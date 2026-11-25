@@ -69,7 +69,27 @@ def _find_marker(pages: dict[int, str], plist: list[int], marker: str, after: tu
                     continue
                 if _norm_marker(line).startswith(nm):
                     return p, i
-    return None
+    return _find_marker_fuzzy(pages, plist, nm, after)
+
+
+def _find_marker_fuzzy(pages: dict[int, str], plist: list[int], nm: str, after=None, threshold: float = 0.8):
+    """OCR / text-layer markdown: headings lose '#', get split over lines or misread letters.
+    Compare the marker with the start of each line (joined with the next two lines)."""
+    import difflib
+
+    best, best_r = None, threshold
+    for p in plist:
+        lines = pages.get(p, "").split("\n")
+        for i in range(len(lines)):
+            if after and (p, i) <= after:
+                continue
+            cand = _norm_marker(" ".join(lines[i:i + 3]))[: len(nm)]
+            if not cand or not cand[:1].isalnum() and cand[:1] != nm[:1]:
+                continue
+            r = difflib.SequenceMatcher(None, nm, cand, autojunk=False).ratio()
+            if r > best_r:
+                best, best_r = (p, i), r
+    return best
 
 
 def cut_segment(pages: dict[int, str], a: int, b: int, start: str | None, end: str | None) -> list[tuple[int, str]]:

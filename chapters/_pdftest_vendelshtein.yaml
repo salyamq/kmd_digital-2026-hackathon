@@ -1,0 +1,14 @@
+# scratch config: PDF-only ingest check on a text-layer book (no md); not part of the main chapter list
+id: _pdftest_vendelshtein
+domain: geology
+title: "PDF-only test"
+book:
+  author: "Б. Ю. Вендельштейн"
+  title: "test"
+  year: 1985
+  pdf: pdf/vendelshtein.pdf
+language: ru
+segments:
+  - pages: [9, 14]
+    start: "Косвенные количественные признаки."
+    end: null

@@ -72,3 +72,14 @@ Files: pack.yaml (id_prefix geo, audience, data_context), difficulty_types.yaml 
 - Kuznetsov/Basniev workers made very fine-grained nodes (56/60); graph merges were not used. Term-before-definition warnings are heuristic.
 - `term_before_definition` is a warning only; course text should define a term at first use anyway.
 - llm/pending is queue state — keep it out of git (suggest `runs/*/llm/pending/` in .gitignore).
+
+## PDF-only ingest (`kmd/ingest/pdf2md.py`, 2026-11-25)
+- If the chapter yaml has no `book.md` (or the file is missing, or `KMD_FORCE_PDF=1`), ingest converts the chapter pages ±1 of `book.pdf` into `runs/<ch>/source.md` with `<!-- page N -->` markers (+ `pdf2md_report.json`: source and quality per page), then ingests as usual.
+- Per page: text layer (pymupdf dict: soft hyphens, line-end hyphenation, letter-spaced words joined, small raised digits → superscripts, headings by font size / bold numbered lines, formula debris kept as `$$ … $$`) if quality is good (≥150 chars, letters ≥0.6, garbled tokens ≤4 %, formula debris ≤20 %); else OCR: vision LLM (`prompts/ingest_ocr.md`, one cached request per page, page PNG at 200 dpi) or `KMD_PDF_OCR=tesseract` (rus+eng, installed via apt) or `off`. `KMD_PDF_MODE=auto|text|ocr`.
+- Start/end markers: if exact match fails, fuzzy match (difflib ≥0.8 on the normalized line + next two lines), so `## 1.2 Дельты` is found in OCR text without `#`.
+- Validation vs provided md (`python -m kmd.ingest.pdf_eval CH [pages] --ocr off|tesseract`, word-sequence similarity, math/markup/figure descriptions removed): text layer vendelshtein 0.91 (21 pages), barenblatt 0.82, latyshova 0.85, basniev 0.80 (formula pages: 23/29 flagged for OCR); scan baraboshkin with tesseract 0.97/0.95/0.98 on text pages, 0.45 on a figure page. Low scores are mostly figure text and formulas, partly errors in the reference md. Scratch configs `chapters/_pdftest_{vendelshtein,baraboshkin}.yaml` ingest end to end (fuzzy start marker found). Existing chapters' units/source_pages unchanged (they keep using md).
+- Vision-LLM OCR path checked only up to the queued request (image path + prompt); no page was answered (budget).
+
+## Book analyses (organizers, LLM-generated)
+- Chapter yaml `analysis: analyses/<ch>.md` (under KMD_DATA); `kmd.ingest.analysis(ch)` → dict | None; `kmd.ingest.analysis_context(ch)` → meta, prerequisites, chapter dependencies, key definitions, weak sections (for a «Перед главой» page).
+- Used only in the checker prompt (weak sections ≤8, key definitions ≤15, labelled as non-author hints). Not used in layer/course prompts (cache keys unchanged). The check_review template changed, so old check caches no longer match (calibration results above stay as recorded).

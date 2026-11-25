@@ -9,6 +9,7 @@ Nothing here is chapter- or domain-specific; only language-level patterns (ru/en
 """
 from __future__ import annotations
 
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -22,7 +23,7 @@ from .parse import (
     split_pages,
 )
 
-__all__ = ["run", "load_units", "load_pages"]
+__all__ = ["run", "load_units", "load_pages", "analysis", "analysis_context"]
 
 
 def load_units(chapter: str) -> dict:
@@ -31,6 +32,41 @@ def load_units(chapter: str) -> dict:
 
 def load_pages(chapter: str) -> dict[int, str]:
     return {int(k): v for k, v in read_json(run_dir(chapter) / "source_pages.json").items()}
+
+
+def analysis(chapter: str) -> dict | None:
+    """Organizers' book analysis (chapter yaml `analysis:`, path relative to KMD_DATA): one ```json block.
+
+    Machine-generated context (prerequisites, dependencies, definitions, weak sections). It is NOT
+    author text: never use it as a source of claims, quotes or numbers.
+    """
+    import json
+
+    from ..config import data_dir
+
+    cfg = chapter_config(chapter)
+    rel = cfg.get("analysis")
+    if not rel:
+        return None
+    p = Path(rel) if Path(rel).is_absolute() else data_dir() / rel
+    if not p.exists():
+        return None
+    text = p.read_text(encoding="utf-8")
+    m = re.search(r"```json\s*(.*?)```", text, re.S)
+    try:
+        return json.loads(m.group(1) if m else text)
+    except json.JSONDecodeError:
+        return None
+
+
+def analysis_context(chapter: str) -> dict | None:
+    """Prerequisites and chapter dependencies from the book analysis, for a deterministic
+    «Перед главой» page. Machine-generated context, not author text."""
+    a = analysis(chapter)
+    if not a:
+        return None
+    keys = ("meta", "prerequisites_and_context", "chapter_dependencies", "key_definitions", "misleading_or_weak_sections")
+    return {k: a.get(k) for k in keys if a.get(k)} | {"_provenance": "organizers' book analysis (LLM-generated), not author text"}
 
 
 def _render_pages(pdf_path: str, pages: list[int], out: Path, dpi: int = 150) -> int:
@@ -56,7 +92,15 @@ def _render_pages(pdf_path: str, pages: list[int], out: Path, dpi: int = 150) ->
 def run(chapter: str, **kw) -> list[Path]:
     cfg = chapter_config(chapter)
     rd = run_dir(chapter)
-    md = Path(cfg["book"]["md_path"]).read_text(encoding="utf-8")
+    md_path = cfg["book"].get("md_path")
+    if os.environ.get("KMD_FORCE_PDF") == "1" or not md_path or not Path(md_path).exists():
+        from .pdf2md import chapter_markdown
+
+        md, pending = chapter_markdown(cfg, rd)
+        if pending:
+            return pending
+    else:
+        md = Path(md_path).read_text(encoding="utf-8")
     md = md.replace("\r\n", "\n").replace("\r", "\n")
     pages = split_pages(md)
     running = detect_running_lines(pages)

@@ -33,6 +33,12 @@
 {% endfor %}
 Чек-лист физики и предметной корректности:
 {{ physics_checklist }}
+{% if analysis %}
+Машинный обзор книги (сгенерирован другой моделью; НЕ авторский текст — не цитируй его как evidence и не считай источником фактов). Подсказки, где книга слаба или где элементы чаще ошибаются:
+{% for w in analysis.weak %}- [{{ w.chapter }}] {{ w.description }}{% if w.impact %} — {{ w.impact }}{% endif %}
+{% endfor %}{% if analysis.definitions %}Определения ключевых терминов в книге (для сверки смысла, не как цитаты):
+{% for d in analysis.definitions %}- {{ d.term }}{% if d.note %}: {{ d.note }}{% endif %}
+{% endfor %}{% endif %}{% endif %}
 
 ---user---
 Глава: {{ chapter_title }} ({{ book }}).

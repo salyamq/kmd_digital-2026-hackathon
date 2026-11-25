@@ -1,0 +1,13 @@
+# scratch config: PDF-only ingest check on a scanned book (no md); not part of the main chapter list
+id: _pdftest_baraboshkin
+domain: geology
+title: "Дельты (PDF-only test)"
+book:
+  author: "Е. Ю. Барабошкин"
+  title: "Практическая седиментология (терригенные коллектора)"
+  year: 2007
+  pdf: pdf/baraboshkin.pdf
+language: ru
+segments:
+  - pages: [30, 32]
+    start: "## 1.2 Дельты"

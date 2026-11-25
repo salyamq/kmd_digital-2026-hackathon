@@ -102,6 +102,18 @@ def code_checks(item: dict, chapter: str) -> tuple[list[dict], list[str]]:
     return findings, notes
 
 
+def analysis_brief(chapter: str, weak: int = 8, definitions: int = 15) -> dict | None:
+    """Short context from the organizers' book analysis (not author text; hints only)."""
+    from ..ingest import analysis
+
+    a = analysis(chapter)
+    if not a:
+        return None
+    w = [x for x in a.get("misleading_or_weak_sections") or [] if isinstance(x, dict)][:weak]
+    d = [x for x in a.get("key_definitions") or [] if isinstance(x, dict) and x.get("term")][:definitions]
+    return {"weak": w, "definitions": d} if (w or d) else None
+
+
 def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]:
     cfg = chapter_config(chapter)
     rd = run_dir(chapter)
@@ -125,6 +137,7 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
         "physics_checklist": pack.get("physics_checklist", ""),
         "chapter_title": cfg.get("title", ""),
         "book": f"{b.get('author', '')}, «{b.get('title', '')}»",
+        "analysis": analysis_brief(cfg["id"], weak=8, definitions=15),
     }
     pkg_id = re.sub(r"[^A-Za-z0-9_.-]+", "_", pkg.get("package_id", Path(package).stem))
     calls = []
