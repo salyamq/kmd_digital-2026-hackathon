@@ -121,7 +121,8 @@ class ProcessChain(Template):
     def state(self, params, t=None):
         rank = _layers(params["nodes"], params["edges"])
         order = sorted(params["nodes"], key=lambda n: (rank[n["id"]], params["nodes"].index(n)))
-        nvis = len(order) if t is None else max(1, math.ceil(t * len(order) - 1e-9))
+        # the chain is fully built by 40 % of the frame time, so the voice can talk about the whole chain
+        nvis = len(order) if t is None else max(1, math.ceil(min(1.0, t / 0.4) * len(order) - 1e-9))
         return {"rank": rank, "order": [n["id"] for n in order], "visible": {n["id"] for n in order[:nvis]}}
 
     def draw(self, fig, rect, params, t, ctx: DrawCtx):
@@ -163,8 +164,14 @@ class ProcessChain(Template):
             for i, row in enumerate(rows):
                 for j, n in enumerate(row):
                     pos[n["id"]] = ((j + 0.5) * Wpx / len(row), Hpx - ch * (i + 0.5))
-        fs = ctx.base_px * 0.95
-        chars = max(8, int((bw - fs) / (fs * 0.66)))
+        # largest font at which every box text fits its box
+        for scale in (0.95, 0.85, 0.76, 0.68, 0.6):
+            fs = ctx.base_px * scale
+            chars = max(8, int((bw - fs) / (fs * 0.66)))
+            need = max(len(textwrap.wrap(n["text"], chars, break_long_words=False)) * 1.3 * fs +
+                       (1.9 if params["show_kind_labels"] else 0.6) * fs for n in params["nodes"])
+            if need <= bh:
+                break
         for n in params["nodes"]:
             if n["id"] not in st["visible"]:
                 continue
@@ -172,7 +179,7 @@ class ProcessChain(Template):
             ks = sg["process_chain"].get(kind, {"color": "#37474F", "bg": "#ECEFF1", "ru": kind})
             cx, cy = pos[n["id"]]
             lines = textwrap.wrap(n["text"], chars, break_long_words=False)
-            need_h = (len(lines) + (1.4 if params["show_kind_labels"] else 0.4)) * fs * 1.3
+            need_h = (len(lines) * 1.3 + (1.9 if params["show_kind_labels"] else 0.6)) * fs
             hh = max(bh * 0.55, min(bh, need_h))
             ax.add_patch(FancyBboxPatch((cx - bw / 2, cy - hh / 2), bw, hh,
                                         boxstyle=f"round,pad=0,rounding_size={fs * 0.6}", fc=ks["bg"], ec=ks["color"],
@@ -180,7 +187,7 @@ class ProcessChain(Template):
             if params["show_kind_labels"]:
                 ax.text(cx - bw / 2 + fs * 0.5, cy + hh / 2 - fs * 0.35, ks.get("ru", kind).upper(), ha="left", va="top",
                         fontsize=ctx.pt(0.62), color=ks["color"], fontweight="bold", zorder=4)
-                ty = cy - fs * 0.45
+                ty = (cy + hh / 2 - fs * 1.25 + cy - hh / 2) / 2
             else:
                 ty = cy
             ax.text(cx, ty, "\n".join(lines), ha="center", va="center", fontsize=fs * 72 / ctx.dpi,

@@ -113,3 +113,28 @@ def round_box(ax, x, y, w, h, fc, ec, lw=1.2, r=0.02, zorder=2, transform=None):
 
 def px_to_pt(px: float, dpi: float = 100) -> float:
     return px * 72.0 / dpi
+
+
+def ru_number(v: float, nd: int = 3) -> str:
+    """Number with a decimal comma (Russian convention), trimmed."""
+    return f"{v:.{nd}g}".replace(".", ",")
+
+
+def comma_axes(ax) -> None:
+    """Decimal comma on the linear axes of ax."""
+    from matplotlib.ticker import FuncFormatter
+
+    for axis, sc in ((ax.xaxis, ax.get_xscale()), (ax.yaxis, ax.get_yscale())):
+        if sc == "linear":
+            axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
+        elif sc == "log":
+            axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
+
+
+def ru_hours(h: float) -> str:
+    """Readable rounded time: '≈ 44 мин', '≈ 2,5 ч', '≈ 21 ч'."""
+    if h < 1:
+        return f"≈ {max(1, round(h * 60))} мин"
+    if h < 10:
+        return "≈ " + f"{round(h * 2) / 2:g}".replace(".", ",") + " ч"
+    return f"≈ {round(h)} ч"

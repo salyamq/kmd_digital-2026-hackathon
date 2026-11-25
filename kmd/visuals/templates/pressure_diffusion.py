@@ -13,6 +13,7 @@ from matplotlib.patches import Circle
 
 from .. import models
 from ..base import DrawCtx, Issue, Template, common_props, register
+from ..style import comma_axes, ru_hours, ru_number
 
 MD = 9.869233e-16  # m2 per millidarcy
 DAY = 86400.0
@@ -198,7 +199,7 @@ class PressureDiffusion(Template):
                         ax.plot(st["x"], yy, color=col[m], lw=1.0, alpha=0.45, ls="-" if m == "exact" else "--")
                         k = int(len(st["x"]) * 0.12)
                         if m == list(st["profiles"])[0]:
-                            ax.text(st["x"][k], yy[k], f"{sh:g} ч", fontsize=ctx.pt(0.7), color=col[m], alpha=0.8,
+                            ax.text(st["x"][k], yy[k], f"{sh:g} ч".replace(".", ","), fontsize=ctx.pt(0.7), color=col[m], alpha=0.8,
                                     ha="left", va="top")
                 for m, yy in st["profiles"].items():
                     ax.plot(st["x"], yy / 1e6, color=col[m], lw=2.4, ls="-" if m == "exact" else "--", label=lab[m])
@@ -225,7 +226,7 @@ class PressureDiffusion(Template):
                     ax.axvline(rz, color=pal["exact_color"], lw=1.0, ls=":")
                     ax.text(rz, ax.get_ylim()[1], " ближняя зона ", ha="right", va="top", fontsize=ctx.pt(0.72),
                             color=pal["exact_color"])
-                ax.set_title(f"p(r) через {T_h:.3g} ч после пуска", fontsize=ctx.pt(0.95))
+                ax.set_title(f"p(r) через {ru_hours(T_h)} после пуска", fontsize=ctx.pt(0.95))
                 if len(st["profiles"]) > 1:
                     ax.legend(loc="lower right", fontsize=ctx.pt(0.75), frameon=True)
                 ax.grid(color=sg["palette"]["grid"], lw=0.5)
@@ -283,6 +284,9 @@ class PressureDiffusion(Template):
                 ax.set_xlabel("м")
                 ax.set_title("вид сверху: давление", fontsize=ctx.pt(0.95))
                 cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.02)
-                cb.set_label("снижение давления p₀ − p, МПа", fontsize=ctx.pt(0.75))
-        notes = [f"κ = {st['kappa']:.2g} м²/с"]
+                cb.set_label("снижение давления p₀ − p, МПа", fontsize=ctx.pt(0.85))
+                cb.ax.tick_params(labelsize=ctx.pt(0.8))
+        for a_ in res_axes:
+            comma_axes(a_)
+        notes = [f"пьезопроводность κ = {ru_number(st['kappa'], 2)} м²/с"]
         return {"exaggerations": exag, "legend": [], "notes": notes, "axes": res_axes}

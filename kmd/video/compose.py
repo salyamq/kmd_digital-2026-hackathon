@@ -86,7 +86,7 @@ class Composer:
                      bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#B71C1C", lw=1.2))
         if notes:
             fig.text(0.5, y - (0.021 if self.fmt == "short" else 0.035), " · ".join(notes), ha="center",
-                     va="center", fontsize=L["base_px"] * 0.66 * 72 / dpi, color="#616161")
+                     va="center", fontsize=L["base_px"] * 0.85 * 72 / dpi, color="#424242")
         # on-screen key words
         if caption:
             lines = textwrap.wrap(caption, L["chars"])
@@ -111,9 +111,9 @@ class Composer:
         y = L["top_y"] - 0.008
         for i in range(n):
             col = "#E65100" if i == k else ("#37474F" if i < k else "#BDBDBD")
-            fig.patches.append(matplotlib.patches.Circle((x0 + i * step, y), 0.0085 if self.fmt == "short" else 0.006,
-                                                         transform=fig.transFigure, fc=col, ec="none",
-                                                         figure=fig))
+            r = 0.0085 if self.fmt == "short" else 0.006
+            fig.patches.append(matplotlib.patches.Ellipse((x0 + i * step, y), 2 * r, 2 * r * W / H,
+                                                          transform=fig.transFigure, fc=col, ec="none", figure=fig))
         fig.text(x0 - 0.02, y, f"шаг {k + 1} из {n}", ha="right", va="center",
                  fontsize=L["base_px"] * 0.7 * 72 / dpi, color="#616161")
 
