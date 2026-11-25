@@ -311,10 +311,10 @@ def verify_layer(chapter: str, layer: dict, units: dict, coverage: list | None) 
     first_def = {}
     for i, n in enumerate(nodes):
         for t in n.get("terms", []):
-            first_def.setdefault(t["term"], i)
+            first_def.setdefault(t["term"].lower().replace("ё", "е"), i)
     for i, n in enumerate(nodes):
         txt = node_text(n)
-        own = {t["term"] for t in n.get("terms", [])}
+        own = {t["term"].lower().replace("ё", "е") for t in n.get("terms", [])}
         for term, j in first_def.items():
             if j > i and term not in own and uses_term(txt, term):
                 warn("term_before_definition", n["id"], f"uses «{term}» defined later in {nodes[j]['id']}")

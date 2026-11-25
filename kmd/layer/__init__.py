@@ -330,9 +330,17 @@ def assemble(cfg, U, drafts, skipped, graph, prefix):
     # ids: <prefix>.<chapter>.<section_code>.<nn>, nn counted per section in book order (stable)
     key2id: dict[str, str] = {}
     per_sec: dict[str, int] = {}
+    known = {s["code"] for s in U["sections"]}
     for k in alive:  # book order
         n = by_key[k]
-        sc = re.sub(r"[^a-z0-9_]", "", n["section_code"].lower()) or "s0"
+        # section code comes from the node's first unit (the LLM's section_code is only a fallback)
+        first_u = next((units[u] for u in n["unit_ids"] if u in units), None)
+        sc = first_u["section_code"] if first_u else n.get("section_code", "")
+        if sc not in known:
+            alt = "s" + re.sub(r"[^0-9]+", "_", sc).strip("_")
+            sc = alt if alt in known else sc
+        sc = re.sub(r"[^a-z0-9_]", "", sc.lower()) or "s0"
+        n["section_code"] = sc
         per_sec[sc] = per_sec.get(sc, 0) + 1
         key2id[k] = f"{prefix}.{cfg['id']}.{sc}.{per_sec[sc]:02d}"
     for f, t in merged_from.items():

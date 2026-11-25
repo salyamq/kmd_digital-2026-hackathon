@@ -1,0 +1,107 @@
+{
+  "chapter": "latyshova",
+  "ok": true,
+  "stats": {
+    "nodes": 34,
+    "claims": 269,
+    "quotes_exact": 268,
+    "quotes_fuzzy": 1,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 18
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.latyshova.s19.02.c11",
+      "message": "quote matched fuzzily (99%)"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.ch5.01",
+      "message": "uses «глинистость» defined later in geo.latyshova.s18.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.ch5.01",
+      "message": "uses «межзерновой коллектор» defined later in geo.latyshova.s17.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.ch5.01",
+      "message": "uses «параметр насыщения» defined later in geo.latyshova.s18.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.ch5.01",
+      "message": "uses «проницаемость» defined later in geo.latyshova.s20.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s17.01",
+      "message": "uses «глинистость» defined later in geo.latyshova.s18.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s17.01",
+      "message": "uses «техническая вода» defined later in geo.latyshova.s17.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s17.01",
+      "message": "uses «нефильтрующийся раствор» defined later in geo.latyshova.s17.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s18.01",
+      "message": "uses «межзерновой коллектор» defined later in geo.latyshova.s17.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s18.01",
+      "message": "uses «каверномер» defined later in geo.latyshova.s17.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s17.03",
+      "message": "uses «минерализация фильтрата» defined later in geo.latyshova.s17.04"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s17.04",
+      "message": "uses «положительное приращение микрозондов» defined later in geo.latyshova.s20.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s18.02",
+      "message": "uses «обсадная колонна» defined later in geo.latyshova.s20.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s20.01",
+      "message": "uses «проницаемость» defined later in geo.latyshova.s20.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s20.01",
+      "message": "uses «прослой неколлектора» defined later in geo.latyshova.s20.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s20.04",
+      "message": "uses «критическая пористость» defined later in geo.latyshova.s20.21"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s20.05",
+      "message": "uses «связанная водонасыщенность» defined later in geo.latyshova.s20.21"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.latyshova.s20.07",
+      "message": "uses «класс коллектора» defined later in geo.latyshova.s20.11"
+    }
+  ]
+}

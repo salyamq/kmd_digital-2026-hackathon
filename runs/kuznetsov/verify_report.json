@@ -1,0 +1,817 @@
+{
+  "chapter": "kuznetsov",
+  "ok": true,
+  "stats": {
+    "nodes": 56,
+    "claims": 465,
+    "quotes_exact": 460,
+    "quotes_fuzzy": 5,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 160
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.kuznetsov.s10_2.02.c09",
+      "message": "quote matched fuzzily (96%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.kuznetsov.s10_2.05.c06",
+      "message": "quote matched fuzzily (94%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.kuznetsov.s10_2.08.c02",
+      "message": "quote matched fuzzily (95%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.kuznetsov.s10_3.12.c11",
+      "message": "quote matched fuzzily (93%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.kuznetsov.s10_3.18.c02",
+      "message": "quote matched fuzzily (99%)"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.01",
+      "message": "uses «биогерм» defined later in geo.kuznetsov.s10_1.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.01",
+      "message": "uses «карст» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.01",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.01",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.01",
+      "message": "uses «запасы» defined later in geo.kuznetsov.s10_4.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «рифовая система» defined later in geo.kuznetsov.s10_1.04"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «положение роста» defined later in geo.kuznetsov.s10_2.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «структура» defined later in geo.kuznetsov.s10_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «колония» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «карст» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «ядро» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «шлейф» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «асимметричный риф» defined later in geo.kuznetsov.s10_3.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «пласт» defined later in geo.kuznetsov.s10_3.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «куполовидный риф» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «асимметричная рифовая система» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.02",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «колония» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «карст» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «массивное строение» defined later in geo.kuznetsov.s10_2.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «резервуар» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «рифовый массив» defined later in geo.kuznetsov.s10_3.15"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.03",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «асимметричный риф» defined later in geo.kuznetsov.s10_3.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «палеогеография» defined later in geo.kuznetsov.s10_3.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «отмель» defined later in geo.kuznetsov.s10_3.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «асимметричная рифовая система» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_1.04",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.01",
+      "message": "uses «структура» defined later in geo.kuznetsov.s10_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.01",
+      "message": "uses «колония» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.01",
+      "message": "uses «карст» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.01",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.02",
+      "message": "uses «доломит» defined later in geo.kuznetsov.s10_2.04"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.02",
+      "message": "uses «шлейф» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.02",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.02",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.03",
+      "message": "uses «гребень» defined later in geo.kuznetsov.s10_3.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.03",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.03",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.03",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «колония» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «ядро» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «шлейф» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «песчаник» defined later in geo.kuznetsov.s10_3.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «рифостроители» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «куполовидный риф» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.04",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «ядро» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «атолловидный риф» defined later in geo.kuznetsov.s10_3.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «гребень» defined later in geo.kuznetsov.s10_3.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «микрозернистый известняк» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «куполовидный риф» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.05",
+      "message": "uses «лагунные отложения» defined later in geo.kuznetsov.s10_4.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «коллектор» defined later in geo.kuznetsov.s10_2.07"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «ядро» defined later in geo.kuznetsov.s10_3.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «профиль» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «пласт» defined later in geo.kuznetsov.s10_3.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.06",
+      "message": "uses «зарифовая фация» defined later in geo.kuznetsov.s10_4.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.07",
+      "message": "uses «карст» defined later in geo.kuznetsov.s10_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.07",
+      "message": "uses «пористость» defined later in geo.kuznetsov.s10_3.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.07",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.07",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.07",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.08",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.08",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.09",
+      "message": "uses «пористость» defined later in geo.kuznetsov.s10_3.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.09",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.09",
+      "message": "uses «покрышка» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.09",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.10",
+      "message": "uses «пористость» defined later in geo.kuznetsov.s10_3.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.10",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.10",
+      "message": "uses «скважина (скв.)» defined later in geo.kuznetsov.s10_3.16"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.11",
+      "message": "uses «пористость» defined later in geo.kuznetsov.s10_3.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.11",
+      "message": "uses «каверновая пористость» defined later in geo.kuznetsov.s10_3.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_2.11",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.01",
+      "message": "uses «куполовидный риф» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.02",
+      "message": "uses «профиль» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.02",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.02",
+      "message": "uses «пласт» defined later in geo.kuznetsov.s10_3.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.02",
+      "message": "uses «рифовый резервуар» defined later in geo.kuznetsov.s10_4.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «фациальная зональность» defined later in geo.kuznetsov.s10_3.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «профиль» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «отмель» defined later in geo.kuznetsov.s10_3.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.03",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «шельф» defined later in geo.kuznetsov.s10_3.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «профиль» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «известняк» defined later in geo.kuznetsov.s10_3.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «отмель» defined later in geo.kuznetsov.s10_3.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.04",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.05",
+      "message": "uses «фильтрация» defined later in geo.kuznetsov.s10_3.19"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.05",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.05",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.06",
+      "message": "uses «внешний склон» defined later in geo.kuznetsov.s10_3.19"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.06",
+      "message": "uses «плосковершинный риф» defined later in geo.kuznetsov.s10_3.19"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.06",
+      "message": "uses «отмель» defined later in geo.kuznetsov.s10_3.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.07",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.08",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.08",
+      "message": "uses «скважина (скв.)» defined later in geo.kuznetsov.s10_3.16"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.08",
+      "message": "uses «куполовидный риф» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «разлом» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «профиль» defined later in geo.kuznetsov.s10_3.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «асимметричный риф» defined later in geo.kuznetsov.s10_3.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «асимметричная рифовая система» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.09",
+      "message": "uses «запасы» defined later in geo.kuznetsov.s10_4.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.10",
+      "message": "uses «скважина (скв.)» defined later in geo.kuznetsov.s10_3.16"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.20",
+      "message": "uses «асимметричная рифовая система» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.20",
+      "message": "uses «боковой экран» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.20",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.11",
+      "message": "uses «разрез» defined later in geo.kuznetsov.s10_3.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.11",
+      "message": "uses «природный резервуар (пр)» defined later in geo.kuznetsov.s10_3.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.11",
+      "message": "uses «рифовый резервуар» defined later in geo.kuznetsov.s10_4.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.12",
+      "message": "uses «пласт» defined later in geo.kuznetsov.s10_3.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.12",
+      "message": "uses «карбонаты» defined later in geo.kuznetsov.s10_4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.14",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.15",
+      "message": "uses «пласт» defined later in geo.kuznetsov.s10_3.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.16",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.18",
+      "message": "uses «рифовый резервуар» defined later in geo.kuznetsov.s10_4.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.17",
+      "message": "uses «рифовый резервуар» defined later in geo.kuznetsov.s10_4.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_3.17",
+      "message": "uses «кольцевая система» defined later in geo.kuznetsov.s10_4.21"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.01",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.02",
+      "message": "uses «боковой экран» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.02",
+      "message": "uses «замыкание» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.04",
+      "message": "uses «боковой экран» defined later in geo.kuznetsov.s10_4.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.04",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.04",
+      "message": "uses «высота ловушки» defined later in geo.kuznetsov.s10_4.16"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.04",
+      "message": "uses «замыкание» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.05",
+      "message": "uses «столовый риф» defined later in geo.kuznetsov.s10_4.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.06",
+      "message": "uses «асимметричная система» defined later in geo.kuznetsov.s10_4.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.06",
+      "message": "uses «высота ловушки» defined later in geo.kuznetsov.s10_4.16"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.06",
+      "message": "uses «замыкание» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.07",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.08",
+      "message": "uses «боковое экранирование» defined later in geo.kuznetsov.s10_4.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.09",
+      "message": "uses «замыкание» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.03",
+      "message": "uses «запасы» defined later in geo.kuznetsov.s10_4.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.10",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.10",
+      "message": "uses «запасы» defined later in geo.kuznetsov.s10_4.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.11",
+      "message": "uses «замыкание» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.15",
+      "message": "uses «перегиб» defined later in geo.kuznetsov.s10_4.18"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.19",
+      "message": "uses «сводовая часть» defined later in geo.kuznetsov.s10_4.20"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.kuznetsov.s10_4.19",
+      "message": "uses «запасы» defined later in geo.kuznetsov.s10_4.20"
+    }
+  ]
+}
