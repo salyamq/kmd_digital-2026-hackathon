@@ -1,0 +1,184 @@
+[
+  {
+    "section": "truth",
+    "id": "claims_verified",
+    "status": "pass",
+    "text": "Every claim maps to a page + verbatim quote found in the chapter",
+    "details": "{'verified': 11}"
+  },
+  {
+    "section": "truth",
+    "id": "facts_have_sources",
+    "status": "pass",
+    "text": "Every factual narration line has a source",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "spoken_numbers",
+    "status": "pass",
+    "text": "Every spoken number is in the source table",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "screen_numbers",
+    "status": "pass",
+    "text": "Every on-screen number is sourced (claim/dataset/model/axis)",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "assumptions_listed",
+    "status": "info",
+    "text": "Values not taken from the chapter are marked as assumptions (listed in the passport)",
+    "details": "5 assumptions"
+  },
+  {
+    "section": "truth",
+    "id": "S1:frame_same_y",
+    "status": "pass",
+    "text": "in rendered frames the curve point is at the tool's depth",
+    "details": "5/5 sampled frames within 4 px (worst 0.9 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S3:frame_same_y",
+    "status": "pass",
+    "text": "in rendered frames the curve point is at the tool's depth",
+    "details": "5/5 sampled frames within 4 px (worst 0.5 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "invariants_model",
+    "status": "pass",
+    "text": "Scene-spec invariants hold (model/layout level)",
+    "details": "12 checks"
+  },
+  {
+    "section": "truth",
+    "id": "no_ai_text",
+    "status": "pass",
+    "text": "No AI-generated text, digits, axes or arrows: all text is composited from JSON",
+    "details": "0 AI clips generated; prompts checked for text/digit/diagram words"
+  },
+  {
+    "section": "truth",
+    "id": "ai_frames_verified",
+    "status": "pass",
+    "text": "Every AI clip starts/ends on a verified frame; no AI clip shows mechanism or data",
+    "details": "no class D shots"
+  },
+  {
+    "section": "truth",
+    "id": "physics:gr_no_emission",
+    "status": "pass",
+    "text": "Гамма-каротаж (ГК) не излучает и не принимает «отражённое» излучение — он измеряет естественную радиоактивность пород.",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "provenance_labels",
+    "status": "pass",
+    "text": "Provenance label on each frame matches how it was made",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "ab_share",
+    "status": "pass",
+    "text": "≥70% of screen time is class A/B (visual data/process)",
+    "details": "A: 91%, T: 9%"
+  },
+  {
+    "section": "truth",
+    "id": "card_share",
+    "status": "pass",
+    "text": "Text cards (class T) ≤ 25% of screen time",
+    "details": "T: 9%"
+  },
+  {
+    "section": "truth",
+    "id": "mechanism_visuals",
+    "status": "pass",
+    "text": "Every mechanism/data line is shown on a visual template (class A/B/C)",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "overlay_cards",
+    "status": "info",
+    "text": "Visual shots with a question/fact strip beside the visual (overlay_card)",
+    "details": "55% of screen time"
+  },
+  {
+    "section": "truth",
+    "id": "d_clips",
+    "status": "pass",
+    "text": "≤2 class D clips",
+    "details": "0"
+  },
+  {
+    "section": "form",
+    "id": "style",
+    "status": "pass",
+    "text": "One style, one theme, one subtitle style for the whole video",
+    "details": "style F, fonts bundled in assets/fonts"
+  },
+  {
+    "section": "form",
+    "id": "subtitles_readable",
+    "status": "pass",
+    "text": "Subtitles readable on a phone (size, length, ≥0.6 s on screen), no overflow (wrapped to max width)",
+    "details": "34 chunks; too long: []; very short: 0"
+  },
+  {
+    "section": "form",
+    "id": "subtitles_synced",
+    "status": "pass",
+    "text": "Subtitles synced to the voice (chunk inside its line's audio)",
+    "details": "[]"
+  },
+  {
+    "section": "form",
+    "id": "stress",
+    "status": "pass",
+    "text": "Stress/pronunciation of terms checked against the dictionary",
+    "details": "dictionary entries: 50; glossary terms in narration without entry: []"
+  },
+  {
+    "section": "form",
+    "id": "length",
+    "status": "pass",
+    "text": "Length within target 30-60 s",
+    "details": "56.4 s"
+  },
+  {
+    "section": "form",
+    "id": "hook_3s",
+    "status": "pass",
+    "text": "Hook comes in the first 3 s",
+    "details": "first line 'hook' at 0.25 s"
+  },
+  {
+    "section": "form",
+    "id": "loudness",
+    "status": "pass",
+    "text": "Loudness about -16.0 LUFS",
+    "details": "-16.0 LUFS"
+  },
+  {
+    "section": "coverage",
+    "id": "templates",
+    "status": "pass",
+    "text": "All requested visuals covered by templates",
+    "details": ""
+  },
+  {
+    "section": "mentor",
+    "id": "spec_review",
+    "status": "manual",
+    "text": "Mentor reviewed scene specs + source table before final render",
+    "details": "see mentor_pack.md"
+  }
+]

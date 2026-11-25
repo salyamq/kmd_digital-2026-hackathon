@@ -1,0 +1,66 @@
+{
+  "shot_id": "S7",
+  "template": "overlay_card",
+  "class": "A",
+  "params": {
+    "base": {
+      "template": "data_chart",
+      "params": {
+        "x": "x",
+        "y": [
+          "y_AVG_DOWNHOLE_PRESSURE"
+        ],
+        "dates": true,
+        "y_label": "забойное давление, бар",
+        "draw": {
+          "start": 0.0,
+          "end": 0.6
+        },
+        "highlight_where": {
+          "array": "c_ON_STREAM_HRS",
+          "op": "==",
+          "value": 0,
+          "label": "скважина *остановлена*"
+        },
+        "caption": "Volve · скв. 15/9-F-15 D · суточные данные (Equinor Open Data)"
+      }
+    },
+    "cards": [
+      {
+        "kind": "text",
+        "label": "для дата-инженера",
+        "text": "Изменение доходит до дальних узлов *с задержкой*",
+        "at": "L16"
+      },
+      {
+        "kind": "text",
+        "label": "для дата-инженера",
+        "text": "По форме отклика восстанавливают параметры; подбор модели — часто *вручную*",
+        "at": "L17"
+      }
+    ]
+  },
+  "model": {
+    "type": "csv",
+    "file": "volve_daily_production.csv",
+    "x": "DATEPRD",
+    "y": [
+      "AVG_DOWNHOLE_PRESSURE"
+    ],
+    "also": [
+      "ON_STREAM_HRS"
+    ],
+    "filter": {
+      "NPD_WELL_BORE_NAME": "15/9-F-15 D"
+    },
+    "x_from": "2014-11-12",
+    "x_to": "2014-12-25",
+    "dataset": "Equinor Volve"
+  },
+  "invariants": [
+    "same Volve data as S6"
+  ],
+  "assumptions": [],
+  "provenance": "data",
+  "needs_new_template": null
+}

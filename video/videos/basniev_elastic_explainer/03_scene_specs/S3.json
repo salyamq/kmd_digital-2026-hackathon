@@ -1,0 +1,176 @@
+{
+  "shot_id": "S3",
+  "template": "overlay_card",
+  "class": "B",
+  "params": {
+    "base": {
+      "template": "data_chart",
+      "params": {
+        "x": "axis_r",
+        "y": [
+          "dp_1h",
+          "dp_1d",
+          "dp_10d"
+        ],
+        "x_scale": "log",
+        "y_display_unit": "bar",
+        "x_label": "r, м (лог. шкала)",
+        "y_label": "Δp, бар",
+        "series_draw": [
+          {
+            "start": "L6+0.6",
+            "end": "L6.end"
+          },
+          {
+            "start": "L7",
+            "end": "L7.end"
+          },
+          {
+            "start": "L8",
+            "end": "L8.end-0.4"
+          }
+        ],
+        "series_labels": {
+          "dp_1h": "через 1 ч",
+          "dp_1d": "через 1 сут",
+          "dp_10d": "через 10 сут"
+        }
+      }
+    },
+    "cards": [
+      {
+        "kind": "equation",
+        "text": "χ = k / (μ·β*)",
+        "label": "пьезопроводность",
+        "at": "L6+0.3",
+        "source_ref": "c2"
+      },
+      {
+        "kind": "equation",
+        "text": "β* = m·βж + βс",
+        "label": "упругоёмкость",
+        "at": "L7",
+        "source_ref": "c3"
+      },
+      {
+        "kind": "equation",
+        "text": "Δp = Qμ/(4πkh) · [−Ei(−r²/4χt)]",
+        "label": "основная формула",
+        "at": "L8",
+        "source_ref": "c4"
+      }
+    ]
+  },
+  "model": {
+    "type": "formula",
+    "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t1))",
+    "exprs": {
+      "dp_1d": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t2))",
+      "dp_10d": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t3))"
+    },
+    "source": {
+      "claim_id": "c4",
+      "page": null,
+      "quote": null
+    },
+    "params": {
+      "Q": {
+        "value": 100,
+        "unit": "m3/сут",
+        "source": {
+          "assumption": true,
+          "note": "illustrative rate; replace with the chapter example"
+        }
+      },
+      "mu": {
+        "value": 1,
+        "unit": "mPa*s",
+        "source": {
+          "assumption": true,
+          "note": "water-like viscosity"
+        }
+      },
+      "k": {
+        "value": 0.1,
+        "unit": "D",
+        "source": {
+          "assumption": true,
+          "note": "100 mD, typical sandstone"
+        }
+      },
+      "h": {
+        "value": 10,
+        "unit": "m",
+        "source": {
+          "assumption": true,
+          "note": "reservoir thickness"
+        }
+      },
+      "beta": {
+        "value": 3e-10,
+        "unit": "1/Pa",
+        "source": {
+          "assumption": true,
+          "note": "β*, elastic capacity of the reservoir"
+        }
+      },
+      "dp_min": {
+        "value": 0.1,
+        "unit": "bar",
+        "source": {
+          "assumption": true,
+          "note": "threshold of a 'noticeable' pressure drop for the front line"
+        }
+      },
+      "t1": {
+        "value": 1,
+        "unit": "hour",
+        "source": {
+          "assumption": true,
+          "note": "profile time 1"
+        }
+      },
+      "t2": {
+        "value": 1,
+        "unit": "day",
+        "source": {
+          "assumption": true,
+          "note": "profile time 2"
+        }
+      },
+      "t3": {
+        "value": 10,
+        "unit": "day",
+        "source": {
+          "assumption": true,
+          "note": "profile time 3"
+        }
+      }
+    },
+    "derived": {
+      "chi": "k/(mu*beta)"
+    },
+    "grid": {
+      "r": {
+        "from": 0.5,
+        "to": 2000,
+        "n": 200,
+        "unit": "m",
+        "scale": "log"
+      }
+    },
+    "output": {
+      "name": "dp_1h",
+      "unit": "Pa"
+    }
+  },
+  "invariants": [
+    "the three profiles come from one formula (c4) with the same parameters as S1/S4",
+    "later profiles reach farther: the disturbance spreads, it does not appear everywhere at once"
+  ],
+  "assumptions": [
+    "Illustrative parameters as in S4; profile times 1 h, 1 day, 10 days chosen for illustration"
+  ],
+  "provenance": "simulation",
+  "needs_new_template": null
+}

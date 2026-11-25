@@ -1,0 +1,17 @@
+{
+  "_note": "UNSEEN-DOMAIN TEST FIXTURE (production engineering, English). Written to test genericity; not taken from a chapter. quote/page null on purpose.",
+  "node_id": "prod_decline_en_01",
+  "name": "Why a well's oil rate declines",
+  "language": "en",
+  "difficulty": "misconception",
+  "myth": {"myth": "A well keeps producing at a constant rate until the oil runs out",
+           "correction": "The rate falls as reservoir pressure depletes and the water share of the produced liquid grows"},
+  "statements": [
+    {"key": "s1", "statement": "The production rate depends on the pressure difference between the reservoir and the well, the drawdown."},
+    {"key": "s2", "statement": "As fluids are withdrawn, reservoir pressure declines unless it is maintained, so the achievable rate drops."},
+    {"key": "s3", "statement": "After water breakthrough the water cut rises, so the oil share of the produced liquid falls."},
+    {"key": "s4", "statement": "Decline-curve analysis fits the falling rate to forecast future production."}
+  ],
+  "data_meaning": {"text": "In daily production data the oil rate of a well drifts down over months, with steps when the choke or the well status changes.", "curves": ["BORE_OIL_VOL"]},
+  "analogy": "Like forecasting a degrading time series: fit a trend to noisy history, but first flag the step changes - choke changes and shut-ins are regime switches, not trend."
+}

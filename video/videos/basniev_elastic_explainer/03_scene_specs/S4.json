@@ -1,0 +1,125 @@
+{
+  "shot_id": "S4",
+  "template": "field_evolution",
+  "class": "B",
+  "params": {
+    "field": {
+      "output": "dp",
+      "x_axis": "r",
+      "t_axis": "t"
+    },
+    "view": "plan_radial",
+    "display_unit": "bar",
+    "x_max": 1000,
+    "x_scale": "log",
+    "time": {
+      "start": "L9+1.5",
+      "end": "L11.end-0.6"
+    },
+    "front": {
+      "threshold": 0.1,
+      "label": "заметное падение: Δp = 0,1 бар (условно)",
+      "at": "L10+0.8"
+    },
+    "ghosts": 3,
+    "gamma": 0.55,
+    "labels": {
+      "x": "r, м",
+      "y": "Δp, бар",
+      "source": "скважина",
+      "colorbar": "Δp, бар"
+    }
+  },
+  "model": {
+    "type": "formula",
+    "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t))",
+    "source": {
+      "claim_id": "c4",
+      "page": null,
+      "quote": null
+    },
+    "params": {
+      "Q": {
+        "value": 100,
+        "unit": "m3/сут",
+        "source": {
+          "assumption": true,
+          "note": "illustrative rate; replace with the chapter example"
+        }
+      },
+      "mu": {
+        "value": 1,
+        "unit": "mPa*s",
+        "source": {
+          "assumption": true,
+          "note": "water-like viscosity"
+        }
+      },
+      "k": {
+        "value": 0.1,
+        "unit": "D",
+        "source": {
+          "assumption": true,
+          "note": "100 mD, typical sandstone"
+        }
+      },
+      "h": {
+        "value": 10,
+        "unit": "m",
+        "source": {
+          "assumption": true,
+          "note": "reservoir thickness"
+        }
+      },
+      "beta": {
+        "value": 3e-10,
+        "unit": "1/Pa",
+        "source": {
+          "assumption": true,
+          "note": "β*, elastic capacity of the reservoir"
+        }
+      },
+      "dp_min": {
+        "value": 0.1,
+        "unit": "bar",
+        "source": {
+          "assumption": true,
+          "note": "threshold of a 'noticeable' pressure drop for the front line"
+        }
+      }
+    },
+    "derived": {
+      "chi": "k/(mu*beta)"
+    },
+    "grid": {
+      "r": {
+        "from": 0.1,
+        "to": 2000,
+        "n": 220,
+        "unit": "m",
+        "scale": "log"
+      },
+      "t": {
+        "from": 60,
+        "to": 864000,
+        "n": 90,
+        "unit": "s",
+        "scale": "log"
+      }
+    },
+    "output": {
+      "name": "dp",
+      "unit": "Pa"
+    }
+  },
+  "invariants": [
+    "map and profile read the same array",
+    "same formula and parameters as S1/S3"
+  ],
+  "assumptions": [
+    "All parameter values are illustrative (not from the chapter): Q=100 m3/day, μ=1 mPa·s, k=0.1 D, h=10 m, β*=3e-10 1/Pa",
+    "Front drawn where Δp = 0.1 bar (display threshold)"
+  ],
+  "provenance": "simulation",
+  "needs_new_template": null
+}

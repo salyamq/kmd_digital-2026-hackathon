@@ -1,0 +1,205 @@
+[
+  {
+    "section": "truth",
+    "id": "claims_verified",
+    "status": "fail",
+    "text": "Every claim maps to a page + verbatim quote",
+    "details": "{'no_quote': 8}; chapter pages not provided — quotes cannot be checked"
+  },
+  {
+    "section": "truth",
+    "id": "facts_have_sources",
+    "status": "pass",
+    "text": "Every factual narration line has a source",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "spoken_numbers",
+    "status": "pass",
+    "text": "Every spoken number is in the source table",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "screen_numbers",
+    "status": "pass",
+    "text": "Every on-screen number is sourced (claim/dataset/model/axis)",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "assumptions_listed",
+    "status": "info",
+    "text": "Values not taken from the chapter are marked as assumptions (listed in the passport)",
+    "details": "16 assumptions"
+  },
+  {
+    "section": "truth",
+    "id": "S1:frame_front",
+    "status": "pass",
+    "text": "front marker in map and chart at the model's front radius",
+    "details": "3/3 sampled frames within 5 px (worst 0.6 px); 2 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S3:frame_head",
+    "status": "pass",
+    "text": "drawn curve head is at the data point for that time",
+    "details": "2/2 sampled frames within 5 px (worst 0.5 px); 3 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S4:frame_front",
+    "status": "pass",
+    "text": "front marker in map and chart at the model's front radius",
+    "details": "5/5 sampled frames within 5 px (worst 0.5 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S5:frame_head",
+    "status": "pass",
+    "text": "drawn curve head is at the data point for that time",
+    "details": "5/5 sampled frames within 5 px (worst 0.6 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S6:frame_head",
+    "status": "pass",
+    "text": "drawn curve head is at the data point for that time",
+    "details": "5/5 sampled frames within 5 px (worst 0.6 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "S7:frame_head",
+    "status": "pass",
+    "text": "drawn curve head is at the data point for that time",
+    "details": "5/5 sampled frames within 5 px (worst 0.5 px); 0 frames without probe"
+  },
+  {
+    "section": "truth",
+    "id": "invariants_model",
+    "status": "pass",
+    "text": "Scene-spec invariants hold (model/layout level)",
+    "details": "17 checks"
+  },
+  {
+    "section": "truth",
+    "id": "no_ai_text",
+    "status": "pass",
+    "text": "No AI-generated text, digits, axes or arrows: all text is composited from JSON",
+    "details": "0 AI clips generated; prompts checked for text/digit/diagram words"
+  },
+  {
+    "section": "truth",
+    "id": "ai_frames_verified",
+    "status": "pass",
+    "text": "Every AI clip starts/ends on a verified frame; no AI clip shows mechanism or data",
+    "details": "no class D shots"
+  },
+  {
+    "section": "truth",
+    "id": "provenance_labels",
+    "status": "pass",
+    "text": "Provenance label on each frame matches how it was made",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "ab_share",
+    "status": "pass",
+    "text": "≥70% of screen time is class A/B (visual data/process)",
+    "details": "A: 25%, B: 70%, T: 5%"
+  },
+  {
+    "section": "truth",
+    "id": "card_share",
+    "status": "pass",
+    "text": "Text cards (class T) ≤ 25% of screen time",
+    "details": "T: 5%"
+  },
+  {
+    "section": "truth",
+    "id": "mechanism_visuals",
+    "status": "pass",
+    "text": "Every mechanism/data line is shown on a visual template (class A/B/C)",
+    "details": ""
+  },
+  {
+    "section": "truth",
+    "id": "overlay_cards",
+    "status": "info",
+    "text": "Visual shots with a question/fact strip beside the visual (overlay_card)",
+    "details": "49% of screen time"
+  },
+  {
+    "section": "truth",
+    "id": "d_clips",
+    "status": "pass",
+    "text": "≤2 class D clips",
+    "details": "0"
+  },
+  {
+    "section": "form",
+    "id": "style",
+    "status": "pass",
+    "text": "One style, one theme, one subtitle style for the whole video",
+    "details": "style F, fonts bundled in assets/fonts"
+  },
+  {
+    "section": "form",
+    "id": "subtitles_readable",
+    "status": "warn",
+    "text": "Subtitles readable on a phone (size, length, ≥0.6 s on screen), no overflow (wrapped to max width)",
+    "details": "52 chunks; too long: []; very short: 1"
+  },
+  {
+    "section": "form",
+    "id": "subtitles_synced",
+    "status": "pass",
+    "text": "Subtitles synced to the voice (chunk inside its line's audio)",
+    "details": "[]"
+  },
+  {
+    "section": "form",
+    "id": "stress",
+    "status": "pass",
+    "text": "Stress/pronunciation of terms checked against the dictionary",
+    "details": "dictionary entries: 50; glossary terms in narration without entry: []"
+  },
+  {
+    "section": "form",
+    "id": "length",
+    "status": "pass",
+    "text": "Length within target 120-240 s",
+    "details": "137.9 s"
+  },
+  {
+    "section": "form",
+    "id": "hook_3s",
+    "status": "pass",
+    "text": "Hook comes in the first 3 s",
+    "details": "first line 'hook' at 0.25 s"
+  },
+  {
+    "section": "form",
+    "id": "loudness",
+    "status": "pass",
+    "text": "Loudness about -16.0 LUFS",
+    "details": "-16.0 LUFS"
+  },
+  {
+    "section": "coverage",
+    "id": "templates",
+    "status": "pass",
+    "text": "All requested visuals covered by templates",
+    "details": ""
+  },
+  {
+    "section": "mentor",
+    "id": "spec_review",
+    "status": "manual",
+    "text": "Mentor reviewed scene specs + source table before final render",
+    "details": "see mentor_pack.md"
+  }
+]

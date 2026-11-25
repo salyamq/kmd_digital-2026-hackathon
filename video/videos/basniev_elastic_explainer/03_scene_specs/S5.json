@@ -1,0 +1,106 @@
+{
+  "shot_id": "S5",
+  "template": "data_chart",
+  "class": "B",
+  "params": {
+    "x": "axis_t",
+    "y": [
+      "y_dp"
+    ],
+    "x_scale": "log",
+    "x_display_unit": "hour",
+    "y_display_unit": "bar",
+    "x_label": "t, ч (логарифмическая шкала)",
+    "y_label": "Δp у скважины, бар",
+    "draw": {
+      "start": "L12",
+      "end": "L13.end"
+    },
+    "series_labels": {
+      "y_dp": "расчёт по формуле"
+    }
+  },
+  "model": {
+    "type": "formula",
+    "expr": "Q*mu/(4*pi*k*h) * E1(rw**2/(4*chi*t))",
+    "source": {
+      "claim_id": "c4",
+      "page": null,
+      "quote": null
+    },
+    "params": {
+      "Q": {
+        "value": 100,
+        "unit": "m3/сут",
+        "source": {
+          "assumption": true,
+          "note": "same as S6"
+        }
+      },
+      "mu": {
+        "value": 1,
+        "unit": "mPa*s",
+        "source": {
+          "assumption": true,
+          "note": "same as S6"
+        }
+      },
+      "k": {
+        "value": 0.1,
+        "unit": "D",
+        "source": {
+          "assumption": true,
+          "note": "same as S6"
+        }
+      },
+      "h": {
+        "value": 10,
+        "unit": "m",
+        "source": {
+          "assumption": true,
+          "note": "same as S6"
+        }
+      },
+      "beta": {
+        "value": 3e-10,
+        "unit": "1/Pa",
+        "source": {
+          "assumption": true,
+          "note": "same as S6"
+        }
+      },
+      "rw": {
+        "value": 0.1,
+        "unit": "m",
+        "source": {
+          "assumption": true,
+          "note": "well radius"
+        }
+      }
+    },
+    "derived": {
+      "chi": "k/(mu*beta)"
+    },
+    "grid": {
+      "t": {
+        "from": 60,
+        "to": 864000,
+        "n": 100,
+        "unit": "s",
+        "scale": "log"
+      }
+    },
+    "output": {
+      "name": "y_dp",
+      "unit": "Pa"
+    }
+  },
+  "invariants": [
+    "same formula and parameters as S4"
+  ],
+  "assumptions": [
+    "illustrative parameters, see S6"
+  ],
+  "provenance": "simulation",
+  "needs_new_template": null
+}

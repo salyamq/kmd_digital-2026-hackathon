@@ -1,0 +1,105 @@
+{
+  "shot_id": "S2",
+  "template": "inset_callouts",
+  "class": "B",
+  "params": {
+    "base": {
+      "template": "cross_section",
+      "params": {
+        "units": [
+          {
+            "name": "покрышка · глина",
+            "lith": "clay",
+            "thickness": 1
+          },
+          {
+            "name": "пласт · песчаник",
+            "lith": "sandstone",
+            "thickness": 1.4
+          },
+          {
+            "name": "подошва · глина",
+            "lith": "clay",
+            "thickness": 0.9
+          }
+        ],
+        "fluids": [
+          {
+            "unit": "пласт · песчаник",
+            "fluid": "water"
+          }
+        ],
+        "well": {
+          "x": 0.18,
+          "to_unit": "пласт · песчаник",
+          "label": "скважина",
+          "at": 0.6
+        },
+        "reveal": "all",
+        "labels": true
+      }
+    },
+    "inset": {
+      "template": "pore_scale",
+      "params": {
+        "grains": {
+          "n": 46,
+          "size_cv": 0.12,
+          "touching": true
+        },
+        "fluids": {
+          "wetting": "water",
+          "nonwetting": "oil",
+          "sw": 1.0,
+          "wetting_label": "жидкость"
+        },
+        "grain_label": "зерно",
+        "legend": true,
+        "seed": 7
+      },
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "pos": [
+        0.56,
+        0.48
+      ],
+      "radius": 0.36,
+      "zoom": 6
+    },
+    "inset_at": "L4+1.2",
+    "callouts": [
+      {
+        "text": "жидкость *расширяется*",
+        "target": [
+          0.5,
+          0.28
+        ],
+        "dx": -40,
+        "dy": -10,
+        "at": "L5+0.5",
+        "source_ref": "c1"
+      },
+      {
+        "text": "поровый объём *уменьшается*",
+        "target": [
+          0.63,
+          0.72
+        ],
+        "dx": 60,
+        "dy": 40,
+        "at": "L5+2.2",
+        "source_ref": "c1"
+      }
+    ]
+  },
+  "model": null,
+  "invariants": [
+    "grains touch (grain-supported framework)",
+    "fluid only in pores, no free 'lake'"
+  ],
+  "assumptions": [],
+  "provenance": "schematic",
+  "needs_new_template": null
+}

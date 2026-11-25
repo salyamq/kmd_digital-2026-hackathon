@@ -1,0 +1,100 @@
+{
+  "shot_id": "S3",
+  "template": "depth_track",
+  "class": "A",
+  "params": {
+    "track": {
+      "curve": "GR",
+      "unit": "API",
+      "range": [
+        0,
+        150
+      ],
+      "title": "ГМ (GR), API"
+    },
+    "window": [
+      4282,
+      4362
+    ],
+    "layers": [
+      {
+        "top": 4282,
+        "base": 4304,
+        "lith": "clay",
+        "label": "Åsgard · глинистая",
+        "source_ref": "assumption:lith"
+      },
+      {
+        "top": 4304,
+        "base": 4317,
+        "lith": "shale",
+        "label": "Draupne/Heather · глина",
+        "source_ref": "assumption:lith"
+      },
+      {
+        "top": 4317,
+        "base": 4340,
+        "lith": "sandstone",
+        "label": "Hugin · песчаник",
+        "source_ref": "assumption:lith"
+      },
+      {
+        "top": 4340,
+        "base": 4362,
+        "lith": "siltstone",
+        "label": "Skagerrak",
+        "source_ref": "assumption:lith"
+      }
+    ],
+    "motion": {
+      "direction": "up",
+      "start": "L6+0.4",
+      "end": "L7.end-0.2",
+      "profile": "linear"
+    },
+    "particles": {
+      "direction": "to_object",
+      "rate": "curve"
+    },
+    "annotations": [
+      {
+        "depth": 4327,
+        "text": "песчаник: показания *ниже*",
+        "source_ref": "c3"
+      },
+      {
+        "depth": 4309,
+        "text": "глина: показания *выше*",
+        "source_ref": "c3"
+      }
+    ],
+    "callouts": [
+      {
+        "text": "иззубренность = *флуктуации*",
+        "at": "L7+0.3",
+        "target": "curve",
+        "source_ref": "c5"
+      }
+    ],
+    "readout": true,
+    "caption": "Volve · скв. 15/9-19 SR · GR (Equinor Open Data)"
+  },
+  "model": {
+    "type": "las",
+    "file": "15-9-19_SR_COMP.las",
+    "curve": "GR",
+    "depth_from": 4278,
+    "depth_to": 4366,
+    "dataset": "Equinor Volve"
+  },
+  "invariants": [
+    "recording while the instrument moves bottom -> top (p. 64)",
+    "curve point depth == instrument depth (one state array)"
+  ],
+  "assumptions": [
+    "Lithology of formations from NPD descriptions",
+    "Depth window 4282–4362 m chosen to show clay–sand–silt"
+  ],
+  "provenance": "data",
+  "needs_new_template": null
+}

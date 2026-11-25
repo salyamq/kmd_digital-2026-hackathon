@@ -1,0 +1,102 @@
+{
+  "shots": [
+    {
+      "id": "S1",
+      "line_ids": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "template": "overlay_card",
+      "class": "B",
+      "provenance": "simulation",
+      "exaggerations": [
+        "Model time 1 min…10 days compressed into seconds of video"
+      ]
+    },
+    {
+      "id": "S2",
+      "line_ids": [
+        "L4",
+        "L5"
+      ],
+      "template": "inset_callouts",
+      "class": "B",
+      "provenance": "schematic",
+      "exaggerations": [
+        "Expansion/compression are labelled, not animated: at real scale they are invisible"
+      ]
+    },
+    {
+      "id": "S3",
+      "line_ids": [
+        "L6",
+        "L7",
+        "L8"
+      ],
+      "template": "overlay_card",
+      "class": "B",
+      "provenance": "simulation",
+      "exaggerations": []
+    },
+    {
+      "id": "S4",
+      "line_ids": [
+        "L9",
+        "L10",
+        "L11"
+      ],
+      "template": "field_evolution",
+      "class": "B",
+      "provenance": "simulation",
+      "exaggerations": [
+        "Video time runs on a log scale of reservoir time: 1 min … 10 days"
+      ]
+    },
+    {
+      "id": "S5",
+      "line_ids": [
+        "L12",
+        "L13"
+      ],
+      "template": "data_chart",
+      "class": "B",
+      "provenance": "simulation",
+      "exaggerations": []
+    },
+    {
+      "id": "S6",
+      "line_ids": [
+        "L14",
+        "L15"
+      ],
+      "template": "data_chart",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": []
+    },
+    {
+      "id": "S7",
+      "line_ids": [
+        "L16",
+        "L17"
+      ],
+      "template": "overlay_card",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": []
+    },
+    {
+      "id": "S8",
+      "line_ids": [
+        "L18"
+      ],
+      "template": "question_card",
+      "class": "T",
+      "provenance": "schematic",
+      "exaggerations": []
+    }
+  ],
+  "planner": "llm:replay:replay-cache",
+  "notes": []
+}
