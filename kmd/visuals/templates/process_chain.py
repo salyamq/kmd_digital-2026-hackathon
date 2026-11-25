@@ -121,8 +121,8 @@ class ProcessChain(Template):
     def state(self, params, t=None):
         rank = _layers(params["nodes"], params["edges"])
         order = sorted(params["nodes"], key=lambda n: (rank[n["id"]], params["nodes"].index(n)))
-        # the chain is fully built by 40 % of the frame time, so the voice can talk about the whole chain
-        nvis = len(order) if t is None else max(1, math.ceil(min(1.0, t / 0.4) * len(order) - 1e-9))
+        # the chain is fully built within the first 10 % of the frame time: the voice talks about the whole chain
+        nvis = len(order) if t is None else max(1, math.ceil(min(1.0, t / 0.1) * len(order) - 1e-9))
         return {"rank": rank, "order": [n["id"] for n in order], "visible": {n["id"] for n in order[:nvis]}}
 
     def draw(self, fig, rect, params, t, ctx: DrawCtx):
