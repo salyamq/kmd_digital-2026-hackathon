@@ -241,7 +241,7 @@
 
   /* ---------- animation player */
   $$(".anim").forEach(function (a) {
-    var imgs = $$(".anim-stage img", a), range = $("input[type=range]", a), cnt = $(".anim-count", a), cap = $(".anim-cap", a), play = $(".play", a);
+    var imgs = $$(".anim-stage picture", a), range = $("input[type=range]", a), cnt = $(".anim-count", a), cap = $(".anim-cap", a), play = $(".play", a);
     var caps = []; try { caps = JSON.parse($(".anim-caps", a).textContent); } catch (e) {}
     var k = 0, timer = null;
     function show(i) {

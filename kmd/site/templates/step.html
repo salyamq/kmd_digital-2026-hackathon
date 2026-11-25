@@ -48,8 +48,7 @@
       <h2 id="h-media">{{ "Интерактив" if s.media.interactive else "Анимация" }}: как это происходит</h2>
       <div class="anim" data-frames="{{ s.media.frames|length }}">
         <div class="anim-stage ill-frame ill-raster">
-          {% for f in s.media.frames %}<img src="{{ f.src }}" alt="Кадр {{ loop.index }} из {{ s.media.frames|length }}{% if f.caption %}: {{ f.caption }}{% endif %}" {% if not loop.first %}hidden{% endif %} loading="lazy">{% endfor %}
-          <span class="prov">{{ s.media.frames[0].provenance }}</span>
+          {% for f in s.media.frames %}<picture {% if not loop.first %}hidden{% endif %}>{% if f.src_m %}<source media="(max-width: 600px)" srcset="{{ f.src_m }}">{% endif %}<img src="{{ f.src }}" alt="Кадр {{ loop.index }} из {{ s.media.frames|length }}{% if f.caption %}: {{ f.caption }}{% endif %}" loading="lazy"></picture>{% endfor %}
         </div>
         <div class="anim-ctrl">
           <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>

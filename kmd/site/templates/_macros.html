@@ -5,8 +5,8 @@
 {% macro figure(ill) %}
 <figure class="ill" id="{{ ill.id }}">
   <div class="ill-frame{% if ill.src %} ill-raster{% endif %}">
-    {% if ill.inline %}{{ ill.inline|safe }}{% elif ill.src %}<img src="{{ ill.src }}" alt="{{ ill.alt }}" loading="lazy">{% else %}<p class="muted">Иллюстрация не найдена</p>{% endif %}
-    <span class="prov" title="Метка происхождения: как сделана картинка">{{ ill.provenance }}</span>
+    {% if ill.inline %}{{ ill.inline|safe }}{% elif ill.src %}<picture>{% if ill.src_m %}<source media="(max-width: 600px)" srcset="{{ ill.src_m }}">{% endif %}<img src="{{ ill.src }}" alt="{{ ill.alt }}" loading="lazy"></picture>{% else %}<p class="muted">Иллюстрация не найдена</p>{% endif %}
+    {% if ill.inline %}<span class="prov" title="Метка происхождения: как сделана картинка">{{ ill.provenance }}</span>{% endif %}
   </div>
   <figcaption>
     {{ ill.caption|md }}

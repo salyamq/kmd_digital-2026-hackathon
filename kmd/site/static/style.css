@@ -339,3 +339,5 @@ th { background: var(--surface-2); }
 .ill-frame .ill-svg { max-width: 34rem; margin: 0 auto; }
 .btn kbd { color: inherit; border-color: currentColor; opacity: .8; }
 @media (hover: none) { .btn kbd { display: none; } }
+.anim-stage picture[hidden] { display: none; }
+.anim-stage picture, .ill-frame picture { display: block; }

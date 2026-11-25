@@ -427,11 +427,19 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
                 best, overlap = it["id"], o
         f = Path(r["file"])
         rd = ctx["run_dir"]
+        file_m = None
+        if r["renderer"] == "visuals":  # phone-friendly tall variant of the same spec
+            try:
+                rm = illustrate.render(dict(s, size="tall"), ctx["ill_dir"], stem + "_m")
+                fm = Path(rm["file"])
+                file_m = str(fm.resolve().relative_to(rd.resolve())) if rd.resolve() in fm.resolve().parents else str(fm)
+            except Exception:
+                file_m = None
         ills.append({
             "id": f"ill-{k+1}", "template": s["template"], "class": r["class"], "provenance": r["provenance"],
             "caption": r.get("caption") or s["caption"], "alt": s.get("alt") or r.get("alt") or "",
             "file": str(f.resolve().relative_to(rd.resolve())) if rd.resolve() in f.resolve().parents else str(f),
-            "renderer": r["renderer"], "claim_ids": ids, "pages": _pages(ids, claims), "after_block": best,
+            "renderer": r["renderer"], "file_m": file_m, "claim_ids": ids, "pages": _pages(ids, claims), "after_block": best,
             "redrawn_from": r.get("redrawn_from") or s.get("redrawn_from"), "exaggerations": r.get("exaggerations") or s.get("exaggerations"),
         })
     if not ills:

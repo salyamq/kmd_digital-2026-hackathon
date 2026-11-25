@@ -235,16 +235,18 @@ def render_scene_frames(scene: dict, out: Path) -> list[dict]:
         desc = ""
         if specs:
             desc = specs[min(len(specs) - 1, int(k * len(specs) / len(ts)))].get("description", "")
-        if not (cached and base.with_suffix(".svg").exists()):
+        mbase = out / f"m{k:02d}"
+        if not (cached and base.with_suffix(".svg").exists() and mbase.with_suffix(".svg").exists()):
             try:
                 r = V.render(tpl, scene.get("params", {}), base, size=(1200, 750), t=t, exaggerations=scene.get("exaggerations"), formats=("svg",))
+                V.render(tpl, scene.get("params", {}), mbase, size=(900, 1200), t=t, exaggerations=scene.get("exaggerations"), formats=("svg",))
             except Exception as e:
                 print(f"[site] scene frames for {scene.get('node_id')}: {e}")
                 return []
             prov = r.get("provenance", "симуляция")
         else:
             prov = meta[tpl].get("provenance", "симуляция")
-        frames.append({"src": f"media/{out.name}/{base.name}.svg", "t": t, "caption": desc, "provenance": prov})
+        frames.append({"src": f"media/{out.name}/{base.name}.svg", "src_m": f"media/{out.name}/{mbase.name}.svg", "t": t, "caption": desc, "provenance": prov})
     stamp.write_text(key)
     return frames
 
@@ -319,6 +321,10 @@ def build(chapter: str) -> Path:
                 dst = site / "img" / f.name
                 shutil.copy2(f, dst)
                 ill["src"] = f"img/{f.name}"
+                fm = rd / ill["file_m"] if ill.get("file_m") else None
+                if fm and fm.exists():
+                    shutil.copy2(fm, site / "img" / fm.name)
+                    ill["src_m"] = f"img/{fm.name}"
         s["media"] = find_media(rd, site, s, scenes.get(s["node_id"]))
         s["format_label"] = format_label(s)
         # related steps
