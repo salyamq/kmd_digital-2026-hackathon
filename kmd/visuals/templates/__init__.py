@@ -3,6 +3,7 @@ from . import (  # noqa: F401
     comparison_bar,
     crossplot,
     cross_section,
+    log_plot,
     log_track,
     plan_map,
     pressure_diffusion,

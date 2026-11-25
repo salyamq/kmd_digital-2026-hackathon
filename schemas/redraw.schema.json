@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Redraw of a book figure by code (оцифровка рисунка в параметры шаблона)",
+  "type": "object",
+  "required": ["figure", "page", "feasible", "reason", "template", "params", "caption", "alt", "approximations", "checks"],
+  "properties": {
+    "figure": {"type": "string"},
+    "page": {"type": "integer"},
+    "feasible": {"type": "boolean", "description": "можно ли честно перерисовать рисунок кодом по имеющимся шаблонам"},
+    "reason": {"type": "string", "description": "почему выбран шаблон или почему перерисовка невозможна"},
+    "template": {"type": "string", "description": "шаблон каталога (пусто, если feasible=false)"},
+    "params": {"type": "object", "description": "параметры шаблона по его params_schema"},
+    "title": {"type": "string"},
+    "caption": {"type": "string", "description": "подпись: что изображено, по-русски"},
+    "alt": {"type": "string"},
+    "approximations": {"type": "array", "items": {"type": "string"},
+                       "description": "что снято приблизительно / упрощено при оцифровке"},
+    "checks": {
+      "type": "array",
+      "description": "контрольные точки из примеров и задач главы: точка (x, y) и область/ответ, который должен получиться",
+      "items": {"type": "object", "required": ["x", "y", "expected_region", "source"],
+                "properties": {"x": {"type": "number"}, "y": {"type": "number"},
+                               "expected_region": {"type": "string", "description": "подпись области (label в regions), куда должна попасть точка"},
+                               "source": {"type": "string", "description": "пример/задача, откуда точка"}}}
+    }
+  }
+}

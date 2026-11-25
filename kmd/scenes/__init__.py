@@ -215,8 +215,8 @@ def run(chapter: str, node: str | None = None, fmt: str | None = None, **kw) -> 
             raise KeyError(f"node {node} not in layer")
         hit = [t for t in todo if t[0]["id"] == node]
         r = hit[0][1] if hit else routing.get(node, {})
-        f = fmt or (hit[0][2] if hit else "short")
-        todo = [(nodes[node], r, f)]
+        f = fmt or (hit[0][2] if hit else None)
+        todo = [(nodes[node], r, f)] if f else []
     elif fmt:
         todo = [(n, r, fmt) for n, r, _ in todo]
     pending = []
@@ -229,6 +229,10 @@ def run(chapter: str, node: str | None = None, fmt: str | None = None, **kw) -> 
         write_json(scene_path(rd, n["id"], f, r.get("format")), sc)
         st = sc["checks"]
         print(f"[scenes] {n['id']} ({f}): {st['status']}, {len(st['errors'])} errors, {len(st['warnings'])} warnings")
+    if not kw.get("no_redraw"):
+        from ..visuals import redraw
+
+        pending += redraw.run(chapter, node=node)
     return pending
 
 

@@ -72,7 +72,9 @@ class Crossplot(Template):
                                                 "points": {"type": "array", "items": {"type": "array", "items": {"type": "number"},
                                                                                        "minItems": 2, "maxItems": 2}},
                                                 "kind": {"enum": ["line", "points", "smooth"], "default": "line"},
-                                                "color": {"type": "string"}, "dashed": {"type": "boolean", "default": False}}}},
+                                                "color": {"type": "string"}, "dashed": {"type": "boolean", "default": False},
+                                                "label_at_end": {"type": "boolean", "default": False,
+                                                                 "description": "подписать кривую у её правого конца (шифр кривой), а не в легенде"}}}},
             "functions": {"type": "array", "default": [],
                           "items": {"type": "object", "required": ["label", "expr"],
                                     "properties": {"label": {"type": "string"}, "expr": {"type": "string"},
@@ -181,7 +183,12 @@ class Crossplot(Template):
                     xx = np.linspace(xs[0], xs[-1], 200)
                     ys = PchipInterpolator(xs, ys)(xx)
                     xs = xx
-                ax.plot(xs, ys, color=col, lw=2.2, ls="--" if s.get("dashed") else "-", label=s["label"], zorder=3)
+                lab_end = s.get("label_at_end")
+                ax.plot(xs, ys, color=col, lw=2.2, ls="--" if s.get("dashed") else "-",
+                        label=None if lab_end else s["label"], zorder=3)
+                if lab_end and len(xs):
+                    ax.annotate(s["label"], (xs[-1], ys[-1]), xytext=(4, 0), textcoords="offset points", va="center",
+                                ha="left", fontsize=ctx.pt(0.72), color=col, annotation_clip=False)
         for f in p.get("functions", []):
             col = f.get("color") or pal[ci % len(pal)]
             ci += 1
@@ -216,7 +223,7 @@ class Crossplot(Template):
 
         for a, axis in ((p["x"], ax.xaxis), (p["y"], ax.yaxis)):
             if a.get("scale") == "log":
-                axis.set_major_locator(LogLocator(base=10, numticks=8))
+                axis.set_major_locator(LogLocator(base=10, subs=(1.0, 2.0, 5.0), numticks=12))
                 axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
                 axis.set_minor_formatter(NullFormatter())
             else:
