@@ -1,0 +1,258 @@
+[
+  {
+    "node_id": "geo.baraboshkin.s1_2.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Дельта — не просто устье реки, а трёхмерное осадочное тело (конус выноса) с надводной и подводными частями разного состава."
+    },
+    "video_criteria": [
+      "scale_jump",
+      "invisible_visible"
+    ],
+    "scene_template": "block_3d",
+    "hook_only": false,
+    "rationale": "Тип П: дельта как трёхмерное тело — скачок масштаба от устья реки к конусу выноса с подводными частями."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2.02",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Тип дельты определяет, какой процесс победил на её фронте: река, волны или приливы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: три типа дельт по доминирующему процессу — классификация для карточек."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2.03",
+    "format": "long",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": "Разрез дельты повторяется циклами: дельта (или её лопасть) многократно продвигается и отмирает."
+    },
+    "video_criteria": [
+      "time_change",
+      "scale_jump",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип В/П: циклы продвижения и отмирания лопастей и формирование депоцентров — процесс во времени на нескольких масштабах, разбор 16:9."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2.04",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Фации объединяются в ассоциации, которые выдают и тип дельты, и стадию её развития."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: перечень фаций и ассоциаций — карточки."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "Р",
+      "threshold": "Самые тонкие слои разреза — фации отмирания — самые ценные для корреляции: они выдержаны по площади."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип В/Р: роль тонких слоёв отмирания как маркеров — текст."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Залив дельты заполняется снизу вверх: сначала ил из взвеси, потом всё более песчаные осадки паводков — разрез огрубляется кверху."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип Р/В: залив заполняется снизу вверх, разрез огрубляется — изменение во времени в одной сцене."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Р: огрубление или утонение кверху (бар или канал) — интерактив с формой кривой зернистости."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.04",
+    "format": "short",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Рукав дельты недолговечен: его перехватывают, он отмирает, и разрез утоняется кверху до углей и палеопочв."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип Р/В: авульсия — рукав перехвачен, отмирает и зарастает до углей; причина → следствие."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.03",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Разрез читают как таблицу «факт → интерпретация»: каждый слой — свидетельство события в жизни рукава."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Р: решение на данных — прочитать разрез рукава (рис. 1.18) по таблице «факт → интерпретация»."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Фронт дельты огрубляется вверх: внизу ил из взвеси, выше всё больше песчаных паводковых слоёв."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р/В: подробное описание текстур фронта — текст с иллюстрацией."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_1.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип В/Р: признаки отмирания флювиальной дельты — текст."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_2.01",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "В волновой дельте волны перераспределяют осадок вдоль берега: нет устьевых баров, берег ровный, фронт продвигается целиком."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип Р/П: контринтуитивно, что у волновой дельты нет устьевых баров — интерактивное сравнение плана флювиальной и волновой дельты."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_2.02",
+    "format": "short",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": "Сохранившийся разрез — не вся история: после отмирания волны срезают фронт, и в разрезе остаётся сокращённая версия."
+    },
+    "video_criteria": [
+      "time_change",
+      "counterintuitive"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип В/П: волны срезают фронт после отмирания (рис. 1.23 а–в) — сохранённый разрез меньше исходного."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_3.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Прилив превращает рукав в широкую воронку, а там, где речной поток подпружен приливом, рождаются «внутренние дельты»."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: форма приливных рукавов и внутренние дельты — текст с картосхемой."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_3.02",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "В",
+      "threshold": "Главный признак приливного рукава — течения, менявшие направление: бимодальная косая слоистость и частая смена фаций."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Р: разрез приливного рукава (рис. 1.24) — практикум «найди признаки приливного влияния»."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_3.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "scale_jump"
+    ],
+    "scene_template": "block_3d",
+    "hook_only": false,
+    "rationale": "Тип П/Н: размеры песчаных тел в зависимости от миграции протоки — интерактивная 3D-модель (рис. 1.25)."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_3.04",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: климатические варианты внутридельтовых фаций — карточки."
+  },
+  {
+    "node_id": "geo.baraboshkin.s1_2_3.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: приливные гряды фронта и отмирание — текст."
+  }
+]

@@ -126,6 +126,9 @@ def extract_numbers(text: str) -> list[str]:
     """Numbers as written (with decimal comma/point), excluding single digits inside identifiers/subscripts."""
     t = (text or "").translate(_SUPER)
     t = re.sub(r"\\(?:tag|label)\s*\{[^}]*\}", " ", t)
+    # references are not facts: «стр. 42», «рис. 1.24», «табл. 21», «§ 20», «пример 46», «задача 99», «(23.4)»
+    t = re.sub(r"(?:стр|с|рис|табл|p|fig|tab|eq)\.\s*\d+(?:[.,]\d+)*(?:\s*[–—-]\s*\d+)?", " ", t, flags=re.I)
+    t = re.sub(r"(?:§|пример\w*|задач\w*|формул\w*|рисун\w*|таблиц\w*|глав\w*)\s*\d+(?:[.,]\d+)*(?:\s*[–—-]\s*\d+)?", " ", t, flags=re.I)
     t = re.sub(r"[_^]\s*\{[^}]*\}|[_^]\s*\w", " ", t)  # LaTeX sub/superscripts are not numbers
     t = re.sub(r"(?<=[A-Za-zА-Яа-яЁё])\d+", " ", t)      # letter-glued digits (БК-3? no: hyphen) like A0, k2
     out = []

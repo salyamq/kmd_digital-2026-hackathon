@@ -1,0 +1,302 @@
+{
+  "chapter": "latyshova",
+  "nodes": 34,
+  "steps_done": 23,
+  "pending": [],
+  "tasks": 55,
+  "task_types": {
+    "cloze": 11,
+    "multiple": 13,
+    "numeric": 3,
+    "order": 6,
+    "single": 22
+  },
+  "cards": 67,
+  "decision_steps": [
+    "geo.latyshova.s20.07",
+    "geo.latyshova.s20.10"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "geo.latyshova.ch5.01",
+      "status": "ok",
+      "title": "Какие задачи решают по данным ГИС",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s17.01",
+      "status": "ok",
+      "title": "Набор методов зависит от бурового раствора",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s18.01",
+      "status": "ok",
+      "title": "Какие бывают разрезы и коллекторы",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s17.02",
+      "status": "ok",
+      "title": "Корка сужает скважину против коллектора",
+      "tasks": 2,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s17.03",
+      "status": "ok",
+      "title": "Водоотдача и давление раствора",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s17.04",
+      "status": "ok",
+      "title": "Пресный или солёный фильтрат",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s17.05",
+      "status": "ok",
+      "title": "Бурение на воде и без фильтрации",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s18.02",
+      "status": "ok",
+      "title": "Какой метод для какой задачи",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s18.03",
+      "status": "ok",
+      "title": "Как оценивают нефтенасыщенность пласта",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s18.04",
+      "status": "ok",
+      "title": "Методы ГИС дополняют друг друга",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s19.01",
+      "status": "ok",
+      "title": "Как строят разрез скважины по ГИС",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s19.02",
+      "status": "ok",
+      "title": "Подписи пород на диаграммах ГИС",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [
+        "illustrations[1] (log_track): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.22, 1000, 1008, 1014, 1020, 1026, 1032"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s19.03",
+      "status": "ok",
+      "title": "Простой разрез и сложный разрез",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.01",
+      "status": "ok",
+      "title": "Прямые признаки коллектора на диаграммах",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (log_track): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.22, 1000, 1006, 1014, 1020"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.02",
+      "status": "ok",
+      "title": "Проникновение и повторные замеры",
+      "tasks": 2,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.03",
+      "status": "ok",
+      "title": "Порог «коллектор или неколлектор»",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.04",
+      "status": "ok",
+      "title": "От дебита к порогу на диаграмме",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.05",
+      "status": "ok",
+      "title": "Нефть или вода: параметр насыщения",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.06",
+      "status": "ok",
+      "title": "Сопротивление против пористости",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.07",
+      "status": "ok",
+      "title": "Палетка: точка пласта решает",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 40"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.08",
+      "status": "ok",
+      "title": "Два вида критических значений",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.09",
+      "status": "ok",
+      "title": "Три зоны течения в порах",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.10",
+      "status": "ok",
+      "title": "Зона неопределённости насыщения",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.latyshova.s20.11",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.12",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.13",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.14",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.15",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.16",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.17",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.18",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.19",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.20",
+      "status": "pending"
+    },
+    {
+      "node_id": "geo.latyshova.s20.21",
+      "status": "pending"
+    }
+  ]
+}
