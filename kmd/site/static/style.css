@@ -76,7 +76,7 @@ kbd { font: 0.75rem ui-monospace, monospace; border: 1px solid var(--line); bord
 /* layout */
 .layout { max-width: 1240px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: minmax(0, 1fr); }
 .content { max-width: var(--measure); margin: 0 auto; padding: 1.2rem 0 3rem; width: 100%; min-width: 0; }
-.content.wide { max-width: 72rem; padding: 1.2rem 1rem 3rem; }
+.content.wide { max-width: 1240px; padding: 1.2rem 1rem 3rem; }
 main.content:not(.layout main) { padding-left: 1rem; padding-right: 1rem; }
 .layout .content { padding-left: 0; padding-right: 0; }
 .toc { padding-top: 1rem; }
