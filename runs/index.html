@@ -4,41 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Глава → курс</title>
-  <script>try { var theme = localStorage.getItem("kmd:theme"); if (theme) document.documentElement.dataset.theme = theme; } catch (e) {}</script>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("kmd:theme") || "light"; } catch (e) {}</script>
   <link rel="stylesheet" href="library/style.css">
 </head>
 <body data-page="library">
   <a class="skip" href="#main">Перейти к содержанию</a>
   <header class="topbar">
     <div class="topbar-in">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">Глава → курс</span></a>
+      <a class="brand" href="index.html">Глава → курс</a>
       <button class="theme-toggle" type="button" aria-label="Переключить тему"><span aria-hidden="true">◐</span></button>
     </div>
   </header>
   <main id="main" class="content wide library-main" tabindex="-1">
-    <section class="hero library-hero">
-      <div class="hero-copy">
-        <h1>Геология по главам</h1>
-        <p>Курсы и видеоразборы по геологии и геофизике.</p>
+    <section class="library-intro" aria-labelledby="h-title">
+      <div>
+        <h1 id="h-title">Геология<br>по главам</h1>
+        <p>Книжные главы по геологии и геофизике с пояснениями, заданиями и видеоразборами.</p>
       </div>
+      <figure class="cover-photo">
+        <img src="library/powell-point.webp" alt="Красные и светлые слои пород на склонах Гранд-Каньона" width="1440" height="1080">
+        <figcaption>Гранд-Каньон, вид с южного края. <a href="https://www.usgs.gov/media/images/grand-canyon-south-rim-near-powell-point">Фото Annie Scott, USGS</a></figcaption>
+      </figure>
     </section>
-    <h2>Учебные материалы</h2>
-    <div class="library-grid">
-      <article class="library-card">
-        <p class="kicker">В. Г. Кузнецов · 2012</p>
-        <h3>Природные резервуары рифов</h3>
-<p class="muted">Шаги · 56 &nbsp; Задания · 134</p>        <a class="btn primary" href="kuznetsov/site/index.html" aria-label="Открыть курс: Природные резервуары рифов">Открыть курс <span aria-hidden="true">→</span></a>
+    <h2 class="catalog-heading">Учебные материалы</h2>
+    <div class="library-list">
+      <article class="library-entry">
+        <a class="catalog-link" href="kuznetsov/site/index.html" aria-labelledby="chapter-action-1 chapter-title-1">
+          <p class="catalog-byline">В. Г. Кузнецов<span>2012</span></p>
+          <div>
+            <h3 id="chapter-title-1">Природные резервуары рифов</h3>
+<p class="muted">Уроки (56) · Задания (134)</p>          </div>
+          <span class="catalog-action" id="chapter-action-1">Открыть курс <span aria-hidden="true">→</span></span>
+        </a>
       </article>
-      <article class="library-card">
-        <p class="kicker">М. Г. Латышова · 1991</p>
-        <h3>Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</h3>
-<p class="muted">Шаги · 34 &nbsp; Задания · 81</p>        <a class="btn primary" href="latyshova/site/index.html" aria-label="Открыть курс: Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС">Открыть курс <span aria-hidden="true">→</span></a>
+      <article class="library-entry">
+        <a class="catalog-link" href="latyshova/site/index.html" aria-labelledby="chapter-action-2 chapter-title-2">
+          <p class="catalog-byline">М. Г. Латышова<span>1991</span></p>
+          <div>
+            <h3 id="chapter-title-2">Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</h3>
+<p class="muted">Уроки (34) · Задания (81)</p>          </div>
+          <span class="catalog-action" id="chapter-action-2">Открыть курс <span aria-hidden="true">→</span></span>
+        </a>
       </article>
-      <article class="library-card">
-        <p class="kicker">К. С. Басниев и др. · 2005</p>
-        <h3>Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</h3>
-        <p class="muted">Видеоразбор · 130 с</p>
-        <a class="btn" href="basniev/video/geo.basniev.s5_2.13/long.mp4" aria-label="Смотреть видео: Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС">Смотреть видео <span aria-hidden="true">↗</span></a>
+      <article class="library-entry">
+        <a class="catalog-link" href="basniev/video/geo.basniev.s5_2.13/long.mp4" aria-labelledby="chapter-action-3 chapter-title-3">
+          <p class="catalog-byline">К. С. Басниев и др.<span>2005</span></p>
+          <div>
+            <h3 id="chapter-title-3">Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</h3>
+<p class="muted">Видеоразбор · 130 с</p>          </div>
+          <span class="catalog-action" id="chapter-action-3">Смотреть видео <span aria-hidden="true">→</span></span>
+        </a>
       </article>
     </div>
   </main>

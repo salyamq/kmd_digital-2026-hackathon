@@ -336,6 +336,8 @@ def build_library() -> Path:
         for name in ("style.css", "app.js"):
             shutil.copy2(STATIC / name, staged / name)
             (staged / name).replace(assets / name)
+        shutil.copy2(HERE / "library_assets" / "powell-point.webp", staged / "powell-point.webp")
+        (staged / "powell-point.webp").replace(assets / "powell-point.webp")
         entries.sort(key=lambda entry: not entry.get("url"))
         (staged / "index.html").write_text(env.get_template("library.html").render(entries=entries), encoding="utf-8")
         (staged / "index.html").replace(index)

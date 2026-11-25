@@ -4,37 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Глава → курс</title>
-  <script>try { var theme = localStorage.getItem("kmd:theme"); if (theme) document.documentElement.dataset.theme = theme; } catch (e) {}</script>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("kmd:theme") || "light"; } catch (e) {}</script>
   <link rel="stylesheet" href="library/style.css">
 </head>
 <body data-page="library">
   <a class="skip" href="#main">Перейти к содержанию</a>
   <header class="topbar">
     <div class="topbar-in">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">Глава → курс</span></a>
+      <a class="brand" href="index.html">Глава → курс</a>
       <button class="theme-toggle" type="button" aria-label="Переключить тему"><span aria-hidden="true">◐</span></button>
     </div>
   </header>
   <main id="main" class="content wide library-main" tabindex="-1">
-    <section class="hero library-hero">
-      <div class="hero-copy">
-        <h1>Геология по главам</h1>
-        <p>Курсы и видеоразборы по геологии и геофизике.</p>
+    <section class="library-intro" aria-labelledby="h-title">
+      <div>
+        <h1 id="h-title">Геология<br>по главам</h1>
+        <p>Книжные главы по геологии и геофизике с пояснениями, заданиями и видеоразборами.</p>
       </div>
+      <figure class="cover-photo">
+        <img src="library/powell-point.webp" alt="Красные и светлые слои пород на склонах Гранд-Каньона" width="1440" height="1080">
+        <figcaption>Гранд-Каньон, вид с южного края. <a href="https://www.usgs.gov/media/images/grand-canyon-south-rim-near-powell-point">Фото Annie Scott, USGS</a></figcaption>
+      </figure>
     </section>
-    <h2>Учебные материалы</h2>
-    <div class="library-grid">
+    <h2 class="catalog-heading">Учебные материалы</h2>
+    <div class="library-list">
       {% for e in entries %}
-      <article class="library-card">
-        <p class="kicker">{{ e.book.author }}{% if e.book.year %} · {{ e.book.year }}{% endif %}</p>
-        <h3>{{ e.title }}</h3>
-        {% if e.url %}
-        {% if e.steps %}<p class="muted">Шаги · {{ e.steps }} &nbsp; Задания · {{ e.tasks }}</p>{% endif %}
-        <a class="btn primary" href="{{ e.url }}" aria-label="Открыть курс: {{ e.title }}">Открыть курс <span aria-hidden="true">→</span></a>
-        {% else %}
-        <p class="muted">Видеоразбор{% if e.duration %} · {{ e.duration|round|int }} с{% endif %}</p>
-        <a class="btn" href="{{ e.video }}" aria-label="Смотреть видео: {{ e.title }}">Смотреть видео <span aria-hidden="true">↗</span></a>
-        {% endif %}
+      <article class="library-entry">
+        <a class="catalog-link" href="{{ e.url or e.video }}" aria-labelledby="chapter-action-{{ loop.index }} chapter-title-{{ loop.index }}">
+          <p class="catalog-byline">{{ e.book.author }}{% if e.book.year %}<span>{{ e.book.year }}</span>{% endif %}</p>
+          <div>
+            <h3 id="chapter-title-{{ loop.index }}">{{ e.title }}</h3>
+            {% if e.url and e.steps %}<p class="muted">Уроки ({{ e.steps }}) · Задания ({{ e.tasks }})</p>{% endif %}
+            {% if e.video and e.duration %}<p class="muted">Видеоразбор · {{ e.duration|round|int }} с</p>{% endif %}
+          </div>
+          <span class="catalog-action" id="chapter-action-{{ loop.index }}">{{ 'Открыть курс' if e.url else 'Смотреть видео' }} <span aria-hidden="true">→</span></span>
+        </a>
       </article>
       {% else %}
       <p>Курсы ещё не собраны.</p>

@@ -3,12 +3,12 @@
 <main id="main" class="content wide" tabindex="-1">
   <section class="hero">
     <div class="hero-copy">
-      <p class="kicker">{{ course.book.author }}{% if course.book.year %} · {{ course.book.year }}{% endif %}</p>
+      <p class="catalog-byline">{{ course.book.author }}{% if course.book.year %} · {{ course.book.year }}{% endif %}</p>
       <h1>{{ course.title }}</h1>
       <p class="booktitle">«{{ course.book.title }}»</p>
       <div class="resume">
         <a class="btn primary start" href="{{ course.steps[0].url }}">Начать с шага 1</a>
-        {% if course.has_before %}<a class="btn ghost hero-secondary" href="before.html">Перед главой</a>{% endif %}
+        {% if course.has_before %}<a href="before.html">Перед главой</a>{% endif %}
         <span class="resume-note" aria-live="polite"></span>
       </div>
     </div>
@@ -22,9 +22,8 @@
 
   {% if feature %}
   <a class="feature-link" href="{{ url_of[feature.node_id] }}#media">
-    <span class="feature-icon" aria-hidden="true">▶</span>
-    <span><span class="kicker">Видео · шаг {{ feature.index }}</span><strong>{{ feature.title_beginner }}</strong></span>
-    <span class="feature-arrow" aria-hidden="true">→</span>
+    <span class="muted">Видео · шаг {{ feature.index }}</span>
+    <span><strong>{{ feature.title_beginner }}</strong> <span aria-hidden="true">→</span></span>
   </a>
   {% endif %}
 

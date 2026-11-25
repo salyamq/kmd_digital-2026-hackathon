@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Природные резервуары рифов</title>
 <script>
-(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
 </script>
 <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
@@ -15,7 +15,7 @@
 <header class="topbar">
   <div class="topbar-in">
     <a class="brand" href="../../index.html" title="Все главы">
-      <span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">Глава → курс</span>
+      Глава → курс
     </a>
     <nav class="mainnav" aria-label="Разделы курса">
       <a href="index.html" aria-current="page">Путь</a>
@@ -31,12 +31,12 @@
 <main id="main" class="content wide" tabindex="-1">
   <section class="hero">
     <div class="hero-copy">
-      <p class="kicker">В. Г. Кузнецов · 2012</p>
+      <p class="catalog-byline">В. Г. Кузнецов · 2012</p>
       <h1>Природные резервуары рифов</h1>
       <p class="booktitle">«Литология природных резервуаров нефти и газа»</p>
       <div class="resume">
         <a class="btn primary start" href="step-01.html">Начать с шага 1</a>
-<a class="btn ghost hero-secondary" href="before.html">Перед главой</a>        <span class="resume-note" aria-live="polite"></span>
+<a href="before.html">Перед главой</a>        <span class="resume-note" aria-live="polite"></span>
       </div>
     </div>
     <dl class="hero-stats">
