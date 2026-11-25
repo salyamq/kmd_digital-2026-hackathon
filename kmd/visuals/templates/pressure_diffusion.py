@@ -169,7 +169,7 @@ class PressureDiffusion(Template):
         rects = []
         for i in range(n):
             if wide:
-                gap = 0.07 * w
+                gap = (0.12 if "plan" in views[:-1] else 0.07) * w
                 ww = (w - gap * (n - 1)) / n
                 rects.append([x0 + i * (ww + gap), y0, ww, h])
             else:

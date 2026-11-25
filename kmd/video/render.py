@@ -136,8 +136,17 @@ def render_frames(scene: dict, fmt: str, timeline: dict, cache: Path, domain: st
     blocks = frame_blocks(timeline["phrases"])
     nfr = int(round(timeline["total"] * RENDER_FPS))
     seq, jobs = [], {}
-    skey = hashlib.sha1(json.dumps([scene["views"], scene["frames"], scene.get("title")], ensure_ascii=False,
-                                   sort_keys=True).encode()).hexdigest()[:10]
+    from .compose import LAYOUT
+
+    # code version of the drawing (templates + composer) is part of the cache key
+    code = "".join(sorted(p.read_text() for p in (Path(__file__).parent.parent / "visuals").rglob("*.py")))
+    code += (Path(__file__).parent / "compose.py").read_text()
+    from ..config import DOMAINS
+
+    sgp = DOMAINS / domain / "styleguide.json"
+    code += sgp.read_text() if sgp.exists() else ""
+    skey = hashlib.sha1(json.dumps([scene["views"], scene["frames"], scene.get("title"), LAYOUT[fmt], code],
+                                   ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:10]
     for k in range(nfr):
         st = state_at(k / RENDER_FPS, timeline, frames, blocks)
         key = hashlib.sha1(json.dumps([skey, fmt, st["frame_id"], st["t"], st["caption"], st["overlay"]],

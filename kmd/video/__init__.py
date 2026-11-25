@@ -59,6 +59,9 @@ def make_script(rd: Path, node: dict, scene: dict, fmt: str, entries: list[dict]
     return script, errors, warns
 
 
+_FAILED_ENGINES: set = set()
+
+
 def synth_all(phrases: list[dict], entries: list[dict], cache: Path, voice: str, rate: str) -> tuple[dict, list[str]]:
     """All phrases with ONE engine/voice: the first engine that voices every phrase wins (TZ: one voice per series;
     on a voice failure the whole video switches)."""
@@ -69,6 +72,8 @@ def synth_all(phrases: list[dict], entries: list[dict], cache: Path, voice: str,
         ear += used
     last = None
     for eng in tts.engine_order():
+        if eng in _FAILED_ENGINES:
+            continue
         out = {}
         try:
             for p in phrases:
@@ -77,6 +82,7 @@ def synth_all(phrases: list[dict], entries: list[dict], cache: Path, voice: str,
             return out, sorted(set(ear))
         except Exception as e:  # noqa: BLE001
             last = e
+            _FAILED_ENGINES.add(eng)
             print(f"[video] TTS engine {eng} failed ({e}); switching the whole video to the next engine")
     raise RuntimeError(f"all TTS engines failed: {last}")
 

@@ -6,6 +6,7 @@ curve (curves are drawn only where the tool has already passed).
 from __future__ import annotations
 
 import math
+import textwrap
 
 import numpy as np
 from matplotlib.patches import Rectangle
@@ -194,12 +195,22 @@ class LogTrack(Template):
             tr = sg["curves"][c]["track"]
             if tr not in tracks:
                 tracks.append(tr)
-        nmax = max([sum(1 for c in curves if sg["curves"][c]["track"] == tr) for tr in tracks] + [1])
-        block_px = 2.05 * ctx.base_px
-        head_px = nmax * block_px + 0.9 * ctx.base_px
+        vid = ctx.mode == "video"
+        widths = [0.42 if vid else 0.30, (0.8 if vid else 1.15) if params["show_well"] else 0.7] + \
+            [sg["tracks"].get(tr, {}).get("width", 1.0) for tr in tracks]
+        tot_ = sum(widths)
+        name_lines = {}
+        for ti, tr in enumerate(tracks):
+            tw_px = w * widths[2 + ti] / tot_ * ctx.fig_px[0]
+            nch = max(6, int(tw_px / (ctx.base_px * 0.8 * 0.6)))
+            for c in curves:
+                if sg["curves"][c]["track"] == tr:
+                    name_lines[c] = textwrap.wrap(sg["curves"][c]["ru"], nch) or [c]
+        blocks = {c: (len(name_lines[c]) * 0.8 * 1.2 + 1.05) * ctx.base_px for c in curves}
+        head_px = max([sum(blocks[c] for c in curves if sg["curves"][c]["track"] == tr) for tr in tracks] + [ctx.base_px]) \
+            + 0.9 * ctx.base_px
         head_h = head_px / ctx.fig_px[1]
         body_h = h - head_h
-        widths = [0.42 if ctx.mode == "video" else 0.30, 1.15 if params["show_well"] else 0.7] + [sg["tracks"].get(tr, {}).get("width", 1.0) for tr in tracks]
         tot = sum(widths)
         gap = 0.006
         xs = [x0]
@@ -311,10 +322,10 @@ class LogTrack(Template):
                 # header line for the curve
                 hx0 = xs[2 + ti] + gap / 2
                 hw_ = w * widths[2 + ti] / tot - gap
-                yy = head_px - ci * block_px - 0.15 * ctx.base_px
-                ly = yy - 1.05 * ctx.base_px
-                hax.text(hx0 + hw_ / 2, yy, cs["ru"], ha="center", va="top", fontsize=ctx.pt(0.8), color=cs["color"],
-                         fontweight="bold")
+                yy = head_px - sum(blocks[c2] for c2 in tr_curves[:ci]) - 0.15 * ctx.base_px
+                ly = yy - (len(name_lines[c]) * 0.8 * 1.2 + 0.1) * ctx.base_px
+                hax.text(hx0 + hw_ / 2, yy, "\n".join(name_lines[c]), ha="center", va="top", fontsize=ctx.pt(0.8),
+                         color=cs["color"], fontweight="bold", linespacing=1.0)
                 hax.plot([hx0, hx0 + hw_], [ly, ly], color=cs["color"], ls=cs.get("style", "-"), lw=1.8)
                 a_, b_ = cs["range"]
                 hax.text(hx0, ly - 0.08 * ctx.base_px, f"{a_:g}", ha="left", va="top", fontsize=ctx.pt(0.66), color=cs["color"])
@@ -332,7 +343,7 @@ class LogTrack(Template):
                 ax.axhline(tool, color="#FFA000", lw=1.0, ls="--", zorder=4)
         # header for depth and lithology columns
         hax.text(xs[0] + w * widths[0] / tot / 2, 0.2 * ctx.base_px, "м", ha="center", va="bottom", fontsize=ctx.pt(0.8))
-        hax.text(xs[1] + w * widths[1] / tot / 2, 0.2 * ctx.base_px, "порода и ствол" if params["show_well"] else "порода",
+        hax.text(xs[1] + w * widths[1] / tot / 2, 0.2 * ctx.base_px, ("ствол" if ctx.mode == "video" else "порода и ствол") if params["show_well"] else "порода",
                  ha="center", va="bottom", fontsize=ctx.pt(0.8))
         # annotations (observation vs inference)
         for an in params.get("annotations", []):

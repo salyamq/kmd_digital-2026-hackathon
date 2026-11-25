@@ -124,7 +124,7 @@ def _engine_edge(text, wav, voice, rate, retries):
             err = e
             import time
 
-            time.sleep(min(2.0 + 2.0 * i, 8.0))
+            time.sleep(min(1.5 + 0.7 * i, 8.0))
     raise RuntimeError(f"edge-tts failed: {err}")
 
 
@@ -163,7 +163,7 @@ def engine_order() -> list[str]:
 
 
 def synth(text: str, out_dir: Path, *, engine: str = "edge-tts", voice: str = "ru-RU-DmitryNeural",
-          rate: str = "+0%", retries: int = 4) -> dict:
+          rate: str = "+0%", retries: int | None = None) -> dict:
     """Synthesize one phrase with one engine -> {wav, duration, engine, voice}. Cached by (engine, voice, rate, text).
     Raises RuntimeError when the engine fails (the caller switches the whole video to the next engine)."""
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -172,6 +172,8 @@ def synth(text: str, out_dir: Path, *, engine: str = "edge-tts", voice: str = "r
     meta = out_dir / f"{key}.json"
     if wav.exists() and meta.exists():
         return json.loads(meta.read_text())
+    if retries is None:
+        retries = int(os.environ.get("KMD_TTS_RETRIES", "20"))
     used_voice = ENGINES[engine](text, wav, voice, rate, retries)
     data, sr = sf.read(wav)
     # trim leading/trailing silence (keeps phrase timing tight for sync)

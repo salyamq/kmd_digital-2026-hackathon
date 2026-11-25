@@ -7,6 +7,7 @@ GREEK = re.compile(r"[α-ωΑ-Ω]")
 FORMULA = re.compile(r"[=<>^_\\/*+]|\$")
 DIGIT = re.compile(r"\d")
 LATIN = re.compile(r"[A-Za-z]")
+ASSUME = re.compile(r"для примера|условн|допусти|предполож|возьм[её]м для|в модели", re.I)
 
 
 def words(s: str) -> list[str]:
@@ -48,7 +49,11 @@ def check_script(script: dict, scene: dict, node: dict, fmt: str, entries: list[
         bad = [c for c in p.get("claim_ids", []) if c not in claims]
         if bad:
             errors.append(f"{p['id']}: нет таких утверждений в узле: {bad}")
-        if p["kind"] in ("observation", "inference", "assumption") and not p.get("claim_ids") and p["role"] not in ("hook", "transfer", "final"):
+        if p["kind"] == "assumption" and not p.get("claim_ids"):
+            if not ASSUME.search(p["text"]):
+                errors.append(f"{p['id']}: допущение модели без claim_ids должно звучать как допущение "
+                              f"(«для примера», «условно», «допустим»)")
+        elif p["kind"] in ("observation", "inference") and not p.get("claim_ids") and p["role"] not in ("hook", "transfer", "final"):
             errors.append(f"{p['id']}: фраза-утверждение без claim_ids (голос не говорит больше источника)")
         if p["kind"] == "analogy" and "аналог" not in p["text"].lower() and "как будто" not in p["text"].lower() \
                 and "похож" not in p["text"].lower() and "словно" not in p["text"].lower():

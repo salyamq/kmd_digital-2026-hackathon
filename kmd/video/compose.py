@@ -22,11 +22,11 @@ from ..visuals.style import provenance_badge, setup_rc, styleguide  # noqa: E402
 LAYOUT = {
     # fractions of the frame (x0, y0, w, h); y from the bottom. Short keeps the bottom 12 % and top 5 % free
     # (platform UI safe zones); captions sit above the bottom safe zone.
-    "short": {"size": (1080, 1920), "base_px": 34, "view": (0.15, 0.31, 0.80, 0.545), "caption_y": 0.178,
-              "caption_w": 0.86, "caption_px": 60, "notes_y": 0.268, "top_y": 0.945, "title_y": 0.905,
+    "short": {"size": (1080, 1920), "base_px": 38, "view": (0.13, 0.235, 0.845, 0.615), "caption_y": 0.13,
+              "caption_w": 0.86, "caption_px": 60, "notes_y": 0.872, "top_y": 0.955, "title_y": 0.922,
               "chars": 26},
-    "long": {"size": (1920, 1080), "base_px": 24, "view": (0.075, 0.27, 0.89, 0.58), "caption_y": 0.105,
-             "caption_w": 0.80, "caption_px": 50, "notes_y": 0.185, "top_y": 0.965, "title_y": 0.905,
+    "long": {"size": (1920, 1080), "base_px": 24, "view": (0.075, 0.29, 0.89, 0.56), "caption_y": 0.075,
+             "caption_w": 0.80, "caption_px": 50, "notes_y": 0.19, "top_y": 0.965, "title_y": 0.905,
              "chars": 52},
 }
 
@@ -78,25 +78,25 @@ class Composer:
             ex_txt = "истинный масштаб — без преувеличения"
         notes = [n for n in res.get("notes", []) if n]
         y = L["notes_y"]
+        if self.fmt == "short" and notes:
+            ex_txt = " · ".join([x for x in [ex_txt] if x])
         if ex_txt:
             fig.text(0.5, y, ex_txt, ha="center", va="center", fontsize=L["base_px"] * 0.8 * 72 / dpi,
                      color="#B71C1C", fontweight="bold",
                      bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#B71C1C", lw=1.2))
         if notes:
-            fig.text(0.5, y - (0.024 if self.fmt == "short" else 0.04), " · ".join(notes), ha="center",
+            fig.text(0.5, y - (0.021 if self.fmt == "short" else 0.035), " · ".join(notes), ha="center",
                      va="center", fontsize=L["base_px"] * 0.66 * 72 / dpi, color="#616161")
         # on-screen key words
         if caption:
             lines = textwrap.wrap(caption, L["chars"])
+            bg = "#E65100" if overlay == "predict" else "#1A237E"
             fig.text(0.5, L["caption_y"], "\n".join(lines), ha="center", va="center",
                      fontsize=L["caption_px"] * 72 / dpi, fontweight="bold", color="#FFFFFF", linespacing=1.15,
-                     bbox=dict(boxstyle="round,pad=0.45,rounding_size=0.8", fc="#1A237E", ec="none", alpha=0.92))
+                     bbox=dict(boxstyle="round,pad=0.45,rounding_size=0.8", fc=bg, ec="none", alpha=0.95))
         if overlay == "predict":
-            fig.text(0.9 if self.fmt == "short" else 0.95, L["caption_y"] + (0.085 if self.fmt == "short" else 0.12), "?",
-                     ha="center", va="center", fontsize=L["caption_px"] * 1.8 * 72 / dpi, fontweight="bold",
-                     color="#FFFFFF", bbox=dict(boxstyle="circle,pad=0.25", fc="#E65100", ec="none"))
-            fig.text(0.5, L["caption_y"] - (0.055 if self.fmt == "short" else 0.075), "пауза: подумайте",
-                     ha="center", va="center", fontsize=L["base_px"] * 0.9 * 72 / dpi, color="#E65100",
+            fig.text(0.5, L["caption_y"] - (0.062 if self.fmt == "short" else 0.06), "? пауза: подумайте",
+                     ha="center", va="center", fontsize=L["base_px"] * 0.95 * 72 / dpi, color="#E65100",
                      fontweight="bold")
         fig.savefig(out_path, dpi=dpi)
         plt.close(fig)
@@ -114,7 +114,7 @@ class Composer:
             fig.patches.append(matplotlib.patches.Circle((x0 + i * step, y), 0.0085 if self.fmt == "short" else 0.006,
                                                          transform=fig.transFigure, fc=col, ec="none",
                                                          figure=fig))
-        fig.text(x1, y - 0.022 * (1 if self.fmt == "short" else 1.6), f"шаг {k + 1} из {n}", ha="right", va="top",
+        fig.text(x0 - 0.02, y, f"шаг {k + 1} из {n}", ha="right", va="center",
                  fontsize=L["base_px"] * 0.7 * 72 / dpi, color="#616161")
 
 
