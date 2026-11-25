@@ -1,6 +1,10 @@
 """Cost metrics required by the TZ: human-minutes and money per node and per video minute,
 share of manual work. Reads the LLM cache, the edit journal and produced artifacts.
 
+LLM usage counts every cached answer, including answers that were later superseded (re-asks after a
+prompt change), so it is the real development cost, an upper bound for a clean run. Queue answers have no
+token counts: tokens are estimated from characters (CHARS_PER_TOKEN).
+
     python -m kmd.metrics            # all chapters -> runs/metrics.json + table on stdout
 """
 from __future__ import annotations
@@ -50,7 +54,7 @@ def _video_minutes(ch_dir) -> float:
     durations = {}
     for p in sorted(ch_dir.glob("video/*/passport*.json"), key=lambda p: p.name != "passport.json"):
         d = read_json(p)
-        durations[(p.parent, d.get("format", "short"))] = float(d.get("duration_s", 0))
+        durations[(p.parent, d.get("format", "short"))] = float(d.get("duration_s") or (d.get("video") or {}).get("duration_s") or 0)
     return sum(durations.values()) / 60
 
 
@@ -59,7 +63,7 @@ def compute() -> dict:
     res = {}
     for ch_dir in sorted(p for p in RUNS.iterdir() if p.is_dir()):
         layer_p = ch_dir / "layer.json"
-        if not layer_p.exists():
+        if not layer_p.exists() or ch_dir.name.startswith(("fixture", "stub", "_")):
             continue
         nodes = len(read_json(layer_p)["nodes"])
         calls, tin, tout = _llm_usage(ch_dir)
@@ -78,6 +82,7 @@ def compute() -> dict:
             "human_minutes": human_min,
             "human_minutes_per_node": round(human_min / nodes, 2) if nodes else None,
             "video_minutes": round(vmin, 2),
+            "usd_per_video_minute_of_chapter": round(usd / vmin, 2) if vmin else None,
         }
     write_json(RUNS / "metrics.json", res)
     return res
