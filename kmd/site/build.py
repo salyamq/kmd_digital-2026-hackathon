@@ -197,7 +197,7 @@ def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | N
             videos.append(v)
     if videos:
         return {"kind": "video", "videos": videos}
-    if step["format"] in ("short", "long", "interactive") and scene and scene.get("template"):
+    if step["format"] in ("short", "long", "interactive") and scene and (scene.get("template") or scene.get("views")):
         frames = render_scene_frames(scene, site / "media" / slug(nid))
         if frames:
             return {"kind": "animation", "frames": frames, "interactive": step["format"] == "interactive",
@@ -207,46 +207,57 @@ def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | N
 
 
 def render_scene_frames(scene: dict, out: Path) -> list[dict]:
-    """Animation frames rendered by kmd.visuals from the node's scene spec (same state model as the video)."""
+    """Animation frames rendered by kmd.visuals from the node's scene spec (same state model as the video).
+
+    Two scene layouts are accepted: {template, params, frames} or {views: {name: {template, params}},
+    frames: [{view, t: [t0, t1] | t, description, provenance}]}. One still per frame (end of its time span)."""
     try:
         import kmd.visuals as V
-    except Exception:
-        return []
-    try:
         meta = {e["name"]: e for e in V.catalog()}
     except Exception:
         return []
-    tpl = scene.get("template")
-    if tpl not in meta:
-        return []
-    specs = scene.get("frames") or []
-    if meta[tpl].get("animatable"):
-        n = max(5, min(8, len(specs) or 6))
-        ts = [round(k / (n - 1), 3) for k in range(n)]
+    views = scene.get("views") or {}
+    if not views and scene.get("template"):
+        views = {"main": {"template": scene["template"], "params": scene.get("params", {})}}
+    specs = [f for f in (scene.get("frames") or []) if isinstance(f, dict)]
+    jobs = []
+    if specs:
+        for f in specs:
+            v = views.get(f.get("view")) or (next(iter(views.values())) if len(views) == 1 else None)
+            if not v or v.get("template") not in meta:
+                continue
+            t = f.get("t")
+            if isinstance(t, (list, tuple)) and t:
+                t = t[-1]
+            if not meta[v["template"]].get("animatable"):
+                t = None
+            jobs.append((v, t, f.get("description", ""), f.get("provenance")))
     else:
-        ts = [None]
-    key = hashlib.sha256(json.dumps([tpl, scene.get("params"), ts], ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
+        for v in views.values():
+            if v.get("template") in meta:
+                n = 6 if meta[v["template"]].get("animatable") else 1
+                for k in range(n):
+                    jobs.append((v, round(k / max(1, n - 1), 3) if n > 1 else None, "", None))
+    if not jobs:
+        return []
+    key = hashlib.sha256(json.dumps([[j[0], j[1]] for j in jobs], ensure_ascii=False, sort_keys=True, default=str).encode()).hexdigest()[:12]
     out.mkdir(parents=True, exist_ok=True)
     stamp = out / "spec.hash"
-    frames = []
     cached = stamp.exists() and stamp.read_text() == key
-    for k, t in enumerate(ts):
-        base = out / f"f{k:02d}"
-        desc = ""
-        if specs:
-            desc = specs[min(len(specs) - 1, int(k * len(specs) / len(ts)))].get("description", "")
-        mbase = out / f"m{k:02d}"
+    frames = []
+    for k, (v, t, desc, prov) in enumerate(jobs):
+        base, mbase = out / f"f{k:02d}", out / f"m{k:02d}"
+        tpl = v["template"]
         if not (cached and base.with_suffix(".svg").exists() and mbase.with_suffix(".svg").exists()):
             try:
-                r = V.render(tpl, scene.get("params", {}), base, size=(1200, 750), t=t, exaggerations=scene.get("exaggerations"), formats=("svg",))
-                V.render(tpl, scene.get("params", {}), mbase, size=(900, 1200), t=t, exaggerations=scene.get("exaggerations"), formats=("svg",))
+                r = V.render(tpl, v.get("params", {}), base, size=(1200, 750), t=t, exaggerations=scene.get("exaggerations") if isinstance(scene.get("exaggerations"), list) else None, formats=("svg",))
+                V.render(tpl, v.get("params", {}), mbase, size=(480, 680), t=t, exaggerations=scene.get("exaggerations") if isinstance(scene.get("exaggerations"), list) else None, formats=("svg",))
+                prov = prov or r.get("provenance")
             except Exception as e:
-                print(f"[site] scene frames for {scene.get('node_id')}: {e}")
-                return []
-            prov = r.get("provenance", "симуляция")
-        else:
-            prov = meta[tpl].get("provenance", "симуляция")
-        frames.append({"src": f"media/{out.name}/{base.name}.svg", "src_m": f"media/{out.name}/{mbase.name}.svg", "t": t, "caption": desc, "provenance": prov})
+                print(f"[site] scene frame {k} for {scene.get('node_id')}: {str(e)[:200]}")
+                continue
+        frames.append({"src": f"media/{out.name}/{base.name}.svg", "src_m": f"media/{out.name}/{mbase.name}.svg", "t": t,
+                       "caption": desc, "provenance": prov or meta[tpl].get("provenance", "симуляция")})
     stamp.write_text(key)
     return frames
 

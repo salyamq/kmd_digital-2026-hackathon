@@ -360,8 +360,16 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
 
     # --- Задачи из книги, рисунки книги
     if node.get("book_problems"):
-        blocks.append({"id": "problems", "kind": "problems", "title": "Задачи из книги", "by": "author", "pages": sorted({b["page"] for b in node["book_problems"] if b.get("page")}), "items": node["book_problems"]})
-        chunks.append(("problems", " ".join(b.get("text", "") for b in node["book_problems"])))
+        probs = []
+        for b in node["book_problems"]:
+            b = dict(b)
+            if b.get("ocr_suspect"):  # garbled OCR: do not show it as the author's wording
+                b["text"] = f"Текст задачи повреждён при распознавании — возьмите формулировку со скана книги, стр. {b.get('page')}."
+                b["ocr_damaged"] = True
+                warnings.append(f"задача {b.get('number')}: текст повреждён распознаванием (скрыт)")
+            probs.append(b)
+        blocks.append({"id": "problems", "kind": "problems", "title": "Задачи из книги", "by": "author", "pages": sorted({b["page"] for b in probs if b.get("page")}), "items": probs})
+        chunks.append(("problems", " ".join(b.get("text", "") for b in probs if not b.get("ocr_damaged"))))
     if node.get("figures"):
         blocks.append({"id": "book_figures", "kind": "book_figures", "title": "Рисунки книги к этому шагу", "by": "author", "pages": sorted({f["page"] for f in node["figures"] if f.get("page")}), "items": node["figures"]})
 
@@ -430,7 +438,7 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
         file_m = None
         if r["renderer"] == "visuals":  # phone-friendly tall variant of the same spec
             try:
-                rm = illustrate.render(dict(s, size="tall"), ctx["ill_dir"], stem + "_m")
+                rm = illustrate.render(dict(s, size=[480, 680]), ctx["ill_dir"], stem + "_m")
                 fm = Path(rm["file"])
                 file_m = str(fm.resolve().relative_to(rd.resolve())) if rd.resolve() in fm.resolve().parents else str(fm)
             except Exception:
