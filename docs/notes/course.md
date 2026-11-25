@@ -54,3 +54,12 @@ Order tasks: pointer events (mouse + finger; verified with real CDP touch events
   `kmd.course.reuse` re-submits the previous answer when the node block is unchanged (still fully re-checked).
 - Book figures are not redrawn by the course stage unless the LLM can fill a template from the node text
   (`redrawn_from`); real redraws from scans belong to visuals (manifest.json hook).
+
+## Book-figure redraws (2026-11-25)
+`write_step` reads `runs/<ch>/illustrations/redraws.json` (visuals redraw stage) and appends every entry with
+`status: ok` whose `node_ids` contain the node as illustration `ill-rN` (`after_block: book_figures`, `redraw: true`,
+`approximations` shown under the caption, image links to the full SVG). This runs after the LLM, so it never
+invalidates `course_step` caches; rerun `kmd course CH && kmd site CH` after new redraws appear.
+Answer workflow used for kuznetsov/latyshova: answers in `/tmp/course_ans/<ch>/<nid>.json`, prechecked with
+`stage.assemble` before `kmd llm answer`; `python -m kmd.course.reuse CH` re-submits old answers when only
+catalog/routing/scene text changed the cache key (run `kmd course CH` first so pending files exist).
