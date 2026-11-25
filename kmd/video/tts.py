@@ -137,8 +137,8 @@ def _engine_piper(text, wav, voice, rate, retries):
     # length_scale > 1 slows down; map edge-style rate "+8%" -> 1/1.08
     r = 1.0 + int(rate.strip("%") or 0) / 100.0
     tmp = wav.with_suffix(".piper.wav")
-    subprocess.run([sys.executable, "-m", "piper", "-m", str(m), "-f", str(tmp), "--length-scale", f"{1 / r:.3f}"],
-                   input=text, text=True, check=True, capture_output=True)
+    subprocess.run([sys.executable, "-X", "utf8", "-m", "piper", "-m", str(m), "-f", str(tmp), "--length-scale", f"{1 / r:.3f}"],
+                   input=text, encoding="utf-8", check=True, capture_output=True)
     _to_wav(tmp, wav)
     tmp.unlink()
     return f"piper {PIPER_VOICE}"

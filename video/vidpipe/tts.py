@@ -8,6 +8,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+from importlib.util import find_spec
 from pathlib import Path
 
 import numpy as np
@@ -17,15 +18,22 @@ from .util import RES_DIR, read_json
 
 DEFAULT_VOICES = {"yandex": {"ru": "alexander", "en": "john"},
                   "microsoft": {"ru": "ru-RU-DmitryNeural", "en": "en-US-GuyNeural", "kk": "kk-KZ-AzamatNeural"},
+                  "piper": {"ru": "ru_RU-dmitri-medium"},
                   "rhvoice": {"ru": "aleksandr-hq", "en": "slt"},
                   "silero": {"ru": "eugene", "en": "en_0"},
                   "espeak": {"ru": "ru", "en": "en-us"}}
 SR = 48000
 
 
+class MicrosoftSpeechError(RuntimeError):
+    pass
+
+
 def available_provider(preferred=None):
     """Pick the TTS engine. A requested cloud engine without credentials falls back to RHVoice (offline)."""
     if preferred == "microsoft":
+        return preferred
+    if preferred == "piper" and find_spec("piper") is not None:
         return preferred
     if preferred == "yandex":
         from .tts_yandex import have_credentials
@@ -120,12 +128,23 @@ def synth(text, out_wav, lang, provider, voice=None, rate=None, role=None, speed
         from kmd.video.tts import synth as synth_microsoft
 
         spoken = re.sub(r"\+([аеёиоуыэюя])", r"\1́", text, flags=re.IGNORECASE)
-        result = synth_microsoft(spoken, out_wav.parent / "microsoft",
-                                 voice=voice, rate=f"{(rate or 100) - 100:+d}%", retries=3)
+        try:
+            result = synth_microsoft(spoken, out_wav.parent / "microsoft",
+                                     voice=voice, rate=f"{(rate or 100) - 100:+d}%", retries=3)
+        except RuntimeError as exc:
+            raise MicrosoftSpeechError(str(exc)) from exc
         _to_sr(result["wav"], out_wav)
         if log:
             log({"kind": "tts", "provider": "microsoft", "chars": len(text),
                  "audio_s": result["duration"]})
+        return result["duration"]
+    if provider == "piper":
+        from kmd.video.tts import synth as synth_piper
+
+        result = synth_piper(re.sub(r"\+(?=[аеёиоуыэюя])", "", text, flags=re.IGNORECASE),
+                             out_wav.parent / "piper", engine="piper",
+                             rate=f"{(rate or 100) - 100:+d}%")
+        _to_sr(result["wav"], out_wav)
         return result["duration"]
     if provider == "yandex":
         from .tts_yandex import synthesize

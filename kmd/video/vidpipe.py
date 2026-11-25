@@ -10,7 +10,7 @@ from ..config import ROOT, chapter_config, domain_dir, read_json, run_dir, write
 def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
     from video.vidpipe.cli import run_stages
     from video.vidpipe.pipeline import stage_brief
-    from video.vidpipe.tts import available_provider
+    from video.vidpipe.tts import MicrosoftSpeechError, available_provider
 
     cfg = chapter_config(chapter)
     rd = run_dir(chapter)
@@ -41,10 +41,13 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
     data = nd.get("data_meaning") or {}
     analogy = nd.get("it_analogy") or {}
     node_file = inputs / "node.json"
+    lang = cfg.get("course_language") or layer.get("language") or cfg.get("language", "ru")
+    if tts == "piper" and lang != "ru":
+        raise ValueError("The configured Piper voice supports Russian; select a different --tts engine")
     write_json(node_file, {
         **nd,
         "title": nd.get("title_beginner") or nd.get("title_book") or node,
-        "lang": cfg.get("course_language") or layer.get("language") or cfg.get("language", "ru"),
+        "lang": lang,
         "source": {"title": layer.get("title") or cfg.get("title"), "book": book.get("title"),
                    "chapter": chapter, "pages": sorted({c["page"] for c in nd["claims"] if c.get("page")})},
         "difficulty_types": [difficulty[key] for key in ("primary", "secondary") if difficulty.get(key)],
@@ -59,11 +62,21 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
         "mode": planner, "model": os.environ.get("VIDPIPE_LLM_MODEL") or os.environ.get("KMD_LLM_MODEL"),
         "base_url": os.environ.get("VIDPIPE_LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL"),
     }
-    stage_brief(build, node_file, pages, domain_dir(cfg.get("domain") or layer["domain"]),
-                {"short": "short", "long": "explainer"}[fmt], "F", [ROOT / "video" / "data"],
-                product_settings, {"provider": tts, "voice": os.environ.get("KMD_TTS_VOICE") if tts == "microsoft" else None},
-                {"provider": "none"})
-    run_stages(build)
+    brief = stage_brief(build, node_file, pages, domain_dir(cfg.get("domain") or layer["domain"]),
+                        {"short": "short", "long": "explainer"}[fmt], "F", [ROOT / "video" / "data"],
+                        product_settings, {"provider": tts, "voice": os.environ.get("KMD_TTS_VOICE") if tts == "microsoft" else None},
+                        {"provider": "none"})
+    try:
+        run_stages(build)
+    except MicrosoftSpeechError as exc:
+        candidates = ("piper", "rhvoice", "espeak") if lang == "ru" else ("rhvoice", "espeak")
+        fallback = next((provider for provider in candidates if available_provider(provider) == provider), None)
+        if fallback is None:
+            raise RuntimeError(f"{exc}. Install a local voice engine or use --tts none for a silent preview.") from exc
+        print(f"[video] Microsoft speech failed; re-voicing the entire video with {fallback}")
+        brief["tts"] = {"provider": fallback}
+        write_json(build / "00_brief.json", brief)
+        run_stages(build, start="audio")
 
     passport = read_json(build / "passport.json")
     narration = passport["tools"]["tts"]["provider"]

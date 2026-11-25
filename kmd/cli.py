@@ -149,7 +149,7 @@ def cmd_video(args) -> int:
 def video_options(parser):
     parser.add_argument("--video-engine", choices=["vidpipe", "legacy"], default="vidpipe")
     parser.add_argument("--planner", choices=["rule", "llm"], default="rule")
-    parser.add_argument("--tts", choices=["microsoft", "rhvoice", "espeak", "none"], default="microsoft")
+    parser.add_argument("--tts", choices=["microsoft", "piper", "rhvoice", "espeak", "none"], default="microsoft")
 
 
 def cmd_check(args) -> int:
