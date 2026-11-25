@@ -10,7 +10,7 @@
   </div>
   <figcaption>
     {{ ill.caption|md }}
-    <span class="ill-meta">Класс {{ ill["class"] }} · {{ ill.provenance }}{% if ill.redrawn_from %} · перерисовано по рис. {{ ill.redrawn_from.figure }}{% if ill.redrawn_from.page %}, стр. {{ ill.redrawn_from.page }}{% endif %}{% endif %}{% if ill.exaggerations %} · не в масштабе: {% for e in ill.exaggerations %}{{ e.what }}{% if e.factor %} ×{{ e.factor }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}{% endif %} · нарисовано кодом{% if ill.pages %} · {{ ill.pages|pages }}{% endif %}</span>
+    <span class="ill-meta">Класс {{ ill["class"] }} · {{ ill.provenance }}{% if ill.redrawn_from %} · перерисовано по рис. {{ ill.redrawn_from.figure }}{% if ill.redrawn_from.page %}, стр. {{ ill.redrawn_from.page }}{% endif %}{% endif %}{% if ill.exaggerations %} · не в масштабе: {% for e in ill.exaggerations %}{{ e.what }}{% if e.factor is number %} ×{{ e.factor }}{% elif e.factor %} ({{ e.factor }}){% endif %}{% if not loop.last %}; {% endif %}{% endfor %}{% endif %} · нарисовано кодом{% if ill.pages %} · {{ ill.pages|pages }}{% endif %}</span>
   </figcaption>
 </figure>
 {% endmacro %}
