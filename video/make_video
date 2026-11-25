@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# make_video: thin wrapper around the Python CLI
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$DIR" && exec python3 -m vidpipe make "$@"

@@ -1,0 +1,40 @@
+{
+  "_comment": "Default legend. A domain pack's style guide overrides any key here.",
+  "lithology": {
+    "sandstone":    {"fill": "#F2D27A", "pattern": "dots"},
+    "shale":        {"fill": "#9FA58C", "pattern": "dashes"},
+    "clay":         {"fill": "#B3A58E", "pattern": "dashes"},
+    "siltstone":    {"fill": "#D9C894", "pattern": "dots_dashes"},
+    "limestone":    {"fill": "#8DB7D4", "pattern": "bricks"},
+    "dolomite":     {"fill": "#B8A6CF", "pattern": "bricks"},
+    "marl":         {"fill": "#B9C4A4", "pattern": "bricks"},
+    "salt":         {"fill": "#F1C4D0", "pattern": "cross"},
+    "anhydrite":    {"fill": "#D7B8E3", "pattern": "cross"},
+    "coal":         {"fill": "#3B3330", "pattern": "none"},
+    "conglomerate": {"fill": "#E3B567", "pattern": "circles"},
+    "chalk":        {"fill": "#E9EDF0", "pattern": "bricks"},
+    "basement":     {"fill": "#C98B7A", "pattern": "cross"},
+    "unknown":      {"fill": "#CFC3AE", "pattern": "none"}
+  },
+  "lithology_aliases": {
+    "песчаник": "sandstone", "песок": "sandstone", "пески": "sandstone", "sand": "sandstone", "коллектор": "sandstone",
+    "глина": "clay", "глины": "clay", "глинистые": "clay", "аргиллит": "shale", "аргиллиты": "shale",
+    "сланец": "shale", "глинистый сланец": "shale", "mudstone": "shale", "claystone": "clay",
+    "алевролит": "siltstone", "алевролиты": "siltstone", "silt": "siltstone",
+    "известняк": "limestone", "известняки": "limestone", "доломит": "dolomite", "мергель": "marl",
+    "соль": "salt", "каменная соль": "salt", "halite": "salt", "ангидрит": "anhydrite",
+    "уголь": "coal", "конгломерат": "conglomerate", "мел": "chalk", "фундамент": "basement"
+  },
+  "fluids": {"oil": "#4A2E14", "water": "#4F8FD1", "gas": "#F0E27A", "mud": "#C9B48F", "brine": "#6FA3D6"},
+  "fluid_aliases": {"нефть": "oil", "вода": "water", "газ": "gas", "буровой раствор": "mud", "раствор": "mud", "рассол": "brine"},
+  "curves": {
+    "GR": "#1F8A3B", "SGR": "#1F8A3B", "CGR": "#1F8A3B", "ГК": "#1F8A3B",
+    "SP": "#1F8A3B", "ПС": "#1F8A3B",
+    "RHOB": "#C0392B", "DEN": "#C0392B", "NPHI": "#2F6FB5", "NEU": "#2F6FB5",
+    "RT": "#111111", "RD": "#111111", "RDEP": "#111111", "RMED": "#7A4E2D", "DT": "#8E44AD", "AC": "#8E44AD",
+    "CALI": "#7F7F7F", "PRESSURE": "#2F6FB5", "default": "#2A211B"
+  },
+  "axes": {"depth": "down", "time": "right"},
+  "seismic": {"polarity": "unspecified", "cmap": ["#B2182B", "#F7F7F7", "#2166AC"]},
+  "probe_colors": {"a": "#1E5AA8", "b": "#C81E3C", "c": "#0B8F6A"}
+}

@@ -1,0 +1,32 @@
+{
+  "_comment": "Machine-checkable anti-examples. Each rule fires only when 'applies_if' matches the narration; 'forbid' patterns must then NOT match. Text-only items go to 'manual'. A domain pack may add rules.",
+  "rules": [
+    {"id": "gr_no_emission", "lang": "ru",
+     "text": "Гамма-каротаж (ГК) не излучает и не принимает «отражённое» излучение — он измеряет естественную радиоактивность пород.",
+     "applies_if": ["гамма", "ГК\\b"],
+     "forbid": ["(зонд|прибор|ГК)[^.]{0,40}(излучает|испускает|посылает|отправляет)(?![^.]{0,30}\\bне\\b)", "отраж[её]нн\\w* (гамма|излучени)", "(излучени|сигнал)\\w*[^.]{0,30}(возвращ|отража)"],
+     "allow_if_negated": true},
+    {"id": "gr_no_emission_en", "lang": "en",
+     "text": "A gamma-ray tool does not emit radiation and receive a reflection; it measures the natural radioactivity of the rocks.",
+     "applies_if": ["gamma"],
+     "forbid": ["(tool|sonde|detector)[^.]{0,40}\\b(emits|sends out|fires)\\b[^.]{0,30}gamma", "reflected gamma", "gamma[^.]{0,40}(bounce|reflect)"],
+     "allow_if_negated": true},
+    {"id": "oil_not_lake", "lang": "ru",
+     "text": "Нефть не образует подземных озёр — она заполняет поры породы.",
+     "applies_if": ["нефт"],
+     "forbid": ["(подземн\\w* )?(озер|озёр|озеро|озера|море|бассейн\\w* нефти|резервуар\\w* (пуст|полост))"],
+     "allow_if_negated": true},
+    {"id": "oil_not_lake_en", "lang": "en",
+     "text": "Oil does not sit in underground lakes; it fills pores in rock.",
+     "applies_if": ["\\boil\\b"],
+     "forbid": ["underground (lake|pool of oil|cavern)", "\\blake of oil\\b", "oil (lake|sea)\\b"],
+     "allow_if_negated": true}
+  ],
+  "spec_rules": [
+    {"id": "grains_touch", "text": "Grain-supported framework: grains in pore-scale scenes must touch.",
+     "applies_to_template": "inset_callouts", "require": "params.get('grains', {}).get('touching', True) is True"},
+    {"id": "depth_down", "text": "Depth axes increase downward.",
+     "applies_to_template": "*", "require": "params.get('depth_axis', 'down') == 'down'"}
+  ],
+  "manual": []
+}

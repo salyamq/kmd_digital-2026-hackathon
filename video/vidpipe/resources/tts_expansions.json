@@ -1,0 +1,55 @@
+{
+  "_comment": "Spoken forms. 'abbr' is always applied; 'units' only when numbers are expanded to words (engines that read digits themselves, e.g. SpeechKit, also read units correctly). Domain pack expansions override.",
+  "ru": {
+    "abbr": {
+      "GR": "джи-ар",
+      "API": "эй-пи-ай",
+      "LAS": "лас",
+      "SP": "эс-пэ",
+      "ГК": "гэ-ка",
+      "ПС": "пэ-эс",
+      "НГК": "эн-гэ-ка",
+      "ГГК": "гэ-гэ-ка",
+      "ИК": "и-ка",
+      "БК": "бэ-ка",
+      "IT": "ай-ти",
+      "ML": "эм-эль",
+      "ГИС": "гис",
+      "КИН": "кин",
+      "PVT": "пи-ви-ти",
+      "SEG-Y": "сег-уай",
+      "CSV": "си-эс-ви",
+      "т.е.": "то есть",
+      "т. е.": "то есть",
+      "и т.д.": "и так далее",
+      "др.": "другие",
+      "Δp": "дельта пэ",
+      "χ": "хи",
+      "μ": "мю",
+      "β": "бета"
+    },
+    "units": {
+      "м": "метров",
+      "км": "километров",
+      "сут": "суток",
+      "МПа": "мегапаскалей",
+      "кПа": "килопаскалей",
+      "кН": "килоньютонов"
+    }
+  },
+  "en": {
+    "abbr": {
+      "GR": "gamma ray",
+      "API": "A P I",
+      "LAS": "L A S",
+      "e.g.": "for example",
+      "i.e.": "that is",
+      "Δp": "delta p"
+    },
+    "units": {
+      "m": "meters",
+      "km": "kilometers",
+      "MPa": "megapascals"
+    }
+  }
+}

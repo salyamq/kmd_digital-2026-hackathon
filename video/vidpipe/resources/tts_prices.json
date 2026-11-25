@@ -1,0 +1,8 @@
+{
+  "_comment": "Price per 1,000,000 characters sent (spaces and markup characters count). Fill in from the provider's current price list; null = cost logged as unknown.",
+  "yandex":  {"price_per_1m_chars": null, "currency": "RUB", "source": "https://yandex.cloud/en/docs/speechkit/pricing"},
+  "rhvoice": {"price_per_1m_chars": 0, "currency": "USD", "source": "offline"},
+  "silero":  {"price_per_1m_chars": 0, "currency": "USD", "source": "offline"},
+  "espeak":  {"price_per_1m_chars": 0, "currency": "USD", "source": "offline"},
+  "none":    {"price_per_1m_chars": 0, "currency": "USD", "source": "dry run"}
+}
