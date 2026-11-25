@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Illustration spec (рисунок курса, рендерится кодом из шаблона kmd/visuals)",
+  "type": "object",
+  "required": ["id", "template", "params", "caption", "claim_ids"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+$", "description": "имя файла без расширения, уникально в главе"},
+    "node_id": {"type": "string"},
+    "template": {"type": "string", "description": "имя шаблона из каталога kmd.visuals.catalog()"},
+    "params": {"type": "object", "description": "параметры по params_schema шаблона"},
+    "title": {"type": "string", "description": "заголовок на рисунке (коротко); пусто — без заголовка"},
+    "caption": {"type": "string", "description": "подпись под рисунком: что изображено (по-русски)"},
+    "alt": {"type": "string", "description": "альтернативный текст; пусто — генерируется шаблоном"},
+    "class": {"enum": ["A", "B", "C", "D"], "description": "класс кадра; по умолчанию из шаблона"},
+    "provenance": {"enum": ["реальные данные", "симуляция", "схема"], "description": "метка происхождения; по умолчанию из шаблона"},
+    "redrawn_from": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "object", "required": ["figure", "page"],
+         "properties": {"figure": {"type": ["string", "integer"]}, "page": {"type": "integer"}}}
+      ],
+      "description": "если перерисовано по рисунку книги: номер рисунка и страница PDF"
+    },
+    "exaggerations": {
+      "type": "array",
+      "items": {"type": "object", "required": ["what"],
+                "properties": {"what": {"type": "string"}, "factor": {"type": ["number", "string", "null"]}}},
+      "description": "дополнительные преувеличения (шаблон сам добавляет вычисленные, напр. вертикальный масштаб)"
+    },
+    "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "утверждения узла, которые иллюстрирует рисунок"},
+    "size": {"anyOf": [{"enum": ["wide", "tall", "square"]},
+                       {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2}]},
+    "t": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "момент анимации для статичного кадра"},
+    "domain": {"type": "string", "default": "geology"}
+  }
+}
