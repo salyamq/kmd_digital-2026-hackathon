@@ -1,0 +1,67 @@
+{
+  "shots": [
+    {
+      "id": "S1",
+      "line_ids": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "template": "overlay_card",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": [
+        "Particles are symbolic gamma quanta; their density follows the measured GR at the instrument depth"
+      ]
+    },
+    {
+      "id": "S2",
+      "line_ids": [
+        "L5"
+      ],
+      "template": "data_chart",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": [
+        "Log scale: ranges span two orders of magnitude"
+      ]
+    },
+    {
+      "id": "S3",
+      "line_ids": [
+        "L6",
+        "L7"
+      ],
+      "template": "depth_track",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": [
+        "Values above 150 API (Draupne hot shale) are drawn at the track edge",
+        "Logging speed compressed to video time"
+      ]
+    },
+    {
+      "id": "S4",
+      "line_ids": [
+        "L8"
+      ],
+      "template": "overlay_card",
+      "class": "A",
+      "provenance": "data",
+      "exaggerations": []
+    },
+    {
+      "id": "S5",
+      "line_ids": [
+        "L9"
+      ],
+      "template": "question_card",
+      "class": "T",
+      "provenance": "schematic",
+      "exaggerations": []
+    }
+  ],
+  "planner": "llm:replay:replay-cache",
+  "notes": []
+}

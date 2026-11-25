@@ -1,0 +1,22 @@
+{
+  "_comment": "Yandex SpeechKit API v3 voices and roles (from yandex.cloud docs 'List of voices', checked 2026-11-25). Used to validate --voice/--role; an invalid role makes the API return an error.",
+  "default": {"ru": "alexander", "en": "john"},
+  "suggested": {"ru_male": "alexander", "ru_female": "dasha", "en_male": "john"},
+  "voices": {
+    "alexander": {"lang": "ru-RU", "gender": "M", "roles": ["neutral", "good"]},
+    "kirill":    {"lang": "ru-RU", "gender": "M", "roles": ["neutral", "strict", "good"]},
+    "anton":     {"lang": "ru-RU", "gender": "M", "roles": ["neutral", "good"]},
+    "ermil":     {"lang": "ru-RU", "gender": "M", "roles": ["neutral", "good"]},
+    "zahar":     {"lang": "ru-RU", "gender": "M", "roles": ["neutral", "good"]},
+    "filipp":    {"lang": "ru-RU", "gender": "M", "roles": []},
+    "madi_ru":   {"lang": "ru-RU", "gender": "M", "roles": []},
+    "dasha":     {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "good", "friendly"]},
+    "marina":    {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "whisper", "friendly"]},
+    "julia":     {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "strict"]},
+    "lera":      {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "friendly"]},
+    "masha":     {"lang": "ru-RU", "gender": "F", "roles": ["good", "strict", "friendly"]},
+    "jane":      {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "good", "evil"]},
+    "omazh":     {"lang": "ru-RU", "gender": "F", "roles": ["neutral", "evil"]},
+    "john":      {"lang": "en-US", "gender": "M", "roles": []}
+  }
+}

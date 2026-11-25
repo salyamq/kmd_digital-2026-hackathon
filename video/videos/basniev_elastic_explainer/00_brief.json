@@ -1,0 +1,44 @@
+{
+  "video_id": "basniev_elastic_explainer",
+  "node_id": "basniev_elastic_01",
+  "node": "examples/ru_elastic_basniev/node.json",
+  "pages": null,
+  "domain": "examples/domain_pack_demo",
+  "data_dirs": [
+    "data"
+  ],
+  "format": "explainer",
+  "style": "F",
+  "lang": "ru",
+  "target_s": [
+    120,
+    240
+  ],
+  "size": [
+    1920,
+    1080
+  ],
+  "planner": {
+    "mode": "replay",
+    "provider": null,
+    "model": null,
+    "base_url": null,
+    "cache": "examples/ru_elastic_basniev/llm_replay"
+  },
+  "tts": {
+    "provider": "rhvoice",
+    "voice": null,
+    "rate": null,
+    "role": null,
+    "speed": null,
+    "numbers": null,
+    "emphasis": null
+  },
+  "ai_video": {
+    "provider": "none"
+  },
+  "allow_unverified": false,
+  "created": "2026-11-25 14:41:41",
+  "cmdline": "python -m vidpipe make --node examples/ru_elastic_basniev/node.json --domain examples/domain_pack_demo --format explainer --style F --planner replay --llm-cache examples/ru_elastic_basniev/llm_replay --tts rhvoice --id basniev_elastic_explainer",
+  "node_missing_fields": []
+}

@@ -1,0 +1,115 @@
+{
+  "shot_id": "S1",
+  "template": "overlay_card",
+  "class": "A",
+  "params": {
+    "base": {
+      "template": "depth_track",
+      "params": {
+        "track": {
+          "curve": "GR",
+          "unit": "API",
+          "range": [
+            0,
+            150
+          ],
+          "title": "ГМ (GR), API"
+        },
+        "window": [
+          4282,
+          4362
+        ],
+        "layers": [
+          {
+            "top": 4282,
+            "base": 4304,
+            "lith": "clay",
+            "label": "Åsgard · глинистая",
+            "source_ref": "assumption:lith"
+          },
+          {
+            "top": 4304,
+            "base": 4317,
+            "lith": "shale",
+            "label": "Draupne/Heather · глина",
+            "source_ref": "assumption:lith"
+          },
+          {
+            "top": 4317,
+            "base": 4340,
+            "lith": "sandstone",
+            "label": "Hugin · песчаник",
+            "source_ref": "assumption:lith"
+          },
+          {
+            "top": 4340,
+            "base": 4362,
+            "lith": "siltstone",
+            "label": "Skagerrak",
+            "source_ref": "assumption:lith"
+          }
+        ],
+        "motion": {
+          "direction": "up",
+          "start": "100%"
+        },
+        "particles": {
+          "direction": "to_object",
+          "rate": "curve",
+          "start": "L3+0.2",
+          "label": "излучает порода: U, Th, K",
+          "at": "L4+0.3",
+          "source_ref": "c2"
+        },
+        "readout": false
+      }
+    },
+    "cards": [
+      {
+        "kind": "myth",
+        "text": "Прибор *посылает* излучение и ловит отражение?",
+        "label": "Миф или нет?",
+        "at": 0.2
+      },
+      {
+        "kind": "question",
+        "text": "Где кривая покажет *больше*?",
+        "options": [
+          "против глин",
+          "против песчаников"
+        ],
+        "at": "L2"
+      },
+      {
+        "kind": "fact",
+        "text": "Прибор только *регистрирует* естественное гамма-излучение пород",
+        "at": "L3",
+        "source_ref": "c1"
+      },
+      {
+        "kind": "fact",
+        "text": "Излучают сами породы: *уран, торий, калий*",
+        "at": "L4",
+        "source_ref": "c2"
+      }
+    ]
+  },
+  "model": {
+    "type": "las",
+    "file": "15-9-19_SR_COMP.las",
+    "curve": "GR",
+    "depth_from": 4278,
+    "depth_to": 4366,
+    "dataset": "Equinor Volve"
+  },
+  "invariants": [
+    "particles move from the formation TO the instrument (it does not emit)",
+    "depth increases downward"
+  ],
+  "assumptions": [
+    "Lithology of formations (Åsgard, Draupne/Heather, Hugin, Skagerrak) from NPD lithostratigraphic descriptions, not from the chapter",
+    "Formation tops from NPD for well 15/9-19 SR (MD)"
+  ],
+  "provenance": "data",
+  "needs_new_template": null
+}

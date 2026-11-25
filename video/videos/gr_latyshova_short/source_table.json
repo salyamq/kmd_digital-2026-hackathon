@@ -1,0 +1,310 @@
+[
+  {
+    "kind": "reference",
+    "ref": "М.Г. Латышова. Практическое руководство по интерпретации диаграмм геофизических исследований скважин. 3-е изд. М.: Недра, 1991",
+    "chapter": "Глава III. § 12. Метод естественного гамма-излучения ГМ",
+    "used_by": [],
+    "id": "src1",
+    "status": "reference"
+  },
+  {
+    "kind": "claim",
+    "ref": "c1",
+    "page": 65,
+    "quote": "Интенсивность естественного гамма-излучения, регистрируемого прибором, помещенным в изучаемую однородную и безграничную среду, пропорциональна ее объемной радиоактивности",
+    "claim_text": "Прибор регистрирует естественное гамма-излучение; его интенсивность пропорциональна объёмной радиоактивности породы.",
+    "used_by": [
+      "L3"
+    ],
+    "id": "src2",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c2",
+    "page": 65,
+    "quote": "Их радиоактивность обусловлена наличием весьма малых количеств радиоактивных элементов — урана, тория, актиния, продуктов их распада, а также изотопа калия 40К.",
+    "claim_text": "Радиоактивность осадочных пород создают малые количества урана, тория, актиния, продуктов их распада и изотопа калия 40K.",
+    "used_by": [
+      "L4"
+    ],
+    "id": "src3",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c3",
+    "page": 65,
+    "quote": "Из всех осадочных пород наиболее радиоактивными являются глины, поэтому величина радиоактивности других, менее активных пород достаточно тесно связана с их глинистостью",
+    "claim_text": "Из осадочных пород наиболее радиоактивны глины, поэтому радиоактивность других пород тесно связана с их глинистостью.",
+    "used_by": [
+      "L5"
+    ],
+    "id": "src4",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c4",
+    "page": 65,
+    "quote": "Радиоактивность некоторых горных пород осадочного комплекса.",
+    "claim_text": "Таблица 12: радиоактивность пород осадочного комплекса — от 0,5 (ангидрит) до 10,0–50,0 пг·экв Ra/г (глина глубоководная); песчаник 0,7–1,5.",
+    "used_by": [
+      "L5"
+    ],
+    "id": "src5",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c7",
+    "page": 64,
+    "quote": "регистрация диаграмм осуществляется при движении скважинного снаряда снизу вверх",
+    "claim_text": "Диаграммы регистрируются при движении скважинного прибора снизу вверх.",
+    "used_by": [
+      "L6"
+    ],
+    "id": "src6",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 64,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "dataset",
+    "ref": "Equinor Volve",
+    "file": "15-9-19_SR_COMP.las",
+    "curve": "GR",
+    "used_by": [
+      "L6",
+      "S1",
+      "S3",
+      "S4"
+    ],
+    "id": "src7",
+    "window": [
+      4278,
+      4366
+    ],
+    "status": "dataset"
+  },
+  {
+    "kind": "claim",
+    "ref": "c5",
+    "page": 65,
+    "quote": "При непрерывной регистрации на диаграммах радиометрии отмечаются мелкие аномалии (иззубренность), созданные статистическими флуктуациями.",
+    "claim_text": "На диаграммах радиометрии мелкие аномалии (иззубренность) создаются статистическими флуктуациями.",
+    "used_by": [
+      "L7"
+    ],
+    "id": "src8",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c6",
+    "page": 65,
+    "quote": "Интерпретации подлежат аномалии, амплитуды которых не менее чем в два раза превышают ширину \"дорожки\" статистических флуктуации.",
+    "claim_text": "Интерпретируют аномалии, амплитуды которых не менее чем в два раза превышают ширину «дорожки» флуктуаций.",
+    "used_by": [
+      "L7"
+    ],
+    "id": "src9",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c9",
+    "page": 67,
+    "quote": "ΔJγ = ΔI/ΔIоп = (I – Iоп1)/(Iоп2 – Iоп1)",
+    "claim_text": "По диаграмме выделяют два опорных пласта и вычисляют относительную амплитуду ΔJγ = (I – Iоп1)/(Iоп2 – Iоп1).",
+    "used_by": [
+      "L8"
+    ],
+    "id": "src10",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 67,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c12",
+    "page": 67,
+    "quote": "просматривается с целью выделения на ней двух опорных пластов",
+    "claim_text": "Опорные пласты выделяют, просматривая диаграмму.",
+    "used_by": [
+      "L8"
+    ],
+    "id": "src11",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 67,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "claim",
+    "ref": "c10",
+    "page": 67,
+    "quote": "Такой способ ручной интерпретации удобен",
+    "claim_text": "Выделение опорных пластов и пересчёт в глинистость — ручная интерпретация.",
+    "used_by": [
+      "L8"
+    ],
+    "id": "src12",
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 67,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "assumption",
+    "ref": "Lithology of formations (Åsgard, Draupne/Heather, Hugin, Skagerrak) from NPD lithostratigraphic descriptions, not from the chapter",
+    "used_by": [
+      "S1"
+    ],
+    "id": "src13",
+    "status": "assumption"
+  },
+  {
+    "kind": "assumption",
+    "ref": "Formation tops from NPD for well 15/9-19 SR (MD)",
+    "used_by": [
+      "S1"
+    ],
+    "id": "src14",
+    "status": "assumption"
+  },
+  {
+    "kind": "table",
+    "ref": "табл. 12",
+    "page": 65,
+    "quote": "Радиоактивность некоторых горных пород осадочного комплекса.",
+    "cells": [
+      "10,0",
+      "50,0",
+      "4,1",
+      "11,0",
+      "2,6",
+      "5,0",
+      "1,1",
+      "1,9",
+      "0,7",
+      "1,5",
+      "0,6",
+      "1,9",
+      "0,5",
+      "2,0",
+      "0,5",
+      "0,5"
+    ],
+    "labels": [
+      "Глина глубоководная",
+      "Глина тёмная битуминозная",
+      "Глина светлая песчанистая",
+      "Алевролит",
+      "Песчаник",
+      "Известняк",
+      "Каменная соль",
+      "Ангидрит"
+    ],
+    "used_by": [
+      "S2"
+    ],
+    "id": "src15",
+    "missing_cells": [],
+    "status": "verified",
+    "match": {
+      "status": "verified",
+      "page_found": 65,
+      "ratio": 1.0,
+      "page_match": true,
+      "exact": true
+    }
+  },
+  {
+    "kind": "assumption",
+    "ref": "Lithology of formations from NPD descriptions",
+    "used_by": [
+      "S3"
+    ],
+    "id": "src16",
+    "status": "assumption"
+  },
+  {
+    "kind": "assumption",
+    "ref": "Depth window 4282–4362 m chosen to show clay–sand–silt",
+    "used_by": [
+      "S3"
+    ],
+    "id": "src17",
+    "status": "assumption"
+  },
+  {
+    "kind": "assumption",
+    "ref": "Reference beds placed at the GR minimum (Hugin) and maximum (Draupne) of this window as an illustration",
+    "used_by": [
+      "S4"
+    ],
+    "id": "src18",
+    "status": "assumption"
+  }
+]

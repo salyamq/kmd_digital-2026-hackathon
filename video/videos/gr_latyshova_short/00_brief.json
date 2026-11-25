@@ -1,0 +1,44 @@
+{
+  "video_id": "gr_latyshova_short",
+  "node_id": "latyshova_gm_12",
+  "node": "examples/ru_gr_latyshova/node.json",
+  "pages": "examples/ru_gr_latyshova/pages",
+  "domain": "examples/domain_pack_demo",
+  "data_dirs": [
+    "data"
+  ],
+  "format": "short",
+  "style": "F",
+  "lang": "ru",
+  "target_s": [
+    30,
+    60
+  ],
+  "size": [
+    720,
+    1280
+  ],
+  "planner": {
+    "mode": "replay",
+    "provider": null,
+    "model": null,
+    "base_url": null,
+    "cache": "examples/ru_gr_latyshova/llm_replay"
+  },
+  "tts": {
+    "provider": "rhvoice",
+    "voice": null,
+    "rate": null,
+    "role": null,
+    "speed": null,
+    "numbers": null,
+    "emphasis": null
+  },
+  "ai_video": {
+    "provider": "none"
+  },
+  "allow_unverified": false,
+  "created": "2026-11-25 14:30:01",
+  "cmdline": "python -m vidpipe make --node examples/ru_gr_latyshova/node.json --pages examples/ru_gr_latyshova/pages --domain examples/domain_pack_demo --format short --style F --planner replay --llm-cache examples/ru_gr_latyshova/llm_replay --tts rhvoice --id gr_latyshova_short",
+  "node_missing_fields": []
+}

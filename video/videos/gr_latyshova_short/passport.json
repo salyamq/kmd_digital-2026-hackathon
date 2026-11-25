@@ -1,0 +1,845 @@
+{
+  "video_id": "gr_latyshova_short",
+  "rebuild_command": "python -m vidpipe rebuild videos/gr_latyshova_short",
+  "rebuild_from_scratch_command": "python -m vidpipe make --node examples/ru_gr_latyshova/node.json --pages examples/ru_gr_latyshova/pages --domain examples/domain_pack_demo --format short --style F --planner replay --llm-cache examples/ru_gr_latyshova/llm_replay --tts rhvoice --id gr_latyshova_short",
+  "output": "videos/gr_latyshova_short/08_final/gr_latyshova_short.mp4",
+  "format": {
+    "name": "short",
+    "size": [
+      720,
+      1280
+    ],
+    "fps": 30,
+    "duration_s": 56.367,
+    "style": "F"
+  },
+  "node_card": {
+    "node_id": "latyshova_gm_12",
+    "title": "Гамма-метод: что *на самом деле* регистрирует прибор",
+    "difficulty_types": [
+      "misconception",
+      "measurement"
+    ],
+    "misconception_fixed": {
+      "wrong": "Прибор ГМ посылает излучение в породу и ловит отражённый сигнал",
+      "right": "Прибор ничего не посылает: он *регистрирует* естественное гамма-излучение пород, пропорциональное их радиоактивности",
+      "claim_id": "c1",
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "ГИС · Латышова, § 12",
+      "book": "М.Г. Латышова. Практическое руководство по интерпретации диаграмм геофизических исследований скважин. 3-е изд. М.: Недра, 1991",
+      "chapter": "Глава III. § 12. Метод естественного гамма-излучения ГМ",
+      "pages": "64–69 (PDF pages of the provided file)"
+    },
+    "node_file_sha1": "0064b604b0933c9d"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Многие думают, что прибор гамма-метода *посылает* излучение в породу и ловит отражение.",
+      "t0": 0.25,
+      "t1": 6.23,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Как думаете: где кривая покажет больше — против глин или против песчаников?",
+      "t0": 6.45,
+      "t1": 11.558,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "На самом деле прибор ничего не посылает: он *регистрирует* естественное гамма-излучение пород.",
+      "t0": 11.778,
+      "t1": 17.701,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c1",
+          "page": 65,
+          "quote": "Интенсивность естественного гамма-излучения, регистрируемого прибором, помещенным в изучаемую однородную и безграничную среду, пропорциональна ее объемной радиоактивности"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Излучают сами породы: в них рассеяны уран, торий и изотоп калия.",
+      "t0": 17.921,
+      "t1": 22.579,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c2",
+          "page": 65,
+          "quote": "Их радиоактивность обусловлена наличием весьма малых количеств радиоактивных элементов — урана, тория, актиния, продуктов их распада, а также изотопа калия 40К."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "Самые радиоактивные из осадочных пород — *глины*, поэтому показания связаны с глинистостью.",
+      "t0": 23.183,
+      "t1": 29.655,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c3",
+          "page": 65,
+          "quote": "Из всех осадочных пород наиболее радиоактивными являются глины, поэтому величина радиоактивности других, менее активных пород достаточно тесно связана с их глинистостью"
+        },
+        {
+          "type": "claim",
+          "claim_id": "c4",
+          "page": 65,
+          "quote": "Радиоактивность некоторых горных пород осадочного комплекса."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L6",
+      "role": "data",
+      "text": "Это реальная кривая скважины Volve. Запись идёт при подъёме прибора — *снизу вверх*.",
+      "t0": 30.283,
+      "t1": 35.474,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c7",
+          "page": 64,
+          "quote": "регистрация диаграмм осуществляется при движении скважинного снаряда снизу вверх"
+        },
+        {
+          "type": "dataset",
+          "dataset": "Equinor Volve",
+          "file": "15-9-19_SR_COMP.las",
+          "curve": "GR"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L7",
+      "role": "data",
+      "text": "Иззубренность — статистические флуктуации: интерпретируют аномалии, вдвое превышающие их «дорожку».",
+      "t0": 35.694,
+      "t1": 42.409,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c5",
+          "page": 65,
+          "quote": "При непрерывной регистрации на диаграммах радиометрии отмечаются мелкие аномалии (иззубренность), созданные статистическими флуктуациями."
+        },
+        {
+          "type": "claim",
+          "claim_id": "c6",
+          "page": 65,
+          "quote": "Интерпретации подлежат аномалии, амплитуды которых не менее чем в два раза превышают ширину \"дорожки\" статистических флуктуации."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L8",
+      "role": "bridge",
+      "text": "Для дата-инженера это признак: относительная амплитуда между двумя опорными пластами. Но опорные пласты выбирают вручную.",
+      "t0": 43.017,
+      "t1": 50.696,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c9",
+          "page": 67,
+          "quote": "ΔJγ = ΔI/ΔIоп = (I – Iоп1)/(Iоп2 – Iоп1)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "c12",
+          "page": 67,
+          "quote": "просматривается с целью выделения на ней двух опорных пластов"
+        },
+        {
+          "type": "claim",
+          "claim_id": "c10",
+          "page": 67,
+          "quote": "Такой способ ручной интерпретации удобен"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L9",
+      "role": "transfer",
+      "text": "Проверьте себя: песчаник, а показания высокие. Что вы проверите первым?",
+      "t0": 51.317,
+      "t1": 56.008,
+      "sources": [],
+      "asserts_fact": false
+    }
+  ],
+  "source_table": [
+    {
+      "kind": "reference",
+      "ref": "М.Г. Латышова. Практическое руководство по интерпретации диаграмм геофизических исследований скважин. 3-е изд. М.: Недра, 1991",
+      "chapter": "Глава III. § 12. Метод естественного гамма-излучения ГМ",
+      "used_by": [],
+      "id": "src1",
+      "status": "reference"
+    },
+    {
+      "kind": "claim",
+      "ref": "c1",
+      "page": 65,
+      "quote": "Интенсивность естественного гамма-излучения, регистрируемого прибором, помещенным в изучаемую однородную и безграничную среду, пропорциональна ее объемной радиоактивности",
+      "claim_text": "Прибор регистрирует естественное гамма-излучение; его интенсивность пропорциональна объёмной радиоактивности породы.",
+      "used_by": [
+        "L3"
+      ],
+      "id": "src2",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c2",
+      "page": 65,
+      "quote": "Их радиоактивность обусловлена наличием весьма малых количеств радиоактивных элементов — урана, тория, актиния, продуктов их распада, а также изотопа калия 40К.",
+      "claim_text": "Радиоактивность осадочных пород создают малые количества урана, тория, актиния, продуктов их распада и изотопа калия 40K.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src3",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c3",
+      "page": 65,
+      "quote": "Из всех осадочных пород наиболее радиоактивными являются глины, поэтому величина радиоактивности других, менее активных пород достаточно тесно связана с их глинистостью",
+      "claim_text": "Из осадочных пород наиболее радиоактивны глины, поэтому радиоактивность других пород тесно связана с их глинистостью.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src4",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c4",
+      "page": 65,
+      "quote": "Радиоактивность некоторых горных пород осадочного комплекса.",
+      "claim_text": "Таблица 12: радиоактивность пород осадочного комплекса — от 0,5 (ангидрит) до 10,0–50,0 пг·экв Ra/г (глина глубоководная); песчаник 0,7–1,5.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src5",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c7",
+      "page": 64,
+      "quote": "регистрация диаграмм осуществляется при движении скважинного снаряда снизу вверх",
+      "claim_text": "Диаграммы регистрируются при движении скважинного прибора снизу вверх.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src6",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 64,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "dataset",
+      "ref": "Equinor Volve",
+      "file": "15-9-19_SR_COMP.las",
+      "curve": "GR",
+      "used_by": [
+        "L6",
+        "S1",
+        "S3",
+        "S4"
+      ],
+      "id": "src7",
+      "window": [
+        4278,
+        4366
+      ],
+      "status": "dataset"
+    },
+    {
+      "kind": "claim",
+      "ref": "c5",
+      "page": 65,
+      "quote": "При непрерывной регистрации на диаграммах радиометрии отмечаются мелкие аномалии (иззубренность), созданные статистическими флуктуациями.",
+      "claim_text": "На диаграммах радиометрии мелкие аномалии (иззубренность) создаются статистическими флуктуациями.",
+      "used_by": [
+        "L7"
+      ],
+      "id": "src8",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c6",
+      "page": 65,
+      "quote": "Интерпретации подлежат аномалии, амплитуды которых не менее чем в два раза превышают ширину \"дорожки\" статистических флуктуации.",
+      "claim_text": "Интерпретируют аномалии, амплитуды которых не менее чем в два раза превышают ширину «дорожки» флуктуаций.",
+      "used_by": [
+        "L7"
+      ],
+      "id": "src9",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c9",
+      "page": 67,
+      "quote": "ΔJγ = ΔI/ΔIоп = (I – Iоп1)/(Iоп2 – Iоп1)",
+      "claim_text": "По диаграмме выделяют два опорных пласта и вычисляют относительную амплитуду ΔJγ = (I – Iоп1)/(Iоп2 – Iоп1).",
+      "used_by": [
+        "L8"
+      ],
+      "id": "src10",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 67,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c12",
+      "page": 67,
+      "quote": "просматривается с целью выделения на ней двух опорных пластов",
+      "claim_text": "Опорные пласты выделяют, просматривая диаграмму.",
+      "used_by": [
+        "L8"
+      ],
+      "id": "src11",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 67,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "c10",
+      "page": 67,
+      "quote": "Такой способ ручной интерпретации удобен",
+      "claim_text": "Выделение опорных пластов и пересчёт в глинистость — ручная интерпретация.",
+      "used_by": [
+        "L8"
+      ],
+      "id": "src12",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 67,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "assumption",
+      "ref": "Lithology of formations (Åsgard, Draupne/Heather, Hugin, Skagerrak) from NPD lithostratigraphic descriptions, not from the chapter",
+      "used_by": [
+        "S1"
+      ],
+      "id": "src13",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Formation tops from NPD for well 15/9-19 SR (MD)",
+      "used_by": [
+        "S1"
+      ],
+      "id": "src14",
+      "status": "assumption"
+    },
+    {
+      "kind": "table",
+      "ref": "табл. 12",
+      "page": 65,
+      "quote": "Радиоактивность некоторых горных пород осадочного комплекса.",
+      "cells": [
+        "10,0",
+        "50,0",
+        "4,1",
+        "11,0",
+        "2,6",
+        "5,0",
+        "1,1",
+        "1,9",
+        "0,7",
+        "1,5",
+        "0,6",
+        "1,9",
+        "0,5",
+        "2,0",
+        "0,5",
+        "0,5"
+      ],
+      "labels": [
+        "Глина глубоководная",
+        "Глина тёмная битуминозная",
+        "Глина светлая песчанистая",
+        "Алевролит",
+        "Песчаник",
+        "Известняк",
+        "Каменная соль",
+        "Ангидрит"
+      ],
+      "used_by": [
+        "S2"
+      ],
+      "id": "src15",
+      "missing_cells": [],
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 65,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "assumption",
+      "ref": "Lithology of formations from NPD descriptions",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src16",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Depth window 4282–4362 m chosen to show clay–sand–silt",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src17",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Reference beds placed at the GR minimum (Hugin) and maximum (Draupne) of this window as an illustration",
+      "used_by": [
+        "S4"
+      ],
+      "id": "src18",
+      "status": "assumption"
+    }
+  ],
+  "scene_specs": [
+    {
+      "shot_id": "S1",
+      "file": "03_scene_specs/S1.json",
+      "template": "overlay_card",
+      "class": "A",
+      "model": {
+        "type": "las",
+        "file": "15-9-19_SR_COMP.las",
+        "curve": "GR",
+        "depth_from": 4278,
+        "depth_to": 4366,
+        "dataset": "Equinor Volve"
+      },
+      "invariants": [
+        "particles move from the formation TO the instrument (it does not emit)",
+        "depth increases downward"
+      ],
+      "assumptions": [
+        "Lithology of formations (Åsgard, Draupne/Heather, Hugin, Skagerrak) from NPD lithostratigraphic descriptions, not from the chapter",
+        "Formation tops from NPD for well 15/9-19 SR (MD)"
+      ]
+    },
+    {
+      "shot_id": "S2",
+      "file": "03_scene_specs/S2.json",
+      "template": "data_chart",
+      "class": "A",
+      "model": {
+        "type": "table",
+        "columns": [
+          "min",
+          "max"
+        ],
+        "labels": [
+          "Глина глубоководная",
+          "Глина тёмная битуминозная",
+          "Глина светлая песчанистая",
+          "Алевролит",
+          "Песчаник",
+          "Известняк",
+          "Каменная соль",
+          "Ангидрит"
+        ],
+        "rows": [
+          [
+            "10,0",
+            "50,0"
+          ],
+          [
+            "4,1",
+            "11,0"
+          ],
+          [
+            "2,6",
+            "5,0"
+          ],
+          [
+            "1,1",
+            "1,9"
+          ],
+          [
+            "0,7",
+            "1,5"
+          ],
+          [
+            "0,6",
+            "1,9"
+          ],
+          [
+            "0,5",
+            "2,0"
+          ],
+          [
+            "0,5",
+            "0,5"
+          ]
+        ],
+        "source": {
+          "page": 65,
+          "quote": "Радиоактивность некоторых горных пород осадочного комплекса.",
+          "title": "табл. 12"
+        }
+      },
+      "invariants": [
+        "every value is a cell of Table 12 on p. 65"
+      ],
+      "assumptions": []
+    },
+    {
+      "shot_id": "S3",
+      "file": "03_scene_specs/S3.json",
+      "template": "depth_track",
+      "class": "A",
+      "model": {
+        "type": "las",
+        "file": "15-9-19_SR_COMP.las",
+        "curve": "GR",
+        "depth_from": 4278,
+        "depth_to": 4366,
+        "dataset": "Equinor Volve"
+      },
+      "invariants": [
+        "recording while the instrument moves bottom -> top (p. 64)",
+        "curve point depth == instrument depth (one state array)"
+      ],
+      "assumptions": [
+        "Lithology of formations from NPD descriptions",
+        "Depth window 4282–4362 m chosen to show clay–sand–silt"
+      ]
+    },
+    {
+      "shot_id": "S4",
+      "file": "03_scene_specs/S4.json",
+      "template": "overlay_card",
+      "class": "A",
+      "model": {
+        "type": "las",
+        "file": "15-9-19_SR_COMP.las",
+        "curve": "GR",
+        "depth_from": 4278,
+        "depth_to": 4366,
+        "dataset": "Equinor Volve"
+      },
+      "invariants": [
+        "formula (40) from p. 67 shown verbatim"
+      ],
+      "assumptions": [
+        "Reference beds placed at the GR minimum (Hugin) and maximum (Draupne) of this window as an illustration"
+      ]
+    },
+    {
+      "shot_id": "S5",
+      "file": "03_scene_specs/S5.json",
+      "template": "question_card",
+      "class": "T",
+      "model": null,
+      "invariants": [],
+      "assumptions": []
+    }
+  ],
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 22.933,
+      "class": "A",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "las",
+      "ai": null
+    },
+    {
+      "shot": "S2",
+      "t0": 22.933,
+      "t1": 30.033,
+      "class": "A",
+      "template": "data_chart",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "table",
+      "ai": null
+    },
+    {
+      "shot": "S3",
+      "t0": 30.033,
+      "t1": 42.767,
+      "class": "A",
+      "template": "depth_track",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "las",
+      "ai": null
+    },
+    {
+      "shot": "S4",
+      "t0": 42.767,
+      "t1": 51.067,
+      "class": "A",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "las",
+      "ai": null
+    },
+    {
+      "shot": "S5",
+      "t0": 51.067,
+      "t1": 56.367,
+      "class": "T",
+      "template": "question_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    }
+  ],
+  "exaggerations": [
+    {
+      "shot": "S1",
+      "what": "Particles are symbolic gamma quanta; their density follows the measured GR at the instrument depth"
+    },
+    {
+      "shot": "S2",
+      "what": "Log scale: ranges span two orders of magnitude"
+    },
+    {
+      "shot": "S3",
+      "what": "Values above 150 API (Draupne hot shale) are drawn at the track edge"
+    },
+    {
+      "shot": "S3",
+      "what": "Logging speed compressed to video time"
+    },
+    {
+      "shot": "S3",
+      "what": "Particles are a symbolic depiction of radiation quanta; their density follows the measured curve value, not a physical count."
+    },
+    {
+      "shot": "S3",
+      "what": "Cutaway is zoomed and not to scale horizontally; borehole and tool widths exaggerated for visibility."
+    }
+  ],
+  "prediction_question": {
+    "text": "Где кривая ГМ покажет больше — против глин или против песчаников?",
+    "options": [
+      "против глин",
+      "против песчаников"
+    ]
+  },
+  "transfer_question": {
+    "text": "Песчаник, а показания ГМ высокие. Что вы проверите первым?",
+    "answer_hint_source": {
+      "claim_id": "c11",
+      "page": 65
+    }
+  },
+  "data_it_bridge": {
+    "where_in_data": "Кривая GR в LAS-файле; относительная амплитуда ΔJγ между двумя опорными пластами (формула 40, с. 67) — признак для оценки глинистости.",
+    "manual_work": "Выбор двух опорных пластов на диаграмме и пересчёт ΔJγ в глинистость — ручная интерпретация (с. 67).",
+    "hypotheses": []
+  },
+  "metrics": {
+    "person_minutes": 0.0,
+    "machine_minutes": 1.29,
+    "machine_seconds_by_stage": {
+      "script": 0.04,
+      "shotlist": 0.28,
+      "specs": 0.33,
+      "models": 0.85,
+      "audio": 3.23,
+      "layout": 0.35,
+      "render": 28.06,
+      "overlays": 0.01,
+      "compose": 44.03,
+      "qa": 0.27,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {
+      "USD": 0.0
+    },
+    "tts_chars": 0,
+    "tts_audio_s": 0,
+    "money_note": "sum of logged calls",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "replay",
+        "model": "replay-cache",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": 0.0,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:30:01"
+      },
+      {
+        "kind": "llm",
+        "provider": "replay",
+        "model": "replay-cache",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": 0.0,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:30:01"
+      },
+      {
+        "kind": "llm",
+        "provider": "replay",
+        "model": "replay-cache",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": 0.0,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:33:06"
+      }
+    ]
+  },
+  "tools": {
+    "planner": "llm:replay:replay-cache",
+    "tts": {
+      "provider": "rhvoice",
+      "voice": "aleksandr-hq",
+      "role": null,
+      "speed": null,
+      "rate": 124,
+      "numbers": "words"
+    },
+    "renderer": "vidpipe.render2d (Cairo) — deterministic, from scene specs",
+    "text_layer": "vidpipe.overlays (PIL glyphs + Cairo) composited at compose time",
+    "encoder": "ffmpeg libx264 / AAC",
+    "ai_video": {
+      "provider": "none"
+    }
+  },
+  "qa_summary": {
+    "pass": 23,
+    "fail": 0,
+    "warn": 0,
+    "manual": 1,
+    "info": 2
+  },
+  "qa_failures": [],
+  "coverage_gaps": [],
+  "open_questions": [
+    "Lithology of formations (Åsgard, Draupne/Heather, Hugin, Skagerrak) from NPD lithostratigraphic descriptions, not from the chapter",
+    "Formation tops from NPD for well 15/9-19 SR (MD)",
+    "Lithology of formations from NPD descriptions",
+    "Depth window 4282–4362 m chosen to show clay–sand–silt",
+    "Reference beds placed at the GR minimum (Hugin) and maximum (Draupne) of this window as an illustration"
+  ],
+  "datasets": [
+    "Equinor Volve · 15-9-19_SR_COMP.las"
+  ]
+}

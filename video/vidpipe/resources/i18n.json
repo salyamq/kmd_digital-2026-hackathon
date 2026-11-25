@@ -1,0 +1,140 @@
+{
+  "ru": {
+    "provenance": {
+      "data": "реальные данные",
+      "simulation": "симуляция",
+      "schematic": "схема",
+      "photo": "фото"
+    },
+    "myth": "Миф",
+    "fact": "На самом деле",
+    "question": "Вопрос",
+    "predict": "Как думаете?",
+    "transfer": "Проверь себя",
+    "answer_soon": "ответ — через несколько секунд",
+    "depth_m": "глубина, м",
+    "time": "время",
+    "source": "источник",
+    "draft": "ЧЕРНОВИК · источники не сверены",
+    "before": "Было",
+    "after": "Стало",
+    "manual": "вручную",
+    "auto": "автоматически",
+    "data": "данные",
+    "bridge": "Где это в данных",
+    "connectors": {
+      "predict_lead": "Как вы думаете:",
+      "mechanism_lead": "Разберёмся, как это устроено.",
+      "data_lead": "Как это выглядит в данных?",
+      "bridge_lead": "Если смотреть как инженер по данным:",
+      "transfer_lead": "Вопрос на перенос:",
+      "true_or_false": "Верно ли, что"
+    },
+    "units": {
+      "s": "с",
+      "min": "мин",
+      "hour": "ч",
+      "day": "сут",
+      "m": "м",
+      "bar": "бар",
+      "MPa": "МПа",
+      "kPa": "кПа",
+      "atm": "атм"
+    },
+    "number": {
+      "decimal": ",",
+      "thousands": " "
+    },
+    "rule": {
+      "hook_myth": "Многие думают: {wrong}. Так ли это?",
+      "hook_title": "{title}: что здесь неочевидно?",
+      "predict_generic": "Как вы думаете — это правда? Остановите видео и решите.",
+      "reveal_prefix": "На самом деле:",
+      "data_prefix": "В данных это выглядит так:",
+      "transfer_generic": "Где ещё в данных вы встретите тот же эффект — и как его проверить?",
+      "options_myth": [
+        "Да, так и есть",
+        "Нет, всё иначе"
+      ]
+    },
+    "roles": {
+      "hook": "ВОПРОС",
+      "prediction": "ВАШ ПРОГНОЗ",
+      "reveal": "РАЗБОР",
+      "mechanism": "КАК УСТРОЕНО",
+      "data": "В ДАННЫХ",
+      "bridge": "ДЛЯ ДАТА-ИНЖЕНЕРА",
+      "transfer": "ПРОВЕРЬ СЕБЯ",
+      "outro": "ИТОГ"
+    }
+  },
+  "en": {
+    "provenance": {
+      "data": "real data",
+      "simulation": "simulation",
+      "schematic": "schematic",
+      "photo": "photo"
+    },
+    "myth": "Myth",
+    "fact": "In fact",
+    "question": "Question",
+    "predict": "What do you think?",
+    "transfer": "Check yourself",
+    "answer_soon": "answer in a few seconds",
+    "depth_m": "depth, m",
+    "time": "time",
+    "source": "source",
+    "draft": "DRAFT · sources not verified",
+    "before": "Before",
+    "after": "After",
+    "manual": "manual",
+    "auto": "automated",
+    "data": "data",
+    "bridge": "Where it shows up in data",
+    "connectors": {
+      "predict_lead": "What do you think:",
+      "mechanism_lead": "Let's see how it works.",
+      "data_lead": "What does it look like in data?",
+      "bridge_lead": "From a data engineer's point of view:",
+      "transfer_lead": "Transfer question:",
+      "true_or_false": "True or false:"
+    },
+    "units": {
+      "s": "s",
+      "min": "min",
+      "hour": "h",
+      "day": "d",
+      "m": "m",
+      "bar": "bar",
+      "MPa": "MPa",
+      "kPa": "kPa",
+      "atm": "atm"
+    },
+    "number": {
+      "decimal": ".",
+      "thousands": ","
+    },
+    "rule": {
+      "hook_myth": "Many people think: {wrong}. Is that true?",
+      "hook_title": "{title}: what is not obvious here?",
+      "predict_generic": "What do you think — is it true? Pause and decide.",
+      "reveal_prefix": "In fact:",
+      "data_prefix": "In data it looks like this:",
+      "transfer_generic": "Where else in data would you meet the same effect — and how would you check it?",
+      "options_myth": [
+        "Yes, that's right",
+        "No, it works differently"
+      ]
+    },
+    "roles": {
+      "hook": "QUESTION",
+      "prediction": "YOUR GUESS",
+      "reveal": "THE ANSWER",
+      "mechanism": "HOW IT WORKS",
+      "data": "IN THE DATA",
+      "bridge": "FOR DATA ENGINEERS",
+      "transfer": "CHECK YOURSELF",
+      "outro": "SUMMARY"
+    }
+  }
+}

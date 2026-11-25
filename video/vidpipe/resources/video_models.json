@@ -1,0 +1,9 @@
+{
+  "_comment": "AI video providers for class D clips (first+last frame). Prices: USD per generated second, checked 2026-11-25 on fal.ai model pages; re-check before use.",
+  "fal:fal-ai/kling-video/o1/image-to-video": {"first": "start_image_url", "last": "end_image_url", "duration": "duration",
+                                                "durations": [5, 10], "price_per_s": 0.112},
+  "fal:fal-ai/wan/v2.7/image-to-video":       {"first": "image_url", "last": "end_image_url", "duration": "duration",
+                                                "durations": [5], "price_per_s": 0.10},
+  "fal:fal-ai/veo3.1/first-last-frame-to-video": {"first": "first_frame_url", "last": "last_frame_url", "duration": "duration",
+                                                "durations": [4, 6, 8], "price_per_s": null}
+}

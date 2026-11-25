@@ -1,0 +1,23 @@
+{
+  "_comment": "Rule-based planner: how difficulty types / content signals map to templates. Data, not code: edit freely.",
+  "by_difficulty": {
+    "misconception": ["misconception_card"],
+    "mechanism":     ["process_steps"],
+    "process":       ["process_steps"],
+    "measurement":   ["depth_track", "data_chart", "process_steps"],
+    "data":          ["data_chart", "depth_track"],
+    "structure":     ["cross_section", "process_steps"],
+    "spatial":       ["cross_section", "inset_callouts"],
+    "scale":         ["inset_callouts", "cross_section"],
+    "dynamics":      ["field_evolution", "data_chart", "process_steps"],
+    "formula":       ["field_evolution", "equation_card"],
+    "terminology":   ["before_after", "process_steps"],
+    "default":       ["process_steps"]
+  },
+  "difficulty_aliases": {
+    "заблуждение": "misconception", "механизм": "mechanism", "процесс": "process", "измерение": "measurement",
+    "данные": "data", "структура": "structure", "пространственное": "spatial", "масштаб": "scale",
+    "динамика": "dynamics", "формула": "formula", "терминология": "terminology", "термин": "terminology",
+    "counterintuitive": "misconception", "контринтуитивное": "misconception", "math": "formula", "математика": "formula"
+  }
+}

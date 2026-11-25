@@ -1,0 +1,49 @@
+{
+  "shot_id": "S6",
+  "template": "data_chart",
+  "class": "A",
+  "params": {
+    "x": "x",
+    "y": [
+      "y_AVG_DOWNHOLE_PRESSURE"
+    ],
+    "dates": true,
+    "y_label": "забойное давление, бар",
+    "draw": {
+      "start": "L14+1.0",
+      "end": "L15.end-1.0"
+    },
+    "highlight_where": {
+      "array": "c_ON_STREAM_HRS",
+      "op": "==",
+      "value": 0,
+      "label": "скважина *остановлена*"
+    },
+    "caption": "Volve · скв. 15/9-F-15 D · суточные данные (Equinor Open Data)"
+  },
+  "model": {
+    "type": "csv",
+    "file": "volve_daily_production.csv",
+    "x": "DATEPRD",
+    "y": [
+      "AVG_DOWNHOLE_PRESSURE"
+    ],
+    "also": [
+      "ON_STREAM_HRS"
+    ],
+    "filter": {
+      "NPD_WELL_BORE_NAME": "15/9-F-15 D"
+    },
+    "x_from": "2014-11-12",
+    "x_to": "2014-12-25",
+    "dataset": "Equinor Volve"
+  },
+  "invariants": [
+    "shut-in band derived from the data (ON_STREAM_HRS == 0), not drawn by hand"
+  ],
+  "assumptions": [
+    "Daily averages: the build-up is sampled once per day, so the first hours are not resolved"
+  ],
+  "provenance": "data",
+  "needs_new_template": null
+}

@@ -1,0 +1,53 @@
+{
+  "node": "basniev_elastic_01",
+  "node_missing_fields": [],
+  "templates_used": {
+    "overlay_card": 3,
+    "inset_callouts": 1,
+    "field_evolution": 1,
+    "data_chart": 2,
+    "question_card": 1
+  },
+  "library": [
+    "title_card",
+    "misconception_card",
+    "question_card",
+    "before_after",
+    "equation_card",
+    "summary_list",
+    "text_panel",
+    "data_chart",
+    "depth_track",
+    "field_evolution",
+    "cross_section",
+    "pore_scale",
+    "inset_callouts",
+    "process_steps",
+    "photo",
+    "ai_clip",
+    "overlay_card"
+  ],
+  "gaps": [],
+  "inputs": {
+    "pages": false,
+    "pages_files": 0,
+    "domain_pack": {
+      "dir": "examples/domain_pack_demo",
+      "found": {
+        "stress": [
+          "examples/domain_pack_demo/stress.tsv"
+        ],
+        "glossary": [
+          "examples/domain_pack_demo/glossary.json"
+        ]
+      },
+      "stress_entries": 46,
+      "glossary_entries": 9,
+      "physics_rules": 4,
+      "physics_manual": 0,
+      "photos": 0
+    },
+    "datasets": 3,
+    "photos": 0
+  }
+}

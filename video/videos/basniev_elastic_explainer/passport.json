@@ -1,0 +1,1348 @@
+{
+  "video_id": "basniev_elastic_explainer",
+  "rebuild_command": "python -m vidpipe rebuild videos/basniev_elastic_explainer",
+  "rebuild_from_scratch_command": "python -m vidpipe make --node examples/ru_elastic_basniev/node.json --domain examples/domain_pack_demo --format explainer --style F --planner replay --llm-cache examples/ru_elastic_basniev/llm_replay --tts rhvoice --id basniev_elastic_explainer",
+  "output": "videos/basniev_elastic_explainer/08_final/basniev_elastic_explainer.mp4",
+  "format": {
+    "name": "explainer",
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "duration_s": 137.867,
+    "style": "F"
+  },
+  "node_card": {
+    "node_id": "basniev_elastic_01",
+    "title": "Упругий режим: давление расходится *не мгновенно*",
+    "difficulty_types": [
+      "misconception",
+      "dynamics",
+      "formula"
+    ],
+    "misconception_fixed": {
+      "wrong": "Когда скважина начинает работать, давление сразу падает во всём пласте",
+      "right": "Возмущение давления уходит от скважины *постепенно* — с темпом, который задаёт пьезопроводность пласта",
+      "claim_id": "c2",
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "ПОДЗЕМНАЯ ГИДРОМЕХАНИКА · Басниев и др.",
+      "book": "К.С. Басниев, Н.М. Дмитриев, Р.Д. Каневская, В.М. Максимов. Подземная гидромеханика",
+      "chapter": "Неустановившаяся фильтрация упругой жидкости в упругом пласте",
+      "pages": null
+    },
+    "node_file_sha1": "49e60947f0dd4cbd"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Скважину запустили. Кажется, давление сразу падает во всём пласте — будто это бак с водой.",
+      "t0": 0.25,
+      "t1": 6.942,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Как думаете: через час после пуска почувствует ли это пласт в километре от скважины? Остановите видео и решите.",
+      "t0": 7.162,
+      "t1": 14.457,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "На самом деле возмущение давления уходит от скважины *постепенно* — с темпом, который задаёт пьезопроводность пласта.",
+      "t0": 14.677,
+      "t1": 22.801,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c2",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Почему так? При упругом режиме сжимаемы и жидкость, и сам пласт.",
+      "t0": 23.417,
+      "t1": 27.91,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c1",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "Отбор жидкости покрывается тем, что она *расширяется*, а поровый объём пласта уменьшается.",
+      "t0": 28.13,
+      "t1": 34.509,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c1",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L6",
+      "role": "mechanism",
+      "text": "Поэтому давление подчиняется уравнению пьезопроводности. Его коэффициент *χ* — это проницаемость k, делённая на вязкость μ и упругоёмкость β*.",
+      "t0": 35.117,
+      "t1": 46.525,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c2",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L7",
+      "role": "mechanism",
+      "text": "А упругоёмкость складывает сжимаемость жидкости, умноженную на пористость, и сжимаемость самого пласта.",
+      "t0": 46.745,
+      "t1": 53.872,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c3",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L8",
+      "role": "mechanism",
+      "text": "Для скважины с постоянным дебитом в бесконечном пласте есть решение — *основная формула* теории упругого режима.",
+      "t0": 54.092,
+      "t1": 61.604,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c4",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L9",
+      "role": "mechanism",
+      "text": "Посчитаем её на сетке и посмотрим на пласт сверху. Цвет показывает, на сколько упало давление.",
+      "t0": 62.217,
+      "t1": 69.052,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L10",
+      "role": "mechanism",
+      "text": "Возмущение расходится от скважины, и граница заметного падения уходит всё дальше — но *не мгновенно*.",
+      "t0": 69.272,
+      "t1": 76.306,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c2",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L11",
+      "role": "mechanism",
+      "text": "Справа — профиль давления по радиусу из той же расчётной сетки, поэтому фронт на карте и на графике совпадает.",
+      "t0": 76.526,
+      "t1": 84.105,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L12",
+      "role": "mechanism",
+      "text": "Когда r²/(4χt) мало, понижение давления растёт пропорционально *логарифму* времени.",
+      "t0": 84.717,
+      "t1": 92.561,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c5",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L13",
+      "role": "mechanism",
+      "text": "В логарифмическом масштабе времени это почти *прямая* линия.",
+      "t0": 92.781,
+      "t1": 96.705,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c5",
+          "page": null,
+          "quote": null
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L14",
+      "role": "data",
+      "text": "Как это выглядит в реальных данных? Вот забойное давление добывающей скважины месторождения Volve.",
+      "t0": 97.317,
+      "t1": 103.636,
+      "sources": [
+        {
+          "type": "dataset",
+          "dataset": "Equinor Volve",
+          "file": "volve_daily_production.csv",
+          "curve": "AVG_DOWNHOLE_PRESSURE"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L15",
+      "role": "data",
+      "text": "Скважину остановили — и давление восстанавливается не скачком, а *постепенно*, день за днём. Это и есть кривая восстановления давления.",
+      "t0": 103.856,
+      "t1": 113.583,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "c5",
+          "page": null,
+          "quote": null
+        },
+        {
+          "type": "dataset",
+          "dataset": "Equinor Volve",
+          "file": "volve_daily_production.csv",
+          "curve": "ON_STREAM_HRS"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L16",
+      "role": "bridge",
+      "text": "Для дата-инженера картина знакомая: изменение доходит до дальних узлов распределённой системы с задержкой.",
+      "t0": 114.183,
+      "t1": 121.097,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L17",
+      "role": "bridge",
+      "text": "А по форме отклика восстанавливают параметры: так по КВД оценивают свойства пласта. Подбор модели к кривой часто до сих пор делают вручную.",
+      "t0": 121.317,
+      "t1": 130.693,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L18",
+      "role": "transfer",
+      "text": "Проверьте себя: в пласте две скважины, одну остановили. Когда и как это заметят на второй?",
+      "t0": 131.317,
+      "t1": 137.515,
+      "sources": [],
+      "asserts_fact": false
+    }
+  ],
+  "source_table": [
+    {
+      "kind": "reference",
+      "ref": "К.С. Басниев, Н.М. Дмитриев, Р.Д. Каневская, В.М. Максимов. Подземная гидромеханика",
+      "chapter": "Неустановившаяся фильтрация упругой жидкости в упругом пласте",
+      "used_by": [],
+      "id": "src1",
+      "status": "reference"
+    },
+    {
+      "kind": "claim",
+      "ref": "c2",
+      "page": null,
+      "quote": null,
+      "claim_text": "Распределение давления описывается уравнением пьезопроводности; его коэффициент χ равен k, делённому на произведение μ и β*.",
+      "used_by": [
+        "L10",
+        "L3",
+        "L6"
+      ],
+      "id": "src2",
+      "status": "no_quote"
+    },
+    {
+      "kind": "claim",
+      "ref": "c1",
+      "page": null,
+      "quote": null,
+      "claim_text": "При упругом режиме жидкость и пласт сжимаемы: отбор жидкости покрывается расширением жидкости и уменьшением порового объёма.",
+      "used_by": [
+        "L4",
+        "L5"
+      ],
+      "id": "src3",
+      "status": "no_quote"
+    },
+    {
+      "kind": "claim",
+      "ref": "c3",
+      "page": null,
+      "quote": null,
+      "claim_text": "β* — коэффициент упругоёмкости пласта: β* = m·βж + βс, где m — пористость, βж и βс — коэффициенты сжимаемости жидкости и пласта.",
+      "used_by": [
+        "L7"
+      ],
+      "id": "src4",
+      "status": "no_quote"
+    },
+    {
+      "kind": "claim",
+      "ref": "c4",
+      "page": null,
+      "quote": null,
+      "claim_text": "Для скважины с постоянным дебитом в бесконечном пласте понижение давления Δp = Qμ/(4πkh)·[−Ei(−r²/(4χt))] — основная формула теории упругого режима.",
+      "used_by": [
+        "L8"
+      ],
+      "id": "src5",
+      "status": "no_quote"
+    },
+    {
+      "kind": "claim",
+      "ref": "c5",
+      "page": null,
+      "quote": null,
+      "claim_text": "Когда r²/(4χt) мало, понижение давления растёт пропорционально логарифму времени — на этом основана обработка кривых восстановления давления.",
+      "used_by": [
+        "L12",
+        "L13",
+        "L15"
+      ],
+      "id": "src6",
+      "status": "no_quote"
+    },
+    {
+      "kind": "dataset",
+      "ref": "Equinor Volve",
+      "file": "volve_daily_production.csv",
+      "curve": "AVG_DOWNHOLE_PRESSURE",
+      "used_by": [
+        "L14",
+        "S6",
+        "S7"
+      ],
+      "id": "src7",
+      "selection": "NPD_WELL_BORE_NAME=15/9-F-15 D",
+      "window": [
+        "2014-11-12",
+        "2014-12-25"
+      ],
+      "status": "dataset"
+    },
+    {
+      "kind": "dataset",
+      "ref": "Equinor Volve",
+      "file": "volve_daily_production.csv",
+      "curve": "ON_STREAM_HRS",
+      "used_by": [
+        "L15"
+      ],
+      "id": "src8",
+      "status": "dataset"
+    },
+    {
+      "kind": "formula",
+      "ref": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t))",
+      "claim_id": "c4",
+      "page": null,
+      "quote": null,
+      "claim_text": "Для скважины с постоянным дебитом в бесконечном пласте понижение давления Δp = Qμ/(4πkh)·[−Ei(−r²/(4χt))] — основная формула теории упругого режима.",
+      "used_by": [
+        "S1",
+        "S4"
+      ],
+      "assumption": false,
+      "id": "src9",
+      "status": "no_quote"
+    },
+    {
+      "kind": "assumption",
+      "param": "Q",
+      "value": 100,
+      "unit": "m3/сут",
+      "page": null,
+      "quote": null,
+      "note": "illustrative rate; replace with the chapter example",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "id": "src10",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "mu",
+      "value": 1,
+      "unit": "mPa*s",
+      "page": null,
+      "quote": null,
+      "note": "water-like viscosity",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "id": "src11",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "k",
+      "value": 0.1,
+      "unit": "D",
+      "page": null,
+      "quote": null,
+      "note": "100 mD, typical sandstone",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "id": "src12",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "h",
+      "value": 10,
+      "unit": "m",
+      "page": null,
+      "quote": null,
+      "note": "reservoir thickness",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "id": "src13",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "beta",
+      "value": 3e-10,
+      "unit": "1/Pa",
+      "page": null,
+      "quote": null,
+      "note": "β*, elastic capacity of the reservoir",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "id": "src14",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "dp_min",
+      "value": 0.1,
+      "unit": "bar",
+      "page": null,
+      "quote": null,
+      "note": "threshold of a 'noticeable' pressure drop for the front line",
+      "used_by": [
+        "S1",
+        "S3",
+        "S4"
+      ],
+      "id": "src15",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Illustrative parameters (see model params); the chapter gives the formula, not these values",
+      "used_by": [
+        "S1"
+      ],
+      "id": "src16",
+      "status": "assumption"
+    },
+    {
+      "kind": "formula",
+      "ref": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t1))",
+      "claim_id": "c4",
+      "page": null,
+      "quote": null,
+      "claim_text": "Для скважины с постоянным дебитом в бесконечном пласте понижение давления Δp = Qμ/(4πkh)·[−Ei(−r²/(4χt))] — основная формула теории упругого режима.",
+      "used_by": [
+        "S3"
+      ],
+      "assumption": false,
+      "id": "src17",
+      "status": "no_quote"
+    },
+    {
+      "kind": "assumption",
+      "param": "t1",
+      "value": 1,
+      "unit": "hour",
+      "page": null,
+      "quote": null,
+      "note": "profile time 1",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src18",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "t2",
+      "value": 1,
+      "unit": "day",
+      "page": null,
+      "quote": null,
+      "note": "profile time 2",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src19",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "param": "t3",
+      "value": 10,
+      "unit": "day",
+      "page": null,
+      "quote": null,
+      "note": "profile time 3",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src20",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Illustrative parameters as in S4; profile times 1 h, 1 day, 10 days chosen for illustration",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src21",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "All parameter values are illustrative (not from the chapter): Q=100 m3/day, μ=1 mPa·s, k=0.1 D, h=10 m, β*=3e-10 1/Pa",
+      "used_by": [
+        "S4"
+      ],
+      "id": "src22",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Front drawn where Δp = 0.1 bar (display threshold)",
+      "used_by": [
+        "S4"
+      ],
+      "id": "src23",
+      "status": "assumption"
+    },
+    {
+      "kind": "formula",
+      "ref": "Q*mu/(4*pi*k*h) * E1(rw**2/(4*chi*t))",
+      "claim_id": "c4",
+      "page": null,
+      "quote": null,
+      "claim_text": "Для скважины с постоянным дебитом в бесконечном пласте понижение давления Δp = Qμ/(4πkh)·[−Ei(−r²/(4χt))] — основная формула теории упругого режима.",
+      "used_by": [
+        "S5"
+      ],
+      "assumption": false,
+      "id": "src24",
+      "status": "no_quote"
+    },
+    {
+      "kind": "assumption",
+      "param": "rw",
+      "value": 0.1,
+      "unit": "m",
+      "page": null,
+      "quote": null,
+      "note": "well radius",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src25",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "illustrative parameters, see S6",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src26",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Daily averages: the build-up is sampled once per day, so the first hours are not resolved",
+      "used_by": [
+        "S6"
+      ],
+      "id": "src27",
+      "status": "assumption"
+    }
+  ],
+  "scene_specs": [
+    {
+      "shot_id": "S1",
+      "file": "03_scene_specs/S1.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": {
+        "type": "formula",
+        "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t))",
+        "source": {
+          "claim_id": "c4",
+          "page": null,
+          "quote": null
+        },
+        "params": {
+          "Q": {
+            "value": 100,
+            "unit": "m3/сут",
+            "source": {
+              "assumption": true,
+              "note": "illustrative rate; replace with the chapter example"
+            }
+          },
+          "mu": {
+            "value": 1,
+            "unit": "mPa*s",
+            "source": {
+              "assumption": true,
+              "note": "water-like viscosity"
+            }
+          },
+          "k": {
+            "value": 0.1,
+            "unit": "D",
+            "source": {
+              "assumption": true,
+              "note": "100 mD, typical sandstone"
+            }
+          },
+          "h": {
+            "value": 10,
+            "unit": "m",
+            "source": {
+              "assumption": true,
+              "note": "reservoir thickness"
+            }
+          },
+          "beta": {
+            "value": 3e-10,
+            "unit": "1/Pa",
+            "source": {
+              "assumption": true,
+              "note": "β*, elastic capacity of the reservoir"
+            }
+          },
+          "dp_min": {
+            "value": 0.1,
+            "unit": "bar",
+            "source": {
+              "assumption": true,
+              "note": "threshold of a 'noticeable' pressure drop for the front line"
+            }
+          }
+        },
+        "derived": {
+          "chi": "k/(mu*beta)"
+        },
+        "grid": {
+          "r": {
+            "from": 0.1,
+            "to": 2000,
+            "n": 220,
+            "unit": "m",
+            "scale": "log"
+          },
+          "t": {
+            "from": 60,
+            "to": 864000,
+            "n": 90,
+            "unit": "s",
+            "scale": "log"
+          }
+        },
+        "output": {
+          "name": "dp",
+          "unit": "Pa"
+        }
+      },
+      "invariants": [
+        "map and profile read the same computed array",
+        "pressure drop is largest at the well and decays with distance"
+      ],
+      "assumptions": [
+        "Illustrative parameters (see model params); the chapter gives the formula, not these values"
+      ]
+    },
+    {
+      "shot_id": "S2",
+      "file": "03_scene_specs/S2.json",
+      "template": "inset_callouts",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "grains touch (grain-supported framework)",
+        "fluid only in pores, no free 'lake'"
+      ],
+      "assumptions": []
+    },
+    {
+      "shot_id": "S3",
+      "file": "03_scene_specs/S3.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": {
+        "type": "formula",
+        "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t1))",
+        "exprs": {
+          "dp_1d": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t2))",
+          "dp_10d": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t3))"
+        },
+        "source": {
+          "claim_id": "c4",
+          "page": null,
+          "quote": null
+        },
+        "params": {
+          "Q": {
+            "value": 100,
+            "unit": "m3/сут",
+            "source": {
+              "assumption": true,
+              "note": "illustrative rate; replace with the chapter example"
+            }
+          },
+          "mu": {
+            "value": 1,
+            "unit": "mPa*s",
+            "source": {
+              "assumption": true,
+              "note": "water-like viscosity"
+            }
+          },
+          "k": {
+            "value": 0.1,
+            "unit": "D",
+            "source": {
+              "assumption": true,
+              "note": "100 mD, typical sandstone"
+            }
+          },
+          "h": {
+            "value": 10,
+            "unit": "m",
+            "source": {
+              "assumption": true,
+              "note": "reservoir thickness"
+            }
+          },
+          "beta": {
+            "value": 3e-10,
+            "unit": "1/Pa",
+            "source": {
+              "assumption": true,
+              "note": "β*, elastic capacity of the reservoir"
+            }
+          },
+          "dp_min": {
+            "value": 0.1,
+            "unit": "bar",
+            "source": {
+              "assumption": true,
+              "note": "threshold of a 'noticeable' pressure drop for the front line"
+            }
+          },
+          "t1": {
+            "value": 1,
+            "unit": "hour",
+            "source": {
+              "assumption": true,
+              "note": "profile time 1"
+            }
+          },
+          "t2": {
+            "value": 1,
+            "unit": "day",
+            "source": {
+              "assumption": true,
+              "note": "profile time 2"
+            }
+          },
+          "t3": {
+            "value": 10,
+            "unit": "day",
+            "source": {
+              "assumption": true,
+              "note": "profile time 3"
+            }
+          }
+        },
+        "derived": {
+          "chi": "k/(mu*beta)"
+        },
+        "grid": {
+          "r": {
+            "from": 0.5,
+            "to": 2000,
+            "n": 200,
+            "unit": "m",
+            "scale": "log"
+          }
+        },
+        "output": {
+          "name": "dp_1h",
+          "unit": "Pa"
+        }
+      },
+      "invariants": [
+        "the three profiles come from one formula (c4) with the same parameters as S1/S4",
+        "later profiles reach farther: the disturbance spreads, it does not appear everywhere at once"
+      ],
+      "assumptions": [
+        "Illustrative parameters as in S4; profile times 1 h, 1 day, 10 days chosen for illustration"
+      ]
+    },
+    {
+      "shot_id": "S4",
+      "file": "03_scene_specs/S4.json",
+      "template": "field_evolution",
+      "class": "B",
+      "model": {
+        "type": "formula",
+        "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t))",
+        "source": {
+          "claim_id": "c4",
+          "page": null,
+          "quote": null
+        },
+        "params": {
+          "Q": {
+            "value": 100,
+            "unit": "m3/сут",
+            "source": {
+              "assumption": true,
+              "note": "illustrative rate; replace with the chapter example"
+            }
+          },
+          "mu": {
+            "value": 1,
+            "unit": "mPa*s",
+            "source": {
+              "assumption": true,
+              "note": "water-like viscosity"
+            }
+          },
+          "k": {
+            "value": 0.1,
+            "unit": "D",
+            "source": {
+              "assumption": true,
+              "note": "100 mD, typical sandstone"
+            }
+          },
+          "h": {
+            "value": 10,
+            "unit": "m",
+            "source": {
+              "assumption": true,
+              "note": "reservoir thickness"
+            }
+          },
+          "beta": {
+            "value": 3e-10,
+            "unit": "1/Pa",
+            "source": {
+              "assumption": true,
+              "note": "β*, elastic capacity of the reservoir"
+            }
+          },
+          "dp_min": {
+            "value": 0.1,
+            "unit": "bar",
+            "source": {
+              "assumption": true,
+              "note": "threshold of a 'noticeable' pressure drop for the front line"
+            }
+          }
+        },
+        "derived": {
+          "chi": "k/(mu*beta)"
+        },
+        "grid": {
+          "r": {
+            "from": 0.1,
+            "to": 2000,
+            "n": 220,
+            "unit": "m",
+            "scale": "log"
+          },
+          "t": {
+            "from": 60,
+            "to": 864000,
+            "n": 90,
+            "unit": "s",
+            "scale": "log"
+          }
+        },
+        "output": {
+          "name": "dp",
+          "unit": "Pa"
+        }
+      },
+      "invariants": [
+        "map and profile read the same array",
+        "same formula and parameters as S1/S3"
+      ],
+      "assumptions": [
+        "All parameter values are illustrative (not from the chapter): Q=100 m3/day, μ=1 mPa·s, k=0.1 D, h=10 m, β*=3e-10 1/Pa",
+        "Front drawn where Δp = 0.1 bar (display threshold)"
+      ]
+    },
+    {
+      "shot_id": "S5",
+      "file": "03_scene_specs/S5.json",
+      "template": "data_chart",
+      "class": "B",
+      "model": {
+        "type": "formula",
+        "expr": "Q*mu/(4*pi*k*h) * E1(rw**2/(4*chi*t))",
+        "source": {
+          "claim_id": "c4",
+          "page": null,
+          "quote": null
+        },
+        "params": {
+          "Q": {
+            "value": 100,
+            "unit": "m3/сут",
+            "source": {
+              "assumption": true,
+              "note": "same as S6"
+            }
+          },
+          "mu": {
+            "value": 1,
+            "unit": "mPa*s",
+            "source": {
+              "assumption": true,
+              "note": "same as S6"
+            }
+          },
+          "k": {
+            "value": 0.1,
+            "unit": "D",
+            "source": {
+              "assumption": true,
+              "note": "same as S6"
+            }
+          },
+          "h": {
+            "value": 10,
+            "unit": "m",
+            "source": {
+              "assumption": true,
+              "note": "same as S6"
+            }
+          },
+          "beta": {
+            "value": 3e-10,
+            "unit": "1/Pa",
+            "source": {
+              "assumption": true,
+              "note": "same as S6"
+            }
+          },
+          "rw": {
+            "value": 0.1,
+            "unit": "m",
+            "source": {
+              "assumption": true,
+              "note": "well radius"
+            }
+          }
+        },
+        "derived": {
+          "chi": "k/(mu*beta)"
+        },
+        "grid": {
+          "t": {
+            "from": 60,
+            "to": 864000,
+            "n": 100,
+            "unit": "s",
+            "scale": "log"
+          }
+        },
+        "output": {
+          "name": "y_dp",
+          "unit": "Pa"
+        }
+      },
+      "invariants": [
+        "same formula and parameters as S4"
+      ],
+      "assumptions": [
+        "illustrative parameters, see S6"
+      ]
+    },
+    {
+      "shot_id": "S6",
+      "file": "03_scene_specs/S6.json",
+      "template": "data_chart",
+      "class": "A",
+      "model": {
+        "type": "csv",
+        "file": "volve_daily_production.csv",
+        "x": "DATEPRD",
+        "y": [
+          "AVG_DOWNHOLE_PRESSURE"
+        ],
+        "also": [
+          "ON_STREAM_HRS"
+        ],
+        "filter": {
+          "NPD_WELL_BORE_NAME": "15/9-F-15 D"
+        },
+        "x_from": "2014-11-12",
+        "x_to": "2014-12-25",
+        "dataset": "Equinor Volve"
+      },
+      "invariants": [
+        "shut-in band derived from the data (ON_STREAM_HRS == 0), not drawn by hand"
+      ],
+      "assumptions": [
+        "Daily averages: the build-up is sampled once per day, so the first hours are not resolved"
+      ]
+    },
+    {
+      "shot_id": "S7",
+      "file": "03_scene_specs/S7.json",
+      "template": "overlay_card",
+      "class": "A",
+      "model": {
+        "type": "csv",
+        "file": "volve_daily_production.csv",
+        "x": "DATEPRD",
+        "y": [
+          "AVG_DOWNHOLE_PRESSURE"
+        ],
+        "also": [
+          "ON_STREAM_HRS"
+        ],
+        "filter": {
+          "NPD_WELL_BORE_NAME": "15/9-F-15 D"
+        },
+        "x_from": "2014-11-12",
+        "x_to": "2014-12-25",
+        "dataset": "Equinor Volve"
+      },
+      "invariants": [
+        "same Volve data as S6"
+      ],
+      "assumptions": []
+    },
+    {
+      "shot_id": "S8",
+      "file": "03_scene_specs/S8.json",
+      "template": "question_card",
+      "class": "T",
+      "model": null,
+      "invariants": [],
+      "assumptions": []
+    }
+  ],
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 23.167,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "симуляция",
+      "state_model": "formula",
+      "ai": null
+    },
+    {
+      "shot": "S2",
+      "t0": 23.167,
+      "t1": 34.867,
+      "class": "B",
+      "template": "inset_callouts",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S3",
+      "t0": 34.867,
+      "t1": 61.967,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "симуляция",
+      "state_model": "formula",
+      "ai": null
+    },
+    {
+      "shot": "S4",
+      "t0": 61.967,
+      "t1": 84.467,
+      "class": "B",
+      "template": "field_evolution",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "симуляция",
+      "state_model": "formula",
+      "ai": null
+    },
+    {
+      "shot": "S5",
+      "t0": 84.467,
+      "t1": 97.067,
+      "class": "B",
+      "template": "data_chart",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "симуляция",
+      "state_model": "formula",
+      "ai": null
+    },
+    {
+      "shot": "S6",
+      "t0": 97.067,
+      "t1": 113.933,
+      "class": "A",
+      "template": "data_chart",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "csv",
+      "ai": null
+    },
+    {
+      "shot": "S7",
+      "t0": 113.933,
+      "t1": 131.067,
+      "class": "A",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "csv",
+      "ai": null
+    },
+    {
+      "shot": "S8",
+      "t0": 131.067,
+      "t1": 137.867,
+      "class": "T",
+      "template": "question_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    }
+  ],
+  "exaggerations": [
+    {
+      "shot": "S1",
+      "what": "Model time 1 min…10 days compressed into seconds of video"
+    },
+    {
+      "shot": "S2",
+      "what": "Expansion/compression are labelled, not animated: at real scale they are invisible"
+    },
+    {
+      "shot": "S2",
+      "what": "2D slice of a 3D grain pack; grains drawn as discs."
+    },
+    {
+      "shot": "S4",
+      "what": "Video time runs on a log scale of reservoir time: 1 min … 10 days"
+    },
+    {
+      "shot": "S4",
+      "what": "Model time is mapped to video time (log scale if the grid is log-spaced): seconds of video ≠ seconds of reservoir time."
+    }
+  ],
+  "prediction_question": {
+    "text": "Через час после пуска почувствует ли это пласт в километре от скважины?",
+    "options": [
+      "Да, сразу",
+      "Нет, позже",
+      "Зависит от пласта"
+    ]
+  },
+  "transfer_question": {
+    "text": "В пласте две скважины, одну остановили. Когда и как это заметят на второй?"
+  },
+  "data_it_bridge": {
+    "where_in_data": "Забойное давление (AVG_DOWNHOLE_PRESSURE) и статус работы скважины (ON_STREAM_HRS) в суточных данных; высокочастотные записи манометров при гидродинамических исследованиях.",
+    "manual_work": "Выделение периодов остановки, подбор модели пласта к КВД (интерпретация ГДИС).",
+    "hypotheses": [
+      "Подбор модели к КВД часто выполняется вручную — проверить по главе/практике."
+    ]
+  },
+  "metrics": {
+    "person_minutes": 0.0,
+    "machine_minutes": 6.19,
+    "machine_seconds_by_stage": {
+      "script": 0.02,
+      "shotlist": 0.3,
+      "specs": 0.24,
+      "models": 0.3,
+      "audio": 6.9,
+      "layout": 1.34,
+      "render": 115.94,
+      "overlays": 0.19,
+      "compose": 244.56,
+      "qa": 1.39,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {
+      "USD": 0.0
+    },
+    "tts_chars": 0,
+    "tts_audio_s": 0,
+    "money_note": "sum of logged calls",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "replay",
+        "model": "replay-cache",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": 0.0,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:41:41"
+      },
+      {
+        "kind": "llm",
+        "provider": "replay",
+        "model": "replay-cache",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": 0.0,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:41:41"
+      }
+    ]
+  },
+  "tools": {
+    "planner": "llm:replay:replay-cache",
+    "tts": {
+      "provider": "rhvoice",
+      "voice": "aleksandr-hq",
+      "role": null,
+      "speed": null,
+      "rate": 116,
+      "numbers": "words"
+    },
+    "renderer": "vidpipe.render2d (Cairo) — deterministic, from scene specs",
+    "text_layer": "vidpipe.overlays (PIL glyphs + Cairo) composited at compose time",
+    "encoder": "ffmpeg libx264 / AAC",
+    "ai_video": {
+      "provider": "none"
+    }
+  },
+  "qa_summary": {
+    "pass": 24,
+    "fail": 1,
+    "warn": 1,
+    "manual": 1,
+    "info": 2
+  },
+  "qa_failures": [
+    "claims_verified: Every claim maps to a page + verbatim quote — {'no_quote': 8}; chapter pages not provided — quotes cannot be checked"
+  ],
+  "coverage_gaps": [],
+  "open_questions": [
+    "Q",
+    "mu",
+    "k",
+    "h",
+    "beta",
+    "dp_min",
+    "Illustrative parameters (see model params); the chapter gives the formula, not these values",
+    "t1",
+    "t2",
+    "t3",
+    "Illustrative parameters as in S4; profile times 1 h, 1 day, 10 days chosen for illustration",
+    "All parameter values are illustrative (not from the chapter): Q=100 m3/day, μ=1 mPa·s, k=0.1 D, h=10 m, β*=3e-10 1/Pa",
+    "Front drawn where Δp = 0.1 bar (display threshold)",
+    "rw",
+    "illustrative parameters, see S6",
+    "Daily averages: the build-up is sampled once per day, so the first hours are not resolved"
+  ],
+  "datasets": [
+    "Equinor Volve · volve_daily_production.csv"
+  ]
+}

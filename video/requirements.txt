@@ -1,0 +1,13 @@
+# Python >= 3.9 (tested on 3.9.25 and 3.13). Pinned versions = the set the selftest passed with on Python 3.9.
+# System packages (not pip): ffmpeg, Cairo (for pycairo), RHVoice (offline TTS) — see README.md.
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.3
+pillow==11.0.0
+pycairo==1.27.0
+lasio==0.31
+pint==0.24.4
+num2words==0.5.14
+soundfile==0.12.1
+pyloudnorm==0.1.1
+openpyxl==3.1.5

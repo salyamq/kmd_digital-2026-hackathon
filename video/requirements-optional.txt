@@ -1,0 +1,3 @@
+# Optional extras
+pypdf==5.1.0        # scripts/extract_pages.py when poppler's pdftotext is not installed
+# torch             # only for --tts silero (large; install per https://pytorch.org)

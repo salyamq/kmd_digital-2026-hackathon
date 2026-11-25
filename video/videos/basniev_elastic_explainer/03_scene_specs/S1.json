@@ -1,0 +1,153 @@
+{
+  "shot_id": "S1",
+  "template": "overlay_card",
+  "class": "B",
+  "params": {
+    "base": {
+      "template": "field_evolution",
+      "params": {
+        "field": {
+          "output": "dp",
+          "x_axis": "r",
+          "t_axis": "t"
+        },
+        "view": "plan_radial",
+        "display_unit": "bar",
+        "x_max": 1000,
+        "x_scale": "log",
+        "time": {
+          "start": "L3+0.2",
+          "end": "100%"
+        },
+        "front": {
+          "threshold": 0.1,
+          "label": "заметное падение (условно)",
+          "at": "L3+1.5"
+        },
+        "ghosts": 0,
+        "gamma": 0.55,
+        "labels": {
+          "x": "r, м",
+          "y": "Δp, бар",
+          "source": "скважина",
+          "colorbar": "Δp, бар"
+        }
+      }
+    },
+    "cards": [
+      {
+        "kind": "myth",
+        "label": "Миф или нет?",
+        "text": "Давление сразу падает *во всём пласте*, как в баке?",
+        "at": 0.2
+      },
+      {
+        "kind": "question",
+        "text": "Через час — почувствует ли пласт *в километре*?",
+        "options": [
+          "Да, сразу",
+          "Нет, позже",
+          "Зависит от пласта"
+        ],
+        "at": "L2"
+      },
+      {
+        "kind": "fact",
+        "text": "Возмущение уходит *постепенно*: темп задаёт пьезопроводность",
+        "at": "L3",
+        "source_ref": "c2"
+      }
+    ]
+  },
+  "model": {
+    "type": "formula",
+    "expr": "Q*mu/(4*pi*k*h) * E1(r**2/(4*chi*t))",
+    "source": {
+      "claim_id": "c4",
+      "page": null,
+      "quote": null
+    },
+    "params": {
+      "Q": {
+        "value": 100,
+        "unit": "m3/сут",
+        "source": {
+          "assumption": true,
+          "note": "illustrative rate; replace with the chapter example"
+        }
+      },
+      "mu": {
+        "value": 1,
+        "unit": "mPa*s",
+        "source": {
+          "assumption": true,
+          "note": "water-like viscosity"
+        }
+      },
+      "k": {
+        "value": 0.1,
+        "unit": "D",
+        "source": {
+          "assumption": true,
+          "note": "100 mD, typical sandstone"
+        }
+      },
+      "h": {
+        "value": 10,
+        "unit": "m",
+        "source": {
+          "assumption": true,
+          "note": "reservoir thickness"
+        }
+      },
+      "beta": {
+        "value": 3e-10,
+        "unit": "1/Pa",
+        "source": {
+          "assumption": true,
+          "note": "β*, elastic capacity of the reservoir"
+        }
+      },
+      "dp_min": {
+        "value": 0.1,
+        "unit": "bar",
+        "source": {
+          "assumption": true,
+          "note": "threshold of a 'noticeable' pressure drop for the front line"
+        }
+      }
+    },
+    "derived": {
+      "chi": "k/(mu*beta)"
+    },
+    "grid": {
+      "r": {
+        "from": 0.1,
+        "to": 2000,
+        "n": 220,
+        "unit": "m",
+        "scale": "log"
+      },
+      "t": {
+        "from": 60,
+        "to": 864000,
+        "n": 90,
+        "unit": "s",
+        "scale": "log"
+      }
+    },
+    "output": {
+      "name": "dp",
+      "unit": "Pa"
+    }
+  },
+  "invariants": [
+    "map and profile read the same computed array",
+    "pressure drop is largest at the well and decays with distance"
+  ],
+  "assumptions": [
+    "Illustrative parameters (see model params); the chapter gives the formula, not these values"
+  ],
+  "provenance": "simulation",
+  "needs_new_template": null
+}

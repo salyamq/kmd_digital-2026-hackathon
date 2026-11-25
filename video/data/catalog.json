@@ -1,0 +1,13 @@
+[
+  {"file": "volve/15-9-19_SR_COMP.las", "dataset": "Equinor Volve", "license": "Equinor Open Data Licence (Volve)",
+   "source": "Volve Data Village; mirror: github.com/andymcdgeo/Petrophysics-Python-Series",
+   "description": "Composite well logs, exploration well 15/9-19 SR"},
+  {"file": "volve/15_9_19_SR_TOPS_NPD.csv", "dataset": "Equinor Volve / NPD", "license": "Equinor Open Data Licence (Volve); NPD open data",
+   "kind": "formation_tops", "well": "15/9-19 SR", "columns": ["formation", "top_md_m"],
+   "description": "NPD formation tops for well 15/9-19 SR (MD, m)"},
+  {"file": "volve/volve_daily_production.csv", "dataset": "Equinor Volve", "license": "Equinor Open Data Licence (Volve)",
+   "source": "Volve production data; mirror: github.com/ser-arthur/volve-field-data-analysis",
+   "kind": "production_daily", "time_column": "DATEPRD", "well_column": "NPD_WELL_BORE_NAME",
+   "units": {"AVG_DOWNHOLE_PRESSURE": "bar", "ON_STREAM_HRS": "h", "BORE_OIL_VOL": "Sm3/d", "BORE_GAS_VOL": "Sm3/d", "BORE_WAT_VOL": "Sm3/d"},
+   "description": "Daily production per wellbore, Volve field 2008-2016"}
+]
