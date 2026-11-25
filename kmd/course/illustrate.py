@@ -77,7 +77,7 @@ def render(spec: dict, out_dir: Path, stem: str) -> dict:
     if not callable(fn):
         raise KeyError(f"unknown illustration template: {tpl}")
     s = {k: spec[k] for k in _SPEC_KEYS if spec.get(k) is not None}
-    s["id"] = stem
+    s["id"] = stem.replace(".", "_")  # visuals derives the file name from id (a dot would be taken as a suffix)
     try:
         res = fn(s, out_dir) or {}
     except Exception as e:
