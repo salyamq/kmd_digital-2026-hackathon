@@ -1,0 +1,317 @@
+{
+  "about": "Глоссарий RU/EN домена demo_hydro (черновик LLM по главе barenblatt).",
+  "items": [
+    {
+      "term": "пьезопроводность",
+      "en": "hydraulic diffusivity",
+      "definition": "Параметр κ, определяющий скорость перераспределения давления в пласте.",
+      "aliases": [
+        "κ"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "уравнение пьезопроводности",
+      "en": "diffusivity equation",
+      "definition": "Уравнение ∂p/∂t = κΔp для давления в упругом пласте; по форме совпадает с уравнением теплопроводности.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "нестационарная фильтрация",
+      "en": "transient flow",
+      "definition": "Течение в пласте, при котором давление и расход меняются во времени.",
+      "aliases": [
+        "неустановившаяся фильтрация"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "упругий режим",
+      "en": "elastic drive",
+      "definition": "Режим, при котором приток обеспечивается упругостью жидкости и породы.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "слабосжимаемая жидкость",
+      "en": "slightly compressible fluid",
+      "definition": "Жидкость, объём которой мало меняется с давлением.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "граничное условие",
+      "en": "boundary condition",
+      "definition": "Заданное значение давления или потока на границе пласта.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "начальное условие",
+      "en": "initial condition",
+      "definition": "Распределение давления в начальный момент.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "контур питания",
+      "en": "supply boundary",
+      "definition": "Граница пласта с поддерживаемым давлением.",
+      "aliases": [
+        "Rк"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "галерея",
+      "en": "gallery (line drain)",
+      "definition": "Модельный линейный сток, к которому идёт плоскопараллельный поток.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "плоскорадиальное течение",
+      "en": "radial flow",
+      "definition": "Осесимметричное течение к скважине.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "дебит",
+      "en": "flow rate",
+      "definition": "Объём жидкости, поступающей в скважину за единицу времени.",
+      "aliases": [
+        "Q"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "забойное давление",
+      "en": "bottomhole pressure",
+      "definition": "Давление на забое скважины.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "кривая восстановления давления",
+      "en": "pressure buildup curve",
+      "definition": "Рост забойного давления после остановки скважины.",
+      "aliases": [
+        "КВД"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "гидропроводность",
+      "en": "transmissibility",
+      "definition": "Параметр kh/μ.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "проницаемость",
+      "en": "permeability",
+      "definition": "Способность породы пропускать флюид.",
+      "aliases": [
+        "k"
+      ],
+      "source": "model"
+    },
+    {
+      "term": "вязкость",
+      "en": "viscosity",
+      "definition": "Сопротивление жидкости течению.",
+      "aliases": [
+        "μ"
+      ],
+      "source": "model"
+    },
+    {
+      "term": "радиус скважины",
+      "en": "wellbore radius",
+      "definition": "Радиус ствола скважины; в формулах — кажущийся.",
+      "aliases": [
+        "ρ",
+        "rс"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "эквивалентный радиус скважины",
+      "en": "effective wellbore radius",
+      "definition": "Радиус идеальной скважины с тем же откликом, что у реальной.",
+      "aliases": [
+        "ρ*"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "несовершенство скважины",
+      "en": "partial penetration",
+      "definition": "Неполное вскрытие пласта или неполная открытость поверхности.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "призабойная зона",
+      "en": "near-wellbore zone",
+      "definition": "Часть пласта вблизи скважины.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "загрязнение призабойной зоны",
+      "en": "formation damage",
+      "definition": "Снижение проницаемости вблизи скважины.",
+      "aliases": [
+        "скин"
+      ],
+      "source": "model"
+    },
+    {
+      "term": "интенсификация притока",
+      "en": "well stimulation",
+      "definition": "Работы по увеличению притока к скважине.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "гидропрослушивание",
+      "en": "interference test",
+      "definition": "Определение параметров по реакции одной скважины на изменение режима другой.",
+      "aliases": [],
+      "source": "model"
+    },
+    {
+      "term": "возмущающая скважина",
+      "en": "active well",
+      "definition": "Скважина, режим которой меняют при исследовании.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "реагирующая скважина",
+      "en": "observation well",
+      "definition": "Скважина, в которой регистрируют отклик давления.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "интегральная показательная функция",
+      "en": "exponential integral",
+      "definition": "Функция Ei, через которую выражается давление при пуске скважины.",
+      "aliases": [
+        "Ei"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "преобразование Лапласа",
+      "en": "Laplace transform",
+      "definition": "Интегральное преобразование по времени.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "промежуточная асимптотика",
+      "en": "intermediate asymptotics",
+      "definition": "Приближение для времён между двумя масштабами.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "автомодельное решение",
+      "en": "self-similar solution",
+      "definition": "Решение, зависящее от комбинации x/√(κt).",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "характерное время",
+      "en": "characteristic time",
+      "definition": "Время выхода на стационарный режим, порядка L²/κ.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "стационарный режим",
+      "en": "steady state",
+      "definition": "Режим, при котором давление не меняется во времени.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "область влияния",
+      "en": "zone of influence",
+      "definition": "Часть пласта, где давление уже изменилось.",
+      "aliases": [
+        "зона возмущения"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "радиус зоны возмущения",
+      "en": "radius of investigation",
+      "definition": "Расстояние, до которого распространилось изменение давления.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "метод интегральных соотношений",
+      "en": "integral method",
+      "definition": "Приближённый метод с интегральными балансами на области возмущения.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "метод последовательной смены стационарных состояний",
+      "en": "successive steady states",
+      "definition": "Приближение серией стационарных профилей с движущейся границей.",
+      "aliases": [
+        "ПССС"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "послеприток",
+      "en": "afterflow",
+      "definition": "Продолжение притока в скважину после остановки на устье.",
+      "aliases": [
+        "wellbore storage"
+      ],
+      "source": "model"
+    },
+    {
+      "term": "суперпозиция",
+      "en": "superposition",
+      "definition": "Сложение решений линейного уравнения.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "интеграл Дюамеля",
+      "en": "Duhamel integral",
+      "definition": "Суперпозиция решений для произвольного граничного режима.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "функции Бесселя",
+      "en": "Bessel functions",
+      "definition": "Специальные функции радиальных решений.",
+      "aliases": [
+        "I₀",
+        "K₀"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "ряды Фурье–Бесселя",
+      "en": "Fourier–Bessel series",
+      "definition": "Точные, но громоздкие решения для ограниченного пласта.",
+      "aliases": [],
+      "source": "chapter"
+    }
+  ]
+}

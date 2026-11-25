@@ -1,0 +1,216 @@
+{
+  "version": "1.0",
+  "about": "Черновик LLM (домен demo_hydro). Словарь ударений и произношений для синтеза речи (домен «геология»). kind=abbr|symbol: точное совпадение токена, читается как say, при первом упоминании в ролике раскрывается (expansion). kind=stem: основа слова, во всех формах ударение ставится знаком U+0301 после ударной гласной. check_by_ear=true — слово попадает в список «проверить на слух» паспорта ролика.",
+  "entries": [
+    {
+      "term": "КВД",
+      "kind": "abbr",
+      "say": "ка вэ дэ",
+      "expansion": "кривая восстановления давления",
+      "check_by_ear": false
+    },
+    {
+      "term": "ПССС",
+      "kind": "abbr",
+      "say": "пэ эс эс эс",
+      "expansion": "метод последовательной смены стационарных состояний",
+      "check_by_ear": false
+    },
+    {
+      "term": "κ",
+      "kind": "symbol",
+      "say": "каппа",
+      "expansion": "коэффициент пьезопроводности",
+      "check_by_ear": false
+    },
+    {
+      "term": "μ",
+      "kind": "symbol",
+      "say": "мю",
+      "expansion": "вязкость",
+      "check_by_ear": false
+    },
+    {
+      "term": "Ei",
+      "kind": "symbol",
+      "say": "и и",
+      "expansion": "интегральная показательная функция",
+      "check_by_ear": false
+    },
+    {
+      "term": "erfc",
+      "kind": "symbol",
+      "say": "э эр эф цэ",
+      "expansion": "дополнительная функция ошибок",
+      "check_by_ear": false
+    },
+    {
+      "term": "ψ",
+      "kind": "symbol",
+      "say": "пси",
+      "expansion": "функция отклика пласта",
+      "check_by_ear": false
+    },
+    {
+      "term": "σ",
+      "kind": "symbol",
+      "say": "сигма",
+      "expansion": "параметр преобразования Лапласа",
+      "check_by_ear": false
+    },
+    {
+      "term": "ρ",
+      "kind": "symbol",
+      "say": "ро",
+      "expansion": "радиус скважины",
+      "check_by_ear": false
+    },
+    {
+      "term": "ln",
+      "kind": "symbol",
+      "say": "логарифм",
+      "expansion": "натуральный логарифм",
+      "check_by_ear": false
+    },
+    {
+      "term": "пьезопроводность",
+      "kind": "stem",
+      "say": "пьезопрово́дность",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "гидропроводность",
+      "kind": "stem",
+      "say": "гидропрово́дность",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "дебит",
+      "kind": "stem",
+      "say": "де́бит",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "забой",
+      "kind": "stem",
+      "say": "забо́й",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "скважина",
+      "kind": "stem",
+      "say": "скважи́на",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "пласт",
+      "kind": "stem",
+      "say": "пла́ст",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "асимптотика",
+      "kind": "stem",
+      "say": "асимпто́тика",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "автомодельный",
+      "kind": "stem",
+      "say": "автомоде́льный",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "галерея",
+      "kind": "stem",
+      "say": "галере́я",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "депрессия",
+      "kind": "stem",
+      "say": "депре́ссия",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "репрессия",
+      "kind": "stem",
+      "say": "репре́ссия",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "призабойный",
+      "kind": "stem",
+      "say": "призабо́йный",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "интенсификация",
+      "kind": "stem",
+      "say": "интенсифика́ция",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "послеприток",
+      "kind": "stem",
+      "say": "послепри́ток",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "гидропрослушивание",
+      "kind": "stem",
+      "say": "гидропрослу́шивание",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "Бессель",
+      "kind": "stem",
+      "say": "Бе́ссель",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "Дюамель",
+      "kind": "stem",
+      "say": "Дюаме́ль",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "Лаплас",
+      "kind": "stem",
+      "say": "Лапла́с",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "Фурье",
+      "kind": "stem",
+      "say": "Фурье́",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "фильтрация",
+      "kind": "stem",
+      "say": "фильтра́ция",
+      "expansion": null,
+      "check_by_ear": true
+    }
+  ]
+}
