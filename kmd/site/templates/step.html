@@ -15,7 +15,8 @@
     </details>
   </aside>
   <main id="main" class="content" tabindex="-1">
-    <p class="crumbs"><a href="index.html">Путь</a> › {{ s.part.title }} › Шаг {{ s.index }} из {{ course.steps|length }}</p>
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">{{ course.title }}</a><span aria-hidden="true"> / </span>Шаг {{ s.index }} из {{ course.steps|length }}</p>
     <h1>{{ s.title_beginner }}</h1>
     <p class="booktitle">В книге: «{{ s.title_book }}» <span class="pg">{{ s.pages|pages }}</span></p>
     <p class="meta">
@@ -24,6 +25,7 @@
       {% if s.difficulty.primary %}<span class="chip" title="Тип трудности узла">трудность: {{ DIFF_RU.get(s.difficulty.primary, s.difficulty.primary) }}{% if s.difficulty.secondary %} + {{ DIFF_RU.get(s.difficulty.secondary, s.difficulty.secondary) }}{% endif %}</span>{% endif %}
     </p>
     {% if s.relies_on %}<p class="relies">Опирается на: {% for r in s.relies_on %}<a href="{{ r.url }}">шаг {{ r.index }} «{{ r.title }}»</a> <span class="muted">({{ r.type }})</span>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+    </header>
 
     <section id="essence" class="essence" aria-labelledby="h-essence">
       <h2 id="h-essence">Суть</h2>

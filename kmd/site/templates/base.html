@@ -31,7 +31,7 @@
 </header>
 {% block body %}{% endblock %}
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: {{ course.book.author }}, «{{ course.book.title }}»{% if course.book.year %}, {{ course.book.year }}{% endif %}. Страницы указаны по PDF книги.</p>
+  <p>{{ course.book.author }} · «{{ course.book.title }}»{% if course.book.year %} · {{ course.book.year }}{% endif %}. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
 <div id="ask" class="rag">
@@ -44,7 +44,11 @@
       <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
     </header>
     <div class="rag-content">
-      <p class="rag-intro">{{ "Спросите о теме урока. Ссылки в ответе ведут к отрывкам на этой странице." if page_id == "step" else "Спросите о теме главы. Ссылки в ответе ведут к исходному тексту." }}</p>
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>{{ "Что пояснить в уроке?" if page_id == "step" else "Что пояснить в главе?" }}</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
       <div class="rag-messages" aria-label="История чата" role="log"></div>
       <p class="rag-status muted" role="status"></p>
     </div>
