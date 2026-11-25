@@ -21,7 +21,7 @@ def _node_block(user: str) -> str:
     if i < 0:
         return ""
     j = user.find("\n# ", i + 5)
-    return user[i:j if j > 0 else None]
+    return user[i:j if j > 0 else None].strip()
 
 
 def reuse(chapter: str) -> int:
