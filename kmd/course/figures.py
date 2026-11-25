@@ -153,17 +153,19 @@ def tpl_ranges(p: dict, label: str) -> str:
         t, h = _text_block(W / 2, y + 8, title, 60, "ill-title")
         body.append(t)
         y += h + 16
-    bar_y = y + 10
+    bar_y = y + 26
     rows = p.get("ranges", [])
     for i, r in enumerate(rows):
         a = _scale(float(r["from"]), lo, hi, x0, x1, log)
         b = _scale(float(r["to"]), lo, hi, x0, x1, log)
         tone = r.get("tone", "neutral")
-        ry = bar_y + i * 46
-        body.append(f'<rect class="ill-box ill-{tone}" x="{a:.1f}" y="{ry}" width="{max(b-a,4):.1f}" height="26" rx="5"/>')
-        tx = min(max((a + b) / 2, x0 + 60), x1 - 60)
-        body.append(f'<text class="ill-text" x="{tx:.1f}" y="{ry+18}" text-anchor="middle">{esc(r.get("label",""))}</text>')
-    axis_y = bar_y + max(len(rows), 1) * 46 + 6
+        ry = bar_y + i * 48
+        body.append(f'<rect class="ill-box ill-{tone}" x="{a:.1f}" y="{ry}" width="{max(b-a,4):.1f}" height="16" rx="4"/>')
+        lab = str(r.get("label", ""))
+        half = len(lab) * 4.4
+        tx = min(max((a + b) / 2, x0 + half), x1 - half)
+        body.append(f'<text class="ill-text" x="{tx:.1f}" y="{ry-6}" text-anchor="middle">{esc(lab)}</text>')
+    axis_y = bar_y + max(len(rows), 1) * 48 - 14
     body.append(f'<line class="ill-line" x1="{x0}" y1="{axis_y}" x2="{x1}" y2="{axis_y}"/>')
     ticks = ax.get("ticks") or sorted({float(r["from"]) for r in rows} | {float(r["to"]) for r in rows} | {lo, hi})
     for tv in ticks:

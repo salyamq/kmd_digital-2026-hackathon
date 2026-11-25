@@ -27,7 +27,7 @@ def strip_markup(s: str) -> str:
     return re.sub(r"\*\*(.+?)\*\*", r"\1", str(s or ""))
 
 
-_ABBR = r"(?:стр|рис|табл|см|т\.е|т\.к|т\.д|т\.п|др|пр|им|гл|ед|усл|мин|макс|ок|прим|напр|г|гг|вв|в|м|e\.g|i\.e|etc|fig|eq|vs)"
+_ABBR = r"(?:стр|рис|табл|т\.\s?е|т\.\s?к|им|гл|ед|усл|прим|напр|e\.g|i\.e|fig|eq|vs|Dr|Mr|St)"
 
 
 def sentences(text: str) -> list[str]:
@@ -35,7 +35,7 @@ def sentences(text: str) -> list[str]:
     t = re.sub(r"\$[^$]*\$", "F", t)  # inline math counts as one word
     # protect abbreviations and decimals
     t = re.sub(rf"\b({_ABBR})\.", lambda m: m.group(1).replace(".", "§") + "§", t, flags=re.I)
-    parts = re.split(r"(?<=[.!?…])\s+(?=[A-ZА-ЯЁ0-9«\"(])", t)
+    parts = re.split(r"(?<=[.!?…])\s+(?=[A-ZА-ЯЁ«\"(])", t)
     return [p.replace("§", ".").strip() for p in parts if p.strip()]
 
 

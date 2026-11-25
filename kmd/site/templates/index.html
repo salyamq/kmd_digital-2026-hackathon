@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block body %}
+<main id="main" class="content wide" tabindex="-1">
+  <section class="hero">
+    <p class="kicker">Курс по главе книги</p>
+    <h1>{{ course.title }}</h1>
+    <p class="booktitle">{{ course.book.author }}, «{{ course.book.title }}»{% if course.book.year %} ({{ course.book.year }}){% endif %}</p>
+    <p class="stats"><span>{{ course.steps|length }} шагов</span><span>≈ {{ course.minutes }} мин</span><span>{{ course.n_tasks }} заданий</span><span>{{ course.n_cards }} карточек</span></p>
+    <div class="resume">
+      <a class="btn primary start" href="{{ course.steps[0].url }}">Начать с шага 1</a>
+      <span class="resume-note muted" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="howto" aria-labelledby="h-howto">
+    <h2 id="h-howto">Как устроен курс</h2>
+    <ul>
+      <li>Шаги идут в порядке, в котором новичку легче понять главу. У каждого шага — суть, полное объяснение со ссылками на страницы книги и задания с проверкой.</li>
+      <li>Обычный текст — пересказ книги моделью, у каждого абзаца стоит «стр. N». Рядом — дословная цитата автора. Пометка <span class="chip chip-model">модель</span> значит: этого в книге нет.</li>
+      <li>Прогресс сохраняется в этом браузере. Можно закрыть курс и вернуться к месту, где остановились.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-path">
+    <h2 id="h-path">Путь по главе</h2>
+    {% for p in parts %}
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть {{ loop.index }}</span> {{ p.title }}</h3>
+      <ol class="path" start="{{ p.steps[0].index }}">
+        {% for s in p.steps %}
+        <li class="path-step" data-node="{{ s.node_id }}">
+          <a href="step-{{ '%02d'|format(s.index) }}.html">
+            <span class="ps-num" aria-hidden="true">{{ s.index }}</span>
+            <span class="ps-body"><span class="ps-title">{{ s.title_beginner }}</span>
+            <span class="ps-meta">{{ s.format_label[1] }} {{ s.format_label[0] }} · ≈ {{ s.minutes }} мин · {{ s.pages|pages }}</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="tiles" aria-label="Другие разделы">
+    <a class="tile" href="tasks.html"><b>Задания</b><span>Все {{ course.n_tasks }} заданий главы с проверкой</span></a>
+    <a class="tile" href="cards.html"><b>Карточки</b><span>Повторение: «знаю / повторить»</span></a>
+    <a class="tile" href="summary.html"><b>Конспект</b><span>Суть шагов и выводы для данных; печать в PDF</span></a>
+    <a class="tile" href="map.html"><b>Карта связей</b><span>Какой шаг на какой опирается</span></a>
+  </section>
+</main>
+{% endblock %}

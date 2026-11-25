@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block title %}Шаг {{ s.index }}. {{ s.title_beginner }} — {{ course.title }}{% endblock %}
+{% block body %}
+{% set toc = [("essence", "Суть")] %}
+{% if s.media %}{% set _ = toc.append(("media", "Видео" if s.media.kind == "video" else "Анимация")) %}{% endif %}
+{% for b in s.blocks %}{% set _ = toc.append((b.id, b.title)) %}{% endfor %}
+{% if tasks %}{% set _ = toc.append(("check", "Проверь себя")) %}{% endif %}
+{% set _ = toc.append(("sources", "Источник")) %}
+<div class="layout" data-node="{{ s.node_id }}" data-index="{{ s.index }}">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol>{% for id, t in toc %}<li><a href="#{{ id }}">{{ t }}</a></li>{% endfor %}</ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › {{ s.part.title }} › Шаг {{ s.index }} из {{ course.steps|length }}</p>
+    <h1>{{ s.title_beginner }}</h1>
+    <p class="booktitle">В книге: «{{ s.title_book }}» <span class="pg">{{ s.pages|pages }}</span></p>
+    <p class="meta">
+      <span class="chip">≈ {{ s.minutes }} мин</span>
+      <span class="chip">{{ s.format_label[1] }} {{ s.format_label[0] }}</span>
+      {% if s.difficulty.primary %}<span class="chip" title="Тип трудности узла">трудность: {{ DIFF_RU.get(s.difficulty.primary, s.difficulty.primary) }}{% if s.difficulty.secondary %} + {{ DIFF_RU.get(s.difficulty.secondary, s.difficulty.secondary) }}{% endif %}</span>{% endif %}
+    </p>
+    {% if s.relies_on %}<p class="relies">Опирается на: {% for r in s.relies_on %}<a href="{{ r.url }}">шаг {{ r.index }} «{{ r.title }}»</a> <span class="muted">({{ r.type }})</span>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+      {% for e in s.essence %}<p{% if loop.first %} class="lead"{% endif %}>{{ e|md }}</p>{% endfor %}
+      {% if s.threshold %}<p class="threshold"><b>Пороговая идея.</b> {{ s.threshold|md }} <span class="chip chip-model">модель</span></p>{% endif %}
+    </section>
+
+    {% if s.media %}
+    <section id="media" class="media" aria-labelledby="h-media">
+      {% if s.media.kind == "video" %}
+      <h2 id="h-media">Видео</h2>
+      {% for v in s.media.videos %}
+      <div class="video{% if v.vertical %} vertical{% endif %}">
+        <video controls preload="metadata" playsinline src="{{ v.src }}">
+          {% if v.vtt %}<track kind="subtitles" srclang="ru" label="Русские субтитры" src="{{ v.vtt }}" default>{% endif %}
+          Ваш браузер не показывает видео: <a href="{{ v.src }}">скачать ролик</a>.
+        </video>
+        {% if v.passport and v.passport.prediction_question %}<p class="muted">Вопрос-предсказание: {{ v.passport.prediction_question }}</p>{% endif %}
+      </div>
+      {% endfor %}
+      {% else %}
+      <h2 id="h-media">{{ "Интерактив" if s.media.interactive else "Анимация" }}: как это происходит</h2>
+      <div class="anim" data-frames="{{ s.media.frames|length }}">
+        <div class="anim-stage ill-frame ill-raster">
+          {% for f in s.media.frames %}<img src="{{ f.src }}" alt="Кадр {{ loop.index }} из {{ s.media.frames|length }}{% if f.caption %}: {{ f.caption }}{% endif %}" {% if not loop.first %}hidden{% endif %} loading="lazy">{% endfor %}
+          <span class="prov">{{ s.media.frames[0].provenance }}</span>
+        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="{{ s.media.frames|length - 1 }}" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / {{ s.media.frames|length }}</span>
+        </div>
+        <p class="anim-cap">{{ s.media.frames[0].caption }}</p>
+        <script type="application/json" class="anim-caps">{{ s.media.frames|map(attribute="caption")|list|tojson }}</script>
+        {% if s.media.assumptions or s.media.exaggerations %}<p class="muted small">{% if s.media.exaggerations %}Не в масштабе: {% for e in s.media.exaggerations %}{{ e.what }}{% if e.factor %} ×{{ e.factor }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}. {% endif %}{% if s.media.assumptions %}Допущения: {{ s.media.assumptions|join("; ") }}.{% endif %}</p>{% endif %}
+      </div>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% for b in s.blocks %}
+    <section id="{{ b.id }}" class="block block-{{ b.kind }}" aria-labelledby="h-{{ b.id }}">
+      <h2 id="h-{{ b.id }}">{{ b.title }} {{ m.by_chip(b.by) if b.by != "mixed" else "" }}</h2>
+
+      {% if b.kind == "how" %}
+        {% set ns = namespace(sec="") %}
+        {% for it in b["items"] %}
+          {% if it.section and it.section != ns.sec %}<h3>{{ it.section }}</h3>{% set ns.sec = it.section %}{% endif %}
+          <div class="para{% if it.by == 'model' %} para-model{% endif %}" id="{{ it.id }}">
+            <p>{{ it.text|md }} {% if it.by == "model" %}<span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span>{% else %}{{ m.pg(it.pages) }}{% endif %}</p>
+            {% for q in it.quotes %}
+            <blockquote class="quote" cite="#src-{{ q.claim_id }}"><p>«{{ q.quote }}»</p><footer>— автор, стр. {{ q.page }} <span class="kind kind-{{ q.kind }}">{{ KIND_RU.get(q.kind, q.kind) }}</span></footer></blockquote>
+            {% endfor %}
+          </div>
+          {% for ill in ills_after.get(it.id, []) %}{{ m.figure(ill) }}{% endfor %}
+        {% endfor %}
+        {% for ill in ills_after.get("how", []) %}{{ m.figure(ill) }}{% endfor %}
+
+      {% elif b.kind == "procedure" %}
+        {% if b.subtitle %}<p class="subtitle">{{ b.subtitle }}</p>{% endif %}
+        <ol class="proc">{% for st in b["items"] %}<li>{{ st.text|md }} {{ m.pg(st.pages) }}</li>{% endfor %}</ol>
+
+      {% elif b.kind == "examples" %}
+        {% for e in b["items"] %}
+        <div class="example" id="{{ e.id }}">
+          <h3>{{ e.title }} <span class="pg">стр. {{ e.page }}</span></h3>
+          <p><b>Условие.</b> {{ e.condition|md }}</p>
+          {% if e.steps %}<ol class="ex-steps">{% for st in e.steps %}<li>{{ st|md }}</li>{% endfor %}</ol>{% endif %}
+          <p class="ex-result"><b>Итог.</b> {{ e.result|md }}</p>
+        </div>
+        {% endfor %}
+
+      {% elif b.kind == "decision" %}
+        {% set d = b.data %}
+        <div class="decision">
+          {% if d.title %}<p class="subtitle">{{ d.title }}</p>{% endif %}
+          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul>{% for x in d.signs %}<li>{{ x|md }}</li>{% endfor %}</ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>{{ d.rule|md }} {{ m.pg(b.pages) }}</p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>{{ d.conclusion|md }}</p></div>
+          </div>
+          {% if d.cases %}
+          <h3>Потренируйтесь</h3>
+          {% for c in d.cases %}
+          <div class="case" data-answer="{{ c.answer }}">
+            <p><b>Дано:</b> {{ c.given|md }} {% if c.source %}<span class="muted small">({{ c.source }})</span>{% endif %}</p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод">{% for o in c.options %}<button type="button" class="btn ghost case-opt" data-i="{{ loop.index0 }}">{{ o }}</button>{% endfor %}</div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> {{ c.why|md }}</p>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+
+      {% elif b.kind == "numbers" %}
+        <ul class="nums">{% for it in b["items"] %}<li>{{ it.text|md }} {{ m.pg(it.pages) }}</li>{% endfor %}</ul>
+
+      {% elif b.kind == "formulas" %}
+        {% for f in b["items"] %}
+        <div class="formula" id="f-{{ f.id }}">
+          <div class="tex-display" data-tex="{{ f.latex }}">$${{ f.latex }}$$</div>
+          <p>{{ f.meaning|md }} <span class="pg">стр. {{ f.page }}</span></p>
+          {% if f.vars %}<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+          {% for v in f.vars %}<tr><td>${{ v.symbol }}$</td><td>{{ v.meaning|md }}</td><td>{{ v.unit or "—" }}</td></tr>{% endfor %}
+          </tbody></table>{% endif %}
+        </div>
+        {% endfor %}
+
+      {% elif b.kind == "tables" %}
+        {% for t in b["items"] %}
+        <div class="booktable">
+          <p class="tcap"><b>{{ t.caption }}</b> <span class="pg">стр. {{ t.page }}</span></p>
+          <div class="tscroll" tabindex="0" role="region" aria-label="Таблица: {{ t.caption }}"><table>
+            <thead><tr>{% for c in t.columns %}<th scope="col">{{ c|md }}</th>{% endfor %}</tr></thead>
+            <tbody>{% for r in t.rows %}<tr>{% for c in r %}<td>{{ c|md }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+          </table></div>
+          {% if t.ocr_fixes %}<p class="ocr"><b>Исправления распознавания:</b> {{ t.ocr_fixes|join("; ") }}</p>{% endif %}
+        </div>
+        {% endfor %}
+
+      {% elif b.kind == "mistake" %}
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> {{ b.data.text|md }}</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> {{ b.data.correction|md }} {{ m.pg(b.pages) }}</p>
+        </div>
+
+      {% elif b.kind == "data" %}
+        {% set d = b.data %}
+        <p>{{ d.text|md }}</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>{{ d.inputs|md }}</dd>
+          <dt>Выход</dt><dd>{{ d.outputs|md }}</dd>
+          <dt>Где ломается</dt><dd>{{ d.breaks_where|md }}</dd>
+        </dl>
+        {% if d.hypotheses %}<ul class="hyp">{% for h in d.hypotheses %}<li><span class="chip chip-hyp">гипотеза</span> {{ h|md }}</li>{% endfor %}</ul>{% endif %}
+        {% if d.lens %}
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>{{ d.lens.inputs|md }}</dd>
+            <dt>Ручные шаги</dt><dd>{{ d.lens.manual_steps|md }}</dd>
+            <dt>Точки суждения</dt><dd>{{ d.lens.judgment_points|md }}</dd>
+            <dt>Время</dt><dd>{{ d.lens.time|md }}</dd>
+            <dt>Типичные ошибки</dt><dd>{{ d.lens.typical_errors|md }}</dd>
+          </dl>
+        </details>
+        {% endif %}
+
+      {% elif b.kind == "analogy" %}
+        <p>{{ b.data.text|md }}</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> {{ b.data.breaks_where|md }}</p>
+
+      {% elif b.kind == "now" %}
+        <p>{{ b.data.text|md }}</p>
+
+      {% elif b.kind == "deeper" %}
+        {% for d in b["items"] %}<details class="deeper"><summary>{{ d.title }} {{ m.by_chip(d.by) }}</summary><p>{{ d.text|md }}</p></details>{% endfor %}
+
+      {% elif b.kind == "problems" %}
+        <ul class="problems">{% for p in b["items"] %}<li><b>Задача {{ p.number }}.</b> {{ p.text|md }} {% if p.figure %}<span class="muted">Нужен рисунок: {{ p.figure }}.</span>{% endif %} <span class="pg">стр. {{ p.page }}</span></li>{% endfor %}</ul>
+
+      {% elif b.kind == "book_figures" %}
+        <ul class="bookfigs">{% for f in b["items"] %}<li>Рис. {{ f.number }}. {{ f.caption|md }} <span class="pg">стр. {{ f.page }}</span></li>{% endfor %}</ul>
+        <p class="muted small">Рисунки книги в курс не вставляются: смотрите их в книге по номеру страницы; нужные для примеров перерисованы кодом.</p>
+
+      {% elif b.kind == "glossary" %}
+        <dl class="gloss">{% for t in b["items"] %}<dt>{{ t.term }}{% if t.en %} <span class="en" lang="en">({{ t.en }})</span>{% endif %}</dt><dd>{{ t.definition|md }} {% if t.page %}<span class="pg">стр. {{ t.page }}</span>{% endif %}{% if t.by == "model" %} <span class="chip chip-model">модель</span>{% endif %}</dd>{% endfor %}</dl>
+      {% endif %}
+    </section>
+    {% endfor %}
+
+    {% if tasks %}
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+      {% for t in tasks %}{{ m.task(t) }}{% endfor %}
+    </section>
+    {% endif %}
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+      {% for c in s.sources %}
+        <li id="src-{{ c.claim_id }}"><p>{{ c.text|md }} <span class="kind kind-{{ c.kind }}">{{ KIND_RU.get(c.kind, c.kind) }}</span></p><blockquote class="quote"><p>«{{ c.quote }}»</p><footer>— стр. {{ c.page }}</footer></blockquote></li>
+      {% endfor %}
+      </ol>
+      {% if s.used_by %}<p>На этот шаг опираются: {% for r in s.used_by %}<a href="{{ r.url }}">шаг {{ r.index }} «{{ r.title }}»</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+      {% if prev %}<a class="prev" href="{{ prev.url }}" rel="prev"><span>← Назад</span><b>{{ prev.title }}</b></a>{% else %}<a class="prev" href="index.html"><span>← К пути</span><b>Все шаги</b></a>{% endif %}
+      {% if next %}<a class="next" href="{{ next.url }}" rel="next"><span>Дальше →</span><b>{{ next.title }}</b></a>{% else %}<a class="next" href="summary.html"><span>Дальше →</span><b>Конспект главы</b></a>{% endif %}
+    </nav>
+  </main>
+</div>
+{% endblock %}
+{% block data %}<script>window.KMD_TASKS = {{ tasks_json|safe }};</script>{% endblock %}

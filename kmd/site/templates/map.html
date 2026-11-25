@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Карта связей — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content" tabindex="-1">
+  <h1>Карта связей</h1>
+  <p class="lead">Шаги идут сверху вниз в порядке пути. Дуга слева ведёт от шага к шагу, на который он опирается (стрелка — к опоре). Нажмите на шаг, чтобы открыть его.</p>
+  <p class="lm-legend"><span class="lm-key lm-prerequisite"></span> предпосылка <span class="lm-key lm-example"></span> пример <span class="lm-key lm-refutes_misconception"></span> опровергает заблуждение <span class="lm-key lm-to_data"></span> переход к данным</p>
+  <div class="mapwrap">{{ svg|safe }}</div>
+  <h2>То же списком</h2>
+  <ol class="maplist">
+  {% for s in steps %}
+    <li><a href="step-{{ '%02d'|format(s.index) }}.html">{{ s.title_beginner }}</a>{% if s.relies_on %} — опирается на: {% for r in s.relies_on %}шаг {{ r.index }} ({{ r.type }}){% if not loop.last %}, {% endif %}{% endfor %}{% else %} — <span class="muted">начальный шаг</span>{% endif %}</li>
+  {% endfor %}
+  </ol>
+</main>
+{% endblock %}

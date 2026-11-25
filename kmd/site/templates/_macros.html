@@ -1,0 +1,54 @@
+{% macro pg(pages) %}{% set l = pages|pages %}{% if l %}<span class="pg" title="Страница книги (по PDF)">{{ l }}</span>{% endif %}{% endmacro %}
+
+{% macro by_chip(by) %}{% if by == "model" %}<span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span>{% elif by == "author" %}<span class="chip chip-author" title="По книге">по книге</span>{% endif %}{% endmacro %}
+
+{% macro figure(ill) %}
+<figure class="ill" id="{{ ill.id }}">
+  <div class="ill-frame{% if ill.src %} ill-raster{% endif %}">
+    {% if ill.inline %}{{ ill.inline|safe }}{% elif ill.src %}<img src="{{ ill.src }}" alt="{{ ill.alt }}" loading="lazy">{% else %}<p class="muted">Иллюстрация не найдена</p>{% endif %}
+    <span class="prov" title="Метка происхождения: как сделана картинка">{{ ill.provenance }}</span>
+  </div>
+  <figcaption>
+    {{ ill.caption|md }}
+    <span class="ill-meta">Класс {{ ill["class"] }} · {{ ill.provenance }}{% if ill.redrawn_from %} · перерисовано по рис. {{ ill.redrawn_from.figure }}{% if ill.redrawn_from.page %}, стр. {{ ill.redrawn_from.page }}{% endif %}{% endif %}{% if ill.exaggerations %} · не в масштабе: {% for e in ill.exaggerations %}{{ e.what }}{% if e.factor %} ×{{ e.factor }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}{% endif %} · нарисовано кодом{% if ill.pages %} · {{ ill.pages|pages }}{% endif %}</span>
+  </figcaption>
+</figure>
+{% endmacro %}
+
+{% macro task(t, show_step=False) %}
+<div class="task" id="task-{{ t.id|replace('.', '-') }}" data-task="{{ t.id }}" data-type="{{ t.type }}">
+  <div class="task-head">
+    <span class="task-type">{{ {"single": "Один ответ", "multiple": "Несколько ответов", "order": "Порядок", "cloze": "Пропуск в тексте", "numeric": "Расчёт"}[t.type] }}</span>
+    {% if show_step %}<a class="task-step" href="{{ t.link.split('#')[0] }}">Шаг {{ t.step_index }}. {{ t.step_title }}</a>{% endif %}
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  {% if t.type in ("single", "multiple") %}
+  <fieldset>
+    <legend class="task-q">{{ t.question|md }}</legend>
+    {% for o in t.options %}
+    <label class="opt"><input type="{{ 'radio' if t.type == 'single' else 'checkbox' }}" name="{{ t.id }}" value="{{ loop.index0 }}"> <span>{{ o|md }}</span></label>
+    {% endfor %}
+  </fieldset>
+  {% elif t.type == "order" %}
+  <p class="task-q" id="q-{{ t.id|replace('.', '-') }}">{{ t.question|md }}</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-{{ t.id|replace('.', '-') }}">
+    {% for it in t["items"] %}
+    <li class="order-item" data-pos="{{ it.pos }}"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">{{ it.text|md }}</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    {% endfor %}
+  </ol>
+  {% elif t.type == "cloze" %}
+  <p class="task-q">{{ t.question|md }}</p>
+  <p class="cloze">{% for p in t.parts %}{{ p|md }}{% if not loop.last %}{% set b = t.blanks[loop.index0] %}{% if b.options %}<select aria-label="Пропуск {{ loop.index }}"><option value="">—</option>{% for o in b.options %}<option>{{ o }}</option>{% endfor %}</select>{% else %}<input type="text" aria-label="Пропуск {{ loop.index }}" autocomplete="off" size="12">{% endif %}{% endif %}{% endfor %}</p>
+  {% elif t.type == "numeric" %}
+  <label class="task-q" for="in-{{ t.id|replace('.', '-') }}">{{ t.question|md }}</label>
+  <p class="numeric"><input id="in-{{ t.id|replace('.', '-') }}" type="text" inputmode="decimal" autocomplete="off" size="10"> {% if t.unit %}<span class="unit">{{ t.unit }}</span>{% endif %}</p>
+  {% endif %}
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> {{ t.answer_text|md }}</p>
+    <p class="fb-expl">{{ t.explanation|md }} <a href="{{ t.link }}">Где это в тексте{% if t.page %} (стр. {{ t.page }}){% endif %} →</a></p>
+  </div>
+</div>
+{% endmacro %}

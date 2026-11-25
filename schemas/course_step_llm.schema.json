@@ -2,64 +2,196 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "LLM answer for one step page (prompt course_step). $defs.task is injected from task.schema.json by kmd.course",
   "type": "object",
-  "required": ["title_beginner", "essence", "how_it_works", "procedure", "numbers", "decision", "illustrations", "tasks", "cards"],
+  "required": [
+    "title_beginner",
+    "essence",
+    "how_it_works",
+    "procedure",
+    "numbers",
+    "decision",
+    "illustrations",
+    "tasks",
+    "cards"
+  ],
   "properties": {
-    "title_beginner": {"type": "string", "minLength": 3},
-    "essence": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "string"}},
+    "title_beginner": {
+      "type": "string",
+      "minLength": 3
+    },
+    "essence": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
     "how_it_works": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["section", "text", "claim_ids"],
+        "required": [
+          "section",
+          "text",
+          "claim_ids"
+        ],
         "properties": {
-          "section": {"type": "string", "description": "subheading, e.g. Механизм / Практика / Нюансы"},
-          "text": {"type": "string"},
-          "claim_ids": {"type": "array", "items": {"type": "string"}},
-          "by": {"enum": ["author", "model"], "description": "author = retelling of the book (claim_ids required); model = explanation not in the book"}
+          "section": {
+            "type": "string",
+            "description": "subheading, e.g. Механизм / Практика / Нюансы"
+          },
+          "text": {
+            "type": "string"
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "by": {
+            "enum": [
+              "author",
+              "model"
+            ],
+            "description": "author = retelling of the book (claim_ids required); model = explanation not in the book"
+          }
         }
       }
     },
     "procedure": {
       "anyOf": [
-        {"type": "null"},
+        {
+          "type": "null"
+        },
         {
           "type": "object",
-          "required": ["title", "steps"],
+          "required": [
+            "title",
+            "steps"
+          ],
           "properties": {
-            "title": {"type": "string"},
-            "steps": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["text", "claim_ids"], "properties": {"text": {"type": "string"}, "claim_ids": {"type": "array", "items": {"type": "string"}}}}}
+            "title": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "claim_ids"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       ]
     },
     "numbers": {
       "type": "array",
-      "items": {"type": "object", "required": ["text", "claim_ids"], "properties": {"text": {"type": "string"}, "claim_ids": {"type": "array", "items": {"type": "string"}}}}
+      "items": {
+        "type": "object",
+        "required": [
+          "text",
+          "claim_ids"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     },
     "decision": {
       "anyOf": [
-        {"type": "null"},
+        {
+          "type": "null"
+        },
         {
           "type": "object",
-          "required": ["title", "signs", "rule", "conclusion", "claim_ids", "cases"],
+          "required": [
+            "title",
+            "signs",
+            "rule",
+            "conclusion",
+            "claim_ids",
+            "cases"
+          ],
           "properties": {
-            "title": {"type": "string"},
-            "signs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-            "rule": {"type": "string"},
-            "conclusion": {"type": "string"},
-            "claim_ids": {"type": "array", "items": {"type": "string"}},
+            "title": {
+              "type": "string"
+            },
+            "signs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "rule": {
+              "type": "string"
+            },
+            "conclusion": {
+              "type": "string"
+            },
+            "claim_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
             "cases": {
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["given", "options", "answer", "why"],
+                "required": [
+                  "given",
+                  "options",
+                  "answer",
+                  "why"
+                ],
                 "properties": {
-                  "given": {"type": "string"},
-                  "options": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-                  "answer": {"type": "integer", "minimum": 0},
-                  "why": {"type": "string"},
-                  "source": {"type": "string", "description": "e.g. «Пример 47, стр. 98» or «модель»"}
+                  "given": {
+                    "type": "string"
+                  },
+                  "options": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "answer": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "why": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string",
+                    "description": "e.g. «Пример 47, стр. 98» or «модель»"
+                  }
                 }
               }
             }
@@ -72,28 +204,112 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["template", "params", "caption", "alt", "claim_ids"],
+        "required": [
+          "template",
+          "params",
+          "caption",
+          "alt",
+          "claim_ids"
+        ],
         "properties": {
-          "template": {"type": "string"},
-          "params": {"type": "object"},
-          "caption": {"type": "string"},
-          "alt": {"type": "string"},
-          "claim_ids": {"type": "array", "items": {"type": "string"}}
+          "template": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object"
+          },
+          "caption": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "redrawn_from": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "figure": {
+                "type": "string"
+              },
+              "page": {
+                "type": "integer"
+              }
+            }
+          },
+          "exaggerations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "what"
+              ],
+              "properties": {
+                "what": {
+                  "type": "string"
+                },
+                "factor": {
+                  "type": [
+                    "number",
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
         }
       }
     },
-    "tasks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/task"}},
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
     "cards": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["front", "back", "claim_ids", "kind"],
+        "required": [
+          "front",
+          "back",
+          "claim_ids",
+          "kind"
+        ],
         "properties": {
-          "front": {"type": "string"},
-          "back": {"type": "string"},
-          "claim_ids": {"type": "array", "items": {"type": "string"}},
-          "kind": {"enum": ["term", "idea", "number", "mistake"]}
+          "front": {
+            "type": "string"
+          },
+          "back": {
+            "type": "string"
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "enum": [
+              "term",
+              "idea",
+              "number",
+              "mistake"
+            ]
+          }
         }
       }
     }

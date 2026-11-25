@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Конспект — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content summary" tabindex="-1">
+  <h1>Конспект главы</h1>
+  <p class="booktitle">{{ course.title }}. {{ course.book.author }}, «{{ course.book.title }}»{% if course.book.year %} ({{ course.book.year }}){% endif %}</p>
+  <p class="noprint"><button type="button" class="btn print">Сохранить в PDF / распечатать</button></p>
+  {% for p in parts %}
+  <h2>Часть {{ loop.index }}. {{ p.title }}</h2>
+  {% for s in p.steps %}
+  <article class="sum-step">
+    <h3><a href="step-{{ '%02d'|format(s.index) }}.html">{{ s.index }}. {{ s.title_beginner }}</a> <span class="pg">{{ s.pages|pages }}</span></h3>
+    <p class="muted small">В книге: «{{ s.title_book }}»</p>
+    {% for e in s.essence %}<p{% if loop.first %} class="lead"{% endif %}>{{ e|md }}</p>{% endfor %}
+    {% for b in s.blocks if b.kind == "decision" %}<p><b>Правило:</b> {{ b.data.rule|md }} → {{ b.data.conclusion|md }}</p>{% endfor %}
+    {% for b in s.blocks if b.kind == "numbers" %}<ul class="nums">{% for it in b["items"] %}<li>{{ it.text|md }} <span class="pg">{{ it.pages|pages }}</span></li>{% endfor %}</ul>{% endfor %}
+    {% for b in s.blocks if b.kind == "data" %}
+    <div class="sum-data"><p><b>Для данных:</b> {{ b.data.text|md }}</p>
+      <p class="small"><b>Вход:</b> {{ b.data.inputs|md }}. <b>Выход:</b> {{ b.data.outputs|md }}. <b>Где ломается:</b> {{ b.data.breaks_where|md }}</p>
+      {% for h in b.data.hypotheses %}<p class="small"><span class="chip chip-hyp">гипотеза</span> {{ h|md }}</p>{% endfor %}
+    </div>
+    {% endfor %}
+  </article>
+  {% endfor %}
+  {% endfor %}
+</main>
+{% endblock %}

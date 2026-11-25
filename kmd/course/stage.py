@@ -90,19 +90,30 @@ def part_of(layer: dict) -> dict:
     return out
 
 
-def domain_misconceptions(pack: dict) -> list[str]:
+def domain_misconceptions(pack: dict) -> list[dict]:
     m = pack.get("misconceptions") or []
     if isinstance(m, dict):
-        m = m.get("items") or m.get("misconceptions") or list(m.values())
+        m = m.get("items") or m.get("misconceptions") or []
     out = []
     for x in m:
         if isinstance(x, str):
-            out.append(x)
+            out.append({"text": x, "keywords": []})
         elif isinstance(x, dict):
             t = x.get("text") or x.get("misconception") or x.get("wrong") or x.get("myth")
             if t:
-                out.append(t)
-    return out[:25]
+                out.append({"text": t, "correction": x.get("correction", ""), "keywords": x.get("keywords", [])})
+    return out
+
+
+def relevant_misconceptions(items: list[dict], node: dict, limit: int = 8) -> list[str]:
+    """Misconceptions whose keywords occur in the node (domain packs give keywords); else none."""
+    txt = C.norm(json.dumps(node, ensure_ascii=False))
+    out = []
+    for m in items:
+        kws = [C.norm(k) for k in m.get("keywords", []) if k]
+        if kws and any(k in txt for k in kws):
+            out.append(m["text"] + (f" (на деле: {m['correction']})" if m.get("correction") else ""))
+    return out[:limit]
 
 
 def source_number_set(rd: Path, layer: dict) -> set[str]:
@@ -262,7 +273,7 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
             len_check(s["text"], f"procedure.steps[{k}]")
             num_check(s["text"], f"procedure.steps[{k}]")
             steps.append({"text": s["text"], "claim_ids": ids, "pages": _pages(ids, claims)})
-        blocks.append({"id": "procedure", "kind": "procedure", "title": "По шагам", "by": "author", "subtitle": proc.get("title", ""), "pages": sorted({p for s in steps for p in s["pages"]}), "items": steps})
+        blocks.append({"id": "procedure", "kind": "procedure", "title": "По шагам", "by": "mixed", "subtitle": proc.get("title", ""), "pages": sorted({p for s in steps for p in s["pages"]}), "items": steps})
         chunks.append(("procedure", " ".join(s["text"] for s in steps)))
 
     # --- Разбор примеров (author, from the layer)
@@ -299,7 +310,7 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
             num_check(s["text"], f"numbers[{k}]")
             len_check(s["text"], f"numbers[{k}]")
             nitems.append({"text": s["text"], "claim_ids": ids, "pages": _pages(ids, claims)})
-        blocks.append({"id": "numbers", "kind": "numbers", "title": "Цифры и условия", "by": "author", "pages": sorted({p for s in nitems for p in s["pages"]}), "items": nitems})
+        blocks.append({"id": "numbers", "kind": "numbers", "title": "Цифры и условия", "by": "mixed", "pages": sorted({p for s in nitems for p in s["pages"]}), "items": nitems})
         chunks.append(("numbers", " ".join(s["text"] for s in nitems)))
 
     # --- Формулы, таблицы (author, from the layer)
@@ -383,26 +394,42 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
             warnings.append(f"cards[{k}]: ответ длиннее 40 слов")
         cards.append({"front": c["front"], "back": c["back"], "claim_ids": ids, "kind": c.get("kind", "idea"), "page": (_pages(ids, claims) or [None])[0]})
 
-    # --- Illustrations (specs only; rendered in write_step)
+    # --- Illustrations: render now, so a failing spec goes into the repair request
     known = {t["template"] for t in ctx["catalog"]}
     ills = []
     for k, s in enumerate(ans.get("illustrations", [])):
-        where = f"illustrations[{k}]"
+        where = f"illustrations[{k}] ({s.get('template')})"
         if s.get("template") not in known:
-            errors.append(f"{where}: неизвестный шаблон «{s.get('template')}» (есть: {', '.join(sorted(known))})")
+            errors.append(f"{where}: неизвестный шаблон (есть: {', '.join(sorted(known))})")
             continue
         ids = _ids(s.get("claim_ids"), claims, errors, where)
-        txt = json.dumps(s.get("params", {}), ensure_ascii=False)
-        bad = C.unknown_numbers(re.sub(r'"(tone|log|min|max|ticks)":\s*[^,}\]]+', "", txt), src_nums)
+        txt = json.dumps({"p": s.get("params", {}), "c": s.get("caption", ""), "a": s.get("alt", "")}, ensure_ascii=False)
+        bad = C.unknown_numbers(re.sub(r'"(tone|log|min|max|ticks|[a-z_]*frac|[a-z_]*_m|width|height|t|seed|vertical_exaggeration)":\s*(\[[^\]]*\]|[^,}\]]+)', "", txt), src_nums)
         if bad:
-            errors.append(f"{where}: числа не найдены в источнике: {', '.join(bad)}")
+            warnings.append(f"{where}: числа не найдены в источнике (проверьте, что это параметры модели, а не факты): {', '.join(bad)}")
+        stem = f"{node['id']}__{k+1}"
+        try:
+            r = illustrate.render(s, ctx["ill_dir"], stem)
+        except Exception as e:
+            errors.append(f"{where}: рисунок не построен: {str(e)[:400]}")
+            continue
+        if r.get("issues"):
+            errors.append(f"{where}: нарушены инварианты шаблона: {'; '.join(i.get('message', '') for i in r['issues'])[:400]}")
             continue
         best, overlap = "how", 0
         for it in items:
             o = len(set(ids) & set(it["claim_ids"]))
             if o > overlap:
                 best, overlap = it["id"], o
-        ills.append(dict(s, claim_ids=ids, pages=_pages(ids, claims), after_block=best))
+        f = Path(r["file"])
+        rd = ctx["run_dir"]
+        ills.append({
+            "id": f"ill-{k+1}", "template": s["template"], "class": r["class"], "provenance": r["provenance"],
+            "caption": r.get("caption") or s["caption"], "alt": s.get("alt") or r.get("alt") or "",
+            "file": str(f.resolve().relative_to(rd.resolve())) if rd.resolve() in f.resolve().parents else str(f),
+            "renderer": r["renderer"], "claim_ids": ids, "pages": _pages(ids, claims), "after_block": best,
+            "redrawn_from": r.get("redrawn_from") or s.get("redrawn_from"), "exaggerations": r.get("exaggerations") or s.get("exaggerations"),
+        })
     if not ills:
         errors.append("illustrations: нет ни одной корректной иллюстрации")
 
@@ -478,8 +505,8 @@ def llm_vars(cfg: dict, layer: dict, node: dict, pl: dict, ctx: dict) -> dict:
         "route_rationale": (route.get("rationale") or "").strip().rstrip("."),
         "node": prompt_node(node),
         "scene": scene_summary(ctx["scenes"].get(node["id"])),
-        "misconceptions": ctx["misconceptions"],
-        "templates": ctx["catalog"],
+        "misconceptions": relevant_misconceptions(ctx["misconceptions"], node),
+        "templates_text": ctx["catalog_text"],
         "n_tasks": pl["n_tasks"],
         "preferred_types": pl["preferred_types"],
         "has_numbers": pl["has_numbers"],
@@ -510,21 +537,7 @@ def write_step(rd: Path, cfg: dict, layer: dict, node: dict, pl: dict, ctx: dict
     nid = node["id"]
     claims = {c["id"]: c for c in node.get("claims", [])}
     errors, warnings = list(res["errors"]), list(res["warnings"])
-    ill_dir = rd / "illustrations"
-    ills = []
-    for k, s in enumerate(res["illustrations"]):
-        stem = f"{nid}__{k+1}"
-        try:
-            r = illustrate.render(s, ill_dir, stem)
-        except Exception as e:
-            errors.append(f"illustrations[{k}]: рендер не удался: {e}")
-            continue
-        f = Path(r["file"])
-        ills.append({
-            "id": f"ill-{k+1}", "template": s["template"], "class": r["class"], "provenance": r["provenance"],
-            "caption": s["caption"], "alt": r.get("alt") or s["alt"], "file": str(f.relative_to(rd)) if f.is_absolute() and rd in f.parents else str(f),
-            "renderer": r["renderer"], "claim_ids": s["claim_ids"], "pages": s["pages"], "after_block": s["after_block"],
-        })
+    ills = list(res["illustrations"])
     # extra illustrations announced by the visuals stage (book figure redraws, scene stills)
     man = rd / "illustrations" / "manifest.json"
     if man.exists():
@@ -618,6 +631,9 @@ def run(chapter: str, node: str | None = None, **kw) -> list[Path]:
         "next_title": next_title,
         "misconceptions": domain_misconceptions(pack),
         "catalog": illustrate.catalog(cfg.get("domain")),
+        "catalog_text": illustrate.catalog_text(cfg.get("domain")),
+        "run_dir": rd,
+        "ill_dir": rd / "illustrations",
         "source_numbers": source_number_set(rd, layer),
     }
     targets = [node] if node else order

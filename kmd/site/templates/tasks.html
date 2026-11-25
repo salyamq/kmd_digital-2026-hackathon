@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block title %}Задания — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content" tabindex="-1">
+  <h1>Задания главы</h1>
+  <p class="lead">{{ tasks|length }} заданий. Ответ на каждое есть в тексте шага: после проверки видна ссылка на место в тексте и страницу книги.</p>
+  <p class="score" aria-live="polite"></p>
+  <p><button type="button" class="btn ghost reset-tasks">Сбросить ответы</button></p>
+  {% set ns = namespace(step=None) %}
+  {% for t in tasks %}
+    {% if t.step_index != ns.step %}{% set ns.step = t.step_index %}<h2 class="tasks-step"><a href="{{ t.link.split('#')[0] }}">Шаг {{ t.step_index }}. {{ t.step_title }}</a></h2>{% endif %}
+    {{ m.task(t) }}
+  {% endfor %}
+</main>
+{% endblock %}
+{% block data %}<script>window.KMD_TASKS = {{ tasks_json|safe }};</script>{% endblock %}

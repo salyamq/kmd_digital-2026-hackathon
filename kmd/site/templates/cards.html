@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Карточки — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content" tabindex="-1">
+  <h1>Карточки повторения</h1>
+  <p class="lead">Прочитайте вопрос, вспомните ответ, откройте карточку и честно отметьте: «знаю» или «повторить».</p>
+  <div class="deck-filter" role="group" aria-label="Какие карточки показывать">
+    <button type="button" class="btn ghost" data-filter="all" aria-pressed="true">Все <span class="n-all"></span></button>
+    <button type="button" class="btn ghost" data-filter="repeat" aria-pressed="false">Повторить <span class="n-repeat"></span></button>
+    <button type="button" class="btn ghost" data-filter="new" aria-pressed="false">Новые <span class="n-new"></span></button>
+  </div>
+  <div class="deck" aria-live="polite">
+    <div class="card" tabindex="0">
+      <p class="card-step muted small"></p>
+      <p class="card-front"></p>
+      <div class="card-back" hidden><p></p><p class="muted small card-src"></p></div>
+    </div>
+    <div class="card-actions">
+      <button type="button" class="btn flip">Показать ответ <kbd>пробел</kbd></button>
+      <button type="button" class="btn good know" hidden>Знаю <kbd>1</kbd></button>
+      <button type="button" class="btn warn repeat" hidden>Повторить <kbd>2</kbd></button>
+    </div>
+    <p class="deck-pos muted"></p>
+    <p class="deck-empty" hidden>В этой стопке карточек нет. Выберите другую.</p>
+  </div>
+  <details class="allcards"><summary>Все карточки списком</summary>
+    <dl>{% for c in cards %}<dt>{{ c.front }}</dt><dd>{{ c.back }} <a href="{{ c.url }}">шаг {{ c.step_index }}</a>{% if c.page %}, стр. {{ c.page }}{% endif %}</dd>{% endfor %}</dl>
+  </details>
+</main>
+{% endblock %}
+{% block data %}<script>window.KMD_CARDS = {{ cards_json|safe }};</script>{% endblock %}
