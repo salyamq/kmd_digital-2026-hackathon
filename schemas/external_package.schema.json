@@ -1,0 +1,86 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "External draft package for the checker (kmd check PACKAGE --chapter CH)",
+ "description": "Another team's draft built from a chapter: claims, video scripts, scene specs and frames. Every element has a stable id; findings refer to these ids. Loader is tolerant: package.json in this schema, or loose JSON lists / text files (see kmd/checker/load.py).",
+ "type": "object",
+ "required": ["package_id", "claims"],
+ "properties": {
+  "package_id": {"type": "string"},
+  "chapter": {"type": "string", "description": "chapter id or title the draft is about"},
+  "team": {"type": "string"},
+  "claims": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "text"],
+    "properties": {
+     "id": {"type": "string"},
+     "node_id": {"type": ["string", "null"]},
+     "kind": {"enum": ["observation", "inference", "assumption", "definition", "number", "analogy", "other", null]},
+     "text": {"type": "string"},
+     "quote": {"type": ["string", "null"], "description": "verbatim author quote the claim relies on"},
+     "page": {"type": ["integer", "null"]}
+    }
+   }
+  },
+  "scripts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "lines"],
+    "properties": {
+     "id": {"type": "string"},
+     "node_id": {"type": ["string", "null"]},
+     "format": {"type": ["string", "null"]},
+     "lines": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": ["id", "text"],
+       "properties": {
+        "id": {"type": "string"},
+        "t": {"type": ["string", "number", "null"], "description": "timecode"},
+        "text": {"type": "string"},
+        "claim_ids": {"type": "array", "items": {"type": "string"}},
+        "on_screen": {"type": ["string", "null"]}
+       }
+      }
+     }
+    }
+   }
+  },
+  "scenes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id"],
+    "properties": {
+     "id": {"type": "string"},
+     "node_id": {"type": ["string", "null"]},
+     "template": {"type": ["string", "null"]},
+     "objects": {"type": "array"},
+     "params": {"type": "object"},
+     "invariants": {"type": "array", "items": {"type": "string"}},
+     "assumptions": {"type": "array", "items": {"type": "string"}},
+     "exaggerations": {"type": "array"}
+    }
+   }
+  },
+  "frames": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "description"],
+    "properties": {
+     "id": {"type": "string"},
+     "scene_id": {"type": ["string", "null"]},
+     "class": {"enum": ["A", "B", "C", "D", null]},
+     "provenance": {"type": ["string", "null"], "description": "реальные данные | симуляция | схема | иллюстрация ИИ"},
+     "description": {"type": "string"},
+     "labels": {"type": "array", "items": {"type": "string"}},
+     "claim_ids": {"type": "array", "items": {"type": "string"}}
+    }
+   }
+  }
+ }
+}
