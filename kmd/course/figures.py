@@ -12,7 +12,7 @@ from __future__ import annotations
 import html
 import math
 
-W = 640  # viewBox width; the site scales it to the column width
+W = 360  # viewBox width: phone-first (1 unit ~ 1 CSS px on a 390px screen); the site caps the width on desktop
 
 _STYLE = """<style>
 .ill-bg{fill:var(--ill-bg,#fff)} .ill-box{fill:var(--ill-box,#f3f5f8);stroke:var(--ill-line,#5b6573);stroke-width:1.5}
@@ -78,17 +78,17 @@ def tpl_chain(p: dict, label: str) -> str:
     title = p.get("title", "")
     y, body = 30, []
     if title:
-        t, h = _text_block(W / 2, y + 8, title, 60, "ill-title")
+        t, h = _text_block(W / 2, y + 8, title, 34, "ill-title")
         body.append(t)
         y += h + 14
-    bw = 470
+    bw = W - 24
     for i, it in enumerate(items):
-        lines = wrap(it, 50)
+        lines = wrap(it, 36)
         bh = 18 + 19 * len(lines)
         tone = p.get("tones", [None] * len(items))[i] if i < len(p.get("tones", [])) else None
         cls = f"ill-box ill-{tone}" if tone in ("good", "bad", "neutral", "accent") else "ill-box"
         body.append(f'<rect class="{cls}" x="{(W-bw)/2}" y="{y}" width="{bw}" height="{bh}" rx="10"/>')
-        t, _ = _text_block(W / 2, y + 24, it, 50)
+        t, _ = _text_block(W / 2, y + 24, it, 36)
         body.append(t)
         y += bh
         if i < len(items) - 1:
@@ -98,38 +98,31 @@ def tpl_chain(p: dict, label: str) -> str:
 
 
 def tpl_contrast(p: dict, label: str) -> str:
-    """Two cases side by side (e.g. «хороший раствор» vs «плохой раствор»)."""
+    """Two cases one above the other (e.g. «хороший раствор» vs «плохой раствор»)."""
     left, right = p.get("left", {}), p.get("right", {})
     title = p.get("title", "")
-    y0, body = 30, []
+    y, body = 30, []
     if title:
-        t, h = _text_block(W / 2, y0 + 8, title, 60, "ill-title")
+        t, h = _text_block(W / 2, y + 8, title, 34, "ill-title")
         body.append(t)
-        y0 += h + 14
-    colw, gap = 290, 20
-    heights = []
-    parts = []
+        y += h + 14
     for k, side in enumerate((left, right)):
-        x = 20 + k * (colw + gap)
         tone = side.get("tone") or ("good" if k == 0 else "bad")
         cls = f"ill-box ill-{tone}" if tone in ("good", "bad", "neutral", "accent") else "ill-box"
-        inner, yy = [], y0 + 26
-        t, h = _text_block(x + colw / 2, yy, side.get("title", ""), 28, "ill-title")
+        inner, yy = [], y + 24
+        t, h = _text_block(W / 2, yy, side.get("title", ""), 34, "ill-title")
         inner.append(t)
-        yy += h + 8
+        yy += h + 6
         for pt in side.get("points", [])[:6]:
-            t, h = _text_block(x + 16, yy, "• " + str(pt), 32, "ill-text", anchor="start")
+            t, h = _text_block(26, yy, "• " + str(pt), 38, "ill-text", anchor="start")
             inner.append(t)
-            yy += h + 6
-        heights.append(yy - y0)
-        parts.append((x, cls, inner))
-    hmax = max(heights + [60]) + 10
-    for x, cls, inner in parts:
-        body.append(f'<rect class="{cls}" x="{x}" y="{y0}" width="{colw}" height="{hmax}" rx="10"/>')
+            yy += h + 4
+        bh = yy - y + 4
+        body.append(f'<rect class="{cls}" x="12" y="{y}" width="{W-24}" height="{bh}" rx="10"/>')
         body.extend(inner)
-    y = y0 + hmax + 12
+        y += bh + 10
     if p.get("verdict"):
-        t, h = _text_block(W / 2, y + 12, p["verdict"], 64, "ill-small")
+        t, h = _text_block(W / 2, y + 12, p["verdict"], 40, "ill-small")
         body.append(t)
         y += h + 10
     return _svg(y + 8, "".join(body), label, title or f"{left.get('title','')} / {right.get('title','')}")
@@ -147,10 +140,10 @@ def tpl_ranges(p: dict, label: str) -> str:
     lo, hi, log = float(ax.get("min", 0)), float(ax.get("max", 1)), bool(ax.get("log", False))
     unit = ax.get("unit") or ""
     title = p.get("title", "")
-    x0, x1 = 40, W - 40
+    x0, x1 = 22, W - 22
     y, body = 30, []
     if title:
-        t, h = _text_block(W / 2, y + 8, title, 60, "ill-title")
+        t, h = _text_block(W / 2, y + 8, title, 34, "ill-title")
         body.append(t)
         y += h + 16
     bar_y = y + 26
@@ -162,7 +155,7 @@ def tpl_ranges(p: dict, label: str) -> str:
         ry = bar_y + i * 48
         body.append(f'<rect class="ill-box ill-{tone}" x="{a:.1f}" y="{ry}" width="{max(b-a,4):.1f}" height="16" rx="4"/>')
         lab = str(r.get("label", ""))
-        half = len(lab) * 4.4
+        half = min(len(lab) * 4.2, (x1 - x0) / 2)
         tx = min(max((a + b) / 2, x0 + half), x1 - half)
         body.append(f'<text class="ill-text" x="{tx:.1f}" y="{ry-6}" text-anchor="middle">{esc(lab)}</text>')
     axis_y = bar_y + max(len(rows), 1) * 48 - 14
@@ -181,55 +174,39 @@ def tpl_ranges(p: dict, label: str) -> str:
 
 
 def tpl_decision(p: dict, label: str) -> str:
-    """Signs -> rule -> outcomes (decision on data)."""
+    """Signs -> rule -> outcomes (decision on data), stacked for narrow screens."""
     title = p.get("title", "")
     y, body = 30, []
     if title:
-        t, h = _text_block(W / 2, y + 8, title, 60, "ill-title")
+        t, h = _text_block(W / 2, y + 8, title, 34, "ill-title")
         body.append(t)
         y += h + 14
-    signs = p.get("signs", [])[:5]
-    body.append(f'<text class="ill-small" x="20" y="{y+4}">Признаки</text>')
-    y += 12
-    for s in signs:
-        lines = wrap(s, 64)
-        bh = 12 + 19 * len(lines)
-        body.append(f'<rect class="ill-box ill-accent" x="20" y="{y}" width="{W-40}" height="{bh}" rx="8"/>')
-        t, _ = _text_block(36, y + 20, s, 64, anchor="start")
+
+    def box(y, text, tone, cls="ill-text"):
+        lines = wrap(text, 38)
+        bh = 14 + 19 * len(lines)
+        body.append(f'<rect class="ill-box ill-{tone}" x="12" y="{y}" width="{W-24}" height="{bh}" rx="8"/>')
+        t, _ = _text_block(24, y + 21, text, 38, cls, anchor="start")
         body.append(t)
-        y += bh + 6
-    body.append(_arrow(W / 2, y + 2, W / 2, y + 24))
-    y += 30
-    body.append(f'<text class="ill-small" x="20" y="{y+4}">Правило</text>')
-    y += 12
-    lines = wrap(p.get("rule", ""), 64)
-    bh = 14 + 19 * len(lines)
-    body.append(f'<rect class="ill-box" x="20" y="{y}" width="{W-40}" height="{bh}" rx="8"/>')
-    t, _ = _text_block(36, y + 21, p.get("rule", ""), 64, anchor="start")
-    body.append(t)
-    y += bh + 4
-    outs = p.get("outcomes", [])[:4]
+        return y + bh
+
+    def head(y, text):
+        body.append(f'<text class="ill-small" x="14" y="{y+4}">{esc(text)}</text>')
+        return y + 12
+
+    y = head(y, "Признаки")
+    for s_ in p.get("signs", [])[:5]:
+        y = box(y, s_, "accent") + 6
+    body.append(_arrow(W / 2, y + 2, W / 2, y + 22))
+    y = head(y + 30, "Правило")
+    y = box(y, p.get("rule", ""), "neutral") + 4
+    outs = p.get("outcomes", [])[:5]
     if outs:
-        body.append(_arrow(W / 2, y + 2, W / 2, y + 24))
-        y += 30
-        body.append(f'<text class="ill-small" x="20" y="{y+4}">Вывод</text>')
-        y += 12
-        n = len(outs)
-        cw = (W - 40 - (n - 1) * 10) / n
-        maxh = 0
-        blocks = []
-        for i, o in enumerate(outs):
-            x = 20 + i * (cw + 10)
-            chars = max(10, int(cw / 8.5))
-            tone = o.get("tone", "neutral")
-            t1, h1 = _text_block(x + cw / 2, y + 22, o.get("if", ""), chars, "ill-small")
-            t2, h2 = _text_block(x + cw / 2, y + 30 + h1, o.get("then", ""), chars, "ill-title")
-            maxh = max(maxh, h1 + h2 + 24)
-            blocks.append((x, tone, t1 + t2))
-        for x, tone, t in blocks:
-            body.append(f'<rect class="ill-box ill-{tone}" x="{x:.1f}" y="{y}" width="{cw:.1f}" height="{maxh}" rx="8"/>{t}')
-        y += maxh
-    return _svg(y + 16, "".join(body), label, title or p.get("rule", ""))
+        body.append(_arrow(W / 2, y + 2, W / 2, y + 22))
+        y = head(y + 30, "Вывод")
+        for o in outs:
+            y = box(y, f"{o.get('if', '')} → {o.get('then', '')}", o.get("tone", "neutral")) + 6
+    return _svg(y + 12, "".join(body), label, title or p.get("rule", ""))
 
 
 def tpl_regions2d(p: dict, label: str) -> str:
@@ -241,10 +218,10 @@ def tpl_regions2d(p: dict, label: str) -> str:
     top = 30
     body = []
     if title:
-        t, h = _text_block(W / 2, top + 8, title, 60, "ill-title")
+        t, h = _text_block(W / 2, top + 8, title, 34, "ill-title")
         body.append(t)
         top += h + 14
-    L, R, T, B = 70, W - 20, top, top + 300
+    L, R, T, B = 52, W - 12, top, top + 260
     for r in p.get("regions", []):
         rx = [float(v) for v in r.get("x", [xlo, xhi])]
         ry = [float(v) for v in r.get("y", [ylo, yhi])]

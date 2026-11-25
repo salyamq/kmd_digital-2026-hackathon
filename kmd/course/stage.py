@@ -158,6 +158,10 @@ def step_llm_schema() -> dict:
     return s
 
 
+def validate_answer(ans: dict) -> None:
+    llm.validate(ans, step_llm_schema())
+
+
 # ---------------------------------------------------------------- planning
 
 def plan(layer: dict, routing: dict) -> dict:

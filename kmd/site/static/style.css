@@ -69,6 +69,8 @@ kbd { font: 0.75rem ui-monospace, monospace; border: 1px solid var(--line); bord
   .brand-text { display: none; }
   .mainnav { margin-left: 0; order: 3; width: 100%; justify-content: space-between; gap: 0.2rem 0.6rem; font-size: 0.88rem; }
   .theme-toggle { margin-left: auto; }
+  .topbar { position: static; }
+  .wide-only { display: none; }
 }
 
 /* layout */
@@ -334,3 +336,6 @@ th { background: var(--surface-2); }
 .ill-label { fill: var(--ill-muted); font: italic 12px system-ui, sans-serif; }
 .ill-point { fill: var(--ill-accent-line); }
 .ill-svg .ill-label { display: none; } /* the HTML badge .prov shows provenance on the picture */
+.ill-frame .ill-svg { max-width: 34rem; margin: 0 auto; }
+.btn kbd { color: inherit; border-color: currentColor; opacity: .8; }
+@media (hover: none) { .btn kbd { display: none; } }

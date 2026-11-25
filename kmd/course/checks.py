@@ -51,7 +51,14 @@ _NUM = re.compile(r"(?<![\w.,])(\d+(?:[.,]\d+)?)")
 
 
 def numbers(text: str) -> list[str]:
-    """Numbers in text, normalized (decimal comma -> dot, no leading zeros)."""
+    """Numbers in text, normalized (decimal comma -> dot, no leading zeros).
+    Uses kmd.verify's extractor (skips sub/superscripts and letter-glued digits) when available."""
+    try:
+        from ..verify import _canon, extract_numbers
+
+        return [_canon(n) for n in extract_numbers(str(text or ""))]
+    except Exception:
+        pass
     t = re.sub(r"(?<=\d)[ \u00a0\u202f](?=\d{3}\b)", "", str(text or ""))  # 10 000 -> 10000
     out = []
     for m in _NUM.finditer(t):
