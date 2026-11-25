@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 25. Как читать карты фаций и пористости — Природные резервуары рифов</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Природные резервуары рифов"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">В. Г. Кузнецов: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="56" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.kuznetsov.s10_3.10" data-index="25">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Когда лучшие коллекторы — на краю или вдоль рифа › Шаг 25 из 56</p>
+    <h1>Как читать карты фаций и пористости</h1>
+    <p class="booktitle">В книге: «Фации и пористость рифа Тенгиз» <span class="pg">стр. 210</span></p>
+    <p class="meta">
+      <span class="chip">≈ 9 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: пространство + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-22.html">шаг 22 «Пористость трёх зон рифа Тенгиз»</a> <span class="muted">(предпосылка)</span>, <a href="step-20.html">шаг 20 «Почему лучшие коллекторы у края рифа»</a> <span class="muted">(пример)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Рисунок месторождения Тенгиз сочетает две карты: схематическую фациальную карту атолловидного рифа и карту пористости.</p><p>На них разные линии показывают разные величины: изогипсы — отметки кровли, изолинии — пористость.</p><p>Сначала проверьте легенду, потом сопоставляйте зоны рифа с пористостью; разлом на карте — только предполагаемый.</p><p class="threshold"><b>Пороговая идея.</b> Отличить карту обстановок формирования от карты значений свойства и от поверхности кровли. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что на рисунке</h3>          <div class="para" id="how-1">
+            <p>Рис. 10.4 книги — месторождение Тенгиз в Прикаспийской впадине. Панель а — схематическая фациальная карта атолловидного рифа. Панель б — карта пористости. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c01"><p>«Месторождение Тенгиз, Прикаспийская впадина [Павлов, 1963]»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c06"><p>«a – схематическая фациальная карта атолловидного рифа; б – карта пористости.»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Фациальная карта</h3>          <div class="para" id="how-2">
+            <p>На фациальной карте различены три зоны: остов атолловидного рифа, центральная лагуна и дальние склоны. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c02"><p>«Фации: 1 – остока атолловидного рифа; 2 – центральной лагуны; 3 – дальних склонов»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Линии и значки</h3>          <div class="para" id="how-3">
+            <p>На карте показаны профили — линии, вдоль которых строят разрезы. Есть <strong class="term">изогипсы</strong> кровли продуктивного комплекса — линии равной отметки его верхней границы. Отмечены и <strong class="term">поглощающие скважины</strong>, в которые жидкость уходит в пласт. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c03"><p>«4 – профили; 5 – изогинсы кровли продуктивного комплекса; 6 – поглощающие скважины»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p>Отдельно в легенде указаны <strong class="term">изолинии</strong> коэффициента пористости — линии равной пористости. И скважины с номером и значением коэффициента пористости. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c04"><p>«7 – изолинии величины коэффициента пористости; 8 – скважина, ее номер и значение коэффициента пористости»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюанс</h3>          <div class="para" id="how-5">
+            <p>Структура оконтурена изогипсой. А разлом обозначен как предполагаемый — его нельзя считать подтверждённым. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+            <blockquote class="quote" cite="#src-geo.kuznetsov.s10_3.10.c05"><p>«9 – изогинса, оконтуривающая структуру; 10 – предполагаемый разлом»</p><footer>— автор, стр. 210 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как сопоставлять</h3>          <div class="para" id="how-6">
+            <p>Похожие на вид линии показывают разные величины. Поэтому сначала по легенде определяют, что за линия. Значение у скважины — замер в точке, а изолиния — интерпретация между скважинами. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" role="img" aria-label="Сначала легенда, потом контуры" class="ill-svg"><title>Сначала легенда, потом контуры</title><rect class="ill-bg" x="0" y="0" width="360" height="460" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Сначала легенда, потом контуры</tspan></text><text class="ill-small" x="14" y="67">Признаки</text><rect class="ill-box ill-accent" x="12" y="75" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="96" text-anchor="start"><tspan x="24" dy="0">Линия или значок на рис. 10.4</tspan></text><line class="ill-line" x1="180.0" y1="116.0" x2="180.0" y2="136.0"/><polygon class="ill-arrow" points="180.0,136.0 176.1,127.9 183.9,127.9"/><text class="ill-small" x="14" y="148">Правило</text><rect class="ill-box ill-neutral" x="12" y="156" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="177" text-anchor="start"><tspan x="24" dy="0">Определить по легенде, какую величину</tspan><tspan x="24" dy="19">показывает линия</tspan></text><line class="ill-line" x1="180.0" y1="214.0" x2="180.0" y2="234.0"/><polygon class="ill-arrow" points="180.0,234.0 176.1,225.9 183.9,225.9"/><text class="ill-small" x="14" y="246">Вывод</text><rect class="ill-box ill-accent" x="12" y="254" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="275" text-anchor="start"><tspan x="24" dy="0">равная отметка кровли → изогипса</tspan></text><rect class="ill-box ill-good" x="12" y="293" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="314" text-anchor="start"><tspan x="24" dy="0">равный коэффициент пористости →</tspan><tspan x="24" dy="19">изолиния пористости</tspan></text><rect class="ill-box ill-neutral" x="12" y="351" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="372" text-anchor="start"><tspan x="24" dy="0">скважина с числом → замер пористости в</tspan><tspan x="24" dy="19">точке</tspan></text><rect class="ill-box ill-bad" x="12" y="409" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="430" text-anchor="start"><tspan x="24" dy="0">линия разлома → предполагаемый разлом</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Правило чтения карты Тенгиза: одинаковые на вид линии показывают разные величины.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 210</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как сопоставить зоны рифа с пористостью</p>        <ol class="proc"><li>На панели а найдите остов рифа, центральную лагуну и дальние склоны. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></li><li>По легенде отличите изогипсы кровли от изолиний пористости. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></li><li>На панели б сравните изолинии и скважинные значения пористости в каждой зоне. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></li></ol>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Что показывает эта линия на карте Тенгиза?</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Описание линии или значка в легенде</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сначала определить по легенде, какую величину показывает линия, и только потом сопоставлять контуры. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Изогипса кровли, изолиния пористости, скважинное значение или предполагаемый разлом.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Линия соединяет точки равной отметки кровли продуктивного комплекса <span class="muted small">(легенда рис. 10.4)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">изогипса</button><button type="button" class="btn ghost case-opt" data-i="1">изолиния пористости</button><button type="button" class="btn ghost case-opt" data-i="2">профиль</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Изогипса — линия равной отметки поверхности.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Линия соединяет точки равного коэффициента пористости <span class="muted small">(легенда рис. 10.4)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">изогипса</button><button type="button" class="btn ghost case-opt" data-i="1">изолиния пористости</button><button type="button" class="btn ghost case-opt" data-i="2">разлом</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Так в легенде обозначены изолинии коэффициента пористости.</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Значок скважины с номером и числом рядом <span class="muted small">(легенда рис. 10.4)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">значение пористости в скважине</button><button type="button" class="btn ghost case-opt" data-i="1">отметка кровли</button><button type="button" class="btn ghost case-opt" data-i="2">граница фации</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Легенда: скважина, её номер и значение коэффициента пористости.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Линия разлома на карте <span class="muted small">(легенда рис. 10.4)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">подтверждённый разлом</button><button type="button" class="btn ghost case-opt" data-i="1">предполагаемый разлом</button><button type="button" class="btn ghost case-opt" data-i="2">изогипса</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> В легенде разлом обозначен как предполагаемый.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: разлом на рис. 10.4 — предполагаемый, не подтверждённый. <span class="pg" title="Страница книги (по PDF)">стр. 210</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для Ержана: скважинное значение и линия интерпретированной карты — разные типы записей.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Фациальные зоны, координаты скважин, значения пористости, контуры и типы объектов.</dd>
+          <dt>Выход</dt><dd>Согласованные пространственные слои с отдельной разметкой того, что наблюдали и что интерпретировали.</dd>
+          <dt>Где ломается</dt><dd>Если не указана переменная контура или если предполагаемый разлом записан как подтверждённый.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Разделив измеренные точки и интерпретированные линии, легче выявить области слабого покрытия данными.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Легенда карты, скважины и контуры.</dd>
+            <dt>Ручные шаги</dt><dd>Разнести разные типы линий по слоям; сопоставить точки со значениями.</dd>
+            <dt>Точки суждения</dt><dd>Проверить, какой контур изображает кровлю, а какой — пористость.</dd>
+            <dt>Время</dt><dd>Зависит от качества легенды и привязок объектов.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять изогипсу за линию равной пористости или не сохранить статус разлома.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Карта — набор слоёв как в картографическом приложении: зоны, точки, линии разных типов.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> В недрах положение линий восстанавливают по неполным данным; их точность не равна точности отрисовки.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>В цифровом каталоге маркировать тип линии, единицы свойства, источник и статус уверенности геологической интерпретации.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Не путать типы изолиний <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Геометрически одинаковые контурные линии могут показывать разные переменные. Сначала проверьте легенду и только затем сопоставляйте контуры.</p></details>
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 10.4. Рис. 10.4. Месторождение Тенгиз, Прикаспийская впадина [Павлов, 1963]:
+Фации: 1 – остока атолловидного рифа; 2 – центральной лагуны; 3 – дальних склонов; 4 – профили; 5 – изогинсы кровли продуктивного комплекса; 6 – поглощающие скважины; 7 – изолинии величины коэффициента пористости; 8 – скважина, ее номер и значение коэффициента пористости; 9 – изогинса, оконтуривающая структуру; 10 – предполагаемый разлом <span class="pg">стр. 210</span></li></ul>
+        <p class="muted small">Сканы рисунков книги в курс не вставляются: смотрите их в книге по номеру страницы. Перерисованные кодом рисунки показаны выше с пометкой «перерисовано по рис.».</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Коллектор</dt><dd>Порода с пустотами, способная вмещать и пропускать флюид — жидкость или газ.  <span class="chip chip-model">модель</span></dd><dt>Фация</dt><dd>Часть отложений, по признакам которой восстанавливают определённую обстановку её формирования.  <span class="chip chip-model">модель</span></dd><dt>Пористость</dt><dd>Доля объёма породы, занятая пустотами.  <span class="chip chip-model">модель</span></dd><dt>Проницаемость</dt><dd>Способность породы пропускать жидкость или газ через сообщающиеся пустоты.  <span class="chip chip-model">модель</span></dd><dt>Атолловидный риф</dt><dd>Кольцевая рифовая постройка с внутренней лагуной.  <span class="chip chip-model">модель</span></dd><dt>Лагуна</dt><dd>Внутренняя область рифового кольца.  <span class="chip chip-model">модель</span></dd><dt>Кровля</dt><dd>Верхняя граница слоя или комплекса пород.  <span class="chip chip-model">модель</span></dd><dt>Изогипса</dt><dd>Линия равной отметки поверхности.  <span class="chip chip-model">модель</span></dd><dt>Изолиния</dt><dd>Линия равного значения некоторой величины.  <span class="chip chip-model">модель</span></dd><dt>Коэффициент пористости</dt><dd>Доля пустот в общем объёме породы.  <span class="chip chip-model">модель</span></dd><dt>Разлом</dt><dd>Нарушение сплошности пород со смещением.  <span class="chip chip-model">модель</span></dd><dt>Продуктивный комплекс</dt><dd>Толща, содержащая продуктивные породы.  <span class="chip chip-model">модель</span></dd><dt>Поглощающая скважина</dt><dd>Скважина, в которую закачиваемая жидкость уходит в пласт.  <span class="chip chip-model">модель</span></dd><dt>Профиль</dt><dd>Линия, вдоль которой строят разрез или сопоставляют данные.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-kuznetsov-s10_3-10-t01" data-task="geo.kuznetsov.s10_3.10.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенное слово.</p>
+  <p class="cloze">Разлом на карте месторождения Тенгиз обозначен как <select aria-label="Пропуск 1"><option value="">—</option><option>предполагаемый</option><option>древний</option><option>главный</option><option>подтверждённый</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Разлом на карте месторождения Тенгиз обозначен как [предполагаемый].</p>
+    <p class="fb-expl">Предполагаемый разлом нельзя записывать в данные как подтверждённый. <a href="#how-5">Где это в тексте (стр. 210) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-kuznetsov-s10_3-10-t02" data-task="geo.kuznetsov.s10_3.10.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что показывает изогипса кровли продуктивного комплекса?</legend>
+    <label class="opt"><input type="radio" name="geo.kuznetsov.s10_3.10.t02" value="0"> <span>Траекторию скважины</span></label>
+    <label class="opt"><input type="radio" name="geo.kuznetsov.s10_3.10.t02" value="1"> <span>Границу фаций</span></label>
+    <label class="opt"><input type="radio" name="geo.kuznetsov.s10_3.10.t02" value="2"> <span>Линию равной пористости</span></label>
+    <label class="opt"><input type="radio" name="geo.kuznetsov.s10_3.10.t02" value="3"> <span>Линию равной отметки верхней границы комплекса</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Линию равной отметки верхней границы комплекса</p>
+    <p class="fb-expl">Изогипса — линия равной высотной отметки поверхности; пористость показывают изолинии. <a href="#how-3">Где это в тексте (стр. 210) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.kuznetsov.s10_3.10.c01"><p>Показаны схемы месторождения Тенгиз в Прикаспийской впадине. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Месторождение Тенгиз, Прикаспийская впадина [Павлов, 1963]»</p><footer>— стр. 210</footer></blockquote></li>
+        <li id="src-geo.kuznetsov.s10_3.10.c02"><p>На карте различены фации остова атолловидного рифа, центральной лагуны и дальних склонов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Фации: 1 – остока атолловидного рифа; 2 – центральной лагуны; 3 – дальних склонов»</p><footer>— стр. 210</footer></blockquote></li>
+        <li id="src-geo.kuznetsov.s10_3.10.c03"><p>На карте обозначены профили, изогипсы кровли и поглощающие скважины. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«4 – профили; 5 – изогинсы кровли продуктивного комплекса; 6 – поглощающие скважины»</p><footer>— стр. 210</footer></blockquote></li>
+        <li id="src-geo.kuznetsov.s10_3.10.c04"><p>В легенде отдельно указаны изолинии коэффициента пористости и скважины с номером и значением пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«7 – изолинии величины коэффициента пористости; 8 – скважина, ее номер и значение коэффициента пористости»</p><footer>— стр. 210</footer></blockquote></li>
+        <li id="src-geo.kuznetsov.s10_3.10.c05"><p>Структура оконтурена изогипсой; разлом обозначен как предполагаемый. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«9 – изогинса, оконтуривающая структуру; 10 – предполагаемый разлом»</p><footer>— стр. 210</footer></blockquote></li>
+        <li id="src-geo.kuznetsov.s10_3.10.c06"><p>Панель а — схематическая фациальная карта атолловидного рифа; панель б — карта пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«a – схематическая фациальная карта атолловидного рифа; б – карта пористости.»</p><footer>— стр. 210</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-18.html">шаг 18 «Свойства ядра и крыльев рифа Рейнбоу»</a>, <a href="step-22.html">шаг 22 «Пористость трёх зон рифа Тенгиз»</a>, <a href="step-28.html">шаг 28 «Когда риф можно считать массивным»</a>, <a href="step-50.html">шаг 50 «Когда бурить сначала по краям»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-24.html" rel="prev"><span>← Назад</span><b>Коллекторы смещаются вместе с гребнем</b></a><a class="next" href="step-26.html" rel="next"><span>Дальше →</span><b>Проницаемое кольцо рифа</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: В. Г. Кузнецов, «Литология природных резервуаров нефти и газа», 2012. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "kuznetsov", "title": "Природные резервуары рифов", "book": {"author": "В. Г. Кузнецов", "title": "Литология природных резервуаров нефти и газа", "year": 2012, "md": "md/train_kuznetsov.md", "pdf": "pdf/kuznetsov.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_kuznetsov.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/kuznetsov.pdf"}, "steps": [{"node_id": "geo.kuznetsov.s10_1.01", "index": 1, "title": "Почему небольшие рифы богаты нефтью", "url": "step-01.html", "minutes": 8}, {"node_id": "geo.kuznetsov.s10_1.02", "index": 2, "title": "Биостром и биогерм: пласт или холм", "url": "step-02.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_1.03", "index": 3, "title": "Что делает постройку настоящим рифом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_1.04", "index": 4, "title": "Одиночный риф или рифовая цепочка", "url": "step-04.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_2.01", "index": 5, "title": "Каркас запускает рост рифа", "url": "step-05.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.02", "index": 6, "title": "Обломочные и изменённые породы рифа", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.03", "index": 7, "title": "Почему породы рифа быстро сменяются", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_2.04", "index": 8, "title": "Куполовидный риф: от ядра к периферии", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_2.05", "index": 9, "title": "Атолл: кольцо, внутренний склон и лагуна", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.06", "index": 10, "title": "Поперёк линейной цепи рифов", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.07", "index": 11, "title": "Пустоты внутри скелетов и между ними", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.08", "index": 12, "title": "Первичные пустоты вне скелетного каркаса", "url": "step-12.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_2.09", "index": 13, "title": "Как риф теряет первичные поры", "url": "step-13.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_2.10", "index": 14, "title": "Как вода создаёт каверны в рифе", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.kuznetsov.s10_2.11", "index": 15, "title": "Поры между кристаллами", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_3.01", "index": 16, "title": "Когда лучший коллектор в центре рифа", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_3.02", "index": 17, "title": "Из чего состоит риф Рейнбоу «А»", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_3.03", "index": 18, "title": "Свойства ядра и крыльев рифа Рейнбоу", "url": "step-18.html", "minutes": 10}, {"node_id": "geo.kuznetsov.s10_3.04", "index": 19, "title": "Где ещё лучшие коллекторы в центре", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.05", "index": 20, "title": "Почему лучшие коллекторы у края рифа", "url": "step-20.html", "minutes": 9}, {"node_id": "geo.kuznetsov.s10_3.06", "index": 21, "title": "Что могут объяснить краевые трещины", "url": "step-21.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.07", "index": 22, "title": "Пористость трёх зон рифа Тенгиз", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_3.08", "index": 23, "title": "Карачаганак: купол и кольцо устроены по-разному", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.kuznetsov.s10_3.09", "index": 24, "title": "Коллекторы смещаются вместе с гребнем", "url": "step-24.html", "minutes": 8}, {"node_id": "geo.kuznetsov.s10_3.10", "index": 25, "title": "Как читать карты фаций и пористости", "url": "step-25.html", "minutes": 9}, {"node_id": "geo.kuznetsov.s10_3.19", "index": 26, "title": "Проницаемое кольцо рифа", "url": "step-26.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.20", "index": 27, "title": "Коллектор асимметричного рифа", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.11", "index": 28, "title": "Когда риф можно считать массивным", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_3.12", "index": 29, "title": "Слои внутри рифа от смены глубины", "url": "step-29.html", "minutes": 9}, {"node_id": "geo.kuznetsov.s10_3.14", "index": 30, "title": "Почему коллекторы чередуются по глубине", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.15", "index": 31, "title": "Как хорошие пачки лежат внутри рифа", "url": "step-31.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_3.13", "index": 32, "title": "Линзы и пласты пористости на разрезе", "url": "step-32.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_3.16", "index": 33, "title": "Карачаганак: плотные пачки и трещины", "url": "step-33.html", "minutes": 8}, {"node_id": "geo.kuznetsov.s10_3.18", "index": 34, "title": "Когда флюиду трудно двигаться вверх", "url": "step-34.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_3.17", "index": 35, "title": "Форма рифа подсказывает схему разведки", "url": "step-35.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_4.01", "index": 36, "title": "Когда риф получает покрышку", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_4.02", "index": 37, "title": "Что замыкает рифовую ловушку", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.04", "index": 38, "title": "Где проходит нижняя граница ловушки", "url": "step-38.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.05", "index": 39, "title": "Узнайте ловушку по её форме", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.06", "index": 40, "title": "Почему важна зарифовая сторона", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.07", "index": 41, "title": "Куда смещается свод ловушки", "url": "step-41.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.08", "index": 42, "title": "Как складка дополняет боковой экран", "url": "step-42.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.09", "index": 43, "title": "Когда ловушку создаёт складка", "url": "step-43.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.03", "index": 44, "title": "Как читать схему рифовых ловушек", "url": "step-44.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_4.10", "index": 45, "title": "Где размещается рифовая залежь", "url": "step-45.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.11", "index": 46, "title": "Чем ограничена высота рифовой залежи", "url": "step-46.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_4.12", "index": 47, "title": "Как тип рифа направляет разведку", "url": "step-47.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.13", "index": 48, "title": "Где бурить в куполовидном рифе", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_4.14", "index": 49, "title": "Почему перспективен край крупного рифа", "url": "step-49.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.15", "index": 50, "title": "Когда бурить сначала по краям", "url": "step-50.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.16", "index": 51, "title": "Что задаёт высоту асимметричной ловушки", "url": "step-51.html", "minutes": 5}, {"node_id": "geo.kuznetsov.s10_4.17", "index": 52, "title": "Почему проверяют фронт рифа", "url": "step-52.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.18", "index": 53, "title": "Где ловушка замкнута слабее всего", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.kuznetsov.s10_4.19", "index": 54, "title": "Почему объём залежи сосредоточен под сводом", "url": "step-54.html", "minutes": 7}, {"node_id": "geo.kuznetsov.s10_4.20", "index": 55, "title": "Зачем сгущать скважины у свода", "url": "step-55.html", "minutes": 4}, {"node_id": "geo.kuznetsov.s10_4.21", "index": 56, "title": "Как форма рифа задаёт схему бурения", "url": "step-56.html", "minutes": 9}], "minutes": 339, "n_tasks": 134, "n_cards": 132};</script>
+<script>window.KMD_TASKS = [{"id": "geo.kuznetsov.s10_3.10.t01", "type": "cloze", "question": "Вставьте пропущенное слово.", "explanation": "Предполагаемый разлом нельзя записывать в данные как подтверждённый.", "page": 210, "link": "#how-5", "step_title": "Как читать карты фаций и пористости", "step_index": 25, "node_id": "geo.kuznetsov.s10_3.10", "parts": ["Разлом на карте месторождения Тенгиз обозначен как ", "."], "blanks": [{"options": ["предполагаемый", "древний", "главный", "подтверждённый"], "answers": ["предполагаемый"]}], "key": [["предполагаемый"]], "answer_text": "Разлом на карте месторождения Тенгиз обозначен как [предполагаемый]."}, {"id": "geo.kuznetsov.s10_3.10.t02", "type": "single", "question": "Что показывает изогипса кровли продуктивного комплекса?", "explanation": "Изогипса — линия равной высотной отметки поверхности; пористость показывают изолинии.", "page": 210, "link": "#how-3", "step_title": "Как читать карты фаций и пористости", "step_index": 25, "node_id": "geo.kuznetsov.s10_3.10", "options": ["Траекторию скважины", "Границу фаций", "Линию равной пористости", "Линию равной отметки верхней границы комплекса"], "key": [3], "answer_text": "Линию равной отметки верхней границы комплекса"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

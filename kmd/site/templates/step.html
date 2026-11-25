@@ -186,7 +186,8 @@
 
       {% elif b.kind == "book_figures" %}
         <ul class="bookfigs">{% for f in b["items"] %}<li>Рис. {{ f.number }}. {{ f.caption|md }} <span class="pg">стр. {{ f.page }}</span></li>{% endfor %}</ul>
-        <p class="muted small">Рисунки книги в курс не вставляются: смотрите их в книге по номеру страницы; нужные для примеров перерисованы кодом.</p>
+        {% for ill in ills_after.get("book_figures", []) %}{{ m.figure(ill) }}{% endfor %}
+        <p class="muted small">Сканы рисунков книги в курс не вставляются: смотрите их в книге по номеру страницы. Перерисованные кодом рисунки показаны выше с пометкой «перерисовано по рис.».</p>
 
       {% elif b.kind == "glossary" %}
         <dl class="gloss">{% for t in b["items"] %}<dt>{{ t.term }}{% if t.en %} <span class="en" lang="en">({{ t.en }})</span>{% endif %}</dt><dd>{{ t.definition|md }} {% if t.page %}<span class="pg">стр. {{ t.page }}</span>{% endif %}{% if t.by == "model" %} <span class="chip chip-model">модель</span>{% endif %}</dd>{% endfor %}</dl>

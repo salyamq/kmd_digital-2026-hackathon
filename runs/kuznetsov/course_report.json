@@ -1,0 +1,588 @@
+{
+  "chapter": "kuznetsov",
+  "nodes": 56,
+  "steps_done": 56,
+  "pending": [],
+  "tasks": 134,
+  "task_types": {
+    "cloze": 31,
+    "multiple": 26,
+    "numeric": 10,
+    "order": 12,
+    "single": 55
+  },
+  "cards": 132,
+  "decision_steps": [
+    "geo.kuznetsov.s10_3.03",
+    "geo.kuznetsov.s10_3.07",
+    "geo.kuznetsov.s10_3.10",
+    "geo.kuznetsov.s10_4.21"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "geo.kuznetsov.s10_1.01",
+      "status": "ok",
+      "title": "Почему небольшие рифы богаты нефтью",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_1.02",
+      "status": "ok",
+      "title": "Биостром и биогерм: пласт или холм",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_1.03",
+      "status": "ok",
+      "title": "Что делает постройку настоящим рифом",
+      "tasks": 2,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_1.04",
+      "status": "ok",
+      "title": "Одиночный риф или рифовая цепочка",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.01",
+      "status": "ok",
+      "title": "Каркас запускает рост рифа",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.02",
+      "status": "ok",
+      "title": "Обломочные и изменённые породы рифа",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.03",
+      "status": "ok",
+      "title": "Почему породы рифа быстро сменяются",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.04",
+      "status": "ok",
+      "title": "Куполовидный риф: от ядра к периферии",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.05",
+      "status": "ok",
+      "title": "Атолл: кольцо, внутренний склон и лагуна",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.06",
+      "status": "ok",
+      "title": "Поперёк линейной цепи рифов",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.07",
+      "status": "ok",
+      "title": "Пустоты внутри скелетов и между ними",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.08",
+      "status": "ok",
+      "title": "Первичные пустоты вне скелетного каркаса",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.09",
+      "status": "ok",
+      "title": "Как риф теряет первичные поры",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.10",
+      "status": "ok",
+      "title": "Как вода создаёт каверны в рифе",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.11",
+      "status": "ok",
+      "title": "Поры между кристаллами",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.01",
+      "status": "ok",
+      "title": "Когда лучший коллектор в центре рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "tasks: меньше двух типов заданий в шаге"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.02",
+      "status": "ok",
+      "title": "Из чего состоит риф Рейнбоу «А»",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.03",
+      "status": "ok",
+      "title": "Свойства ядра и крыльев рифа Рейнбоу",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.04",
+      "status": "ok",
+      "title": "Где ещё лучшие коллекторы в центре",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.05",
+      "status": "ok",
+      "title": "Почему лучшие коллекторы у края рифа",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.06",
+      "status": "ok",
+      "title": "Что могут объяснить краевые трещины",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.07",
+      "status": "ok",
+      "title": "Пористость трёх зон рифа Тенгиз",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.08",
+      "status": "ok",
+      "title": "Карачаганак: купол и кольцо устроены по-разному",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.09",
+      "status": "ok",
+      "title": "Коллекторы смещаются вместе с гребнем",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.10",
+      "status": "ok",
+      "title": "Как читать карты фаций и пористости",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.19",
+      "status": "ok",
+      "title": "Проницаемое кольцо рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.20",
+      "status": "ok",
+      "title": "Коллектор асимметричного рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.11",
+      "status": "ok",
+      "title": "Когда риф можно считать массивным",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.12",
+      "status": "ok",
+      "title": "Слои внутри рифа от смены глубины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.14",
+      "status": "ok",
+      "title": "Почему коллекторы чередуются по глубине",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.15",
+      "status": "ok",
+      "title": "Как хорошие пачки лежат внутри рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (log_track): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.02, 0.15, 2012, 2016, 2026, 2030, 2040"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.13",
+      "status": "ok",
+      "title": "Линзы и пласты пористости на разрезе",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.16",
+      "status": "ok",
+      "title": "Карачаганак: плотные пачки и трещины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.18",
+      "status": "ok",
+      "title": "Когда флюиду трудно двигаться вверх",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.17",
+      "status": "ok",
+      "title": "Форма рифа подсказывает схему разведки",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.01",
+      "status": "ok",
+      "title": "Когда риф получает покрышку",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.02",
+      "status": "ok",
+      "title": "Что замыкает рифовую ловушку",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.04",
+      "status": "ok",
+      "title": "Где проходит нижняя граница ловушки",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.05",
+      "status": "ok",
+      "title": "Узнайте ловушку по её форме",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.06",
+      "status": "ok",
+      "title": "Почему важна зарифовая сторона",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.07",
+      "status": "ok",
+      "title": "Куда смещается свод ловушки",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.08",
+      "status": "ok",
+      "title": "Как складка дополняет боковой экран",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.09",
+      "status": "ok",
+      "title": "Когда ловушку создаёт складка",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.03",
+      "status": "ok",
+      "title": "Как читать схему рифовых ловушек",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.10",
+      "status": "ok",
+      "title": "Где размещается рифовая залежь",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.11",
+      "status": "ok",
+      "title": "Чем ограничена высота рифовой залежи",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.12",
+      "status": "ok",
+      "title": "Как тип рифа направляет разведку",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.13",
+      "status": "ok",
+      "title": "Где бурить в куполовидном рифе",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.14",
+      "status": "ok",
+      "title": "Почему перспективен край крупного рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.15",
+      "status": "ok",
+      "title": "Когда бурить сначала по краям",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.16",
+      "status": "ok",
+      "title": "Что задаёт высоту асимметричной ловушки",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.17",
+      "status": "ok",
+      "title": "Почему проверяют фронт рифа",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.18",
+      "status": "ok",
+      "title": "Где ловушка замкнута слабее всего",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.19",
+      "status": "ok",
+      "title": "Почему объём залежи сосредоточен под сводом",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.20",
+      "status": "ok",
+      "title": "Зачем сгущать скважины у свода",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.21",
+      "status": "ok",
+      "title": "Как форма рифа задаёт схему бурения",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    }
+  ]
+}

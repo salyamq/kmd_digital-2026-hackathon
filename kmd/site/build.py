@@ -388,7 +388,10 @@ def build(chapter: str) -> Path:
         next_s = steps[i + 1] if i + 1 < len(steps) else None
         ills_after = {}
         for ill in s.get("illustrations", []):
-            ills_after.setdefault(ill.get("after_block") or "how", []).append(ill)
+            ab = ill.get("after_block") or "how"
+            if ab == "book_figures" and not any(b.get("kind") == "book_figures" for b in s.get("blocks", [])):
+                ab = "how"
+            ills_after.setdefault(ab, []).append(ill)
         page("step.html", url_of[s["node_id"]], s=s, tasks=views, tasks_json=jdump(views),
              prev=prev_s and {"url": url_of[prev_s["node_id"]], "title": prev_s["title_beginner"]},
              next=next_s and {"url": url_of[next_s["node_id"]], "title": next_s["title_beginner"]},
