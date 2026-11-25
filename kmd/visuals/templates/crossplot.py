@@ -212,6 +212,15 @@ class Crossplot(Template):
         for an in p.get("annotations", []):
             ax.annotate(an["text"], (an["x"], an["y"]), xytext=(6, -6), textcoords="offset points",
                         fontsize=ctx.pt(0.78), color="#212121", bbox=dict(fc="white", ec="#BDBDBD", alpha=0.9, pad=2))
+        from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter
+
+        for a, axis in ((p["x"], ax.xaxis), (p["y"], ax.yaxis)):
+            if a.get("scale") == "log":
+                axis.set_major_locator(LogLocator(base=10, numticks=8))
+                axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
+                axis.set_minor_formatter(NullFormatter())
+            else:
+                axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
         ax.grid(True, which="both", color=sg["palette"]["grid"], lw=0.5)
         if p.get("series") or p.get("functions"):
             ax.legend(fontsize=ctx.pt(0.78), loc="best")

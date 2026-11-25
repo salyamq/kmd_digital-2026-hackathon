@@ -114,17 +114,22 @@ def render(template: str, params: dict, out: str | Path, *, size=(1200, 750), t:
     setup_rc(sg, base_px=bpx, dpi=dpi)
     fig = plt.figure(figsize=(W / dpi, H / dpi), dpi=dpi)
     ctx = DrawCtx(sg=sg, dpi=dpi, base_px=bpx, mode="illustration", fig_px=(W, H))
-    top_h = (bpx * 2.6) / H
+    import textwrap
+
+    ttl = title if title is not None else p.get("title", "")
+    # title goes on its own line(s) under the provenance badge, wrapped to the image width
+    ttl_lines = textwrap.wrap(ttl, max(20, int(W / (bpx * 1.1 * 0.62)))) if ttl else []
+    top_h = (bpx * 2.3 + len(ttl_lines) * bpx * 1.45) / H
     foot_h = (bpx * 1.9) / H
     leg_h = (bpx * 2.0 * (2 if W < 1000 else 1.6)) / H
     axl_h = (bpx * 3.0) / H
-    rect = [0.075, foot_h + leg_h + axl_h, 0.905, 1 - top_h - foot_h - leg_h - axl_h - 0.02]
+    lm = max(0.075, bpx * 4.6 / W)
+    rect = [lm, foot_h + leg_h + axl_h, 0.98 - lm, 1 - top_h - foot_h - leg_h - axl_h - 0.02]
     res = tpl.draw(fig, rect, p, t, ctx) or {}
     prov = provenance or tpl.provenance_for(p)
     provenance_badge(fig, sg, prov, size_px=bpx * 0.95, dpi=dpi, xy=(0.012, 1 - 0.3 * bpx / H))
-    ttl = title if title is not None else p.get("title", "")
-    if ttl:
-        fig.text(0.5, 1 - 0.35 * bpx / H, ttl, ha="center", va="top", fontsize=ctx.pt(1.1), fontweight="bold",
+    if ttl_lines:
+        fig.text(0.5, 1 - 2.0 * bpx / H, "\n".join(ttl_lines), ha="center", va="top", fontsize=ctx.pt(1.1), fontweight="bold",
                  color=sg["palette"]["text"], wrap=True)
     ex = list(res.get("exaggerations", [])) + list(exaggerations or [])
     _draw_legend(fig, res.get("legend", []), [0.02, foot_h + 0.01, 0.96, leg_h], ctx)
@@ -140,7 +145,7 @@ def render(template: str, params: dict, out: str | Path, *, size=(1200, 750), t:
     out.parent.mkdir(parents=True, exist_ok=True)
     paths = []
     for fmt in formats:
-        pth = out.with_suffix("." + fmt)
+        pth = out.parent / f"{out.name}.{fmt}" if not out.suffix.lower() in (".svg", ".png") else out.with_suffix("." + fmt)
         fig.savefig(pth, format=fmt, dpi=dpi, metadata={"Date": None} if fmt == "svg" else None)
         paths.append(pth)
     plt.close(fig)

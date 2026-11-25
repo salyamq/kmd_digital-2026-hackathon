@@ -23,7 +23,7 @@
 ```
 
 # Маршрутизация узла
-Формат: {{ format }}. Критерии видеоёмкости: {{ route.video_criteria | join(", ") if route.video_criteria else "—" }}. Обоснование: {{ route.rationale or "—" }}.
+Формат: {{ format }}. Критерии видеоёмкости: {{ route.video_criteria | join(", ") if route.video_criteria else "—" }}. Обоснование: {{ route.rationale or "—" }}.{% if route.scene_template %} Шаблон, предложенный маршрутизацией: {{ route.scene_template }} (можно взять другой из каталога, если он точнее показывает узел; можно сочетать несколько видов).{% endif %}
 
 # Каталог шаблонов сцен (используй только эти имена и параметры)
 {{ catalog }}
