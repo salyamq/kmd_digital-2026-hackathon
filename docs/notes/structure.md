@@ -56,9 +56,11 @@ Files: pack.yaml (id_prefix geo, audience, data_context), difficulty_types.yaml 
 | basniev | 349 | 60 | 420 | 417/3/0 | 0 | 0 |
 | kuznetsov | 103 | 56 | 465 | 465/0/0 | 0 | 0 |
 | baraboshkin (control) | 67 | 18 | 116 | 116/0/0 | 0 | 0 |
+| barenblatt (control) | 167 | 19 | 114 | 114/0/0 | 0 | 0 |
 
 ## Known gaps / lessons
-- vendelshtein, barenblatt layers not built yet (queue requests exist).
+- vendelshtein layer not built yet (11 layer_extract requests in the queue; `kmd layer vendelshtein`).
+- Ingest: a footnote between the two halves of a paragraph split by a page break blocks the merge (barenblatt p.38–39); the LLM sees both halves in one chunk, so content is not lost.
 - OCR damage stays in source: subscripts in Latyshova (ρп/ρн/kв mixed), problems 101–102 mojibake (flagged, not quoted), table typos (listed as `ocr_fixes`). Formulas in layer are re-typed by the LLM with a note when indices were restored by meaning.
 - Kuznetsov/Basniev workers made very fine-grained nodes (56/60); graph merges were not used. Term-before-definition warnings are heuristic.
 - `term_before_definition` is a warning only; course text should define a term at first use anyway.
