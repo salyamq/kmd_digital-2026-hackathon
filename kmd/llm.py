@@ -104,28 +104,45 @@ def validate(obj, schema: dict | None) -> None:
         jsonschema.validate(obj, schema)
 
 
-def _call_anthropic(system: str, user: str, max_tokens: int) -> tuple[str, dict, str]:
+def _b64(path: str) -> tuple[str, str]:
+    import base64
+    import mimetypes
+
+    mime = mimetypes.guess_type(path)[0] or "image/png"
+    return mime, base64.b64encode(Path(path).read_bytes()).decode()
+
+
+def _call_anthropic(system: str, user: str, max_tokens: int, images=()) -> tuple[str, dict, str]:
     import anthropic
 
     model = os.environ.get("KMD_LLM_MODEL", "claude-opus-4-5")
     client = anthropic.Anthropic()
+    content = []
+    for im in images:
+        mime, data = _b64(im)
+        content.append({"type": "image", "source": {"type": "base64", "media_type": mime, "data": data}})
+    content.append({"type": "text", "text": user})
     msg = client.messages.create(
-        model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": user}]
+        model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": content}]
     )
     text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     usage = {"input_tokens": msg.usage.input_tokens, "output_tokens": msg.usage.output_tokens}
     return text, usage, model
 
 
-def _call_openai(system: str, user: str, max_tokens: int) -> tuple[str, dict, str]:
+def _call_openai(system: str, user: str, max_tokens: int, images=()) -> tuple[str, dict, str]:
     import openai
 
     model = os.environ.get("KMD_LLM_MODEL", "gpt-4.1")
     client = openai.OpenAI(base_url=os.environ.get("OPENAI_BASE_URL") or None)
+    content = [{"type": "text", "text": user}]
+    for im in images:
+        mime, data = _b64(im)
+        content.append({"type": "image_url", "image_url": {"url": f"data:{mime};base64,{data}"}})
     r = client.chat.completions.create(
         model=model,
         max_tokens=max_tokens,
-        messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+        messages=[{"role": "system", "content": system}, {"role": "user", "content": content if images else user}],
     )
     text = r.choices[0].message.content or ""
     u = r.usage
@@ -141,14 +158,21 @@ def complete_json(
     schema: str | dict | None = None,
     max_tokens: int = 32000,
     attempts: int = 3,
+    images: list | tuple = (),
 ):
-    """Render prompt, return parsed+validated JSON. Cached. May raise PendingLLM (queue)."""
+    """Render prompt, return parsed+validated JSON. Cached. May raise PendingLLM (queue).
+
+    `images`: paths of images (e.g. page scans / figure crops) sent with the user message to a
+    vision model. They enter the cache key by content hash. In queue mode their absolute paths are
+    listed in the request (`images`) and the worker must look at them.
+    """
     schema_d = load_schema(schema)
     system, user, src = render(prompt, variables)
     user_full = user + _schema_instruction(schema_d)
-    key = hashlib.sha256(
-        json.dumps([prompt, src, system, user_full], ensure_ascii=False).encode("utf-8")
-    ).hexdigest()[:20]
+    images = [str(Path(i).resolve()) for i in images]
+    img_hashes = [hashlib.sha256(Path(i).read_bytes()).hexdigest()[:16] for i in images]
+    key_parts = [prompt, src, system, user_full] + ([img_hashes] if images else [])
+    key = hashlib.sha256(json.dumps(key_parts, ensure_ascii=False).encode("utf-8")).hexdigest()[:20]
     task_slug = re.sub(r"[^A-Za-z0-9_.-]+", "_", task)
     cache = Path(run_dir) / "llm" / task_slug / f"{key}.json"
     if cache.exists():
@@ -162,6 +186,7 @@ def complete_json(
         "system": system,
         "user": user_full,
         "schema": schema_d,
+        "images": images,
         "cache_path": str(cache.relative_to(Path(run_dir).parent.parent)) if Path(run_dir).is_absolute() else str(cache),
         "created": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
@@ -177,7 +202,7 @@ def complete_json(
     last_err = None
     msgs_user = user_full
     for _ in range(attempts):
-        text, usage, model = call(system, msgs_user, max_tokens)
+        text, usage, model = call(system, msgs_user, max_tokens, images)
         try:
             obj = _extract_json(text)
             validate(obj, schema_d)

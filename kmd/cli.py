@@ -84,6 +84,8 @@ def cmd_llm(args) -> int:
     if args.llm_cmd == "show":
         r = read_json(args.file)
         print("=== SYSTEM ===\n" + r["system"] + "\n=== USER ===\n" + r["user"])
+        if r.get("images"):
+            print("=== IMAGES (look at each before answering) ===\n" + "\n".join(r["images"]))
         return 0
     if args.llm_cmd == "answer":
         out = llm.answer_pending(Path(args.file), Path(args.response))
