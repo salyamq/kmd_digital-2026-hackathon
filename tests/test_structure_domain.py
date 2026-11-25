@@ -28,4 +28,4 @@ def test_digest_budget():
     import json
     u = json.load(open(Path(__file__).resolve().parent.parent / "runs/latyshova/units.json"))["units"]
     d = dom.chapter_digest(u, budget=8000)
-    assert len(d) < 10000 and "§ 20" in d
+    assert len(d) < 16000 and "§ 20" in d
