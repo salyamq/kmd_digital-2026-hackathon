@@ -1,0 +1,96 @@
+{
+  "package_id": "inject_barenblatt_s5",
+  "chapter": "barenblatt",
+  "items_checked": 30,
+  "findings": [
+    {
+      "target_id": "f1",
+      "error_type": "frame_error",
+      "severity": 3,
+      "message": "Сгенерированный кадр утверждает факты (диаграмма с подписями).",
+      "fix": "Диаграмму строить кодом (класс A).",
+      "page": null,
+      "evidence_quote": null,
+      "evidence_verified": false,
+      "source": "llm"
+    },
+    {
+      "target_id": "sc1",
+      "error_type": "frame_error",
+      "severity": 3,
+      "message": "Нарушен порядок слоёв: молодые слои лежат на более древних.",
+      "fix": "Более молодые слои располагаются над более древними.",
+      "page": null,
+      "evidence_quote": null,
+      "evidence_verified": false,
+      "source": "llm"
+    },
+    {
+      "target_id": "v05",
+      "error_type": "wrong_scaling_law",
+      "severity": 3,
+      "message": "Давление на скважине выражается логарифмом времени (асимптотика Ei через ln), а не линейной функцией.",
+      "fix": "Давление на скважине выражается логарифмической формулой (II.108).",
+      "page": 43,
+      "evidence_quote": "с помощью асимптотического выражения $E_i (-x) = \\ln \\gamma x$ при $x \\to \\infty$ имеем",
+      "evidence_verified": true,
+      "source": "llm"
+    },
+    {
+      "target_id": "s1.l1",
+      "error_type": "it_analogy_without_limit",
+      "severity": 2,
+      "message": "ИТ-аналогия без указания, где она ломается.",
+      "fix": "Добавить границу аналогии: порог зависит от условий, «выброс» не всегда означает искомый объект.",
+      "page": null,
+      "evidence_quote": null,
+      "evidence_verified": false,
+      "source": "llm"
+    },
+    {
+      "target_id": "v01",
+      "error_type": "overgeneralization",
+      "severity": 2,
+      "message": "У автора «обычно», а не «всегда».",
+      "fix": "Радиус скважины в формуле притока обычно не равен истинному из-за несовершенства вскрытия.",
+      "page": 44,
+      "evidence_quote": "радиус скважины в формуле для притока обычно не равен истинному",
+      "evidence_verified": true,
+      "source": "llm"
+    },
+    {
+      "target_id": "v02",
+      "error_type": "sign_flip",
+      "severity": 2,
+      "message": "Условие перевёрнуто: у автора R > 300 м.",
+      "fix": "При расстоянии между скважинами больше 300 м применима промежуточная асимптотика.",
+      "page": 43,
+      "evidence_quote": "Если расстояние между скважинами $R > 300$ м",
+      "evidence_verified": true,
+      "source": "llm"
+    },
+    {
+      "target_id": "v18",
+      "error_type": "lost_condition",
+      "severity": 2,
+      "message": "Утверждение обрезано: потеряно условие скачкообразного изменения дебита возмущающей скважины.",
+      "fix": "При скачке дебита возмущающей скважины для изменения давления в реагирующей скважине используют формулу (II.109).",
+      "page": 44,
+      "evidence_quote": "если дебит возмущающей скважины изменяется скачком, можно использовать формулу (II.107)",
+      "evidence_verified": true,
+      "source": "llm"
+    },
+    {
+      "target_id": "v24",
+      "error_type": "wrong_number",
+      "severity": 1,
+      "message": "Сравнение с точным решением показано на рис. 7.",
+      "fix": "Приближённые решения довольно хорошо согласуются с точным (рис. 7).",
+      "page": 50,
+      "evidence_quote": "При сопоставлении приближенных решений 1 с точным 2 (рис. 7)",
+      "evidence_verified": true,
+      "source": "llm"
+    }
+  ],
+  "dropped_for_precision": []
+}

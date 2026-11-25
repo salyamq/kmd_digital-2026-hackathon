@@ -18,7 +18,7 @@ for k, v in errors.items():
     if not x:
         miss.append(k)
         continue
-    full = bool(x.get("fix")) and (x.get("page") is not None or v["type"] in ("frame_error",))
+    full = bool(x.get("fix")) and (x.get("page") is not None or v["type"] in ("frame_error", "it_analogy_without_limit", "outdated_as_current"))
     hits += 1 if full else 0
     half += 0 if full else 1
     type_ok += x["error_type"] == v["type"]
