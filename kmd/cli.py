@@ -50,7 +50,11 @@ def cmd_run(args) -> int:
         stages = stages[stages.index(args.from_stage):]
     if args.to_stage:
         stages = stages[: stages.index(args.to_stage) + 1]
+    scenes_requested = args.with_scenes or "scenes" in (args.from_stage, args.to_stage)
     for s in stages:
+        if s == "scenes" and not scenes_requested and llm.provider_name() == "queue":
+            print(f"[scenes] {args.chapter}: using saved scenes and redraws (queue provider)")
+            continue
         t0 = time.time()
         pending = _stage(s).run(args.chapter) or []
         print(f"[{s}] {args.chapter}: {time.time()-t0:.1f}s, pending={len(pending)}")
@@ -141,9 +145,11 @@ def main(argv=None) -> int:
     p.add_argument("chapter")
     p.add_argument("--from", dest="from_stage", choices=STAGES)
     p.add_argument("--to", dest="to_stage", choices=STAGES)
+    p.add_argument("--with-scenes", action="store_true", help="generate missing scenes and redraws in queue mode")
     p.set_defaults(func=cmd_run)
     p = sub.add_parser("rebuild", help="re-merge overrides and rebuild downstream")
     p.add_argument("chapter")
+    p.add_argument("--with-scenes", action="store_true", help="generate missing scenes and redraws in queue mode")
     p.add_argument("--video", action="store_true", help="also re-render existing videos")
     p.set_defaults(func=cmd_rebuild)
     p = sub.add_parser("video")
