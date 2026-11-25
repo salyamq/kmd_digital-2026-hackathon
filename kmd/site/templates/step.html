@@ -3,7 +3,7 @@
 {% block title %}Шаг {{ s.index }}. {{ s.title_beginner }} — {{ course.title }}{% endblock %}
 {% block body %}
 {% set toc = [("essence", "Суть")] %}
-{% if s.media %}{% set _ = toc.append(("media", "Видео" if s.media.kind == "video" else "Анимация")) %}{% endif %}
+{% if s.media %}{% set _ = toc.append(("media", s.format_label[0])) %}{% endif %}
 {% for b in s.blocks %}{% set _ = toc.append((b.id, b.title)) %}{% endfor %}
 {% if tasks %}{% set _ = toc.append(("check", "Проверь себя")) %}{% endif %}
 {% set _ = toc.append(("sources", "Источник")) %}
@@ -34,15 +34,48 @@
     {% if s.media %}
     <section id="media" class="media" aria-labelledby="h-media">
       {% if s.media.kind == "video" %}
-      <h2 id="h-media">Видео</h2>
+      <h2 id="h-media">Видеоразбор</h2>
       {% for v in s.media.videos %}
-      <div class="video{% if v.vertical %} vertical{% endif %}">
-        <video controls preload="metadata" playsinline src="{{ v.src }}">
+      {% set passport = v.passport or {} %}
+      <div class="lesson-media{% if v.vertical %} is-vertical{% endif %}">
+        <div class="video">
+        <video controls preload="metadata" playsinline src="{{ v.src }}" aria-label="{{ s.title_beginner }}">
           {% if v.vtt %}<track kind="subtitles" srclang="ru" label="Русские субтитры" src="{{ v.vtt }}" default>{% endif %}
-          Ваш браузер не показывает видео: <a href="{{ v.src }}">скачать ролик</a>.
+          <a href="{{ v.src }}">Открыть ролик</a>
         </video>
-        {% if v.passport and v.passport.prediction_question %}<p class="muted">Вопрос-предсказание: {{ v.passport.prediction_question }}</p>{% endif %}
+        </div>
+        <div class="media-notes">
+          {% if passport.duration_s %}<p class="kicker">{{ passport.duration_s|round|int }} с · {{ "9:16" if v.vertical else "16:9" }}</p>{% endif %}
+          {% if passport.prediction_question is string %}
+          <h3>Перед просмотром</h3><p>{{ passport.prediction_question }}</p>
+          {% endif %}
+          {% if passport.transfer_question is string %}
+          <h3>После просмотра</h3><p>{{ passport.transfer_question }}</p>
+          {% endif %}
+          {% if tasks %}<a class="btn" href="#check">К заданиям <span aria-hidden="true">↓</span></a>{% endif %}
+        </div>
+        {% if v.transcript %}
+        <details class="transcript">
+          <summary>Текст видео и источники</summary>
+          <ol>
+            {% for cue in v.transcript %}
+            <li><a class="cue-time" data-seek="{{ cue.time }}" href="{{ v.src }}#t={{ cue.time }}" aria-label="Перейти к {{ cue.clock }}">{{ cue.clock }}</a>
+              <span>{{ cue.text }} {% for source in cue.sources %}<a class="pg" href="#src-{{ source.id }}">стр. {{ source.page }}</a> {% endfor %}</span></li>
+            {% endfor %}
+          </ol>
+        </details>
+        {% endif %}
       </div>
+      {% endfor %}
+      {% elif s.media.kind == "evidence" %}
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      {% for c in s.media.sources %}
+      <details class="evidence">
+        <summary>{{ c.text }}</summary>
+        <p><strong>{{ KIND_RU.get(c.kind, c.kind)|capitalize }}</strong> · <a href="#src-{{ c.claim_id }}">стр. {{ c.page }}</a></p>
+        <blockquote class="quote"><p>«{{ c.quote }}»</p></blockquote>
+      </details>
       {% endfor %}
       {% else %}
       <h2 id="h-media">{{ "Интерактив" if s.media.interactive else "Анимация" }}: как это происходит</h2>

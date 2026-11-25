@@ -14,9 +14,12 @@
 <a class="skip" href="#main">Перейти к содержанию</a>
 <header class="topbar">
   <div class="topbar-in">
-    <a class="brand" href="index.html" title="{{ course.title }}"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">{{ course.book.author or "Курс" }}: курс по главе</span></a>
+    <a class="brand" href="{% if course.library %}../../index.html{% else %}index.html{% endif %}" title="{% if course.library %}Все главы{% else %}{{ course.title }}{% endif %}">
+      <span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">Глава → курс</span>
+    </a>
     <nav class="mainnav" aria-label="Разделы курса">
       <a href="index.html"{% if page_id == "index" %} aria-current="page"{% endif %}>Путь</a>
+      {% if course.has_media %}<a href="media.html"{% if page_id == "media" %} aria-current="page"{% endif %}>Медиа</a>{% endif %}
       <a href="tasks.html"{% if page_id == "tasks" %} aria-current="page"{% endif %}>Задания</a>
       <a href="cards.html"{% if page_id == "cards" %} aria-current="page"{% endif %}>Карточки</a>
       <a href="summary.html"{% if page_id == "summary" %} aria-current="page"{% endif %}>Конспект</a>

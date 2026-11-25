@@ -2,24 +2,31 @@
 {% block body %}
 <main id="main" class="content wide" tabindex="-1">
   <section class="hero">
-    <p class="kicker">Курс по главе книги</p>
-    <h1>{{ course.title }}</h1>
-    <p class="booktitle">{{ course.book.author }}, «{{ course.book.title }}»{% if course.book.year %} ({{ course.book.year }}){% endif %}</p>
-    <p class="stats"><span>{{ course.steps|length }} шагов</span><span>≈ {{ course.minutes }} мин</span><span>{{ course.n_tasks }} заданий</span><span>{{ course.n_cards }} карточек</span></p>
-    <div class="resume">
-      <a class="btn primary start" href="{{ course.steps[0].url }}">Начать с шага 1</a>
-      <span class="resume-note muted" aria-live="polite"></span>
+    <div class="hero-copy">
+      <p class="kicker">{{ course.book.author }}{% if course.book.year %} · {{ course.book.year }}{% endif %}</p>
+      <h1>{{ course.title }}</h1>
+      <p class="booktitle">«{{ course.book.title }}»</p>
+      <div class="resume">
+        <a class="btn primary start" href="{{ course.steps[0].url }}">Начать с шага 1</a>
+        {% if course.has_before %}<a class="btn ghost hero-secondary" href="before.html">Перед главой</a>{% endif %}
+        <span class="resume-note" aria-live="polite"></span>
+      </div>
     </div>
+    <dl class="hero-stats">
+      <div><dt>Шагов</dt><dd>{{ course.steps|length }}</dd></div>
+      <div><dt>Время</dt><dd>≈ {{ course.minutes }} мин</dd></div>
+      <div><dt>Заданий</dt><dd>{{ course.n_tasks }}</dd></div>
+      <div><dt>Карточек</dt><dd>{{ course.n_cards }}</dd></div>
+    </dl>
   </section>
 
-  <section class="howto" aria-labelledby="h-howto">
-    <h2 id="h-howto">Как устроен курс</h2>
-    <ul>
-      <li>Шаги идут в порядке, в котором новичку легче понять главу. У каждого шага — суть, полное объяснение со ссылками на страницы книги и задания с проверкой.</li>
-      <li>Обычный текст — пересказ книги моделью, у каждого абзаца стоит «стр. N». Рядом — дословная цитата автора. Пометка <span class="chip chip-model">модель</span> значит: этого в книге нет.</li>
-      <li>Прогресс сохраняется в этом браузере. Можно закрыть курс и вернуться к месту, где остановились.</li>
-    </ul>
-  </section>
+  {% if feature %}
+  <a class="feature-link" href="{{ url_of[feature.node_id] }}#media">
+    <span class="feature-icon" aria-hidden="true">▶</span>
+    <span><span class="kicker">Видео · шаг {{ feature.index }}</span><strong>{{ feature.title_beginner }}</strong></span>
+    <span class="feature-arrow" aria-hidden="true">→</span>
+  </a>
+  {% endif %}
 
   <section aria-labelledby="h-path">
     <h2 id="h-path">Путь по главе</h2>

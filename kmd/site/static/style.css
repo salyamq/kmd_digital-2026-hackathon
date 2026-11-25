@@ -341,3 +341,99 @@ th { background: var(--surface-2); }
 @media (hover: none) { .btn kbd { display: none; } }
 .anim-stage picture[hidden] { display: none; }
 .anim-stage picture, .ill-frame picture { display: block; }
+
+/* Shared course and library presentation */
+:root { --field: #142b42; --field-line: #4f687d; --field-text: #f9f5ec; --field-muted: #c6d4de; --field-accent: #ffd289; }
+.topbar-in > .theme-toggle { margin-left: auto; flex: 0 0 auto; }
+.brand { font-weight: 750; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 8px;
+  background: var(--field);
+  color: var(--field-accent);
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 16rem);
+  align-items: end;
+  gap: clamp(1rem, 4vw, 3rem);
+  max-width: none;
+  padding: clamp(1.35rem, 5vw, 3.75rem);
+  border-radius: 24px;
+  background-color: var(--field);
+  background-image: repeating-radial-gradient(ellipse at 108% 125%, transparent 0 22px, #8aabc222 23px 24px, transparent 25px 41px);
+  color: var(--field-text);
+}
+.hero h1 { max-width: 24ch; font: 600 clamp(1.9rem, 4vw, 3.35rem)/1.08 Georgia, "Times New Roman", serif; }
+.hero .kicker { color: var(--field-accent); }
+.hero .booktitle, .hero .resume-note, .library-hero p { color: var(--field-muted); }
+.hero .btn.primary { background: var(--field-accent); color: #172739; border-color: var(--field-accent); }
+.hero .resume .btn.primary { color: #172739; }
+.hero .hero-secondary { background: var(--field); border-color: var(--field-line); color: var(--field-text); }
+.hero .btn:focus-visible { outline-color: var(--field-accent); }
+.hero .resume { align-items: center; margin-top: 1.3rem; }
+.hero .resume-note:not(:empty) { flex-basis: 100%; }
+.hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; margin: 0; }
+.hero-stats div { padding: 0.6rem 0.7rem; border: 1px solid var(--field-line); border-radius: 12px; background: #142b42ed; }
+.hero-stats dt { color: var(--field-muted); font-size: 0.8rem; }
+.hero-stats dd { margin: 0; font-weight: 730; }
+.library-hero { grid-template-columns: 1fr; }
+.library-hero h1 { max-width: none; }
+.library-hero p { margin: 0.6rem 0 0; }
+.library-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+.library-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.library-card h3 { font: 600 1.31rem/1.25 Georgia, "Times New Roman", serif; text-wrap: pretty; margin: 0 0 0.75rem; }
+.library-card .btn { margin-top: auto; }
+.feature-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding: 0.9rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none;
+}
+.feature-link:hover { border-color: var(--accent); }
+.feature-link .kicker { display: block; margin: 0; }
+.feature-icon { display: grid; place-items: center; width: 2.65rem; height: 2.65rem; border-radius: 10px; color: var(--field-accent); background: var(--field); }
+.feature-arrow { color: var(--accent); margin-inline-start: auto; }
+.media-path { margin-top: 1.2rem; }
+.media { margin-top: 1.5rem; }
+.lesson-media { display: grid; gap: 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.lesson-media + .lesson-media { margin-top: 1rem; }
+.lesson-media.is-vertical { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); align-items: start; }
+.lesson-media video { display: block; }
+.lesson-media.is-vertical video { aspect-ratio: 9 / 16; }
+.media-notes h3 { margin: 0.5rem 0 0.3rem; }
+.transcript { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 0.8rem; }
+.transcript summary, .evidence summary { font-weight: 650; cursor: pointer; }
+.transcript ol { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.transcript li { display: grid; grid-template-columns: 3.1rem minmax(0, 1fr); gap: 0.6rem; padding: 0.45rem 0; border-bottom: 1px solid var(--line); }
+.cue-time { font-variant-numeric: tabular-nums; align-self: start; }
+.evidence { padding: 0.75rem 0.9rem; margin: 0.45rem 0; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); }
+.evidence > p { margin: 0.6rem 0 0.25rem; }
+@media (max-width: 680px) {
+  .hero { grid-template-columns: minmax(0, 1fr); border-radius: 16px; }
+  .hero h1 { font-size: clamp(1.55rem, 6.5vw, 2rem); max-width: none; text-wrap: pretty; }
+  .lesson-media.is-vertical { grid-template-columns: minmax(0, 1fr); }
+  .lesson-media.is-vertical video { max-width: 15rem; margin-inline: auto; }
+  .brand-text { display: inline; }
+  .mainnav { gap: 0.15rem 0.55rem; justify-content: flex-start; }
+}

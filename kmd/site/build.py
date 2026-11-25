@@ -12,12 +12,14 @@ import json
 import random
 import re
 import shutil
+import tempfile
 from pathlib import Path
 
 import jinja2
 
-from ..config import chapter_config, read_json, run_dir, write_json
+from ..config import CHAPTERS, RUNS, chapter_config, read_json, run_dir, write_json
 from ..course.stage import redraw_ills
+from ..ingest import analysis_context
 
 HERE = Path(__file__).resolve().parent
 STATIC = HERE / "static"
@@ -172,6 +174,20 @@ def link_map_svg(steps: list[dict], url_of: dict) -> str:
 
 # ---------------------------------------------------------------- media
 
+def lesson_transcript(passport: dict, step: dict) -> list[dict]:
+    pages = {c["claim_id"]: c["page"] for c in step.get("sources", [])}
+    cues = []
+    for line in passport.get("script", []):
+        time = line.get("t0", line.get("start"))
+        if not isinstance(time, (int, float)) or not line.get("text"):
+            continue
+        ids = line.get("claim_ids") or [s.get("claim_id") for s in line.get("sources", [])]
+        cues.append({"text": line["text"], "time": time,
+                     "clock": f"{int(time) // 60}:{int(time) % 60:02}",
+                     "sources": [{"id": cid, "page": pages[cid]} for cid in dict.fromkeys(ids) if cid in pages]})
+    return cues
+
+
 def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | None:
     nid = step["node_id"]
     vdir = rd / "video" / nid
@@ -195,19 +211,24 @@ def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | N
                 try:
                     p = read_json(pas)
                     if p.get("format") in (None, mp4.stem):
-                        v["passport"] = {k: p[k] for k in ("prediction_question", "transfer_question", "exaggerations", "data_bridge") if p.get(k)}
+                        v["passport"] = {k: p[k] for k in ("prediction_question", "transfer_question", "duration_s", "qa_summary") if p.get(k)}
+                        v["passport"]["duration_s"] = p.get("duration_s") or (p.get("video") or {}).get("duration_s")
+                        v["transcript"] = lesson_transcript(p, step)
                 except Exception:
                     pass
             videos.append(v)
     if videos:
         return {"kind": "video", "videos": videos}
-    if step["format"] in ("short", "long", "interactive") and scene and (scene.get("template") or scene.get("views")):
+    if step["format"] not in ("short", "long", "interactive"):
+        return None
+    if scene and not (scene.get("checks") or {}).get("errors"):
         frames = render_scene_frames(scene, site / "media" / slug(nid))
-        if frames:
+        if len(frames) >= 2:
             return {"kind": "animation", "frames": frames, "interactive": step["format"] == "interactive",
                     "invariants": scene.get("invariants", []), "assumptions": scene.get("assumptions", []),
                     "exaggerations": scene.get("exaggerations", [])}
-    return None
+    evidence = [c for c in step.get("sources", []) if c.get("text") and c.get("quote") and c.get("page")]
+    return {"kind": "evidence", "sources": evidence} if evidence else None
 
 
 def render_scene_frames(scene: dict, out: Path) -> list[dict]:
@@ -273,6 +294,8 @@ def format_label(s: dict) -> tuple[str, str]:
         return FORMAT["long"] if fmt == "long" else FORMAT["short"]
     if media.get("kind") == "animation":
         return ("Интерактив", "⟳") if media.get("interactive") else ("Анимация", "⟳")
+    if media.get("kind") == "evidence":
+        return ("Разбор источника", "⟳")
     if any(b["kind"] == "decision" for b in s.get("blocks", [])) and fmt == "data_practice":
         return FORMAT["data_practice"]
     if fmt == "cards":
@@ -281,6 +304,43 @@ def format_label(s: dict) -> tuple[str, str]:
 
 
 # ---------------------------------------------------------------- build
+
+def build_library() -> Path:
+    entries = []
+    for config_path in sorted(CHAPTERS.glob("*.yaml")):
+        cfg = chapter_config(str(config_path))
+        rd = RUNS / cfg["id"]
+        course_path = rd / "site" / "index.html"
+        if course_path.exists():
+            report_file = rd / "site_report.json"
+            report = read_json(report_file) if report_file.exists() else {}
+            entries.append({"title": report.get("title") or cfg.get("title"), "book": cfg.get("book"),
+                            "steps": report.get("steps"), "tasks": report.get("tasks"),
+                            "url": course_path.relative_to(RUNS).as_posix()})
+            continue
+        for mp4 in sorted((rd / "video").glob("*/*.mp4")):
+            passport_file = mp4.with_name(f"passport.{mp4.stem}.json")
+            if not passport_file.exists():
+                passport_file = mp4.with_name("passport.json")
+            passport = read_json(passport_file) if passport_file.exists() else {}
+            entries.append({"title": cfg.get("title"), "book": cfg.get("book"),
+                            "video": mp4.relative_to(RUNS).as_posix(),
+                            "duration": passport.get("duration_s") or (passport.get("video") or {}).get("duration_s")})
+    assets = RUNS / "library"
+    assets.mkdir(parents=True, exist_ok=True)
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(TEMPLATES)), autoescape=True,
+                             trim_blocks=True, lstrip_blocks=True)
+    index = RUNS / "index.html"
+    with tempfile.TemporaryDirectory(dir=assets) as staging:
+        staged = Path(staging)
+        for name in ("style.css", "app.js"):
+            shutil.copy2(STATIC / name, staged / name)
+            (staged / name).replace(assets / name)
+        entries.sort(key=lambda entry: not entry.get("url"))
+        (staged / "index.html").write_text(env.get_template("library.html").render(entries=entries), encoding="utf-8")
+        (staged / "index.html").replace(index)
+    return index
+
 
 def build(chapter: str) -> Path:
     cfg = chapter_config(chapter)
@@ -373,6 +433,9 @@ def build(chapter: str) -> Path:
         parts[-1]["steps"].append(s)
 
     total_min = sum(s["minutes"] for s in steps)
+    before = analysis_context(chapter) or {}
+    media_steps = [s for s in steps if s["media"]]
+    feature = next((s for s in media_steps if s["media"]["kind"] == "video"), None)
     course = {
         "chapter": cfg["id"],
         "title": layer.get("title") or cfg.get("title", ""),
@@ -381,6 +444,9 @@ def build(chapter: str) -> Path:
         "minutes": total_min,
         "n_tasks": len(tasks),
         "n_cards": len(cards),
+        "has_media": bool(media_steps),
+        "library": rd.parent == RUNS,
+        "has_before": any(before.get(key) for key in ("prerequisites_and_context", "chapter_dependencies", "key_definitions")),
     }
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(TEMPLATES)), autoescape=jinja2.select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.filters["md"] = lambda t: jinja2.Markup(md(t)) if hasattr(jinja2, "Markup") else md(t)
@@ -415,7 +481,11 @@ def build(chapter: str) -> Path:
              prev=prev_s and {"url": url_of[prev_s["node_id"]], "title": prev_s["title_beginner"]},
              next=next_s and {"url": url_of[next_s["node_id"]], "title": next_s["title_beginner"]},
              ills_after=ills_after, page_id="step")
-    page("index.html", "index.html", page_id="index")
+    page("index.html", "index.html", page_id="index", feature=feature, url_of=url_of)
+    if course["has_media"]:
+        page("media.html", "media.html", page_id="media", steps=media_steps, url_of=url_of)
+    if course["has_before"]:
+        page("before.html", "before.html", page_id="before", before=before)
     page("tasks.html", "tasks.html", tasks=all_views, tasks_json=jdump(all_views), page_id="tasks", steps=steps)
     card_views = [dict(c, step_title=title_of.get(c["node_id"], ""), step_index=index_of.get(c["node_id"]), url=url_of.get(c["node_id"])) for c in cards if c["node_id"] in url_of]
     page("cards.html", "cards.html", cards=card_views, cards_json=jdump(card_views), page_id="cards")
@@ -423,7 +493,9 @@ def build(chapter: str) -> Path:
     page("map.html", "map.html", steps=steps, svg=link_map_svg(steps, url_of), page_id="map")
 
     size = sum(f.stat().st_size for f in site.rglob("*") if f.is_file())
-    write_json(rd / "site_report.json", {"chapter": cfg["id"], "steps": len(steps), "tasks": len(all_views), "cards": len(card_views),
+    write_json(rd / "site_report.json", {"chapter": cfg["id"], "title": course["title"], "steps": len(steps), "tasks": len(all_views), "cards": len(card_views),
                                          "size_mb": round(size / 1e6, 2), "media": {s["node_id"]: (s["media"] or {}).get("kind") for s in steps}})
     print(f"[site] {site/'index.html'}  ({len(steps)} steps, {len(all_views)} tasks, {len(card_views)} cards, {size/1e6:.1f} MB)")
+    if course["library"]:
+        build_library()
     return site

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Глава → курс</title>
+  <script>try { var theme = localStorage.getItem("kmd:theme"); if (theme) document.documentElement.dataset.theme = theme; } catch (e) {}</script>
+  <link rel="stylesheet" href="library/style.css">
+</head>
+<body data-page="library">
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">Глава → курс</span></a>
+      <button class="theme-toggle" type="button" aria-label="Переключить тему"><span aria-hidden="true">◐</span></button>
+    </div>
+  </header>
+  <main id="main" class="content wide library-main" tabindex="-1">
+    <section class="hero library-hero">
+      <div class="hero-copy">
+        <h1>Геология по главам</h1>
+        <p>Курсы и видеоразборы по геологии и геофизике.</p>
+      </div>
+    </section>
+    <h2>Учебные материалы</h2>
+    <div class="library-grid">
+      {% for e in entries %}
+      <article class="library-card">
+        <p class="kicker">{{ e.book.author }}{% if e.book.year %} · {{ e.book.year }}{% endif %}</p>
+        <h3>{{ e.title }}</h3>
+        {% if e.url %}
+        {% if e.steps %}<p class="muted">Шаги · {{ e.steps }} &nbsp; Задания · {{ e.tasks }}</p>{% endif %}
+        <a class="btn primary" href="{{ e.url }}" aria-label="Открыть курс: {{ e.title }}">Открыть курс <span aria-hidden="true">→</span></a>
+        {% else %}
+        <p class="muted">Видеоразбор{% if e.duration %} · {{ e.duration|round|int }} с{% endif %}</p>
+        <a class="btn" href="{{ e.video }}" aria-label="Смотреть видео: {{ e.title }}">Смотреть видео <span aria-hidden="true">↗</span></a>
+        {% endif %}
+      </article>
+      {% else %}
+      <p>Курсы ещё не собраны.</p>
+      {% endfor %}
+    </div>
+  </main>
+  <script src="library/app.js"></script>
+</body>
+</html>

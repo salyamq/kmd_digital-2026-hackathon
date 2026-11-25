@@ -143,6 +143,8 @@ def cmd_video(args) -> int:
     rd = run_dir(args.chapter)
     if not pending and any((rd / "steps").glob("*.json")):
         _stage("site").run(args.chapter)
+    elif not pending:
+        cmd_library(args)
     return _report_pending(pending)
 
 
@@ -155,6 +157,20 @@ def video_options(parser):
 def cmd_check(args) -> int:
     pending = _stage("checker").run_check(Path(args.package), args.chapter, out=args.out) or []
     return _report_pending(pending)
+
+
+def cmd_library(args) -> int:
+    from .site.build import build_library
+
+    print(f"OK: open {build_library()}")
+    return 0
+
+
+def cmd_serve(args) -> int:
+    from .site.serve import serve
+
+    cmd_library(args)
+    return serve(args.port)
 
 
 def cmd_domain(args) -> int:
@@ -192,6 +208,11 @@ def main(argv=None) -> int:
     p.add_argument("--format", choices=["short", "long"], default="short")
     video_options(p)
     p.set_defaults(func=cmd_video)
+    p = sub.add_parser("library", help="build a shared offline home for available courses and videos")
+    p.set_defaults(func=cmd_library)
+    p = sub.add_parser("serve", help="open the local course library with video seeking")
+    p.add_argument("--port", type=int, default=8766)
+    p.set_defaults(func=cmd_serve)
     p = sub.add_parser("check", help="review an external package (bookmarks)")
     p.add_argument("package")
     p.add_argument("--chapter", required=True)

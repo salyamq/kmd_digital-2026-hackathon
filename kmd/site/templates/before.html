@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Перед главой — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content" tabindex="-1">
+  {% set prereq = before.get("prerequisites_and_context") or {} %}
+  {% set dependencies = before.get("chapter_dependencies") or {} %}
+  <p class="crumbs"><a href="index.html">Путь по главе</a></p>
+  <h1>Перед главой</h1>
+  <p class="muted">Рекомендации из машинного анализа книги, подготовленного организаторами.</p>
+  {% if prereq.assumed_knowledge %}
+  <section class="block"><h2>Что полезно знать заранее</h2>
+    <ul>{% for item in prereq.assumed_knowledge %}<li><strong>{{ item.area }}</strong>{% if item.note %} — {{ item.note }}{% endif %}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  {% if dependencies.note or dependencies.dependency_chains or dependencies.notation_defined_in %}
+  <section class="block"><h2>Связи с другими главами</h2>
+    {% if dependencies.note %}<p>{{ dependencies.note }}</p>{% endif %}
+    {% if dependencies.dependency_chains %}<ul>{% for item in dependencies.dependency_chains %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+    {% if dependencies.notation_defined_in %}<p>{{ dependencies.notation_defined_in }}</p>{% endif %}
+  </section>
+  {% endif %}
+  {% if before.key_definitions %}
+  <section class="block"><h2>Ключевые термины</h2>
+    <dl>{% for item in before.key_definitions if item.term %}
+      <dt><strong>{{ item.term }}</strong>{% if item.term_en_equivalent %} ({{ item.term_en_equivalent }}){% endif %}</dt>
+      <dd>{{ item.note or item.school_note or "" }}{% if item.chapter %} <span class="muted">{{ item.chapter }}</span>{% endif %}</dd>
+    {% endfor %}</dl>
+  </section>
+  {% endif %}
+  <a class="btn primary" href="{{ course.steps[0].url }}">К первому шагу</a>
+</main>
+{% endblock %}

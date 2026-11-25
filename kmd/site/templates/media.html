@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Медиа — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content wide" tabindex="-1">
+  <p class="crumbs"><a href="index.html">Путь по главе</a></p>
+  <h1>Медиа к главе</h1>
+  <ul class="path media-path">
+    {% for step in steps %}
+    <li class="path-step">
+      <a href="{{ url_of[step.node_id] }}#media">
+        <span class="ps-num" aria-hidden="true">{{ step.format_label[1] }}</span>
+        <span class="ps-body"><strong class="ps-title">{{ step.title_beginner }}</strong>
+          <span class="ps-meta">{{ step.format_label[0] }} · шаг {{ step.index }} · {{ step.pages|pages }}</span></span>
+        <span class="feature-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+{% endblock %}

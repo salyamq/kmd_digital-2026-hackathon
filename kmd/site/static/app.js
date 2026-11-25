@@ -30,6 +30,19 @@
   });
   labelTheme();
 
+  $$("[data-seek]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      var video = $("video", link.closest(".lesson-media"));
+      if (!video || video.error) return;
+      event.preventDefault();
+      video.currentTime = Number(link.dataset.seek);
+      video.scrollIntoView({ block: "center", behavior: reduceMotion ? "instant" : "smooth" });
+      video.focus({ preventScroll: true });
+      video.play().catch(function () {});
+    });
+  });
+
   /* ---------- progress */
   function done() { return store.get("done", []); }
   function setDone(id, on) {
