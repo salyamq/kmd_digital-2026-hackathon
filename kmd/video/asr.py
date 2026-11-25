@@ -67,8 +67,11 @@ def transcribe(wav: Path, model: str = "small") -> list[dict]:
     return out
 
 
-def check(wav: Path, phrases: list[dict], terms: list[str], model: str = "small") -> dict:
+def check(wav: Path, phrases: list[dict], terms: list[str], model: str | None = None) -> dict:
     """phrases: [{id, text, start, end}] with scheduled times. Returns metrics for the passport."""
+    import os
+
+    model = model or os.environ.get("KMD_ASR_MODEL", "medium")
     asr_words = transcribe(wav, model)
     hyp_tokens, hyp_times = [], []
     for w in asr_words:

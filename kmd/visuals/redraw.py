@@ -177,7 +177,7 @@ def _errors(ans: dict, check) -> list[str]:
     return errs
 
 
-def run(chapter: str, node: str | None = None, **kw) -> list[Path]:
+def run(chapter: str, node: str | None = None, figures: list[str] | None = None, **kw) -> list[Path]:
     cfg = chapter_config(chapter)
     rd = run_dir(chapter)
     layer = read_json(rd / "layer.json")
@@ -185,6 +185,8 @@ def run(chapter: str, node: str | None = None, **kw) -> list[Path]:
     figs = figure_uses(layer)
     if node:
         figs = {k: v for k, v in figs.items() if any(u["node_id"] == node for u in v["uses"])}
+    if figures:
+        figs = {k: v for k, v in figs.items() if k in figures}
     pending, index = [], []
     for num, ent in figs.items():
         try:
