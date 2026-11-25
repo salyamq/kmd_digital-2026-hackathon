@@ -1,0 +1,17 @@
+id: kuznetsov
+split: train
+domain: geology
+title: "Природные резервуары рифов"
+book:
+  author: "В. Г. Кузнецов"
+  title: "Литология природных резервуаров нефти и газа"
+  year: 2012
+  md: md/train_kuznetsov.md
+  pdf: pdf/kuznetsov.pdf
+language: ru
+difficulty_types: [Р, В, П]
+notes: "Maps and sections are damaged in text extraction: figures must be read from page images."
+segments:
+  - pages: [200, 222]
+    start: "## ПРИРОДНЫЕ РЕЗЕРВУАРЫ РИФОВ"
+    end: "# Глава 11"

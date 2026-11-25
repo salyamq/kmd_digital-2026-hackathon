@@ -1,0 +1,16 @@
+id: barenblatt
+split: control
+domain: geology
+title: "Нестационарное движение однородной сжимаемой жидкости. Линейная теория"
+book:
+  author: "Г. И. Баренблатт, В. М. Ентов, В. М. Рыжик"
+  title: "Движение жидкостей и газов в природных пластах"
+  year: 1984
+  md: md/ctrl_barenblatt.md
+  pdf: pdf/barenblatt.pdf
+language: ru
+difficulty_types: [Ф, М]
+segments:
+  - pages: [38, 51]
+    start: "## § 4. Нестационарное движение однородной сжимаемой жидкости"
+    end: "## § 5."

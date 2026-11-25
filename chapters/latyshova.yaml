@@ -1,0 +1,16 @@
+id: latyshova
+split: train
+domain: geology
+title: "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"
+book:
+  author: "М. Г. Латышова"
+  title: "Практическое руководство по интерпретации диаграмм геофизических исследований скважин"
+  year: 1991
+  md: md/train_latyshova.md
+  pdf: pdf/latyshova.pdf
+language: ru
+difficulty_types: [И, Пр, Н]
+segments:
+  - pages: [90, 108]
+    start: "# Глава V"
+    end: "# § 21."

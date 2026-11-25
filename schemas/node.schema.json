@@ -1,0 +1,664 @@
+{
+ "type": "object",
+ "required": [
+  "id",
+  "title_book",
+  "title_beginner",
+  "difficulty",
+  "order_rationale",
+  "layers",
+  "claims",
+  "worked_examples",
+  "book_problems",
+  "terms",
+  "formulas",
+  "tables",
+  "figures",
+  "misconception",
+  "data_meaning",
+  "it_analogy",
+  "current_practice",
+  "inefficiency_lens",
+  "links",
+  "unit_ids"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9_]+\\.[a-z0-9_]+\\.[a-z0-9_]+\\.[0-9]{2}$"
+  },
+  "section": {
+   "type": "string"
+  },
+  "title_book": {
+   "type": "string"
+  },
+  "title_beginner": {
+   "type": "string"
+  },
+  "difficulty": {
+   "type": "object",
+   "required": [
+    "primary",
+    "threshold"
+   ],
+   "properties": {
+    "primary": {
+     "enum": [
+      "М",
+      "В",
+      "И",
+      "Ф",
+      "П",
+      "Пр",
+      "Н",
+      "Р"
+     ]
+    },
+    "secondary": {
+     "anyOf": [
+      {
+       "enum": [
+        "М",
+        "В",
+        "И",
+        "Ф",
+        "П",
+        "Пр",
+        "Н",
+        "Р"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "threshold": {
+     "type": "string"
+    }
+   }
+  },
+  "order_rationale": {
+   "type": "object",
+   "required": [
+    "text",
+    "by"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "by": {
+     "enum": [
+      "author",
+      "model"
+     ]
+    }
+   }
+  },
+  "layers": {
+   "type": "object",
+   "required": [
+    "mechanism",
+    "practice",
+    "nuances",
+    "deeper"
+   ],
+   "properties": {
+    "mechanism": {
+     "type": "object",
+     "required": [
+      "text",
+      "by"
+     ],
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "by": {
+       "enum": [
+        "author",
+        "model"
+       ]
+      }
+     }
+    },
+    "practice": {
+     "type": "object",
+     "required": [
+      "text",
+      "by"
+     ],
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "by": {
+       "enum": [
+        "author",
+        "model"
+       ]
+      }
+     }
+    },
+    "nuances": {
+     "type": "object",
+     "required": [
+      "text",
+      "by"
+     ],
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "by": {
+       "enum": [
+        "author",
+        "model"
+       ]
+      }
+     }
+    },
+    "deeper": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "title",
+       "text",
+       "by"
+      ],
+      "properties": {
+       "title": {
+        "type": "string"
+       },
+       "text": {
+        "type": "string"
+       },
+       "by": {
+        "enum": [
+         "author",
+         "model"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "claims": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "text",
+     "quote",
+     "page",
+     "unit_ids",
+     "by"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "kind": {
+      "enum": [
+       "observation",
+       "inference",
+       "assumption"
+      ]
+     },
+     "text": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string",
+      "minLength": 8
+     },
+     "page": {
+      "type": "integer"
+     },
+     "unit_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "by": {
+      "enum": [
+       "author",
+       "model"
+      ]
+     }
+    }
+   }
+  },
+  "worked_examples": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "page",
+     "title",
+     "condition",
+     "steps",
+     "result"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer"
+     },
+     "title": {
+      "type": "string"
+     },
+     "condition": {
+      "type": "string"
+     },
+     "steps": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "result": {
+      "type": "string"
+     },
+     "numbers": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "unit_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "book_problems": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "number",
+     "text",
+     "page"
+    ],
+    "properties": {
+     "number": {
+      "type": "string"
+     },
+     "text": {
+      "type": "string"
+     },
+     "figure": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "page": {
+      "type": "integer"
+     },
+     "unit_id": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "terms": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "term",
+     "definition",
+     "by"
+    ],
+    "properties": {
+     "term": {
+      "type": "string"
+     },
+     "definition": {
+      "type": "string"
+     },
+     "en": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "page": {
+      "type": [
+       "integer",
+       "null"
+      ]
+     },
+     "by": {
+      "enum": [
+       "author",
+       "model"
+      ]
+     }
+    }
+   }
+  },
+  "formulas": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "latex",
+     "meaning",
+     "vars",
+     "page"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "latex": {
+      "type": "string"
+     },
+     "meaning": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer"
+     },
+     "vars": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "symbol",
+        "meaning"
+       ],
+       "properties": {
+        "symbol": {
+         "type": "string"
+        },
+        "meaning": {
+         "type": "string"
+        },
+        "unit": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "tables": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "caption",
+     "page",
+     "columns",
+     "rows"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "caption": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer"
+     },
+     "columns": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      }
+     },
+     "ocr_fixes": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "figures": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "number",
+     "page",
+     "caption",
+     "role"
+    ],
+    "properties": {
+     "number": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer"
+     },
+     "caption": {
+      "type": "string"
+     },
+     "role": {
+      "enum": [
+       "example",
+       "problem",
+       "illustration"
+      ]
+     },
+     "redraw": {
+      "type": "boolean"
+     }
+    }
+   }
+  },
+  "misconception": {
+   "anyOf": [
+    {
+     "type": "null"
+    },
+    {
+     "type": "object",
+     "required": [
+      "text",
+      "correction",
+      "by"
+     ],
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "correction": {
+       "type": "string"
+      },
+      "claim_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "by": {
+       "enum": [
+        "author",
+        "model"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "data_meaning": {
+   "type": "object",
+   "required": [
+    "text",
+    "inputs",
+    "outputs",
+    "breaks_where",
+    "hypotheses",
+    "by"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "inputs": {
+     "type": "string"
+    },
+    "outputs": {
+     "type": "string"
+    },
+    "breaks_where": {
+     "type": "string"
+    },
+    "hypotheses": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "by": {
+     "enum": [
+      "author",
+      "model"
+     ]
+    }
+   }
+  },
+  "it_analogy": {
+   "type": "object",
+   "required": [
+    "text",
+    "breaks_where",
+    "by"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "breaks_where": {
+     "type": "string"
+    },
+    "by": {
+     "enum": [
+      "author",
+      "model"
+     ]
+    }
+   }
+  },
+  "current_practice": {
+   "type": "object",
+   "required": [
+    "text",
+    "by"
+   ],
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "by": {
+     "enum": [
+      "author",
+      "model"
+     ]
+    }
+   }
+  },
+  "inefficiency_lens": {
+   "type": "object",
+   "required": [
+    "inputs",
+    "manual_steps",
+    "judgment_points",
+    "time",
+    "typical_errors",
+    "by"
+   ],
+   "properties": {
+    "inputs": {
+     "type": "string"
+    },
+    "manual_steps": {
+     "type": "string"
+    },
+    "judgment_points": {
+     "type": "string"
+    },
+    "time": {
+     "type": "string"
+    },
+    "typical_errors": {
+     "type": "string"
+    },
+    "by": {
+     "enum": [
+      "author",
+      "model"
+     ]
+    }
+   }
+  },
+  "links": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "to",
+     "type"
+    ],
+    "properties": {
+     "to": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "prerequisite",
+       "example",
+       "refutes_misconception",
+       "to_data"
+      ]
+     }
+    }
+   }
+  },
+  "unit_ids": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Node of the learning layer"
+}

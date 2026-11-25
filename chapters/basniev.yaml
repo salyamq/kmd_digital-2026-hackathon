@@ -1,0 +1,16 @@
+id: basniev
+split: train
+domain: geology
+title: "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС"
+book:
+  author: "К. С. Басниев и др."
+  title: "Нефтегазовая гидромеханика"
+  year: 2005
+  md: md/train_basniev.md
+  pdf: pdf/basniev.pdf
+language: ru
+difficulty_types: [Ф, М]
+segments:
+  - pages: [474, 500]
+    start: "# Глава XXIII"
+    end: "## §2. Метод А.М.Пирвердяна"

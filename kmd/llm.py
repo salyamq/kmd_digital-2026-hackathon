@@ -1,0 +1,222 @@
+"""LLM access for every stage. Provider-agnostic, cached, schema-validated.
+
+Providers (env KMD_LLM_PROVIDER, or auto-detected):
+  anthropic  - ANTHROPIC_API_KEY, model KMD_LLM_MODEL (set explicitly)
+  openai     - OPENAI_API_KEY (+ OPENAI_BASE_URL for OpenRouter / vLLM / Ollama), model KMD_LLM_MODEL
+  queue      - no API: requests are written to runs/<ch>/llm/pending/ and answered by a worker
+               (`kmd llm answer`). Used for the dev runs of this repo (Claude Opus 5.5 agents).
+
+Every response is cached under runs/<ch>/llm/<task>/<key>.json, so re-runs and rebuilds are free
+and reproducible; the jury can replay a run without any API key.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import re
+import time
+from pathlib import Path
+
+import jinja2
+import jsonschema
+
+from .config import PROMPTS, SCHEMAS, load_env, read_json, write_json
+
+
+class PendingLLM(Exception):
+    """Raised by the queue provider: the request was written to disk and awaits an answer."""
+
+    def __init__(self, path: Path):
+        super().__init__(str(path))
+        self.path = path
+
+
+class LLMError(Exception):
+    pass
+
+
+_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(str(PROMPTS)),
+    undefined=jinja2.StrictUndefined,
+    keep_trailing_newline=True,
+)
+_env.filters["tojson_ru"] = lambda o, indent=None: json.dumps(o, ensure_ascii=False, indent=indent)
+
+
+def load_schema(name: str | dict | None) -> dict | None:
+    if name is None or isinstance(name, dict):
+        return name
+    return read_json(SCHEMAS / (name if name.endswith(".json") else f"{name}.schema.json"))
+
+
+def render(prompt: str, variables: dict) -> tuple[str, str, str]:
+    """Return (system, user, template_source)."""
+    src_path = PROMPTS / f"{prompt}.md"
+    src = src_path.read_text(encoding="utf-8")
+    text = _env.get_template(f"{prompt}.md").render(**variables)
+    m = re.split(r"^---(system|user)---\s*$", text, flags=re.M)
+    parts = {}
+    for i in range(1, len(m) - 1, 2):
+        parts[m[i]] = m[i + 1].strip()
+    if "user" not in parts:
+        parts = {"system": "", "user": text.strip()}
+    return parts.get("system", ""), parts["user"], src
+
+
+def provider_name() -> str:
+    load_env()
+    p = os.environ.get("KMD_LLM_PROVIDER")
+    if p:
+        return p
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "anthropic"
+    if os.environ.get("OPENAI_API_KEY"):
+        return "openai"
+    return "queue"
+
+
+def _schema_instruction(schema: dict | None) -> str:
+    if not schema:
+        return "\n\nОтвет — только JSON, без пояснений и без ```."
+    return (
+        "\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n"
+        + json.dumps(schema, ensure_ascii=False)
+    )
+
+
+def _extract_json(text: str):
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
+        text = re.sub(r"\n?```\s*$", "", text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        i, j = text.find("{"), text.rfind("}")
+        if i >= 0 and j > i:
+            return json.loads(text[i : j + 1])
+        raise
+
+
+def validate(obj, schema: dict | None) -> None:
+    if schema:
+        jsonschema.validate(obj, schema)
+
+
+def _call_anthropic(system: str, user: str, max_tokens: int) -> tuple[str, dict, str]:
+    import anthropic
+
+    model = os.environ.get("KMD_LLM_MODEL", "claude-opus-4-5")
+    client = anthropic.Anthropic()
+    msg = client.messages.create(
+        model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": user}]
+    )
+    text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
+    usage = {"input_tokens": msg.usage.input_tokens, "output_tokens": msg.usage.output_tokens}
+    return text, usage, model
+
+
+def _call_openai(system: str, user: str, max_tokens: int) -> tuple[str, dict, str]:
+    import openai
+
+    model = os.environ.get("KMD_LLM_MODEL", "gpt-4.1")
+    client = openai.OpenAI(base_url=os.environ.get("OPENAI_BASE_URL") or None)
+    r = client.chat.completions.create(
+        model=model,
+        max_tokens=max_tokens,
+        messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+    )
+    text = r.choices[0].message.content or ""
+    u = r.usage
+    usage = {"input_tokens": getattr(u, "prompt_tokens", 0), "output_tokens": getattr(u, "completion_tokens", 0)}
+    return text, usage, model
+
+
+def complete_json(
+    run_dir: Path,
+    task: str,
+    prompt: str,
+    variables: dict,
+    schema: str | dict | None = None,
+    max_tokens: int = 32000,
+    attempts: int = 3,
+):
+    """Render prompt, return parsed+validated JSON. Cached. May raise PendingLLM (queue)."""
+    schema_d = load_schema(schema)
+    system, user, src = render(prompt, variables)
+    user_full = user + _schema_instruction(schema_d)
+    key = hashlib.sha256(
+        json.dumps([prompt, src, system, user_full], ensure_ascii=False).encode("utf-8")
+    ).hexdigest()[:20]
+    task_slug = re.sub(r"[^A-Za-z0-9_.-]+", "_", task)
+    cache = Path(run_dir) / "llm" / task_slug / f"{key}.json"
+    if cache.exists():
+        return read_json(cache)["response"]
+
+    prov = provider_name()
+    request = {
+        "task": task,
+        "key": key,
+        "prompt": prompt,
+        "system": system,
+        "user": user_full,
+        "schema": schema_d,
+        "cache_path": str(cache.relative_to(Path(run_dir).parent.parent)) if Path(run_dir).is_absolute() else str(cache),
+        "created": time.strftime("%Y-%m-%dT%H:%M:%S"),
+    }
+    if prov == "queue":
+        pend = Path(run_dir) / "llm" / "pending" / f"{task_slug}__{key}.json"
+        if not pend.exists():
+            write_json(pend, request)
+        raise PendingLLM(pend)
+
+    call = {"anthropic": _call_anthropic, "openai": _call_openai}.get(prov)
+    if not call:
+        raise LLMError(f"unknown provider {prov}")
+    last_err = None
+    msgs_user = user_full
+    for _ in range(attempts):
+        text, usage, model = call(system, msgs_user, max_tokens)
+        try:
+            obj = _extract_json(text)
+            validate(obj, schema_d)
+        except Exception as e:  # retry with the error message
+            last_err = e
+            msgs_user = user_full + f"\n\nПредыдущий ответ не прошёл проверку: {str(e)[:1500]}\nИсправь и верни валидный JSON."
+            continue
+        write_json(cache, {"request": request, "response": obj, "provider": prov, "model": model, "usage": usage})
+        return obj
+    raise LLMError(f"{task}: invalid JSON after {attempts} attempts: {last_err}")
+
+
+def answer_pending(pending_file: Path, response_file: Path, model: str = "claude-opus-5.5 (agent queue)") -> Path:
+    """Validate a worker's answer to a queued request and move it into the cache."""
+    from .config import ROOT
+
+    req = read_json(pending_file)
+    raw = Path(response_file).read_text(encoding="utf-8")
+    obj = _extract_json(raw)
+    validate(obj, req.get("schema"))
+    cache = Path(req["cache_path"])
+    if not cache.is_absolute():
+        cache = ROOT / cache
+    usage = {"input_chars": len(req["system"]) + len(req["user"]), "output_chars": len(raw)}
+    write_json(cache, {"request": req, "response": obj, "provider": "queue", "model": model, "usage": usage})
+    Path(pending_file).unlink()
+    return cache
+
+
+def gather(calls):
+    """Run zero-arg callables; collect results and pending requests instead of stopping at the first.
+
+    Returns (results, pending_paths). results[i] is None where pending.
+    """
+    results, pending = [], []
+    for c in calls:
+        try:
+            results.append(c())
+        except PendingLLM as p:
+            results.append(None)
+            pending.append(p.path)
+    return results, pending

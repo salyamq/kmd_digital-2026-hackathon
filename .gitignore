@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+runs/*/pages/
+runs/*/tmp/
+*.wav
+.pytest_cache/

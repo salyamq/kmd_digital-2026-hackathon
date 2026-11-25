@@ -1,0 +1,16 @@
+id: baraboshkin
+split: control
+domain: geology
+title: "Дельты"
+book:
+  author: "Е. Ю. Барабошкин"
+  title: "Практическая седиментология (терригенные коллектора)"
+  year: 2007
+  md: md/ctrl_baraboshkin_b.md
+  pdf: pdf/baraboshkin.pdf
+language: ru
+difficulty_types: [Р, В, П]
+segments:
+  - pages: [30, 44]
+    start: "## 1.2 Дельты"
+    end: "## 1.3 Озерные обстановки"

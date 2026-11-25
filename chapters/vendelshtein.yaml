@@ -1,0 +1,19 @@
+id: vendelshtein
+split: control
+domain: geology
+title: "Косвенные количественные признаки коллекторов; характер насыщения, эффективная мощность, ВНК и ГЖК"
+book:
+  author: "Б. Ю. Вендельштейн, Р. А. Резванов"
+  title: "Геофизические методы определения параметров нефтегазовых коллекторов"
+  year: 1978
+  md: md/ctrl_vendelshtein.md
+  pdf: pdf/vendelshtein.pdf
+language: ru
+difficulty_types: [И, Пр, Н]
+segments:
+  - pages: [9, 14]
+    start: "Косвенные количественные признаки."
+    end: null
+  - pages: [20, 30]
+    start: "## ОЦЕНКА ХАРАКТЕРА НАСЫЩЕНИЯ КОЛЛЕКТОРА"
+    end: "# ГЛАВА II"
