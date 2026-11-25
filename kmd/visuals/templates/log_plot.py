@@ -230,4 +230,7 @@ class LogPlot(Template):
                 seen.add(l["lith"])
                 lt = lith(sg, l["lith"])
                 legend.append({"kind": "patch", "label": lt["ru"], "color": lt["color"], "hatch": lt.get("hatch")})
+        for fl in ("gas", "oil", "water"):
+            if any(l.get("fluid") == fl for l in p.get("lith_column", [])):
+                legend.append({"kind": "patch", "label": sg["fluids"][fl]["ru"], "color": sg["fluids"][fl]["color"]})
         return {"exaggerations": [], "legend": legend, "notes": ["глубина растёт вниз"], "axes": axes}

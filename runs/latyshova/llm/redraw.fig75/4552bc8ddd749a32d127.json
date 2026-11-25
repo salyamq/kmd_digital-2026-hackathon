@@ -1,0 +1,593 @@
+{
+  "request": {
+    "task": "redraw.fig75",
+    "key": "4552bc8ddd749a32d127",
+    "prompt": "scene_redraw",
+    "system": "Ты — инженер-оцифровщик. По скану страницы книги и вырезке рисунка ты переводишь рисунок в ПАРАМЕТРЫ шаблона, по которым код перерисует его заново (вставлять рисунки книги в курс нельзя, их перерисовывают кодом с подписью «перерисовано по рис. N, стр. M»).\n\nПравила:\n1. Используй только шаблоны и параметры из каталога ниже. Типичный выбор: графики, палетки, зависимости, кроссплоты → crossplot (кривые — series с точками, снятыми с рисунка; подписанные области — regions-полигоны; пороги — hlines/vlines); каротажные диаграммы → log_plot (кривые — точки [глубина, значение], шкалы как на рисунке, литоколонка и интервалы — только если они есть на рисунке или в подписи); разрезы → cross_section; карты → plan_map.\n2. Снимай значения с осей рисунка честно: шкалы (в т.ч. логарифмические и обратные), единицы и подписи — как у автора. Для каждой кривой — достаточно точек (6–20), чтобы форма совпала. Подписи кривых и областей — как в книге (шифр кривых, номера, буквы), с расшифровкой из подписи к рисунку.\n3. Всё, что снято приблизительно, перечисли в approximations. Ничего не добавляй от себя: если на рисунке нет данных для элемента, не рисуй его.\n4. Если в тексте главы есть пример или задача, которые решаются по этому рисунку (точка с координатами и ответ), добавь их в checks: x, y и подпись области (как в regions), куда точка должна попасть. Код проверит, что перерисованный рисунок даёт тот же ответ, что у автора.\n5. Если рисунок нельзя честно перерисовать имеющимися шаблонами (фото, сложная схема прибора) — feasible=false и причина.\n6. Язык подписей — русский.\n\nОтвет — только JSON по схеме, без пояснений.",
+    "user": "# Рисунок\nРис. 75, стр. 105. Подпись из книги: Рис.75. Диаграммы ГИС для выделения в терригенном разрезе газоносных коллекторов:  \\( \\Delta T_{n} = 600 \\)  мкс/м;  \\( \\Delta T_{ск} = 170 \\)  мкс/м;  \\( \\delta_{n} = 1,1 \\)  г/см \\( ^{3} \\) ,  \\( \\delta_{ск} = 2,65 \\)  г/см \\( ^{3} \\) ,  \\( \\delta_{фл} = 0,9 \\)  г/см \\( ^{3} \\)\n\nОписание рисунка из распознанного текста (может содержать ошибки; сверяй со сканом):\nРис.75. Диаграммы ГИС для выделения в терригенном разрезе газоносных коллекторов:  \\( \\Delta T_{n} = 600 \\)  мкс/м;  \\( \\Delta T_{ск} = 170 \\)  мкс/м;  \\( \\delta_{n} = 1,1 \\)  г/см \\( ^{3} \\) ,  \\( \\delta_{ск} = 2,65 \\)  г/см \\( ^{3} \\) ,  \\( \\delta_{фл} = 0,9 \\)  г/см \\( ^{3} \\)\n\nИзображения: вырезка рисунка (крупно) и вся страница (контекст).\n\n# Где рисунок используется в главе (узлы учебного слоя: примеры, задачи, утверждения)\n\n## geo.latyshova.s20.17 — Практикум по терригенному разрезу\n- Задача 103 (стр. 105): При граничном значении  \\( k_{n,гр} = 9 \\% \\) , выделить в терригенном разрезе (рис. 75) коллекторы по диаграммам ГГМ и АК, используя следующие значения констант: для ГГМ  \\( \\delta_{ск} = 2,65 \\, г/см^{3} \\) ,  \\( \\delta_{фл} = 0,9 \\) ; для  \\( AK\\Delta T_{ск} = 170 \\, мкс/м \\) ,  \\( \\Delta T_{ф} = 600 \\, мкс/м \\) .\n- Задача 103: при граничной пористости 9 % выделить коллекторы по ГГМ и АК (рис. 75). (стр. 105)\n- Рис. 75 — диаграммы ГИС для выделения газоносных коллекторов в терригенном разрезе. (стр. 105)\n\n\n\n# Каталог шаблонов (только эти имена и параметры)\n### comparison_bar — Сравнение чисел из главы (столбики с подписями)\nГоризонтальные столбики для сравнения величин, взятых из главы (диапазоны — отрезками min–max). Каждое число подписано на столбике. Для тем: сравнение пород/методов/параметров по числу, пороги и диапазоны применимости. Только числа из источника.\nКласс по умолчанию: A, метка: «реальные данные». Для типов: М, Р, И, сравнение, диапазоны, пороги. Анимация: t∈[0,1]: столбики растут до значений.\n\nparams schema: {\"type\": \"object\", \"required\": [\"items\"], \"properties\": {\"items\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 14, \"items\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"value\": {\"type\": \"number\"}, \"min\": {\"type\": \"number\"}, \"max\": {\"type\": \"number\"}, \"note\": {\"type\": \"string\"}, \"color\": {\"type\": \"string\"}}}}, \"value_label\": {\"type\": \"string\", \"default\": \"\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"highlight\": {\"type\": [\"string\", \"null\"], \"default\": null}, \"threshold\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}}\n\nexample params: {\"title\": \"Пористость пород (пример)\", \"items\": [{\"label\": \"песчаник\", \"min\": 15, \"max\": 30}, {\"label\": \"известняк\", \"min\": 1, \"max\": 10}, {\"label\": \"глина\", \"value\": 30, \"note\": \"поры есть, но они не проницаемы\"}], \"value_label\": \"пористость\", \"unit\": \"%\", \"threshold\": {\"value\": 9, \"label\": \"граничное значение\"}}\n\n### cross_section — Геологический разрез: слои, структура, разлом, флюиды в ловушке, скважины\nВертикальный разрез: слои сверху вниз (молодые над старыми), форма структуры (горизонтально, антиклиналь, синклиналь, моноклиналь), разлом с одинаковым смещением всех слоёв, флюиды в ПОРАХ пласта-коллектора по горизонтальным контактам (газ над нефтью над водой), покрышка, скважины. Вертикальное преувеличение вычисляется и подписывается числом; vertical_exaggeration=1 даёт истинный масштаб («пласт как лист бумаги»). Для ловушек, контактов ВНК/ГНК, корреляции разрезов скважин, «почему нефть не озеро», масштабов.\nКласс по умолчанию: B, метка: «схема». Для типов: П, М, В, Н, ловушка, контакты флюидов, разлом, масштаб. Анимация: t∈[0,1]: заполнение ловушки — контакты опускаются от кровли до заданных глубин (накопление УВ).\n\nparams schema: {\"type\": \"object\", \"required\": [\"layers\"], \"properties\": {\"layers\": {\"type\": \"array\", \"minItems\": 2, \"description\": \"Слои сверху вниз (от молодых к древним)\", \"items\": {\"type\": \"object\", \"required\": [\"lith\", \"thickness_m\"], \"properties\": {\"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"thickness_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0}, \"name\": {\"type\": \"string\"}}}}, \"top_depth_m\": {\"type\": \"number\", \"default\": 1000, \"description\": \"глубина кровли верхнего слоя на краях\"}, \"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 5000}, \"structure\": {\"type\": \"object\", \"default\": {\"type\": \"flat\"}, \"properties\": {\"type\": {\"enum\": [\"flat\", \"anticline\", \"syncline\", \"monocline\"]}, \"amplitude_m\": {\"type\": \"number\", \"minimum\": 0}, \"center_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"width_frac\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"maximum\": 2}, \"dip_deg\": {\"type\": \"number\", \"minimum\": -30, \"maximum\": 30}}}, \"fault\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"x_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"throw_m\": {\"type\": \"number\", \"description\": \"+: правый блок опущен\"}, \"dip_deg\": {\"type\": \"number\", \"minimum\": 30, \"maximum\": 90, \"default\": 70}, \"sealing\": {\"type\": \"boolean\", \"default\": true}}}, \"traps\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"layer\"], \"properties\": {\"layer\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"индекс слоя-коллектора\"}, \"goc_m\": {\"type\": [\"number\", \"null\"], \"description\": \"глубина ГНК\"}, \"owc_m\": {\"type\": [\"number\", \"null\"], \"description\": \"глубина ВНК\"}, \"transition_m\": {\"type\": \"number\", \"minimum\": 0, \"default\": 0, \"description\": \"переходная зона над ВНК (показывается градиентом)\"}}}}, \"wells\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x_frac\"], \"properties\": {\"x_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"name\": {\"type\": \"string\"}, \"depth_m\": {\"type\": \"number\"}}}}, \"vertical_exaggeration\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"null — подобрать; 1 — истинный масштаб; иначе ×N\"}, \"show_labels\": {\"type\": \"boolean\", \"default\": true}}}\n\nexample params: {\"title\": \"Антиклинальная ловушка: газ, нефть и вода в порах песчаника\", \"layers\": [{\"lith\": \"shale\", \"thickness_m\": 60, \"name\": \"покрышка\"}, {\"lith\": \"sand\", \"thickness_m\": 40, \"name\": \"пласт-коллектор\"}, {\"lith\": \"shale\", \"thickness_m\": 50}, {\"lith\": \"limestone\", \"thickness_m\": 40}], \"top_depth_m\": 1500, \"width_m\": 6000, \"structure\": {\"type\": \"anticline\", \"amplitude_m\": 70, \"center_frac\": 0.5, \"width_frac\": 0.6}, \"traps\": [{\"layer\": 1, \"goc_m\": 1525, \"owc_m\": 1555}], \"wells\": [{\"x_frac\": 0.5, \"name\": \"Скв. 1\"}, {\"x_frac\": 0.82, \"name\": \"Скв. 2\"}]}\n\n### crossplot — График / кроссплот / палетка: точки, оцифрованные кривые, формулы, области\nДвумерный график: точки данных, кривые (оцифрованные с рисунка книги или из таблицы), кривые по формуле из главы (вычисляются кодом: x, log, log10, exp, sqrt, erf, erfc, E1), подписанные области (например «коллектор/неколлектор», «нефть/вода»), пороговые линии и точка запроса («ваш образец»). Линейные и логарифмические оси. Для перерисовки рисунков книги (палетки, зависимости), решения на данных (признак → порог → вывод), сравнения зависимостей.\nКласс по умолчанию: A, метка: «реальные данные». Для типов: Ф, Р, Пр, И, data_practice, палетка, зависимость, перерисовка рисунка. Анимация: t∈[0,1]: точка запроса движется по заданному пути / кривые прорисовываются слева направо.\n\nparams schema: {\"type\": \"object\", \"required\": [\"x\", \"y\"], \"properties\": {\"x\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"invert\": {\"type\": \"boolean\", \"default\": false}}}, \"y\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"invert\": {\"type\": \"boolean\", \"default\": false}}}, \"series\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"points\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"points\": {\"type\": \"array\", \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}}, \"kind\": {\"enum\": [\"line\", \"points\", \"smooth\"], \"default\": \"line\"}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}, \"label_at_end\": {\"type\": \"boolean\", \"default\": false, \"description\": \"подписать кривую у её правого конца (шифр кривой), а не в легенде\"}}}}, \"functions\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"expr\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"expr\": {\"type\": \"string\"}, \"x_range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}}}}, \"regions\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"polygon\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"polygon\": {\"type\": \"array\", \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"color\": {\"type\": \"string\"}}}}, \"hlines\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"value\"], \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}, \"vlines\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"value\"], \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}, \"query\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}, \"annotations\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\", \"text\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"text\": {\"type\": \"string\"}}}}}}\n\nexample params: {\"title\": \"Сопротивление пласта по формуле Арчи при разной водонасыщенности\", \"x\": {\"label\": \"пористость\", \"unit\": \"д. ед.\", \"range\": [0.05, 0.35]}, \"y\": {\"label\": \"сопротивление\", \"unit\": \"Ом·м\", \"scale\": \"log\", \"range\": [0.1, 1000]}, \"functions\": [{\"label\": \"водоносный (Sв = 1)\", \"expr\": \"0.05 / x**2\"}, {\"label\": \"нефтеносный (Sв = 0,25)\", \"expr\": \"0.05 / (x**2 * 0.25**2)\"}], \"query\": {\"x\": 0.2, \"y\": 20, \"label\": \"пласт A\"}, \"provenance\": \"симуляция\"}\n\n### log_plot — Каротажная диаграмма по данным (оцифровка рисунка книги или LAS)\nПланшет ГИС, построенный по ТОЧКАМ кривых (оцифровка рисунка книги или реальные данные): треки с кривыми (глубина вниз, шкалы и единицы в шапке), необязательная литологическая колонка по интерпретации и выделенные интервалы с подписями (коллектор, ВНК, плотный прослой…). Для перерисовки рисунков-диаграмм, на которых держатся примеры и задачи главы, и для «решения на данных».\nКласс по умолчанию: A, метка: «реальные данные». Для типов: И, Р, Пр, Н, data_practice, перерисовка рисунка, диаграммы ГИС. Анимация: t∈[0,1]: кривые прорисовываются снизу вверх (как при записи на подъёме).\n\nparams schema: {\"type\": \"object\", \"required\": [\"tracks\"], \"properties\": {\"tracks\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 6, \"items\": {\"type\": \"object\", \"required\": [\"curves\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"curves\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 4, \"items\": {\"type\": \"object\", \"required\": [\"name\", \"points\"], \"properties\": {\"name\": {\"type\": \"string\", \"description\": \"как в книге: ПС, ГК, КС (А2М0,5N), НГК…\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"points\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"description\": \"[[глубина, значение], …] по глубине\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2, \"description\": \"шкала трека слева→справа (может убывать)\"}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}}}}}}}, \"depth_range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"lith_column\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"lith\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"fluid\": {\"enum\": [\"water\", \"oil\", \"gas\", null]}, \"label\": {\"type\": \"string\"}}}}, \"intervals\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"text\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"text\": {\"type\": \"string\"}, \"kind\": {\"enum\": [\"observation\", \"inference\", \"assumption\"], \"default\": \"inference\"}}}}}}\n\nexample params: {\"title\": \"ПС и сопротивление по участку разреза (пример)\", \"tracks\": [{\"title\": \"ПС\", \"curves\": [{\"name\": \"ПС\", \"unit\": \"мВ\", \"range\": [-60, 10], \"points\": [[1200, 0], [1204, 0], [1205, -40], [1210, -42], [1211, 0], [1220, 0]]}]}, {\"title\": \"КС\", \"curves\": [{\"name\": \"КС\", \"unit\": \"Ом·м\", \"scale\": \"log\", \"range\": [1, 100], \"points\": [[1200, 3], [1204, 3], [1205, 25], [1208, 25], [1209, 4], [1211, 3], [1220, 3]]}]}], \"lith_column\": [{\"top\": 1200, \"base\": 1204.5, \"lith\": \"shale\"}, {\"top\": 1204.5, \"base\": 1210.5, \"lith\": \"sand\"}, {\"top\": 1210.5, \"base\": 1220, \"lith\": \"shale\"}], \"intervals\": [{\"top\": 1204.5, \"base\": 1210.5, \"text\": \"коллектор\", \"kind\": \"inference\"}]}\n\n### plan_map — Карта (вид сверху): структурные изолинии кровли, контур залежи, скважины\nВид сверху: изогипсы кровли пласта (купол, антиклиналь, моноклиналь или по точкам скважин), внешний контур нефтеносности по ВНК и газоносности по ГНК (контакт горизонтален, поэтому контур = изогипса), скважины с результатом, линия разреза А–А′, масштабная линейка и север. Для тем: строение залежи, размещение скважин, связь карты и разреза.\nКласс по умолчанию: B, метка: «схема». Для типов: П, М, Р, карта, залежь, размещение скважин. Анимация: t∈[0,1]: скважины появляются по порядку.\n\nparams schema: {\"type\": \"object\", \"properties\": {\"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 6000}, \"height_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 5000}, \"structure\": {\"type\": \"object\", \"default\": {\"type\": \"dome\"}, \"properties\": {\"type\": {\"enum\": [\"dome\", \"anticline\", \"monocline\", \"points\"]}, \"center\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2, \"description\": \"доли ширины/высоты\"}, \"crest_depth_m\": {\"type\": \"number\"}, \"amplitude_m\": {\"type\": \"number\"}, \"radius_frac\": {\"type\": \"number\"}, \"elongation\": {\"type\": \"number\"}, \"azimuth_deg\": {\"type\": \"number\"}, \"dip_deg\": {\"type\": \"number\"}}}, \"points\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\", \"z\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"z\": {\"type\": \"number\"}}}}, \"contour_interval_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"owc_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"goc_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"wells\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"name\": {\"type\": \"string\"}, \"result\": {\"enum\": [\"oil\", \"gas\", \"water\", \"dry\", null]}}}}, \"section_line\": {\"type\": [\"array\", \"null\"], \"default\": null, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}}}\n\nexample params: {\"title\": \"Купол: изогипсы кровли и контур залежи по ВНК\", \"structure\": {\"type\": \"dome\", \"center\": [0.5, 0.5], \"crest_depth_m\": 1500, \"amplitude_m\": 80, \"radius_frac\": 0.35, \"elongation\": 1.6, \"azimuth_deg\": 30}, \"owc_m\": 1545, \"goc_m\": 1515, \"wells\": [{\"x\": 3000, \"y\": 2500, \"name\": \"1\", \"result\": \"gas\"}, {\"x\": 4300, \"y\": 3300, \"name\": \"2\", \"result\": \"oil\"}, {\"x\": 5200, \"y\": 1200, \"name\": \"3\", \"result\": \"water\"}], \"section_line\": [[600, 1000], [5400, 4000]]}\n\n### timeline_growth — Геологическая история: накопление, рост рифа, проградация, размыв, погружение\nРазрез, который строится во времени по событиям: накопление слоя (пласт, клин, линза, постройка-риф, проградирующий клин дельты), колебания уровня моря, размыв (несогласие как событие: размыв → перерыв → новое накопление), погружение. Молодые слои всегда ложатся на текущую поверхность. Внизу — шкала времени с текущим событием. Для тем: рост рифа, проградация дельты, формирование ловушки и покрышки, «как пласт оказался на глубине».\nКласс по умолчанию: B, метка: «схема». Для типов: В, П, М, геологическое время, рост рифа, несогласие. Анимация: t∈[0,1]: события по порядку; текущее событие выполняется частично.\n\nparams schema: {\"type\": \"object\", \"required\": [\"events\"], \"properties\": {\"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 3000}, \"base_lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"], \"default\": \"basement\"}, \"base_thickness_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 30}, \"sea_level_m\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"уровень моря над исходной поверхностью, м\"}, \"events\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 12, \"items\": {\"type\": \"object\", \"required\": [\"kind\"], \"properties\": {\"kind\": {\"enum\": [\"deposit\", \"erode\", \"sea_level\", \"subside\"]}, \"label\": {\"type\": \"string\"}, \"time_label\": {\"type\": \"string\"}, \"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"shape\": {\"enum\": [\"sheet\", \"wedge\", \"lens\", \"mound\", \"prograde\", \"fill\"], \"default\": \"sheet\", \"description\": \"fill — заполнить рельеф до отметки level_m (облекание/захоронение)\"}, \"thickness_m\": {\"type\": \"number\", \"minimum\": 0}, \"center_frac\": {\"type\": \"number\"}, \"width_frac\": {\"type\": \"number\"}, \"thicken\": {\"enum\": [\"left\", \"right\"]}, \"up_to_sea_level\": {\"type\": \"boolean\", \"default\": false, \"description\": \"рост не выше уровня моря (риф)\"}, \"level_m\": {\"type\": \"number\", \"description\": \"erode: срезать до отметки; sea_level: новый уровень\"}, \"amount_m\": {\"type\": \"number\", \"description\": \"subside: на сколько погрузить\"}}}}}}\n\nexample params: {\"title\": \"Рост рифа и его захоронение\", \"width_m\": 3000, \"sea_level_m\": 40, \"base_lith\": \"limestone\", \"events\": [{\"kind\": \"deposit\", \"lith\": \"limestone\", \"shape\": \"mound\", \"thickness_m\": 35, \"center_frac\": 0.5, \"width_frac\": 0.4, \"up_to_sea_level\": true, \"label\": \"риф растёт к свету\", \"time_label\": \"этап 1\"}, {\"kind\": \"sea_level\", \"level_m\": 80, \"label\": \"море углубляется\", \"time_label\": \"этап 2\"}, {\"kind\": \"deposit\", \"lith\": \"limestone\", \"shape\": \"mound\", \"thickness_m\": 35, \"center_frac\": 0.5, \"width_frac\": 0.3, \"up_to_sea_level\": true, \"label\": \"риф догоняет уровень моря\", \"time_label\": \"этап 3\"}, {\"kind\": \"deposit\", \"lith\": \"shale\", \"shape\": \"fill\", \"level_m\": 78, \"label\": \"глины перекрывают риф\", \"time_label\": \"этап 4\"}]}\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"Redraw of a book figure by code (оцифровка рисунка в параметры шаблона)\", \"type\": \"object\", \"required\": [\"figure\", \"page\", \"feasible\", \"reason\", \"template\", \"params\", \"caption\", \"alt\", \"approximations\", \"checks\"], \"properties\": {\"figure\": {\"type\": \"string\"}, \"page\": {\"type\": \"integer\"}, \"feasible\": {\"type\": \"boolean\", \"description\": \"можно ли честно перерисовать рисунок кодом по имеющимся шаблонам\"}, \"reason\": {\"type\": \"string\", \"description\": \"почему выбран шаблон или почему перерисовка невозможна\"}, \"template\": {\"type\": \"string\", \"description\": \"шаблон каталога (пусто, если feasible=false)\"}, \"params\": {\"type\": \"object\", \"description\": \"параметры шаблона по его params_schema\"}, \"title\": {\"type\": \"string\"}, \"caption\": {\"type\": \"string\", \"description\": \"подпись: что изображено, по-русски\"}, \"alt\": {\"type\": \"string\"}, \"approximations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"что снято приблизительно / упрощено при оцифровке\"}, \"checks\": {\"type\": \"array\", \"description\": \"контрольные точки из примеров и задач главы: точка (x, y) и область/ответ, который должен получиться\", \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\", \"expected_region\", \"source\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"expected_region\": {\"type\": \"string\", \"description\": \"подпись области (label в regions), куда должна попасть точка\"}, \"source\": {\"type\": \"string\", \"description\": \"пример/задача, откуда точка\"}}}}}}",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Redraw of a book figure by code (оцифровка рисунка в параметры шаблона)",
+      "type": "object",
+      "required": [
+        "figure",
+        "page",
+        "feasible",
+        "reason",
+        "template",
+        "params",
+        "caption",
+        "alt",
+        "approximations",
+        "checks"
+      ],
+      "properties": {
+        "figure": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "feasible": {
+          "type": "boolean",
+          "description": "можно ли честно перерисовать рисунок кодом по имеющимся шаблонам"
+        },
+        "reason": {
+          "type": "string",
+          "description": "почему выбран шаблон или почему перерисовка невозможна"
+        },
+        "template": {
+          "type": "string",
+          "description": "шаблон каталога (пусто, если feasible=false)"
+        },
+        "params": {
+          "type": "object",
+          "description": "параметры шаблона по его params_schema"
+        },
+        "title": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string",
+          "description": "подпись: что изображено, по-русски"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "approximations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "что снято приблизительно / упрощено при оцифровке"
+        },
+        "checks": {
+          "type": "array",
+          "description": "контрольные точки из примеров и задач главы: точка (x, y) и область/ответ, который должен получиться",
+          "items": {
+            "type": "object",
+            "required": [
+              "x",
+              "y",
+              "expected_region",
+              "source"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "expected_region": {
+                "type": "string",
+                "description": "подпись области (label в regions), куда должна попасть точка"
+              },
+              "source": {
+                "type": "string",
+                "description": "пример/задача, откуда точка"
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [
+      "/home/s_tokhtobayev/kmd_digital-2026-hackathon/runs/latyshova/tmp/figs/p105_fig1.png",
+      "/home/s_tokhtobayev/kmd_digital-2026-hackathon/runs/latyshova/tmp/figs/p105_fig2.png",
+      "/home/s_tokhtobayev/kmd_digital-2026-hackathon/runs/latyshova/tmp/figs/p105_fig3.png",
+      "/home/s_tokhtobayev/kmd_digital-2026-hackathon/runs/latyshova/pages/p105.png"
+    ],
+    "cache_path": "runs/latyshova/llm/redraw.fig75/4552bc8ddd749a32d127.json",
+    "created": "2026-11-25T08:09:03"
+  },
+  "response": {
+    "figure": "75",
+    "page": 105,
+    "feasible": true,
+    "reason": "Диаграммы ГИС (ГМ, ИК, АМ, ГГМ) — шаблон log_plot. Интервалы коллекторов не отмечены: их выделение — задача 103.",
+    "template": "log_plot",
+    "params": {
+      "tracks": [
+        {
+          "title": "ГМ и ИК",
+          "curves": [
+            {
+              "name": "ГМ",
+              "unit": "10⁻¹³ А/кг",
+              "range": [
+                0,
+                8
+              ],
+              "dashed": true,
+              "points": [
+                [
+                  3587.6,
+                  7.2
+                ],
+                [
+                  3592,
+                  6.8
+                ],
+                [
+                  3595,
+                  6.4
+                ],
+                [
+                  3596.3,
+                  5.5
+                ],
+                [
+                  3597.9,
+                  4.1
+                ],
+                [
+                  3599.5,
+                  3.4
+                ],
+                [
+                  3603,
+                  3.2
+                ],
+                [
+                  3607,
+                  2.8
+                ],
+                [
+                  3611,
+                  2.6
+                ],
+                [
+                  3615,
+                  2.9
+                ],
+                [
+                  3619,
+                  3.4
+                ],
+                [
+                  3623,
+                  3.6
+                ],
+                [
+                  3626,
+                  3.9
+                ],
+                [
+                  3629,
+                  4.1
+                ],
+                [
+                  3630.3,
+                  5.5
+                ],
+                [
+                  3632,
+                  6.2
+                ],
+                [
+                  3633.8,
+                  6.5
+                ]
+              ]
+            },
+            {
+              "name": "ИК (6Ф1)",
+              "unit": "мСим/м",
+              "range": [
+                0,
+                330
+              ],
+              "points": [
+                [
+                  3587.6,
+                  75
+                ],
+                [
+                  3590,
+                  81
+                ],
+                [
+                  3594,
+                  109
+                ],
+                [
+                  3597.9,
+                  144
+                ],
+                [
+                  3599.5,
+                  181
+                ],
+                [
+                  3601,
+                  225
+                ],
+                [
+                  3602.6,
+                  194
+                ],
+                [
+                  3603.8,
+                  231
+                ],
+                [
+                  3605,
+                  281
+                ],
+                [
+                  3606.6,
+                  294
+                ],
+                [
+                  3607.8,
+                  288
+                ],
+                [
+                  3609,
+                  225
+                ],
+                [
+                  3610.5,
+                  194
+                ],
+                [
+                  3612,
+                  238
+                ],
+                [
+                  3614,
+                  231
+                ],
+                [
+                  3615.3,
+                  194
+                ],
+                [
+                  3616.8,
+                  238
+                ],
+                [
+                  3618.4,
+                  219
+                ],
+                [
+                  3620,
+                  244
+                ],
+                [
+                  3622.4,
+                  181
+                ],
+                [
+                  3624,
+                  219
+                ],
+                [
+                  3625.1,
+                  275
+                ],
+                [
+                  3626.7,
+                  219
+                ],
+                [
+                  3627.9,
+                  244
+                ],
+                [
+                  3629.1,
+                  194
+                ],
+                [
+                  3630.6,
+                  131
+                ],
+                [
+                  3632.2,
+                  81
+                ],
+                [
+                  3633.8,
+                  50
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "АМ",
+          "curves": [
+            {
+              "name": "АМ ΔT",
+              "unit": "мкс/м",
+              "range": [
+                184,
+                288
+              ],
+              "points": [
+                [
+                  3587.6,
+                  206
+                ],
+                [
+                  3589.6,
+                  227
+                ],
+                [
+                  3590.4,
+                  249
+                ],
+                [
+                  3591.2,
+                  213
+                ],
+                [
+                  3594,
+                  217
+                ],
+                [
+                  3597.9,
+                  220
+                ],
+                [
+                  3601,
+                  224
+                ],
+                [
+                  3603.4,
+                  235
+                ],
+                [
+                  3605,
+                  253
+                ],
+                [
+                  3605.8,
+                  227
+                ],
+                [
+                  3607.4,
+                  260
+                ],
+                [
+                  3609,
+                  231
+                ],
+                [
+                  3610.5,
+                  270
+                ],
+                [
+                  3611.7,
+                  242
+                ],
+                [
+                  3612.9,
+                  281
+                ],
+                [
+                  3614.5,
+                  242
+                ],
+                [
+                  3615.7,
+                  267
+                ],
+                [
+                  3617.2,
+                  231
+                ],
+                [
+                  3618.8,
+                  270
+                ],
+                [
+                  3620.4,
+                  235
+                ],
+                [
+                  3621.6,
+                  260
+                ],
+                [
+                  3623.2,
+                  227
+                ],
+                [
+                  3624.3,
+                  256
+                ],
+                [
+                  3626,
+                  227
+                ],
+                [
+                  3627.9,
+                  242
+                ],
+                [
+                  3630.3,
+                  220
+                ],
+                [
+                  3633.8,
+                  213
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ГГМ",
+          "curves": [
+            {
+              "name": "ГГМ δп",
+              "unit": "г/см³",
+              "range": [
+                2.68,
+                1.95
+              ],
+              "points": [
+                [
+                  3587.6,
+                  2.47
+                ],
+                [
+                  3590.8,
+                  2.45
+                ],
+                [
+                  3593.9,
+                  2.52
+                ],
+                [
+                  3597.1,
+                  2.43
+                ],
+                [
+                  3599.5,
+                  2.38
+                ],
+                [
+                  3601,
+                  2.36
+                ],
+                [
+                  3602.6,
+                  2.4
+                ],
+                [
+                  3604.2,
+                  2.29
+                ],
+                [
+                  3605.8,
+                  2.22
+                ],
+                [
+                  3607.4,
+                  2.2
+                ],
+                [
+                  3608.2,
+                  1.99
+                ],
+                [
+                  3608.9,
+                  2.38
+                ],
+                [
+                  3610.1,
+                  2.32
+                ],
+                [
+                  3611.3,
+                  2.08
+                ],
+                [
+                  3612.1,
+                  2.27
+                ],
+                [
+                  3612.9,
+                  2.01
+                ],
+                [
+                  3614.1,
+                  2.29
+                ],
+                [
+                  3615.3,
+                  2.36
+                ],
+                [
+                  3616.8,
+                  2.43
+                ],
+                [
+                  3618.4,
+                  2.38
+                ],
+                [
+                  3620,
+                  2.43
+                ],
+                [
+                  3621.6,
+                  2.24
+                ],
+                [
+                  3622.8,
+                  2.43
+                ],
+                [
+                  3624.7,
+                  2.33
+                ],
+                [
+                  3626.3,
+                  2.45
+                ],
+                [
+                  3627.9,
+                  2.43
+                ],
+                [
+                  3630.3,
+                  2.47
+                ],
+                [
+                  3633.8,
+                  2.45
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "depth_range": [
+        3587.5,
+        3634
+      ],
+      "lith_column": [],
+      "intervals": [],
+      "provenance": "реальные данные"
+    },
+    "title": "ГИС для выделения газоносных коллекторов",
+    "caption": "Диаграммы ГИС для выделения в терригенном разрезе газоносных коллекторов: ГМ, индукционный метод (ИК, удельная проводимость), акустический (АМ, интервальное время ΔT) и плотностной гамма-гамма (ГГМ, плотность δп; шкала убывает вправо). Константы автора: ΔTж = 600 мкс/м, ΔTск = 170 мкс/м, δж = 1,1 г/см³, δск = 2,65 г/см³, δфл = 0,9 г/см³.",
+    "alt": "Каротажная диаграмма 3588–3634 м в трёх треках: ГМ и проводимость ИК, интервальное время АМ, плотность ГГМ. В середине разреза (около 3600–3628 м) ГМ понижен, проводимость высокая, интервальное время растёт до 260–280 мкс/м, а плотность местами падает до 2,0–2,2 г/см³.",
+    "approximations": [
+      "Кривые оцифрованы со скана с шагом около 1–1,5 м; мелкие колебания не повторены",
+      "Шкала ГМ продлена до 8 единиц: у кровли и подошвы кривая выходит за деление 6",
+      "Интервалы коллекторов не отмечены — это ответ задачи 103"
+    ],
+    "checks": []
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 22439,
+    "output_chars": 2924
+  }
+}
