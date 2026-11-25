@@ -1,0 +1,80 @@
+{
+  "baraboshkin": {
+    "nodes": 18,
+    "llm_calls": 12,
+    "tokens_in": 97919,
+    "tokens_out": 57334,
+    "usd_total": 5.77,
+    "usd_per_node": 0.32,
+    "manual_edits": 0,
+    "human_minutes": 0,
+    "human_minutes_per_node": 0.0,
+    "video_minutes": 0.0,
+    "usd_per_video_minute_of_chapter": null
+  },
+  "barenblatt": {
+    "nodes": 19,
+    "llm_calls": 10,
+    "tokens_in": 82951,
+    "tokens_out": 42645,
+    "usd_total": 4.44,
+    "usd_per_node": 0.234,
+    "manual_edits": 0,
+    "human_minutes": 0,
+    "human_minutes_per_node": 0.0,
+    "video_minutes": 0.0,
+    "usd_per_video_minute_of_chapter": null
+  },
+  "basniev": {
+    "nodes": 60,
+    "llm_calls": 80,
+    "tokens_in": 1351225,
+    "tokens_out": 354953,
+    "usd_total": 46.89,
+    "usd_per_node": 0.781,
+    "manual_edits": 0,
+    "human_minutes": 0,
+    "human_minutes_per_node": 0.0,
+    "video_minutes": 2.17,
+    "usd_per_video_minute_of_chapter": 21.66
+  },
+  "kuznetsov": {
+    "nodes": 56,
+    "llm_calls": 188,
+    "tokens_in": 3359967,
+    "tokens_out": 520459,
+    "usd_total": 89.43,
+    "usd_per_node": 1.597,
+    "manual_edits": 0,
+    "human_minutes": 0,
+    "human_minutes_per_node": 0.0,
+    "video_minutes": 0.0,
+    "usd_per_video_minute_of_chapter": null
+  },
+  "latyshova": {
+    "nodes": 34,
+    "llm_calls": 141,
+    "tokens_in": 2341756,
+    "tokens_out": 349469,
+    "usd_total": 61.34,
+    "usd_per_node": 1.804,
+    "manual_edits": 1,
+    "human_minutes": 6.0,
+    "human_minutes_per_node": 0.18,
+    "video_minutes": 2.02,
+    "usd_per_video_minute_of_chapter": 30.39
+  },
+  "vendelshtein": {
+    "nodes": 32,
+    "llm_calls": 16,
+    "tokens_in": 147470,
+    "tokens_out": 55890,
+    "usd_total": 6.4,
+    "usd_per_node": 0.2,
+    "manual_edits": 0,
+    "human_minutes": 0,
+    "human_minutes_per_node": 0.0,
+    "video_minutes": 0.0,
+    "usd_per_video_minute_of_chapter": null
+  }
+}
