@@ -326,7 +326,7 @@ class CrossSection(Template):
         exag = []
         notes = []
         if ve > 1.3:
-            exag.append({"what": "вертикальный масштаб", "factor": round(ve, 0 if ve > 5 else 1)})
+            exag.append({"what": "вертикальный масштаб", "factor": float(round(ve, 0 if ve > 5 else 1))})
         else:
             notes.append("истинный масштаб: без вертикального преувеличения")
         legend = []

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Illustration spec (рисунок курса, рендерится кодом из шаблона kmd/visuals)",
   "type": "object",
-  "required": ["id", "template", "params", "caption", "claim_ids"],
+  "required": ["id", "template", "params"],
   "properties": {
     "id": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+$", "description": "имя файла без расширения, уникально в главе"},
     "node_id": {"type": "string"},
