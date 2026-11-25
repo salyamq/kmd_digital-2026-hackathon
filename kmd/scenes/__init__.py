@@ -78,8 +78,29 @@ def slim_node(node: dict) -> dict:
 def check_scene(scene: dict, node: dict, fmt: str) -> tuple[list[str], list[str], dict]:
     """Return (errors, warnings, fixed_scene). Provenance/class are set from the template (code is the truth)."""
     from .. import visuals
+    from ..course.checks import number_set, unknown_numbers
 
     errors, warns = [], []
+    source_numbers = number_set(json.dumps({
+        "quotes": [claim.get("quote", "") for claim in node.get("claims", [])],
+        "tables": node.get("tables", []),
+        "examples": node.get("worked_examples", []),
+    }, ensure_ascii=False))
+
+    def check_values(template, params, where):
+        if template.provenance_for(params) != "реальные данные":
+            return
+        if template.name == "comparison_bar":
+            values = [str(item[k]) for item in params["items"] for k in ("value", "min", "max") if k in item]
+            if params.get("threshold"):
+                values.append(str(params["threshold"].get("value", "")))
+        elif template.name == "log_plot" and not (params.get("redrawn_from") or params.get("dataset")):
+            values = [str(value) for value in params.get("depth_range") or []]
+        else:
+            return
+        if bad := unknown_numbers(" ".join(values), source_numbers):
+            errors.append(f"{where}: числа реальных данных отсутствуют в источниках узла: {', '.join(bad)}")
+
     sc = copy.deepcopy(scene)
     claim_ids = {c["id"] for c in node.get("claims", [])}
     views = sc.get("views", {})
@@ -97,6 +118,7 @@ def check_scene(scene: dict, node: dict, fmt: str) -> tuple[list[str], list[str]
             errors.append(f"вид «{name}» ({tpl.name}): параметры не по схеме: {str(e).splitlines()[0][:300]}")
             continue
         normalized[name] = (tpl, p)
+        check_values(tpl, p, f"вид «{name}» ({tpl.name})")
         for i in tpl.check(p):
             (errors if i.level == "error" else warns).append(f"вид «{name}» ({tpl.name}) [{i.code}]: {i.message}")
     frames = sc.get("frames", [])
@@ -122,6 +144,7 @@ def check_scene(scene: dict, node: dict, fmt: str) -> tuple[list[str], list[str]
                     for i in tpl.check(p2):
                         if i.level == "error":
                             errors.append(f"кадр {f['id']} (params_override) [{i.code}]: {i.message}")
+                    check_values(tpl, p2, f"кадр {f['id']} (params_override)")
                     p = p2
                 except Exception as e:
                     errors.append(f"кадр {f['id']}: params_override не по схеме: {str(e).splitlines()[0][:200]}")

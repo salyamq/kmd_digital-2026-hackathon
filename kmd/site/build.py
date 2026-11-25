@@ -214,6 +214,16 @@ def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | N
                         v["passport"] = {k: p[k] for k in ("prediction_question", "transfer_question", "duration_s", "qa_summary") if p.get(k)}
                         v["passport"]["duration_s"] = p.get("duration_s") or (p.get("video") or {}).get("duration_s")
                         v["transcript"] = lesson_transcript(p, step)
+                        v["templates"] = [
+                            {"template": spec["template"], "model": spec.get("model")}
+                            for spec in p.get("scene_specs", []) if spec.get("template")
+                        ]
+                        if not v["templates"]:
+                            v["templates"] = [
+                                {"template": spec["template"], "model": _visual_model(spec["template"])}
+                                for spec in (p.get("scene_spec") or {}).get("views", {}).values()
+                                if spec.get("template")
+                            ]
                 except Exception:
                     pass
             videos.append(v)
@@ -256,6 +266,8 @@ def render_scene_frames(scene: dict, out: Path) -> list[dict]:
                 t = t[-1]
             if not meta[v["template"]].get("animatable"):
                 t = None
+            if overrides := f.get("params_override"):
+                v = dict(v, params={**v.get("params", {}), **overrides})
             jobs.append((v, t, f.get("description", ""), f.get("provenance")))
     else:
         for v in views.values():
@@ -282,9 +294,37 @@ def render_scene_frames(scene: dict, out: Path) -> list[dict]:
                 print(f"[site] scene frame {k} for {scene.get('node_id')}: {str(e)[:200]}")
                 continue
         frames.append({"src": f"media/{out.name}/{base.name}.svg", "src_m": f"media/{out.name}/{mbase.name}.svg", "t": t,
+                       "template": tpl,
                        "caption": desc, "provenance": prov or meta[tpl].get("provenance", "симуляция")})
     stamp.write_text(key)
     return frames
+
+
+def _visual_model(name: str) -> str | None:
+    from ..visuals import get_template
+    from ..visuals.base import Template
+
+    try:
+        cls = type(get_template(name))
+    except KeyError:
+        return None
+    method = "state" if cls.state is not Template.state else "draw"
+    return f"{cls.__module__}.{cls.__name__}.{method}"
+
+
+def template_coverage(steps: list[dict]) -> list[dict]:
+    rows = []
+    for step in steps:
+        if step["format"] not in ("short", "long", "interactive"):
+            continue
+        media = step["media"] or {}
+        specs = [spec for video in media.get("videos", []) for spec in video.get("templates", [])]
+        for name in dict.fromkeys(f["template"] for f in media.get("frames", [])):
+            specs.append({"template": name, "model": _visual_model(name)})
+        unique_specs = list({json.dumps(spec, ensure_ascii=False, sort_keys=True): spec for spec in specs}.values())
+        rows.append({"node_id": step["node_id"], "format": step["format"], "media": media.get("kind"),
+                     "templates": unique_specs, "needs_template": not unique_specs})
+    return rows
 
 
 def format_label(s: dict) -> tuple[str, str]:
@@ -502,6 +542,7 @@ def build(chapter: str) -> Path:
     size = sum(f.stat().st_size for f in site.rglob("*") if f.is_file())
     write_json(rd / "site_report.json", {"chapter": cfg["id"], "title": course["title"], "steps": len(steps), "tasks": len(all_views), "cards": len(card_views),
                                          "size_mb": round(size / 1e6, 2), "media": {s["node_id"]: (s["media"] or {}).get("kind") for s in steps}})
+    write_json(rd / "template_coverage.json", {"chapter": cfg["id"], "nodes": template_coverage(steps)})
     print(f"[site] {site/'index.html'}  ({len(steps)} steps, {len(all_views)} tasks, {len(card_views)} cards, {size/1e6:.1f} MB)")
     if course["library"]:
         build_library()

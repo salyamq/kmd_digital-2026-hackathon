@@ -19,9 +19,9 @@
 | Латышова, гл. V §17–20 | обучение | `runs/latyshova/site/index.html` |
 | Басниев и др., гл. XXIII + XXIV §1 | обучение | `runs/basniev/site/index.html` |
 | Кузнецов, гл. 10 §10.1–10.4 | обучение | `runs/kuznetsov/site/index.html` |
-| Вендельштейн, Резванов, гл. I | контроль | `runs/vendelshtein/site/index.html` |
-| Баренблатт и др., §4 | контроль | `runs/barenblatt/site/index.html` |
-| Барабошкин, §1.2 | контроль | `runs/baraboshkin/site/index.html` |
+| Латышова, §21 | репетиция | `runs/rehearsal_lat21/site/index.html` |
+
+Для контрольных глав используйте `make control` с источниками из [HANDOFF](docs/HANDOFF.md).
 
 Ролики и их паспорта: `runs/<глава>/video/<узел>/`.
 
@@ -97,8 +97,13 @@ python -m kmd video latyshova geo.latyshova.s20.01 --format short
    Без ключа запросы попадают в `runs/<id>/llm/pending/`. Команды `kmd llm show` и
    `kmd llm answer` показывают запрос и проверяют ответ по схеме перед записью в кэш.
 3. Запустите `make run CH=<id>`. В режиме очереди код 3 означает, что нужны ответы.
-   Проверьте `verify_report.json` и `course_report.json` рядом с сайтом.
+   Рядом с сайтом сохранены `verify_report.json`, `course_report.json` и `template_coverage.json`.
+   Последний показывает, какой шаблон и какая модель закрывают каждый видеоёмкий узел.
 4. Для назначенного узла выполните `.venv/bin/python -m kmd video <id> <node_id> --format short|long`.
+5. Для сдачи запустите `.venv/bin/python -m kmd export <id>`. В `runs/<id>/submission/` появятся
+   учебный слой, покрытие, маршрутизация, задания, иллюстрации и паспорта по схемам организаторов.
+   Сайт и MP4 открываются из соседних папок `site/` и `video/`. Для прогона по бурению экспорт
+   можно выполнить сразу после `kmd route`. [Схемы организаторов](https://drive.google.com/drive/folders/1Oj6D3l_drhPSZHvUOEsBUQ9ocq9ZFoL7)
 
 ### Новый домен (сдвиг)
 
@@ -118,7 +123,10 @@ make rebuild CH=latyshova VIDEO=1  # также пересобрать имею�
 ```
 
 Журнал ручных правок: `edits/journal.jsonl` (минуты, коммит). Метрики стоимости:
-`python -m kmd.metrics` → `runs/metrics.json` (человеко-минуты и деньги на узел и на минуту видео).
+`python -m kmd.metrics` сохраняет `runs/metrics.json`. Суммы, сообщённые API, записаны отдельно
+от оценок по токенам. Оценки можно настроить через `KMD_PRICE_IN` и `KMD_PRICE_OUT` в USD за миллион.
+Для работы над роликом укажите `--kind video` при записи в журнал, для разбора с ментором — `--kind mentor`.
+Доля ручного времени рассчитана по журналу и замеру последнего полного запуска `kmd run`.
 
 ### Модуль проверки (закладки)
 

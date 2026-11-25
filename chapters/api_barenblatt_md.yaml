@@ -1,0 +1,15 @@
+id: api_barenblatt_md
+split: rehearsal
+domain: geology
+title: "Пористые среды"
+book:
+  author: "Г. И. Баренблатт, В. М. Ентов, В. М. Рыжик"
+  title: "Движение жидкостей и газов в природных пластах"
+  year: 1984
+  md: md/ctrl_barenblatt.md
+  page_images: page_images/barenblatt_porous
+language: ru
+segments:
+  - pages: [7, 9]
+    start: "§ 2. Пористые среды"
+    end: "§ 3. Закон Дарси"

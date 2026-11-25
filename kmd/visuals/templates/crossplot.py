@@ -33,7 +33,8 @@ def safe_eval(expr: str, x: np.ndarray, extra: dict | None = None) -> np.ndarray
             raise ValueError("недопустимая функция в формуле")
     env = {"x": x, **_FUNCS, **_CONST, **(extra or {})}
     with np.errstate(all="ignore"):
-        return np.asarray(eval(compile(tree, "<expr>", "eval"), {"__builtins__": {}}, env), dtype=float)
+        values = np.asarray(eval(compile(tree, "<expr>", "eval"), {"__builtins__": {}}, env), dtype=float)
+        return np.broadcast_to(values, x.shape)
 
 
 AXIS = {"type": "object", "required": ["label"],

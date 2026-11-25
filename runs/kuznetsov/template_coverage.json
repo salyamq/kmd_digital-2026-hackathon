@@ -1,0 +1,120 @@
+{
+  "chapter": "kuznetsov",
+  "nodes": [
+    {
+      "node_id": "geo.kuznetsov.s10_1.01",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.03",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.04",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.09",
+      "format": "long",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_2.10",
+      "format": "short",
+      "media": "video",
+      "templates": [
+        {
+          "template": "overlay_card",
+          "model": null
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.05",
+      "format": "short",
+      "media": "video",
+      "templates": [
+        {
+          "template": "overlay_card",
+          "model": null
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.08",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.09",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.12",
+      "format": "long",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.15",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_3.17",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.01",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.03",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.13",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.kuznetsov.s10_4.19",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    }
+  ]
+}

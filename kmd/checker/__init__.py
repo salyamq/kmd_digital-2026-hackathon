@@ -138,6 +138,24 @@ def _review_batch(items: list[dict], root: Path, scenes: dict) -> tuple[list[dic
     return messages, images, context
 
 
+def _confirm_findings(rd: Path, pkg_id: str, findings: list[dict], items: dict,
+                      base: dict, root: Path, scenes: dict) -> tuple[set[str], list[Path]]:
+    schema = {"type": "object", "required": ["checks"], "properties": {
+        "checks": {"type": "array", "items": {"type": "object", "required": ["id", "supported"],
+            "properties": {"id": {"type": "string"}, "supported": {"type": "boolean"}}}},
+    }}
+    calls = []
+    for i in range(0, len(findings), FRAME_BATCH * 2):
+        group = findings[i:i + FRAME_BATCH * 2]
+        batch, images, context = _review_batch([items[f["target_id"]] for f in group], root, scenes)
+        variables = {**base, "items": batch, "scenes": context, "candidates": group}
+        calls.append(lambda variables=variables, images=images, i=i: llm.complete_json(
+            rd, f"check_{pkg_id}_confirm_{i // (FRAME_BATCH * 2) + 1:02d}", "check_confirm",
+            variables, schema, images=images))
+    results, pending = llm.gather(calls)
+    return {row["id"] for result in results if result for row in result["checks"] if row["supported"]}, pending
+
+
 def _organizer_remarks(findings: list[dict]) -> list[dict]:
     categories = {
         "overgeneralization": "overgeneralization", "sign_flip": "sign_flip",
@@ -227,6 +245,16 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
                 "message": rv["explanation"], "fix": rv.get("fix"), "page": page,
                 "evidence_quote": ev, "evidence_verified": verified, "source": "llm",
             })
+    if "items" in pkg:
+        candidates = [f for f in findings if f["source"] == "llm"]
+        confirmed, pending = _confirm_findings(rd, pkg_id, candidates, by_id, base, root, scenes)
+        if pending:
+            return pending
+        for finding in candidates:
+            if finding["target_id"] not in confirmed:
+                dropped.append({**finding, "reason": "independent review did not confirm the contradiction"})
+        findings = [f for f in findings if f["source"] == "code" or f["target_id"] in confirmed]
+
     # one finding per target (keep the most severe; llm over code when equal)
     best: dict[str, dict] = {}
     for f in findings:
@@ -239,6 +267,7 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
     if "items" in pkg:
         res["package_id"] = pkg.get("package_id") or pkg_id
         res["remarks"] = _organizer_remarks(final)
+        llm.validate(res, llm.load_schema("organizer/review_output"))
     outp = Path(out) if out else root / "findings.json"
     write_json(outp, res)
     print(f"[check] {pkg.get('package_id')}: {len(items)} items, {len(final)} findings "

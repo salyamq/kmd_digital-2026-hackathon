@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 from . import edits, llm
-from .config import ROOT, RUNS, chapter_config, load_env, read_json, run_dir
+from .config import ROOT, RUNS, chapter_config, load_env, read_json, run_dir, write_json
 
 STAGES = ["ingest", "layer", "verify", "route", "scenes", "course", "site"]
 EXIT_PENDING = 3
@@ -56,6 +56,7 @@ def cmd_run(args) -> int:
         if "site" not in stages:
             raise ValueError("--video-node requires the run to include the site stage")
         video_jobs = [(args.video_node, args.video_format, args.video_engine)]
+    started = time.monotonic()
     for s in stages:
         if s == "scenes" and not scenes_requested and llm.provider_name() == "queue":
             print(f"[scenes] {args.chapter}: using saved scenes and redraws (queue provider)")
@@ -70,7 +71,18 @@ def cmd_run(args) -> int:
         print(f"[{s}] {args.chapter}: {time.time()-t0:.1f}s, pending={len(pending)}")
         if pending:
             return _report_pending(pending)
-    print(f"OK: open {RUNS / chapter_config(args.chapter)['id'] / 'site' / 'index.html'}")
+    output = RUNS / chapter_config(args.chapter)["id"]
+    if stages == STAGES and output.is_dir():
+        write_json(output / "run_timing.json", {"seconds": round(time.monotonic() - started, 3)})
+    course_report = output / "course_report.json"
+    if "course" in stages and course_report.exists():
+        chapter_errors = read_json(course_report).get("chapter_errors", [])
+        if chapter_errors:
+            for error in chapter_errors:
+                print(f"[course] ERROR {error}", file=sys.stderr)
+            return 1
+    if "site" in stages:
+        print(f"OK: open {output / 'site' / 'index.html'}")
     return 0
 
 
@@ -177,6 +189,12 @@ def cmd_serve(args) -> int:
     return serve(args.port)
 
 
+def cmd_export(args) -> int:
+    target = _stage("submission").export(args.chapter, args.out)
+    print(f"[export] {target}")
+    return 0
+
+
 def cmd_domain(args) -> int:
     pending = _stage("domain").new_domain(args.domain, args.from_chapter) or []
     return _report_pending(pending)
@@ -222,6 +240,10 @@ def main(argv=None) -> int:
     p.add_argument("--chapter", required=True)
     p.add_argument("--out")
     p.set_defaults(func=cmd_check)
+    p = sub.add_parser("export", help="export course JSON in the organizers’ schemas")
+    p.add_argument("chapter")
+    p.add_argument("--out")
+    p.set_defaults(func=cmd_export)
     p = sub.add_parser("domain", help="draft a domain pack for a new domain")
     p.add_argument("domain")
     p.add_argument("--from-chapter", required=True)

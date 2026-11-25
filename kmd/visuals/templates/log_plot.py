@@ -154,7 +154,8 @@ class LogPlot(Template):
                 ax.set_yticks([])
             axes.append(ax)
         span = base - top
-        step = next(s for s in (0.5, 1, 2, 5, 10, 20, 50, 100, 200) if span / s <= 12)
+        candidates = (0.5, 1, 2, 5, 10, 20, 50, 100, 200)
+        step = next((s for s in candidates if span / s <= 12), math.ceil(span / 12))
         ticks = np.arange(math.ceil(top / step) * step, base + 1e-6, step)
         axes[0].set_yticks([])
         for v in ticks:

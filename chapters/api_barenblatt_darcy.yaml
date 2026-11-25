@@ -1,0 +1,14 @@
+id: api_barenblatt_darcy
+split: rehearsal
+domain: geology
+title: "Закон Дарси, пределы его применимости и уточнения"
+book:
+  author: "Г. И. Баренблатт, В. М. Ентов, В. М. Рыжик"
+  title: "Движение жидкостей и газов в природных пластах"
+  year: 1984
+  pdf: pdf/barenblatt.pdf
+language: ru
+segments:
+  - pages: [9, 14]
+    start: "§ 3. Закон Дарси"
+    end: "§ 4. Уравнение неразрывности"

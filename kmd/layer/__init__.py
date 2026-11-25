@@ -201,10 +201,10 @@ def run(chapter: str, **kw) -> list[Path]:
             ids = {u["id"] for u in missing}
             repairs.append((i, missing, {
                 **variables, "must_cover": sorted(ids),
-                "units": [u for u in variables["units"] if u["id"] in ids], "coverage_retry": True,
+                "units": [u for u in variables["units"] if u["id"] in ids],
             }))
     calls = [
-        (lambda v=v, i=i: llm.complete_json(rd, f"layer_cover_{i + 1:02d}", "layer_extract", v, "layer_extract"))
+        (lambda v=v, i=i: llm.complete_json(rd, f"layer_cover_{i + 1:02d}", "layer_cover", v, "layer_extract"))
         for i, _, v in repairs
     ]
     repair_results, pending = llm.gather(calls)

@@ -97,3 +97,19 @@ def test_asr_normalization():
     assert normalize("Пористость 20%.") == ["пористость", "двадцать", "процентов"]
     assert wer(["а", "б", "в"], ["а", "б", "в"]) == 0
     assert abs(wer(["а", "б", "в", "г"], ["а", "х", "в", "г"]) - 0.25) < 1e-9
+
+
+def test_crossplot_constant_matches_every_x():
+    import numpy as np
+    from kmd.visuals.templates.crossplot import safe_eval
+
+    x = np.array([1.0, 2.0, 3.0])
+    assert safe_eval("0.5", x).tolist() == [0.5, 0.5, 0.5]
+
+
+def test_scene_flags_unsourced_real_data_bars():
+    scene = _scene()
+    scene["views"]["log"] = {"template": "comparison_bar",
+                              "params": {"items": [{"label": "Замер", "value": 573.8}]}}
+    errors, _, _ = check_scene(scene, NODE, "short")
+    assert any("573.8" in error for error in errors)
