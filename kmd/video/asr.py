@@ -13,11 +13,11 @@ import soundfile as sf
 _MODEL = {}
 
 
-def _model(name: str):
+def _model(name: str, *, local_files_only: bool = False):
     if name not in _MODEL:
         from faster_whisper import WhisperModel
 
-        _MODEL[name] = WhisperModel(name, device="cpu", compute_type="int8")
+        _MODEL[name] = WhisperModel(name, device="cpu", compute_type="int8", local_files_only=local_files_only)
     return _MODEL[name]
 
 
@@ -54,12 +54,14 @@ def wer(ref: list[str], hyp: list[str]) -> float:
     return float(d[n, m]) / n
 
 
-def transcribe(wav: Path, model: str = "small") -> list[dict]:
+def transcribe(wav: Path, model: str = "small", *, local_files_only: bool = False) -> list[dict]:
     tmp = Path(wav).with_suffix(".16k.wav")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-ar", "16000", str(tmp)], check=True)
     a, _ = sf.read(tmp, dtype="float32")
     tmp.unlink()
-    segs, _ = _model(model).transcribe(a, language="ru", word_timestamps=True, beam_size=5, vad_filter=False)
+    segs, _ = _model(model, local_files_only=local_files_only).transcribe(
+        a, language="ru", word_timestamps=True, beam_size=5, vad_filter=False,
+    )
     out = []
     for s in segs:
         for w in s.words or []:
@@ -67,12 +69,13 @@ def transcribe(wav: Path, model: str = "small") -> list[dict]:
     return out
 
 
-def check(wav: Path, phrases: list[dict], terms: list[str], model: str | None = None) -> dict:
+def check(wav: Path, phrases: list[dict], terms: list[str], model: str | None = None,
+          *, local_files_only: bool = False) -> dict:
     """phrases: [{id, text, start, end}] with scheduled times. Returns metrics for the passport."""
     import os
 
     model = model or os.environ.get("KMD_ASR_MODEL", "medium")
-    asr_words = transcribe(wav, model)
+    asr_words = transcribe(wav, model, local_files_only=local_files_only)
     hyp_tokens, hyp_times = [], []
     for w in asr_words:
         toks = normalize(w["word"])

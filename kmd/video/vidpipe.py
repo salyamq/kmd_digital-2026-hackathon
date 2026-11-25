@@ -89,7 +89,7 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
         script_text = " ".join(p["text"] for p in phrases).casefold()
         terms = [term["term"] for term in nd.get("terms", []) if term["term"].casefold() in script_text]
         try:
-            speech_check = check(build / "06_audio" / "narration.wav", phrases, terms)
+            speech_check = check(build / "06_audio" / "narration.wav", phrases, terms, local_files_only=True)
         except Exception as exc:
             speech_check = {"status": "unavailable", "reason": str(exc)}
             print(f"[video] local speech verification unavailable: {exc}")
