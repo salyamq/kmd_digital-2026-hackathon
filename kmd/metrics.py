@@ -47,11 +47,11 @@ def _edits():
 
 
 def _video_minutes(ch_dir) -> float:
-    total = 0.0
-    for p in ch_dir.glob("video/*/passport.json"):
+    durations = {}
+    for p in sorted(ch_dir.glob("video/*/passport*.json"), key=lambda p: p.name != "passport.json"):
         d = read_json(p)
-        total += float(d.get("duration_s", 0)) / 60
-    return total
+        durations[(p.parent, d.get("format", "short"))] = float(d.get("duration_s", 0))
+    return sum(durations.values()) / 60
 
 
 def compute() -> dict:

@@ -408,7 +408,18 @@ class DomainPack:
         d = self.dir
         for p in _find(d, ["*legend*.json", "*style*.json", "*palette*.json"]):
             j = read_json(p) or {}
-            self.legend = _deep_merge(self.legend, j.get("legend", j))
+            legend = j.get("legend", j)
+            for group in ("fluids", "curves"):
+                if isinstance(legend.get(group), dict):
+                    legend[group] = {key: value["color"] if isinstance(value, dict) else value
+                                     for key, value in legend[group].items()
+                                     if not isinstance(value, dict) or value.get("color")}
+            for key, value in (legend.get("lithology") or {}).items():
+                if isinstance(value, dict) and value.get("color"):
+                    value["fill"] = value["color"]
+                    if key == "sand" and "sandstone" not in legend["lithology"]:
+                        self.legend["lithology"]["sandstone"]["fill"] = value["color"]
+            self.legend = _deep_merge(self.legend, legend)
             self.found.setdefault("legend", []).append(str(p))
         for p in _find(d, ["*style*.md", "*legend*.md", "*style*.txt"]):
             self.style_notes += [l.strip("-*• ").strip() for l in p.read_text(encoding="utf-8").splitlines()
@@ -419,11 +430,14 @@ class DomainPack:
                 continue
             rows = _read_table(p)
             if isinstance(rows, dict):
-                rows = list(rows.items())
+                rows = rows.get("entries", list(rows.items()))
             for r in rows or []:
                 if isinstance(r, dict):
                     k = _first(r, ["word", "term", "слово", "термин", "text"])
-                    v = _first(r, ["stressed", "stress", "ударение", "tts", "pronunciation", "with_stress"])
+                    v = _first(r, ["stressed", "stress", "ударение", "tts", "pronunciation", "with_stress", "say"])
+                    if k and v and r.get("kind") in ("abbr", "symbol"):
+                        self.expansions[k] = v
+                        continue
                 else:
                     k, v = r[0], r[1]
                 if k and v:
@@ -433,7 +447,7 @@ class DomainPack:
         for p in _find(d, ["*glossar*", "*глоссар*", "*terms*"]):
             rows = _read_table(p)
             if isinstance(rows, dict):
-                rows = [{"term": k, "definition": v} for k, v in rows.items()]
+                rows = rows.get("items", [{"term": k, "definition": v} for k, v in rows.items()])
             for r in rows or []:
                 if isinstance(r, dict):
                     self.glossary.append(r)
@@ -465,7 +479,7 @@ class DomainPack:
             self.found.setdefault("physics", []).append(str(p))
         for p in _find(d, ["*misconcep*", "*заблужд*"]):
             j = read_json(p) if p.suffix == ".json" else None
-            self.misconceptions += j if isinstance(j, list) else []
+            self.misconceptions += j.get("items", []) if isinstance(j, dict) else (j or [])
             self.found.setdefault("misconceptions", []).append(str(p))
         for p in _find(d, ["*visual*.json"]):
             j = read_json(p) or []

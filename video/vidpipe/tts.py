@@ -16,6 +16,7 @@ import soundfile as sf
 from .util import RES_DIR, read_json
 
 DEFAULT_VOICES = {"yandex": {"ru": "alexander", "en": "john"},
+                  "microsoft": {"ru": "ru-RU-DmitryNeural", "en": "en-US-GuyNeural", "kk": "kk-KZ-AzamatNeural"},
                   "rhvoice": {"ru": "aleksandr-hq", "en": "slt"},
                   "silero": {"ru": "eugene", "en": "en_0"},
                   "espeak": {"ru": "ru", "en": "en-us"}}
@@ -24,6 +25,8 @@ SR = 48000
 
 def available_provider(preferred=None):
     """Pick the TTS engine. A requested cloud engine without credentials falls back to RHVoice (offline)."""
+    if preferred == "microsoft":
+        return preferred
     if preferred == "yandex":
         from .tts_yandex import have_credentials
         if have_credentials():
@@ -113,6 +116,17 @@ def synth(text, out_wav, lang, provider, voice=None, rate=None, role=None, speed
     out_wav = Path(out_wav)
     out_wav.parent.mkdir(parents=True, exist_ok=True)
     voice = voice or DEFAULT_VOICES.get(provider, {}).get(lang)
+    if provider == "microsoft":
+        from kmd.video.tts import synth as synth_microsoft
+
+        spoken = re.sub(r"\+([аеёиоуыэюя])", r"\1́", text, flags=re.IGNORECASE)
+        result = synth_microsoft(spoken, out_wav.parent / "microsoft",
+                                 voice=voice, rate=f"{(rate or 100) - 100:+d}%", retries=3)
+        _to_sr(result["wav"], out_wav)
+        if log:
+            log({"kind": "tts", "provider": "microsoft", "chars": len(text),
+                 "audio_s": result["duration"]})
+        return result["duration"]
     if provider == "yandex":
         from .tts_yandex import synthesize
         audio, meta = synthesize(text, voice, role, speed, lang, log=log)

@@ -426,7 +426,10 @@ def _final_node(nid: str, d: dict, g: dict, units: dict, key2id: dict) -> dict:
     for i, e in enumerate(d.get("worked_examples", [])):
         uids = [u for u in e.get("unit_ids", []) if u in units]
         page = units[uids[0]]["page"] if uids else (units[d["unit_ids"][0]]["page"] if d["unit_ids"] else 0)
-        nums = sorted(set(_NUM_RE.findall(" ".join([e["condition"], e["result"], *e["steps"]]))), key=lambda x: float(x.replace(",", ".")))
+        nums = sorted(
+            set(_NUM_RE.findall(" ".join([e["condition"], e["result"], *e["steps"]]))),
+            key=lambda x: (float(x.replace(",", ".")), -len(x), x),
+        )
         ex_no = next((units[u].get("example_no") for u in uids if units[u].get("example_no")), None)
         examples.append({
             "id": f"{nid}.e{i + 1:02d}", "page": page, "title": e["title"], "condition": e["condition"],

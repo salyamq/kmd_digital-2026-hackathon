@@ -51,11 +51,21 @@ def cmd_run(args) -> int:
     if args.to_stage:
         stages = stages[: stages.index(args.to_stage) + 1]
     scenes_requested = args.with_scenes or "scenes" in (args.from_stage, args.to_stage)
+    video_jobs = getattr(args, "video_jobs", [])
+    if getattr(args, "video_node", None):
+        if "site" not in stages:
+            raise ValueError("--video-node requires the run to include the site stage")
+        video_jobs = [(args.video_node, args.video_format)]
     for s in stages:
         if s == "scenes" and not scenes_requested and llm.provider_name() == "queue":
             print(f"[scenes] {args.chapter}: using saved scenes and redraws (queue provider)")
             continue
         t0 = time.time()
+        if s == "site":
+            for node, fmt in video_jobs:
+                pending = _render_video(args, node, fmt)
+                if pending:
+                    return _report_pending(pending)
         pending = _stage(s).run(args.chapter) or []
         print(f"[{s}] {args.chapter}: {time.time()-t0:.1f}s, pending={len(pending)}")
         if pending:
@@ -68,13 +78,15 @@ def cmd_rebuild(args) -> int:
     """After an override: re-merge the layer and rebuild everything downstream."""
     args.from_stage = "layer"
     args.to_stage = None
-    rc = cmd_run(args)
-    if rc == 0 and args.video:
-        vid = _stage("video")
-        for p in sorted((run_dir(args.chapter) / "video").glob("*/passport.json")):
+    args.video_jobs = []
+    if args.video:
+        passports = sorted((run_dir(args.chapter) / "video").glob("*/passport*.json"))
+        for p in passports:
             pas = read_json(p)
-            vid.run(args.chapter, node=pas["node_id"], fmt=pas.get("format", "short"))
-    return rc
+            job = (pas["node_id"], pas.get("format", "short"))
+            if job not in args.video_jobs:
+                args.video_jobs.append(job)
+    return cmd_run(args)
 
 
 def cmd_llm(args) -> int:
@@ -117,9 +129,27 @@ def cmd_edit(args) -> int:
     return 0
 
 
+def _render_video(args, node, fmt):
+    if args.video_engine == "legacy":
+        return _stage("video").run(args.chapter, node=node, fmt=fmt) or []
+    from .video import vidpipe
+
+    vidpipe.run(args.chapter, node, fmt, planner=args.planner, tts=args.tts)
+    return []
+
+
 def cmd_video(args) -> int:
-    pending = _stage("video").run(args.chapter, node=args.node, fmt=args.format) or []
+    pending = _render_video(args, args.node, args.format)
+    rd = run_dir(args.chapter)
+    if not pending and any((rd / "steps").glob("*.json")):
+        _stage("site").run(args.chapter)
     return _report_pending(pending)
+
+
+def video_options(parser):
+    parser.add_argument("--video-engine", choices=["vidpipe", "legacy"], default="vidpipe")
+    parser.add_argument("--planner", choices=["rule", "llm"], default="rule")
+    parser.add_argument("--tts", choices=["microsoft", "rhvoice", "espeak", "none"], default="microsoft")
 
 
 def cmd_check(args) -> int:
@@ -146,16 +176,21 @@ def main(argv=None) -> int:
     p.add_argument("--from", dest="from_stage", choices=STAGES)
     p.add_argument("--to", dest="to_stage", choices=STAGES)
     p.add_argument("--with-scenes", action="store_true", help="generate missing scenes and redraws in queue mode")
+    p.add_argument("--video-node", help="render one learning-layer node before building the site")
+    p.add_argument("--video-format", choices=["short", "long"], default="short")
+    video_options(p)
     p.set_defaults(func=cmd_run)
     p = sub.add_parser("rebuild", help="re-merge overrides and rebuild downstream")
     p.add_argument("chapter")
     p.add_argument("--with-scenes", action="store_true", help="generate missing scenes and redraws in queue mode")
     p.add_argument("--video", action="store_true", help="also re-render existing videos")
+    video_options(p)
     p.set_defaults(func=cmd_rebuild)
     p = sub.add_parser("video")
     p.add_argument("chapter")
     p.add_argument("node")
     p.add_argument("--format", choices=["short", "long"], default="short")
+    video_options(p)
     p.set_defaults(func=cmd_video)
     p = sub.add_parser("check", help="review an external package (bookmarks)")
     p.add_argument("package")

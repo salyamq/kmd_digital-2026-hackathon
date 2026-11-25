@@ -1,13 +1,13 @@
 """Output formats and pipeline-wide defaults. Nothing topic-specific lives here."""
 
 FORMATS = {
-    # 9:16 short: 30-60 s. Russian/English narration runs at ~2 words/s (measured on RHVoice and SpeechKit
+    # 9:16 short: 40-75 s. Russian/English narration runs at ~2 words/s (measured on RHVoice and SpeechKit
     # at speed 1.0), so the word budget is ~2x the target seconds.
     "short": {"w": 720, "h": 1280, "fps": 30, "orientation": "portrait",
-              "target_s": [30, 60], "words": [60, 115]},
-    # 16:9 explainer: 2-4 min
+              "target_s": [40, 75], "words": [80, 145]},
+    # 16:9 explainer: 1.5-3 min
     "explainer": {"w": 1920, "h": 1080, "fps": 30, "orientation": "landscape",
-                  "target_s": [120, 240], "words": [240, 470]},
+                  "target_s": [90, 180], "words": [180, 350]},
 }
 
 # Order in which stages run. Each stage reads files written by earlier stages only,

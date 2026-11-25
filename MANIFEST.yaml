@@ -14,6 +14,9 @@ models:
   - role: синтез речи (основной)
     tool: "edge-tts (онлайн-голоса Microsoft, ru-RU-DmitryNeural)"
     data_leaves: "да — только текст сценария (по ТЗ)"
+  - role: сценарий, раскадровка и рендер видео (product)
+    tool: "vidpipe из feature/video-pipeline: правила по умолчанию, LLM по --planner llm, Cairo, FFmpeg"
+    data_leaves: "нет в режиме правил; при --planner llm текст узла и выдержки страниц получает настроенный провайдер"
   - role: синтез речи (запасной)
     tool: "piper-tts, голос ru_RU-dmitri-medium (локально); espeak-ng (локально)"
     data_leaves: "нет"
@@ -29,6 +32,7 @@ tools:
   - {name: rapidfuzz, purpose: "поиск дословной цитаты на странице", data_leaves: no}
   - {name: "matplotlib, NumPy, SciPy", purpose: "кадры и иллюстрации классов A/B из моделей состояния", data_leaves: no}
   - {name: ffmpeg, purpose: "сборка роликов, субтитры, громкость −16 LUFS", data_leaves: no}
+  - {name: Cairo, purpose: "детерминированный рендер кадров vidpipe", data_leaves: no}
   - {name: pyloudnorm, purpose: "измерение громкости", data_leaves: no}
   - {name: num2words, purpose: "числа словами в сценарии", data_leaves: no}
   - {name: KaTeX, purpose: "формулы в курсе (вложен в сайт, офлайн)", license: MIT, data_leaves: no}

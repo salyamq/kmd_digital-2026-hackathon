@@ -181,8 +181,9 @@ def run(chapter: str, node: str | None = None, fmt: str = "short", **kw) -> list
     passport = build_passport(cfg, nd, scene, script, timeline, audio, loud, enc, asr_res, ear, wpm, voice, rate,
                               fmt, s_warn, size)
     pp = out_dir / "passport.json"
-    if pp.exists() and read_json(pp).get("format") != fmt:
-        pp = out_dir / f"passport.{fmt}.json"
+    specific = out_dir / f"passport.{fmt}.json"
+    if specific.exists() or (pp.exists() and read_json(pp).get("format") != fmt):
+        pp = specific
     write_json(pp, passport)
     print(f"[video] {node} {fmt}: {enc['duration_s']} s, {enc['size_mb']} MB, wpm {wpm:.0f}, LUFS {loud['lufs']}, "
           f"WER {asr_res.get('wer')}, sync max {asr_res.get('sync_max_s')} s -> {mp4}")

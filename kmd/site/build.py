@@ -188,11 +188,14 @@ def find_media(rd: Path, site: Path, step: dict, scene: dict | None) -> dict | N
                 vtt.parent.mkdir(parents=True, exist_ok=True)
                 vtt.write_text(srt_to_vtt(srt.read_text(encoding="utf-8")), encoding="utf-8")
                 v["vtt"] = f"media/{vtt.name}"
-            pas = vdir / "passport.json"
+            pas = vdir / f"passport.{mp4.stem}.json"
+            if not pas.exists():
+                pas = vdir / "passport.json"
             if pas.exists():
                 try:
                     p = read_json(pas)
-                    v["passport"] = {k: p.get(k) for k in ("prediction_question", "transfer_question", "exaggerations", "data_bridge") if p.get(k)}
+                    if p.get("format") in (None, mp4.stem):
+                        v["passport"] = {k: p[k] for k in ("prediction_question", "transfer_question", "exaggerations", "data_bridge") if p.get(k)}
                 except Exception:
                     pass
             videos.append(v)
