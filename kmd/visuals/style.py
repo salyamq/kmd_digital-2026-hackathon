@@ -11,6 +11,8 @@ import json
 import matplotlib
 
 matplotlib.use("Agg")
+# Deterministic SVG element ids, so rebuilding an unchanged course gives byte-identical files.
+matplotlib.rcParams["svg.hashsalt"] = "kmd"
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyBboxPatch  # noqa: E402
 

@@ -305,6 +305,11 @@ def format_label(s: dict) -> tuple[str, str]:
 
 # ---------------------------------------------------------------- build
 
+def _public_book(cfg: dict) -> dict:
+    """Book metadata safe to embed in the site: no machine-local absolute paths (md_path/pdf_path)."""
+    return {k: v for k, v in (cfg.get("book") or {}).items() if not k.endswith("_path")}
+
+
 def build_library() -> Path:
     entries = []
     for config_path in sorted(CHAPTERS.glob("*.yaml")):
@@ -314,7 +319,7 @@ def build_library() -> Path:
         if course_path.exists():
             report_file = rd / "site_report.json"
             report = read_json(report_file) if report_file.exists() else {}
-            entries.append({"title": report.get("title") or cfg.get("title"), "book": cfg.get("book"),
+            entries.append({"title": report.get("title") or cfg.get("title"), "book": _public_book(cfg),
                             "steps": report.get("steps"), "tasks": report.get("tasks"),
                             "url": course_path.relative_to(RUNS).as_posix()})
             continue
@@ -323,7 +328,7 @@ def build_library() -> Path:
             if not passport_file.exists():
                 passport_file = mp4.with_name("passport.json")
             passport = read_json(passport_file) if passport_file.exists() else {}
-            entries.append({"title": cfg.get("title"), "book": cfg.get("book"),
+            entries.append({"title": cfg.get("title"), "book": _public_book(cfg),
                             "video": mp4.relative_to(RUNS).as_posix(),
                             "duration": passport.get("duration_s") or (passport.get("video") or {}).get("duration_s")})
     assets = RUNS / "library"
@@ -441,7 +446,7 @@ def build(chapter: str) -> Path:
     course = {
         "chapter": cfg["id"],
         "title": layer.get("title") or cfg.get("title", ""),
-        "book": cfg.get("book", {}),
+        "book": _public_book(cfg),
         "steps": [{"node_id": s["node_id"], "index": s["index"], "title": s["title_beginner"], "url": url_of[s["node_id"]], "minutes": s["minutes"]} for s in steps],
         "minutes": total_min,
         "n_tasks": len(tasks),

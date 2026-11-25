@@ -23,7 +23,7 @@ def test_run_renders_selected_video_before_site(monkeypatch):
     monkeypatch.setattr(cli, "_stage", stage)
     monkeypatch.setattr(cli, "chapter_config", lambda chapter: {"id": chapter})
     monkeypatch.setattr(cli, "_render_video",
-                        lambda args, node, fmt: calls.append((node, fmt)) or [])
+                        lambda args, node, fmt, engine=None: calls.append((node, fmt)) or [])
 
     assert cli.main(["run", "chapter", "--from", "course",
                      "--video-node", "node", "--video-format", "long"]) == 0

@@ -55,15 +55,15 @@ def cmd_run(args) -> int:
     if getattr(args, "video_node", None):
         if "site" not in stages:
             raise ValueError("--video-node requires the run to include the site stage")
-        video_jobs = [(args.video_node, args.video_format)]
+        video_jobs = [(args.video_node, args.video_format, args.video_engine)]
     for s in stages:
         if s == "scenes" and not scenes_requested and llm.provider_name() == "queue":
             print(f"[scenes] {args.chapter}: using saved scenes and redraws (queue provider)")
             continue
         t0 = time.time()
         if s == "site":
-            for node, fmt in video_jobs:
-                pending = _render_video(args, node, fmt)
+            for node, fmt, engine in video_jobs:
+                pending = _render_video(args, node, fmt, engine)
                 if pending:
                     return _report_pending(pending)
         pending = _stage(s).run(args.chapter) or []
@@ -83,7 +83,9 @@ def cmd_rebuild(args) -> int:
         passports = sorted((run_dir(args.chapter) / "video").glob("*/passport*.json"))
         for p in passports:
             pas = read_json(p)
-            job = (pas["node_id"], pas.get("format", "short"))
+            # Re-render each video with the engine that made it: a rebuild must not silently swap a
+            # checked video for one made by another engine.
+            job = (pas["node_id"], pas.get("format", "short"), pas.get("engine") or "legacy")
             if job not in args.video_jobs:
                 args.video_jobs.append(job)
     return cmd_run(args)
@@ -129,8 +131,8 @@ def cmd_edit(args) -> int:
     return 0
 
 
-def _render_video(args, node, fmt):
-    if args.video_engine == "legacy":
+def _render_video(args, node, fmt, engine=None):
+    if (engine or args.video_engine) == "legacy":
         return _stage("video").run(args.chapter, node=node, fmt=fmt) or []
     from .video import vidpipe
 
@@ -139,7 +141,7 @@ def _render_video(args, node, fmt):
 
 
 def cmd_video(args) -> int:
-    pending = _render_video(args, args.node, args.format)
+    pending = _render_video(args, args.node, args.format, args.video_engine)
     rd = run_dir(args.chapter)
     if not pending and any((rd / "steps").glob("*.json")):
         _stage("site").run(args.chapter)
@@ -149,7 +151,10 @@ def cmd_video(args) -> int:
 
 
 def video_options(parser):
-    parser.add_argument("--video-engine", choices=["vidpipe", "legacy"], default="vidpipe")
+    # legacy = kmd/video: LLM scene spec through kmd.llm (queue/cache) -> state-model frames. Default, because
+    # without an LLM key vidpipe can only use its rule planner, which gives generic frames on unseen nodes.
+    # vidpipe = video/vidpipe: richer renderer + real Volve data; use with --planner llm and an API key.
+    parser.add_argument("--video-engine", choices=["legacy", "vidpipe"], default="legacy")
     parser.add_argument("--planner", choices=["rule", "llm"], default="rule")
     parser.add_argument("--tts", choices=["microsoft", "piper", "rhvoice", "espeak", "none"], default="microsoft")
 
