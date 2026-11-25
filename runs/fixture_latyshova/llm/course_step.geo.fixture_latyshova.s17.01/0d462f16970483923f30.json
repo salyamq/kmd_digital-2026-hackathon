@@ -1,0 +1,736 @@
+{
+  "request": {
+    "task": "course_step.geo.fixture_latyshova.s17.01",
+    "key": "0d462f16970483923f30",
+    "prompt": "course_step",
+    "system": "Ты — редактор учебных курсов и методист. Ты превращаешь один узел учебного слоя (структурированный конспект главы технической книги) в страницу шага онлайн-курса для новичка: сотрудника цифровой трансформации без профильного образования (ИТ-специалист, аналитик данных). Ему нужно всё и глубоко: механизм, практика специалиста, нюансы, условия применимости.\n\nЖёсткие правила:\n1. Единственный источник фактов — узел, который дан ниже (поля claims, layers, worked_examples, terms, formulas, tables, misconception, data_meaning и т. д.). Не добавляй фактов, чисел, названий методов, приборов и выводов, которых нет в узле. Общеизвестные слова можно пояснять простыми словами, но не вводи новых утверждений о предмете.\n2. Язык курса — русский. Пиши на нём, даже если узел или цитаты на другом языке (термины можно дать с оригиналом в скобках).\n3. Короткие фразы: каждое предложение — не больше 18 слов (жёсткий предел — 20). Одна мысль в предложении. Без канцелярита и пустых общих слов.\n4. Каждый термин при первом упоминании на странице выдели как **термин** и сразу объясни простыми словами (по полю terms узла или из текста узла). Термины, уже объяснённые в прошлых шагах (список ниже), не объясняй заново полностью — достаточно короткого напоминания в 3–6 слов.\n5. Числа пиши ровно так, как в узле (десятичная запятая, те же единицы). Не вычисляй новых чисел, кроме случая, когда это прямо сделано в разобранном примере узла.\n6. Различай наблюдение, вывод и допущение (поле kind утверждения): вывод и допущение подавай как вывод/допущение автора («автор делает вывод…», «при условии, что…»).\n7. Ничего не выдумывай про страницы: страницы проставит код по claim_ids.\n\nОтвет — только JSON по схеме, без пояснений.",
+    "user": "# Глава\nКнига: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин» (1991).\nГлава/тема: Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС (фрагмент для тестов)\nШаг 1 из 3. Часть курса: «Как бурение влияет на измерения».\n\nЭто первый шаг курса: новичок ещё ничего не знает.\n\nСледующий шаг: «Прямые признаки коллектора на диаграммах».\n\nФормат подачи этого узла по маршрутизации: короткое видео (шортс) — Проникновение фильтрата невидимо — его нужно показать.\n\n# Узел учебного слоя (единственный источник фактов)\n```json\n{\n \"id\": \"geo.fixture_latyshova.s17.01\",\n \"section\": \"§ 17\",\n \"title_book\": \"§ 17. Условия вскрытия разрезов скважин и их влияние на комплекс геофизических исследований\",\n \"title_beginner\": \"Буровой раствор меняет показания приборов\",\n \"difficulty\": {\n  \"primary\": \"Пр\",\n  \"secondary\": \"И\",\n  \"threshold\": \"Измерения в скважине зависят от того, чем её бурили: раствор проникает в пласт и меняет то, что видят приборы.\"\n },\n \"order_rationale\": {\n  \"text\": \"Прежде чем читать диаграммы, нужно понять, в каких условиях они записаны: от раствора зависит, какие признаки коллектора вообще появятся.\",\n  \"by\": \"model\"\n },\n \"layers\": {\n  \"mechanism\": {\n   \"text\": \"Давление раствора в скважине выше пластового, поэтому его фильтрат уходит в проницаемые породы, а на стенке остаётся глинистая корка.\",\n   \"by\": \"model\"\n  },\n  \"practice\": {\n   \"text\": \"Интерпретатор сначала смотрит тип и параметры раствора и только потом выбирает методы и признаки.\",\n   \"by\": \"model\"\n  },\n  \"nuances\": {\n   \"text\": \"Сближение сопротивления фильтрата и пласта ухудшает СП и микрозонды, но облегчает оценку продуктивности разноглубинными зондами.\",\n   \"by\": \"model\"\n  },\n  \"deeper\": [\n   {\n    \"title\": \"Бурение на соленой воде\",\n    \"text\": \"Минерализованная вода оправдана только в разрезах с мощными солями: она не растворяет соль и не даёт каверн.\",\n    \"by\": \"model\"\n   }\n  ]\n },\n \"claims\": [\n  {\n   \"id\": \"c01\",\n   \"kind\": \"observation\",\n   \"text\": \"Тип и параметры промывочной жидкости сильнее всего влияют на достоверность данных ГИС.\",\n   \"quote\": \"в первую очередь тип и параметры промывочной жидкости, которые в значительной степени определяют достоверность и качество получаемой по геофизическим данным информации\",\n   \"page\": 90,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c02\",\n   \"kind\": \"observation\",\n   \"text\": \"При оптимальной водоотдаче 4–8 см³/ч проникновение и корка минимальны, условия для ГИС лучшие.\",\n   \"quote\": \"При оптимальной водоотдаче (4—8 см³/ч) условия изучения разреза геофизическими методами наиболее благоприятны\",\n   \"page\": 90,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c03\",\n   \"kind\": \"inference\",\n   \"text\": \"При водоотдаче 20 см³/ч глубокое проникновение мешает глубинным методам, а толстая корка — малоглубинным.\",\n   \"quote\": \"При высокой водоотдаче (20 см³/ч) условия изучения разреза и прежде всего коллекторов геофизическими методами становятся крайне неблагоприятными\",\n   \"page\": 90,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c04\",\n   \"kind\": \"inference\",\n   \"text\": \"Чем больше плотность раствора, тем больше репрессия и тем глубже проникает фильтрат.\",\n   \"quote\": \"Чем больше $\\\\delta_p$, тем больше $p_c$ и $\\\\Delta p$, и тем глубже происходит проникновение фильтрата глинистого раствора в коллекторы.\",\n   \"page\": 90,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c05\",\n   \"kind\": \"observation\",\n   \"text\": \"Лучше всего для ГИС бурение «на равновесии», когда репрессия близка к нулю.\",\n   \"quote\": \"Оптимальные условия для проведения геофизических исследований - бурение с минимальным $\\\\Delta p$ или \\\"на равновесии\\\", когда $\\\\Delta p \\\\approx 0$.\",\n   \"page\": 91,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c06\",\n   \"kind\": \"observation\",\n   \"text\": \"В растворе на нефтяной основе из электрических методов работает только индукционный зонд.\",\n   \"quote\": \"Из методов электрометрии применим только индукционный зонд.\",\n   \"page\": 91,\n   \"by\": \"author\"\n  }\n ],\n \"worked_examples\": [],\n \"book_problems\": [],\n \"terms\": [\n  {\n   \"term\": \"промывочная жидкость\",\n   \"definition\": \"Жидкость, которую закачивают в скважину при бурении: глинистый раствор, техническая вода или нефильтрующийся раствор.\",\n   \"en\": \"drilling fluid (mud)\",\n   \"page\": 90,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"водоотдача\",\n   \"definition\": \"Сколько воды раствор отдаёт в пористую породу за единицу времени; главный показатель качества глинистого раствора.\",\n   \"en\": \"fluid loss\",\n   \"page\": 90,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"репрессия\",\n   \"definition\": \"Превышение давления в скважине над пластовым давлением: Δp = pс − pпл.\",\n   \"en\": \"overbalance\",\n   \"page\": 90,\n   \"by\": \"model\"\n  }\n ],\n \"formulas\": [\n  {\n   \"id\": \"f1\",\n   \"latex\": \"\\\\Delta p = p_c - p_{пл}\",\n   \"meaning\": \"Репрессия — превышение давления в скважине над пластовым.\",\n   \"vars\": [\n    {\n     \"symbol\": \"\\\\Delta p\",\n     \"meaning\": \"репрессия\",\n     \"unit\": \"Па\"\n    },\n    {\n     \"symbol\": \"p_c\",\n     \"meaning\": \"давление в скважине\",\n     \"unit\": \"Па\"\n    },\n    {\n     \"symbol\": \"p_{пл}\",\n     \"meaning\": \"пластовое давление\",\n     \"unit\": \"Па\"\n    }\n   ],\n   \"page\": 90\n  }\n ],\n \"tables\": [],\n \"figures\": [],\n \"misconception\": {\n  \"text\": \"Каротаж показывает пласт таким, каким он был до бурения.\",\n  \"correction\": \"Фильтрат раствора уже проник в пласт и изменил его около скважины; приборы видят изменённую зону.\",\n  \"claim_ids\": [\n   \"c03\",\n   \"c04\"\n  ],\n  \"by\": \"model\"\n },\n \"data_meaning\": {\n  \"text\": \"Параметры раствора — обязательный контекст к каждой кривой: без них нельзя сравнивать скважины.\",\n  \"inputs\": \"тип раствора, водоотдача, плотность, сопротивление фильтрата\",\n  \"outputs\": \"какие методы надёжны в этой скважине\",\n  \"breaks_where\": \"При высокой водоотдаче или бурении на воде признаки коллектора на диаграммах пропадают.\",\n  \"hypotheses\": [\n   \"Модель, обученная на скважинах с глинистым раствором, может ошибаться на скважинах с раствором на нефтяной основе.\"\n  ],\n  \"by\": \"model\"\n },\n \"it_analogy\": {\n  \"text\": \"Раствор — как фильтр камеры: тот же объект на снимке выглядит иначе в зависимости от фильтра.\",\n  \"breaks_where\": \"Фильтр камеры не меняет объект, а фильтрат раствора физически меняет пласт около скважины.\",\n  \"by\": \"model\"\n },\n \"current_practice\": {\n  \"text\": \"Сегодня параметры раствора записывают в заголовок файла каротажа (LAS) и учитывают при обработке.\",\n  \"by\": \"model\"\n },\n \"inefficiency_lens\": {\n  \"inputs\": \"диаграммы, паспорт раствора\",\n  \"manual_steps\": \"сверка параметров раствора по каждой скважине\",\n  \"judgment_points\": \"доверять ли микрозондам и СП\",\n  \"time\": \"минуты на скважину\",\n  \"typical_errors\": \"игнорирование смены раствора по стволу\",\n  \"by\": \"model\"\n },\n \"links\": []\n}\n```\n\n\n# Типичные заблуждения новичков в этой области (не закрепляй их; если узел их опровергает — скажи об этом)\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n\n\n\n# Что вернуть\n\n## title_beginner\nЗаголовок для новичка, 3–7 слов, понятный без знания предмета (можно начать с исходного `title_beginner` узла и улучшить). Без кавычек и точки.\n\n## essence\n2–3 предложения. Первое — главное: что новичок должен вынести из шага. Остальные — зачем это нужно и чем кончается.\n\n## how_it_works — «Как это работает»\nАбзацы полного объяснения. Это главный блок шага:\n- Перескажи ВСЕ утверждения узла (claims) — каждое claim id должен попасть хотя бы в один абзац (в claim_ids этого абзаца). Плотные места не сжимай: если у автора пять условий, назови все пять.\n- Используй также слои узла mechanism → practice → nuances и ветки deeper. Группируй абзацы подзаголовками в поле section: «Механизм», «Практика», «Нюансы» (можно точнее: «Почему так происходит», «Как это делает специалист», «Когда правило не работает»).\n- Абзац = 2–5 коротких предложений об одной мысли. claim_ids — те утверждения, на которые абзац опирается (обязательно хотя бы одно, by = \"author\").\n- Если нужен абзац-пояснение, которого нет в книге (например, бытовой пример для понимания), ставь by = \"model\" и claim_ids = [] — такие абзацы будут помечены как «пояснение модели». Не больше одного-двух таких абзацев, без новых фактов о предмете.\n- Порядок изложения: проблема → механизм → как это видно → что делает специалист → ограничения.\n\n## procedure — «По шагам»\nЕсли автор описывает порядок действий (алгоритм, методику, последовательность операций) — шаги по порядку, каждый с claim_ids. Иначе null.\n\n## numbers — «Цифры и условия»\nВсе пороги, диапазоны, граничные значения и условия применимости из узла (каждый пункт — одно короткое предложение с числом/условием и claim_ids). Если чисел и условий нет — пустой список.\n\n## decision — «Решение на данных»\nЕсли узел даёт правило «признаки → вывод», заполни как описано ниже, иначе null. Формат: {title, signs, rule, conclusion, claim_ids, cases:[{given, options, answer, why, source}]}.\n\n\n## illustrations\n1–2 иллюстрации, детерминированно рисуемые кодом по шаблону. Выбери шаблон из каталога и заполни params ТОЛЬКО текстом и числами из узла (подписи короткие, 2–7 слов). Предпочитай классы A и B. Шаблон должен показывать механизм или правило шага, а не украшать. Не утверждай на рисунке ничего, чего нет в узле.\ncaption — что изображено и что из этого следует (1–2 фразы); alt — описание для незрячего читателя (что где нарисовано); claim_ids — какие утверждения иллюстрирует.\nКаталог шаблонов:\n- `cross_section` (класс B, метка «схема»): Вертикальный разрез: слои сверху вниз (молодые над старыми), форма структуры (горизонтально, антиклиналь, синклиналь, моноклиналь), разлом с одинаковым смещением всех слоёв, флюиды в ПОРАХ пласта-коллектора по горизонтальным контактам (газ над нефтью над водой), покрышка, скважины. Вертикальное преувеличение вычисляется и подписывается числом; vertical_exaggeration=1 даёт истинный масштаб («пласт как лист бумаги»). Для ловушек, контактов ВНК/ГНК, корреляции разрезов скважин, «почему нефть не озеро», масштабов.\n- `log_track` (класс B, метка «симуляция»): Литологическая колонка (цвет и знак породы по стайлгайду, флюид в порах точками), ствол скважины с глинистой коркой и кавернами, прибор на кабеле, и синтетические кривые ГИС (ГК, ПС, кавернометрия, сопротивления двух глубинностей, микрозонды, НК/НГК, ГГК-П, АК), рассчитанные из ОДНОЙ модели пласта (Арчи, ПС по ρф/ρв, плотность/АК по пористости). Глубина вниз. Для вопросов «как по кривым выделить коллектор / глину / плотную породу / нефть и воду, ВНК, эффективная толщина», «что регистрирует прибор».\n- `chain` (класс B, метка «схема»): Цепочка «причина → следствие» или стадии процесса сверху вниз. params: {title?, items:[2–7 коротких фраз из текста шага], tones?:[good|bad|neutral|accent]}\n- `contrast` (класс B, метка «схема»): Два случая рядом (условие А против условия Б). params: {title?, left:{title, points:[...], tone?}, right:{title, points:[...], tone?}, verdict?}\n- `ranges` (класс A, метка «схема»): Числовая ось с диапазонами и порогами ИЗ КНИГИ. params: {title?, axis:{label, unit, min, max, log?, ticks?}, ranges:[{from, to, label, tone:good|bad|neutral|accent}], marks?:[{value, label}]}\n- `decision` (класс B, метка «схема»): Решение на данных: признаки → правило → вывод. params: {title?, signs:[...], rule, outcomes:[{if, then, tone?}]}\n- `regions2d` (класс A, метка «схема»): Плоскость двух признаков, разбитая ПОСТОЯННЫМИ порогами на области, с точками-примерами. Только если в книге границы — постоянные пороги (не кривые!). params: {title?, x:{label, unit, min, max, log?, ticks?}, y:{...}, regions:[{label, x:[a,b], y:[c,d], tone}], vlines?:[{value,label}], hlines?:[{value,label}], points?:[{x, y, label}]}\n\n\n## tasks — задания с автоматической проверкой\nРовно 5 заданий. Типы: single (один ответ), multiple (несколько ответов), order (расставить по порядку), cloze (пропуск в тексте), numeric (расчёт/число). Используй хотя бы 2 разных типа; в этом шаге предпочтительны: single, multiple.\nПравила:\n- Задание проверяет понимание мысли автора (claim_id — id утверждения узла), а не память на мелочи. Хорошо: «найди, почему…», «что будет, если…», «какой вывод верен».\n- Ответ должен быть в тексте этого шага. evidence — ДОСЛОВНЫЙ фрагмент (8–200 символов) из твоих полей essence / how_it_works / procedure / numbers / decision или из worked_examples узла, где виден ответ. Копируй символ в символ (без **).\n- single/multiple: options 3–5 вариантов, correct — индексы верных (у single ровно один). Неверные варианты правдоподобны, но опровергаются текстом шага. Не используй «все перечисленные».\n- order: items — 3–6 пунктов В ВЕРНОМ порядке (сайт перемешает). Порядок должен прямо следовать из текста (шаги методики, стадии процесса).\n- cloze: text с пропусками ___ (три подчёркивания), blanks по порядку: answers — допустимые ответы (первый — канонический, в той же форме, что в тексте), options — 3–4 варианта для выпадающего списка, включая верный.\n- numeric: answer — число, tolerance — допуск, unit — единица. Ответ должен совпадать с числом из текста шага или из разобранного примера автора.\n- explanation — одна фраза: почему ответ верный (со ссылкой на мысль автора).\n\n## cards — карточки повторения\n2–4 карточки: front — вопрос или термин, back — короткий ответ (до 30 слов) по тексту шага; kind: term | idea | number | mistake; claim_ids.\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"LLM answer for one step page (prompt course_step). $defs.task is injected from task.schema.json by kmd.course\", \"type\": \"object\", \"required\": [\"title_beginner\", \"essence\", \"how_it_works\", \"procedure\", \"numbers\", \"decision\", \"illustrations\", \"tasks\", \"cards\"], \"properties\": {\"title_beginner\": {\"type\": \"string\", \"minLength\": 3}, \"essence\": {\"type\": \"array\", \"minItems\": 2, \"maxItems\": 3, \"items\": {\"type\": \"string\"}}, \"how_it_works\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"section\", \"text\", \"claim_ids\"], \"properties\": {\"section\": {\"type\": \"string\", \"description\": \"subheading, e.g. Механизм / Практика / Нюансы\"}, \"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"by\": {\"enum\": [\"author\", \"model\"], \"description\": \"author = retelling of the book (claim_ids required); model = explanation not in the book\"}}}}, \"procedure\": {\"anyOf\": [{\"type\": \"null\"}, {\"type\": \"object\", \"required\": [\"title\", \"steps\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"steps\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"object\", \"required\": [\"text\", \"claim_ids\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}}}]}, \"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"text\", \"claim_ids\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"decision\": {\"anyOf\": [{\"type\": \"null\"}, {\"type\": \"object\", \"required\": [\"title\", \"signs\", \"rule\", \"conclusion\", \"claim_ids\", \"cases\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"signs\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\"}}, \"rule\": {\"type\": \"string\"}, \"conclusion\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"cases\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"given\", \"options\", \"answer\", \"why\"], \"properties\": {\"given\": {\"type\": \"string\"}, \"options\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"string\"}}, \"answer\": {\"type\": \"integer\", \"minimum\": 0}, \"why\": {\"type\": \"string\"}, \"source\": {\"type\": \"string\", \"description\": \"e.g. «Пример 47, стр. 98» or «модель»\"}}}}}}]}, \"illustrations\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"template\", \"params\", \"caption\", \"alt\", \"claim_ids\"], \"properties\": {\"template\": {\"type\": \"string\"}, \"params\": {\"type\": \"object\"}, \"caption\": {\"type\": \"string\"}, \"alt\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"tasks\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"$ref\": \"#/$defs/task\"}}, \"cards\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"front\", \"back\", \"claim_ids\", \"kind\"], \"properties\": {\"front\": {\"type\": \"string\"}, \"back\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"kind\": {\"enum\": [\"term\", \"idea\", \"number\", \"mistake\"]}}}}}, \"$defs\": {\"task\": {\"title\": \"Course task (задание) — one item of runs/<ch>/tasks.json -> tasks[]\", \"description\": \"Types: single (one answer), multiple (several answers), order (drag to order), cloze (fill the gaps), numeric (calculation). The answer must be inside the step text: `evidence` is a substring of the step text (code-checked). `claim_id` links the claim of the node the task checks.\", \"type\": \"object\", \"required\": [\"type\", \"question\", \"explanation\", \"evidence\", \"claim_id\"], \"properties\": {\"type\": {\"enum\": [\"single\", \"multiple\", \"order\", \"cloze\", \"numeric\"]}, \"question\": {\"type\": \"string\", \"minLength\": 5}, \"options\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"single/multiple: answer options\"}, \"correct\": {\"type\": \"array\", \"items\": {\"type\": \"integer\", \"minimum\": 0}, \"description\": \"single/multiple: indexes of correct options (exactly one for single)\"}, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"order: items in the CORRECT order (the site shuffles them)\"}, \"text\": {\"type\": \"string\", \"description\": \"cloze: sentence(s) with gaps marked ___ (three underscores), one per blank\"}, \"blanks\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"answers\"], \"properties\": {\"answers\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\"}, \"description\": \"accepted answers; the first is the canonical one\"}, \"options\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"choices shown in a dropdown (must contain answers[0])\"}}}}, \"answer\": {\"type\": \"number\", \"description\": \"numeric: correct value\"}, \"tolerance\": {\"type\": \"number\", \"minimum\": 0, \"description\": \"numeric: absolute tolerance\"}, \"unit\": {\"type\": [\"string\", \"null\"]}, \"explanation\": {\"type\": \"string\", \"description\": \"one sentence shown after checking\"}, \"evidence\": {\"type\": \"string\", \"minLength\": 8, \"description\": \"verbatim substring of the step text that contains the answer\"}, \"claim_id\": {\"type\": \"string\"}}, \"allOf\": [{\"if\": {\"properties\": {\"type\": {\"enum\": [\"single\", \"multiple\"]}}}, \"then\": {\"required\": [\"options\", \"correct\"], \"properties\": {\"options\": {\"minItems\": 3}, \"correct\": {\"minItems\": 1}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"order\"}}}, \"then\": {\"required\": [\"items\"], \"properties\": {\"items\": {\"minItems\": 3, \"maxItems\": 7}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"cloze\"}}}, \"then\": {\"required\": [\"text\", \"blanks\"], \"properties\": {\"blanks\": {\"minItems\": 1}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"numeric\"}}}, \"then\": {\"required\": [\"answer\"]}}]}}}",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "LLM answer for one step page (prompt course_step). $defs.task is injected from task.schema.json by kmd.course",
+      "type": "object",
+      "required": [
+        "title_beginner",
+        "essence",
+        "how_it_works",
+        "procedure",
+        "numbers",
+        "decision",
+        "illustrations",
+        "tasks",
+        "cards"
+      ],
+      "properties": {
+        "title_beginner": {
+          "type": "string",
+          "minLength": 3
+        },
+        "essence": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "how_it_works": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "section",
+              "text",
+              "claim_ids"
+            ],
+            "properties": {
+              "section": {
+                "type": "string",
+                "description": "subheading, e.g. Механизм / Практика / Нюансы"
+              },
+              "text": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "by": {
+                "enum": [
+                  "author",
+                  "model"
+                ],
+                "description": "author = retelling of the book (claim_ids required); model = explanation not in the book"
+              }
+            }
+          }
+        },
+        "procedure": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "title",
+                "steps"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "claim_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "claim_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "claim_ids"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "title",
+                "signs",
+                "rule",
+                "conclusion",
+                "claim_ids",
+                "cases"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "signs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rule": {
+                  "type": "string"
+                },
+                "conclusion": {
+                  "type": "string"
+                },
+                "claim_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "given",
+                      "options",
+                      "answer",
+                      "why"
+                    ],
+                    "properties": {
+                      "given": {
+                        "type": "string"
+                      },
+                      "options": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "answer": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "why": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "e.g. «Пример 47, стр. 98» or «модель»"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "illustrations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "template",
+              "params",
+              "caption",
+              "alt",
+              "claim_ids"
+            ],
+            "properties": {
+              "template": {
+                "type": "string"
+              },
+              "params": {
+                "type": "object"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/task"
+          }
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "front",
+              "back",
+              "claim_ids",
+              "kind"
+            ],
+            "properties": {
+              "front": {
+                "type": "string"
+              },
+              "back": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "kind": {
+                "enum": [
+                  "term",
+                  "idea",
+                  "number",
+                  "mistake"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "$defs": {
+        "task": {
+          "title": "Course task (задание) — one item of runs/<ch>/tasks.json -> tasks[]",
+          "description": "Types: single (one answer), multiple (several answers), order (drag to order), cloze (fill the gaps), numeric (calculation). The answer must be inside the step text: `evidence` is a substring of the step text (code-checked). `claim_id` links the claim of the node the task checks.",
+          "type": "object",
+          "required": [
+            "type",
+            "question",
+            "explanation",
+            "evidence",
+            "claim_id"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "single",
+                "multiple",
+                "order",
+                "cloze",
+                "numeric"
+              ]
+            },
+            "question": {
+              "type": "string",
+              "minLength": 5
+            },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "single/multiple: answer options"
+            },
+            "correct": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "description": "single/multiple: indexes of correct options (exactly one for single)"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "order: items in the CORRECT order (the site shuffles them)"
+            },
+            "text": {
+              "type": "string",
+              "description": "cloze: sentence(s) with gaps marked ___ (three underscores), one per blank"
+            },
+            "blanks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "answers"
+                ],
+                "properties": {
+                  "answers": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "accepted answers; the first is the canonical one"
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "choices shown in a dropdown (must contain answers[0])"
+                  }
+                }
+              }
+            },
+            "answer": {
+              "type": "number",
+              "description": "numeric: correct value"
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "description": "numeric: absolute tolerance"
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "explanation": {
+              "type": "string",
+              "description": "one sentence shown after checking"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 8,
+              "description": "verbatim substring of the step text that contains the answer"
+            },
+            "claim_id": {
+              "type": "string"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "single",
+                      "multiple"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "options",
+                  "correct"
+                ],
+                "properties": {
+                  "options": {
+                    "minItems": 3
+                  },
+                  "correct": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "order"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "items"
+                ],
+                "properties": {
+                  "items": {
+                    "minItems": 3,
+                    "maxItems": 7
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "cloze"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "text",
+                  "blanks"
+                ],
+                "properties": {
+                  "blanks": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "numeric"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "answer"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "cache_path": "runs/fixture_latyshova/llm/course_step.geo.fixture_latyshova.s17.01/0d462f16970483923f30.json",
+    "created": "2026-11-25T07:06:15"
+  },
+  "response": {
+    "title_beginner": "Буровой раствор меняет показания приборов",
+    "essence": [
+      "То, что приборы покажут в скважине, сильно зависит от раствора, на котором её бурили.",
+      "Раствор под давлением уходит в проницаемые породы и меняет их около ствола.",
+      "Поэтому интерпретация диаграмм начинается с вопроса: какой был раствор и с какими параметрами."
+    ],
+    "how_it_works": [
+      {
+        "section": "Почему раствор важен",
+        "text": "Скважину бурят с **промывочной жидкостью** — это жидкость, которую закачивают в ствол при бурении. Бывает глинистый раствор, техническая вода или нефильтрующийся раствор. По автору, тип и параметры этой жидкости в первую очередь определяют достоверность данных ГИС.",
+        "claim_ids": [
+          "c01"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Механизм",
+        "text": "Давление раствора в скважине выше пластового. Поэтому жидкая часть раствора, **фильтрат**, уходит в проницаемые породы. На стенке против них остаётся слой глины — глинистая корка.",
+        "claim_ids": [
+          "c04"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Механизм",
+        "text": "**Водоотдача** — сколько воды раствор отдаёт в пористую породу за единицу времени. Это главный показатель качества глинистого раствора. При оптимальной водоотдаче 4–8 см³/ч условия для ГИС наиболее благоприятны. Проникновение фильтрата и толщина корки тогда минимальны.",
+        "claim_ids": [
+          "c02"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Механизм",
+        "text": "При высокой водоотдаче, 20 см³/ч, условия становятся крайне неблагоприятными. Автор делает вывод: глубокое проникновение мешает самым глубинным методам. А толстая корка закрывает коллектор от методов с малой глубинностью.",
+        "claim_ids": [
+          "c03"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Плотность и давление",
+        "text": "**Репрессия** — превышение давления в скважине над пластовым. Чем больше плотность раствора, тем больше давление и репрессия. Автор делает вывод: тем глубже фильтрат проникает в коллекторы.",
+        "claim_ids": [
+          "c04"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Практика",
+        "text": "Поэтому лучшие условия для исследований — бурение с минимальной репрессией. Его называют бурением «на равновесии», когда репрессия близка к нулю. Интерпретатор сначала смотрит тип и параметры раствора, а потом выбирает методы.",
+        "claim_ids": [
+          "c05"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Нюансы",
+        "text": "У нефильтрующихся растворов на нефтяной основе огромное сопротивление, и они почти не проникают в пласт. Прямого электрического контакта с породой нет. Поэтому из методов электрометрии применим только индукционный зонд.",
+        "claim_ids": [
+          "c06"
+        ],
+        "by": "author"
+      }
+    ],
+    "procedure": null,
+    "numbers": [
+      {
+        "text": "Оптимальная водоотдача глинистого раствора — 4–8 см³/ч: проникновение и корка минимальны.",
+        "claim_ids": [
+          "c02"
+        ]
+      },
+      {
+        "text": "Водоотдача 20 см³/ч — условия для ГИС крайне неблагоприятные.",
+        "claim_ids": [
+          "c03"
+        ]
+      },
+      {
+        "text": "Лучшее условие бурения — репрессия близка к нулю («на равновесии»).",
+        "claim_ids": [
+          "c05"
+        ]
+      },
+      {
+        "text": "В растворе на нефтяной основе из электрометрии работает только индукционный зонд.",
+        "claim_ids": [
+          "c06"
+        ]
+      }
+    ],
+    "decision": null,
+    "illustrations": [
+      {
+        "template": "ranges",
+        "params": {
+          "title": "Водоотдача глинистого раствора и условия ГИС",
+          "axis": {
+            "label": "Водоотдача",
+            "unit": "см³/ч",
+            "min": 0,
+            "max": 24,
+            "ticks": [
+              4,
+              8,
+              20
+            ]
+          },
+          "ranges": [
+            {
+              "from": 4,
+              "to": 8,
+              "label": "оптимально",
+              "tone": "good"
+            },
+            {
+              "from": 20,
+              "to": 24,
+              "label": "крайне неблагоприятно",
+              "tone": "bad"
+            }
+          ]
+        },
+        "caption": "Две точки шкалы, которые называет автор: при 4–8 см³/ч условия лучшие, при 20 см³/ч — крайне неблагоприятные. Промежуточные значения автор не оценивает.",
+        "alt": "Горизонтальная шкала водоотдачи в см³/ч. Зелёная полоса от 4 до 8 подписана «оптимально», красная полоса от 20 подписана «крайне неблагоприятно».",
+        "claim_ids": [
+          "c02",
+          "c03"
+        ]
+      },
+      {
+        "template": "chain",
+        "params": {
+          "title": "Почему плотный раствор мешает измерениям",
+          "items": [
+            "Плотность раствора больше",
+            "Давление в скважине и репрессия больше",
+            "Фильтрат проникает в коллектор глубже",
+            "Приборы видят изменённую зону"
+          ],
+          "tones": [
+            "neutral",
+            "neutral",
+            "bad",
+            "bad"
+          ]
+        },
+        "caption": "Цепочка автора: плотность раствора → репрессия → глубина проникновения фильтрата.",
+        "alt": "Четыре прямоугольника сверху вниз, соединённые стрелками: плотность раствора больше, давление и репрессия больше, фильтрат проникает глубже, приборы видят изменённую зону.",
+        "claim_ids": [
+          "c04"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "type": "single",
+        "question": "При какой водоотдаче глинистого раствора условия для ГИС, по автору, наиболее благоприятны?",
+        "options": [
+          "4–8 см³/ч",
+          "20 см³/ч",
+          "Чем выше водоотдача, тем лучше",
+          "Водоотдача на ГИС не влияет"
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": "Автор называет оптимальной водоотдачу 4–8 см³/ч: проникновение и корка тогда минимальны.",
+        "evidence": "При оптимальной водоотдаче 4–8 см³/ч условия для ГИС наиболее благоприятны",
+        "claim_id": "c02"
+      },
+      {
+        "type": "order",
+        "question": "Расставьте звенья цепочки автора по порядку: от причины к следствию.",
+        "items": [
+          "Растёт плотность раствора",
+          "Растёт давление в скважине и репрессия",
+          "Фильтрат глубже проникает в коллектор"
+        ],
+        "explanation": "Чем больше плотность раствора, тем больше давление и репрессия, и тем глубже проникает фильтрат.",
+        "evidence": "Чем больше плотность раствора, тем больше давление и репрессия",
+        "claim_id": "c04"
+      },
+      {
+        "type": "multiple",
+        "question": "Что, по автору, происходит при высокой водоотдаче раствора? Выберите все верные ответы.",
+        "options": [
+          "Глубокое проникновение мешает самым глубинным методам",
+          "Толстая корка закрывает коллектор от методов с малой глубинностью",
+          "Условия для ГИС становятся наиболее благоприятными",
+          "Фильтрат перестаёт проникать в пласт"
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explanation": "При водоотдаче 20 см³/ч мешают и глубокое проникновение, и толстая корка.",
+        "evidence": "глубокое проникновение мешает самым глубинным методам",
+        "claim_id": "c03"
+      },
+      {
+        "type": "cloze",
+        "question": "Вставьте пропущенное слово.",
+        "text": "В растворе на нефтяной основе из методов электрометрии применим только ___ зонд.",
+        "blanks": [
+          {
+            "answers": [
+              "индукционный"
+            ],
+            "options": [
+              "индукционный",
+              "микро",
+              "градиент",
+              "потенциал"
+            ]
+          }
+        ],
+        "explanation": "Такой раствор не даёт электрического контакта с породой, поэтому работает только индукционный зонд.",
+        "evidence": "из методов электрометрии применим только индукционный зонд",
+        "claim_id": "c06"
+      }
+    ],
+    "cards": [
+      {
+        "front": "Что такое водоотдача раствора и какая она оптимальна для ГИС?",
+        "back": "Сколько воды раствор отдаёт в породу за единицу времени. Оптимально 4–8 см³/ч.",
+        "claim_ids": [
+          "c02"
+        ],
+        "kind": "number"
+      },
+      {
+        "front": "Что такое репрессия и как она влияет на проникновение?",
+        "back": "Превышение давления в скважине над пластовым. Чем она больше, тем глубже проникает фильтрат.",
+        "claim_ids": [
+          "c04"
+        ],
+        "kind": "term"
+      },
+      {
+        "front": "Какое бурение лучше всего для геофизических исследований?",
+        "back": "Бурение «на равновесии», когда репрессия близка к нулю.",
+        "claim_ids": [
+          "c05"
+        ],
+        "kind": "idea"
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 21852,
+    "output_chars": 7503
+  }
+}

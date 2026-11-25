@@ -82,11 +82,11 @@ def run(chapter: str, **kw) -> list[Path]:
         for p in range(a, b + 1):
             chapter_pages.append(p)
             # full page text (author text only: figure descriptions removed)
-            source_pages[str(p)] = _strip_descriptions(pages.get(p, ""))
+            source_pages[str(p)] = _clean_page(pages.get(p, ""), running)
         # neighbour pages help quotes that run over the segment border
         for p in (a - 1, b + 1):
             if p in pages and str(p) not in source_pages:
-                source_pages[str(p)] = _strip_descriptions(pages[p])
+                source_pages[str(p)] = _clean_page(pages[p], running)
 
     # stable ids: u<page>_<nn>
     per_page: Counter = Counter()
@@ -120,6 +120,17 @@ def run(chapter: str, **kw) -> list[Path]:
 
 def _natkey(s: str):
     return [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", s)]
+
+
+def _clean_page(text: str, running: set) -> str:
+    """Author text of a page: no vision descriptions, no running headers/footers or bare page numbers
+    at the page edges (so that quotes crossing a page break can be matched)."""
+    from .parse import _is_noise
+
+    lines = _strip_descriptions(text).split("\n")
+    nz = [i for i, l in enumerate(lines) if l.strip()]
+    edge = set(nz[:4] + nz[-4:])
+    return "\n".join(l for i, l in enumerate(lines) if not (i in edge and _is_noise(l, running))).strip() + "\n"
 
 
 def _strip_descriptions(text: str) -> str:

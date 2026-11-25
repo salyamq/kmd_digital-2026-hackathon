@@ -4,34 +4,29 @@
   "stats": {
     "nodes": 60,
     "claims": 420,
-    "quotes_exact": 416,
-    "quotes_fuzzy": 4,
+    "quotes_exact": 417,
+    "quotes_fuzzy": 3,
     "quotes_missing": 0,
     "numbers_bad": 0,
     "errors": 0,
-    "warnings": 37
+    "warnings": 36
   },
   "errors": [],
   "warnings": [
     {
       "type": "quote_fuzzy",
-      "target": "geo.basniev.s3.03.c07",
-      "message": "quote matched fuzzily (95%)"
-    },
-    {
-      "type": "quote_fuzzy",
       "target": "geo.basniev.s5_1.07.c01",
-      "message": "quote matched fuzzily (93%)"
+      "message": "quote matched fuzzily (99%)"
     },
     {
       "type": "quote_fuzzy",
       "target": "geo.basniev.s5_1.07.c02",
-      "message": "quote matched fuzzily (93%)"
+      "message": "quote matched fuzzily (99%)"
     },
     {
       "type": "quote_fuzzy",
       "target": "geo.basniev.s5_1.07.c03",
-      "message": "quote matched fuzzily (93%)"
+      "message": "quote matched fuzzily (99%)"
     },
     {
       "type": "term_before_definition",

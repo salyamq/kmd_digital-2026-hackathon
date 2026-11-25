@@ -1,0 +1,694 @@
+{
+  "request": {
+    "task": "course_step.geo.fixture_latyshova.s20.01",
+    "key": "79f125710df70766d3f8",
+    "prompt": "course_step",
+    "system": "Ты — редактор учебных курсов и методист. Ты превращаешь один узел учебного слоя (структурированный конспект главы технической книги) в страницу шага онлайн-курса для новичка: сотрудника цифровой трансформации без профильного образования (ИТ-специалист, аналитик данных). Ему нужно всё и глубоко: механизм, практика специалиста, нюансы, условия применимости.\n\nЖёсткие правила:\n1. Единственный источник фактов — узел, который дан ниже (поля claims, layers, worked_examples, terms, formulas, tables, misconception, data_meaning и т. д.). Не добавляй фактов, чисел, названий методов, приборов и выводов, которых нет в узле. Общеизвестные слова можно пояснять простыми словами, но не вводи новых утверждений о предмете.\n2. Язык курса — русский. Пиши на нём, даже если узел или цитаты на другом языке (термины можно дать с оригиналом в скобках).\n3. Короткие фразы: каждое предложение — не больше 18 слов (жёсткий предел — 20). Одна мысль в предложении. Без канцелярита и пустых общих слов.\n4. Каждый термин при первом упоминании на странице выдели как **термин** и сразу объясни простыми словами (по полю terms узла или из текста узла). Термины, уже объяснённые в прошлых шагах (список ниже), не объясняй заново полностью — достаточно короткого напоминания в 3–6 слов.\n5. Числа пиши ровно так, как в узле (десятичная запятая, те же единицы). Не вычисляй новых чисел, кроме случая, когда это прямо сделано в разобранном примере узла.\n6. Различай наблюдение, вывод и допущение (поле kind утверждения): вывод и допущение подавай как вывод/допущение автора («автор делает вывод…», «при условии, что…»).\n7. Ничего не выдумывай про страницы: страницы проставит код по claim_ids.\n\nОтвет — только JSON по схеме, без пояснений.",
+    "user": "# Глава\nКнига: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин» (1991).\nГлава/тема: Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС (фрагмент для тестов)\nШаг 2 из 3. Часть курса: «Коллектор: найти и оценить».\n\nТермины, уже объяснённые в прошлых шагах (не объясняй заново, только напомни): промывочная жидкость, водоотдача, репрессия.\n\nСледующий шаг: «Нефть или вода: точка на графике».\n\nФормат подачи этого узла по маршрутизации: интерактив — Признаки на диаграммах удобно трогать руками.\n\n# Узел учебного слоя (единственный источник фактов)\n```json\n{\n \"id\": \"geo.fixture_latyshova.s20.01\",\n \"section\": \"§ 20\",\n \"title_book\": \"§ 20. Выделение, оценка характера насыщения и определение эффективной толщины межзерновых коллекторов: выделение коллектора\",\n \"title_beginner\": \"Прямые признаки коллектора на диаграммах\",\n \"difficulty\": {\n  \"primary\": \"И\",\n  \"secondary\": \"Пр\",\n  \"threshold\": \"Коллектор узнают не по самой породе, а по следам фильтрации раствора в неё.\"\n },\n \"order_rationale\": {\n  \"text\": \"Признаки коллектора опираются на корку и проникновение, о которых шла речь в прошлом шаге.\",\n  \"by\": \"model\"\n },\n \"layers\": {\n  \"mechanism\": {\n   \"text\": \"Фильтрат уходит только в проницаемую породу, поэтому корка, приращение микрозондов и зона проникновения появляются именно против коллектора.\",\n   \"by\": \"model\"\n  },\n  \"practice\": {\n   \"text\": \"Интерпретатор ищет на кавернограмме сужение ствола, на микрозондах — расхождение кривых.\",\n   \"by\": \"model\"\n  },\n  \"nuances\": {\n   \"text\": \"Отсутствие радиального градиента сопротивления не доказывает, что коллектора нет.\",\n   \"by\": \"model\"\n  },\n  \"deeper\": []\n },\n \"claims\": [\n  {\n   \"id\": \"c01\",\n   \"kind\": \"observation\",\n   \"text\": \"Коллектор выделяют потому, что он отличается от соседних пород проницаемостью, пористостью и глинистостью.\",\n   \"quote\": \"Предпосылкой выделения коллектора геофизическими методами [3, 5] является его отличие от вмещающих пород-неколлекторов по проницаемости, пористости, глинистости.\",\n   \"page\": 96,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c02\",\n   \"kind\": \"observation\",\n   \"text\": \"Прямые признаки показывают, что в порах возможна фильтрация воды, нефти, газа и фильтрата.\",\n   \"quote\": \"Прямые признаки указывают на возможность фильтрации в порах коллектора воды, нефти, газа и фильтрата бурового раствора.\",\n   \"page\": 96,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c03\",\n   \"kind\": \"observation\",\n   \"text\": \"Признак проникновения не обязателен: в продуктивных коллекторах сопротивления зон могут совпасть.\",\n   \"quote\": \"Последний признак не является обязательным\",\n   \"page\": 96,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c04\",\n   \"kind\": \"observation\",\n   \"text\": \"Глинистая корка в хороших условиях не толще 1 см, при плохом растворе 3–4 см.\",\n   \"quote\": \"в хороших условиях и достигает 3-4 см при плохом растворе\",\n   \"page\": 96,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c05\",\n   \"kind\": \"observation\",\n   \"text\": \"При бурении на технической воде признаки коллектора на микрозондах и кавернограмме обычно отсутствуют.\",\n   \"quote\": \"При бурении на технической воде признаки коллекторов на диаграммах микрозондов и кавернограммах обычно отсутствуют\",\n   \"page\": 96,\n   \"by\": \"author\"\n  },\n  {\n   \"id\": \"c06\",\n   \"kind\": \"inference\",\n   \"text\": \"Если отдельные замеры не помогают, смотрят, как зона проникновения меняется во времени.\",\n   \"quote\": \"используются динамические методы их обнаружения\",\n   \"page\": 96,\n   \"by\": \"author\"\n  }\n ],\n \"worked_examples\": [],\n \"book_problems\": [],\n \"terms\": [\n  {\n   \"term\": \"коллектор\",\n   \"definition\": \"Порода, которая может вмещать и отдавать нефть, газ или воду.\",\n   \"en\": \"reservoir rock\",\n   \"page\": 96,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"глинистая корка\",\n   \"definition\": \"Слой глины из раствора, который оседает на стенке скважины против проницаемой породы.\",\n   \"en\": \"mud cake\",\n   \"page\": 96,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"микрозонды\",\n   \"definition\": \"Два коротких зонда, прижатых к стенке; разница их показаний выдаёт корку и промытую зону.\",\n   \"en\": \"microlog\",\n   \"page\": 96,\n   \"by\": \"model\"\n  }\n ],\n \"formulas\": [],\n \"tables\": [],\n \"figures\": [\n  {\n   \"number\": \"14\",\n   \"page\": 96,\n   \"caption\": \"Пример выделения межзерновых коллекторов\",\n   \"role\": \"illustration\",\n   \"redraw\": false\n  }\n ],\n \"misconception\": {\n  \"text\": \"Нет зоны проникновения — значит, нет коллектора.\",\n  \"correction\": \"Автор прямо пишет, что этот признак не обязателен.\",\n  \"claim_ids\": [\n   \"c03\"\n  ],\n  \"by\": \"model\"\n },\n \"data_meaning\": {\n  \"text\": \"Признаки коллектора — это разность двух кривых и сужение диаметра, а не одно значение.\",\n  \"inputs\": \"кавернограмма, микрозонды, разноглубинные зонды\",\n  \"outputs\": \"интервалы «коллектор / неколлектор»\",\n  \"breaks_where\": \"Бурение на воде или толстая корка стирают признаки.\",\n  \"hypotheses\": [\n   \"Расхождение микрозондов можно считать признаком для автоматической разметки коллекторов.\"\n  ],\n  \"by\": \"model\"\n },\n \"it_analogy\": {\n  \"text\": \"Как детектор изменений: смотрят не на значение, а на разницу двух датчиков.\",\n  \"breaks_where\": \"Разница появляется только при хорошем растворе; без него детектор слеп.\",\n  \"by\": \"model\"\n },\n \"current_practice\": {\n  \"text\": \"Современные микрозонды и каверномеры работают на том же принципе; данные идут в цифровом виде.\",\n  \"by\": \"model\"\n },\n \"inefficiency_lens\": {\n  \"inputs\": \"диаграммы\",\n  \"manual_steps\": \"визуальный поиск признаков\",\n  \"judgment_points\": \"достаточно ли расхождение\",\n  \"time\": \"часы на скважину\",\n  \"typical_errors\": \"пропуск тонких пропластков\",\n  \"by\": \"model\"\n },\n \"links\": [\n  {\n   \"to\": \"geo.fixture_latyshova.s17.01\",\n   \"type\": \"prerequisite\"\n  }\n ]\n}\n```\n\n\n# Типичные заблуждения новичков в этой области (не закрепляй их; если узел их опровергает — скажи об этом)\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n\n\n\n# Что вернуть\n\n## title_beginner\nЗаголовок для новичка, 3–7 слов, понятный без знания предмета (можно начать с исходного `title_beginner` узла и улучшить). Без кавычек и точки.\n\n## essence\n2–3 предложения. Первое — главное: что новичок должен вынести из шага. Остальные — зачем это нужно и чем кончается.\n\n## how_it_works — «Как это работает»\nАбзацы полного объяснения. Это главный блок шага:\n- Перескажи ВСЕ утверждения узла (claims) — каждое claim id должен попасть хотя бы в один абзац (в claim_ids этого абзаца). Плотные места не сжимай: если у автора пять условий, назови все пять.\n- Используй также слои узла mechanism → practice → nuances и ветки deeper. Группируй абзацы подзаголовками в поле section: «Механизм», «Практика», «Нюансы» (можно точнее: «Почему так происходит», «Как это делает специалист», «Когда правило не работает»).\n- Абзац = 2–5 коротких предложений об одной мысли. claim_ids — те утверждения, на которые абзац опирается (обязательно хотя бы одно, by = \"author\").\n- Если нужен абзац-пояснение, которого нет в книге (например, бытовой пример для понимания), ставь by = \"model\" и claim_ids = [] — такие абзацы будут помечены как «пояснение модели». Не больше одного-двух таких абзацев, без новых фактов о предмете.\n- Порядок изложения: проблема → механизм → как это видно → что делает специалист → ограничения.\n\n## procedure — «По шагам»\nЕсли автор описывает порядок действий (алгоритм, методику, последовательность операций) — шаги по порядку, каждый с claim_ids. Иначе null.\n\n## numbers — «Цифры и условия»\nВсе пороги, диапазоны, граничные значения и условия применимости из узла (каждый пункт — одно короткое предложение с числом/условием и claim_ids). Если чисел и условий нет — пустой список.\n\n## decision — «Решение на данных»\nЕсли узел даёт правило «признаки → вывод», заполни как описано ниже, иначе null. Формат: {title, signs, rule, conclusion, claim_ids, cases:[{given, options, answer, why, source}]}.\n\n\n## illustrations\n1–2 иллюстрации, детерминированно рисуемые кодом по шаблону. Выбери шаблон из каталога и заполни params ТОЛЬКО текстом и числами из узла (подписи короткие, 2–7 слов). Предпочитай классы A и B. Шаблон должен показывать механизм или правило шага, а не украшать. Не утверждай на рисунке ничего, чего нет в узле.\ncaption — что изображено и что из этого следует (1–2 фразы); alt — описание для незрячего читателя (что где нарисовано); claim_ids — какие утверждения иллюстрирует.\nКаталог шаблонов:\n- `cross_section` (класс B, метка «схема»): Вертикальный разрез: слои сверху вниз (молодые над старыми), форма структуры (горизонтально, антиклиналь, синклиналь, моноклиналь), разлом с одинаковым смещением всех слоёв, флюиды в ПОРАХ пласта-коллектора по горизонтальным контактам (газ над нефтью над водой), покрышка, скважины. Вертикальное преувеличение вычисляется и подписывается числом; vertical_exaggeration=1 даёт истинный масштаб («пласт как лист бумаги»). Для ловушек, контактов ВНК/ГНК, корреляции разрезов скважин, «почему нефть не озеро», масштабов.\n- `log_track` (класс B, метка «симуляция»): Литологическая колонка (цвет и знак породы по стайлгайду, флюид в порах точками), ствол скважины с глинистой коркой и кавернами, прибор на кабеле, и синтетические кривые ГИС (ГК, ПС, кавернометрия, сопротивления двух глубинностей, микрозонды, НК/НГК, ГГК-П, АК), рассчитанные из ОДНОЙ модели пласта (Арчи, ПС по ρф/ρв, плотность/АК по пористости). Глубина вниз. Для вопросов «как по кривым выделить коллектор / глину / плотную породу / нефть и воду, ВНК, эффективная толщина», «что регистрирует прибор».\n- `chain` (класс B, метка «схема»): Цепочка «причина → следствие» или стадии процесса сверху вниз. params: {title?, items:[2–7 коротких фраз из текста шага], tones?:[good|bad|neutral|accent]}\n- `contrast` (класс B, метка «схема»): Два случая рядом (условие А против условия Б). params: {title?, left:{title, points:[...], tone?}, right:{title, points:[...], tone?}, verdict?}\n- `ranges` (класс A, метка «схема»): Числовая ось с диапазонами и порогами ИЗ КНИГИ. params: {title?, axis:{label, unit, min, max, log?, ticks?}, ranges:[{from, to, label, tone:good|bad|neutral|accent}], marks?:[{value, label}]}\n- `decision` (класс B, метка «схема»): Решение на данных: признаки → правило → вывод. params: {title?, signs:[...], rule, outcomes:[{if, then, tone?}]}\n- `regions2d` (класс A, метка «схема»): Плоскость двух признаков, разбитая ПОСТОЯННЫМИ порогами на области, с точками-примерами. Только если в книге границы — постоянные пороги (не кривые!). params: {title?, x:{label, unit, min, max, log?, ticks?}, y:{...}, regions:[{label, x:[a,b], y:[c,d], tone}], vlines?:[{value,label}], hlines?:[{value,label}], points?:[{x, y, label}]}\n\n\n## tasks — задания с автоматической проверкой\nРовно 5 заданий. Типы: single (один ответ), multiple (несколько ответов), order (расставить по порядку), cloze (пропуск в тексте), numeric (расчёт/число). Используй хотя бы 2 разных типа; в этом шаге предпочтительны: order, cloze (numeric не используй: в узле нет чисел для расчёта).\nПравила:\n- Задание проверяет понимание мысли автора (claim_id — id утверждения узла), а не память на мелочи. Хорошо: «найди, почему…», «что будет, если…», «какой вывод верен».\n- Ответ должен быть в тексте этого шага. evidence — ДОСЛОВНЫЙ фрагмент (8–200 символов) из твоих полей essence / how_it_works / procedure / numbers / decision или из worked_examples узла, где виден ответ. Копируй символ в символ (без **).\n- single/multiple: options 3–5 вариантов, correct — индексы верных (у single ровно один). Неверные варианты правдоподобны, но опровергаются текстом шага. Не используй «все перечисленные».\n- order: items — 3–6 пунктов В ВЕРНОМ порядке (сайт перемешает). Порядок должен прямо следовать из текста (шаги методики, стадии процесса).\n- cloze: text с пропусками ___ (три подчёркивания), blanks по порядку: answers — допустимые ответы (первый — канонический, в той же форме, что в тексте), options — 3–4 варианта для выпадающего списка, включая верный.\n- numeric: answer — число, tolerance — допуск, unit — единица. Ответ должен совпадать с числом из текста шага или из разобранного примера автора.\n- explanation — одна фраза: почему ответ верный (со ссылкой на мысль автора).\n\n## cards — карточки повторения\n2–4 карточки: front — вопрос или термин, back — короткий ответ (до 30 слов) по тексту шага; kind: term | idea | number | mistake; claim_ids.\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"LLM answer for one step page (prompt course_step). $defs.task is injected from task.schema.json by kmd.course\", \"type\": \"object\", \"required\": [\"title_beginner\", \"essence\", \"how_it_works\", \"procedure\", \"numbers\", \"decision\", \"illustrations\", \"tasks\", \"cards\"], \"properties\": {\"title_beginner\": {\"type\": \"string\", \"minLength\": 3}, \"essence\": {\"type\": \"array\", \"minItems\": 2, \"maxItems\": 3, \"items\": {\"type\": \"string\"}}, \"how_it_works\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"section\", \"text\", \"claim_ids\"], \"properties\": {\"section\": {\"type\": \"string\", \"description\": \"subheading, e.g. Механизм / Практика / Нюансы\"}, \"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"by\": {\"enum\": [\"author\", \"model\"], \"description\": \"author = retelling of the book (claim_ids required); model = explanation not in the book\"}}}}, \"procedure\": {\"anyOf\": [{\"type\": \"null\"}, {\"type\": \"object\", \"required\": [\"title\", \"steps\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"steps\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"object\", \"required\": [\"text\", \"claim_ids\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}}}]}, \"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"text\", \"claim_ids\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"decision\": {\"anyOf\": [{\"type\": \"null\"}, {\"type\": \"object\", \"required\": [\"title\", \"signs\", \"rule\", \"conclusion\", \"claim_ids\", \"cases\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"signs\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\"}}, \"rule\": {\"type\": \"string\"}, \"conclusion\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"cases\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"given\", \"options\", \"answer\", \"why\"], \"properties\": {\"given\": {\"type\": \"string\"}, \"options\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"string\"}}, \"answer\": {\"type\": \"integer\", \"minimum\": 0}, \"why\": {\"type\": \"string\"}, \"source\": {\"type\": \"string\", \"description\": \"e.g. «Пример 47, стр. 98» or «модель»\"}}}}}}]}, \"illustrations\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"template\", \"params\", \"caption\", \"alt\", \"claim_ids\"], \"properties\": {\"template\": {\"type\": \"string\"}, \"params\": {\"type\": \"object\"}, \"caption\": {\"type\": \"string\"}, \"alt\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"tasks\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"$ref\": \"#/$defs/task\"}}, \"cards\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"front\", \"back\", \"claim_ids\", \"kind\"], \"properties\": {\"front\": {\"type\": \"string\"}, \"back\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"kind\": {\"enum\": [\"term\", \"idea\", \"number\", \"mistake\"]}}}}}, \"$defs\": {\"task\": {\"title\": \"Course task (задание) — one item of runs/<ch>/tasks.json -> tasks[]\", \"description\": \"Types: single (one answer), multiple (several answers), order (drag to order), cloze (fill the gaps), numeric (calculation). The answer must be inside the step text: `evidence` is a substring of the step text (code-checked). `claim_id` links the claim of the node the task checks.\", \"type\": \"object\", \"required\": [\"type\", \"question\", \"explanation\", \"evidence\", \"claim_id\"], \"properties\": {\"type\": {\"enum\": [\"single\", \"multiple\", \"order\", \"cloze\", \"numeric\"]}, \"question\": {\"type\": \"string\", \"minLength\": 5}, \"options\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"single/multiple: answer options\"}, \"correct\": {\"type\": \"array\", \"items\": {\"type\": \"integer\", \"minimum\": 0}, \"description\": \"single/multiple: indexes of correct options (exactly one for single)\"}, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"order: items in the CORRECT order (the site shuffles them)\"}, \"text\": {\"type\": \"string\", \"description\": \"cloze: sentence(s) with gaps marked ___ (three underscores), one per blank\"}, \"blanks\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"answers\"], \"properties\": {\"answers\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\"}, \"description\": \"accepted answers; the first is the canonical one\"}, \"options\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"choices shown in a dropdown (must contain answers[0])\"}}}}, \"answer\": {\"type\": \"number\", \"description\": \"numeric: correct value\"}, \"tolerance\": {\"type\": \"number\", \"minimum\": 0, \"description\": \"numeric: absolute tolerance\"}, \"unit\": {\"type\": [\"string\", \"null\"]}, \"explanation\": {\"type\": \"string\", \"description\": \"one sentence shown after checking\"}, \"evidence\": {\"type\": \"string\", \"minLength\": 8, \"description\": \"verbatim substring of the step text that contains the answer\"}, \"claim_id\": {\"type\": \"string\"}}, \"allOf\": [{\"if\": {\"properties\": {\"type\": {\"enum\": [\"single\", \"multiple\"]}}}, \"then\": {\"required\": [\"options\", \"correct\"], \"properties\": {\"options\": {\"minItems\": 3}, \"correct\": {\"minItems\": 1}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"order\"}}}, \"then\": {\"required\": [\"items\"], \"properties\": {\"items\": {\"minItems\": 3, \"maxItems\": 7}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"cloze\"}}}, \"then\": {\"required\": [\"text\", \"blanks\"], \"properties\": {\"blanks\": {\"minItems\": 1}}}}, {\"if\": {\"properties\": {\"type\": {\"const\": \"numeric\"}}}, \"then\": {\"required\": [\"answer\"]}}]}}}",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "LLM answer for one step page (prompt course_step). $defs.task is injected from task.schema.json by kmd.course",
+      "type": "object",
+      "required": [
+        "title_beginner",
+        "essence",
+        "how_it_works",
+        "procedure",
+        "numbers",
+        "decision",
+        "illustrations",
+        "tasks",
+        "cards"
+      ],
+      "properties": {
+        "title_beginner": {
+          "type": "string",
+          "minLength": 3
+        },
+        "essence": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "how_it_works": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "section",
+              "text",
+              "claim_ids"
+            ],
+            "properties": {
+              "section": {
+                "type": "string",
+                "description": "subheading, e.g. Механизм / Практика / Нюансы"
+              },
+              "text": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "by": {
+                "enum": [
+                  "author",
+                  "model"
+                ],
+                "description": "author = retelling of the book (claim_ids required); model = explanation not in the book"
+              }
+            }
+          }
+        },
+        "procedure": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "title",
+                "steps"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "claim_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "claim_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "claim_ids"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "title",
+                "signs",
+                "rule",
+                "conclusion",
+                "claim_ids",
+                "cases"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "signs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rule": {
+                  "type": "string"
+                },
+                "conclusion": {
+                  "type": "string"
+                },
+                "claim_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "given",
+                      "options",
+                      "answer",
+                      "why"
+                    ],
+                    "properties": {
+                      "given": {
+                        "type": "string"
+                      },
+                      "options": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "answer": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "why": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "e.g. «Пример 47, стр. 98» or «модель»"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "illustrations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "template",
+              "params",
+              "caption",
+              "alt",
+              "claim_ids"
+            ],
+            "properties": {
+              "template": {
+                "type": "string"
+              },
+              "params": {
+                "type": "object"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/task"
+          }
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "front",
+              "back",
+              "claim_ids",
+              "kind"
+            ],
+            "properties": {
+              "front": {
+                "type": "string"
+              },
+              "back": {
+                "type": "string"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "kind": {
+                "enum": [
+                  "term",
+                  "idea",
+                  "number",
+                  "mistake"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "$defs": {
+        "task": {
+          "title": "Course task (задание) — one item of runs/<ch>/tasks.json -> tasks[]",
+          "description": "Types: single (one answer), multiple (several answers), order (drag to order), cloze (fill the gaps), numeric (calculation). The answer must be inside the step text: `evidence` is a substring of the step text (code-checked). `claim_id` links the claim of the node the task checks.",
+          "type": "object",
+          "required": [
+            "type",
+            "question",
+            "explanation",
+            "evidence",
+            "claim_id"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "single",
+                "multiple",
+                "order",
+                "cloze",
+                "numeric"
+              ]
+            },
+            "question": {
+              "type": "string",
+              "minLength": 5
+            },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "single/multiple: answer options"
+            },
+            "correct": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "description": "single/multiple: indexes of correct options (exactly one for single)"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "order: items in the CORRECT order (the site shuffles them)"
+            },
+            "text": {
+              "type": "string",
+              "description": "cloze: sentence(s) with gaps marked ___ (three underscores), one per blank"
+            },
+            "blanks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "answers"
+                ],
+                "properties": {
+                  "answers": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "accepted answers; the first is the canonical one"
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "choices shown in a dropdown (must contain answers[0])"
+                  }
+                }
+              }
+            },
+            "answer": {
+              "type": "number",
+              "description": "numeric: correct value"
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "description": "numeric: absolute tolerance"
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "explanation": {
+              "type": "string",
+              "description": "one sentence shown after checking"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 8,
+              "description": "verbatim substring of the step text that contains the answer"
+            },
+            "claim_id": {
+              "type": "string"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "single",
+                      "multiple"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "options",
+                  "correct"
+                ],
+                "properties": {
+                  "options": {
+                    "minItems": 3
+                  },
+                  "correct": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "order"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "items"
+                ],
+                "properties": {
+                  "items": {
+                    "minItems": 3,
+                    "maxItems": 7
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "cloze"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "text",
+                  "blanks"
+                ],
+                "properties": {
+                  "blanks": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "numeric"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "answer"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "cache_path": "runs/fixture_latyshova/llm/course_step.geo.fixture_latyshova.s20.01/79f125710df70766d3f8.json",
+    "created": "2026-11-25T07:06:15"
+  },
+  "response": {
+    "title_beginner": "Как узнать коллектор на диаграммах",
+    "essence": [
+      "Коллектор узнают по следам того, как в него уходил раствор при бурении.",
+      "Прямые признаки — сужение ствола из-за корки, расхождение микрозондов и зона проникновения.",
+      "Признаки работают только при хорошем глинистом растворе; на технической воде они обычно пропадают."
+    ],
+    "how_it_works": [
+      {
+        "section": "Почему коллектор вообще видно",
+        "text": "**Коллектор** — порода, которая может вмещать и отдавать нефть, газ или воду. Его выделяют потому, что он отличается от соседних пород. Отличие — в проницаемости, пористости и глинистости.",
+        "claim_ids": [
+          "c01"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Механизм",
+        "text": "**Прямые признаки** коллектора показывают, что в его порах возможна фильтрация. Через поры могут двигаться вода, нефть, газ и фильтрат бурового раствора. Против такой породы на стенке оседает **глинистая корка** — слой глины из раствора.",
+        "claim_ids": [
+          "c02"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Как это видно на диаграммах",
+        "text": "Корка сужает ствол: диаметр скважины становится меньше номинального. **Микрозонды** — два коротких зонда у стенки — показывают разные значения. Ещё один признак — зона проникновения фильтрата по данным зондов разной глубинности.",
+        "claim_ids": [
+          "c02"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Нюансы",
+        "text": "Признак зоны проникновения не обязателен. В продуктивных коллекторах сопротивления зоны проникновения и пласта могут совпасть. Значит, отсутствие проникновения ещё не доказывает, что коллектора нет.",
+        "claim_ids": [
+          "c03"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Когда признаки пропадают",
+        "text": "Толщина корки зависит от раствора. В хороших условиях она не больше 1 см, при плохом растворе достигает 3–4 см. При бурении на технической воде признаки на микрозондах и кавернограмме обычно отсутствуют.",
+        "claim_ids": [
+          "c04",
+          "c05"
+        ],
+        "by": "author"
+      },
+      {
+        "section": "Если отдельных замеров мало",
+        "text": "Иногда по отдельным замерам коллектор не выделить. Тогда используют динамические методы: смотрят, как зона проникновения меняется во времени.",
+        "claim_ids": [
+          "c06"
+        ],
+        "by": "author"
+      }
+    ],
+    "procedure": null,
+    "numbers": [
+      {
+        "text": "Глинистая корка в хороших условиях — не больше 1 см.",
+        "claim_ids": [
+          "c04"
+        ]
+      },
+      {
+        "text": "При плохом растворе корка достигает 3–4 см.",
+        "claim_ids": [
+          "c04"
+        ]
+      },
+      {
+        "text": "Условие: признаки работают при бурении на качественном глинистом растворе, а не на технической воде.",
+        "claim_ids": [
+          "c05"
+        ]
+      }
+    ],
+    "decision": null,
+    "illustrations": [
+      {
+        "template": "contrast",
+        "params": {
+          "title": "Признаки коллектора зависят от раствора",
+          "left": {
+            "title": "Качественный глинистый раствор",
+            "points": [
+              "корка сужает ствол",
+              "микрозонды расходятся",
+              "видна зона проникновения"
+            ],
+            "tone": "good"
+          },
+          "right": {
+            "title": "Техническая вода",
+            "points": [
+              "признаков на микрозондах обычно нет",
+              "признаков на кавернограмме обычно нет"
+            ],
+            "tone": "bad"
+          },
+          "verdict": "Зона проникновения — не обязательный признак"
+        },
+        "caption": "Слева — что видно против коллектора при хорошем растворе, справа — при бурении на технической воде.",
+        "alt": "Две колонки. Зелёная «Качественный глинистый раствор»: корка сужает ствол, микрозонды расходятся, видна зона проникновения. Красная «Техническая вода»: признаков на микрозондах и кавернограмме обычно нет.",
+        "claim_ids": [
+          "c02",
+          "c05",
+          "c03"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "type": "multiple",
+        "question": "Какие признаки автор относит к прямым признакам коллектора? Выберите все верные.",
+        "options": [
+          "Сужение ствола из-за глинистой корки",
+          "Разные показания двух микрозондов",
+          "Зона проникновения фильтрата",
+          "Расширение ствола против породы"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": "Прямые признаки — корка, расхождение микрозондов и зона проникновения; расширение ствола к ним не относится.",
+        "evidence": "Прямые признаки — сужение ствола из-за корки, расхождение микрозондов и зона проникновения.",
+        "claim_id": "c02"
+      },
+      {
+        "type": "single",
+        "question": "На диаграммах нет признаков зоны проникновения. Что это значит, по автору?",
+        "options": [
+          "Коллектора точно нет",
+          "Это ещё не доказывает, что коллектора нет",
+          "Пласт насыщен газом",
+          "Раствор был нефильтрующимся"
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": "Признак зоны проникновения не обязателен: сопротивления зон в продуктивном коллекторе могут совпасть.",
+        "evidence": "отсутствие проникновения ещё не доказывает, что коллектора нет",
+        "claim_id": "c03"
+      },
+      {
+        "type": "cloze",
+        "question": "Вставьте пропущенное слово.",
+        "text": "При бурении на ___ воде признаки на микрозондах и кавернограмме обычно отсутствуют.",
+        "blanks": [
+          {
+            "answers": [
+              "технической"
+            ],
+            "options": [
+              "технической",
+              "пластовой",
+              "пресной",
+              "морской"
+            ]
+          }
+        ],
+        "explanation": "На технической воде корка не образуется как надо, и признаки пропадают.",
+        "evidence": "При бурении на технической воде признаки на микрозондах и кавернограмме обычно отсутствуют.",
+        "claim_id": "c05"
+      },
+      {
+        "type": "numeric",
+        "question": "Какой толщины, по автору, не превышает глинистая корка в хороших условиях? Ответ в сантиметрах.",
+        "answer": 1,
+        "tolerance": 0,
+        "unit": "см",
+        "explanation": "Автор: в хороших условиях корка не больше 1 см, при плохом растворе — 3–4 см.",
+        "evidence": "В хороших условиях она не больше 1 см",
+        "claim_id": "c04"
+      }
+    ],
+    "cards": [
+      {
+        "front": "Три прямых признака коллектора",
+        "back": "Сужение ствола из-за корки, расхождение микрозондов, зона проникновения (последний признак не обязателен).",
+        "claim_ids": [
+          "c02",
+          "c03"
+        ],
+        "kind": "idea"
+      },
+      {
+        "front": "Глинистая корка",
+        "back": "Слой глины из раствора на стенке против проницаемой породы. В хороших условиях не больше 1 см.",
+        "claim_ids": [
+          "c04"
+        ],
+        "kind": "term"
+      },
+      {
+        "front": "Нет зоны проникновения — значит, нет коллектора?",
+        "back": "Нет. Признак не обязателен: сопротивления зон могут совпасть.",
+        "claim_ids": [
+          "c03"
+        ],
+        "kind": "mistake"
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 20900,
+    "output_chars": 6283
+  }
+}
