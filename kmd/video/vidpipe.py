@@ -7,7 +7,7 @@ import shutil
 from ..config import ROOT, chapter_config, domain_dir, read_json, run_dir, write_json
 
 
-def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
+def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> list:
     from video.vidpipe.cli import run_stages
     from video.vidpipe.pipeline import stage_brief
     from video.vidpipe.tts import MicrosoftSpeechError, available_provider
@@ -28,7 +28,11 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
     inputs = build / "inputs"
     pages = inputs / "pages"
     pages.mkdir(parents=True, exist_ok=True)
-    source_pages = read_json(rd / "source_pages.json")
+    # Only the node's own pages (±1 for quotes across a page break): vidpipe shows the planner an excerpt
+    # from the start of the pages folder, so the whole chapter would push the node's pages out of the prompt.
+    node_pages = {int(c["page"]) for c in nd.get("claims", []) if c.get("page")}
+    wanted = {p + d for p in node_pages for d in (-1, 0, 1)}
+    source_pages = {k: v for k, v in read_json(rd / "source_pages.json").items() if int(k) in wanted}
     for old in pages.glob("p*.txt"):
         if str(int(old.stem[1:])) not in source_pages:
             old.unlink()
@@ -58,16 +62,25 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
         "formulas": [f for f in nd.get("formulas", []) if f.get("expr") and f.get("grid")],
     })
 
+    # planner=llm goes through the product LLM layer (kmd/llm.py): API provider if configured, otherwise the
+    # file queue; answers are cached in runs/<chapter>/llm/vidpipe.<node>.<fmt>.<stage>/.
     product_settings = {
-        "mode": planner, "model": os.environ.get("VIDPIPE_LLM_MODEL") or os.environ.get("KMD_LLM_MODEL"),
-        "base_url": os.environ.get("VIDPIPE_LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL"),
+        "mode": planner, "provider": "kmd" if planner == "llm" else None,
+        "model": os.environ.get("KMD_LLM_MODEL") or "kmd", "base_url": None,
     }
+    os.environ["KMD_VIDPIPE_RUN_DIR"] = str(rd)
+    os.environ["KMD_VIDPIPE_TASK"] = f"{node}.{fmt}"
     brief = stage_brief(build, node_file, pages, domain_dir(cfg.get("domain") or layer["domain"]),
                         {"short": "short", "long": "explainer"}[fmt], "F", [ROOT / "video" / "data"],
                         product_settings, {"provider": tts, "voice": os.environ.get("KMD_TTS_VOICE") if tts == "microsoft" else None},
                         {"provider": "none"})
+    from ..llm import PendingLLM
+
     try:
         run_stages(build)
+    except PendingLLM as pending:
+        print(f"[video] {node}: LLM request queued: {pending.path}")
+        return [pending.path]
     except MicrosoftSpeechError as exc:
         candidates = ("piper", "rhvoice", "espeak") if lang == "ru" else ("rhvoice", "espeak")
         fallback = next((provider for provider in candidates if available_provider(provider) == provider), None)
@@ -108,3 +121,4 @@ def run(chapter: str, node: str, fmt: str, *, planner: str, tts: str) -> None:
     if passport["qa_failures"]:
         print(f"[video] {node}: {len(passport['qa_failures'])} QA failures; see {build / 'qa_report.md'}")
     print(f"[video] {node}: {out / (fmt + '.mp4')}")
+    return []

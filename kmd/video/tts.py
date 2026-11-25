@@ -78,6 +78,10 @@ def apply_dict(text: str, entries: list[dict]) -> tuple[str, list[str]]:
 async def _edge(text: str, voice: str, rate: str) -> bytes:
     import edge_tts
 
+    # The Microsoft service returns no audio for text with combining stress marks (U+0301) — that, not rate
+    # limiting, was why many phrases "failed". Microsoft voices stress Russian terms correctly on their own in
+    # most cases; disputed terms stay on the passport's "проверить на слух" list.
+    text = text.replace(ACUTE, "")
     c = edge_tts.Communicate(text, voice, rate=rate)
     audio = b""
     async for ch in c.stream():
@@ -111,12 +115,30 @@ def _piper_model() -> Path | None:
     return m
 
 
+def edge_variants(text: str) -> list[str]:
+    """The Microsoft service deterministically returns no audio for some phrases (content-dependent: e.g.
+    "Куда сдвинется граница коллектора?" fails, "…коллектора?.." and "…коллектора ?!" are voiced). Retrying the
+    same text does not help, so we try punctuation-only variants: same words, same intonation class."""
+    t = text.replace(ACUTE, "").strip()
+    core = t.rstrip(".?!…").rstrip()
+    end = t[len(core):].strip() or "."
+    q = "?" in end
+    out = [t, core + ("?.." if q else "..."), core + (" ?!" if q else " !"), core + (end + " "), core]
+    seen, res = set(), []
+    for v in out:
+        if v not in seen:
+            seen.add(v)
+            res.append(v)
+    return res
+
+
 def _engine_edge(text, wav, voice, rate, retries):
     err = None
-    for i in range(retries):
+    variants = edge_variants(text)
+    for i in range(max(retries, len(variants))):
         try:
             mp3 = wav.with_suffix(".mp3")
-            mp3.write_bytes(asyncio.run(_edge(text, voice, rate)))
+            mp3.write_bytes(asyncio.run(_edge(variants[i % len(variants)], voice, rate)))
             _to_wav(mp3, wav)
             mp3.unlink()
             return voice

@@ -136,8 +136,7 @@ def _render_video(args, node, fmt, engine=None):
         return _stage("video").run(args.chapter, node=node, fmt=fmt) or []
     from .video import vidpipe
 
-    vidpipe.run(args.chapter, node, fmt, planner=args.planner, tts=args.tts)
-    return []
+    return vidpipe.run(args.chapter, node, fmt, planner=args.planner, tts=args.tts) or []
 
 
 def cmd_video(args) -> int:
@@ -151,11 +150,11 @@ def cmd_video(args) -> int:
 
 
 def video_options(parser):
-    # legacy = kmd/video: LLM scene spec through kmd.llm (queue/cache) -> state-model frames. Default, because
-    # without an LLM key vidpipe can only use its rule planner, which gives generic frames on unseen nodes.
-    # vidpipe = video/vidpipe: richer renderer + real Volve data; use with --planner llm and an API key.
-    parser.add_argument("--video-engine", choices=["legacy", "vidpipe"], default="legacy")
-    parser.add_argument("--planner", choices=["rule", "llm"], default="rule")
+    # vidpipe (default) = video/vidpipe: Cairo renderer, real Volve data, its LLM planner runs through kmd.llm
+    # (API provider or the file queue, cached). --planner rule works without any LLM but gives generic frames.
+    # legacy = kmd/video: matplotlib state-model frames from a kmd scene spec (made the first delivered videos).
+    parser.add_argument("--video-engine", choices=["vidpipe", "legacy"], default="vidpipe")
+    parser.add_argument("--planner", choices=["llm", "rule"], default="llm")
     parser.add_argument("--tts", choices=["microsoft", "piper", "rhvoice", "espeak", "none"], default="microsoft")
 
 

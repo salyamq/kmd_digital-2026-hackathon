@@ -282,15 +282,22 @@ class PoreScale(Template):
                               "dash": [16, 12], "tracks": {"dash_offset": (-ctx.times * 60).round(1).tolist()},
                               "t0": tf + 0.15 * j, "appear": "draw", "fade_in": 0.5})
             if flw.get("label"):
-                texts.append(T(flw["label"], X0 + S / 2, Y0 - ctx.s(20), size=ctx.s(24), font="label",
+                # inside the top edge of the pore view: above it sits the shot title
+                texts.append(T(flw["label"], X0 + S / 2, Y0 + ctx.s(34), size=ctx.s(24), font="label",
                                color=th["accent"], anchor="cb", t0=tf))
         if p.get("legend", True):
+            ru = {"water": "вода", "oil": "нефть", "gas": "газ", "brine": "пластовая вода",
+                  "mud_filtrate": "фильтрат"} if ctx.lang == "ru" else {}
+
+            def fname(key, default):
+                name = fl.get(key, default)
+                return fl.get(f"{key}_label") or ru.get(name, name)
             texts.append({"kind": "legend", "x": X0, "y": Y0 + S + ctx.s(30), "size": ctx.s(22), "t0": 0.8,
                           "items": [{"color": sand, "text": p.get("grain_label", "зерно" if ctx.lang == "ru" else "grain")},
                                     {"color": ctx.domain.fluid_color(fl.get("wetting", "water")),
-                                     "text": fl.get("wetting_label", fl.get("wetting", "water"))},
+                                     "text": fname("wetting", "water")},
                                     {"color": ctx.domain.fluid_color(fl.get("nonwetting", "oil")),
-                                     "text": fl.get("nonwetting_label", fl.get("nonwetting", "oil"))}][:2 if sw >= 0.999 else 3]})
+                                     "text": fname("nonwetting", "oil")}][:2 if sw >= 0.999 else 3]})
         sw_actual = float(wet.sum() / max(1, pore.sum()))
         checks = [{"id": "grains_touch", "type": "assert", "ok": comps == 1,
                    "text": f"grain-supported framework: contact graph connected ({comps} component)"},

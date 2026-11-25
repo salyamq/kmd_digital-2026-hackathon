@@ -147,6 +147,8 @@ def stage_script(P):
                         notes.append("falling back to the rule planner (facts must be sourced)")
                         script = None
             except Exception as e:
+                if type(e).__name__ == "PendingLLM":
+                    raise  # queued request: stop here, the caller reports it
                 notes.append(f"LLM script failed: {e}")
                 script = None
         elif mode == "llm":
@@ -244,6 +246,8 @@ def stage_shotlist(P):
             if errs:
                 notes.append(f"LLM shot list problems: {errs[:6]}")
         except Exception as e:
+            if type(e).__name__ == "PendingLLM":
+                raise
             notes.append(f"LLM shot list failed: {e}")
     if shotlist is None:
         shotlist, specs, coverage = rule_shots_specs(script, P.node, P.catalog, P.brief["format"],

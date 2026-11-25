@@ -4,6 +4,9 @@ Providers (env or CLI):
   anthropic     ANTHROPIC_API_KEY, model via VIDPIPE_LLM_MODEL (e.g. claude-sonnet-4-5)
   openai        OPENAI_API_KEY + VIDPIPE_LLM_BASE_URL (OpenAI, OpenRouter, vLLM, LM Studio, Ollama: http://localhost:11434/v1)
   replay        responses read from a cache dir (<stage>.json) — for exact rebuilds and offline demos
+  kmd           the product pipeline's LLM layer (kmd/llm.py): any configured provider OR the file queue
+                (no API key), cached under runs/<chapter>/llm/. Needs KMD_VIDPIPE_RUN_DIR (set by kmd/video/vidpipe.py).
+                A queued request raises kmd.llm.PendingLLM, which must propagate (never fall back to rules).
 Prices for the cost log: VIDPIPE_LLM_PRICE_IN / VIDPIPE_LLM_PRICE_OUT (USD per 1M tokens), else cost = null.
 """
 import json
@@ -64,6 +67,13 @@ class LLM:
             if not p.exists():
                 raise LLMError(f"replay cache missing: {p}")
             text = p.read_text(encoding="utf-8")
+        elif self.provider == "kmd":
+            from kmd import llm as kmd_llm  # only available inside the product repo
+            run_dir = Path(os.environ["KMD_VIDPIPE_RUN_DIR"])
+            task = f"vidpipe.{os.environ.get('KMD_VIDPIPE_TASK', 'video')}.{stage}"
+            obj = kmd_llm.complete_json(run_dir, task, "vidpipe_raw", {"system": system, "user": user},
+                                        schema=None, max_tokens=max_tokens, attempts=1)
+            text = json.dumps(obj, ensure_ascii=False)
         elif self.provider == "anthropic":
             key = os.environ.get("ANTHROPIC_API_KEY")
             if not key:
