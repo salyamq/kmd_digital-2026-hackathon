@@ -1,0 +1,10 @@
+{"node_id": "geo.stub.s20.01", "format": "short", "title": "Как прибор находит коллектор", "idea": "Против проницаемого пласта ПС отклоняется, а диаметр скважины сужается из-за корки.", "hook": "Прибор не видит нефть. Как же он находит пласт с ней?",
+ "views": {"log": {"template": "log_track", "params": {"layers": [{"top": 1000, "base": 1006, "lith": "shale"}, {"top": 1006, "base": 1010, "lith": "sand", "fluid": "oil", "phi": 0.22}, {"top": 1010, "base": 1014, "lith": "sand", "fluid": "water", "phi": 0.22}, {"top": 1014, "base": 1020, "lith": "shale"}], "curves": ["GR", "SP", "CALI", "RD", "RS"]}, "purpose": "скважина, прибор и кривые из одной модели"},
+            "xs": {"template": "cross_section", "params": {"layers": [{"lith": "shale", "thickness_m": 30}, {"lith": "sand", "thickness_m": 8}, {"lith": "shale", "thickness_m": 30}], "top_depth_m": 1000, "width_m": 3000, "wells": [{"x_frac": 0.5, "name": "скважина"}]}, "purpose": "пласт в истинном масштабе"}},
+ "objects": [{"name": "каротажный прибор", "description": "зонд на кабеле", "reference": "типовой фото-референс: скважинный прибор"}],
+ "invariants": ["порядок слоёв", "ВНК на 1010 м", "прибор один и тот же"], "assumptions": ["синтетические кривые"], "exaggerations": [],
+ "frames": [{"id": "f1", "view": "log", "t": [0, 0.25], "class": "B", "provenance": "симуляция", "description": "прибор поднимается", "claim_ids": ["c01"]},
+            {"id": "f2", "view": "log", "t": [0.25, 0.7], "class": "B", "provenance": "симуляция", "description": "проходит песчаник", "claim_ids": ["c01"]},
+            {"id": "f3", "view": "xs", "t": [1, 1], "class": "B", "provenance": "схема", "description": "истинный масштаб", "claim_ids": ["c01"], "true_scale": true, "params_override": {"vertical_exaggeration": 1}},
+            {"id": "f4", "view": "log", "t": [0.7, 1.0], "class": "B", "provenance": "симуляция", "description": "итог", "claim_ids": ["c01"]}],
+ "checklist": [{"item": "a", "ok": true, "note": ""}], "data_bridge": "LAS"}

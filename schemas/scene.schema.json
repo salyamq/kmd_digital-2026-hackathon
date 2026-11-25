@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene spec (спецификация сцены ролика / интерактива)",
+  "type": "object",
+  "required": ["node_id", "format", "title", "idea", "hook", "views", "objects", "invariants", "assumptions",
+               "exaggerations", "frames", "checklist", "data_bridge"],
+  "properties": {
+    "node_id": {"type": "string"},
+    "format": {"enum": ["short", "long", "interactive"]},
+    "title": {"type": "string", "description": "название ролика, до 8 слов"},
+    "idea": {"type": "string", "description": "один когнитивный шаг: что зритель должен понять (1–2 фразы)"},
+    "hook": {"type": "string", "description": "вопрос, парадокс или нарушенное ожидание для первых 3 секунд"},
+    "views": {
+      "type": "object", "minProperties": 1, "maxProperties": 5,
+      "description": "виды одного мира: имя -> шаблон и его параметры (params по params_schema шаблона)",
+      "additionalProperties": {
+        "type": "object", "required": ["template", "params", "purpose"],
+        "properties": {
+          "template": {"type": "string"},
+          "params": {"type": "object"},
+          "purpose": {"type": "string", "description": "что этот вид показывает"}
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {"type": "object", "required": ["name", "description"],
+                "properties": {"name": {"type": "string"}, "description": {"type": "string"},
+                               "reference": {"type": "string", "description": "фото-референс или страница книги"}}}
+    },
+    "invariants": {"type": "array", "minItems": 3, "items": {"type": "string"},
+                   "description": "что обязано оставаться неизменным во всех кадрах"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "exaggerations": {"type": "array",
+                      "items": {"type": "object", "required": ["what", "factor"],
+                                "properties": {"what": {"type": "string"}, "factor": {"type": ["number", "string"]}}}},
+    "frames": {
+      "type": "array", "minItems": 3, "maxItems": 14,
+      "items": {
+        "type": "object", "required": ["id", "view", "t", "class", "provenance", "description", "claim_ids"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^f[0-9]{1,2}$"},
+          "view": {"type": "string", "description": "имя вида из views"},
+          "t": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}, "minItems": 2, "maxItems": 2,
+                "description": "состояние модели в начале и в конце кадра (параметр анимации шаблона)"},
+          "class": {"enum": ["A", "B"]},
+          "provenance": {"enum": ["реальные данные", "симуляция", "схема"]},
+          "description": {"type": "string", "description": "что видно в кадре и что зритель должен понять"},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "true_scale": {"type": "boolean", "default": false},
+          "params_override": {"type": "object", "description": "изменения параметров вида только для этого кадра (например vertical_exaggeration: 1)"}
+        }
+      }
+    },
+    "checklist": {
+      "type": "array", "minItems": 5,
+      "description": "самопроверка по чек-листу физической и предметной корректности",
+      "items": {"type": "object", "required": ["item", "ok", "note"],
+                "properties": {"item": {"type": "string"}, "ok": {"type": "boolean"}, "note": {"type": "string"}}}
+    },
+    "data_bridge": {"type": "string", "description": "где здесь данные и ИТ: какие данные, что можно автоматизировать"},
+    "interactive": {"type": "string", "description": "для формата interactive: что зритель меняет и что видит"}
+  }
+}

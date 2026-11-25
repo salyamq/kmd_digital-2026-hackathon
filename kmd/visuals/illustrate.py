@@ -22,9 +22,20 @@ SIZES = {"wide": (1200, 750), "tall": (900, 1200), "square": (1000, 1000), "vide
          "video_h": (1920, 1080)}
 
 
+# names used by the domain pack (difficulty_types.yaml scene_templates) -> catalog templates
+ALIASES = {
+    "invasion_profile": "radial_invasion", "tool_in_borehole": "log_track", "function_plot": "crossplot",
+    "parameter_sweep": "crossplot", "decision_scale": "crossplot", "threshold_slider": "crossplot",
+    "timeline": "timeline_growth", "sequence": "timeline_growth", "cross_section_evolution": "timeline_growth",
+    "map_and_section": "plan_map", "decision_flow": "process_chain", "feature_compare": "comparison_bar",
+    "block_3d": "cross_section",
+}
+
+
 def get_template(name: str):
     from . import templates  # noqa: F401  (registers)
 
+    name = ALIASES.get(name, name)
     if name not in REGISTRY:
         raise KeyError(f"unknown template {name!r}; known: {sorted(REGISTRY)}")
     return REGISTRY[name]

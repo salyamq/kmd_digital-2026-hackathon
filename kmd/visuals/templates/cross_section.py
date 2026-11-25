@@ -240,7 +240,8 @@ class CrossSection(Template):
             zspan = W * (box_h_px / box_w_px) / ve_req
             zc = (zmin + zmax) / 2
             zmin, zmax = zc - zspan / 2, zc + zspan / 2
-            params = dict(params)
+            if zmin < 0:  # never show "negative depth" above the surface
+                zmin, zmax = 0.0, zspan
         ax = fig.add_axes(rect)
         ax.set_xlim(0, W)
         ax.set_ylim(zmax, zmin)

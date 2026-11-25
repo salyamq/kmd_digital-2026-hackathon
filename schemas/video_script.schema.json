@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video script for the ear (сценарий закадрового текста)",
+  "type": "object",
+  "required": ["node_id", "format", "phrases", "prediction", "transfer_question", "data_it_bridge", "terms_introduced"],
+  "properties": {
+    "node_id": {"type": "string"},
+    "format": {"enum": ["short", "long"]},
+    "phrases": {
+      "type": "array", "minItems": 6, "maxItems": 40,
+      "items": {
+        "type": "object", "required": ["id", "role", "kind", "text", "caption", "frame_id", "claim_ids"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^p[0-9]{1,2}$"},
+          "role": {"enum": ["hook", "problem", "mechanism", "solution", "name", "prediction", "answer", "counterexample",
+                            "honesty", "decision", "analogy", "transfer", "final"]},
+          "kind": {"enum": ["observation", "inference", "assumption", "analogy", "question", "summary"]},
+          "text": {"type": "string", "description": "фраза для уха: до 15–18 слов, одна мысль, числа и единицы словами"},
+          "caption": {"type": "string", "description": "ключевые слова на экране: до 7 слов, без формул и греческих букв"},
+          "frame_id": {"type": "string"},
+          "claim_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "prediction": {"type": "object", "required": ["question_phrase_id", "answer_phrase_id"],
+                   "properties": {"question_phrase_id": {"type": "string"}, "answer_phrase_id": {"type": "string"}}},
+    "transfer_question": {"type": "string"},
+    "data_it_bridge": {"type": "string"},
+    "terms_introduced": {"type": "array",
+                         "items": {"type": "object", "required": ["term", "phrase_id"],
+                                   "properties": {"term": {"type": "string"}, "phrase_id": {"type": "string"}}}}
+  }
+}

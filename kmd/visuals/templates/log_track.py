@@ -188,15 +188,18 @@ class LogTrack(Template):
         top, base = st["top"], st["base"]
         tool = st["tool_depth"]
         x0, y0, w, h = rect
-        head_h = 0.16 * h if ctx.mode == "video" else 0.15 * h
-        body_h = h - head_h
         curves = [c for c in params["curves"] if c in sg["curves"]]
         tracks: list[str] = []
         for c in curves:
             tr = sg["curves"][c]["track"]
             if tr not in tracks:
                 tracks.append(tr)
-        widths = [0.30, 1.15 if params["show_well"] else 0.7] + [sg["tracks"].get(tr, {}).get("width", 1.0) for tr in tracks]
+        nmax = max([sum(1 for c in curves if sg["curves"][c]["track"] == tr) for tr in tracks] + [1])
+        block_px = 2.05 * ctx.base_px
+        head_px = nmax * block_px + 0.9 * ctx.base_px
+        head_h = head_px / ctx.fig_px[1]
+        body_h = h - head_h
+        widths = [0.42 if ctx.mode == "video" else 0.30, 1.15 if params["show_well"] else 0.7] + [sg["tracks"].get(tr, {}).get("width", 1.0) for tr in tracks]
         tot = sum(widths)
         gap = 0.006
         xs = [x0]
@@ -280,7 +283,7 @@ class LogTrack(Template):
         hax = fig.add_axes([x0, y0 + body_h, w, head_h])
         hax.set_axis_off()
         hax.set_xlim(x0, x0 + w)
-        hax.set_ylim(0, 1)
+        hax.set_ylim(0, head_px)
         if tool is not None:
             draw_mask = z >= tool if params["logging_direction"] == "up" else z <= tool
         else:
@@ -308,13 +311,17 @@ class LogTrack(Template):
                 # header line for the curve
                 hx0 = xs[2 + ti] + gap / 2
                 hw_ = w * widths[2 + ti] / tot - gap
-                yy = 0.86 - ci * (0.8 / max(len(tr_curves), 3))
-                hax.plot([hx0, hx0 + hw_], [yy - 0.08, yy - 0.08], color=cs["color"], ls=cs.get("style", "-"), lw=1.6)
+                yy = head_px - ci * block_px - 0.15 * ctx.base_px
+                ly = yy - 1.05 * ctx.base_px
+                hax.text(hx0 + hw_ / 2, yy, cs["ru"], ha="center", va="top", fontsize=ctx.pt(0.8), color=cs["color"],
+                         fontweight="bold")
+                hax.plot([hx0, hx0 + hw_], [ly, ly], color=cs["color"], ls=cs.get("style", "-"), lw=1.8)
                 a_, b_ = cs["range"]
-                hax.text(hx0 + hw_ / 2, yy, f"{cs['ru']}, {cs['unit']}", ha="center", va="bottom",
-                         fontsize=ctx.pt(0.78), color=cs["color"], fontweight="bold")
-                hax.text(hx0, yy - 0.1, f"{a_:g}", ha="left", va="top", fontsize=ctx.pt(0.68), color=cs["color"])
-                hax.text(hx0 + hw_, yy - 0.1, f"{b_:g}", ha="right", va="top", fontsize=ctx.pt(0.68), color=cs["color"])
+                hax.text(hx0, ly - 0.08 * ctx.base_px, f"{a_:g}", ha="left", va="top", fontsize=ctx.pt(0.66), color=cs["color"])
+                hax.text(hx0 + hw_, ly - 0.08 * ctx.base_px, f"{b_:g}", ha="right", va="top", fontsize=ctx.pt(0.66),
+                         color=cs["color"])
+                hax.text(hx0 + hw_ / 2, ly - 0.08 * ctx.base_px, cs["unit"], ha="center", va="top", fontsize=ctx.pt(0.66),
+                         color=cs["color"])
                 if cs["scale"] == "log":
                     ax.set_xticks([])
                     for dec in range(int(math.floor(math.log10(a_))), int(math.ceil(math.log10(b_))) + 1):
@@ -324,8 +331,8 @@ class LogTrack(Template):
             if tool is not None:
                 ax.axhline(tool, color="#FFA000", lw=1.0, ls="--", zorder=4)
         # header for depth and lithology columns
-        hax.text(xs[0] + w * widths[0] / tot / 2, 0.15, "м", ha="center", va="bottom", fontsize=ctx.pt(0.8))
-        hax.text(xs[1] + w * widths[1] / tot / 2, 0.15, "порода и ствол" if params["show_well"] else "порода",
+        hax.text(xs[0] + w * widths[0] / tot / 2, 0.2 * ctx.base_px, "м", ha="center", va="bottom", fontsize=ctx.pt(0.8))
+        hax.text(xs[1] + w * widths[1] / tot / 2, 0.2 * ctx.base_px, "порода и ствол" if params["show_well"] else "порода",
                  ha="center", va="bottom", fontsize=ctx.pt(0.8))
         # annotations (observation vs inference)
         for an in params.get("annotations", []):
