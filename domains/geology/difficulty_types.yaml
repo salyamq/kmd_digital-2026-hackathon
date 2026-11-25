@@ -1,0 +1,100 @@
+# Eight difficulty types (TZ, "Подача доменов геологии"). Used by layer (classification) and route (formats).
+# video_criteria ids: time_change | invisible_visible | scale_jump | counterintuitive | cause_effect
+types:
+  М:
+    name: "механизм, процесс"
+    description: >-
+      Узел объясняет, как что-то происходит физически: причина, движущая сила, цепочка событий
+      (проникновение фильтрата, распространение волны давления, вытеснение, упругое расширение).
+      Трудность — процесс невидим и идёт во времени или внутри породы.
+    signals: ["описан процесс или причинная цепочка", "есть «чем больше …, тем …»", "есть движение флюида, давления, частиц"]
+    typical_formats: [short, long, interactive]
+    video_worthy_when: [time_change, invisible_visible, cause_effect]
+    scene_templates: [pressure_diffusion, process_chain, invasion_profile, pore_scale]
+    pitfalls: "не показывать процесс «как анимацию по вкусу»: движение считается из модели; причина раньше следствия"
+  В:
+    name: "геологическое время"
+    description: >-
+      Узел о развитии во времени на геологических масштабах: рост рифа, проградация дельты,
+      смена фаций, диагенез, вторичная пористость. Трудность — миллионы лет и порядок событий.
+    signals: ["стадии развития", "последовательность событий", "вторичные изменения", "трансгрессия/регрессия"]
+    typical_formats: [short, long, interactive]
+    video_worthy_when: [time_change, scale_jump, cause_effect]
+    scene_templates: [timeline, cross_section_evolution, sequence]
+    pitfalls: "молодые слои над старыми; несогласие — событие; масштаб времени подписан"
+  И:
+    name: "косвенное измерение"
+    description: >-
+      Узел о том, как прибор/метод измеряет отклик, а свойство породы получают интерпретацией
+      (сопротивление → насыщение, ПС → глинистость, ЯМР → эффективная пористость).
+      Трудность — сигнал ≠ свойство; признаки неоднозначны и зависят от условий.
+    signals: ["метод/прибор/диаграмма", "показания, отклик, аномалия", "признак коллектора/насыщения"]
+    typical_formats: [interactive, data_practice, short]
+    video_worthy_when: [invisible_visible, cause_effect, counterintuitive]
+    scene_templates: [log_track, tool_in_borehole, invasion_profile, crossplot]
+    pitfalls: "прибор регистрирует отклик, а не породу; назвать условия применимости правила"
+  Ф:
+    name: "формализм, модель"
+    description: >-
+      Узел держится на уравнении, модели или выводе (уравнение пьезопроводности, упругий запас,
+      решение для галереи/скважины, метод ПССС). Трудность — абстракция и допущения модели.
+    signals: ["формулы и вывод", "допущения модели", "граничные/начальные условия", "решение, асимптотика"]
+    typical_formats: [interactive, long, text]
+    video_worthy_when: [time_change, invisible_visible, counterintuitive]
+    scene_templates: [pressure_diffusion, parameter_sweep, function_plot]
+    pitfalls: "формулы — в интерактив и текст, не в шортс; допущения модели названы; масштабный закон (√t и т.п.) верный"
+  П:
+    name: "пространство"
+    description: >-
+      Узел о геометрии тел и их распределении в пространстве (форма рифа, зональность коллекторов,
+      геометрия дельты, ловушка, контакт). Трудность — представить 3D по разрезам и картам.
+    signals: ["форма тела", "разрез/профиль/карта", "зональность", "распределение по площади"]
+    typical_formats: [interactive, long, short]
+    video_worthy_when: [scale_jump, invisible_visible]
+    scene_templates: [cross_section, block_3d, map_and_section]
+    pitfalls: "вертикальное преувеличение подписано числом; хотя бы один кадр в истинном масштабе"
+  Пр:
+    name: "процедура"
+    description: >-
+      Узел описывает порядок действий специалиста: алгоритм, методика, последовательность операций
+      (определение критических значений, построение разреза, выделение ВНК).
+      Трудность — много шагов и точек выбора.
+    signals: ["пронумерованные шаги", "«сначала … затем …»", "методика/порядок/схема определения", "разобранный пример"]
+    typical_formats: [data_practice, interactive, text]
+    video_worthy_when: [cause_effect]
+    scene_templates: [process_chain, decision_flow, log_track]
+    pitfalls: "шаги в верном порядке; каждый шаг с «зачем»"
+  Н:
+    name: "неопределённость, решение"
+    description: >-
+      Узел о принятии решения при неполных данных: пороги, критические значения, неоднозначные
+      заключения, вероятностные оценки, выбор комплекса методов.
+      Трудность — нет однозначного ответа, нужен критерий и оговорка.
+    signals: ["критическое/граничное значение", "неоднозначность", "«может», «как правило»", "заключение, выбор"]
+    typical_formats: [data_practice, interactive, short]
+    video_worthy_when: [counterintuitive, cause_effect]
+    scene_templates: [decision_scale, crossplot, threshold_slider]
+    pitfalls: "показать контрпример к правилу; диапазон вместо одного числа"
+  Р:
+    name: "распознавание"
+    description: >-
+      Узел учит узнавать объект по признакам (тип рифа, фация, литология по комплексу кривых,
+      тип коллектора). Трудность — набор признаков и похожие случаи.
+    signals: ["признаки", "типы/классификация", "отличается от …", "характерный облик"]
+    typical_formats: [cards, interactive, short]
+    video_worthy_when: [invisible_visible, counterintuitive]
+    scene_templates: [feature_compare, log_track, cross_section]
+    pitfalls: "если два разных случая дают похожие данные — сказать об этом"
+video_criteria:
+  time_change: "изменение во времени"
+  invisible_visible: "невидимое становится видимым"
+  scale_jump: "скачок масштаба"
+  counterintuitive: "контринтуитивность"
+  cause_effect: "причина и следствие"
+formats:
+  short: "шортс 9:16, 40–75 с, один механизм"
+  long: "разбор 16:9, 1,5–3 мин, решение на данных или процесс на нескольких масштабах"
+  interactive: "интерактив в курсе (ползунки/модель состояния)"
+  data_practice: "практикум «решение на данных»: признаки → правило → вывод"
+  cards: "карточки повторения"
+  text: "текст шага (с иллюстрацией)"

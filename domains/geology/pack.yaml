@@ -1,0 +1,26 @@
+# Domain pack: geology & geophysics of oil and gas reservoirs.
+# The engine reads every file of this folder (kmd.config.domain_pack); nothing here is in code.
+id: geology
+name: "Геология и геофизика нефтегазовых коллекторов"
+id_prefix: geo              # node ids: geo.<chapter>.<section>.<nn>
+language: ru                # course language
+source_languages: [ru, en]  # chapters may come in these languages
+audience: "сотрудники цифровой трансформации без геологического образования («цифровики»)"
+voice:
+  tts: "ru-RU-DmitryNeural"
+  fallback_tts: "espeak-ng ru"
+files:
+  glossary: glossary.json             # RU/EN terms
+  misconceptions: misconceptions.json # typical novice errors (TZ list + ours)
+  physics_checklist: physics_checklist.md
+  it_bridges: it_bridges.json
+  difficulty_types: difficulty_types.yaml
+  personas: personas.md
+  styleguide: styleguide.json         # owned by the visuals agent
+  stress_dict: stress_dict.json       # owned by the visuals agent
+# Hints for the layer prompts: what counts as "data" in this domain and typical open datasets.
+data_context:
+  data_kinds: ["каротажные кривые (LAS)", "керновые анализы", "результаты испытаний/опробования", "сейсмические кубы и атрибуты", "карты и разрезы", "промысловые данные (дебиты, давления)"]
+  open_datasets: ["Volve (Equinor): каротаж, сейсмика, бурение, добыча", "F3 Netherlands: сейсмический куб"]
+# Order of a node's layers, used by course text
+layers_order: [mechanism, practice, nuances, deeper]
