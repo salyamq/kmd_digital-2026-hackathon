@@ -45,3 +45,27 @@ Book-figure redraws: use `crossplot` (digitized points / formula) or `log_track`
 read from the page image, plus `redrawn_from: {figure, page}`.
 
 Tests: `.venv/bin/python -m pytest -q tests/test_visuals_*.py`.
+
+## Scenes, redraws, video (added 2026-11-25)
+
+- `kmd scenes CH [--node ID]`: for nodes routed short/long/interactive → LLM `scene_spec` → code checks
+  (each view's params vs template schema + invariants, frame refs, claim ids, frame count, provenance set from
+  the template) → `scene_fix` repair (≤2) → `runs/<ch>/scenes/<node>.json` with `checks`.
+  Then the **redraw stage** (`kmd/visuals/redraw.py`) runs: figures with role example/problem or redraw:true →
+  PDF crop (300 dpi) + page PNG → vision LLM `scene_redraw` (schema `redraw`) → invariants + control points from
+  worked examples (point must land in the author's region) → `runs/<ch>/illustrations/redraw_<fig>.svg/.json`
+  + index `redraws.json` (contract in the module docstring). Infeasible figures are recorded with the reason.
+- `kmd video CH NODE --format short|long`: scene (built if missing) → `video_script` (+`video_script_fix`) with
+  code rules (≤18 words, numbers in words, claim ids, hook first, prediction ?, transfer last, captions ≤8 words,
+  abbreviations expanded, model assumptions said as such) → TTS per phrase (edge-tts ru-RU-DmitryNeural; if any
+  phrase fails after retries the WHOLE video switches to local piper ru_RU-dmitri, then espeak-ng) → timeline
+  (lead 0.35 s, gaps 0.28 s, prediction pause 1.3 s, caption ≥1.6 s, end hold 1.8 s) → −16 LUFS + limiter →
+  frames (templates at model state t, 12.5 states/s, 4 processes, cached by code+scene hash) → H.264 +
+  soft subtitle track + .srt → faster-whisper **medium** ASR: WER, terms, sync → `passport.json`.
+- Env: `KMD_TTS_ENGINES` (default `edge-tts,piper,espeak-ng`), `KMD_TTS_RETRIES` (20), `KMD_ASR_MODEL` (medium),
+  `KMD_VIDEO_FORCE=1` renders despite remaining spec/script errors.
+- Known: edge-tts is throttled from this sandbox (≈30–90 % of new requests fail, content-dependent); cached
+  phrases are reused, so re-running fills the cache. On-screen captions are key words; full text is in the
+  toggleable subtitle track (TZ: «полный текст — в отключаемых субтитрах»).
+- Template aliases for names in `domains/geology/difficulty_types.yaml`: see `ALIASES` in `kmd/visuals/illustrate.py`.
+  No template yet for `pore_scale`, depth-broken log charts (fig. 73) or free-form facies bodies (kuznetsov 10.5).
