@@ -19,7 +19,8 @@ def test_pipeline_scene_queue_policy(monkeypatch, provider, args, scenes_request
     stages = []
 
     def stage(name):
-        def run(chapter):
+        def run(chapter, **options):
+            assert options == ({"repair": True} if name == "verify" else {})
             stages.append(name)
             return ["scene-request.json"] if name == "scenes" else []
 
@@ -38,7 +39,7 @@ def test_pipeline_scene_queue_policy(monkeypatch, provider, args, scenes_request
 def test_pipeline_still_reports_pending_course(monkeypatch):
     def stage(name):
         assert name != "site"
-        return SimpleNamespace(run=lambda chapter: ["step-request.json"] if name == "course" else [])
+        return SimpleNamespace(run=lambda chapter, **options: ["step-request.json"] if name == "course" else [])
 
     monkeypatch.setenv("KMD_LLM_PROVIDER", "queue")
     monkeypatch.setattr(cli, "_stage", stage)

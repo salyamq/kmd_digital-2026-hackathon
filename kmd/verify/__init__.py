@@ -13,6 +13,7 @@ import re
 import sys
 from functools import lru_cache
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from ..config import chapter_config, read_json, run_dir, write_json
 
@@ -330,11 +331,31 @@ def verify_layer(chapter: str, layer: dict, units: dict, coverage: list | None) 
 def run(chapter: str, **kw) -> list[Path]:
     clear_cache()
     rd = run_dir(chapter)
-    layer = read_json(rd / "layer.json")
+    layer_path = rd / "layer.json"
+    layer = read_json(layer_path)
     units = {u["id"]: u for u in read_json(rd / "units.json")["units"]}
     cov_p = rd / "coverage.json"
     coverage = read_json(cov_p) if cov_p.exists() else None
-    rep = verify_layer(chapter_config(chapter)["id"], layer, units, coverage)
+    chapter_id = chapter_config(chapter)["id"]
+    rep = verify_layer(chapter_id, layer, units, coverage)
+    if kw.get("repair") and rep["errors"] and all(e["type"] == "number_not_in_source" for e in rep["errors"]):
+        from .repair import strip_generated_approximations
+
+        candidate, fields = strip_generated_approximations(chapter_id, layer, rep["errors"])
+        if fields:
+            checked = verify_layer(chapter_id, candidate, units, coverage)
+            if checked["ok"]:
+                with TemporaryDirectory(dir=rd) as tmp:
+                    verified_layer = Path(tmp) / layer_path.name
+                    write_json(verified_layer, candidate)
+                    verified_layer.replace(layer_path)
+                checked["automatic_repairs"] = {
+                    "kind": "remove_unsupported_decimal_approximations",
+                    "fields": fields,
+                    "before": rep["stats"],
+                }
+                rep = checked
+                print(f"[verify] removed unsupported decimal approximations in {len(fields)} fields and verified the layer again")
     write_json(rd / "verify_report.json", rep)
     s = rep["stats"]
     print(f"[verify] {chapter}: nodes={s['nodes']} claims={s['claims']} quotes exact/fuzzy/missing="

@@ -67,7 +67,8 @@ def cmd_run(args) -> int:
                 pending = _render_video(args, node, fmt, engine)
                 if pending:
                     return _report_pending(pending)
-        pending = _stage(s).run(args.chapter) or []
+        options = {"repair": True} if s == "verify" else {}
+        pending = _stage(s).run(args.chapter, **options) or []
         print(f"[{s}] {args.chapter}: {time.time()-t0:.1f}s, pending={len(pending)}")
         if pending:
             return _report_pending(pending)

@@ -54,3 +54,36 @@ def test_route_enforce():
     out, notes = enforce(routes, layer)
     assert out[0]["format"] in ("interactive", "data_practice") and out[1]["format"] == "interactive"
     assert any(r["format"] == "data_practice" for r in out)
+
+
+@pytest.mark.parametrize(("original", "expected"), [
+    ("Отношение равно √π/2 ≈ 0,886, то есть скорость ниже примерно на 11%.", "Отношение равно √π/2."),
+    ("Отношение равно √(π/3) ≈ 1,02, то есть ошибка около 2%.", "Отношение равно √(π/3), то есть ошибка около 2%."),
+    ("Доля 75/100 ≈ 0,75.", "Доля 75/100 ≈ 0,75."),
+    ("Расход ≈ 73,7 литра.", "Расход ≈ 73,7 литра."),
+    (r"Отношение $\sqrt{\pi}/2 \approx 0,886$.", r"Отношение $\sqrt{\pi}/2$."),
+])
+def test_remove_only_unsupported_symbolic_approximations(monkeypatch, original, expected):
+    from kmd import verify
+    from kmd.verify.repair import strip_generated_approximations
+
+    monkeypatch.setattr(verify, "source_numbers", lambda _: frozenset({"0.75"}))
+    target = "geo.test.s4.01.layers.mechanism"
+    node = {
+        "id": "geo.test.s4.01",
+        "layers": {"mechanism": {"text": original, "by": "author"}},
+        "claims": [{"id": "geo.test.s4.01.c01", "quote": "Прямая цитата", "page": 4}],
+    }
+    findings = [{"type": "number_not_in_source", "target": target}]
+
+    candidate, paths = strip_generated_approximations("test", {"nodes": [node]}, findings)
+
+    assert candidate["nodes"][0]["layers"]["mechanism"]["text"] == expected
+    assert candidate["nodes"][0]["claims"] == node["claims"]
+    assert node["layers"]["mechanism"]["text"] == original
+    assert paths == ([f"{target}.text"] if original != expected else [])
+
+    node["_overridden"] = True
+    candidate, paths = strip_generated_approximations("test", {"nodes": [node]}, findings)
+    assert candidate["nodes"][0]["layers"]["mechanism"]["text"] == original
+    assert paths == []
