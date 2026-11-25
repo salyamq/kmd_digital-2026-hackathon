@@ -57,10 +57,7 @@ def migrate(chapter: str) -> int:
     for p in (rd / "llm" / "pending").glob("layer_extract_*.json"):
         r = read_json(p)
         if (ROOT / r["cache_path"]).exists():
-            continue
-        task = r["task"]
-        if any((rd / "llm" / task).glob("*.json")):
-            p.unlink()
+            p.unlink()  # already answered (e.g. by migration)
     return n
 
 
