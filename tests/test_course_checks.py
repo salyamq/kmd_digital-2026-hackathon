@@ -100,3 +100,19 @@ def test_plan_gives_enough_tasks_and_a_decision_step():
     assert pl["geo.fixture_latyshova.s20.03"]["need_decision"]  # routed data_practice
     types = {t for p in pl.values() for t in p["preferred_types"]}
     assert len(types) >= 4
+
+
+def test_decision_with_unsupported_numbers_is_not_published(tmp_path):
+    layer = load("layer.json")
+    node = next(n for n in layer["nodes"] if n["id"] == "geo.fixture_latyshova.s17.01")
+    ans = load("answers/geo.fixture_latyshova.s17.01.json")
+    ans["decision"] = {
+        "title": "Проверка условий",
+        "signs": ["Число 38953"],
+        "rule": "Сначала сверить условия.",
+        "conclusion": "Условия определяют вывод.",
+        "claim_ids": [node["claims"][0]["id"]],
+    }
+    res = stage.assemble(node, ans, _ctx(layer, tmp_path))
+    assert any(error.startswith("decision: числа") for error in res["errors"])
+    assert not any(block["kind"] == "decision" for block in res["blocks"])

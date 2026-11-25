@@ -11,8 +11,10 @@ from __future__ import annotations
 
 import os
 import re
+import shutil
 from collections import Counter
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 from ..config import chapter_config, read_json, run_dir, write_json
 from .parse import (
@@ -70,12 +72,12 @@ def analysis_context(chapter: str) -> dict | None:
 
 
 def _render_pages(pdf_path: str, pages: list[int], out: Path, dpi: int = 150) -> int:
+    if not pdf_path or not Path(pdf_path).is_file():
+        return 0
     try:
         import pymupdf  # type: ignore
     except ImportError:  # older versions
         import fitz as pymupdf  # type: ignore
-    if not Path(pdf_path).exists():
-        return 0
     out.mkdir(parents=True, exist_ok=True)
     n = 0
     doc = pymupdf.open(pdf_path)
@@ -87,6 +89,45 @@ def _render_pages(pdf_path: str, pages: list[int], out: Path, dpi: int = 150) ->
         pix.save(str(f))
         n += 1
     return n
+
+
+def _import_page_images(directory: Path, pages: list[int], out: Path) -> None:
+    """Copy numbered page scans into the same location as PDF-rendered pages."""
+    from PIL import Image, ImageOps
+
+    expected = set(pages)
+    sources = {}
+    if not directory.is_dir():
+        raise FileNotFoundError(f"Каталог изображений страниц не найден: {directory}")
+    for path in directory.iterdir():
+        if not path.is_file() or path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"}:
+            continue
+        match = re.fullmatch(r"(?:p(?:age)?[ _-]*)?(\d+)", path.stem, re.IGNORECASE)
+        if not match or (number := int(match[1])) not in expected:
+            continue
+        if number in sources:
+            raise ValueError(f"Несколько изображений для страницы {number} в {directory}")
+        sources[number] = path
+    missing = expected - sources.keys()
+    if missing:
+        raise ValueError(f"В {directory} нет изображений страниц: {', '.join(map(str, sorted(missing)))}")
+
+    out.mkdir(parents=True, exist_ok=True)
+    for number, source in sorted(sources.items()):
+        target = out / f"p{number}.png"
+        if source.resolve() == target.resolve():
+            continue
+        with NamedTemporaryFile(dir=out, suffix=".png", delete=False) as tmp:
+            staging = Path(tmp.name)
+        try:
+            if source.suffix.lower() == ".png":
+                shutil.copyfile(source, staging)
+            else:
+                with Image.open(source) as scan:
+                    ImageOps.exif_transpose(scan).convert("RGB").save(staging, format="PNG")
+            staging.replace(target)
+        finally:
+            staging.unlink(missing_ok=True)
 
 
 def run(chapter: str, **kw) -> list[Path]:
@@ -156,7 +197,11 @@ def run(chapter: str, **kw) -> list[Path]:
     )
     write_json(rd / "source_pages.json", dict(sorted(source_pages.items(), key=lambda kv: int(kv[0]))))
     if not kw.get("no_images"):
-        _render_pages(cfg["book"].get("pdf_path", ""), chapter_pages, rd / "pages", dpi=kw.get("dpi", 150))
+        image_directory = cfg["book"].get("page_images_path")
+        if image_directory:
+            _import_page_images(Path(image_directory), chapter_pages, rd / "pages")
+        else:
+            _render_pages(cfg["book"].get("pdf_path", ""), chapter_pages, rd / "pages", dpi=kw.get("dpi", 150))
     print(f"[ingest] {cfg['id']}: {len(all_units)} units on {len(chapter_pages)} pages, "
           f"{len(sections)} sections, kinds={dict(kinds)}")
     return []

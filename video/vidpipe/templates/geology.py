@@ -34,6 +34,8 @@ class CrossSection(Template):
         "labels": "bool: callout each unit name", "highlight": "[{unit, at: time-ref, text?}]",
         "fluids": "[{unit, fluid: oil|water|gas, below?: {fluid, at_frac}}] shown as pore-scale dots, not blobs",
         "surface": "bool: draw a ground line with sky above", "times": "time-refs per unit reveal",
+        "areas": "lateral lithology zones [{lith, points: [[x,y], ...], emphasis?: bool, label?: {text, at_xy: [x,y], source_ref?}}]; normalized to the section box",
+        "openings": "enclosed empty voids [{center: [x,y], radii: [rx,ry], initial_radii?: [rx,ry], start?: time-ref, end?: time-ref}]; normalized to the section box and illustrated without scale or fluid fill",
     }
     example = {"units": [{"name": "глина", "lith": "clay", "thickness": 1}, {"name": "песчаник", "lith": "sandstone",
                                                                              "thickness": 1.2},
@@ -44,7 +46,45 @@ class CrossSection(Template):
         p = dict(params)
         p["reveal"] = "all"
         p.pop("times", None)
+        if "openings" in p:
+            p["openings"] = [{k: v for k, v in opening.items() if k != "initial_radii"}
+                             for opening in p["openings"]]
         return p
+
+    def check_params(self, params, model_out=None):
+        errors = super().check_params(params, model_out)
+
+        def point(value):
+            return (isinstance(value, (list, tuple)) and len(value) == 2
+                    and all(isinstance(n, (int, float)) and 0 <= n <= 1 for n in value))
+
+        def enclosed(center, radii):
+            return point(radii) and all(0 < r < min(c, 1 - c) for c, r in zip(center, radii))
+
+        areas = params.get("areas", [])
+        openings = params.get("openings", [])
+        if not isinstance(areas, list) or not isinstance(openings, list):
+            return errors + ["areas and openings must be lists"]
+        for i, area in enumerate(areas):
+            if not isinstance(area, dict):
+                errors.append(f"areas[{i}] must be an object")
+                continue
+            points = area.get("points", [])
+            if not isinstance(points, list) or len(points) < 3 or not all(point(q) for q in points) or not area.get("lith"):
+                errors.append(f"areas[{i}] needs a lithology and at least three normalized points")
+            if "label" in area:
+                label = area["label"]
+                if not isinstance(label, dict) or not label.get("text") or not point(label.get("at_xy")):
+                    errors.append(f"areas[{i}].label needs text and normalized at_xy coordinates")
+        for i, opening in enumerate(openings):
+            if not isinstance(opening, dict):
+                errors.append(f"openings[{i}] must be an object")
+                continue
+            center = opening.get("center")
+            radii = opening.get("radii")
+            if not point(center) or not enclosed(center, radii) or not enclosed(center, opening.get("initial_radii", radii)):
+                errors.append(f"openings[{i}] needs positive radii and a center keeping the void inside the section")
+        return errors
 
     def plan(self, p, model, ctx):
         th = ctx.theme
@@ -133,6 +173,31 @@ class CrossSection(Template):
         if surface:
             items.insert(0, {"type": "rect", "x": X0, "y": by, "w": X1 - X0, "h": Y0 - by, "fill": th["accent2"],
                              "fill_opacity": 0.18, "t0": 0.0})
+        dw, dh = X1 - X0, Y1 - Y0
+        for area in p.get("areas", []):
+            _, style = ctx.lith(area["lith"])
+            outline = [[X0 + x * dw, Y0 + y * dh] for x, y in area["points"]]
+            pattern = {"kind": style.get("pattern", "none"), "spacing": ctx.s(16), "size": 2.1}
+            stroke = th["accent"] if area.get("emphasis") else th["ink"]
+            items.append({"type": "polygon", "pts": outline, "fill": style["fill"], "pattern": pattern,
+                          "stroke": stroke, "lw": ctx.s(5) if area.get("emphasis") else 2.2, "t0": 0.2})
+            if label := area.get("label"):
+                lx, ly = label["at_xy"]
+                texts.append(T(label["text"], X0 + lx * dw, Y0 + ly * dh, size=ctx.s(25),
+                               font="label", anchor="cm", t0=0.45, source_ref=label.get("source_ref"),
+                               bg={"fill": th["panel"], "opacity": 0.92, "radius": 10, "pad": [10, 6]}))
+        for opening in p.get("openings", []):
+            cx, cy = opening["center"]
+            rx, ry = opening["radii"]
+            shape = {"type": "ellipse", "cx": X0 + cx * dw, "cy": Y0 + cy * dh,
+                     "rx": rx * dw, "ry": ry * dh, "fill": th["panel"],
+                     "stroke": th["ink"], "lw": 3, "t0": 0.2}
+            if initial := opening.get("initial_radii"):
+                start = ctx.at(opening.get("start"), ctx.duration * 0.18)
+                end = max(start + 0.01, ctx.at(opening.get("end"), ctx.duration * 0.82))
+                shape["tracks"] = {axis: {"kf": [[start, first * span], [end, final * span]], "ease": "smooth"}
+                                   for axis, first, final, span in zip(("rx", "ry"), initial, (rx, ry), (dw, dh))}
+            items.append(shape)
         w = p.get("well")
         if w:
             wx = X0 + (X1 - X0) * float(w.get("x", 0.5))

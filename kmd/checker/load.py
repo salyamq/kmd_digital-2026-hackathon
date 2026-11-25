@@ -45,6 +45,8 @@ def load_package(path: Path) -> dict:
 
 def flatten(pkg: dict) -> list[dict]:
     """All checkable elements as {id, type, text, quote, page, ...}."""
+    if "items" in pkg:
+        return _organizer_items(pkg)
     items = []
     for c in pkg.get("claims", []):
         items.append({"id": str(c["id"]), "type": "claim", "text": c.get("text", ""), "quote": c.get("quote"),
@@ -67,4 +69,32 @@ def flatten(pkg: dict) -> list[dict]:
             text += f" Подписи: {', '.join(f['labels'])}"
         items.append({"id": str(f["id"]), "type": "frame", "text": text, "quote": None, "page": None,
                       "class": f.get("class"), "provenance": f.get("provenance")})
+    return items
+
+
+def _organizer_items(pkg: dict) -> list[dict]:
+    entries = pkg["items"]
+    claims = {it["id"]: it for it in entries if it["type"] == "claim"}
+    items = []
+    for entry in entries:
+        text = entry.get("text", "")
+        if entry["type"] == "analogy":
+            text += f" [граница аналогии: {entry.get('breaks_where') or 'не указана'}]"
+        if entry.get("on_screen"):
+            text += f" [на экране: {entry['on_screen']}]"
+        claim = claims.get(entry.get("claim_ref"), {})
+        items.append({
+            "id": entry["id"], "type": entry["type"], "text": text,
+            "page": entry.get("page_pdf") or claim.get("page_pdf"), "quote": entry.get("quote"),
+            "video_id": entry.get("video_id"),
+        })
+    for frame in pkg.get("frames", []):
+        provenance = frame.get("label")
+        items.append({
+            "id": frame["id"], "type": "frame", "page": None, "quote": None,
+            "class": frame.get("frame_class"), "provenance": provenance,
+            "video_id": frame.get("video_id"), "image": frame.get("file"),
+            "text": (f"Кадр класса {frame.get('frame_class')}, метка «{provenance}». "
+                     f"{frame.get('shows') or ''} Плашка: {frame.get('plaque') or 'нет'}."),
+        })
     return items

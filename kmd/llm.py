@@ -17,6 +17,7 @@ import os
 import re
 import time
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import jinja2
 import jsonschema
@@ -134,7 +135,19 @@ def _call_openai(system: str, user: str, max_tokens: int, images=()) -> tuple[st
     import openai
 
     model = os.environ.get("KMD_LLM_MODEL", "gpt-4.1")
-    client = openai.OpenAI(base_url=os.environ.get("OPENAI_BASE_URL") or None)
+    base_url = os.environ.get("OPENAI_BASE_URL") or None
+    options = {}
+    if base_url and urlsplit(base_url).hostname == "openrouter.ai":
+        default = "off" if model.startswith("deepseek/deepseek-v4") else "default"
+        reasoning = os.environ.get("KMD_OPENROUTER_REASONING", default)
+        if reasoning not in ("off", "default"):
+            raise LLMError("KMD_OPENROUTER_REASONING must be 'off' or 'default'")
+        if reasoning == "off":
+            options["extra_body"] = {
+                "reasoning": {"enabled": False},
+                "provider": {"require_parameters": True},
+            }
+    client = openai.OpenAI(base_url=base_url)
     content = [{"type": "text", "text": user}]
     for im in images:
         mime, data = _b64(im)
@@ -143,10 +156,19 @@ def _call_openai(system: str, user: str, max_tokens: int, images=()) -> tuple[st
         model=model,
         max_tokens=max_tokens,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": content if images else user}],
+        **options,
     )
-    text = r.choices[0].message.content or ""
+    choice = r.choices[0] if r.choices else None
+    text = (choice.message.content or "") if choice else ""
     u = r.usage
     usage = {"input_tokens": getattr(u, "prompt_tokens", 0), "output_tokens": getattr(u, "completion_tokens", 0)}
+    usage["finish_reason"] = getattr(choice, "finish_reason", None)
+    extra = getattr(u, "model_extra", None) or {}
+    cost = getattr(u, "cost", None)
+    if not isinstance(cost, (int, float)):
+        cost = extra.get("cost")
+    if isinstance(cost, (int, float)):
+        usage["cost_usd"] = cost
     return text, usage, model
 
 
@@ -206,9 +228,12 @@ def complete_json(
         try:
             obj = _extract_json(text)
             validate(obj, schema_d)
-        except Exception as e:  # retry with the error message
-            last_err = e
-            msgs_user = user_full + f"\n\nПредыдущий ответ не прошёл проверку: {str(e)[:1500]}\nИсправь и верни валидный JSON."
+        except (json.JSONDecodeError, jsonschema.ValidationError) as e:
+            last_err = str(e)
+            if usage.get("finish_reason") == "length":
+                last_err = f"ответ оборвался на лимите {max_tokens} токенов: {last_err}"
+            msgs_user = (user_full + f"\n\nПредыдущий ответ не прошёл проверку: {last_err[:1200]}"
+                         "\nВерни один полный JSON. Сохрани покрытие и цитаты, сокращай пояснения.")
             continue
         write_json(cache, {"request": request, "response": obj, "provider": prov, "model": model, "usage": usage})
         return obj

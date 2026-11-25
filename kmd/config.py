@@ -41,7 +41,7 @@ def chapter_config(chapter: str) -> dict:
     cfg = yaml.safe_load(p.read_text(encoding="utf-8"))
     cfg.setdefault("id", p.stem)
     cfg["_path"] = str(p)
-    for key in ("md", "pdf"):
+    for key in ("md", "pdf", "page_images"):
         if cfg.get("book", {}).get(key):
             cfg["book"][f"{key}_path"] = str((data_dir() / cfg["book"][key]).expanduser())
     return cfg

@@ -192,6 +192,27 @@ def run(chapter: str, **kw) -> list[Path]:
         return pending
 
     drafts, skipped = _collect_drafts(reqs, results)
+    accounted = {uid for node in drafts for uid in node["unit_ids"]} | skipped.keys()
+    repairs = []
+    for i, chunk, variables in reqs:
+        missing = [u for u in chunk if u["id"] not in accounted
+                   and u["kind"] not in AUTO_KINDS and not u.get("ocr_suspect")]
+        if missing:
+            ids = {u["id"] for u in missing}
+            repairs.append((i, missing, {
+                **variables, "must_cover": sorted(ids),
+                "units": [u for u in variables["units"] if u["id"] in ids], "coverage_retry": True,
+            }))
+    calls = [
+        (lambda v=v, i=i: llm.complete_json(rd, f"layer_cover_{i + 1:02d}", "layer_extract", v, "layer_extract"))
+        for i, _, v in repairs
+    ]
+    repair_results, pending = llm.gather(calls)
+    if pending:
+        return pending
+    extra_drafts, extra_skips = _collect_drafts(repairs, repair_results, key_suffix="r")
+    drafts.extend(extra_drafts)
+    skipped.update(extra_skips)
     graph_vars = _graph_vars(cfg, U, drafts, pack)
     try:
         graph = llm.complete_json(rd, "layer_graph", "layer_graph", graph_vars, "layer_graph")
@@ -216,18 +237,19 @@ def run(chapter: str, **kw) -> list[Path]:
 
 # ------------------------------------------------------------------ assembly
 
-def _collect_drafts(reqs, results):
+def _collect_drafts(reqs, results, key_suffix: str = ""):
     drafts, skipped = [], {}
     for (i, ch, _v), res in zip(reqs, results):
         chunk_ids = {u["id"] for u in ch}
         for n in res["nodes"]:
             n = dict(n)
-            n["key"] = f"c{i + 1}.{n['key']}"
+            n["key"] = f"c{i + 1}{key_suffix}.{n['key']}"
             n["unit_ids"] = [x for x in n["unit_ids"] if x in chunk_ids]
             n["_chunk"] = i
-            drafts.append(n)
+            if n["unit_ids"] or not key_suffix:
+                drafts.append(n)
         for s in res.get("skipped", []):
-            if s["unit_id"] in chunk_ids:
+            if s["unit_id"] in chunk_ids and s["reason"].strip():
                 skipped[s["unit_id"]] = s["reason"]
     return drafts, skipped
 

@@ -17,6 +17,7 @@ from ..verify import check_text_numbers, clear_cache, find_quote, normalize
 from .load import load_package, flatten
 
 BATCH = 10
+FRAME_BATCH = 3
 ERROR_TYPES = ["overgeneralization", "sign_flip", "measured_vs_derived", "lost_condition", "missing_caveat",
                "wrong_scaling_law", "wrong_mechanism", "wrong_number", "outdated_as_current",
                "it_analogy_without_limit", "frame_error", "misconception", "unsupported"]
@@ -45,20 +46,24 @@ def retrieve(item: dict, units: list[dict], k: int = 3, max_chars: int = 900) ->
     """Top-k source units by stem overlap (+ bonus for the page the item refers to)."""
     q = _stem_tokens(item["text"] + " " + (item.get("quote") or ""))
     scored = []
-    for u in units:
-        if u["kind"] in ("heading", "fragment") or u.get("ocr_suspect"):
+    for unit in units:
+        if unit["kind"] in ("heading", "fragment") or unit.get("ocr_suspect"):
             continue
-        t = _stem_tokens(u["text"])
-        if not t:
-            continue
-        s = len(q & t) / (len(q) ** 0.5 * len(t) ** 0.3 + 1e-9)
-        if item.get("page") and item["page"] in (u["page"], u.get("page_end", u["page"])):
-            s *= 1.5
-        scored.append((s, u))
-    scored.sort(key=lambda x: -x[0])
+        text = unit["text"]
+        markers = [(0, unit["page"])] + [(b["offset"], b["page"]) for b in unit.get("page_breaks", [])]
+        ends = [offset for offset, _ in markers[1:]] + [len(text)]
+        for (start, page), end in zip(markers, ends):
+            excerpt = text[start:end].strip()
+            tokens = _stem_tokens(excerpt)
+            if not tokens:
+                continue
+            score = len(q & tokens) / (len(q) ** 0.5 * len(tokens) ** 0.3 + 1e-9)
+            if item.get("page") == page:
+                score *= 1.5
+            scored.append((score, page, excerpt))
+    scored.sort(key=lambda row: -row[0])
     out = []
-    for s, u in scored[:k]:
-        txt = u["text"]
+    for _, page, txt in scored[:k]:
         if len(txt) > max_chars:  # keep the window with most overlap
             best, bi = -1, 0
             for i in range(0, len(txt) - max_chars + 1, 150):
@@ -66,7 +71,7 @@ def retrieve(item: dict, units: list[dict], k: int = 3, max_chars: int = 900) ->
                 if sc > best:
                     best, bi = sc, i
             txt = ("…" if bi else "") + txt[bi:bi + max_chars] + "…"
-        out.append({"page": u["page"], "text": txt.replace("\n", " ")})
+        out.append({"page": page, "text": txt.replace("\n", " ")})
     return out
 
 
@@ -114,17 +119,54 @@ def analysis_brief(chapter: str, weak: int = 8, definitions: int = 15) -> dict |
     return {"weak": w, "definitions": d} if (w or d) else None
 
 
+def _review_batch(items: list[dict], root: Path, scenes: dict) -> tuple[list[dict], list[str], dict]:
+    messages, images, context = [], [], {}
+    for item in items:
+        message = {k: item.get(k) for k in ("id", "type", "text", "quote", "page", "code_notes", "sources")}
+        if image := item.get("image"):
+            path = (root / image).resolve()
+            if not path.is_relative_to(root) or path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
+                raise ValueError(f"Недопустимый путь к кадру {item['id']}: {image}")
+            if not path.is_file():
+                raise FileNotFoundError(f"Кадр {item['id']} не найден: {image}")
+            images.append(str(path))
+            message["image_index"] = len(images)
+        if (video_id := item.get("video_id")) in scenes:
+            message["video_id"] = video_id
+            context[video_id] = scenes[video_id]
+        messages.append(message)
+    return messages, images, context
+
+
+def _organizer_remarks(findings: list[dict]) -> list[dict]:
+    categories = {
+        "overgeneralization": "overgeneralization", "sign_flip": "sign_flip",
+        "measured_vs_derived": "measured_vs_inferred", "lost_condition": "lost_condition",
+        "missing_caveat": "missing_caveat", "wrong_scaling_law": "wrong_scaling",
+        "wrong_mechanism": "wrong_mechanism", "outdated_as_current": "outdated_as_current",
+        "it_analogy_without_limit": "analogy_without_limit", "frame_error": "frame_error",
+    }
+    severity = {1: "minor", 2: "significant", 3: "critical"}
+    return [{
+        "target": f["target_id"], "category": categories.get(f["error_type"], "other"),
+        "severity": severity[f["severity"]], "problem": f["message"], "fix": f.get("fix") or "",
+        "page_pdf": f.get("page"), "quote": f.get("evidence_quote"),
+    } for f in findings]
+
+
 def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]:
+    package = Path(package)
     cfg = chapter_config(chapter)
     rd = run_dir(chapter)
     clear_cache()
     pack = domain_pack(cfg.get("domain", "geology"))
-    pkg = load_package(Path(package))
+    pkg = load_package(package)
     items = flatten(pkg)
     units = read_json(rd / "units.json")["units"]
+    pages = {int(p): normalize(t) for p, t in read_json(rd / "source_pages.json").items()}
     code_findings = []
     for it in items:
-        f, notes = code_checks(it, cfg["id"])
+        f, notes = code_checks(it, chapter)
         code_findings += f
         it["code_notes"] = "; ".join(notes)
         it["sources"] = retrieve(it, units)
@@ -137,14 +179,21 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
         "physics_checklist": pack.get("physics_checklist", ""),
         "chapter_title": cfg.get("title", ""),
         "book": f"{b.get('author', '')}, «{b.get('title', '')}»",
-        "analysis": analysis_brief(cfg["id"], weak=8, definitions=15),
+        "analysis": analysis_brief(chapter, weak=8, definitions=15),
     }
-    pkg_id = re.sub(r"[^A-Za-z0-9_.-]+", "_", pkg.get("package_id", Path(package).stem))
+    pkg_id = re.sub(r"[^A-Za-z0-9_.-]+", "_", pkg.get("package_id", package.stem))
+    root = (package if package.is_dir() else package.parent).resolve()
+    scenes = {s["video_id"]: s["spec"] for s in pkg.get("scenes", []) if "video_id" in s and "spec" in s}
+    text_items = [it for it in items if not it.get("image")]
+    frame_items = [it for it in items if it.get("image")]
+    batches = [group[i:i + size] for group, size in ((text_items, BATCH), (frame_items, FRAME_BATCH))
+               for i in range(0, len(group), size)]
     calls = []
-    for i in range(0, len(items), BATCH):
-        batch = [{k: it.get(k) for k in ("id", "type", "text", "quote", "page", "code_notes", "sources")} for it in items[i:i + BATCH]]
-        calls.append(lambda batch=batch, i=i: llm.complete_json(
-            rd, f"check_{pkg_id}_{i // BATCH + 1:02d}", "check_review", {**base, "items": batch}, REVIEW_SCHEMA))
+    for i, group in enumerate(batches, 1):
+        batch, images, context = _review_batch(group, root, scenes)
+        calls.append(lambda batch=batch, i=i, images=images, context=context: llm.complete_json(
+            rd, f"check_{pkg_id}_{i:02d}", "check_review", {**base, "items": batch, "scenes": context},
+            REVIEW_SCHEMA, images=images))
     results, pending = llm.gather(calls)
     if pending:
         return pending
@@ -158,9 +207,15 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
             ev = rv.get("evidence_quote")
             verified, page = False, rv.get("page")
             if ev:
-                r = find_quote(ev, page, cfg["id"], min_score=88)
-                if r["found"] or (r["where"] or "").startswith("other:"):
-                    verified, page = True, r["page"]
+                quote = normalize(ev)
+                exact_pages = {p for p, text in pages.items() if quote and quote in text}
+                if exact_pages:
+                    verified = True
+                    page = page if page in exact_pages else min(exact_pages)
+                else:
+                    r = find_quote(ev, page, chapter, min_score=88)
+                    if r["found"] or (r["where"] or "").startswith("other:"):
+                        verified, page = True, r["page"]
             source_based = rv["error_type"] not in ("frame_error", "it_analogy_without_limit", "misconception",
                                                     "outdated_as_current", "missing_caveat")
             if source_based and not verified:
@@ -181,7 +236,10 @@ def run_check(package: Path, chapter: str, out: str | None = None) -> list[Path]
     final = sorted(best.values(), key=lambda f: (-f["severity"], f["target_id"]))
     res = {"package_id": pkg.get("package_id"), "chapter": cfg["id"], "items_checked": len(items),
            "findings": final, "dropped_for_precision": dropped}
-    outp = Path(out) if out else Path(package if Path(package).is_dir() else Path(package).parent) / "findings.json"
+    if "items" in pkg:
+        res["package_id"] = pkg.get("package_id") or pkg_id
+        res["remarks"] = _organizer_remarks(final)
+    outp = Path(out) if out else root / "findings.json"
     write_json(outp, res)
     print(f"[check] {pkg.get('package_id')}: {len(items)} items, {len(final)} findings "
           f"({sum(1 for f in final if f['source'] == 'code')} by code), dropped {len(dropped)} -> {outp}")

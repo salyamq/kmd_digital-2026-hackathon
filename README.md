@@ -62,18 +62,43 @@ python -m kmd video latyshova geo.latyshova.s20.01 --format short
 
 ### Новая глава (тест)
 
-1. Положите md и pdf книги в `$KMD_DATA`, создайте `chapters/<id>.yaml` по образцу (страницы PDF,
-   строки начала и конца главы, домен, язык). Код менять не нужно.
-2. Укажите LLM в `.env` (любой из вариантов):
+1. По ТЗ вход состоит из Markdown главы с метками `<!-- page N -->` и изображений её страниц.
+   Сохраните их в `$KMD_DATA`. Укажите в `chapters/<id>.yaml` домен, язык и страницы PDF.
+
+   ```yaml
+   id: new_chapter
+   title: Название главы
+   domain: geology
+   language: ru
+   book:
+     md: md/new_book.md
+     page_images: page_images/new_book
+   segments:
+     - pages: [7, 9]
    ```
-   ANTHROPIC_API_KEY=...            KMD_LLM_MODEL=<модель>
-   # или OpenAI-совместимый API (OpenAI, OpenRouter, локальный vLLM/Ollama):
-   OPENAI_API_KEY=...  OPENAI_BASE_URL=...  KMD_LLM_MODEL=<модель>
+
+   Для сканов используйте имена с номером страницы PDF, например `p7.png`, `page-008.jpg`
+   и `9.png`. Если вместо отдельных изображений есть PDF, добавьте `book.pdf`: конвейер
+   отрендерит страницы сам. Для режима **PDF-only** задайте только `book.pdf`. При необходимости
+   укажите `language: en` и границы `start` и `end` внутри сегмента.
+   Для скан-PDF установите Tesseract с нужным языковым пакетом.
+
+2. Сохраните ключ и модель в локальном `.env`. Например, для OpenRouter:
+
+   ```dotenv
+   OPENAI_API_KEY=...
+   OPENAI_BASE_URL=https://openrouter.ai/api/v1
+   KMD_LLM_MODEL=<модель>
    ```
-   Без ключа работает режим очереди: запросы пишутся в `runs/<id>/llm/pending/`, на них отвечает
-   оператор/агент (`python -m kmd llm show|answer`), ответ проверяется JSON-схемой и кэшируется.
-3. `make run CH=<id>`. Код выхода 3 значит «есть неотвеченные запросы к LLM» (режим очереди).
-4. Ролик на назначенный узел: `python -m kmd video <id> <node_id> --format short|long`.
+
+   Для Anthropic используйте `ANTHROPIC_API_KEY` и `KMD_LLM_MODEL`. Для DeepSeek V4 на OpenRouter
+   по умолчанию отключён режим рассуждений, чтобы ответ целиком помещался в лимит JSON.
+   `KMD_OPENROUTER_REASONING=default` оставляет настройки провайдера как есть.
+   Без ключа запросы попадают в `runs/<id>/llm/pending/`. Команды `kmd llm show` и
+   `kmd llm answer` показывают запрос и проверяют ответ по схеме перед записью в кэш.
+3. Запустите `make run CH=<id>`. В режиме очереди код 3 означает, что нужны ответы.
+   Проверьте `verify_report.json` и `course_report.json` рядом с сайтом.
+4. Для назначенного узла выполните `.venv/bin/python -m kmd video <id> <node_id> --format short|long`.
 
 ### Новый домен (сдвиг)
 
@@ -98,9 +123,12 @@ make rebuild CH=latyshova VIDEO=1  # также пересобрать имею�
 ### Модуль проверки (закладки)
 
 ```bash
-python -m kmd check <папка_пакета> --chapter <id>     # → findings.json: ошибка, тип, тяжесть, исправление, страница, цитата
+.venv/bin/python -m kmd ingest <id>
+.venv/bin/python -m kmd check <пакет>/package.json --chapter <id> --out remarks.json
 ```
-Формат внешнего пакета: `schemas/external_package.schema.json`.
+Для пакета организаторов с `items`, `frames` и `scenes` поле `remarks` в JSON соответствует
+схеме сдачи. Храните кадры по относительным путям, указанным в пакете.
+Внутренний формат `schemas/external_package.schema.json` также поддерживается.
 
 ## Как устроено
 

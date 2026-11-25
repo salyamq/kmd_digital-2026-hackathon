@@ -293,6 +293,7 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
     # --- Решение на данных
     dec = ans.get("decision")
     if dec:
+        decision_error_start = len(errors)
         ids = _ids(dec.get("claim_ids"), claims, errors, "decision")
         txt = " ".join([dec.get("title", ""), " ".join(dec.get("signs", [])), dec.get("rule", ""), dec.get("conclusion", "")] + [c.get("given", "") + " " + c.get("why", "") + " " + " ".join(c.get("options", [])) for c in dec.get("cases", [])])
         num_check(txt, "decision")
@@ -301,8 +302,9 @@ def assemble(node: dict, ans: dict, ctx: dict) -> dict:
         for k, cs in enumerate(dec.get("cases", [])):
             if not 0 <= cs.get("answer", -1) < len(cs.get("options", [])):
                 errors.append(f"decision.cases[{k}]: answer вне диапазона options")
-        blocks.append({"id": "decision", "kind": "decision", "title": "Решение на данных", "by": "mixed", "pages": _pages(ids, claims), "data": dict(dec, claim_ids=ids)})
-        chunks.append(("decision", txt))
+        if len(errors) == decision_error_start:
+            blocks.append({"id": "decision", "kind": "decision", "title": "Решение на данных", "by": "mixed", "pages": _pages(ids, claims), "data": dict(dec, claim_ids=ids)})
+            chunks.append(("decision", txt))
     elif ctx.get("need_decision"):
         errors.append("decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)")
 
@@ -547,7 +549,10 @@ def build_node(rd: Path, cfg: dict, layer: dict, node: dict, pl: dict, ctx: dict
     v2 = dict(v, previous=ans, errors=res["errors"])
     ans2 = llm.complete_json(rd, task + ".fix", "course_step_fix", v2, schema=schema)
     res2 = assemble(node, ans2, actx)
-    res2["fixed_errors"] = res["errors"]
+    if len(res2["errors"]) > len(res["errors"]):
+        # The repair rendered to the same paths. Restore images belonging to the first answer.
+        return assemble(node, ans, actx), 2
+    res2["fixed_errors"] = [error for error in res["errors"] if error not in res2["errors"]]
     return res2, 2
 
 
