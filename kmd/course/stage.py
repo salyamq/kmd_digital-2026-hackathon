@@ -566,6 +566,23 @@ def _redraws_for(rd: Path, nid: str) -> list[dict]:
             and nid in (m.get("node_ids") or []) and (rd / "illustrations" / m["file"]).exists()]
 
 
+def redraw_ills(rd: Path, nid: str) -> list[dict]:
+    """Step illustrations for the book-figure redraws of node `nid` (also used by the site build)."""
+    out = []
+    for k, m in enumerate(_redraws_for(rd, nid)):
+        fig = (m.get("redrawn_from") or {}).get("figure") or m.get("figure")
+        out.append({
+            "id": f"ill-r{k+1}", "template": m.get("template") or "visuals", "class": m.get("class") or "A",
+            "provenance": m.get("provenance") or "перерисовка рисунка книги", "caption": m.get("caption", ""),
+            "alt": m.get("alt") or m.get("caption", ""), "file": f"illustrations/{m['file']}", "renderer": "visuals",
+            "redrawn_from": m.get("redrawn_from") or {"figure": fig, "page": m.get("page")},
+            "exaggerations": m.get("exaggerations") or [], "approximations": m.get("approximations") or [],
+            "claim_ids": m.get("claim_ids", []), "pages": [m["page"]] if m.get("page") else [],
+            "after_block": "book_figures", "redraw": True,
+        })
+    return out
+
+
 def write_step(rd: Path, cfg: dict, layer: dict, node: dict, pl: dict, ctx: dict, res: dict) -> tuple[dict, list, list]:
     nid = node["id"]
     claims = {c["id"]: c for c in node.get("claims", [])}
@@ -581,18 +598,8 @@ def write_step(rd: Path, cfg: dict, layer: dict, node: dict, pl: dict, ctx: dict
                 "file": m["file"], "renderer": "visuals", "claim_ids": m.get("claim_ids", []),
                 "pages": _pages(m.get("claim_ids", []), claims) or ([m["page"]] if m.get("page") else []), "after_block": m.get("after_block") or "how",
             })
-    # book figures redrawn by code (visuals redraw stage): runs/<ch>/illustrations/redraws.json
-    for k, m in enumerate(_redraws_for(rd, nid)):
-        fig = (m.get("redrawn_from") or {}).get("figure") or m.get("figure")
-        ills.append({
-            "id": f"ill-r{k+1}", "template": m.get("template") or "visuals", "class": m.get("class") or "A",
-            "provenance": m.get("provenance") or "перерисовка рисунка книги", "caption": m.get("caption", ""),
-            "alt": m.get("alt") or m.get("caption", ""), "file": f"illustrations/{m['file']}", "renderer": "visuals",
-            "redrawn_from": m.get("redrawn_from") or {"figure": fig, "page": m.get("page")},
-            "exaggerations": m.get("exaggerations") or [], "approximations": m.get("approximations") or [],
-            "claim_ids": m.get("claim_ids", []), "pages": [m["page"]] if m.get("page") else [],
-            "after_block": "book_figures", "redraw": True,
-        })
+    # book figures redrawn by code (visuals redraw stage)
+    ills += redraw_ills(rd, nid)
     if not ills:
         errors.append("на шаге нет ни одной иллюстрации")
 

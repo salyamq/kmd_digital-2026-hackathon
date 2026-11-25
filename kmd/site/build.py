@@ -17,6 +17,7 @@ from pathlib import Path
 import jinja2
 
 from ..config import chapter_config, read_json, run_dir, write_json
+from ..course.stage import redraw_ills
 
 HERE = Path(__file__).resolve().parent
 STATIC = HERE / "static"
@@ -318,6 +319,14 @@ def build(chapter: str) -> Path:
 
     # illustrations: inline builtin SVG (theme-aware), copy visuals files
     for s in steps:
+        # pick up book-figure redraws that appeared after `kmd course` ran
+        have = {i.get("file") for i in s.get("illustrations", [])}
+        s.setdefault("illustrations", []).extend(i for i in redraw_ills(rd, s["node_id"]) if i["file"] not in have)
+        redrawn = {str((i.get("redrawn_from") or {}).get("figure")) for i in s["illustrations"] if i.get("redraw")}
+        for b in s.get("blocks", []):
+            if b.get("kind") == "book_figures":
+                for f in b.get("items", []):
+                    f["redrawn"] = str(f.get("number")) in redrawn
         for ill in s.get("illustrations", []):
             f = rd / ill["file"] if not Path(ill["file"]).is_absolute() else Path(ill["file"])
             ill["inline"] = None
@@ -339,8 +348,15 @@ def build(chapter: str) -> Path:
         s["media"] = find_media(rd, site, s, scenes.get(s["node_id"]))
         s["format_label"] = format_label(s)
         # related steps
-        s["relies_on"] = [{"title": title_of[l["to"]], "url": url_of[l["to"]], "index": index_of[l["to"]], "type": LINK_RU.get(l.get("type"), l.get("type"))}
-                          for l in s.get("links", []) if l.get("to") in url_of]
+        rel: dict[str, dict] = {}
+        for l in s.get("links", []):
+            if l.get("to") not in url_of:
+                continue
+            r = rel.setdefault(l["to"], {"title": title_of[l["to"]], "url": url_of[l["to"]], "index": index_of[l["to"]], "types": []})
+            t = LINK_RU.get(l.get("type"), l.get("type"))
+            if t not in r["types"]:
+                r["types"].append(t)
+        s["relies_on"] = [dict(r, type=", ".join(r["types"])) for r in rel.values()]
         s["used_by"] = []
     for s in steps:
         for r in s["relies_on"]:
