@@ -1,0 +1,490 @@
+[
+  {
+    "node_id": "geo.latyshova.ch5.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Н",
+      "threshold": "Геофизика скважин не «видит» нефть: по откликам приборов решают цепочку задач — от литологии к коллекторам и их насыщению, и сложные случаи требуют количественной интерпретации."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Вводный узел типа И без собственного механизма: перечень задач ГИС удобнее прочитать текстом с иллюстрацией."
+  },
+  {
+    "node_id": "geo.latyshova.s17.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Качество геофизических данных задаётся ещё при бурении: тип и параметры промывочной жидкости определяют, какие методы вообще будут работать."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: связующий узел о выборе комплекса; процесса для показа нет, достаточно текста."
+  },
+  {
+    "node_id": "geo.latyshova.s18.01",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Коллекторы различаются формой порового пространства (поры, трещины, каверны), и от этого зависит, какими методами их искать."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: классификация разрезов и коллекторов — много типов и признаков, лучше закрепляется карточками."
+  },
+  {
+    "node_id": "geo.latyshova.s17.02",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "И",
+      "threshold": "Против проницаемого пласта скважина «сужается» из-за глинистой корки — это прямой след фильтрации, а не дефект ствола."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип М: невидимый процесс (фильтрат уходит в пласт, растёт корка, ствол сужается) становится видимым; цепочка причина → следствие укладывается в один шортс."
+  },
+  {
+    "node_id": "geo.latyshova.s17.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Н",
+      "threshold": "Чем больше раствор «давит» на пласт и чем больше отдаёт воды, тем глубже изменён пласт у скважины — и тем хуже его видят приборы."
+    },
+    "video_criteria": [
+      "cause_effect"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип М/Н: зависимость глубины проникновения и корки от водоотдачи и репрессии — новичку полезно самому подвигать параметр раствора."
+  },
+  {
+    "node_id": "geo.latyshova.s17.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Одни и те же условия улучшают одни методы и ухудшают другие: солёный фильтрат «гасит» ПС и микрозонды, но облегчает оценку продуктивности по разноглубинной электрометрии."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип И: контринтуитивно — солёный фильтрат «гасит» СП и микрозонды, но помогает электрометрии; интерактив с ползунком минерализации на кривых."
+  },
+  {
+    "node_id": "geo.latyshova.s17.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Нет корки — нет и привычных признаков коллектора: при другом растворе меняется весь набор работающих методов."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/И: сравнение растворов и применимых методов — справочный текст."
+  },
+  {
+    "node_id": "geo.latyshova.s18.02",
+    "format": "cards",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Каждый метод ГИС измеряет свой физический отклик, поэтому методы делятся на группы по задачам, которые они решают."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Р: соответствие «метод → задача → условие применимости» — материал для карточек."
+  },
+  {
+    "node_id": "geo.latyshova.s18.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Ф",
+      "threshold": "Нефть по ГИС видна только через сравнение: сопротивление пласта делят на сопротивление, которое было бы у того же пласта с водой; одного сопротивления мало."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "invisible_visible"
+    ],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип И: контринтуитивная пороговая идея «высокое сопротивление ещё не нефть» — сравнение с водонасыщенным пластом показывается одной сценой."
+  },
+  {
+    "node_id": "geo.latyshova.s18.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Классификация методов условна: почти каждый метод косвенно говорит и о других свойствах, и надёжный разрез получается только из полного комплекса при правильном бурении."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: обобщающий узел о взаимодополнении методов без отдельного процесса."
+  },
+  {
+    "node_id": "geo.latyshova.s19.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Литологию не «читают» с одной кривой: её собирают из суммы признаков разных методов, и при незнакомом разрезе сначала строят условную колонку по физическим признакам."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр: короткая процедура из двух операций — текст со схемой шагов."
+  },
+  {
+    "node_id": "geo.latyshova.s19.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "И",
+      "threshold": "Каждая порода оставляет «подпись» сразу на нескольких кривых; узнают породу по сочетанию, а не по одной кривой."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Р держится на таблице 21 — таблицы не втискиваются в шортс; интерактив: выбрать породу и увидеть её «подпись» на кривых."
+  },
+  {
+    "node_id": "geo.latyshova.s19.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Сложность задачи определяет разрез: в простом хватает электрических методов, в смешанном нужна количественная интерпретация с геологическими сведениями."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: правило выбора между простым и количественным подходом — текст."
+  },
+  {
+    "node_id": "geo.latyshova.s20.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Коллектор выдаёт себя тем, что пропускает фильтрат: корка, расхождение микрозондов и зона проникновения — следы фильтрации, а не самой нефти."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип И/Р: прямые признаки коллектора — след фильтрации на кавернограмме и микрозондах; прибор в скважине и синхронная кривая из одной модели."
+  },
+  {
+    "node_id": "geo.latyshova.s20.02",
+    "format": "long",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Если один замер не различает коллектор, наблюдают процесс во времени: зона проникновения формируется или расформировывается только в коллекторе."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "scale_jump"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип И/М на нескольких масштабах: радиальный профиль сопротивления вокруг скважины и его изменение во времени при повторных замерах — разбор 16:9 с синхронными видами (разрез у скважины + кривые)."
+  },
+  {
+    "node_id": "geo.latyshova.s20.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Граница «коллектор / неколлектор» — не свойство породы само по себе, а порог проницаемости, зависящий от флюида и от экономики района."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н: порог «коллектор/неколлектор» зависит от экономики — ползунок рентабельного дебита сдвигает порог проницаемости."
+  },
+  {
+    "node_id": "geo.latyshova.s20.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Ф",
+      "threshold": "Экономический порог (дебит) переводится цепочкой формул и корреляций в линию на каротажной диаграмме."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/Ф: цепочка формул и корреляций — формулы место в тексте, а не в ролике."
+  },
+  {
+    "node_id": "geo.latyshova.s20.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Ф",
+      "threshold": "Характер насыщения определяется сравнением: сопротивление пласта против сопротивления, которое он имел бы с водой; это связывает в одно уравнение все методы комплекса."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип И/Ф: параметр насыщения как отношение — интерактив, где пористость меняет «водное» сопротивление и вывод."
+  },
+  {
+    "node_id": "geo.latyshova.s20.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Когда пористость сильно меняется, сопротивления нефтеносных и водоносных пластов перекрываются — тогда решает только сравнение сопротивления с «водным» сопротивлением для той же пористости."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр: три способа сопоставления описаны процедурно; показ — в соседних узлах (палетка, нормализация)."
+  },
+  {
+    "node_id": "geo.latyshova.s20.07",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Насыщение определяют, нанося точку пласта на поле графиков: область, куда она попала (неколлектор, чистая нефть, нефть с водой, вода), и есть ответ."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Н/Р: решение на данных — нанести точку (ρп, kп) на палетку и получить класс; примеры 46–47 автора готовые кейсы."
+  },
+  {
+    "node_id": "geo.latyshova.s20.08",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Граница «продуктивный/непродуктивный» бывает двух родов — «чистая нефть» и «промышленный приток», и способ её получения определяет, когда она станет доступна."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: два вида критических значений и два способа их получения — текст."
+  },
+  {
+    "node_id": "geo.latyshova.s20.09",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Граница «нефть / нефть с водой / вода» задаётся физикой течения: при какой водонасыщенности течёт только нефть, обе фазы или только вода."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Пр/Н: кривые фазовых проницаемостей — ползунок водонасыщенности показывает, какая фаза течёт."
+  },
+  {
+    "node_id": "geo.latyshova.s20.10",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Между «точно нефть» и «точно вода» лежит законная зона неопределённости — двухфазное насыщение, где геофизика честно не даёт однозначного ответа."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "Тип Н: шкала решения Pн с зоной неопределённости; примеры 49–50 автора как задания на данных."
+  },
+  {
+    "node_id": "geo.latyshova.s20.11",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "У глинистого коллектора пороги насыщения свои: для решения нужен третий параметр — геофизический показатель глинистости."
+    },
+    "video_criteria": [],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Пр/Н держится на таблице 22 и примерах 51–53 — практикум с парой (Pн, αСП), а не ролик."
+  },
+  {
+    "node_id": "geo.latyshova.s20.12",
+    "format": "long",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": "Водонефтяной контакт часто не линия, а переходная зона; его положение — результат выбранного критерия, а не очевидная граница."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "scale_jump",
+      "counterintuitive"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип Пр/П: переходная зона у ВНК — разрез пласта, кривая сопротивления и шкала решения рядом; контринтуитивно, что контакт — результат критерия."
+  },
+  {
+    "node_id": "geo.latyshova.s20.13",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Газ за обсадной колонной «проявляется» не сразу: показания нейтронного метода растут по мере того, как уходит фильтрат, — время становится измерительным инструментом."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип И/М: газ «проявляется» на НГМ по мере расформирования зоны проникновения — изменение во времени в одной сцене."
+  },
+  {
+    "node_id": "geo.latyshova.s20.14",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "Пр",
+      "threshold": "Эффективная толщина — это не толщина пласта, а пласт минус все прослои неколлектора, которые надо распознать по своим признакам."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: распознавание трёх типов прослоев неколлектора по признакам — карточки."
+  },
+  {
+    "node_id": "geo.latyshova.s20.15",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Когда слои тоньше разрешения приборов, их нельзя увидеть — но можно вычислить их долю по усреднённому сопротивлению пачки."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Тип Ф/Пр: формулы (63)–(64) — интерактив, где доля глинистых прослоев меняет сопротивление пачки и эффективную толщину."
+  },
+  {
+    "node_id": "geo.latyshova.s20.16",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Плотные прослои почти не меняют сопротивление пачки и не видны на СП и ГМ — их учитывают отдельными методами или по керну."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр: учёт плотных прослоев и задачи — текст с формулой (65)."
+  },
+  {
+    "node_id": "geo.latyshova.s20.17",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Практикум-задачи без нового механизма — текст."
+  },
+  {
+    "node_id": "geo.latyshova.s20.18",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "И",
+      "threshold": "В низкопористых карбонатах фильтрат уходит глубже, и сопротивление коллектора становится похожим на сопротивление неколлектора — привычные признаки слабеют."
+    },
+    "video_criteria": [
+      "cause_effect",
+      "counterintuitive"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип М/И: причинная цепочка «низкая пористость → глубже проникновение → сопротивления коллектора и неколлектора сравнялись»."
+  },
+  {
+    "node_id": "geo.latyshova.s20.19",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Если масштабировать кривую сопротивления так, чтобы она совпала с кривой пористости в «пустых» пластах, то любое расхождение указывает на коллектор с нефтью."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Пр/И: нормализацию лучше сделать руками — совместить две кривые в водоносных интервалах и увидеть расхождение."
+  },
+  {
+    "node_id": "geo.latyshova.s20.20",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Полный цикл решения на данных: наложение кривых → продуктивный интервал → ВНК по критическому Pн → эффективная толщина."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Н/Пр: полный цикл решения на данных (пример 54): наложение кривых → продуктивный интервал → ВНК → эффективная толщина."
+  },
+  {
+    "node_id": "geo.latyshova.s20.21",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Граничная пористость карбонатов не универсальна: она зависит от структуры пор, и чужой порог даёт серьёзные ошибки в эффективной толщине."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н/Р: таблица 23 и пример 55 — интерактив «выбери тип коллектора — получи порог», показывающий цену неверного порога."
+  }
+]
