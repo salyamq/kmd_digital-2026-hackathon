@@ -60,19 +60,25 @@ def make_script(rd: Path, node: dict, scene: dict, fmt: str, entries: list[dict]
 
 
 def synth_all(phrases: list[dict], entries: list[dict], cache: Path, voice: str, rate: str) -> tuple[dict, list[str]]:
-    out, ear = {}, []
+    """All phrases with ONE engine/voice: the first engine that voices every phrase wins (TZ: one voice per series;
+    on a voice failure the whole video switches)."""
+    says, ear = {}, []
     for p in phrases:
         say, used = tts.apply_dict(p["text"], entries)
+        says[p["id"]] = say
         ear += used
-        out[p["id"]] = tts.synth(say, cache, voice=voice, rate=rate)
-        out[p["id"]]["say"] = say
-    engines = {v["engine"] for v in out.values()}
-    if len(engines) > 1:  # one voice for the whole video: redo everything with the fallback
-        for p in phrases:
-            say = out[p["id"]]["say"]
-            out[p["id"]] = tts.synth(say, cache / "fallback", voice="__force_fallback__", rate=rate, retries=0)
-            out[p["id"]]["say"] = say
-    return out, sorted(set(ear))
+    last = None
+    for eng in tts.engine_order():
+        out = {}
+        try:
+            for p in phrases:
+                out[p["id"]] = tts.synth(says[p["id"]], cache, engine=eng, voice=voice, rate=rate)
+                out[p["id"]]["say"] = says[p["id"]]
+            return out, sorted(set(ear))
+        except Exception as e:  # noqa: BLE001
+            last = e
+            print(f"[video] TTS engine {eng} failed ({e}); switching the whole video to the next engine")
+    raise RuntimeError(f"all TTS engines failed: {last}")
 
 
 def _wpm(timeline: dict) -> float:

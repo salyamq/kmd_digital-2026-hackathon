@@ -105,8 +105,9 @@ def synth_logs(layers: list[dict], lith_table: dict, fluids: dict, *, rw=0.05, r
         raw["RS"][sel] = rxo
         if p["permeable"]:
             rmc = 1.5 * rm
-            raw["MINV"][sel] = rmc
-            raw["MNOR"][sel] = 0.5 * rmc + 0.5 * min(rxo, 4 * rmc) + 0.6 * rmc
+            # micro-inverse reads mostly the mud cake, micro-normal sees deeper into the flushed zone
+            raw["MINV"][sel] = 1.2 * rmc
+            raw["MNOR"][sel] = 1.2 * rmc + 0.35 * max(min(rxo, 8 * rmc) - rmc, 0.0)
         else:
             v = min(rt, 30.0) if p["vsh"] < 0.5 else rt
             raw["MINV"][sel] = v

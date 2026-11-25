@@ -1,0 +1,271 @@
+[
+  {
+    "node_id": "geo.barenblatt.s4.01",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Давление в упругом пласте подчиняется тому же уравнению, что и температура при теплопроводности, — значит, возмущение давления «диффундирует»."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: давление «растекается», как тепло, — невидимый процесс становится видимым; опровергает «волну как звук»."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: упрощения модели — текст."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Пр: постановка и преобразование Лапласа — формулы в тексте."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.04",
+    "format": "long",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Возмущение давления за время t заметно лишь на расстоянии порядка √(κt): при малых временах пласт «не знает» о своей границе и ведёт себя как бесконечный."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: профиль erfc и закон √t — разбор 16:9: разрез пласта и график давления из одной модели, ползунок времени."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Время выхода на стационар растёт как квадрат размера: секунды для блока породы, часы между скважинами, десятилетия для водонапорной системы."
+    },
+    "video_criteria": [
+      "scale_jump"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: τ ≈ L²/(κπ²) — интерактив с ползунком размера от блока до водонапорной системы (скачок масштаба)."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Ф",
+      "threshold": "Сложную систему упрощают, сравнивая собственные времена элементов: одни уже стационарны, другие только начали меняться."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/Ф: приём разделения по временам — текст."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: радиальная постановка — текст с формулами."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.08",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "В промежуточной асимптотике распределение давления не зависит от радиуса скважины, а давление на скважине линейно по ln t."
+    },
+    "video_criteria": [],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: логарифмический рост давления на скважине — интерактивный график p(ln t)."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.09",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Остановка скважины — эксперимент: наклон прямой p(ln t) даёт гидропроводность пласта."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Пр/И: решение на данных — по КВД (рис. 5) найти наклон прямой и гидропроводность."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.10",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Радиус скважины в формуле — «кажущийся»; надёжнее мерить пьезопроводность по реакции соседней скважины, где масштаб — известное расстояние."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Пр/Н: гидропрослушивание — интерактив: импульс в одной скважине и отклик в соседней."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/М: ограничения метода КВД — текст."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Отношение изображений давления и дебита — «паспорт» пласта, не зависящий от того, как работала скважина."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Пр: метод преобразования Лапласа КВД — формулы в тексте."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.13",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Ф",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/Ф: обработка Ψ(τ) — текст."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.14",
+    "format": "short",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "П",
+      "threshold": "Кривая восстановления давления «видит» и пласт вблизи скважины, и пласт дальше — разные участки кривой дают разные зоны."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Н/П: загрязнённая зона у скважины проявляется на КВД — причина → следствие."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.15",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Точные решения часто необозримы, а исходные данные неточны — поэтому простое приближение с «областью влияния» практичнее."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: зачем приближения — текст."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.16",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Пр: схема метода интегральных соотношений — формулы в тексте."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.17",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Уже второе простое приближение даёт скорость притока, близкую к точной, — и зона возмущения растёт как √(κt)."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: сравнение приближений с точным решением (рис. 6) — интерактив переключения порядка приближения."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.18",
+    "format": "short",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "time_change"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: радиус влияния скважины растёт как √(κt) — изменение во времени в одной сцене."
+  },
+  {
+    "node_id": "geo.barenblatt.s4.19",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Пока зона возмущения не дошла до контура, пласт ведёт себя как бесконечный; после — давление экспоненциально выходит на стационар."
+    },
+    "video_criteria": [
+      "time_change"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: две стадии — бесконечный пласт и выход на стационар — интерактив с ползунком времени."
+  }
+]

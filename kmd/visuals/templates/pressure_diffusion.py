@@ -52,8 +52,11 @@ class PressureDiffusion(Template):
             "geometry": {"enum": ["radial", "linear"], "default": "radial"},
             "bc": {"enum": ["const_rate", "const_pressure"], "default": "const_rate",
                    "description": "на скважине/галерее: постоянный дебит или постоянное забойное давление"},
-            "method": {"enum": ["exact", "pssc", "both"], "default": "exact",
-                       "description": "точное решение, ПССС или оба для сравнения"},
+            "method": {"enum": ["exact", "pssc", "both", "exact_log"], "default": "exact",
+                       "description": "точное решение, ПССС, оба для сравнения, или точное + логарифмическое приближение у скважины (радиальный поток, постоянный дебит)"},
+            "r_scale": {"enum": ["linear", "log"], "default": "linear", "description": "шкала расстояния на профиле p(r)"},
+            "near_zone_factor": {"type": ["number", "null"], "default": None,
+                                 "description": "отметить ближнюю зону r² ≤ factor·4κt (например 0.03 по книге)"},
             "k_md": {"type": "number", "exclusiveMinimum": 0, "default": 100, "description": "проницаемость, мД"},
             "mu_mpas": {"type": "number", "exclusiveMinimum": 0, "default": 1.0, "description": "вязкость, мПа·с"},
             "h_m": {"type": "number", "exclusiveMinimum": 0, "default": 10},
@@ -90,6 +93,13 @@ class PressureDiffusion(Template):
         geom, bc = p["geometry"], p["bc"]
         kw = dict(kappa=s["kappa"], p0=s["p0"], q=s["q"], pw=s["pw"], k=s["k"], mu=s["mu"], h=s["h"], B=s["B"],
                   rw=s["rw"])
+        if method == "log":
+            def flog(x, tt):
+                x = np.asarray(x, dtype=float)
+                u = x ** 2 / (4 * kw["kappa"] * max(tt, 1e-9))
+                v = kw["p0"] - kw["q"] * kw["mu"] / (4 * math.pi * kw["k"] * kw["h"]) * (-0.5772 - np.log(u))
+                return np.where(v <= kw["p0"], v, np.nan)
+            return flog
         f = models.diffusion_exact if method == "exact" else models.diffusion_pssc
         return lambda x, tt: f(geom, bc, x, tt, **kw)
 
@@ -103,8 +113,8 @@ class PressureDiffusion(Template):
         T = p["t_max_h"] * 3600 * (1.0 if t is None else max(float(t), 1e-4))
         rmax = self._rmax(p)
         x0 = s["rw"] if p["geometry"] == "radial" else 0.0
-        x = np.linspace(x0, rmax, 400)
-        methods = ["exact", "pssc"] if p["method"] == "both" else [p["method"]]
+        x = np.geomspace(max(x0, 1e-3), rmax, 400) if p["r_scale"] == "log" else np.linspace(x0, rmax, 400)
+        methods = {"both": ["exact", "pssc"], "exact_log": ["exact", "log"]}.get(p["method"], [p["method"]])
         prof = {m: self._fn(p, m)(x, T) for m in methods}
         front = float(models.pssc_front(p["geometry"], p["bc"], T, kappa=s["kappa"], rw=s["rw"]))
         r_obs = p.get("r_obs_m") or rmax * 0.3
@@ -112,7 +122,9 @@ class PressureDiffusion(Template):
         hist = {}
         for m in methods:
             f = self._fn(p, m)
-            hist[m] = {"obs": np.array([float(f(np.array([r_obs]), tt)[0]) for tt in th])}
+            hist[m] = {}
+            if "obs" in p["history_points"]:
+                hist[m]["obs"] = np.array([float(f(np.array([r_obs]), tt)[0]) for tt in th])
             if p["bc"] == "const_rate" and "well" in p["history_points"]:
                 hist[m]["well"] = np.array([float(f(np.array([x0]), tt)[0]) for tt in th])
         return {"x": x, "T": T, "profiles": prof, "front": front, "r_obs": r_obs, "th": th, "hist": hist,
@@ -132,14 +144,15 @@ class PressureDiffusion(Template):
         if params["bc"] == "const_rate" and params["q_m3_day"] <= 0:
             iss.append(Issue("warning", "injection", "дебит ≤ 0: нагнетание"))
         st = self.state(params, 1.0)
-        pmin = min(float(np.min(v)) for v in st["profiles"].values())
+        pmin = min(float(np.nanmin(v)) for v in st["profiles"].values())
         if pmin <= 0:
             iss.append(Issue("error", "negative_pressure", "давление стало ≤ 0 — параметры неправдоподобны"))
         return iss
 
     def describe(self, params):
         g = "вокруг скважины" if params["geometry"] == "radial" else "у галереи"
-        m = {"exact": "точное решение", "pssc": "метод ПССС", "both": "точное решение и ПССС"}[params["method"]]
+        m = {"exact": "точное решение", "pssc": "метод ПССС", "both": "точное решение и ПССС",
+             "exact_log": "точное решение и логарифмическое приближение у скважины"}[params["method"]]
         return (f"Распределение давления {g} в разные моменты после пуска ({m}); "
                 f"давление у забоя ниже, вдали равно начальному {params['p0_mpa']:g} МПа; область возмущения "
                 f"растёт пропорционально корню из времени.")
@@ -165,8 +178,8 @@ class PressureDiffusion(Template):
                 rects.append([x0, y0 + (n - 1 - i) * (hh + gap), w, hh])
         res_axes = []
         pal = sg["pressure"]
-        col = {"exact": pal["exact_color"], "pssc": pal["approx_color"]}
-        lab = {"exact": "точное решение", "pssc": "ПССС (приближённо)"}
+        col = {"exact": pal["exact_color"], "pssc": pal["approx_color"], "log": pal["approx_color"]}
+        lab = {"exact": "точное решение", "pssc": "ПССС (приближённо)", "log": "логарифмическая формула"}
         xl = "расстояние от скважины r, м" if p["geometry"] == "radial" else "расстояние от галереи x, м"
         T_h = st["T"] / 3600
         exag = []
@@ -194,14 +207,24 @@ class PressureDiffusion(Template):
                     ax.text(st["front"], ax.get_ylim()[0], " R(t)" if p["geometry"] == "radial" else " l(t)",
                             color=pal["approx_color"], fontsize=ctx.pt(0.8), va="bottom", ha="left")
                 if p["show_flow"]:
-                    ya = p["p0_mpa"] - 0.12 * (p["p0_mpa"] - min(float(np.min(v_)) for v_ in st["profiles"].values()) / 1e6)
+                    ya = p["p0_mpa"] - 0.12 * (p["p0_mpa"] - min(float(np.nanmin(v_)) for v_ in st["profiles"].values()) / 1e6)
                     ax.annotate("", xy=(st["rmax"] * 0.55, ya), xytext=(st["rmax"] * 0.8, ya),
                                 arrowprops=dict(arrowstyle="-|>", color="#455A64", lw=1.6))
                     ax.text(st["rmax"] * 0.675, ya, "приток\n", ha="center", va="bottom", fontsize=ctx.pt(0.72),
                             color="#455A64")
                 ax.set_xlabel(xl)
                 ax.set_ylabel("давление p, МПа")
-                ax.set_xlim(0, st["rmax"])
+                if p["r_scale"] == "log":
+                    ax.set_xscale("log")
+                    ax.set_xlim(st["x"][0], st["rmax"])
+                else:
+                    ax.set_xlim(0, st["rmax"])
+                if p.get("near_zone_factor"):
+                    rz = math.sqrt(p["near_zone_factor"] * 4 * st["kappa"] * st["T"])
+                    ax.axvspan(st["x"][0], rz, color=pal["exact_color"], alpha=0.08, lw=0)
+                    ax.axvline(rz, color=pal["exact_color"], lw=1.0, ls=":")
+                    ax.text(rz, ax.get_ylim()[1], " ближняя зона ", ha="right", va="top", fontsize=ctx.pt(0.72),
+                            color=pal["exact_color"])
                 ax.set_title(f"p(r) через {T_h:.3g} ч после пуска", fontsize=ctx.pt(0.95))
                 if len(st["profiles"]) > 1:
                     ax.legend(loc="lower right", fontsize=ctx.pt(0.75), frameon=True)
@@ -209,19 +232,23 @@ class PressureDiffusion(Template):
             elif v == "history":
                 th = st["th"] / 3600
                 for m, hd in st["hist"].items():
-                    ax.plot(th, hd["obs"] / 1e6, color=col[m], lw=2.0, ls="-" if m == "exact" else "--",
-                            label=f"r = {st['r_obs']:.0f} м, {lab[m]}")
+                    if "obs" in hd:
+                        ax.plot(th, hd["obs"] / 1e6, color=col[m], lw=2.0, ls="-" if m == "exact" else "--",
+                                label=f"r = {st['r_obs']:.0f} м, {lab[m]}")
                     if "well" in hd:
-                        ax.plot(th, hd["well"] / 1e6, color=col[m], lw=1.2, alpha=0.6, ls="-" if m == "exact" else "--",
+                        ax.plot(th, hd["well"] / 1e6, color=col[m], lw=2.0, ls="-" if m == "exact" else "--",
                                 label=f"забой, {lab[m]}")
                 ax.axvline(T_h, color="#FFA000", lw=1.4)
                 for m, hd in st["hist"].items():
-                    yv = float(np.interp(T_h, th, hd["obs"] / 1e6))
-                    ax.plot([T_h], [yv], "o", color=col[m], ms=ctx.base_px * 0.45, mec="white")
+                    for key in ("obs", "well"):
+                        if key in hd:
+                            yv = float(np.interp(T_h, th, hd[key] / 1e6))
+                            if np.isfinite(yv):
+                                ax.plot([T_h], [yv], "o", color=col[m], ms=ctx.base_px * 0.45, mec="white")
                 ax.set_xlabel("время после пуска t, ч")
                 ax.set_ylabel("давление p, МПа")
                 ax.set_xlim(0, p["t_max_h"])
-                ax.set_title("p(t) в точке наблюдения", fontsize=ctx.pt(0.95))
+                ax.set_title("p(t): давление во времени", fontsize=ctx.pt(0.95))
                 ax.legend(loc="upper right", fontsize=ctx.pt(0.7))
                 ax.grid(color=sg["palette"]["grid"], lw=0.5)
             elif v == "plan":
@@ -232,7 +259,7 @@ class PressureDiffusion(Template):
                 rr = np.hypot(X, Y) if p["geometry"] == "radial" else np.abs(X)
                 rr = np.maximum(rr, st["x"][0])
                 P = np.interp(rr, st["x"], st["profiles"][m]) / 1e6
-                vmin = min(float(np.min(v_)) for v_ in st["profiles"].values()) / 1e6
+                vmin = min(float(np.nanmin(v_)) for v_ in st["profiles"].values()) / 1e6
                 from matplotlib.colors import PowerNorm
                 dP = p["p0_mpa"] - P
                 im = ax.imshow(dP, extent=[-R, R, -R, R], origin="lower", cmap=pal["cmap"] + "_r",

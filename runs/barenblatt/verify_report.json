@@ -1,0 +1,42 @@
+{
+  "chapter": "barenblatt",
+  "ok": true,
+  "stats": {
+    "nodes": 19,
+    "claims": 114,
+    "quotes_exact": 114,
+    "quotes_fuzzy": 0,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 5
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "term_before_definition",
+      "target": "geo.barenblatt.s4.01",
+      "message": "uses «функция ψ(σ)» defined later in geo.barenblatt.s4.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.barenblatt.s4.04",
+      "message": "uses «функция ψ(σ)» defined later in geo.barenblatt.s4.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.barenblatt.s4.07",
+      "message": "uses «функция ψ(σ)» defined later in geo.barenblatt.s4.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.barenblatt.s4.08",
+      "message": "uses «функция ψ(σ)» defined later in geo.barenblatt.s4.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.barenblatt.s4.15",
+      "message": "uses «метод интегральных соотношений» defined later in geo.barenblatt.s4.16"
+    }
+  ]
+}

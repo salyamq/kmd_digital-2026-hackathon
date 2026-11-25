@@ -108,17 +108,22 @@ class RadialInvasion(Template):
         top.add_patch(Rectangle((p["rw_m"], 0), st["rxo"] - p["rw_m"], 1, fc=filt, alpha=0.35, lw=0))
         top.add_patch(Rectangle((0, 0), st["rc"], 1, fc=sg["fluids"]["mud"]["color"], alpha=0.6, lw=0))
         top.add_patch(Rectangle((st["rc"], 0), p["rw_m"] - st["rc"], 1, fc=sg["fluids"]["mud_cake"]["color"], lw=0))
-        labels = [(st["rc"] / 2, "раствор"), ((st["rxo"] + p["rw_m"]) / 2, "промытая\nзона"),
-                  ((st["rxo"] + st["ri"]) / 2, "зона\nпроникновения"), ((st["ri"] + R) / 2, "неизменённая часть пласта")]
-        for xv, txt in labels:
-            top.text(xv, 0.5, txt, ha="center", va="center", fontsize=ctx.pt(0.72), zorder=5,
-                     bbox=dict(fc="white", ec="none", alpha=0.75, pad=1))
-        top.set_title("срез от оси скважины в пласт", fontsize=ctx.pt(0.9))
-        for tool in p["tools"]:
+        labels = [(st["rc"] / 2, "раствор", 0.12), ((st["rxo"] + p["rw_m"]) / 2, "промытая зона", 0.38),
+                  ((st["rxo"] + st["ri"]) / 2, "зона проникновения", 0.62),
+                  ((st["ri"] + R) / 2, "неизменённая часть пласта", 0.5)]
+        for xv, txt, yv in labels:
+            if xv <= 0:
+                continue
+            ha = "left" if xv < 0.25 * R else "center"
+            top.annotate(txt, (xv, yv), xytext=(max(xv, 0.01 * R) if ha == "left" else xv, yv), ha=ha, va="center",
+                         fontsize=ctx.pt(0.72), zorder=5, bbox=dict(fc="white", ec="none", alpha=0.85, pad=1))
+        if ctx.mode != "video":
+            top.set_title("срез от оси скважины в пласт", fontsize=ctx.pt(0.9), pad=ctx.base_px * 2.6)
+        for i, tool in enumerate(p["tools"]):
             for a in (top, bot):
                 a.axvline(tool["radius_m"], color="#AD1457", lw=1.2, ls=":")
-            top.text(tool["radius_m"], 1.0, tool["name"], rotation=0, ha="center", va="bottom", fontsize=ctx.pt(0.68),
-                     color="#AD1457")
+            top.text(tool["radius_m"], 1.02 + 0.11 * (i % 2), tool["name"], rotation=0, ha="center" if i else "left",
+                     va="bottom", fontsize=ctx.pt(0.66), color="#AD1457", fontweight="bold")
         bot.plot(st["r"], st["R"], color=sg["curves"].get("RD", {}).get("color", "#B71C1C"), lw=2.4)
         bot.set_yscale("log")
         bot.set_xlabel("расстояние от оси скважины, м")

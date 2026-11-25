@@ -149,11 +149,20 @@ class ProcessChain(Template):
                     cy = Hpx - (j + 0.5) * Hpx / len(lay)
                     pos[n["id"]] = (cw * (i + 0.5), cy)
         else:
-            cw, ch = Wpx / maxper, Hpx / nl
-            bw, bh = min(cw * 0.86, Wpx * 0.8), ch * 0.66
-            for i, lay in enumerate(layers):
-                for j, n in enumerate(lay):
-                    pos[n["id"]] = ((j + 0.5) * Wpx / len(lay), Hpx - ch * (i + 0.5))
+            fs0 = ctx.base_px * 0.95
+            k = max(1, int(Wpx // (fs0 * 0.62 * 15 + fs0)))
+            rows = []
+            for lay in layers:
+                for j in range(0, len(lay), k):
+                    rows.append(lay[j:j + k])
+            nr = len(rows)
+            ch = Hpx / nr
+            perrow = max(len(r_) for r_ in rows)
+            bw = min(Wpx / perrow * 0.9, Wpx * 0.8)
+            bh = ch * 0.74
+            for i, row in enumerate(rows):
+                for j, n in enumerate(row):
+                    pos[n["id"]] = ((j + 0.5) * Wpx / len(row), Hpx - ch * (i + 0.5))
         fs = ctx.base_px * 0.95
         chars = max(8, int((bw - fs) / (fs * 0.66)))
         for n in params["nodes"]:
@@ -162,7 +171,7 @@ class ProcessChain(Template):
             kind = n.get("kind", "cause")
             ks = sg["process_chain"].get(kind, {"color": "#37474F", "bg": "#ECEFF1", "ru": kind})
             cx, cy = pos[n["id"]]
-            lines = textwrap.wrap(n["text"], chars)
+            lines = textwrap.wrap(n["text"], chars, break_long_words=False)
             need_h = (len(lines) + (1.4 if params["show_kind_labels"] else 0.4)) * fs * 1.3
             hh = max(bh * 0.55, min(bh, need_h))
             ax.add_patch(FancyBboxPatch((cx - bw / 2, cy - hh / 2), bw, hh,

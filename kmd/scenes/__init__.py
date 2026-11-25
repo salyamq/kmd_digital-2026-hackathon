@@ -160,7 +160,8 @@ def build_scene(rd: Path, node: dict, route: dict, fmt: str, pack: dict, max_fix
     sg = styleguide(pack.get("pack", {}).get("id") or "geology")
     v = {
         "node": slim_node(node),
-        "route": {"video_criteria": route.get("video_criteria") or [], "rationale": route.get("rationale") or ""},
+        "route": {"video_criteria": route.get("video_criteria") or [], "rationale": route.get("rationale") or "",
+                  "scene_template": route.get("scene_template") or ""},
         "format": fmt,
         "format_rules": FORMAT_RULES[fmt],
         "frames_hint": FRAMES_HINT[fmt],
