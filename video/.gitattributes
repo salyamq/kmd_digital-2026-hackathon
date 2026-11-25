@@ -1,0 +1,8 @@
+# keep data and media byte-exact on every OS (no CRLF conversion, no text diffs)
+*.las  -text
+*.csv  -text
+*.mp4  binary
+*.wav  binary
+*.otf  binary
+*.ttf  binary
+*.png  binary

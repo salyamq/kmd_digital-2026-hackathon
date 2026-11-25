@@ -1,0 +1,46 @@
+# ---- secrets: never commit ------------------------------------------------
+.env
+*.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# ---- python / tooling ------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+
+# ---- pipeline outputs (re-created by `make` / `rebuild`) ------------------
+# keep only the planning files of a video (00_brief … 03_scene_specs, reports)
+videos/*/04_models/
+videos/*/05_renders/
+videos/*/06_audio/
+videos/*/07_overlays/
+videos/*/08_final/
+# raw LLM prompts/answers and per-request logs (TTS / LLM / video API)
+videos/*/llm/
+videos/*/calls.jsonl
+videos/*/metrics.json
+videos/*/preview.png
+videos/*/timeline.json
+clips/
+frames/
+*.log
+selftest_out/
+.ocr_cache/
+test*.wav
+
+# ---- chapter text from copyrighted books -------------------------------------
+# re-create locally: python scripts/extract_pages.py --pdf <book.pdf> --pages 64-69 --out examples/ru_gr_latyshova/pages
+examples/ru_gr_latyshova/pages/p*.txt
+examples/**/*.pdf
