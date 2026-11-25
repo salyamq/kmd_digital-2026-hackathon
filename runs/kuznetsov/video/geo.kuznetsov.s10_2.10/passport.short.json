@@ -1,0 +1,935 @@
+{
+  "video_id": "short",
+  "rebuild_command": "python -m vidpipe rebuild /Users/salimtohtobaev/Documents/Codex/2026-11-25/x20/work/kmd_digital-2026-hackathon/runs/kuznetsov/tmp/vidpipe/geo.kuznetsov.s10_2.10/short",
+  "rebuild_from_scratch_command": "python -m kmd video kuznetsov geo.kuznetsov.s10_2.10 --format short --planner llm --tts microsoft",
+  "output": "short.mp4",
+  "format": "short",
+  "node_card": {
+    "node_id": "geo.kuznetsov.s10_2.10",
+    "title": "Как вода создаёт рифовые каверны",
+    "difficulty_types": [
+      "м",
+      "в"
+    ],
+    "misconception_fixed": {
+      "wrong": "",
+      "right": "",
+      "claim_id": null,
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "Природные резервуары рифов",
+      "book": "Литология природных резервуаров нефти и газа",
+      "chapter": "kuznetsov",
+      "pages": [
+        205
+      ]
+    },
+    "node_file_sha1": "dc8c26c8e488ba57"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Откуда в рифе *пустоты*?",
+      "t0": 0.25,
+      "t1": 1.793,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Предскажите, что меняется в проницаемой породе, когда вода растворяет её и уносит вещество.",
+      "t0": 2.013,
+      "t1": 7.572,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "Так возникают *каверны*. Это пустоты внутри породы, важная часть её вторичной пористости.",
+      "t0": 8.183,
+      "t1": 14.554,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c01",
+          "page": 205,
+          "quote": "Большое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c02",
+          "page": 205,
+          "quote": "Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Вода легче проходит через породу с высокой начальной *проницаемостью*. Глинистых преград в рифе почти нет.",
+      "t0": 15.183,
+      "t1": 22.541,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c03",
+          "page": 205,
+          "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества."
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c05",
+          "page": 205,
+          "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "При активном обмене вода *растворяет породу* и уносит вещество. Пустоты меняют форму и размер.",
+      "t0": 22.761,
+      "t1": 29.216,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c07",
+          "page": 205,
+          "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества."
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c11",
+          "page": 205,
+          "quote": "В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер."
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c13",
+          "page": 205,
+          "quote": "В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L6",
+      "role": "data",
+      "text": "В описании скважины автор отмечает необычно высокий приток. Он связывает его с пересечением *карстовой пещеры*.",
+      "t0": 29.817,
+      "t1": 37.464,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_2.10.c14",
+          "page": 205,
+          "quote": "Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L7",
+      "role": "bridge",
+      "text": "Гипотеза для данных: храните описание *пустот* отдельно от оценки притока и сверяйте их по скважине.",
+      "t0": 38.083,
+      "t1": 44.113,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L8",
+      "role": "transfer",
+      "text": "Где вы ожидали бы более активного растворения: при свободном обмене воды или за глинистой преградой?",
+      "t0": 44.333,
+      "t1": 50.039,
+      "sources": [],
+      "asserts_fact": false
+    }
+  ],
+  "source_table": [
+    {
+      "kind": "reference",
+      "ref": "Литология природных резервуаров нефти и газа",
+      "chapter": "kuznetsov",
+      "used_by": [],
+      "id": "src1",
+      "status": "reference"
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c01",
+      "page": 205,
+      "quote": "Большое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность",
+      "claim_text": "В рифе значима вторичная пористость, притом важнее всего каверны.",
+      "used_by": [
+        "L3"
+      ],
+      "id": "src2",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c02",
+      "page": 205,
+      "quote": "Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом.",
+      "claim_text": "Каверны образуются при активном выщелачивании, в том числе карстовом.",
+      "used_by": [
+        "L3"
+      ],
+      "id": "src3",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c03",
+      "page": 205,
+      "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.",
+      "claim_text": "Высокая первичная проницаемость рифа способствует активному выщелачиванию.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src4",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c05",
+      "page": 205,
+      "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.",
+      "claim_text": "Практическое отсутствие глинистых и других экранирующих пачек способствует выщелачиванию.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src5",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c07",
+      "page": 205,
+      "quote": "Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.",
+      "claim_text": "Эти особенности рифа и другие факторы обеспечивают активный водообмен, растворение породы и вынос вещества.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src6",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c11",
+      "page": 205,
+      "quote": "В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.",
+      "claim_text": "Каверны имеют разную форму.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src7",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c13",
+      "page": 205,
+      "quote": "В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.",
+      "claim_text": "Размеры каверн меняются от долей миллиметра до крупных карстовых пещер.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src8",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_2.10.c14",
+      "page": 205,
+      "quote": "Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе.",
+      "claim_text": "Скважина 4 на Серро-Асуль в меловом рифе дала уникальный дебит 42000 м³/сут благодаря вскрытию карстовой пещеры.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src9",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 205,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "assumption",
+      "ref": "Условный срез породы; точные размеры и начальная геометрия не измерены.",
+      "used_by": [
+        "S1"
+      ],
+      "id": "src10",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Светлая область обозначает пустоту, её заполнение не задано.",
+      "used_by": [
+        "S2"
+      ],
+      "id": "src11",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Условная схема выщелачивания; темп и форма расширения не являются расчётом.",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src12",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Показан тип пересечения, а не фактическая глубина или геометрия конкретной скважины.",
+      "used_by": [
+        "S4"
+      ],
+      "id": "src13",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено.",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src14",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Графика не даёт количественной оценки для выбора ответа.",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src15",
+      "status": "assumption"
+    }
+  ],
+  "scene_specs": [
+    {
+      "shot_id": "S1",
+      "file": "03_scene_specs/S1.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Малая пустота полностью окружена породой."
+      ],
+      "assumptions": [
+        "Условный срез породы; точные размеры и начальная геометрия не измерены."
+      ]
+    },
+    {
+      "shot_id": "S2",
+      "file": "03_scene_specs/S2.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Каверна окружена породой, без изображения нефтяного озера."
+      ],
+      "assumptions": [
+        "Светлая область обозначает пустоту, её заполнение не задано."
+      ]
+    },
+    {
+      "shot_id": "S3",
+      "file": "03_scene_specs/S3.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Центр пустоты и контур породы остаются на месте. При выщелачивании растёт размер пустоты."
+      ],
+      "assumptions": [
+        "Условная схема выщелачивания; темп и форма расширения не являются расчётом."
+      ]
+    },
+    {
+      "shot_id": "S4",
+      "file": "03_scene_specs/S4.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Ствол идёт с поверхности вниз и пересекает пустоту внутри породы."
+      ],
+      "assumptions": [
+        "Показан тип пересечения, а не фактическая глубина или геометрия конкретной скважины."
+      ]
+    },
+    {
+      "shot_id": "S5",
+      "file": "03_scene_specs/S5.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Пористость и приток остаются разными признаками.",
+        "Межзерновые пустоты не превращаются в открытое озеро."
+      ],
+      "assumptions": [
+        "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено.",
+        "Графика не даёт количественной оценки для выбора ответа."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 7.933,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S2",
+      "t0": 7.933,
+      "t1": 14.933,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S3",
+      "t0": 14.933,
+      "t1": 29.567,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S4",
+      "t0": 29.567,
+      "t1": 37.833,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S5",
+      "t0": 37.833,
+      "t1": 50.4,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    }
+  ],
+  "exaggerations": [
+    {
+      "shot": "S2",
+      "what": "Каверна показана крупным планом без масштаба."
+    },
+    {
+      "shot": "S3",
+      "what": "Изменение ускорено для показа; масштаб и длительность природного процесса не заданы."
+    },
+    {
+      "shot": "S5",
+      "what": "Увеличение условное; числовой масштаб отсутствует в источнике, размеры на экране не сопоставляются."
+    }
+  ],
+  "prediction_question": {
+    "text": "Что будет с пустотами при растворении породы и выносе вещества?",
+    "options": [
+      "Пустоты могут увеличиться.",
+      "Пустоты обязательно исчезнут."
+    ]
+  },
+  "transfer_question": {
+    "text": "Как изменится ожидание выщелачивания, если путь движения воды перекрывает глинистая пачка?"
+  },
+  "data_it_bridge": {
+    "where_in_data": "Описание пересечённых пустот и приток по скважине из примера автора.",
+    "manual_work": "Увязать приток с описанием вскрытой каверны, прежде чем делать вывод о породе.",
+    "hypotheses": [
+      "Раздельно хранить описания пустот и замеры притока и связывать их по скважине."
+    ]
+  },
+  "metrics": {
+    "person_minutes": 0.0,
+    "machine_minutes": 0.78,
+    "machine_seconds_by_stage": {
+      "script": 0.02,
+      "shotlist": 0.01,
+      "specs": 0.01,
+      "models": 0.0,
+      "audio": 0.33,
+      "layout": 0.15,
+      "render": 15.73,
+      "overlays": 0.01,
+      "compose": 30.6,
+      "qa": 0.02,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {},
+    "tts_chars": 1608,
+    "tts_audio_s": 106.8,
+    "money_note": "some external calls have unknown cost",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:35:22"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:37:00"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:37:00"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 22,
+        "audio_s": 1.5429166666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:37:18"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 91,
+        "audio_s": 5.5585,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:37:37"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 87,
+        "audio_s": 6.370916666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T20:37:46"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:43:34"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:43:58"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:43:58"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 22,
+        "audio_s": 1.5429166666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:43:58"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 91,
+        "audio_s": 5.5585,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:43:58"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 87,
+        "audio_s": 6.370916666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T20:43:58"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 104,
+        "audio_s": 7.358208333333334,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T20:44:15"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 92,
+        "audio_s": 6.455291666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T20:44:40"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 110,
+        "audio_s": 7.646583333333333,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T20:44:51"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 98,
+        "audio_s": 6.0305,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T20:45:11"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 100,
+        "audio_s": 5.706166666666666,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T20:45:18"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 22,
+        "audio_s": 1.5429166666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 91,
+        "audio_s": 5.5585,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 87,
+        "audio_s": 6.370916666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 104,
+        "audio_s": 7.358208333333334,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 92,
+        "audio_s": 6.455291666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 110,
+        "audio_s": 7.646583333333333,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 98,
+        "audio_s": 6.0305,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T20:49:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 100,
+        "audio_s": 5.706166666666666,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T20:49:52"
+      }
+    ]
+  },
+  "tools": {
+    "planner": "llm:kmd:kmd",
+    "tts": {
+      "provider": "microsoft",
+      "voice": "ru-RU-DmitryNeural",
+      "role": null,
+      "speed": null,
+      "rate": null,
+      "numbers": "words"
+    },
+    "renderer": "vidpipe.render2d (Cairo) — deterministic, from scene specs",
+    "text_layer": "vidpipe.overlays (PIL glyphs + Cairo) composited at compose time",
+    "encoder": "ffmpeg libx264 / AAC",
+    "ai_video": {
+      "provider": "none"
+    }
+  },
+  "qa_summary": {
+    "pass": 19,
+    "fail": 0,
+    "warn": 2,
+    "manual": 33,
+    "info": 2
+  },
+  "qa_failures": [],
+  "coverage_gaps": [],
+  "open_questions": [
+    "Условный срез породы; точные размеры и начальная геометрия не измерены.",
+    "Светлая область обозначает пустоту, её заполнение не задано.",
+    "Условная схема выщелачивания; темп и форма расширения не являются расчётом.",
+    "Показан тип пересечения, а не фактическая глубина или геометрия конкретной скважины.",
+    "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено.",
+    "Графика не даёт количественной оценки для выбора ответа."
+  ],
+  "datasets": [],
+  "engine": "vidpipe",
+  "node_id": "geo.kuznetsov.s10_2.10",
+  "vidpipe_format": {
+    "name": "short",
+    "size": [
+      720,
+      1280
+    ],
+    "fps": 30,
+    "duration_s": 50.4,
+    "style": "F"
+  },
+  "duration_s": 50.4,
+  "data_bridge": {
+    "where_in_data": "Описание пересечённых пустот и приток по скважине из примера автора.",
+    "manual_work": "Увязать приток с описанием вскрытой каверны, прежде чем делать вывод о породе.",
+    "hypotheses": [
+      "Раздельно хранить описания пустот и замеры притока и связывать их по скважине."
+    ]
+  },
+  "speech_check": {
+    "asr_model": "faster-whisper /Users/salimtohtobaev/Documents/Codex/2026-11-25/x20/work/kmd_digital-2026-hackathon/../asr-medium (int8, CPU, local)",
+    "wer": 0.0583,
+    "wer_stem": 0.0485,
+    "ref_words": 103,
+    "heard_text": "Откуда в рифе пустоты, предскажите, что меняется в проницаемой породе, когда вода растворяет ее и уносит вещество. Так возникают коверны. Эта пустоты внутри породы, важная часть ее вторичной пористости. Вода легче проходит через породу с высокой начальной проницаемостью. Длинистых преград в рифе почти нет, при активном обмене вода растворяет породу и уносит вещество. Пустоты меняют форму и размер. В описании скважины автор отмечает необычно высокий приток. Он связывает его с пересечением карстовой пещеры. Гипотезы для данных, храните описание пустот отдельно от оценки притока и сверяйте их по скважине, где вы ожидали бы более активного растворения, при свободном обмене воды или заглинистой преградой.",
+    "terms": [
+      {
+        "term": "Карст",
+        "ok": true
+      },
+      {
+        "term": "Проницаемость",
+        "ok": true
+      }
+    ],
+    "terms_ok": true,
+    "sync_max_s": 0.257,
+    "sync_mean_s": 0.152,
+    "sync_per_phrase": [
+      {
+        "id": "L1",
+        "heard_start": 0.0,
+        "offset": -0.25
+      },
+      {
+        "id": "L2",
+        "heard_start": 2.1,
+        "offset": 0.09
+      },
+      {
+        "id": "L3",
+        "heard_start": 8.18,
+        "offset": -0.0
+      },
+      {
+        "id": "L4",
+        "heard_start": 15.34,
+        "offset": 0.16
+      },
+      {
+        "id": "L5",
+        "heard_start": 22.82,
+        "offset": 0.06
+      },
+      {
+        "id": "L6",
+        "heard_start": 29.56,
+        "offset": -0.26
+      },
+      {
+        "id": "L7",
+        "heard_start": 38.28,
+        "offset": 0.2
+      },
+      {
+        "id": "L8",
+        "heard_start": 44.54,
+        "offset": 0.21
+      }
+    ]
+  },
+  "build_directory": "tmp/vidpipe/geo.kuznetsov.s10_2.10/short"
+}

@@ -1,0 +1,954 @@
+{
+  "video_id": "short",
+  "rebuild_command": "python -m vidpipe rebuild /Users/salimtohtobaev/Documents/Codex/2026-11-25/x20/work/kmd_digital-2026-hackathon/runs/kuznetsov/tmp/vidpipe/geo.kuznetsov.s10_3.05/short",
+  "rebuild_from_scratch_command": "python -m kmd video kuznetsov geo.kuznetsov.s10_3.05 --format short --planner llm --tts microsoft",
+  "output": "short.mp4",
+  "format": "short",
+  "node_card": {
+    "node_id": "geo.kuznetsov.s10_3.05",
+    "title": "Почему лучшие породы у края",
+    "difficulty_types": [
+      "п",
+      "м"
+    ],
+    "misconception_fixed": {
+      "wrong": "Лучшие коллекторы всегда в центре рифа.",
+      "right": "У крупных плосковершинных и атолловидных рифов лучшие зоны смещены к периферии, в область гребня и предрифового шлейфа.",
+      "claim_id": "geo.kuznetsov.s10_3.05.c01",
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "Природные резервуары рифов",
+      "book": "Литология природных резервуаров нефти и газа",
+      "chapter": "kuznetsov",
+      "pages": [
+        207
+      ]
+    },
+    "node_file_sha1": "47a5f6fb509f856f"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Где *лучшие породы* рифа?",
+      "t0": 0.25,
+      "t1": 1.867,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Предскажите: где искать их у крупного плоского рифа, на гребне у края или в лагуне?",
+      "t0": 2.087,
+      "t1": 7.233,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "У крупных рифов с плоской вершиной и у атоллов лучшие зоны смещаются *к краю*.",
+      "t0": 7.85,
+      "t1": 12.232,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c01",
+          "page": 207,
+          "quote": "В более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "На гребне действуют *волны*. Пустоты есть внутри остатков организмов и между ними.",
+      "t0": 12.85,
+      "t1": 18.78,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c03",
+          "page": 207,
+          "quote": "В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c04",
+          "page": 207,
+          "quote": "пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "Волны могут сортировать обломки. С внешней стороны рифа между крупными зёрнами преобладают *межзерновые поры*.",
+      "t0": 19.0,
+      "t1": 26.498,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c05",
+          "page": 207,
+          "quote": "Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c06",
+          "page": 207,
+          "quote": "из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью."
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c08",
+          "page": 207,
+          "quote": "В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c09",
+          "page": 207,
+          "quote": "В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L6",
+      "role": "data",
+      "text": "Сопоставьте место на разрезе и описание породы. В *лагуне* плотные мелкозернистые породы обычно менее пористы.",
+      "t0": 27.117,
+      "t1": 34.813,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c02",
+          "page": 207,
+          "quote": "распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности."
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c10",
+          "page": 207,
+          "quote": "Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.kuznetsov.s10_3.05.c11",
+          "page": 207,
+          "quote": "Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L7",
+      "role": "bridge",
+      "text": "Гипотеза для данных: сравнивайте *пористость* по зонам рифа и проверяйте границы зон по описаниям.",
+      "t0": 35.417,
+      "t1": 40.994,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L8",
+      "role": "transfer",
+      "text": "Если на разрезе указан внешний шлейф из грубых обломков, где вы ожидаете увидеть поры?",
+      "t0": 41.214,
+      "t1": 46.501,
+      "sources": [],
+      "asserts_fact": false
+    }
+  ],
+  "source_table": [
+    {
+      "kind": "reference",
+      "ref": "Литология природных резервуаров нефти и газа",
+      "chapter": "kuznetsov",
+      "used_by": [],
+      "id": "src1",
+      "status": "reference"
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c01",
+      "page": 207,
+      "quote": "В более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа",
+      "claim_text": "В более крупных плосковершинных и атолловидных рифах, особенно атоллах, зона улучшенных свойств сдвигается к периферии, в гребень и предрифовый обломочный шлейф.",
+      "used_by": [
+        "L3"
+      ],
+      "id": "src2",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c03",
+      "page": 207,
+      "quote": "В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности",
+      "claim_text": "Фации рифового гребня возникли в зоне активного воздействия волн.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src3",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c04",
+      "page": 207,
+      "quote": "пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами.",
+      "claim_text": "На гребне пористость связана с полостями внутри органических остатков, промежутками между ними и пещеровидными пустотами.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src4",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c05",
+      "page": 207,
+      "quote": "Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород",
+      "claim_text": "Волны могут образовывать валы из хорошо окатанных и отсортированных обломков рифовых пород.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src5",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c06",
+      "page": 207,
+      "quote": "из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью.",
+      "claim_text": "В таких обломочных валах высока пористость между зёрнами.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src6",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c08",
+      "page": 207,
+      "quote": "В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты",
+      "claim_text": "В предрифовом шлейфе накапливаются грубозернистые обломочные карбонаты.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src7",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c09",
+      "page": 207,
+      "quote": "В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость.",
+      "claim_text": "В отложениях предрифового шлейфа преобладают пустоты между зёрнами.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src8",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c02",
+      "page": 207,
+      "quote": "распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности.",
+      "claim_text": "Распределение пористости и проницаемости подчиняется зональности формы рифа, пород и условий обитания организмов.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src9",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c10",
+      "page": 207,
+      "quote": "Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы",
+      "claim_text": "В тыльной части рифа (внутририфовых лагунах) и в зарифовых отложениях развиты плотные микрозернистые карбонатные породы.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src10",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.kuznetsov.s10_3.05.c11",
+      "page": 207,
+      "quote": "Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость",
+      "claim_text": "Лагуны и зарифовые отложения с такими породами обычно менее пористы.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src11",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 207,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "assumption",
+      "ref": "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены.",
+      "used_by": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "id": "src12",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Синий цвет показывает условную воду в порах, без оценки насыщенности.",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src13",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено.",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src14",
+      "status": "assumption"
+    }
+  ],
+  "scene_specs": [
+    {
+      "shot_id": "S1",
+      "file": "03_scene_specs/S1.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+        "Между кадрами положение и геометрия областей сохраняются."
+      ],
+      "assumptions": [
+        "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+      ]
+    },
+    {
+      "shot_id": "S2",
+      "file": "03_scene_specs/S2.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+        "Между кадрами положение и геометрия областей сохраняются."
+      ],
+      "assumptions": [
+        "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+      ]
+    },
+    {
+      "shot_id": "S3",
+      "file": "03_scene_specs/S3.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+        "Между кадрами положение и геометрия областей сохраняются.",
+        "Во врезке показаны поры между зёрнами шлейфа, а не пустоты внутри остатков на гребне."
+      ],
+      "assumptions": [
+        "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены.",
+        "Синий цвет показывает условную воду в порах, без оценки насыщенности."
+      ]
+    },
+    {
+      "shot_id": "S4",
+      "file": "03_scene_specs/S4.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+        "Между кадрами положение и геометрия областей сохраняются."
+      ],
+      "assumptions": [
+        "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+      ]
+    },
+    {
+      "shot_id": "S5",
+      "file": "03_scene_specs/S5.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "Рассмотрена обломочная порода внешнего шлейфа.",
+        "Пустоты находятся в опорном каркасе."
+      ],
+      "assumptions": [
+        "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 7.6,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S2",
+      "t0": 7.6,
+      "t1": 12.6,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S3",
+      "t0": 12.6,
+      "t1": 26.867,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S4",
+      "t0": 26.867,
+      "t1": 35.167,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S5",
+      "t0": 35.167,
+      "t1": 46.867,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    }
+  ],
+  "exaggerations": [
+    {
+      "shot": "S3",
+      "what": "Масштаб врезки условный, числовой коэффициент для этого схематического сравнения не задан."
+    },
+    {
+      "shot": "S5",
+      "what": "Увеличение условное; числовой масштаб отсутствует в источнике, размеры на экране не сопоставляются."
+    }
+  ],
+  "prediction_question": {
+    "text": "Где вероятнее улучшенные свойства у крупного плосковершинного рифа?",
+    "options": [
+      "На периферии, в гребне и внешнем шлейфе.",
+      "В плотной внутренней лагуне."
+    ]
+  },
+  "transfer_question": {
+    "text": "Какие пустоты ожидаются в крупнозернистых обломочных породах перед рифом?"
+  },
+  "data_it_bridge": {
+    "where_in_data": "При сопоставлении зон на разрезе, описаний пород и пористости.",
+    "manual_work": "Определить, к какой зоне относится наблюдение, и сопоставить его с описанием породы.",
+    "hypotheses": [
+      "Сравнивать пористость по зонам рифа, сохраняя привязку к разрезу."
+    ]
+  },
+  "metrics": {
+    "person_minutes": 0.0,
+    "machine_minutes": 0.84,
+    "machine_seconds_by_stage": {
+      "script": 0.02,
+      "shotlist": 0.01,
+      "specs": 0.01,
+      "models": 0.0,
+      "audio": 0.35,
+      "layout": 0.29,
+      "render": 21.36,
+      "overlays": 0.0,
+      "compose": 28.22,
+      "qa": 0.02,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {},
+    "tts_chars": 1426,
+    "tts_audio_s": 93.0,
+    "money_note": "some external calls have unknown cost",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:35:23"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:41:20"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:41:20"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 1.6174583333333334,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:41:25"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 83,
+        "audio_s": 5.145583333333334,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:41:33"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:43:34"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:46:39"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:46:39"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 1.6174583333333334,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:46:39"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 83,
+        "audio_s": 5.145583333333334,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:46:39"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 76,
+        "audio_s": 4.381916666666666,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T20:46:46"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 80,
+        "audio_s": 5.9303333333333335,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T20:47:07"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 108,
+        "audio_s": 7.498375,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T20:47:15"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 108,
+        "audio_s": 7.695666666666667,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T20:47:31"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 96,
+        "audio_s": 5.576958333333334,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T20:47:41"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 86,
+        "audio_s": 5.287125,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T20:47:49"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:51:15"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T20:51:15"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 1.6174583333333334,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 83,
+        "audio_s": 5.145583333333334,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 76,
+        "audio_s": 4.381916666666666,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 80,
+        "audio_s": 5.9303333333333335,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 108,
+        "audio_s": 7.498375,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 108,
+        "audio_s": 7.695666666666667,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 96,
+        "audio_s": 5.576958333333334,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T20:51:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 86,
+        "audio_s": 5.287125,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T20:51:16"
+      }
+    ]
+  },
+  "tools": {
+    "planner": "llm:kmd:kmd",
+    "tts": {
+      "provider": "microsoft",
+      "voice": "ru-RU-DmitryNeural",
+      "role": null,
+      "speed": null,
+      "rate": null,
+      "numbers": "words"
+    },
+    "renderer": "vidpipe.render2d (Cairo) — deterministic, from scene specs",
+    "text_layer": "vidpipe.overlays (PIL glyphs + Cairo) composited at compose time",
+    "encoder": "ffmpeg libx264 / AAC",
+    "ai_video": {
+      "provider": "none"
+    }
+  },
+  "qa_summary": {
+    "pass": 19,
+    "fail": 0,
+    "warn": 2,
+    "manual": 33,
+    "info": 2
+  },
+  "qa_failures": [],
+  "coverage_gaps": [],
+  "open_questions": [
+    "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены.",
+    "Синий цвет показывает условную воду в порах, без оценки насыщенности.",
+    "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено."
+  ],
+  "datasets": [],
+  "engine": "vidpipe",
+  "node_id": "geo.kuznetsov.s10_3.05",
+  "vidpipe_format": {
+    "name": "short",
+    "size": [
+      720,
+      1280
+    ],
+    "fps": 30,
+    "duration_s": 46.867,
+    "style": "F"
+  },
+  "duration_s": 46.867,
+  "data_bridge": {
+    "where_in_data": "При сопоставлении зон на разрезе, описаний пород и пористости.",
+    "manual_work": "Определить, к какой зоне относится наблюдение, и сопоставить его с описанием породы.",
+    "hypotheses": [
+      "Сравнивать пористость по зонам рифа, сохраняя привязку к разрезу."
+    ]
+  },
+  "speech_check": {
+    "asr_model": "faster-whisper /Users/salimtohtobaev/Documents/Codex/2026-11-25/x20/work/kmd_digital-2026-hackathon/../asr-medium (int8, CPU, local)",
+    "wer": 0.0294,
+    "wer_stem": 0.0294,
+    "ref_words": 102,
+    "heard_text": "Где лучшие породы рифа, предскажите, где искать их у крупного плоского рифа на гребне у края или в лагуне. У крупных рифов с плоской вершиной и у атолов лучшие зоны смещаются к краю. На гребне действуют волны. Пустоты есть внутри остатков организмов и между ними, волны могут сортировать обломки. С внешней стороны рифа между крупными зернами преобладают межзерновые поры. Сопоставьте место на разрезе и описание породы. В лагуне плотные мелкозернистые породы обычно менее паристы. Гипотеза для данных, сравнивайте пористость по зонам рифа и проверяйте границы зон по описаниям. Если на разрезе указан внешний шлейф из грубых где вы ожидаете увидеть поры?",
+    "terms": [
+      {
+        "term": "риф",
+        "ok": true
+      },
+      {
+        "term": "атолл",
+        "ok": false
+      },
+      {
+        "term": "пористость",
+        "ok": true
+      }
+    ],
+    "terms_ok": false,
+    "sync_max_s": 0.26,
+    "sync_mean_s": 0.146,
+    "sync_per_phrase": [
+      {
+        "id": "L1",
+        "heard_start": 0.0,
+        "offset": -0.25
+      },
+      {
+        "id": "L2",
+        "heard_start": 2.2,
+        "offset": 0.11
+      },
+      {
+        "id": "L3",
+        "heard_start": 7.88,
+        "offset": 0.03
+      },
+      {
+        "id": "L4",
+        "heard_start": 12.96,
+        "offset": 0.11
+      },
+      {
+        "id": "L5",
+        "heard_start": 19.26,
+        "offset": 0.26
+      },
+      {
+        "id": "L6",
+        "heard_start": 26.94,
+        "offset": -0.18
+      },
+      {
+        "id": "L7",
+        "heard_start": 35.54,
+        "offset": 0.12
+      },
+      {
+        "id": "L8",
+        "heard_start": 41.32,
+        "offset": 0.11
+      }
+    ]
+  },
+  "build_directory": "tmp/vidpipe/geo.kuznetsov.s10_3.05/short"
+}

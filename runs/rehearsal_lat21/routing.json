@@ -1,0 +1,192 @@
+[
+  {
+    "node_id": "geo.rehearsal_lat21.s21.01",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": null,
+      "threshold": "Коллектор бывает не только с порами между зёрнами: в сложных коллекторах флюид хранится и движется по трещинам и кавернам, и обычные признаки ГИС для них не работают."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Распознавание начинается с различия по строению пустот и составу породы. Карточки помогают закрепить признаки и термины."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "П",
+      "threshold": "Ёмкость и проницаемость могут быть разнесены: плотные блоки почти не хранят и не пропускают флюид, а редкие трещины дают огромную проницаемость."
+    },
+    "video_criteria": [
+      "scale_jump",
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Для механизма и пространственной структуры полезен разрез: изменение раскрытости помогает сравнить малую ёмкость трещин с их ролью в фильтрации."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.06",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Общая пористость складывается из пор матрицы и вторичных пустот (каверн и трещин)."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Формализм лучше раскрыть переключением вкладов матрицы, каверн и трещин в общую пористость. Так формулу можно связать со строением."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.07",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Каверны добавляют коллектору ёмкость, которой нет у чисто трещинного, а проницаемость остаётся не хуже."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "scale_jump",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Пространственная схема связывает ёмкость каверн с признаками при бурении. Сравнение моделей позволяет рассмотреть условия раздельно."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.03",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "И",
+      "threshold": "Стандартный комплекс ГИС настроен на межзерновой коллектор, поэтому трещинный коллектор на нём выглядит как плотная порода."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "При распознавании важна связка признаков при бурении и неоднозначных показаний стандартного каротажа. Карточки позволяют различать наблюдение и вывод."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.04",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Пр",
+      "threshold": "Трещины можно «подсветить», управляя раствором: солёный раствор в трещинах резко снижает сопротивление при той же общей пористости."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect",
+      "counterintuitive"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Косвенное измерение становится понятнее при смене раствора в трещинах и сравнении сопротивления. Это один механизм, подходящий для короткого ролика."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "time_change"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Сопоставление дорожек и режимов измерения позволяет отдельно разобрать признаки акустики и повторных измерений."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.08",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Разные методы пористости «видят» разные пустоты: акустика — только матрицу, нейтронный и плотностной — всё; расхождение выдаёт каверны."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Сравнение пористости по нескольким методам даёт признаки для вывода о типе пустот. Практикум позволяет применить правило к показаниям."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.09",
+    "format": "long",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Коллектор выдаёт себя изменением показаний между двумя замерами, если между ними на пласт воздействовали."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Длинный разбор связывает воздействие, проникновение меченого раствора в пустоты и изменение сигнала на повторном замере."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.10",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Практикум помогает отличить два воздействия по тому, формируется или расформировывается зона проникновения, и применить правило к паре диаграмм."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.11",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Это распознавание типа по проницаемой матрице и эффективным межзерновым порам. Признаки удобно сравнить на карточках."
+  },
+  {
+    "node_id": "geo.rehearsal_lat21.s21.12",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "У трещинного коллектора характер насыщения по ГИС не определить — только испытанием; у кавернозно-трещинного — специальными исследованиями."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "При оценке насыщения набор допустимых методов зависит от типа коллектора. Практикум тренирует выбор процедуры и границы вывода по данным."
+  }
+]

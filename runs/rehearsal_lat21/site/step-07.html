@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 7. Какие сигналы выдают трещины — Выделение и оценка характера насыщения сложных коллекторов</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.rehearsal_lat21.s21.05" data-index="7">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Разбор источника</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как распознать коллектор › Шаг 7 из 12</p>
+    <h1>Какие сигналы выдают трещины</h1>
+    <p class="booktitle">В книге: «Комплекс ГИС для выделения трещинных коллекторов: АКш, акустический телевизор, наклономер, повторные СП» <span class="pg">стр. 109</span></p>
+    <p class="meta">
+      <span class="chip">≈ 8 мин</span>
+      <span class="chip">⟳ Разбор источника</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-05.html">шаг 5 «Как каротаж пропускает трещины»</a> <span class="muted">(предпосылка)</span>, <a href="step-06.html">шаг 6 «Как солёный раствор выдаёт трещины»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Трещины меняют вид волновой картины и иногда изменяют показания между повторными измерениями.</p><p>Разные приборы помогают выделить зону, подтвердить трещины и определить их ориентацию.</p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      <details class="evidence">
+        <summary>Третий метод спецкомплекса — широкополосная акустика АКш.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c01">стр. 109</a></p>
+        <blockquote class="quote"><p>«3. Исследование скважины широкополосной аппаратурой акустического метода (АКш).»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>По АКш трещины видны по сильному ослаблению волны Лэмба-Стоунли и поперечной волны.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c02">стр. 109</a></p>
+        <blockquote class="quote"><p>«интенсивное ослабление амплитуды волны Лэмба-Стоунли и поперечной волны»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>На фазокорреляционной диаграмме яркость линий падает, иногда до полной потери изображения.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c03">стр. 109</a></p>
+        <blockquote class="quote"><p>«уменьшение яркости линий на фазокорреляционной диаграмме, иногда вплоть до полной потери изображения»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>На ФКД появляется характерная сетка.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c04">стр. 109</a></p>
+        <blockquote class="quote"><p>«появление характерной сетки на ФКД»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Коэффициент Пуассона по ΔТр и ΔТs аномален по сравнению с плотными породами и служит для расчёта трещиноватости.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c05">стр. 109</a></p>
+        <blockquote class="quote"><p>«аномальное значение коэффициента Пуассона породы а, рассчитываемое по значениям интервальных времен ΔТр и ΔТs, по сравнению с величиной а во вмещающих непроницаемых породах»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Аномальный коэффициент Пуассона используют для расчёта коэффициента трещиноватости.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c06">стр. 109</a></p>
+        <blockquote class="quote"><p>«это значение используется для расчета коэффициента трещиноватости»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Акустический телевизор подтверждает трещины разной ориентации в зонах, выделенных АКш.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c07">стр. 109</a></p>
+        <blockquote class="quote"><p>«Видеоизображение стенок скважины, получаемое с помощью CAT, подтверждает наличие трещин различной ориентации в трещинных зонах, выделенных АКш.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Наклономер выделяет зоны вертикальных и субвертикальных трещин, наклонённых иначе, чем слои.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c08">стр. 109</a></p>
+        <blockquote class="quote"><p>«Наклономер четко выделяет трещинные зоны, в которых присутствуют трещины, вертикальные и субвертикальные»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Повторные СП при разной репрессии выделяют трещины по изменению фильтрационной компоненты СП.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.rehearsal_lat21.s21.05.c09">стр. 109</a></p>
+        <blockquote class="quote"><p>«Трещинные зоны выделяют в интервалах заметных, иногда весьма значительных изменений потенциала СП благодаря изменению во времени фильтрационной компоненты СП.»</p></blockquote>
+      </details>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Измеряем волны</h3>          <div class="para" id="how-1">
+            <p><strong class="term">АКш</strong> — широкополосная акустика, которая записывает несколько типов волн. В трещиноватой зоне ослабевают поперечная волна и <strong class="term">волна Лэмба-Стоунли</strong>, бегущая вдоль стенки скважины. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c01"><p>«3. Исследование скважины широкополосной аппаратурой акустического метода (АКш).»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c02"><p>«интенсивное ослабление амплитуды волны Лэмба-Стоунли и поперечной волны»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Читаем картину</h3>          <div class="para" id="how-2">
+            <p><strong class="term">ФКД</strong>, фазокорреляционная диаграмма, передаёт волновую картину линиями по глубине. Линии тускнеют, особенно в интервале волны Лэмба-Стоунли. Изображение иногда исчезает, а на диаграмме появляется характерная сетка. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c03"><p>«уменьшение яркости линий на фазокорреляционной диаграмме, иногда вплоть до полной потери изображения»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c04"><p>«появление характерной сетки на ФКД»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 217" role="img" aria-label="Ослабление волн на АКш → Тусклые линии и сетка на ФКД → Подтверждение на изображении стенки" class="ill-svg"><title>Ослабление волн на АКш → Тусклые линии и сетка на ФКД → Подтверждение на изображении стенки</title><rect class="ill-bg" x="0" y="0" width="360" height="217" rx="8"/><rect class="ill-box" x="12.0" y="30" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Ослабление волн на АКш</tspan></text><line class="ill-line" x1="180.0" y1="69.0" x2="180.0" y2="93.0"/><polygon class="ill-arrow" points="180.0,93.0 176.1,84.9 183.9,84.9"/><rect class="ill-box" x="12.0" y="97" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="121" text-anchor="middle"><tspan x="180.0" dy="0">Тусклые линии и сетка на ФКД</tspan></text><line class="ill-line" x1="180.0" y1="136.0" x2="180.0" y2="160.0"/><polygon class="ill-arrow" points="180.0,160.0 176.1,151.9 183.9,151.9"/><rect class="ill-box" x="12.0" y="164" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="188" text-anchor="middle"><tspan x="180.0" dy="0">Подтверждение на изображении стенки</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    На схеме показано, как акустический отклик помогает найти интервал для подтверждения трещин.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 109</span>
+  </figcaption>
+</figure>
+<h3>Оцениваем трещиноватость</h3>          <div class="para" id="how-3">
+            <p><strong class="term">Коэффициент Пуассона</strong> — упругая характеристика породы. Здесь его вычисляют по временам продольной и поперечной волн. В трещиноватой зоне он отличается от значения в непроницаемой породе. Это отклонение используют для оценки трещиноватости. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c05"><p>«аномальное значение коэффициента Пуассона породы а, рассчитываемое по значениям интервальных времен ΔТр и ΔТs, по сравнению с величиной а во вмещающих непроницаемых породах»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c06"><p>«это значение используется для расчета коэффициента трещиноватости»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Подтверждаем положение</h3>          <div class="para" id="how-4">
+            <p><strong class="term">Акустический телевизор</strong> даёт изображение стенки скважины. Он подтверждает трещины разной ориентации в интервалах, выделенных широкополосной акустикой. <strong class="term">Пластовый наклономер</strong> измеряет наклоны. Он выделяет вертикальные и почти вертикальные трещины, наклонённые иначе, чем слои. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c07"><p>«Видеоизображение стенок скважины, получаемое с помощью CAT, подтверждает наличие трещин различной ориентации в трещинных зонах, выделенных АКш.»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c08"><p>«Наклономер четко выделяет трещинные зоны, в которых присутствуют трещины, вертикальные и субвертикальные»</p><footer>— автор, стр. 109 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Меняем режим измерения</h3>          <div class="para" id="how-5">
+            <p><strong class="term">Репрессия</strong> — превышение давления в скважине над пластовым. Записывают повторные диаграммы СП при разной репрессии. Автор связывает изменение потенциала в трещинах с изменением той части СП, которая зависит от фильтрации. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.05.c09"><p>«Трещинные зоны выделяют в интервалах заметных, иногда весьма значительных изменений потенциала СП благодаря изменению во времени фильтрационной компоненты СП.»</p><footer>— автор, стр. 109 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Для повторных диаграмм СП задают разную репрессию. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></li><li>Волновая картина особенно тусклая в интервале волны Лэмба-Стоунли. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Один метод ГИС может однозначно выделить трещины.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Автор описывает комплекс: АКш выделяет зоны, телевизор подтверждает трещины, наклономер находит вертикальные. <span class="pg" title="Страница книги (по PDF)">стр. 109</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Для трещин информативны волновые картины целиком (амплитуды разных волн, ФКД), а не одно интервальное время.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Волновые картины АКш, ΔТр и ΔТs, изображения стенок, наклономер, повторные СП.</dd>
+          <dt>Выход</dt><dd>Зоны трещиноватости, ориентация трещин, оценка трещиноватости через коэффициент Пуассона.</dd>
+          <dt>Где ломается</dt><dd>Если хранится только интервальное время продольной волны, признаки трещин потеряны.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Сохранять полные волновые картины в хранилище важнее, чем производные кривые.</li><li><span class="chip chip-hyp">гипотеза</span> Изображения стенок пригодны для разметки трещин моделями компьютерного зрения.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Волновые картины АКш, ФКД, видео стенок, наклономер, повторные СП.</dd>
+            <dt>Ручные шаги</dt><dd>Просмотреть ФКД и изображения стенок, отметить ослабления и сетки, сопоставить методы по глубине.</dd>
+            <dt>Точки суждения</dt><dd>Что считать «аномальным» коэффициентом Пуассона и «заметным» изменением СП.</dd>
+            <dt>Время</dt><dd>Долго: визуальный просмотр изображений по всему интервалу.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять ослабление волн из-за состояния ствола за трещины; пропустить вертикальные трещины без наклономера.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Мультимодальная проверка: один датчик (АКш) находит кандидатов, второй (видео стенок) подтверждает, третий (наклономер) ловит то, что первые плохо видят.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Сигналы связаны физикой одной и той же стенки скважины и не независимы.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Современные кросс-дипольные акустические приборы и электрические и акустические имиджеры стенок — прямые наследники АКш и САТ; анализ волны Стоунли для проницаемых трещин применяется и сейчас.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Почему трещина гасит волну Стоунли <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Волна Лэмба-Стоунли бежит по границе раствора и стенки скважины. Открытая трещина даёт путь, куда раствор может перетекать, и часть энергии волны уходит в пласт — поэтому её амплитуда падает.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>АКш <span class="en" lang="en">(full-waveform sonic)</span></dt><dd>Широкополосная аппаратура акустического метода, регистрирующая продольную, поперечную волны и волну Лэмба-Стоунли. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd><dt>волна Лэмба-Стоунли <span class="en" lang="en">(Stoneley wave)</span></dt><dd>Волна, бегущая вдоль стенки скважины по границе с раствором. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd><dt>фазокорреляционная диаграмма (ФКД) <span class="en" lang="en">(variable density log)</span></dt><dd>Изображение волновых картин акустики по глубине, на котором линии показывают фазы волн. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd><dt>коэффициент Пуассона <span class="en" lang="en">(Poisson&#39;s ratio)</span></dt><dd>Упругий параметр породы; рассчитывается по интервальным временам продольной и поперечной волн. <span class="pg">стр. 109</span></dd><dt>акустический телевизор (САТ) <span class="en" lang="en">(borehole televiewer)</span></dt><dd>Прибор, дающий изображение стенок скважины по отражению ультразвука. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd><dt>пластовый наклономер <span class="en" lang="en">(dipmeter)</span></dt><dd>Прибор, определяющий наклон и ориентацию слоёв и трещин в стенке скважины. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd><dt>репрессия <span class="en" lang="en">(overbalance)</span></dt><dd>Превышение давления в скважине над пластовым. <span class="pg">стр. 109</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-rehearsal_lat21-s21-05-t01" data-task="geo.rehearsal_lat21.s21.05.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие волны сильно ослабевают по описанию автора?</legend>
+    <label class="opt"><input type="checkbox" name="geo.rehearsal_lat21.s21.05.t01" value="0"> <span>Ни одна из записанных волн</span></label>
+    <label class="opt"><input type="checkbox" name="geo.rehearsal_lat21.s21.05.t01" value="1"> <span>Только продольная</span></label>
+    <label class="opt"><input type="checkbox" name="geo.rehearsal_lat21.s21.05.t01" value="2"> <span>Поперечная</span></label>
+    <label class="opt"><input type="checkbox" name="geo.rehearsal_lat21.s21.05.t01" value="3"> <span>Лэмба-Стоунли</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Поперечная; Лэмба-Стоунли</p>
+    <p class="fb-expl">В этом признаке автор выделяет поперечную волну и волну вдоль стенки. <a href="#how-1">Где это в тексте (стр. 109) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-rehearsal_lat21-s21-05-t02" data-task="geo.rehearsal_lat21.s21.05.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Какой прибор подтверждает трещины по изображению стенки?</p>
+  <p class="cloze">Изображение стенки даёт <select aria-label="Пропуск 1"><option value="">—</option><option>акустический телевизор</option><option>пластовый наклономер</option><option>зонд бокового каротажа</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Изображение стенки даёт [акустический телевизор].</p>
+    <p class="fb-expl">Прибор дополняет широкополосную акустику изображением стенки. <a href="#how-4">Где это в тексте (стр. 109) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-rehearsal_lat21-s21-05-t03" data-task="geo.rehearsal_lat21.s21.05.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что меняют между повторными замерами СП?</legend>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.05.t03" value="0"> <span>Ориентацию пластов</span></label>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.05.t03" value="1"> <span>Репрессию</span></label>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.05.t03" value="2"> <span>Тип коллектора</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Репрессию</p>
+    <p class="fb-expl">Под разной репрессией фильтрационная часть сигнала может меняться в трещинах. <a href="#how-5">Где это в тексте (стр. 109) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.rehearsal_lat21.s21.05.c01"><p>Третий метод спецкомплекса — широкополосная акустика АКш. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«3. Исследование скважины широкополосной аппаратурой акустического метода (АКш).»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c02"><p>По АКш трещины видны по сильному ослаблению волны Лэмба-Стоунли и поперечной волны. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«интенсивное ослабление амплитуды волны Лэмба-Стоунли и поперечной волны»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c03"><p>На фазокорреляционной диаграмме яркость линий падает, иногда до полной потери изображения. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«уменьшение яркости линий на фазокорреляционной диаграмме, иногда вплоть до полной потери изображения»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c04"><p>На ФКД появляется характерная сетка. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«появление характерной сетки на ФКД»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c05"><p>Коэффициент Пуассона по ΔТр и ΔТs аномален по сравнению с плотными породами и служит для расчёта трещиноватости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«аномальное значение коэффициента Пуассона породы а, рассчитываемое по значениям интервальных времен ΔТр и ΔТs, по сравнению с величиной а во вмещающих непроницаемых породах»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c06"><p>Аномальный коэффициент Пуассона используют для расчёта коэффициента трещиноватости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«это значение используется для расчета коэффициента трещиноватости»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c07"><p>Акустический телевизор подтверждает трещины разной ориентации в зонах, выделенных АКш. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Видеоизображение стенок скважины, получаемое с помощью CAT, подтверждает наличие трещин различной ориентации в трещинных зонах, выделенных АКш.»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c08"><p>Наклономер выделяет зоны вертикальных и субвертикальных трещин, наклонённых иначе, чем слои. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Наклономер четко выделяет трещинные зоны, в которых присутствуют трещины, вертикальные и субвертикальные»</p><footer>— стр. 109</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.05.c09"><p>Повторные СП при разной репрессии выделяют трещины по изменению фильтрационной компоненты СП. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Трещинные зоны выделяют в интервалах заметных, иногда весьма значительных изменений потенциала СП благодаря изменению во времени фильтрационной компоненты СП.»</p><footer>— стр. 109</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-09.html">шаг 9 «Что показывает повторный замер»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-06.html" rel="prev"><span>← Назад</span><b>Как солёный раствор выдаёт трещины</b></a><a class="next" href="step-08.html" rel="next"><span>Дальше →</span><b>Почему методы пористости расходятся</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "rehearsal_lat21", "title": "Выделение и оценка характера насыщения сложных коллекторов", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "pdf": "pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.rehearsal_lat21.s21.01", "index": 1, "title": "Что такое сложный коллектор", "url": "step-01.html", "minutes": 5}, {"node_id": "geo.rehearsal_lat21.s21.02", "index": 2, "title": "Как трещины обеспечивают приток", "url": "step-02.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.06", "index": 3, "title": "Трещины и каверны в породе", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.07", "index": 4, "title": "Как каверны меняют бурение", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.03", "index": 5, "title": "Как каротаж пропускает трещины", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.04", "index": 6, "title": "Как солёный раствор выдаёт трещины", "url": "step-06.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.05", "index": 7, "title": "Какие сигналы выдают трещины", "url": "step-07.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.08", "index": 8, "title": "Почему методы пористости расходятся", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.09", "index": 9, "title": "Что показывает повторный замер", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.10", "index": 10, "title": "Как давление меняет диаграмму", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.11", "index": 11, "title": "Чем отличается смешанный коллектор", "url": "step-11.html", "minutes": 3}, {"node_id": "geo.rehearsal_lat21.s21.12", "index": 12, "title": "Как определить насыщение коллектора", "url": "step-12.html", "minutes": 7}], "minutes": 79, "n_tasks": 28, "n_cards": 24, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.rehearsal_lat21.s21.05.t01", "type": "multiple", "question": "Какие волны сильно ослабевают по описанию автора?", "explanation": "В этом признаке автор выделяет поперечную волну и волну вдоль стенки.", "page": 109, "link": "#how-1", "step_title": "Какие сигналы выдают трещины", "step_index": 7, "node_id": "geo.rehearsal_lat21.s21.05", "options": ["Ни одна из записанных волн", "Только продольная", "Поперечная", "Лэмба-Стоунли"], "key": [2, 3], "answer_text": "Поперечная; Лэмба-Стоунли"}, {"id": "geo.rehearsal_lat21.s21.05.t02", "type": "cloze", "question": "Какой прибор подтверждает трещины по изображению стенки?", "explanation": "Прибор дополняет широкополосную акустику изображением стенки.", "page": 109, "link": "#how-4", "step_title": "Какие сигналы выдают трещины", "step_index": 7, "node_id": "geo.rehearsal_lat21.s21.05", "parts": ["Изображение стенки даёт ", "."], "blanks": [{"options": ["акустический телевизор", "пластовый наклономер", "зонд бокового каротажа"], "answers": ["акустический телевизор"]}], "key": [["акустический телевизор"]], "answer_text": "Изображение стенки даёт [акустический телевизор]."}, {"id": "geo.rehearsal_lat21.s21.05.t03", "type": "single", "question": "Что меняют между повторными замерами СП?", "explanation": "Под разной репрессией фильтрационная часть сигнала может меняться в трещинах.", "page": 109, "link": "#how-5", "step_title": "Какие сигналы выдают трещины", "step_index": 7, "node_id": "geo.rehearsal_lat21.s21.05", "options": ["Ориентацию пластов", "Репрессию", "Тип коллектора"], "key": [1], "answer_text": "Репрессию"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

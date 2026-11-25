@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 8. Почему методы пористости расходятся — Выделение и оценка характера насыщения сложных коллекторов</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.rehearsal_lat21.s21.08" data-index="8">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#problems">Задачи из книги</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как распознать коллектор › Шаг 8 из 12</p>
+    <h1>Почему методы пористости расходятся</h1>
+    <p class="booktitle">В книге: «Выделение кавернозно-трещинного коллектора по методам пористости (рис. 78) и ядерно-магнитным методом» <span class="pg">стр. 110–112</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-05.html">шаг 5 «Как каротаж пропускает трещины»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Трещины и каверны в породе»</a> <span class="muted">(предпосылка)</span>, <a href="step-04.html">шаг 4 «Как каверны меняют бурение»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Каверны могут проявляться разницей между общей пористостью и оценкой по акустике.</p><p>Чтобы выделить такой интервал, сопоставьте методы по глубине и учтите размер пустот.</p><p class="threshold"><b>Пороговая идея.</b> Разные методы пористости «видят» разные пустоты: акустика — только матрицу, нейтронный и плотностной — всё; расхождение выдаёт каверны. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что не даёт ответа</h3>          <div class="para" id="how-1">
+            <p>Кавернограмма показывает диаметр ствола, <strong class="term">профилеграмма</strong> — форму его сечения. Вместе с микрозондами эти данные не дают обычных признаков межзернового коллектора. Зато более высокая общая пористость помогает отличить кавернозно-трещинный коллектор от плотной породы. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c01"><p>«По данным стандартного комплекса ГИС кавернозно-трещинный коллектор не отмечается, как и трещинный, характерными для межзернового коллектора показаниями на кавернограмме, профилеграмме и на диаграммах микрозондов.»</p><footer>— автор, стр. 110 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c02"><p>«более высокая общая пористость, позволяющая выделить его по значению kп.общ среди более плотных вмещающих пород»</p><footer>— автор, стр. 110 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 369" role="img" aria-label="Сравнить кривые на одной глубине" class="ill-svg"><title>Сравнить кривые на одной глубине</title><rect class="ill-bg" x="0" y="0" width="360" height="369" rx="8"/><text class="ill-small" x="14" y="34">Признаки</text><rect class="ill-box ill-accent" x="12" y="42" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="63" text-anchor="start"><tspan x="24" dy="0">Общая пористость</tspan></text><rect class="ill-box ill-accent" x="12" y="81" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="102" text-anchor="start"><tspan x="24" dy="0">Пористость по акустике</tspan></text><line class="ill-line" x1="180.0" y1="122.0" x2="180.0" y2="142.0"/><polygon class="ill-arrow" points="180.0,142.0 176.1,133.9 183.9,133.9"/><text class="ill-small" x="14" y="154">Правило</text><rect class="ill-box ill-neutral" x="12" y="162" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="183" text-anchor="start"><tspan x="24" dy="0">Сравнить кривые на одной глубине</tspan></text><line class="ill-line" x1="180.0" y1="201.0" x2="180.0" y2="221.0"/><polygon class="ill-arrow" points="180.0,221.0 176.1,212.9 183.9,212.9"/><text class="ill-small" x="14" y="233">Вывод</text><rect class="ill-box ill-accent" x="12" y="241" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="262" text-anchor="start"><tspan x="24" dy="0">Общая выше акустической → Признак</tspan><tspan x="24" dy="19">каверн</tspan></text><rect class="ill-box ill-neutral" x="12" y="299" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="320" text-anchor="start"><tspan x="24" dy="0">Обе оценки низкие → Признак плотной</tspan><tspan x="24" dy="19">породы</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Схема иллюстрирует сравнение показаний в изучаемом разрезе. Она не содержит условных числовых шкал.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 110</span>
+  </figcaption>
+</figure>
+<h3>Почему есть расхождение</h3>          <div class="para" id="how-2">
+            <p><strong class="term">НМ</strong> и <strong class="term">ГГМ</strong>, нейтронный и гамма-гамма методы, дают оценку общей пористости. <strong class="term">kпАК</strong> — пористость по акустике, близкая к пористости матрицы. Автор указывает, что различие виднее при крупных и более разобщённых пустотах. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c03"><p>«В таком коллекторе kпАК близко к kп.мз и существенно ниже kп.общ.»</p><footer>— автор, стр. 110 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c04"><p>«Эта закономерность проявляется тем четче, чем больше размеры пустот и расстояние между ними.»</p><footer>— автор, стр. 110 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Как используют это на диаграммах</h3>          <div class="para" id="how-3">
+            <p>Сопоставьте кривые по глубине в рассматриваемом разрезе. Автор выделяет кавернозно-трещинный коллектор там, где общая пористость выше акустической. Задача к рисунку предлагает разделить типы коллекторов и плотные интервалы. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c05"><p>«можно по данным стандартного комплекса методов пористости выделить кавернозно-трещинный коллектор»</p><footer>— автор, стр. 110 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Другой сигнал и его предел</h3>          <div class="para" id="how-4">
+            <p><strong class="term">ЯММ</strong>, ядерно-магнитный метод, даёт <strong class="term">ИСФ</strong>, индекс свободного флюида. Аномалии ИСФ у кавернозно-трещинного коллектора близки к его вторичной пористости. Для трещинного коллектора эффективная пористость меньше 1 %, то есть ниже уровня помех ИСФ. <span class="pg" title="Страница книги (по PDF)">стр. 111</span></p>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c06"><p>«Ядерно-магнитный метод выделяет кавернозно-трещинный коллектор аномалиями ИСФ, величина которых близка к значению kп.вт.»</p><footer>— автор, стр. 111 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.rehearsal_lat21.s21.08.c07"><p>«Для выделения трещинного коллектора ЯММ непригоден, поскольку kп.эф ≈ kп.т. &lt; 1 %, т.е. ниже уровня помех при определении ИСФ.»</p><footer>— автор, стр. 111 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как читать пару кривых</p>        <ol class="proc"><li>Определите общую пористость по нейтронному или гамма-гамма методу. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></li><li>Определите пористость по акустическому методу. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></li><li>Сопоставьте кривые по глубине. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></li><li>Отметьте интервалы выраженного превышения общей пористости над акустической и интервалы с низкими оценками. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></li></ol>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Сопоставление методов пористости</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Общая пористость по НМ или ГГМ</li><li>Пористость по акустическому методу</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сравните методы на одной глубине в изучаемом карбонатном разрезе. <span class="pg" title="Страница книги (по PDF)">стр. 110–111</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Превышение общей пористости над акустической даёт признак кавернозно-трещинного коллектора.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Общая пористость заметно выше акустической в рассматриваемом карбонатном интервале. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Возможен кавернозно-трещинный коллектор</button><button type="button" class="btn ghost case-opt" data-i="1">Показания обязательно испорчены</button><button type="button" class="btn ghost case-opt" data-i="2">Обе кривые показывают плотную породу</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Разность пористостей характерна для каверн в рассматриваемых условиях.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Оценки пористости по обоим методам низкие, выраженного превышения нет. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Каверны подтверждены</button><button type="button" class="btn ghost case-opt" data-i="1">Сравнение указывает на плотную породу</button><button type="button" class="btn ghost case-opt" data-i="2">Общая пористость выше акустической</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> При отсутствии превышения это сравнение не даёт признака каверн.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Чем крупнее и дальше друг от друга пустоты, тем заметнее расхождение. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></li><li>При эффективной пористости меньше 1 % сигнал трещинного коллектора ниже уровня помех ИСФ. <span class="pg" title="Страница книги (по PDF)">стр. 111</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Все методы пористости должны давать одно и то же значение; расхождение — ошибка прибора.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> В кавернозно-трещинном коллекторе расхождение kп.общ &gt; kпАК закономерно и служит признаком каверн. <span class="pg" title="Страница книги (по PDF)">стр. 110</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Разница пористостей по нейтронному/плотностному и акустическому методам — информативный признак, а не шум.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Пористость по НМ или ГГМ, пористость по АК, ИСФ по ЯММ.</dd>
+          <dt>Выход</dt><dd>Интервалы кавернозно-трещинного коллектора и плотных пород.</dd>
+          <dt>Где ломается</dt><dd>При мелких и частых пустотах различие слабее; для трещинного коллектора ни разница, ни ЯММ не работают.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Признак «kп.общ − kпАК» можно подавать в модель разметки коллекторов как отдельный вход.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Кривые пористости НМ/ГГМ и АК.</dd>
+            <dt>Ручные шаги</dt><dd>Пересчитать кривые в пористость, совместить, отметить расхождения.</dd>
+            <dt>Точки суждения</dt><dd>Какое расхождение считать значимым.</dd>
+            <dt>Время</dt><dd>Быстро, если пористость уже рассчитана.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять расхождение из-за литологии за каверны; ждать от ЯММ выделения трещинного коллектора.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Два счётчика с разной областью видимости: один считает весь трафик, другой — только основной канал; разница показывает трафик в обход.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Оба счётчика зависят от литологии и глинистости, разница возникает не только из-за каверн.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сравнение пористости по акустике и по нейтронному и плотностному методам остаётся стандартным приёмом оценки вторичной пористости карбонатов.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Почему акустика «не видит» каверны <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Первая продольная волна выбирает самый быстрый путь по плотной матрице и обходит изолированные крупные пустоты. Нейтронный и плотностной методы чувствуют весь объём, включая каверны, — отсюда разница.</p></details>
+    </section>
+    <section id="problems" class="block block-problems" aria-labelledby="h-problems">
+      <h2 id="h-problems">Задачи из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="problems"><li><b>Задача .</b> Задачи 109. По диаграммам рис. 78 выделить коллекторы разных типов и плотные участки. Воспользоваться данными двух методов пористости - акустическим и нейтронным. <span class="muted">Нужен рисунок: 78.</span> <span class="pg">стр. 112</span></li></ul>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 78. Рис.78. Выделение сложных карбонатных коллекторов по результатам определения пористости нейтронным и акустическим методами. <span class="pg">стр. 110</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>kпАК <span class="en" lang="en">(sonic porosity)</span></dt><dd>Коэффициент пористости по данным акустического метода; в кавернозно-трещинном коллекторе близок к пористости матрицы. <span class="pg">стр. 110</span></dd><dt>НМ, ГГМ <span class="en" lang="en">(neutron, density logs)</span></dt><dd>Нейтронный и гамма-гамма (плотностной) методы пористости; дают общую пористость kп.общ. <span class="pg">стр. 110</span></dd><dt>ИСФ (индекс свободного флюида) <span class="en" lang="en">(free fluid index)</span></dt><dd>Показание ядерно-магнитного метода, связанное с подвижным флюидом в пустотах. <span class="pg">стр. 111</span> <span class="chip chip-model">модель</span></dd><dt>профилеграмма <span class="en" lang="en">(multi-arm caliper log)</span></dt><dd>Диаграмма формы сечения ствола скважины по нескольким направлениям. <span class="pg">стр. 110</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-rehearsal_lat21-s21-08-t01" data-task="geo.rehearsal_lat21.s21.08.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что подсказывает заметное превышение общей пористости над акустической?</legend>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.08.t01" value="0"> <span>Кривые обязаны совпасть</span></label>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.08.t01" value="1"> <span>Обе оценки пористости низкие</span></label>
+    <label class="opt"><input type="radio" name="geo.rehearsal_lat21.s21.08.t01" value="2"> <span>Возможны каверны</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Возможны каверны</p>
+    <p class="fb-expl">В этом разрезе расхождение помогает выделить кавернозно-трещинный интервал. <a href="#how-3">Где это в тексте (стр. 110) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-rehearsal_lat21-s21-08-t02" data-task="geo.rehearsal_lat21.s21.08.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">К чему близка оценка пористости по акустике?</p>
+  <p class="cloze">Пористость по акустике близка к пористости <select aria-label="Пропуск 1"><option value="">—</option><option>всей породы по НМ</option><option>матрицы</option><option>только каверн</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Пористость по акустике близка к пористости [матрицы].</p>
+    <p class="fb-expl">Акустическая оценка здесь характеризует главным образом матрицу. <a href="#how-2">Где это в тексте (стр. 110) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.rehearsal_lat21.s21.08.c01"><p>На кавернограмме, профилеграмме и микрозондах кавернозно-трещинный коллектор, как и трещинный, не выделяется. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«По данным стандартного комплекса ГИС кавернозно-трещинный коллектор не отмечается, как и трещинный, характерными для межзернового коллектора показаниями на кавернограмме, профилеграмме и на диаграммах микрозондов.»</p><footer>— стр. 110</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c02"><p>Более высокая общая пористость позволяет выделить его среди плотных пород. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«более высокая общая пористость, позволяющая выделить его по значению kп.общ среди более плотных вмещающих пород»</p><footer>— стр. 110</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c03"><p>Пористость по акустике близка к пористости матрицы и существенно ниже общей пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В таком коллекторе kпАК близко к kп.мз и существенно ниже kп.общ.»</p><footer>— стр. 110</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c04"><p>Различие тем чётче, чем крупнее пустоты и чем дальше они друг от друга. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Эта закономерность проявляется тем четче, чем больше размеры пустот и расстояние между ними.»</p><footer>— стр. 110</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c05"><p>Коллектор выделяют по превышению пористости НМ/ГГМ над акустической (рис. 78). <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«можно по данным стандартного комплекса методов пористости выделить кавернозно-трещинный коллектор»</p><footer>— стр. 110</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c06"><p>ЯММ выделяет кавернозно-трещинный коллектор аномалиями ИСФ, близкими к вторичной пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Ядерно-магнитный метод выделяет кавернозно-трещинный коллектор аномалиями ИСФ, величина которых близка к значению kп.вт.»</p><footer>— стр. 111</footer></blockquote></li>
+        <li id="src-geo.rehearsal_lat21.s21.08.c07"><p>Для трещинного коллектора ЯММ непригоден: эффективная пористость меньше 1 % — ниже уровня помех. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Для выделения трещинного коллектора ЯММ непригоден, поскольку kп.эф ≈ kп.т. &lt; 1 %, т.е. ниже уровня помех при определении ИСФ.»</p><footer>— стр. 111</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-09.html">шаг 9 «Что показывает повторный замер»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-07.html" rel="prev"><span>← Назад</span><b>Какие сигналы выдают трещины</b></a><a class="next" href="step-09.html" rel="next"><span>Дальше →</span><b>Что показывает повторный замер</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "rehearsal_lat21", "title": "Выделение и оценка характера насыщения сложных коллекторов", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "pdf": "pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.rehearsal_lat21.s21.01", "index": 1, "title": "Что такое сложный коллектор", "url": "step-01.html", "minutes": 5}, {"node_id": "geo.rehearsal_lat21.s21.02", "index": 2, "title": "Как трещины обеспечивают приток", "url": "step-02.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.06", "index": 3, "title": "Трещины и каверны в породе", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.07", "index": 4, "title": "Как каверны меняют бурение", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.03", "index": 5, "title": "Как каротаж пропускает трещины", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.04", "index": 6, "title": "Как солёный раствор выдаёт трещины", "url": "step-06.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.05", "index": 7, "title": "Какие сигналы выдают трещины", "url": "step-07.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.08", "index": 8, "title": "Почему методы пористости расходятся", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.09", "index": 9, "title": "Что показывает повторный замер", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.10", "index": 10, "title": "Как давление меняет диаграмму", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.11", "index": 11, "title": "Чем отличается смешанный коллектор", "url": "step-11.html", "minutes": 3}, {"node_id": "geo.rehearsal_lat21.s21.12", "index": 12, "title": "Как определить насыщение коллектора", "url": "step-12.html", "minutes": 7}], "minutes": 79, "n_tasks": 28, "n_cards": 24, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.rehearsal_lat21.s21.08.t01", "type": "single", "question": "Что подсказывает заметное превышение общей пористости над акустической?", "explanation": "В этом разрезе расхождение помогает выделить кавернозно-трещинный интервал.", "page": 110, "link": "#how-3", "step_title": "Почему методы пористости расходятся", "step_index": 8, "node_id": "geo.rehearsal_lat21.s21.08", "options": ["Кривые обязаны совпасть", "Обе оценки пористости низкие", "Возможны каверны"], "key": [2], "answer_text": "Возможны каверны"}, {"id": "geo.rehearsal_lat21.s21.08.t02", "type": "cloze", "question": "К чему близка оценка пористости по акустике?", "explanation": "Акустическая оценка здесь характеризует главным образом матрицу.", "page": 110, "link": "#how-2", "step_title": "Почему методы пористости расходятся", "step_index": 8, "node_id": "geo.rehearsal_lat21.s21.08", "parts": ["Пористость по акустике близка к пористости ", "."], "blanks": [{"options": ["всей породы по НМ", "матрицы", "только каверн"], "answers": ["матрицы"]}], "key": [["матрицы"]], "answer_text": "Пористость по акустике близка к пористости [матрицы]."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

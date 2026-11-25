@@ -1,0 +1,27 @@
+{
+  "chapter": "rehearsal_lat21",
+  "ok": true,
+  "stats": {
+    "nodes": 12,
+    "claims": 88,
+    "quotes_exact": 88,
+    "quotes_fuzzy": 0,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 2
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "term_before_definition",
+      "target": "geo.rehearsal_lat21.s21.01",
+      "message": "uses «карст (закарстованные породы)» defined later in geo.rehearsal_lat21.s21.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.rehearsal_lat21.s21.02",
+      "message": "uses «карст (закарстованные породы)» defined later in geo.rehearsal_lat21.s21.06"
+    }
+  ]
+}

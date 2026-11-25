@@ -1,0 +1,745 @@
+{
+  "request": {
+    "task": "vidpipe.geo.kuznetsov.s10_3.05.short.shots",
+    "key": "c663aaf87c133a1fb2c5",
+    "prompt": "vidpipe_raw",
+    "system": "You turn a narration script into a shot list with machine-readable scene specs for a deterministic renderer.\nYou never draw: you choose a TEMPLATE from the library and fill its params, and (when motion or data is\nshown) a STATE MODEL that code evaluates. Your JSON is validated; unknown fields are ignored.\n\nFRAME CLASSES (decide for every shot)\n A  data: curves, sections, maps, crossplots rendered from a real open dataset (model type las|csv). Label \"data\".\n B  process/schematic: computed process (model type formula|pde_diffusion) -> label \"simulation\";\n    schematic without numbers -> label \"schematic\".\n C  appearance: a real licensed photo (template photo) -> label \"photo\" (flag: not in the organizers' label set).\n D  atmosphere/transition only (template ai_clip), ZERO facts, only on lines with asserts_fact=false,\n    first and last frame must be a real photo or another shot's frame (\"shot:S3:first\"). At most 2 per video.\n T  full-screen TEXT CARD (title_card, question_card, misconception_card, equation_card, before_after,\n    summary_list, text_panel, process_steps) -> label \"schematic\". Reported separately from A/B in QA.\nDecision: shows a quantity, curve, direction, size, order of layers or cause->effect? -> A or B.\nWhat a real object looks like? -> C. Mood with zero facts? -> D. Pure question/summary with nothing to show -> T.\nTargets (checked by QA): >= 70% of screen time is A/B; text cards (T) <= 25% of screen time;\nevery line with role \"mechanism\" or \"data\" is on a VISUAL template (class A/B/C), never on a text card.\nWhen a myth, a question, a fact or an equation must be READ while something is shown, do not cut to a card:\nuse template overlay_card = a visual base (any A/B template with its params) + a strip of cards\n(kinds: myth | question | fact | equation | text) that switch at line cues. Its class is the class of its base.\n\nRULES\n1. Cover every script line exactly once, in order. A shot may span several consecutive lines (e.g. one\n   continuous depth_track or field_evolution scene). Use line ids as time references (\"at\": \"L5\",\n   \"start\": \"L5\", \"end\": \"L6.end\", \"reveal_at\": \"L3\") so animation syncs to the voice.\n2. Only use templates from the library. Satisfy every \"required\" field. If no template fits, use the closest\n   one and add \"needs_new_template\": \"<what visual is missing>\".\n3. State models:\n   - Real data: {\"type\":\"las\",\"file\":<file from DATASETS>,\"curve\":..,\"depth_from\":..,\"depth_to\":..} or\n     {\"type\":\"csv\",\"file\":..,\"x\":..,\"y\":[..],\"filter\":{col:value},\"x_from\":..,\"x_to\":..,\"also\":[cols]}.\n     Never invent files, wells or curves. Choose windows where the effect is visible.\n   - Formula: {\"type\":\"formula\",\"expr\":\"numpy-like expression\",\"params\":{name:{\"value\":..,\"unit\":..,\n     \"source\":{\"page\":..,\"quote\":\"..\"} or {\"assumption\":true,\"note\":\"why this value\"}}},\n     \"derived\":{name:\"expr\"}, \"grid\":{axis:{\"from\":..,\"to\":..,\"n\":..,\"unit\":..,\"scale\":\"lin|log\"}},\n     \"output\":{\"name\":..}, \"source\":{\"page\":..,\"quote\":\"<the formula as printed in the chapter>\"}}\n     Allowed functions: exp log log10 sqrt sin cos tan erf erfc E1 Ei minimum maximum where clip smoothstep pi.\n     The formula itself MUST come from the chapter (page + quote). Parameter values: from the chapter if given,\n     otherwise mark them {\"assumption\": true, \"note\": ...}; they will be listed in the passport.\n   - pde_diffusion: {\"type\":\"pde_diffusion\",\"geometry\":\"radial|linear\",\"coef\":expr,\"params\":..,\"grid\":{\"x\":..,\"t\":..},\n     \"initial\":..,\"inner_bc\":{\"type\":\"flux|value\",\"value\":expr},\"outer_bc\":{...}} for chapters that give only the equation.\n4. Physics: never depict a measuring tool as emitting when the sources say it only receives; fluids sit in\n   pores of rock (no underground lakes); grains in pore-scale views touch; depth increases downward.\n5. Every on-screen label/callout that states a fact must restate a sourced line; put the claim id in\n   \"source_ref\". Numbers on screen only if they are in the sources or come from the dataset/model.\n6. For each shot list \"invariants\" (what must stay true), \"assumptions\" and \"exaggerations\" (simplifications\n   and why) — these go into the video passport.\n7. Lithology names must be from: sandstone, shale, clay, siltstone, limestone, dolomite, marl, salt, anhydrite, coal, conglomerate, chalk, basement, unknown, sand, shaly_sand, generic. Fluids from: oil, water, gas, mud, brine, mud_filtrate, mud_cake, cement, steel, density_order_note.\n\nOUTPUT: JSON only:\n{\"shots\":[{\"id\":\"S1\",\"line_ids\":[\"L1\",\"L2\"],\"template\":\"...\",\"class\":\"A|B|C|D|T\",\"provenance\":\"data|simulation|schematic|photo\",\n  \"params\":{...},\"model\":{...}|null,\"invariants\":[\"...\"],\"assumptions\":[\"...\"],\"exaggerations\":[\"...\"],\n  \"first_frame_src\":null,\"last_frame_src\":null}]}",
+    "user": "LANGUAGE: ru   FORMAT: short   STYLE: F\n\nSCRIPT:\n{\n \"title\": \"Почему лучшие породы у *края*\",\n \"kicker\": \"СТРОЕНИЕ РИФА\",\n \"lines\": [\n  {\n   \"id\": \"L1\",\n   \"role\": \"hook\",\n   \"text\": \"Где *лучшие породы* рифа?\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L2\",\n   \"role\": \"prediction\",\n   \"text\": \"Предскажите: где искать их у крупного плоского рифа, на гребне у края или в лагуне?\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L3\",\n   \"role\": \"reveal\",\n   \"text\": \"У крупных рифов с плоской вершиной и у атоллов лучшие зоны смещаются *к краю*.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c01\",\n     \"page\": 207,\n     \"quote\": \"В более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L4\",\n   \"role\": \"mechanism\",\n   \"text\": \"На гребне действуют *волны*. Пустоты есть внутри остатков организмов и между ними.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c03\",\n     \"page\": 207,\n     \"quote\": \"В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c04\",\n     \"page\": 207,\n     \"quote\": \"пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L5\",\n   \"role\": \"mechanism\",\n   \"text\": \"Волны могут сортировать обломки. С внешней стороны рифа между крупными зёрнами преобладают *межзерновые поры*.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c05\",\n     \"page\": 207,\n     \"quote\": \"Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c06\",\n     \"page\": 207,\n     \"quote\": \"из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью.\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c08\",\n     \"page\": 207,\n     \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c09\",\n     \"page\": 207,\n     \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L6\",\n   \"role\": \"data\",\n   \"text\": \"Сопоставьте место на разрезе и описание породы. В *лагуне* плотные мелкозернистые породы обычно менее пористы.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c02\",\n     \"page\": 207,\n     \"quote\": \"распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности.\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c10\",\n     \"page\": 207,\n     \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_3.05.c11\",\n     \"page\": 207,\n     \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L7\",\n   \"role\": \"bridge\",\n   \"text\": \"Гипотеза для данных: сравнивайте *пористость* по зонам рифа и проверяйте границы зон по описаниям.\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L8\",\n   \"role\": \"transfer\",\n   \"text\": \"Если на разрезе указан внешний шлейф из грубых обломков, где вы ожидаете увидеть поры?\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  }\n ],\n \"prediction_question\": {\n  \"text\": \"Где вероятнее улучшенные свойства у крупного плосковершинного рифа?\",\n  \"options\": [\n   \"На периферии, в гребне и внешнем шлейфе.\",\n   \"В плотной внутренней лагуне.\"\n  ]\n },\n \"transfer_question\": {\n  \"text\": \"Какие пустоты ожидаются в крупнозернистых обломочных породах перед рифом?\"\n },\n \"data_it_bridge\": {\n  \"where_in_data\": \"При сопоставлении зон на разрезе, описаний пород и пористости.\",\n  \"manual_work\": \"Определить, к какой зоне относится наблюдение, и сопоставить его с описанием породы.\",\n  \"hypotheses\": [\n   \"Сравнивать пористость по зонам рифа, сохраняя привязку к разрезу.\"\n  ]\n },\n \"planner\": \"llm:kmd:kmd\",\n \"video_id\": \"short\",\n \"node_id\": \"geo.kuznetsov.s10_3.05\",\n \"lang\": \"ru\",\n \"format\": \"short\",\n \"style\": \"F\",\n \"validation\": {\n  \"errors\": [],\n  \"warnings\": [],\n  \"notes\": []\n }\n}\n\nNODE:\n{\"id\": \"geo.kuznetsov.s10_3.05\", \"title\": \"Почему лучшие породы у края\", \"claims\": [{\"id\": \"geo.kuznetsov.s10_3.05.c01\", \"text\": \"В более крупных плосковершинных и атолловидных рифах, особенно атоллах, зона улучшенных свойств сдвигается к периферии, в гребень и предрифовый обломочный шлейф.\", \"page\": 207, \"quote\": \"В более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c01\", \"kind\": \"observation\", \"text\": \"В более крупных плосковершинных и атолловидных рифах, особенно атоллах, зона улучшенных свойств сдвигается к периферии, в гребень и предрифовый обломочный шлейф.\", \"quote\": \"В более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c02\", \"text\": \"Распределение пористости и проницаемости подчиняется зональности формы рифа, пород и условий обитания организмов.\", \"page\": 207, \"quote\": \"распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c02\", \"kind\": \"observation\", \"text\": \"Распределение пористости и проницаемости подчиняется зональности формы рифа, пород и условий обитания организмов.\", \"quote\": \"распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c03\", \"text\": \"Фации рифового гребня возникли в зоне активного воздействия волн.\", \"page\": 207, \"quote\": \"В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c03\", \"kind\": \"observation\", \"text\": \"Фации рифового гребня возникли в зоне активного воздействия волн.\", \"quote\": \"В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c04\", \"text\": \"На гребне пористость связана с полостями внутри органических остатков, промежутками между ними и пещеровидными пустотами.\", \"page\": 207, \"quote\": \"пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c04\", \"kind\": \"observation\", \"text\": \"На гребне пористость связана с полостями внутри органических остатков, промежутками между ними и пещеровидными пустотами.\", \"quote\": \"пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c05\", \"text\": \"Волны могут образовывать валы из хорошо окатанных и отсортированных обломков рифовых пород.\", \"page\": 207, \"quote\": \"Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c05\", \"kind\": \"observation\", \"text\": \"Волны могут образовывать валы из хорошо окатанных и отсортированных обломков рифовых пород.\", \"quote\": \"Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c06\", \"text\": \"В таких обломочных валах высока пористость между зёрнами.\", \"page\": 207, \"quote\": \"из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c06\", \"kind\": \"observation\", \"text\": \"В таких обломочных валах высока пористость между зёрнами.\", \"quote\": \"из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c07\", \"text\": \"В условиях на воздухе возникают дюны, у которых тот же тип пор — между зёрнами.\", \"page\": 207, \"quote\": \"В субаэральных условиях возникают золовые дюны с аналогичным типом пор.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c07\", \"kind\": \"observation\", \"text\": \"В условиях на воздухе возникают дюны, у которых тот же тип пор — между зёрнами.\", \"quote\": \"В субаэральных условиях возникают золовые дюны с аналогичным типом пор.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c08\", \"text\": \"В предрифовом шлейфе накапливаются грубозернистые обломочные карбонаты.\", \"page\": 207, \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c08\", \"kind\": \"observation\", \"text\": \"В предрифовом шлейфе накапливаются грубозернистые обломочные карбонаты.\", \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c09\", \"text\": \"В отложениях предрифового шлейфа преобладают пустоты между зёрнами.\", \"page\": 207, \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c09\", \"kind\": \"observation\", \"text\": \"В отложениях предрифового шлейфа преобладают пустоты между зёрнами.\", \"quote\": \"В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c10\", \"text\": \"В тыльной части рифа (внутририфовых лагунах) и в зарифовых отложениях развиты плотные микрозернистые карбонатные породы.\", \"page\": 207, \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c10\", \"kind\": \"observation\", \"text\": \"В тыльной части рифа (внутририфовых лагунах) и в зарифовых отложениях развиты плотные микрозернистые карбонатные породы.\", \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c11\", \"text\": \"Лагуны и зарифовые отложения с такими породами обычно менее пористы.\", \"page\": 207, \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c11\", \"kind\": \"observation\", \"text\": \"Лагуны и зарифовые отложения с такими породами обычно менее пористы.\", \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_3.05.c12\", \"text\": \"Лагунные и зарифовые породы могут даже стать экраном для движения жидкости или газа.\", \"page\": 207, \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость и могут даже обладать экранирующими свойствами.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_3.05.c12\", \"kind\": \"observation\", \"text\": \"Лагунные и зарифовые породы могут даже стать экраном для движения жидкости или газа.\", \"quote\": \"Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость и могут даже обладать экранирующими свойствами.\", \"page\": 207, \"unit_ids\": [\"u207_03\"], \"by\": \"author\"}}], \"difficulty\": [\"п\", \"м\"], \"misconception\": {\"wrong\": \"Лучшие коллекторы всегда в центре рифа.\", \"right\": \"У крупных плосковершинных и атолловидных рифов лучшие зоны смещены к периферии, в область гребня и предрифового шлейфа.\", \"claim_id\": \"geo.kuznetsov.s10_3.05.c01\", \"page\": null, \"quote\": null}, \"data_meaning\": {\"text\": \"\", \"curves\": [], \"datasets\": [], \"claim_ids\": []}, \"it_analogy\": \"У зон рифа разные наборы признаков, как у разных подгрупп данных. Полосы пород не обязаны иметь чёткие границы или быть непрерывными.\", \"formulas\": [], \"datasets\": [], \"prediction_question\": null, \"transfer_question\": null, \"source\": {\"title\": \"Природные резервуары рифов\", \"book\": \"Литология природных резервуаров нефти и газа\", \"chapter\": \"kuznetsov\", \"pages\": [207]}, \"visual_hints\": {}, \"lang\": \"ru\", \"_missing\": [\"what_it_means_for_data\"]}\n\nCHAPTER PAGES:\n\n[page 206]\nРис. 10.2. Профильные разрезы рифа Рейнбоу А, Канада [Langton, Chin, 1968]:\nа – литолого-фациальный, б – типов коллекторов.\nИзвестняки: 1 – мелкозернистые тонкослоистые, 2 – мелкозернистые светлоокрашенные, 3 – микро- и тонкозернистые с обильными амфипорами, 4 – с крупными обломками разнообразных организмов, 5 – с крупными обломками массивных строматопороидей и кораллов, 6 – строматопоровые, 7 – коралловые, 8 – известковые песчаники мелко- и среднезернистые, 9 – темноцветные с массивными кораллами, 10 – темноцветные тонко- и мелкозернистые с обломками строматопороидей и кораллов, 11 – мелкозернистые с ветвистыми кораллами, 12 – темноокрашенные микрозернистые с обильными криноидеями, 13 – темно-коричневые микрозернистые битуминозные.\nГруппы коллекторов: I – пористость 10–30 %; проницаемость 50–2000·10⁻¹⁵ м²; II – пористость 15–35 %, проницаемость 30–30000·10⁻¹⁵ м²; III – пористость 8–15 %, проницаемость (5–30)·10⁻¹⁵ м²; IV – пористость 8–25 %, проницаемость <50·10⁻¹⁵ м²; V – пористость 3–8 %, проницаемость <3·10⁻¹⁵ м²\n\n[page 207]\nне с диаметром около 2 км. Пустотное пространство меж- и внутриформенное, имеются мелкие каверны (ваги), пустоты-шаблоны (молдик), трещины. В отложениях рифа выделено две основные фации – ядра рифа и околорифового шлейфа.\nВ соответствии с литолого-фациальной зональностью распределены коллекторские свойства. В ядре, сложенном преимущественно строматопоровыми известняками, пористость составляет 15–35 % при проницаемости от 30 до 30000·10⁻¹⁵ м², в то время как на крыльях преобладают породы двух классов – с пористостью 10–30 % и проницаемостью (50–2000)·10⁻¹⁵ м² и пористостью 8–25 % и проницаемостью ниже 50·10⁻¹⁵ м². При этом устанавливается и более тесная связь коллекторских свойств с литологическими типами пород.\nНаилучшие коллекторские свойства в центральных частях массивов отмечаются в ряде рифов Камско-Кинельской впадины (Карача-Елга, Шелканово – *рис. 10.3*), Приуралья (Введеновском, Тереклинском, Старо-Казанковском, Грачевском, Ишимбаевских), одиночных рифах юры Узбекистана (Кенджа и др.).\nВ более крупных плосковершинных и атолловидных рифах, а тем более атоллах, зона улучшенных коллекторских свойств смещается к периферии рифового комплекса в область биогермного гребня и предрифового обломочного шлейфа, т.е. распределение пористости и проницаемости подчиняется общей морфологической и литолого-экологической зональности. В фациях рифового гребня, образовавшихся в зоне активной волновой деятельности, пористость связана с внутренними полостями органических остатков и пространством между ними, с пещеровидными пустотами. Здесь же волны могут образовывать бароподобные валы из хорошо окатанных и отсортированных обломков рифовых пород, обладающие высокой межгранулярной пористостью. В субаэральных условиях возникают золовые дюны с аналогичным типом пор. В отложениях предрифового шлейфа, где отлагаются грубозернистые обломочные карбонаты, преобладает межгранулярная пористость. Тыльные части рифа (внутририфовые лагуны) и зарифовые отложения, где развиты микрозернистые плотные карбонатные породы, обычно имеют меньшую пористость и могут даже обладать экранирующими свойствами.\nОтмеченная особенность – смещение зон наилучших коллекторских свойств к краю плосковершинных рифов и атоллов, в зону рифового гребня и даже верхнюю часть внешнего склона – явление весьма обычное; при этом здесь нередко отмечаются аномально высокие дебиты. Это позволяет думать, что наряду с межформенной и каверновой пористостью здесь развита повышенная трещиноватость, которая и определяет существенное увеличение проницаемости. Действительно, например, на Карачаганакском месторождении в нижнепермском рифовом комплексе максимальная плотность трещин отмечена в краевых фациях [Югай и др., 1987].\nТипичное для атолловидных рифов распределение коллекторов установлено в пределах нижнекаменноугольного рифа Тенгиз в Прикас-\n\n[page 208]\nРис. 10.3. Профильный разрез Карача-Еггинского и Шелканского рифов [Кошляк, Коваленко, 1967]:\n1 - аргиллиты; 2 - песчаники; известняки с пористостью, %: 3 - 0-2,5; 4 - 2,5-5,0; 5 - 5,0-7,5; 6 - 7,5-10,0; 7 - 10,0-12,5; 8 - 12,5-15,0; 9 - 15,0-17,5; 10 - 17,5-20,0\n\n\nTEMPLATE LIBRARY (name, purpose, allowed classes, required/optional params, example):\n[{\"name\": \"title_card\", \"purpose\": \"Opening/section title: kicker + big title (+ subtitle). No facts beyond the title.\", \"classes\": [\"T\", \"D\"], \"required\": {\"title\": \"str (use *word* to accent a keyword)\"}, \"optional\": {\"kicker\": \"small mono line above\", \"subtitle\": \"str\", \"badge\": \"short number like 01\"}, \"needs_model\": false, \"example\": {\"kicker\": \"ГЕОФИЗИКА · 01\", \"title\": \"Что *на самом деле* меряет зонд\", \"badge\": \"01\"}}, {\"name\": \"misconception_card\", \"purpose\": \"Myth vs fact. The myth appears first and is struck through when the fact is revealed.\", \"classes\": [\"T\"], \"required\": {\"wrong\": \"the misconception (short)\", \"right\": \"the correct statement (short, sourced)\"}, \"optional\": {\"reveal_at\": \"time-ref when the fact appears (default 45%)\", \"wrong_label\": \"str\", \"right_label\": \"str\"}, \"needs_model\": false, \"example\": {\"wrong\": \"Зонд посылает излучение и ловит отражение\", \"right\": \"Зонд только *принимает* естественное излучение пород\", \"reveal_at\": \"50%\"}}, {\"name\": \"question_card\", \"purpose\": \"Prediction question (asked before the reveal) or transfer question (at the end), optional options.\", \"classes\": [\"T\", \"D\"], \"required\": {\"question\": \"str\"}, \"optional\": {\"options\": \"list of short answers\", \"kind\": \"prediction|transfer\", \"timer\": \"bool countdown ring\", \"label\": \"str above the question\"}, \"needs_model\": false, \"example\": {\"question\": \"Где ГК будет выше: в глине или в песчанике?\", \"options\": [\"в глине\", \"в песчанике\"], \"kind\": \"prediction\", \"timer\": true}}, {\"name\": \"before_after\", \"purpose\": \"Two-column comparison (before/after, manual/automated, intuition/reality) with items appearing in turn.\", \"classes\": [\"T\"], \"required\": {\"left\": \"{title, items:[str]}\", \"right\": \"{title, items:[str]}\"}, \"optional\": {\"left_icon\": \"icon kind\", \"right_icon\": \"icon kind\", \"times\": \"list of time-refs for items\"}, \"needs_model\": false, \"example\": {\"left\": {\"title\": \"Вручную\", \"items\": [\"Интерпретатор ставит границы\"]}, \"right\": {\"title\": \"Автоматически\", \"items\": [\"Модель получает ГК как признак\"]}}}, {\"name\": \"equation_card\", \"purpose\": \"Big equation / calculation card. Every number must be in the source table.\", \"classes\": [\"T\"], \"required\": {\"lines\": \"list of equation strings, e.g. ['Δp ~ ln t']\"}, \"optional\": {\"caption\": \"str under the equation\", \"legend\": \"[{symbol, meaning}]\", \"times\": \"time-refs per line\"}, \"needs_model\": false, \"example\": {\"lines\": [\"χ = k / (μ·β*)\"], \"caption\": \"пьезопроводность\", \"legend\": [{\"symbol\": \"k\", \"meaning\": \"проницаемость\"}]}}, {\"name\": \"summary_list\", \"purpose\": \"Vertical numbered list summarizing the path / key takeaways (items appear in turn).\", \"classes\": [\"T\"], \"required\": {\"items\": \"list of short strings\"}, \"optional\": {\"title\": \"str\", \"times\": \"time-refs\"}, \"needs_model\": false, \"example\": {\"title\": \"Итого\", \"items\": [\"ГК меряет природную радиоактивность\", \"Глины обычно ярче\"]}}, {\"name\": \"text_panel\", \"purpose\": \"Panel with an icon, a short paragraph and optional chips (e.g. IT/data bridge, definitions). Fallback for any claim.\", \"classes\": [\"T\"], \"required\": {\"text\": \"paragraph (use *word* for accents)\"}, \"optional\": {\"icon\": \"db|gear|eye|clock|warning|check|arrow\", \"title\": \"str\", \"chips\": \"list of short tags\", \"chips_title\": \"str\"}, \"needs_model\": false, \"example\": {\"title\": \"Где это в данных\", \"text\": \"Кривая ГК — входной *признак* для модели литологии\", \"icon\": \"db\", \"chips\": [\"LAS\", \"GR\", \"литология\"]}}, {\"name\": \"data_chart\", \"purpose\": \"Real-data chart (time series, depth plot, crossplot) drawn progressively, with data-derived highlights.\", \"classes\": [\"A\", \"B\"], \"required\": {\"y\": \"list of model array names to plot (e.g. ['y_PRESSURE'])\"}, \"optional\": {\"x\": \"model array for x (default 'x')\", \"kind\": \"line|step|scatter|range_bars\", \"lo\": \"range_bars: model array with lower bounds\", \"hi\": \"range_bars: model array with upper bounds\", \"labels\": \"range_bars: model array with category names (lithology names get legend colours)\", \"highlight\": \"range_bars: list of category names to emphasise\", \"x_label\": \"str\", \"y_label\": \"str\", \"x_range\": \"[a,b]\", \"y_range\": \"[a,b]\", \"x_scale\": \"lin|log\", \"y_scale\": \"lin|log\", \"invert_y\": \"bool (depth plots)\", \"draw\": \"{start: time-ref, end: time-ref}\", \"series_draw\": \"[{start, end}] per series (draw series one after another)\", \"highlights\": \"[{x_from, x_to, label}] in x units\", \"highlight_where\": \"{array: model array, op: '==|<|>', value: number, label: str}\", \"annotations\": \"[{x, text, at?: time-ref}]\", \"ref_lines\": \"[{y, label}]\", \"series_labels\": \"{array: label}\", \"dates\": \"bool: x_dates array labels ticks\", \"caption\": \"source caption shown under the chart (dataset, well, curve)\", \"x_display_unit\": \"convert x from SI for display (model outputs)\", \"y_display_unit\": \"convert y from SI\"}, \"needs_model\": true, \"example\": {\"x\": \"x\", \"y\": [\"y_AVG_DOWNHOLE_PRESSURE\"], \"dates\": true, \"y_label\": \"p, бар\", \"highlight_where\": {\"array\": \"c_ON_STREAM_HRS\", \"op\": \"==\", \"value\": 0, \"label\": \"скважина остановлена\"}}}, {\"name\": \"depth_track\", \"purpose\": \"Object moving along depth (tool on cable, bit, sensor) in a geological cutaway + a log track that draws a real curve; the curve point is always at the object's current depth.\", \"classes\": [\"A\", \"B\"], \"required\": {\"track\": \"{curve: mnemonic, unit, range?: [min,max], log?: bool, title?: str}\"}, \"optional\": {\"window\": \"[top, base] depth window (default: model depth range)\", \"layers\": \"[{top, base, lith, label?}] lithology bands for the cutaway (depth units of the model)\", \"object\": \"{kind: tool|bit|sensor, label?: str}\", \"motion\": \"{start?, end?: time-ref, profile?: smooth|linear, direction?: down|up (up = logging while pulling out), show_full?: bool (whole curve already logged), margin?: 0..0.2}\", \"particles\": \"{direction: to_object|from_object, rate: curve|number, label?: str, start?: time-ref}\", \"markers\": \"[{depth, label}] horizontal marker lines (e.g. formation tops)\", \"annotations\": \"[{depth, text}] labels that appear when the object passes that depth\", \"readout\": \"bool: live value readout at the curve head\", \"shade\": \"{cutoff, below_color?, above_color?} fill between curve and cutoff\", \"callouts\": \"[{text, at: time-ref, target: object|curve}]\", \"caption\": \"small source caption under the track (dataset · well · curve)\"}, \"needs_model\": true, \"example\": {\"track\": {\"curve\": \"GR\", \"unit\": \"API\", \"range\": [0, 150]}, \"window\": [4285, 4360], \"layers\": [{\"top\": 4285, \"base\": 4317, \"lith\": \"shale\"}, {\"top\": 4317, \"base\": 4340, \"lith\": \"sandstone\"}, {\"top\": 4340, \"base\": 4360, \"lith\": \"shale\"}], \"object\": {\"kind\": \"tool\", \"label\": \"tool\"}, \"particles\": {\"direction\": \"to_object\", \"rate\": \"curve\"}, \"readout\": true}}, {\"name\": \"field_evolution\", \"purpose\": \"A field computed by the state model spreading in time (pressure, temperature, concentration...): map view + synced profile chart from the same array, with the disturbance front marked in both.\", \"classes\": [\"B\"], \"required\": {\"field\": \"{output: name of the model array, x_axis: 'r'|'x' axis name, t_axis: 't'}\"}, \"optional\": {\"view\": \"plan_radial (source at centre, default) | strip (1D bar)\", \"display_unit\": \"unit to show values in (e.g. bar); model output is SI\", \"x_display_unit\": \"unit for distance axis (default m)\", \"x_max\": \"max distance shown (model x units, SI)\", \"x_scale\": \"log|lin for the chart\", \"time\": \"{start: time-ref, end: time-ref} video interval over which model time advances\", \"front\": \"{threshold: value in display_unit, label?: str}\", \"ghosts\": \"number of earlier profiles kept faint on the chart (default 3)\", \"labels\": \"{x: 'r, м', y: 'Δp, бар', source: 'скважина', colorbar: 'Δp, бар'}\", \"invert_values\": \"bool: plot -u (e.g. pressure drop shown as depression)\"}, \"needs_model\": true, \"example\": {\"field\": {\"output\": \"dp\", \"x_axis\": \"r\", \"t_axis\": \"t\"}, \"display_unit\": \"bar\", \"x_max\": 1000, \"front\": {\"threshold\": 0.1}, \"labels\": {\"x\": \"r, м\", \"y\": \"Δp, бар\"}}}, {\"name\": \"cross_section\", \"purpose\": \"Layered geological cross-section: any list of units (lithology, thickness), dip, faults, a well, fluids in pores.\", \"classes\": [\"B\"], \"required\": {\"units\": \"[{name, lith, thickness}] from top to bottom (relative thickness ok)\"}, \"optional\": {\"dip_deg\": \"apparent dip of layers\", \"faults\": \"[{x: 0..1, throw: 0..1 of section height, dip_deg}]\", \"well\": \"{x: 0..1, to_unit: name, label}\", \"reveal\": \"bottom_up|top_down|all\", \"labels\": \"bool: callout each unit name\", \"highlight\": \"[{unit, at: time-ref, text?}]\", \"fluids\": \"[{unit, fluid: oil|water|gas, below?: {fluid, at_frac}}] shown as pore-scale dots, not blobs\", \"surface\": \"bool: draw a ground line with sky above\", \"times\": \"time-refs per unit reveal\", \"areas\": \"lateral lithology zones [{lith, points: [[x,y], ...], emphasis?: bool, label?: {text, at_xy: [x,y], source_ref?}}]; normalized to the section box\", \"openings\": \"enclosed empty voids [{center: [x,y], radii: [rx,ry], initial_radii?: [rx,ry], start?: time-ref, end?: time-ref}]; normalized to the section box and illustrated without scale or fluid fill\"}, \"needs_model\": false, \"example\": {\"units\": [{\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}, {\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1.2}, {\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}], \"reveal\": \"bottom_up\", \"labels\": true}}, {\"name\": \"pore_scale\", \"purpose\": \"Pore-scale view of a granular rock: grains always touch (grain-supported framework), pore space filled with fluids at a given saturation; optional flow arrows through pore throats.\", \"classes\": [\"B\"], \"required\": {}, \"optional\": {\"grains\": \"{n: count, size_cv: 0..0.5, touching: true (always enforced)}\", \"fluids\": \"{wetting: water|oil, sw: 0..1 water saturation, nonwetting: oil|gas}\", \"flow\": \"{direction_deg, label, at}\", \"legend\": \"bool\", \"seed\": \"int\"}, \"needs_model\": false, \"example\": {\"grains\": {\"n\": 60}, \"fluids\": {\"wetting\": \"water\", \"nonwetting\": \"oil\", \"sw\": 0.3}, \"legend\": true}}, {\"name\": \"inset_callouts\", \"purpose\": \"A base scene with a circular magnified inset (any other template inside) and callout labels.\", \"classes\": [\"B\", \"C\"], \"required\": {\"base\": \"{template: name, params: {...}} or {image: path}\", \"inset\": \"{template: name, params: {...}, focus: [x,y] 0..1 of base, pos: [x,y] 0..1, radius: 0..0.5}\"}, \"optional\": {\"callouts\": \"[{text, target: [x,y] 0..1 of base, at: time-ref}]\", \"inset_at\": \"time-ref\"}, \"needs_model\": false, \"example\": {\"base\": {\"template\": \"cross_section\", \"params\": {\"units\": [{\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1}]}}, \"inset\": {\"template\": \"pore_scale\", \"params\": {\"grains\": {\"n\": 40}}, \"focus\": [0.5, 0.5], \"pos\": [0.7, 0.35], \"radius\": 0.28}}}, {\"name\": \"process_steps\", \"purpose\": \"Step-by-step process / chain of causes: numbered nodes connected by flowing arrows, highlighted in turn.\", \"classes\": [\"T\"], \"required\": {\"steps\": \"[{title, text?}] in order (2-6 steps)\"}, \"optional\": {\"layout\": \"vertical|horizontal|cycle\", \"times\": \"time-refs when each step activates\", \"icons\": \"list of icon kinds per step\"}, \"needs_model\": false, \"example\": {\"steps\": [{\"title\": \"Пласт под давлением\"}, {\"title\": \"Скважина открыта\"}, {\"title\": \"Давление падает у ствола\"}], \"layout\": \"vertical\"}}, {\"name\": \"photo\", \"purpose\": \"Real photo/footage frame (class C) with a slow zoom/pan (2.5D feel). Needs a licensed real image.\", \"classes\": [\"C\"], \"required\": {\"src\": \"path to a real photo (domain pack photos/ or refs/)\"}, \"optional\": {\"caption\": \"str\", \"credit\": \"source/licence line (required for publishing)\", \"zoom\": \"[from, to]\", \"pan\": \"[[x0,y0],[x1,y1]] 0..1\", \"callouts\": \"[{text, target:[x,y] 0..1, at}]\"}, \"needs_model\": false, \"example\": {\"src\": \"refs/rig.jpg\", \"credit\": \"Photo: … (CC BY 4.0)\", \"zoom\": [1.0, 1.12]}}, {\"name\": \"ai_clip\", \"purpose\": \"Atmosphere / transition only (class D): an AI video clip between two VERIFIED frames (real photo or our render). No facts, text, numbers or diagrams in the prompt. Without a video model configured, a deterministic cross-zoom between the two frames is used.\", \"classes\": [\"D\"], \"required\": {\"first_frame\": \"path | 'shot:<id>:first' | 'shot:<id>:last'\", \"last_frame\": \"path | 'shot:<id>:first' | 'shot:<id>:last'\", \"prompt\": \"motion/mood description only\"}, \"optional\": {\"seconds\": \"3-6\"}, \"needs_model\": false, \"example\": {\"first_frame\": \"refs/rig_dusk.jpg\", \"last_frame\": \"shot:S2:first\", \"prompt\": \"slow camera descent from the rig into the ground, dusk light\", \"seconds\": 3}}, {\"name\": \"overlay_card\", \"purpose\": \"A visual template (base) with question / myth / fact / equation cards beside it, switching at narration cues. Use it instead of full-screen text cards so every line keeps a visual.\", \"classes\": [\"A\", \"B\", \"C\"], \"required\": {\"base\": \"{template: visual template name, params: {...}} (its model is the shot's model)\", \"cards\": \"[{kind: question|myth|fact|equation|text, text, options?: [..], at: time-ref, label?: str, source_ref?: claim id}]\"}, \"optional\": {\"position\": \"auto (below on 9:16, right on 16:9) | below | right\", \"card_share\": \"0.2..0.45\"}, \"needs_model\": false, \"example\": {\"base\": {\"template\": \"cross_section\", \"params\": {\"units\": [{\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}, {\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1}]}}, \"cards\": [{\"kind\": \"question\", \"text\": \"Где выше радиоактивность?\", \"options\": [\"глина\", \"песчаник\"], \"at\": 0.3}, {\"kind\": \"fact\", \"text\": \"Наиболее радиоактивны *глины*\", \"at\": \"60%\"}]}}]\n\nDATASETS AVAILABLE (open data only; use file names exactly):\n[{\"type\": \"csv\", \"kind\": \"formation_tops\", \"dataset\": \"Equinor Volve / NPD\", \"well\": \"15/9-19 SR\", \"description\": \"NPD formation tops for well 15/9-19 SR (MD, m)\", \"license\": \"Equinor Open Data Licence (Volve); NPD open data\", \"file\": \"15_9_19_SR_TOPS_NPD.csv\", \"columns\": [\"formation\", \"top_md_m\"]}]\n\nWrite the shot list JSON now.\n\nОтвет — только JSON, без пояснений и без ```.",
+    "schema": null,
+    "images": [],
+    "cache_path": "runs/kuznetsov/llm/vidpipe.geo.kuznetsov.s10_3.05.short.shots/c663aaf87c133a1fb2c5.json",
+    "created": "2026-11-25T20:43:34"
+  },
+  "response": {
+    "shots": [
+      {
+        "id": "S1",
+        "line_ids": [
+          "L1",
+          "L2"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "areas": [
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0,
+                      1
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Лагуна",
+                    "at_xy": [
+                      0.16,
+                      0.35
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c10"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Гребень",
+                    "at_xy": [
+                      0.47,
+                      0.28
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c03"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Шлейф",
+                    "at_xy": [
+                      0.81,
+                      0.69
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c08"
+                  }
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "question",
+              "text": "Где искать лучшие свойства?",
+              "options": [
+                "Край рифа",
+                "Лагуна"
+              ],
+              "at": "L2"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.31
+        },
+        "model": null,
+        "invariants": [
+          "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+          "Между кадрами положение и геометрия областей сохраняются."
+        ],
+        "assumptions": [
+          "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+        ],
+        "exaggerations": [],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S2",
+        "line_ids": [
+          "L3"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "areas": [
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0,
+                      1
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Лагуна",
+                    "at_xy": [
+                      0.16,
+                      0.35
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c10"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ]
+                  ],
+                  "emphasis": true,
+                  "label": {
+                    "text": "Гребень",
+                    "at_xy": [
+                      0.47,
+                      0.28
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c03"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ]
+                  ],
+                  "emphasis": true,
+                  "label": {
+                    "text": "Шлейф",
+                    "at_xy": [
+                      0.81,
+                      0.69
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c08"
+                  }
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "У крупных плоских рифов лучшие зоны смещены к краю",
+              "source_ref": "geo.kuznetsov.s10_3.05.c01",
+              "at": "L3"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+          "Между кадрами положение и геометрия областей сохраняются."
+        ],
+        "assumptions": [
+          "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+        ],
+        "exaggerations": [],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S3",
+        "line_ids": [
+          "L4",
+          "L5"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "inset_callouts",
+            "params": {
+              "base": {
+                "template": "cross_section",
+                "params": {
+                  "units": [
+                    {
+                      "name": "Известняк",
+                      "lith": "limestone",
+                      "thickness": 1
+                    }
+                  ],
+                  "labels": false,
+                  "reveal": "all",
+                  "areas": [
+                    {
+                      "lith": "limestone",
+                      "points": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0.34,
+                          0
+                        ],
+                        [
+                          0.3,
+                          0.47
+                        ],
+                        [
+                          0.34,
+                          1
+                        ],
+                        [
+                          0,
+                          1
+                        ]
+                      ],
+                      "emphasis": false,
+                      "label": {
+                        "text": "Лагуна",
+                        "at_xy": [
+                          0.16,
+                          0.35
+                        ],
+                        "source_ref": "geo.kuznetsov.s10_3.05.c10"
+                      }
+                    },
+                    {
+                      "lith": "limestone",
+                      "points": [
+                        [
+                          0.34,
+                          0
+                        ],
+                        [
+                          0.65,
+                          0
+                        ],
+                        [
+                          0.59,
+                          0.48
+                        ],
+                        [
+                          0.58,
+                          1
+                        ],
+                        [
+                          0.34,
+                          1
+                        ],
+                        [
+                          0.3,
+                          0.47
+                        ]
+                      ],
+                      "emphasis": false,
+                      "label": {
+                        "text": "Гребень",
+                        "at_xy": [
+                          0.47,
+                          0.28
+                        ],
+                        "source_ref": "geo.kuznetsov.s10_3.05.c03"
+                      }
+                    },
+                    {
+                      "lith": "limestone",
+                      "points": [
+                        [
+                          0.65,
+                          0
+                        ],
+                        [
+                          1,
+                          0
+                        ],
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          0.58,
+                          1
+                        ],
+                        [
+                          0.59,
+                          0.48
+                        ]
+                      ],
+                      "emphasis": true,
+                      "label": {
+                        "text": "Шлейф",
+                        "at_xy": [
+                          0.81,
+                          0.69
+                        ],
+                        "source_ref": "geo.kuznetsov.s10_3.05.c08"
+                      }
+                    }
+                  ]
+                }
+              },
+              "inset": {
+                "template": "pore_scale",
+                "params": {
+                  "grains": {
+                    "n": 45,
+                    "size_cv": 0.16,
+                    "touching": true
+                  },
+                  "fluids": {
+                    "wetting": "water",
+                    "nonwetting": "water",
+                    "sw": 1
+                  },
+                  "legend": false,
+                  "seed": 15
+                },
+                "focus": [
+                  0.81,
+                  0.69
+                ],
+                "pos": [
+                  0.75,
+                  0.25
+                ],
+                "radius": 0.19
+              }
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "Гребень формируется в зоне действия волн",
+              "source_ref": "geo.kuznetsov.s10_3.05.c03",
+              "at": "L4"
+            },
+            {
+              "kind": "fact",
+              "text": "Во внешнем шлейфе преобладают межзерновые поры",
+              "source_ref": "geo.kuznetsov.s10_3.05.c09",
+              "at": "L5"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+          "Между кадрами положение и геометрия областей сохраняются.",
+          "Во врезке показаны поры между зёрнами шлейфа, а не пустоты внутри остатков на гребне."
+        ],
+        "assumptions": [
+          "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены.",
+          "Синий цвет показывает условную воду в порах, без оценки насыщенности."
+        ],
+        "exaggerations": [
+          "Масштаб врезки условный, числовой коэффициент для этого схематического сравнения не задан."
+        ],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S4",
+        "line_ids": [
+          "L6"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "areas": [
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0,
+                      1
+                    ]
+                  ],
+                  "emphasis": true,
+                  "label": {
+                    "text": "Лагуна",
+                    "at_xy": [
+                      0.16,
+                      0.35
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c10"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.34,
+                      0
+                    ],
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.34,
+                      1
+                    ],
+                    [
+                      0.3,
+                      0.47
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Гребень",
+                    "at_xy": [
+                      0.47,
+                      0.28
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c03"
+                  }
+                },
+                {
+                  "lith": "limestone",
+                  "points": [
+                    [
+                      0.65,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      0.58,
+                      1
+                    ],
+                    [
+                      0.59,
+                      0.48
+                    ]
+                  ],
+                  "emphasis": false,
+                  "label": {
+                    "text": "Шлейф",
+                    "at_xy": [
+                      0.81,
+                      0.69
+                    ],
+                    "source_ref": "geo.kuznetsov.s10_3.05.c08"
+                  }
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "Породы лагуны обычно менее пористы",
+              "source_ref": "geo.kuznetsov.s10_3.05.c11",
+              "at": "L6"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Лагуна, гребень и внешний шлейф остаются боковыми зонами в одном порядке.",
+          "Между кадрами положение и геометрия областей сохраняются."
+        ],
+        "assumptions": [
+          "Условный профиль с фокусом на расположении зон. Их ширина, наклон и границы не измерены."
+        ],
+        "exaggerations": [],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S5",
+        "line_ids": [
+          "L7",
+          "L8"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "pore_scale",
+            "params": {
+              "grains": {
+                "n": 45,
+                "size_cv": 0.16,
+                "touching": true
+              },
+              "fluids": {
+                "wetting": "water",
+                "nonwetting": "water",
+                "sw": 1
+              },
+              "legend": false,
+              "seed": 15
+            }
+          },
+          "cards": [
+            {
+              "kind": "text",
+              "text": "Гипотеза: сравнить пористость по зонам рифа",
+              "at": "L7"
+            },
+            {
+              "kind": "question",
+              "text": "Где пустоты во внешнем обломочном шлейфе?",
+              "options": [
+                "Между зёрнами",
+                "Внутри зёрен"
+              ],
+              "at": "L8"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.31
+        },
+        "model": null,
+        "invariants": [
+          "Рассмотрена обломочная порода внешнего шлейфа.",
+          "Пустоты находятся в опорном каркасе."
+        ],
+        "assumptions": [
+          "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено."
+        ],
+        "exaggerations": [
+          "Увеличение условное; числовой масштаб отсутствует в источнике, размеры на экране не сопоставляются."
+        ],
+        "first_frame_src": null,
+        "last_frame_src": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "Codex (agent queue)",
+  "usage": {
+    "input_chars": 36891,
+    "output_chars": 18852
+  }
+}

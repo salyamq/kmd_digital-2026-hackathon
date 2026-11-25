@@ -1,0 +1,338 @@
+{
+  "request": {
+    "task": "vidpipe.geo.kuznetsov.s10_2.10.short.shots",
+    "key": "48ea28519bc7cc551aad",
+    "prompt": "vidpipe_raw",
+    "system": "You turn a narration script into a shot list with machine-readable scene specs for a deterministic renderer.\nYou never draw: you choose a TEMPLATE from the library and fill its params, and (when motion or data is\nshown) a STATE MODEL that code evaluates. Your JSON is validated; unknown fields are ignored.\n\nFRAME CLASSES (decide for every shot)\n A  data: curves, sections, maps, crossplots rendered from a real open dataset (model type las|csv). Label \"data\".\n B  process/schematic: computed process (model type formula|pde_diffusion) -> label \"simulation\";\n    schematic without numbers -> label \"schematic\".\n C  appearance: a real licensed photo (template photo) -> label \"photo\" (flag: not in the organizers' label set).\n D  atmosphere/transition only (template ai_clip), ZERO facts, only on lines with asserts_fact=false,\n    first and last frame must be a real photo or another shot's frame (\"shot:S3:first\"). At most 2 per video.\n T  full-screen TEXT CARD (title_card, question_card, misconception_card, equation_card, before_after,\n    summary_list, text_panel, process_steps) -> label \"schematic\". Reported separately from A/B in QA.\nDecision: shows a quantity, curve, direction, size, order of layers or cause->effect? -> A or B.\nWhat a real object looks like? -> C. Mood with zero facts? -> D. Pure question/summary with nothing to show -> T.\nTargets (checked by QA): >= 70% of screen time is A/B; text cards (T) <= 25% of screen time;\nevery line with role \"mechanism\" or \"data\" is on a VISUAL template (class A/B/C), never on a text card.\nWhen a myth, a question, a fact or an equation must be READ while something is shown, do not cut to a card:\nuse template overlay_card = a visual base (any A/B template with its params) + a strip of cards\n(kinds: myth | question | fact | equation | text) that switch at line cues. Its class is the class of its base.\n\nRULES\n1. Cover every script line exactly once, in order. A shot may span several consecutive lines (e.g. one\n   continuous depth_track or field_evolution scene). Use line ids as time references (\"at\": \"L5\",\n   \"start\": \"L5\", \"end\": \"L6.end\", \"reveal_at\": \"L3\") so animation syncs to the voice.\n2. Only use templates from the library. Satisfy every \"required\" field. If no template fits, use the closest\n   one and add \"needs_new_template\": \"<what visual is missing>\".\n3. State models:\n   - Real data: {\"type\":\"las\",\"file\":<file from DATASETS>,\"curve\":..,\"depth_from\":..,\"depth_to\":..} or\n     {\"type\":\"csv\",\"file\":..,\"x\":..,\"y\":[..],\"filter\":{col:value},\"x_from\":..,\"x_to\":..,\"also\":[cols]}.\n     Never invent files, wells or curves. Choose windows where the effect is visible.\n   - Formula: {\"type\":\"formula\",\"expr\":\"numpy-like expression\",\"params\":{name:{\"value\":..,\"unit\":..,\n     \"source\":{\"page\":..,\"quote\":\"..\"} or {\"assumption\":true,\"note\":\"why this value\"}}},\n     \"derived\":{name:\"expr\"}, \"grid\":{axis:{\"from\":..,\"to\":..,\"n\":..,\"unit\":..,\"scale\":\"lin|log\"}},\n     \"output\":{\"name\":..}, \"source\":{\"page\":..,\"quote\":\"<the formula as printed in the chapter>\"}}\n     Allowed functions: exp log log10 sqrt sin cos tan erf erfc E1 Ei minimum maximum where clip smoothstep pi.\n     The formula itself MUST come from the chapter (page + quote). Parameter values: from the chapter if given,\n     otherwise mark them {\"assumption\": true, \"note\": ...}; they will be listed in the passport.\n   - pde_diffusion: {\"type\":\"pde_diffusion\",\"geometry\":\"radial|linear\",\"coef\":expr,\"params\":..,\"grid\":{\"x\":..,\"t\":..},\n     \"initial\":..,\"inner_bc\":{\"type\":\"flux|value\",\"value\":expr},\"outer_bc\":{...}} for chapters that give only the equation.\n4. Physics: never depict a measuring tool as emitting when the sources say it only receives; fluids sit in\n   pores of rock (no underground lakes); grains in pore-scale views touch; depth increases downward.\n5. Every on-screen label/callout that states a fact must restate a sourced line; put the claim id in\n   \"source_ref\". Numbers on screen only if they are in the sources or come from the dataset/model.\n6. For each shot list \"invariants\" (what must stay true), \"assumptions\" and \"exaggerations\" (simplifications\n   and why) — these go into the video passport.\n7. Lithology names must be from: sandstone, shale, clay, siltstone, limestone, dolomite, marl, salt, anhydrite, coal, conglomerate, chalk, basement, unknown, sand, shaly_sand, generic. Fluids from: oil, water, gas, mud, brine, mud_filtrate, mud_cake, cement, steel, density_order_note.\n\nOUTPUT: JSON only:\n{\"shots\":[{\"id\":\"S1\",\"line_ids\":[\"L1\",\"L2\"],\"template\":\"...\",\"class\":\"A|B|C|D|T\",\"provenance\":\"data|simulation|schematic|photo\",\n  \"params\":{...},\"model\":{...}|null,\"invariants\":[\"...\"],\"assumptions\":[\"...\"],\"exaggerations\":[\"...\"],\n  \"first_frame_src\":null,\"last_frame_src\":null}]}",
+    "user": "LANGUAGE: ru   FORMAT: short   STYLE: F\n\nSCRIPT:\n{\n \"title\": \"Как вода создаёт *каверны*\",\n \"kicker\": \"РИФОВЫЙ КОЛЛЕКТОР\",\n \"lines\": [\n  {\n   \"id\": \"L1\",\n   \"role\": \"hook\",\n   \"text\": \"Откуда в рифе *пустоты*?\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L2\",\n   \"role\": \"prediction\",\n   \"text\": \"Предскажите, что меняется в проницаемой породе, когда вода растворяет её и уносит вещество.\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L3\",\n   \"role\": \"reveal\",\n   \"text\": \"Так возникают *каверны*. Это пустоты внутри породы, важная часть её вторичной пористости.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c01\",\n     \"page\": 205,\n     \"quote\": \"Большое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c02\",\n     \"page\": 205,\n     \"quote\": \"Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L4\",\n   \"role\": \"mechanism\",\n   \"text\": \"Вода легче проходит через породу с высокой начальной *проницаемостью*. Глинистых преград в рифе почти нет.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c03\",\n     \"page\": 205,\n     \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c05\",\n     \"page\": 205,\n     \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L5\",\n   \"role\": \"mechanism\",\n   \"text\": \"При активном обмене вода *растворяет породу* и уносит вещество. Пустоты меняют форму и размер.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c07\",\n     \"page\": 205,\n     \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c11\",\n     \"page\": 205,\n     \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\"\n    },\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c13\",\n     \"page\": 205,\n     \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L6\",\n   \"role\": \"data\",\n   \"text\": \"В описании скважины автор отмечает необычно высокий приток. Он связывает его с пересечением *карстовой пещеры*.\",\n   \"asserts_fact\": true,\n   \"myth\": false,\n   \"sources\": [\n    {\n     \"type\": \"claim\",\n     \"claim_id\": \"geo.kuznetsov.s10_2.10.c14\",\n     \"page\": 205,\n     \"quote\": \"Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе.\"\n    }\n   ]\n  },\n  {\n   \"id\": \"L7\",\n   \"role\": \"bridge\",\n   \"text\": \"Гипотеза для данных: храните описание *пустот* отдельно от оценки притока и сверяйте их по скважине.\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  },\n  {\n   \"id\": \"L8\",\n   \"role\": \"transfer\",\n   \"text\": \"Где вы ожидали бы более активного растворения: при свободном обмене воды или за глинистой преградой?\",\n   \"asserts_fact\": false,\n   \"myth\": false,\n   \"sources\": []\n  }\n ],\n \"prediction_question\": {\n  \"text\": \"Что будет с пустотами при растворении породы и выносе вещества?\",\n  \"options\": [\n   \"Пустоты могут увеличиться.\",\n   \"Пустоты обязательно исчезнут.\"\n  ]\n },\n \"transfer_question\": {\n  \"text\": \"Как изменится ожидание выщелачивания, если путь движения воды перекрывает глинистая пачка?\"\n },\n \"data_it_bridge\": {\n  \"where_in_data\": \"Описание пересечённых пустот и приток по скважине из примера автора.\",\n  \"manual_work\": \"Увязать приток с описанием вскрытой каверны, прежде чем делать вывод о породе.\",\n  \"hypotheses\": [\n   \"Раздельно хранить описания пустот и замеры притока и связывать их по скважине.\"\n  ]\n },\n \"planner\": \"llm:kmd:kmd\",\n \"video_id\": \"short\",\n \"node_id\": \"geo.kuznetsov.s10_2.10\",\n \"lang\": \"ru\",\n \"format\": \"short\",\n \"style\": \"F\",\n \"validation\": {\n  \"errors\": [],\n  \"warnings\": [],\n  \"notes\": []\n }\n}\n\nNODE:\n{\"id\": \"geo.kuznetsov.s10_2.10\", \"title\": \"Как вода создаёт рифовые каверны\", \"claims\": [{\"id\": \"geo.kuznetsov.s10_2.10.c01\", \"text\": \"В рифе значима вторичная пористость, притом важнее всего каверны.\", \"page\": 205, \"quote\": \"Большое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c01\", \"kind\": \"observation\", \"text\": \"В рифе значима вторичная пористость, притом важнее всего каверны.\", \"quote\": \"Большое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c02\", \"text\": \"Каверны образуются при активном выщелачивании, в том числе карстовом.\", \"page\": 205, \"quote\": \"Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c02\", \"kind\": \"inference\", \"text\": \"Каверны образуются при активном выщелачивании, в том числе карстовом.\", \"quote\": \"Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c03\", \"text\": \"Высокая первичная проницаемость рифа способствует активному выщелачиванию.\", \"page\": 205, \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c03\", \"kind\": \"inference\", \"text\": \"Высокая первичная проницаемость рифа способствует активному выщелачиванию.\", \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c04\", \"text\": \"Массивное строение рифа помогает выщелачиванию.\", \"page\": 205, \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c04\", \"kind\": \"inference\", \"text\": \"Массивное строение рифа помогает выщелачиванию.\", \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c05\", \"text\": \"Практическое отсутствие глинистых и других экранирующих пачек способствует выщелачиванию.\", \"page\": 205, \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c05\", \"kind\": \"inference\", \"text\": \"Практическое отсутствие глинистых и других экранирующих пачек способствует выщелачиванию.\", \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c06\", \"text\": \"Чистый химический состав породы — ещё один фактор высокой способности рифа к выщелачиванию.\", \"page\": 205, \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c06\", \"kind\": \"inference\", \"text\": \"Чистый химический состав породы — ещё один фактор высокой способности рифа к выщелачиванию.\", \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c07\", \"text\": \"Эти особенности рифа и другие факторы обеспечивают активный водообмен, растворение породы и вынос вещества.\", \"page\": 205, \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c07\", \"kind\": \"inference\", \"text\": \"Эти особенности рифа и другие факторы обеспечивают активный водообмен, растворение породы и вынос вещества.\", \"quote\": \"Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c08\", \"text\": \"Карсту способствует высотное положение рифов: они возвышаются над отложениями, которые образуются одновременно с ними.\", \"page\": 205, \"quote\": \"Высокой карстуемости рифов способствует их гипсометрическое положение – они всегда располагаются выше синхронных отложений\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c08\", \"kind\": \"inference\", \"text\": \"Карсту способствует высотное положение рифов: они возвышаются над отложениями, которые образуются одновременно с ними.\", \"quote\": \"Высокой карстуемости рифов способствует их гипсометрическое положение – они всегда располагаются выше синхронных отложений\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c09\", \"text\": \"Рифы нередко поднимаются выше уровня моря ещё во время роста.\", \"page\": 205, \"quote\": \"а в процессе роста нередко выходят выше уровня моря\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c09\", \"kind\": \"observation\", \"text\": \"Рифы нередко поднимаются выше уровня моря ещё во время роста.\", \"quote\": \"а в процессе роста нередко выходят выше уровня моря\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c10\", \"text\": \"При выходе над уровнем моря карст может начаться ещё в ходе образования рифа.\", \"page\": 205, \"quote\": \"а в процессе роста нередко выходят выше уровня моря, т.е. начинают карстоваться уже при своем образовании.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c10\", \"kind\": \"inference\", \"text\": \"При выходе над уровнем моря карст может начаться ещё в ходе образования рифа.\", \"quote\": \"а в процессе роста нередко выходят выше уровня моря, т.е. начинают карстоваться уже при своем образовании.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c11\", \"text\": \"Каверны имеют разную форму.\", \"page\": 205, \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c11\", \"kind\": \"observation\", \"text\": \"Каверны имеют разную форму.\", \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c12\", \"text\": \"Происхождение каверн неодинаково: автор выделяет унаследованные и разработанные.\", \"page\": 205, \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c12\", \"kind\": \"observation\", \"text\": \"Происхождение каверн неодинаково: автор выделяет унаследованные и разработанные.\", \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c13\", \"text\": \"Размеры каверн меняются от долей миллиметра до крупных карстовых пещер.\", \"page\": 205, \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c13\", \"kind\": \"observation\", \"text\": \"Размеры каверн меняются от долей миллиметра до крупных карстовых пещер.\", \"quote\": \"В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c14\", \"text\": \"Скважина 4 на Серро-Асуль в меловом рифе дала уникальный дебит 42000 м³/сут благодаря вскрытию карстовой пещеры.\", \"page\": 205, \"quote\": \"Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе.\", \"kind\": \"inference\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c14\", \"kind\": \"inference\", \"text\": \"Скважина 4 на Серро-Асуль в меловом рифе дала уникальный дебит 42000 м³/сут благодаря вскрытию карстовой пещеры.\", \"quote\": \"Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}, {\"id\": \"geo.kuznetsov.s10_2.10.c15\", \"text\": \"При этом из скважины с нефтью выносились обломки сталактитов.\", \"page\": 205, \"quote\": \"При этом вместе с нефтью выносились обломки сталактитов.\", \"kind\": \"observation\", \"raw\": {\"id\": \"geo.kuznetsov.s10_2.10.c15\", \"kind\": \"observation\", \"text\": \"При этом из скважины с нефтью выносились обломки сталактитов.\", \"quote\": \"При этом вместе с нефтью выносились обломки сталактитов.\", \"page\": 205, \"unit_ids\": [\"u205_02\"], \"by\": \"author\"}}], \"difficulty\": [\"м\", \"в\"], \"misconception\": {\"wrong\": \"\", \"right\": \"\", \"claim_id\": null, \"page\": null, \"quote\": null}, \"data_meaning\": {\"text\": \"\", \"curves\": [], \"datasets\": [], \"claim_ids\": []}, \"it_analogy\": \"Открытые пути движения воды напоминают сеть: если путь доступен, вещество может уйти через выход. В \n\nCHAPTER PAGES:\n\n[page 204]\nных – неморских тыльнорифовых склонах рифового гребня также формируются обломочные известняки, хотя и более тонкие, чем на предрифовых склонах. Отложения этой фации представлены обычно светлыми микрозернистыми известняками часто с тонкой правильной горизонтальной слоистостью, нередко с прослоями детритовых и шламовых известняков. Мощности лагунных отложений, как правило, меньше мощности ядра и в отличие от последних они обладают слоистостью разного масштаба. Таким образом, в атолловидных рифах устанавливается кольцевая зональность с лагунными фациями в центре.\nРифовые системы представляют собой более или менее протяженную цепь, состоящую из ряда соединяющихся или отдельных рифов различной формы. Приуроченность рифовых систем к уступам в рельефе дна, т.е. асимметричным формам, определяет их значительную геоморфологическую, структурную, фациальную и литолого-коллекторскую асимметрию в поперечном сечении.\nВ какой-то степени в линейно вытянутых рифовых системах отмечается аналогичный атоллам характер литолого-экологической зональности, однако отдельные фациальные зоны располагаются не по кольцу, а линейно вытянуты параллельно простиранию всей системы. Кроме того, если в атоллах фации располагаются более или менее симметрично относительно его центра, то в линейно вытянутой системе отмечается резкая асимметрия, так как ее фациальный профиль представляет собой как бы половину профиля атолла: депрессионные бассейновые фации – предрифовые фации – фации ядра рифа – тыльно-рифовые фации – зарифовые лагунные или мелководно-морские фации.\nРазнообразие структурно-генетических типов пород и их частная интенсивная вторичная переработка определяют и разнообразие типов коллекторов, их качества, характера и структуры пустотного пространства. Спецификой является важная роль пустот, так или иначе связанных с наличием скелетных остатков организмов. Первичная пористость весьма разнообразна. Она создается, прежде всего, пустотами во внутренних полостях скелетов органических остатков – кораллов, гидроидов, водорослей, пелеципод, брахиопод, гастропод, фораминифер и т.д., а также пространством между каркасными органическими остатками – веточками мшанок, кораллов и др. Эту пористость Т.А. Линк [Link, 1950] образно сравнил со стогом соломы, придавленной сверху грузом. Отдельные полые соломинки имеют свою пористость, а их беспорядочное нагромождение приводит к образованию еще более крупных пустот. Сюда же относятся щелевидные и линзовидные пустоты между отдельными наслоениями корковых и инкрустирующих организмов, например строматолитовых и водорослевых слойков, а также щелевидные пустоты на контакте скелетов органических остатков, и прежде всего раковин, с вмещающим детритовым, шламовым и другим илистым карбонатным материалом.\nВажное значение имеет межгранулярная первичная пористость в обломочных, органогенно-обломочных и оолитовых известняках. В первичное пустотное пространство рифов входят также довольно многочис-\n\n[page 205]\nленные и нередко крупные пещеровидные пустоты, формирующиеся в волноприбойных каналах, нишах и рифовых туннелях, а также образующиеся при неравномерном и неполном срастании отдельных биогермов и колоний и т.д. К первичным могут быть отнесены также пустоты, образующиеся в результате деятельности сверлильщиков.\nПервичная пористость в чистом виде и в полном объеме практически не сохраняется и уже в процессе роста рифа может сокращаться за счет развития инкрустирующих водорослей, субаквальной цементации, заполнения пустот мелкими организмами и детритом, в результате диагенетического хемогенного и биохемогенного выпадения карбонатов и т.д.\nБольшое значение имеет также вторичная пористость. Наиболее важной является каверновая пустотность, образующаяся при активном выщелачивании, в том числе карстовом. Высокая способность к выщелачиванию обусловлена во многом свойствами самих рифов – их высокой первичной проницаемостью, массивностью строения и практически отсутствием глинистых и иных экранирующих пачек, чистотой химического состава пород и другими факторами, что определяет активный водообмен, растворение и вынос вещества. Высокой карстуемости рифов способствует их гипсометрическое положение – они всегда располагаются выше синхронных отложений, а в процессе роста нередко выходят выше уровня моря, т.е. начинают карстоваться уже при своем образовании. В результате возникают каверны разных форм, происхождения (унаследованные, разработанные) и размеров – от долей миллиметра до крупных карстовых пещер. Уникальный дебит в 42000 м³/сут скв. 4 месторождения Серро-Асуль в поясе Голден-Лейк Мексики, связанного с меловым рифом, обусловлен тем, что скважина вскрыла карстовую пещеру, сформированную в этом рифе. При этом вместе с нефтью выносились обломки сталактитов.\nДругой тип вторичной пористости – межкристаллическая пористость, образующаяся в результате перекристаллизации и доломитизации.\n### 10.3. СТРОЕНИЕ РИФОВЫХ РЕЗЕРВУАРОВ\nВ очень большой степени от морфолого-генетического типа рифов зависит площадное распространение зон улучшенных коллекторских свойств. Наиболее простое распределение коллекторских свойств отмечается в относительно небольших и слабо дифференцированных одиночных куполовидных рифах, где наилучшими коллекторскими свойствами обладают центральные части массивов.\nВ качестве примера на рис. 10.2 приведены данные по резервуару хорошо изученного рифа Рейнбоу «А» в Канаде [Langton, Chin, 1968]. Это островершинный риф (пиннакл) общей мощностью 200–250 м, из которых 90 м нефтенасыщены и 60 м газонасыщены; округлый в пла-\n\n[page 206]\nРис. 10.2. Профильные разрезы рифа Рейнбоу А, Канада [Langton, Chin, 1968]:\nа – литолого-фациальный, б – типов коллекторов.\nИзвестняки: 1 – мелкозернистые тонкослоистые, 2 – мелкозернистые светлоокрашенные, 3 – микро- и тонкозернистые с обильными амфипорами, 4 – с крупными обломками разнообразных организмов, 5 – с крупными обломками массивных строматопороидей и кораллов, 6 – строматопоровые, 7 – коралловые, 8 – известковые песчаники мелко- и среднезернистые, 9 – темноцветные с массивными кораллами, 10 – темноцветные тонко- и мелкозернистые с обломками строматопороидей и кораллов, 11 – мелкозернистые с ветвистыми кораллами, 12 – темноокрашенные микрозернистые с обильными криноидеями, 13 – темно-коричневые микрозернистые битуминозные.\nГруппы коллекторов: I – пористость 10–30 %; проницаемость 50–2000·10⁻¹⁵ м²; II – пористость 15–35 %, проницаемость 30–30000·10⁻¹⁵ м²; III – пористость 8–15 %, проницаемость (5–30)·10⁻¹⁵ м²; IV – пористость 8–25 %, проницаемость <50·10⁻¹⁵ м²; V – пористость 3–8 %, проницаемость <3·10⁻¹⁵ м²\n\n\nTEMPLATE LIBRARY (name, purpose, allowed classes, required/optional params, example):\n[{\"name\": \"title_card\", \"purpose\": \"Opening/section title: kicker + big title (+ subtitle). No facts beyond the title.\", \"classes\": [\"T\", \"D\"], \"required\": {\"title\": \"str (use *word* to accent a keyword)\"}, \"optional\": {\"kicker\": \"small mono line above\", \"subtitle\": \"str\", \"badge\": \"short number like 01\"}, \"needs_model\": false, \"example\": {\"kicker\": \"ГЕОФИЗИКА · 01\", \"title\": \"Что *на самом деле* меряет зонд\", \"badge\": \"01\"}}, {\"name\": \"misconception_card\", \"purpose\": \"Myth vs fact. The myth appears first and is struck through when the fact is revealed.\", \"classes\": [\"T\"], \"required\": {\"wrong\": \"the misconception (short)\", \"right\": \"the correct statement (short, sourced)\"}, \"optional\": {\"reveal_at\": \"time-ref when the fact appears (default 45%)\", \"wrong_label\": \"str\", \"right_label\": \"str\"}, \"needs_model\": false, \"example\": {\"wrong\": \"Зонд посылает излучение и ловит отражение\", \"right\": \"Зонд только *принимает* естественное излучение пород\", \"reveal_at\": \"50%\"}}, {\"name\": \"question_card\", \"purpose\": \"Prediction question (asked before the reveal) or transfer question (at the end), optional options.\", \"classes\": [\"T\", \"D\"], \"required\": {\"question\": \"str\"}, \"optional\": {\"options\": \"list of short answers\", \"kind\": \"prediction|transfer\", \"timer\": \"bool countdown ring\", \"label\": \"str above the question\"}, \"needs_model\": false, \"example\": {\"question\": \"Где ГК будет выше: в глине или в песчанике?\", \"options\": [\"в глине\", \"в песчанике\"], \"kind\": \"prediction\", \"timer\": true}}, {\"name\": \"before_after\", \"purpose\": \"Two-column comparison (before/after, manual/automated, intuition/reality) with items appearing in turn.\", \"classes\": [\"T\"], \"required\": {\"left\": \"{title, items:[str]}\", \"right\": \"{title, items:[str]}\"}, \"optional\": {\"left_icon\": \"icon kind\", \"right_icon\": \"icon kind\", \"times\": \"list of time-refs for items\"}, \"needs_model\": false, \"example\": {\"left\": {\"title\": \"Вручную\", \"items\": [\"Интерпретатор ставит границы\"]}, \"right\": {\"title\": \"Автоматически\", \"items\": [\"Модель получает ГК как признак\"]}}}, {\"name\": \"equation_card\", \"purpose\": \"Big equation / calculation card. Every number must be in the source table.\", \"classes\": [\"T\"], \"required\": {\"lines\": \"list of equation strings, e.g. ['Δp ~ ln t']\"}, \"optional\": {\"caption\": \"str under the equation\", \"legend\": \"[{symbol, meaning}]\", \"times\": \"time-refs per line\"}, \"needs_model\": false, \"example\": {\"lines\": [\"χ = k / (μ·β*)\"], \"caption\": \"пьезопроводность\", \"legend\": [{\"symbol\": \"k\", \"meaning\": \"проницаемость\"}]}}, {\"name\": \"summary_list\", \"purpose\": \"Vertical numbered list summarizing the path / key takeaways (items appear in turn).\", \"classes\": [\"T\"], \"required\": {\"items\": \"list of short strings\"}, \"optional\": {\"title\": \"str\", \"times\": \"time-refs\"}, \"needs_model\": false, \"example\": {\"title\": \"Итого\", \"items\": [\"ГК меряет природную радиоактивность\", \"Глины обычно ярче\"]}}, {\"name\": \"text_panel\", \"purpose\": \"Panel with an icon, a short paragraph and optional chips (e.g. IT/data bridge, definitions). Fallback for any claim.\", \"classes\": [\"T\"], \"required\": {\"text\": \"paragraph (use *word* for accents)\"}, \"optional\": {\"icon\": \"db|gear|eye|clock|warning|check|arrow\", \"title\": \"str\", \"chips\": \"list of short tags\", \"chips_title\": \"str\"}, \"needs_model\": false, \"example\": {\"title\": \"Где это в данных\", \"text\": \"Кривая ГК — входной *признак* для модели литологии\", \"icon\": \"db\", \"chips\": [\"LAS\", \"GR\", \"литология\"]}}, {\"name\": \"data_chart\", \"purpose\": \"Real-data chart (time series, depth plot, crossplot) drawn progressively, with data-derived highlights.\", \"classes\": [\"A\", \"B\"], \"required\": {\"y\": \"list of model array names to plot (e.g. ['y_PRESSURE'])\"}, \"optional\": {\"x\": \"model array for x (default 'x')\", \"kind\": \"line|step|scatter|range_bars\", \"lo\": \"range_bars: model array with lower bounds\", \"hi\": \"range_bars: model array with upper bounds\", \"labels\": \"range_bars: model array with category names (lithology names get legend colours)\", \"highlight\": \"range_bars: list of category names to emphasise\", \"x_label\": \"str\", \"y_label\": \"str\", \"x_range\": \"[a,b]\", \"y_range\": \"[a,b]\", \"x_scale\": \"lin|log\", \"y_scale\": \"lin|log\", \"invert_y\": \"bool (depth plots)\", \"draw\": \"{start: time-ref, end: time-ref}\", \"series_draw\": \"[{start, end}] per series (draw series one after another)\", \"highlights\": \"[{x_from, x_to, label}] in x units\", \"highlight_where\": \"{array: model array, op: '==|<|>', value: number, label: str}\", \"annotations\": \"[{x, text, at?: time-ref}]\", \"ref_lines\": \"[{y, label}]\", \"series_labels\": \"{array: label}\", \"dates\": \"bool: x_dates array labels ticks\", \"caption\": \"source caption shown under the chart (dataset, well, curve)\", \"x_display_unit\": \"convert x from SI for display (model outputs)\", \"y_display_unit\": \"convert y from SI\"}, \"needs_model\": true, \"example\": {\"x\": \"x\", \"y\": [\"y_AVG_DOWNHOLE_PRESSURE\"], \"dates\": true, \"y_label\": \"p, бар\", \"highlight_where\": {\"array\": \"c_ON_STREAM_HRS\", \"op\": \"==\", \"value\": 0, \"label\": \"скважина остановлена\"}}}, {\"name\": \"depth_track\", \"purpose\": \"Object moving along depth (tool on cable, bit, sensor) in a geological cutaway + a log track that draws a real curve; the curve point is always at the object's current depth.\", \"classes\": [\"A\", \"B\"], \"required\": {\"track\": \"{curve: mnemonic, unit, range?: [min,max], log?: bool, title?: str}\"}, \"optional\": {\"window\": \"[top, base] depth window (default: model depth range)\", \"layers\": \"[{top, base, lith, label?}] lithology bands for the cutaway (depth units of the model)\", \"object\": \"{kind: tool|bit|sensor, label?: str}\", \"motion\": \"{start?, end?: time-ref, profile?: smooth|linear, direction?: down|up (up = logging while pulling out), show_full?: bool (whole curve already logged), margin?: 0..0.2}\", \"particles\": \"{direction: to_object|from_object, rate: curve|number, label?: str, start?: time-ref}\", \"markers\": \"[{depth, label}] horizontal marker lines (e.g. formation tops)\", \"annotations\": \"[{depth, text}] labels that appear when the object passes that depth\", \"readout\": \"bool: live value readout at the curve head\", \"shade\": \"{cutoff, below_color?, above_color?} fill between curve and cutoff\", \"callouts\": \"[{text, at: time-ref, target: object|curve}]\", \"caption\": \"small source caption under the track (dataset · well · curve)\"}, \"needs_model\": true, \"example\": {\"track\": {\"curve\": \"GR\", \"unit\": \"API\", \"range\": [0, 150]}, \"window\": [4285, 4360], \"layers\": [{\"top\": 4285, \"base\": 4317, \"lith\": \"shale\"}, {\"top\": 4317, \"base\": 4340, \"lith\": \"sandstone\"}, {\"top\": 4340, \"base\": 4360, \"lith\": \"shale\"}], \"object\": {\"kind\": \"tool\", \"label\": \"tool\"}, \"particles\": {\"direction\": \"to_object\", \"rate\": \"curve\"}, \"readout\": true}}, {\"name\": \"field_evolution\", \"purpose\": \"A field computed by the state model spreading in time (pressure, temperature, concentration...): map view + synced profile chart from the same array, with the disturbance front marked in both.\", \"classes\": [\"B\"], \"required\": {\"field\": \"{output: name of the model array, x_axis: 'r'|'x' axis name, t_axis: 't'}\"}, \"optional\": {\"view\": \"plan_radial (source at centre, default) | strip (1D bar)\", \"display_unit\": \"unit to show values in (e.g. bar); model output is SI\", \"x_display_unit\": \"unit for distance axis (default m)\", \"x_max\": \"max distance shown (model x units, SI)\", \"x_scale\": \"log|lin for the chart\", \"time\": \"{start: time-ref, end: time-ref} video interval over which model time advances\", \"front\": \"{threshold: value in display_unit, label?: str}\", \"ghosts\": \"number of earlier profiles kept faint on the chart (default 3)\", \"labels\": \"{x: 'r, м', y: 'Δp, бар', source: 'скважина', colorbar: 'Δp, бар'}\", \"invert_values\": \"bool: plot -u (e.g. pressure drop shown as depression)\"}, \"needs_model\": true, \"example\": {\"field\": {\"output\": \"dp\", \"x_axis\": \"r\", \"t_axis\": \"t\"}, \"display_unit\": \"bar\", \"x_max\": 1000, \"front\": {\"threshold\": 0.1}, \"labels\": {\"x\": \"r, м\", \"y\": \"Δp, бар\"}}}, {\"name\": \"cross_section\", \"purpose\": \"Layered geological cross-section: any list of units (lithology, thickness), dip, faults, a well, fluids in pores.\", \"classes\": [\"B\"], \"required\": {\"units\": \"[{name, lith, thickness}] from top to bottom (relative thickness ok)\"}, \"optional\": {\"dip_deg\": \"apparent dip of layers\", \"faults\": \"[{x: 0..1, throw: 0..1 of section height, dip_deg}]\", \"well\": \"{x: 0..1, to_unit: name, label}\", \"reveal\": \"bottom_up|top_down|all\", \"labels\": \"bool: callout each unit name\", \"highlight\": \"[{unit, at: time-ref, text?}]\", \"fluids\": \"[{unit, fluid: oil|water|gas, below?: {fluid, at_frac}}] shown as pore-scale dots, not blobs\", \"surface\": \"bool: draw a ground line with sky above\", \"times\": \"time-refs per unit reveal\", \"areas\": \"lateral lithology zones [{lith, points: [[x,y], ...], emphasis?: bool, label?: {text, at_xy: [x,y], source_ref?}}]; normalized to the section box\", \"openings\": \"enclosed empty voids [{center: [x,y], radii: [rx,ry], initial_radii?: [rx,ry], start?: time-ref, end?: time-ref}]; normalized to the section box and illustrated without scale or fluid fill\"}, \"needs_model\": false, \"example\": {\"units\": [{\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}, {\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1.2}, {\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}], \"reveal\": \"bottom_up\", \"labels\": true}}, {\"name\": \"pore_scale\", \"purpose\": \"Pore-scale view of a granular rock: grains always touch (grain-supported framework), pore space filled with fluids at a given saturation; optional flow arrows through pore throats.\", \"classes\": [\"B\"], \"required\": {}, \"optional\": {\"grains\": \"{n: count, size_cv: 0..0.5, touching: true (always enforced)}\", \"fluids\": \"{wetting: water|oil, sw: 0..1 water saturation, nonwetting: oil|gas}\", \"flow\": \"{direction_deg, label, at}\", \"legend\": \"bool\", \"seed\": \"int\"}, \"needs_model\": false, \"example\": {\"grains\": {\"n\": 60}, \"fluids\": {\"wetting\": \"water\", \"nonwetting\": \"oil\", \"sw\": 0.3}, \"legend\": true}}, {\"name\": \"inset_callouts\", \"purpose\": \"A base scene with a circular magnified inset (any other template inside) and callout labels.\", \"classes\": [\"B\", \"C\"], \"required\": {\"base\": \"{template: name, params: {...}} or {image: path}\", \"inset\": \"{template: name, params: {...}, focus: [x,y] 0..1 of base, pos: [x,y] 0..1, radius: 0..0.5}\"}, \"optional\": {\"callouts\": \"[{text, target: [x,y] 0..1 of base, at: time-ref}]\", \"inset_at\": \"time-ref\"}, \"needs_model\": false, \"example\": {\"base\": {\"template\": \"cross_section\", \"params\": {\"units\": [{\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1}]}}, \"inset\": {\"template\": \"pore_scale\", \"params\": {\"grains\": {\"n\": 40}}, \"focus\": [0.5, 0.5], \"pos\": [0.7, 0.35], \"radius\": 0.28}}}, {\"name\": \"process_steps\", \"purpose\": \"Step-by-step process / chain of causes: numbered nodes connected by flowing arrows, highlighted in turn.\", \"classes\": [\"T\"], \"required\": {\"steps\": \"[{title, text?}] in order (2-6 steps)\"}, \"optional\": {\"layout\": \"vertical|horizontal|cycle\", \"times\": \"time-refs when each step activates\", \"icons\": \"list of icon kinds per step\"}, \"needs_model\": false, \"example\": {\"steps\": [{\"title\": \"Пласт под давлением\"}, {\"title\": \"Скважина открыта\"}, {\"title\": \"Давление падает у ствола\"}], \"layout\": \"vertical\"}}, {\"name\": \"photo\", \"purpose\": \"Real photo/footage frame (class C) with a slow zoom/pan (2.5D feel). Needs a licensed real image.\", \"classes\": [\"C\"], \"required\": {\"src\": \"path to a real photo (domain pack photos/ or refs/)\"}, \"optional\": {\"caption\": \"str\", \"credit\": \"source/licence line (required for publishing)\", \"zoom\": \"[from, to]\", \"pan\": \"[[x0,y0],[x1,y1]] 0..1\", \"callouts\": \"[{text, target:[x,y] 0..1, at}]\"}, \"needs_model\": false, \"example\": {\"src\": \"refs/rig.jpg\", \"credit\": \"Photo: … (CC BY 4.0)\", \"zoom\": [1.0, 1.12]}}, {\"name\": \"ai_clip\", \"purpose\": \"Atmosphere / transition only (class D): an AI video clip between two VERIFIED frames (real photo or our render). No facts, text, numbers or diagrams in the prompt. Without a video model configured, a deterministic cross-zoom between the two frames is used.\", \"classes\": [\"D\"], \"required\": {\"first_frame\": \"path | 'shot:<id>:first' | 'shot:<id>:last'\", \"last_frame\": \"path | 'shot:<id>:first' | 'shot:<id>:last'\", \"prompt\": \"motion/mood description only\"}, \"optional\": {\"seconds\": \"3-6\"}, \"needs_model\": false, \"example\": {\"first_frame\": \"refs/rig_dusk.jpg\", \"last_frame\": \"shot:S2:first\", \"prompt\": \"slow camera descent from the rig into the ground, dusk light\", \"seconds\": 3}}, {\"name\": \"overlay_card\", \"purpose\": \"A visual template (base) with question / myth / fact / equation cards beside it, switching at narration cues. Use it instead of full-screen text cards so every line keeps a visual.\", \"classes\": [\"A\", \"B\", \"C\"], \"required\": {\"base\": \"{template: visual template name, params: {...}} (its model is the shot's model)\", \"cards\": \"[{kind: question|myth|fact|equation|text, text, options?: [..], at: time-ref, label?: str, source_ref?: claim id}]\"}, \"optional\": {\"position\": \"auto (below on 9:16, right on 16:9) | below | right\", \"card_share\": \"0.2..0.45\"}, \"needs_model\": false, \"example\": {\"base\": {\"template\": \"cross_section\", \"params\": {\"units\": [{\"name\": \"глина\", \"lith\": \"clay\", \"thickness\": 1}, {\"name\": \"песчаник\", \"lith\": \"sandstone\", \"thickness\": 1}]}}, \"cards\": [{\"kind\": \"question\", \"text\": \"Где выше радиоактивность?\", \"options\": [\"глина\", \"песчаник\"], \"at\": 0.3}, {\"kind\": \"fact\", \"text\": \"Наиболее радиоактивны *глины*\", \"at\": \"60%\"}]}}]\n\nDATASETS AVAILABLE (open data only; use file names exactly):\n[{\"type\": \"csv\", \"kind\": \"formation_tops\", \"dataset\": \"Equinor Volve / NPD\", \"well\": \"15/9-19 SR\", \"description\": \"NPD formation tops for well 15/9-19 SR (MD, m)\", \"license\": \"Equinor Open Data Licence (Volve); NPD open data\", \"file\": \"15_9_19_SR_TOPS_NPD.csv\", \"columns\": [\"formation\", \"top_md_m\"]}]\n\nWrite the shot list JSON now.\n\nОтвет — только JSON, без пояснений и без ```.",
+    "schema": null,
+    "images": [],
+    "cache_path": "runs/kuznetsov/llm/vidpipe.geo.kuznetsov.s10_2.10.short.shots/48ea28519bc7cc551aad.json",
+    "created": "2026-11-25T20:43:34"
+  },
+  "response": {
+    "shots": [
+      {
+        "id": "S1",
+        "line_ids": [
+          "L1",
+          "L2"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "openings": [
+                {
+                  "center": [
+                    0.42,
+                    0.6
+                  ],
+                  "radii": [
+                    0.033,
+                    0.048
+                  ]
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "question",
+              "text": "Что станет с пустотами при растворении?",
+              "options": [
+                "Увеличатся",
+                "Исчезнут"
+              ],
+              "at": "L2"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.31
+        },
+        "model": null,
+        "invariants": [
+          "Малая пустота полностью окружена породой."
+        ],
+        "assumptions": [
+          "Условный срез породы; точные размеры и начальная геометрия не измерены."
+        ],
+        "exaggerations": [],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S2",
+        "line_ids": [
+          "L3"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "openings": [
+                {
+                  "center": [
+                    0.42,
+                    0.6
+                  ],
+                  "radii": [
+                    0.12,
+                    0.2
+                  ]
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "Каверны — пустоты внутри породы",
+              "source_ref": "geo.kuznetsov.s10_2.10.c02",
+              "at": "L3"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Каверна окружена породой, без изображения нефтяного озера."
+        ],
+        "assumptions": [
+          "Светлая область обозначает пустоту, её заполнение не задано."
+        ],
+        "exaggerations": [
+          "Каверна показана крупным планом без масштаба."
+        ],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S3",
+        "line_ids": [
+          "L4",
+          "L5"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "openings": [
+                {
+                  "center": [
+                    0.42,
+                    0.6
+                  ],
+                  "radii": [
+                    0.12,
+                    0.2
+                  ],
+                  "initial_radii": [
+                    0.033,
+                    0.048
+                  ],
+                  "start": "L5",
+                  "end": "L5.end"
+                }
+              ]
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "Проницаемость помогает водообмену",
+              "source_ref": "geo.kuznetsov.s10_2.10.c03",
+              "at": "L4"
+            },
+            {
+              "kind": "fact",
+              "text": "Растворение и вынос вещества",
+              "source_ref": "geo.kuznetsov.s10_2.10.c07",
+              "at": "L5"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Центр пустоты и контур породы остаются на месте. При выщелачивании растёт размер пустоты."
+        ],
+        "assumptions": [
+          "Условная схема выщелачивания; темп и форма расширения не являются расчётом."
+        ],
+        "exaggerations": [
+          "Изменение ускорено для показа; масштаб и длительность природного процесса не заданы."
+        ],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S4",
+        "line_ids": [
+          "L6"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Известняк",
+                  "lith": "limestone",
+                  "thickness": 1
+                }
+              ],
+              "labels": false,
+              "reveal": "all",
+              "openings": [
+                {
+                  "center": [
+                    0.42,
+                    0.6
+                  ],
+                  "radii": [
+                    0.12,
+                    0.2
+                  ]
+                }
+              ],
+              "well": {
+                "x": 0.42,
+                "to_unit": "Известняк",
+                "label": "скважина"
+              }
+            }
+          },
+          "cards": [
+            {
+              "kind": "fact",
+              "text": "Автор связывает высокий приток с карстовой пещерой",
+              "source_ref": "geo.kuznetsov.s10_2.10.c14",
+              "at": "L6"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.26
+        },
+        "model": null,
+        "invariants": [
+          "Ствол идёт с поверхности вниз и пересекает пустоту внутри породы."
+        ],
+        "assumptions": [
+          "Показан тип пересечения, а не фактическая глубина или геометрия конкретной скважины."
+        ],
+        "exaggerations": [],
+        "first_frame_src": null,
+        "last_frame_src": null
+      },
+      {
+        "id": "S5",
+        "line_ids": [
+          "L7",
+          "L8"
+        ],
+        "template": "overlay_card",
+        "class": "B",
+        "provenance": "schematic",
+        "params": {
+          "base": {
+            "template": "pore_scale",
+            "params": {
+              "grains": {
+                "n": 45,
+                "size_cv": 0.16,
+                "touching": true
+              },
+              "fluids": {
+                "wetting": "water",
+                "nonwetting": "water",
+                "sw": 1
+              },
+              "legend": false,
+              "seed": 9
+            }
+          },
+          "cards": [
+            {
+              "kind": "text",
+              "text": "Гипотеза: связать описание пустот и приток по скважине",
+              "at": "L7"
+            },
+            {
+              "kind": "question",
+              "text": "Где выщелачивание было бы активнее?",
+              "options": [
+                "Свободный обмен",
+                "За глиной"
+              ],
+              "at": "L8"
+            }
+          ],
+          "position": "below",
+          "card_share": 0.31
+        },
+        "model": null,
+        "invariants": [
+          "Пористость и приток остаются разными признаками.",
+          "Межзерновые пустоты не превращаются в открытое озеро."
+        ],
+        "assumptions": [
+          "Синий цвет показывает условное заполнение пустот водой; насыщение не измерено.",
+          "Графика не даёт количественной оценки для выбора ответа."
+        ],
+        "exaggerations": [
+          "Увеличение условное; числовой масштаб отсутствует в источнике, размеры на экране не сопоставляются."
+        ],
+        "first_frame_src": null,
+        "last_frame_src": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "Codex (agent queue)",
+  "usage": {
+    "input_chars": 42539,
+    "output_chars": 7939
+  }
+}
