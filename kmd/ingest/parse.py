@@ -425,6 +425,7 @@ def build_units(seg_pages: list[tuple[int, str]], running: set[str], segment: in
             if prev and prev["kind"] == "table" and crossed_break and not prev.get("_closed"):
                 # table continued on the next page
                 rows = [l for l in b["lines"] if not re.fullmatch(r"\|[\s\-:|]+\|?", l)]
+                prev.setdefault("page_breaks", []).append({"offset": len(prev["text"]) + 1, "page": page})
                 prev["text"] += "\n" + "\n".join(rows)
                 prev["page_end"] = page
             elif prev and prev.get("_table_caption"):
@@ -457,7 +458,11 @@ def build_units(seg_pages: list[tuple[int, str]], running: set[str], segment: in
             and (hyphen or _ends_open(prev["text"]))
             and not FIG_RE.match(text)
         ):
-            prev["text"] = _join(prev["text"], text)
+            joined = _join(prev["text"], text)
+            if page != prev["page_end"]:
+                # offset in the joined text where the new page starts
+                prev.setdefault("page_breaks", []).append({"offset": len(joined) - len(text.lstrip()), "page": page})
+            prev["text"] = joined
             prev["page_end"] = max(prev["page_end"], page)
             crossed_break = False
             continue

@@ -1,0 +1,102 @@
+{
+ "type": "object",
+ "required": [
+  "order",
+  "parts",
+  "nodes"
+ ],
+ "properties": {
+  "order": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "parts": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "title",
+     "node_keys"
+    ],
+    "properties": {
+     "title": {
+      "type": "string"
+     },
+     "node_keys": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "nodes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "key",
+     "order_rationale",
+     "links"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "order_rationale": {
+      "type": "string"
+     },
+     "links": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "to",
+        "type"
+       ],
+       "properties": {
+        "to": {
+         "type": "string"
+        },
+        "type": {
+         "enum": [
+          "prerequisite",
+          "example",
+          "refutes_misconception",
+          "to_data"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "merge": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "into",
+     "from"
+    ],
+    "properties": {
+     "into": {
+      "type": "string"
+     },
+     "from": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "notes": {
+   "type": "string"
+  }
+ },
+ "title": "LLM output of layer_graph"
+}
