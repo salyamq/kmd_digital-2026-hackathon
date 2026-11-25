@@ -434,7 +434,7 @@ th { background: var(--surface-2); }
 .evidence > p { margin: 0.6rem 0 0.25rem; }
 @media (max-width: 680px) {
   .hero, .library-intro { grid-template-columns: minmax(0, 1fr); }
-  .hero h1 { font-size: clamp(1.55rem, 6.5vw, 2rem); max-width: none; text-wrap: pretty; }
+  .hero h1 { font-size: clamp(1.85rem, 7.5vw, 2.65rem); max-width: none; text-wrap: pretty; }
   .library-intro h1 { font-size: clamp(2.65rem, 10vw, 3.8rem); }
   .cover-photo img { aspect-ratio: 1.65; }
   .catalog-link { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
@@ -490,7 +490,7 @@ th { background: var(--surface-2); }
   100% { background: transparent; border-color: var(--line); box-shadow: none; }
 }
 .source-excerpt blockquote { margin: 0; }
-@media (max-width: 680px) {
+@media (max-width: 1400px) {
   .rag-reading .rag-panel { height: min(13.5rem, 38dvh); }
   .rag-reading .rag-header { padding-block: 0.45rem; }
   .rag-reading .rag-header p, .rag-reading .rag-shortcuts { display: none; }

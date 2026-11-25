@@ -370,7 +370,7 @@
       excerpt.focus({ preventScroll: true });
       excerpt.scrollIntoView({
         behavior: smooth && !reduceMotion ? "smooth" : "instant",
-        block: ragWidget.classList.contains("rag-reading") && matchMedia("(max-width: 680px)").matches ? "start" : "center"
+        block: ragWidget.classList.contains("rag-reading") && matchMedia("(max-width: 1400px)").matches ? "start" : "center"
       });
       clearTimeout(highlightTimer);
       if (highlightedExcerpt) highlightedExcerpt.classList.remove("source-excerpt-highlight");
