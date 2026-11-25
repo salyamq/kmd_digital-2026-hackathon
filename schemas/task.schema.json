@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course task (задание) — one item of runs/<ch>/tasks.json -> tasks[]",
+  "description": "Types: single (one answer), multiple (several answers), order (drag to order), cloze (fill the gaps), numeric (calculation). The answer must be inside the step text: `evidence` is a substring of the step text (code-checked). `claim_id` links the claim of the node the task checks.",
+  "type": "object",
+  "required": ["type", "question", "explanation", "evidence", "claim_id"],
+  "properties": {
+    "id": {"type": "string", "description": "<node_id>.t<nn> (set by code)"},
+    "node_id": {"type": "string", "description": "set by code"},
+    "type": {"enum": ["single", "multiple", "order", "cloze", "numeric"]},
+    "question": {"type": "string", "minLength": 5},
+    "options": {"type": "array", "items": {"type": "string"}, "description": "single/multiple: answer options"},
+    "correct": {"type": "array", "items": {"type": "integer", "minimum": 0}, "description": "single/multiple: indexes of correct options (exactly one for single)"},
+    "items": {"type": "array", "items": {"type": "string"}, "description": "order: items in the CORRECT order (the site shuffles them)"},
+    "text": {"type": "string", "description": "cloze: sentence(s) with gaps marked ___ (three underscores), one per blank"},
+    "blanks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["answers"],
+        "properties": {
+          "answers": {"type": "array", "minItems": 1, "items": {"type": "string"}, "description": "accepted answers; the first is the canonical one"},
+          "options": {"type": "array", "items": {"type": "string"}, "description": "choices shown in a dropdown (must contain answers[0])"}
+        }
+      }
+    },
+    "answer": {"type": "number", "description": "numeric: correct value"},
+    "tolerance": {"type": "number", "minimum": 0, "description": "numeric: absolute tolerance"},
+    "unit": {"type": ["string", "null"]},
+    "explanation": {"type": "string", "description": "one sentence shown after checking"},
+    "evidence": {"type": "string", "minLength": 8, "description": "verbatim substring of the step text that contains the answer"},
+    "claim_id": {"type": "string"},
+    "page": {"type": ["integer", "null"], "description": "page of the claim (set by code)"},
+    "anchor": {"type": ["string", "null"], "description": "block id of the step page where the evidence is (set by code)"}
+  },
+  "allOf": [
+    {"if": {"properties": {"type": {"enum": ["single", "multiple"]}}}, "then": {"required": ["options", "correct"], "properties": {"options": {"minItems": 3}, "correct": {"minItems": 1}}}},
+    {"if": {"properties": {"type": {"const": "order"}}}, "then": {"required": ["items"], "properties": {"items": {"minItems": 3, "maxItems": 7}}}},
+    {"if": {"properties": {"type": {"const": "cloze"}}}, "then": {"required": ["text", "blanks"], "properties": {"blanks": {"minItems": 1}}}},
+    {"if": {"properties": {"type": {"const": "numeric"}}}, "then": {"required": ["answer"]}}
+  ]
+}

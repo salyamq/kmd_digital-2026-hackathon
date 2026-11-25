@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Flashcards of a chapter (runs/<ch>/cards.json)",
+  "type": "object",
+  "required": ["chapter", "cards"],
+  "properties": {
+    "chapter": {"type": "string"},
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "node_id", "front", "back"],
+        "properties": {
+          "id": {"type": "string"},
+          "node_id": {"type": "string"},
+          "front": {"type": "string", "minLength": 2},
+          "back": {"type": "string", "minLength": 2},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "page": {"type": ["integer", "null"]},
+          "kind": {"enum": ["term", "idea", "number", "mistake"]}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Step page (runs/<ch>/steps/<node_id>.json), assembled by kmd.course from layer.json + the course_step LLM answer",
+  "description": "Blocks follow the TZ table «Обязательные блоки страницы шага». Empty blocks are omitted. Every block carries `by` (author|model|mixed) and `pages`. Text written by the model is a retelling of claims (claim_ids) unless by=model.",
+  "type": "object",
+  "required": ["node_id", "chapter", "index", "part", "title_beginner", "title_book", "pages", "minutes", "difficulty", "format", "essence", "blocks", "illustrations", "sources", "task_ids", "card_ids", "checks"],
+  "properties": {
+    "node_id": {"type": "string"},
+    "chapter": {"type": "string"},
+    "index": {"type": "integer", "description": "1-based position in the path"},
+    "part": {"type": "object", "required": ["id", "title"], "properties": {"id": {"type": "string"}, "title": {"type": "string"}}},
+    "title_beginner": {"type": "string"},
+    "title_book": {"type": "string"},
+    "section": {"type": ["string", "null"]},
+    "pages": {"type": "array", "items": {"type": "integer"}},
+    "minutes": {"type": "integer", "minimum": 1},
+    "difficulty": {"type": "object"},
+    "threshold": {"type": ["string", "null"]},
+    "format": {"type": "string", "description": "routing format: short|long|interactive|data_practice|cards|text"},
+    "essence": {"type": "array", "items": {"type": "string"}},
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "title", "by"],
+        "properties": {
+          "id": {"type": "string", "description": "anchor on the page"},
+          "kind": {"enum": ["how", "procedure", "examples", "decision", "numbers", "formulas", "tables", "mistake", "data", "analogy", "now", "deeper", "problems", "book_figures", "glossary"]},
+          "title": {"type": "string"},
+          "by": {"enum": ["author", "model", "mixed"]},
+          "pages": {"type": "array", "items": {"type": "integer"}},
+          "items": {"type": "array"},
+          "data": {}
+        }
+      }
+    },
+    "illustrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "class", "provenance", "caption", "alt"],
+        "properties": {
+          "id": {"type": "string"},
+          "template": {"type": "string"},
+          "class": {"enum": ["A", "B", "C", "D"]},
+          "provenance": {"type": "string", "description": "реальные данные | симуляция | схема | иллюстрация ИИ | перерисовано по рис. N, стр. M"},
+          "caption": {"type": "string"},
+          "alt": {"type": "string"},
+          "file": {"type": ["string", "null"], "description": "path relative to runs/<ch>/ (svg/png)"},
+          "svg": {"type": ["string", "null"], "description": "inline SVG (theme-aware) when rendered by the built-in templates"},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "pages": {"type": "array", "items": {"type": "integer"}},
+          "after_block": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "media": {"type": ["object", "null"]},
+    "sources": {"type": "array", "items": {"type": "object", "required": ["claim_id", "quote", "page"]}},
+    "task_ids": {"type": "array", "items": {"type": "string"}},
+    "card_ids": {"type": "array", "items": {"type": "string"}},
+    "links": {"type": "array"},
+    "checks": {"type": "object", "required": ["errors", "warnings"], "properties": {"errors": {"type": "array"}, "warnings": {"type": "array"}}}
+  }
+}
