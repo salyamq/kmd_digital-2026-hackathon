@@ -1,0 +1,202 @@
+{
+  "chapter": "basniev",
+  "ok": true,
+  "stats": {
+    "nodes": 60,
+    "claims": 420,
+    "quotes_exact": 416,
+    "quotes_fuzzy": 4,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 37
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.basniev.s3.03.c07",
+      "message": "quote matched fuzzily (95%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.basniev.s5_1.07.c01",
+      "message": "quote matched fuzzily (93%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.basniev.s5_1.07.c02",
+      "message": "quote matched fuzzily (93%)"
+    },
+    {
+      "type": "quote_fuzzy",
+      "target": "geo.basniev.s5_1.07.c03",
+      "message": "quote matched fuzzily (93%)"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.01",
+      "message": "uses «давление насыщения» defined later in geo.basniev.s1.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.01",
+      "message": "uses «твердый скелет» defined later in geo.basniev.s2.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.01",
+      "message": "uses «упругий пласт» defined later in geo.basniev.s5_1.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.01",
+      "message": "uses «скорость фильтрации» defined later in geo.basniev.s5_1.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.02",
+      "message": "uses «упругий режим» defined later in geo.basniev.s5_2.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.03",
+      "message": "uses «скелет пласта» defined later in geo.basniev.s2.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s1.03",
+      "message": "uses «упругий пласт» defined later in geo.basniev.s5_1.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s2.02",
+      "message": "uses «упругоемкость» defined later in geo.basniev.s2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s2.03",
+      "message": "uses «упругий режим» defined later in geo.basniev.s5_2.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s2.03",
+      "message": "uses «возмущенная область» defined later in geo.basniev.ch24s1.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s3.01",
+      "message": "uses «упругий режим» defined later in geo.basniev.s5_2.06"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s3.03",
+      "message": "uses «упругая пористая среда» defined later in geo.basniev.ch24.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s3.02",
+      "message": "uses «функция лейбензона» defined later in geo.basniev.s4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s3.02",
+      "message": "uses «скорость фильтрации» defined later in geo.basniev.s5_1.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s4.02",
+      "message": "uses «упругий пласт» defined later in geo.basniev.s5_1.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s4.04",
+      "message": "uses «пьезопроводность» defined later in geo.basniev.s5_1.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s4.04",
+      "message": "uses «размерность» defined later in geo.basniev.s5_2.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5.01",
+      "message": "uses «пьезопроводность» defined later in geo.basniev.s5_1.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.03",
+      "message": "uses «размерность» defined later in geo.basniev.s5_2.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.03",
+      "message": "uses «безразмерное давление» defined later in geo.basniev.s5_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.04",
+      "message": "uses «частная производная» defined later in geo.basniev.s5_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.04",
+      "message": "uses «безразмерное давление» defined later in geo.basniev.s5_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.07",
+      "message": "uses «размерность» defined later in geo.basniev.s5_2.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.07",
+      "message": "uses «забойное давление» defined later in geo.basniev.s5_2.12"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.08",
+      "message": "uses «расход» defined later in geo.basniev.s5_2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_1.13",
+      "message": "uses «аргумент функции» defined later in geo.basniev.s5_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.01",
+      "message": "uses «расход» defined later in geo.basniev.s5_2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.01",
+      "message": "uses «граница возмущения» defined later in geo.basniev.ch24s1.02"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.02",
+      "message": "uses «безразмерное давление» defined later in geo.basniev.s5_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.02",
+      "message": "uses «аргумент функции» defined later in geo.basniev.s5_2.08"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.02",
+      "message": "uses «расход» defined later in geo.basniev.s5_2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.05",
+      "message": "uses «расход» defined later in geo.basniev.s5_2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.basniev.s5_2.13",
+      "message": "uses «контур питания» defined later in geo.basniev.ch24s1.02"
+    }
+  ]
+}

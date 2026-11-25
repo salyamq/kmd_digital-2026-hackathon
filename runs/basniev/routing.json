@@ -1,0 +1,816 @@
+[
+  {
+    "node_id": "geo.basniev.s1.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Н",
+      "threshold": "После пуска скважины приток возникает за счет упругости и начинается рядом с забоем, не во всем пласте сразу."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип М: пуск скважины — невидимая волна снижения давления расходится по пласту; причина → следствие в одной сцене."
+  },
+  {
+    "node_id": "geo.basniev.s1.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Н",
+      "threshold": "Режим определяется не только упругостью, но и наличием водной подпитки и замкнутостью пласта."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Н: упруговодонапорный и замкнутый режим — различие описывается текстом."
+  },
+  {
+    "node_id": "geo.basniev.s1.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Хорошая проницаемость ускоряет перераспределение давления, тогда как сопротивление жидкости и упругость задерживают его."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "time_change"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип М/Ф: контринтуитивно, что давление перераспределяется не мгновенно, а постепенно, — опровергает «волну как звук»."
+  },
+  {
+    "node_id": "geo.basniev.s2.01",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Упругий запас — объем, доступный при снижении давления, а не общий объем нефти в порах."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: упругий запас — интерактив: снижение давления высвобождает объём жидкости за счёт расширения жидкости и сжатия пор."
+  },
+  {
+    "node_id": "geo.basniev.s2.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Упругость жидкости учитывается только на доле объема, занятой порами, а упругость скелета относится к объему пласта."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s2.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Баланс связывает суммарный дебит не с давлением одной скважины, а с объемом возмущенной области и ее средним давлением."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s3.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "История давления и дебита позволяет изучать свойства пласта, а размер упругого запаса нельзя универсально оценить по обычной доле добычи."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/И: мотивация изучения упругой фильтрации — вводный текст."
+  },
+  {
+    "node_id": "geo.basniev.s3.03",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Деформация может изменить не только пористость, но и проницаемость; ее постоянство — осознанное ограничение модели."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: какие свойства зависят от давления — набор понятий для карточек."
+  },
+  {
+    "node_id": "geo.basniev.s3.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Нужны разные уравнения: сохранение массы, закон движения и связи свойств с давлением."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s4.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Из полной системы выбирают баланс массы и подстановкой функции Лейбензона сводят задачу к одному уравнению."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s4.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Сжимаемость не исчезает при линеаризации: в накоплении массы остается совместный вклад жидкости и породы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s4.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "В пространственном члене сохраняют основной вклад плотности, пренебрегая поправкой на слабую сжимаемость."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s4.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Пьезопроводность — коэффициент перераспределения давления, а не постоянная скорость границы."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: коэффициент пьезопроводности — ползунки проницаемости, вязкости и упругоёмкости показывают скорость распространения возмущения."
+  },
+  {
+    "node_id": "geo.basniev.s5.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "П",
+      "threshold": "Точные решения далее строятся для специально выбранных одномерных потоков, не сразу для произвольной геометрии."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/П: переход к одномерным потокам — связующий текст."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Постоянное давление на галерее не означает постоянного давления внутри пласта."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Разные профили давления становятся одной кривой, если изменить шкалу расстояния."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.07",
+    "format": "long",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: профиль давления у галереи во времени (рис. 23.1) — разбор 16:9: разрез пласта и график давления из одной модели, рост зоны возмущения ~ корень из времени."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.08",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Постоянное давление на галерее даёт переменный дебит."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Ф: дебит из градиента давления — текст с формулой."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.09",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Падающий дебит не означает падения накопленной добычи."
+    },
+    "video_criteria": [
+      "time_change"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип М/Ф: дебит и добыча во времени (рис. 23.2) — интерактивный график с ползунком времени."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Фиксация расходов вместо давления меняет условие на галерее, а не уравнение внутри пласта."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.13",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.14",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.15",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "При постоянном дебите переменной величиной становится давление на галерее."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_1.16",
+    "format": "short",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": "Математически допустимое продолжение кривой может описывать физически нереализуемый режим."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Н/М: контринтуитивное следствие модели — фиксированный дебит со временем невозможен без падения давления на галерее."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Постоянный дебит скважины не означает установившегося давления во всём пласте."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Одинаковая переменная подобия позволяет описывать разные пары радиуса и времени одной координатой."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "После перехода к переменной подобия остаётся производная по одной координате, но граничные условия по-прежнему необходимы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Производную давления можно сначала найти как отдельную неизвестную."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Условие вдали фиксирует уровень давления, а условие у скважины — масштаб его изменения."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Вся зависимость от времени и расстояния входит в аргумент одной функции."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "Ряд представляет специальную функцию при любом положительном аргументе, а не только вблизи нуля."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.08",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Область использования упрощения и область гарантированной погрешности — разные вещи."
+    },
+    "video_criteria": [],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: когда интегральную показательную функцию можно заменить логарифмом — интерактивный график сравнения двух кривых."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.09",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Дебит у скважины фиксирован, но во время переходного процесса расход через удалённый цилиндр другой."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Ф: расход и скорость вокруг скважины — текст с формулами."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": null,
+      "threshold": "То же физическое время на масштабе скважины и на масштабе пласта имеет разные безразмерные значения."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Ф",
+      "threshold": "Условия точности для забоя, других точек пласта и сравнения разных границ не взаимозаменяемы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/Ф: проверка влияния внешней границы — текст."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.11",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Ф",
+      "threshold": "Радиус влияет на пригодность модели через безразмерное время: точечный сток может хорошо работать и для реальной скважины."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Тип Н/Ф: пример автора с числами — насколько важен радиус скважины; решение на данных."
+  },
+  {
+    "node_id": "geo.basniev.s5_2.13",
+    "format": "long",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Давление может продолжать снижаться, хотя радиальный градиент вблизи скважины почти не меняется во времени."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "scale_jump"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип М/Ф: пьезометрические кривые при пуске скважины (рис. 23.4) — разбор 16:9: вид сверху на воронку депрессии + график давления по радиусу во времени."
+  },
+  {
+    "node_id": "geo.basniev.ch24.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Точное решение уравнения может быть неудобным для практических вычислений."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: зачем приближённые методы — вводный текст."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "М",
+      "threshold": "Отличать мгновенный стационарный профиль от неизменного во времени процесса."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "time_change"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип Ф/М: идея ПССС — нестационарный процесс как серия стационарных состояний с движущимся фронтом; одна наглядная сцена."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "П",
+      "threshold": "Назвать область постоянного давления и событие перехода к следующей фазе."
+    },
+    "video_criteria": [
+      "time_change"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "Тип М/П: условный фронт возмущения и две фазы процесса — интерактив с ползунком времени."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Читать линейный профиль по расстоянию от галереи и отделять это расстояние от длины зоны."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Отличать объём всей затронутой породы от объёма высвободившейся жидкости."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.05",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Объяснить, откуда в балансе появляется квадрат длины."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.06",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Ф",
+      "threshold": "Правильно выбирать ветвь профиля и показатель сравнения."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Н/Ф: пример автора с оценкой погрешности ПССС при постоянном дебите — практикум на числах."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Не путать управляемый вход и вычисляемый выход при смене граничного условия."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.08",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Разобрать, какие множители постоянны и почему дебит остаётся переменным."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.09",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Уметь вычислить давление по ветвям и не переносить погрешность дебита на всё поле."
+    },
+    "video_criteria": [],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Ф/Н: профиль, дебит и точность при постоянной депрессии — интерактивное сравнение приближённого и точного решения."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Различать радиус скважины, координату точки и радиус возмущения."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Отличать падение давления у скважины от среднего снижения давления по объёму."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Объяснить начальное условие R(0) = r_c и отличать рост R от роста его квадрата."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.13",
+    "format": "text",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Пр",
+      "threshold": "Различать формулу поля и формулу его значения на стенке."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.14",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Ф",
+      "threshold": "Связать оценку ошибки с безразмерным временем и с измеряемым выходом."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Н/Ф: пример автора — как погрешность радиальной депрессии меняется со временем; задание на данных."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.15",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Ф",
+      "threshold": "Снять с графика безразмерный радиус, вернуть физические единицы и найти дебит."
+    },
+    "video_criteria": [],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Пр/Ф: решение на данных — по графику определить радиус возмущения и найти дебит при постоянном забойном давлении (пример автора)."
+  },
+  {
+    "node_id": "geo.basniev.ch24s1.16",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": "Оценивать пригодность ПССС отдельно для поля давления и для связи дебита с депрессией."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/М: вывод о пределах метода ПССС — текст."
+  }
+]
