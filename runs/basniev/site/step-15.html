@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 15. Что задано у галереи — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s5_1.01" data-index="15">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › От баланса массы к форме профиля давления › Шаг 15 из 60</p>
+    <h1>Что задано у галереи</h1>
+    <p class="booktitle">В книге: «Прямолинейно-параллельный фильтрационный поток упругой жидкости» <span class="pg">стр. 481</span></p>
+    <p class="meta">
+      <span class="chip">≈ 5 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-14.html">шаг 14 «Переход к одномерным потокам»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(пример)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Давление на галерее мгновенно снижают и дальше держат постоянным, но внутри пласта оно меняется со временем.</p><p>Задачу решают одномерным уравнением пьезопроводности для полубесконечного пласта.</p><p class="threshold"><b>Пороговая идея.</b> Постоянное давление на галерее не означает постоянного давления внутри пласта. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Постановка задачи</h3>          <div class="para" id="how-1">
+            <p>Пласт горизонтальный и <strong class="term">полубесконечный</strong>: он начинается у галереи и не имеет внешней границы. Это идеализация. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c01"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Толщина пласта постоянна. Ширина пласта тоже постоянна. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c02"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c03"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>До пуска давление одинаково по всему пласту. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c04"><p>«начальное пластовое давление всюду постоянно и равно $p_\kappa$.»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p><strong class="term">Галерея</strong> — линейная выработка, через которую отбирают жидкость. Давление на ней мгновенно снижается до нового значения. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c05"><p>«На галерее (при $x = 0$) давление мгновенно снижено до $p_\tau$ и в дальнейшем поддерживается постоянным (т.е. $p_\tau = \text{const}$).»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>После скачка давление галереи постоянно. На бесконечном удалении давление всё время остаётся начальным. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c06"><p>«На галерее (при $x = 0$) давление мгновенно снижено до $p_\tau$ и в дальнейшем поддерживается постоянным (т.е. $p_\tau = \text{const}$).»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c07"><p>«В удаленных точках ($x \to \infty$) давление в любой момент времени остается равным $p_\kappa$.»</p><footer>— автор, стр. 481 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Что происходит в пласте</h3>          <div class="para" id="how-6">
+            <p>Пласт деформируемый. По выводу автора, в нём возникает меняющийся во времени прямолинейно-параллельный поток упругой жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c08"><p>«При этих условиях в упругом (деформируемом) пласте образуется неустановившийся прямолинейно-параллельный поток упругой жидкости.»</p><footer>— автор, стр. 481 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>Уравнение пьезопроводности позволяет найти давление в любой точке и в любой момент. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c09"><p>«Давление в любой точке потока $x$ и в любой момент времени $t$ можно определить, интегрируя уравнение пьезопроводности (23.17)»</p><footer>— автор, стр. 481 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-8">
+            <p>Скорость изменения давления во времени равна пьезопроводности, умноженной на вторую производную по координате. Уравнение действует внутри пласта. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.01.c10"><p>«$$\frac{\partial p}{\partial t} = \kappa \frac{\partial^2 p}{\partial x^2}, \quad 0 &lt; x &lt; \infty. \quad (23.19)$$»</p><footer>— автор, стр. 481 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-9">
+            <p>Постоянное давление на галерее не означает постоянного давления внутри пласта. <span class="pg" title="Страница книги (по PDF)">стр. 481</span></p>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_s5_1_01__1_m.svg"><img src="img/geo_basniev_s5_1_01__1.svg" alt="График давления от расстояния до галереи: у галереи давление пониженное и постоянное, три кривые для разных моментов показывают, как зона понижения уходит вглубь пласта." loading="lazy"></picture>  </div>
+  <figcaption>
+    Профили давления от галереи вглубь пласта в разные моменты при условных параметрах. На галерее давление постоянно, а внутри пласта оно падает всё дальше со временем.
+    <span class="ill-meta">Класс B · симуляция · нарисовано кодом · стр. 481</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.s5_1.01.f01">
+          <div class="tex-display" data-tex="\frac{\partial p}{\partial t} = \kappa \frac{\partial^2 p}{\partial x^2}, \quad 0 &lt; x &lt; \infty. \quad (23.19)">$$\frac{\partial p}{\partial t} = \kappa \frac{\partial^2 p}{\partial x^2}, \quad 0 &lt; x &lt; \infty. \quad (23.19)$$</div>
+          <p>Одномерное уравнение пьезопроводности внутри полубесконечного пласта. <span class="pg">стр. 481</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>давление жидкости в пласте</td><td>Па</td></tr><tr><td>$t$</td><td>время от пуска</td><td>с</td></tr><tr><td>$\kappa$</td><td>коэффициент пьезопроводности</td><td>м²/с</td></tr><tr><td>$x$</td><td>расстояние от галереи</td><td>м</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Геометрия и режим пуска задают одномерную модель давления.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Толщина, ширина, начальное и заданное давления, пьезопроводность.</dd>
+          <dt>Выход</dt><dd>Задача для давления как функции расстояния и времени.</dd>
+          <dt>Где ломается</dt><dd>Если геометрия или режим отбора не соответствуют постановке.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Толщина, ширина, начальное и заданное давления, пьезопроводность.</dd>
+            <dt>Ручные шаги</dt><dd>Проверить геометрию и разметить момент ступенчатого снижения давления.</dd>
+            <dt>Точки суждения</dt><dd>Решить, можно ли пренебречь границами и изменением сечения.</dd>
+            <dt>Время</dt><dd>Дольше всего искать согласованные сведения о геометрии и пуске.</dd>
+            <dt>Типичные ошибки</dt><dd>Подменить фиксированное давление фиксированным дебитом.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Заданное давление на галерее похоже на фиксированное значение на границе вычислительной области.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> В пласте значение создаётся физическим режимом отбора, а не присваиванием переменной.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Галерея <span class="en" lang="en">(gallery)</span></dt><dd>Линейная выработка, через которую в этой задаче отбирают жидкость из пласта.  <span class="chip chip-model">модель</span></dd><dt>Полубесконечный пласт <span class="en" lang="en">(semi-infinite reservoir)</span></dt><dd>Идеализация пласта с границей у галереи и без конечной внешней границы в направлении удаления от неё.  <span class="chip chip-model">модель</span></dd><dt>Упругий пласт <span class="en" lang="en">(elastic reservoir)</span></dt><dd>Пласт, поровый объём которого в модели обратимо меняется с давлением.  <span class="chip chip-model">модель</span></dd><dt>Пьезопроводность <span class="en" lang="en">(hydraulic diffusivity)</span></dt><dd>Способность среды передавать изменения давления диффузионным образом; коэффициент имеет размерность площади, делённой на время.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s5_1-01-t01" data-task="geo.basniev.s5_1.01.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуск.</p>
+  <p class="cloze">На бесконечном удалении давление всё время остаётся <select aria-label="Пропуск 1"><option value="">—</option><option>равным давлению галереи</option><option>нулевым</option><option>начальным</option><option>переменным</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> На бесконечном удалении давление всё время остаётся [начальным].</p>
+    <p class="fb-expl">Граничное условие: вдали от галереи давление остаётся начальным. <a href="#how-5">Где это в тексте (стр. 481) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_1-01-t02" data-task="geo.basniev.s5_1.01.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Давление на галерее держат постоянным. Что происходит внутри пласта?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.01.t02" value="0"> <span>Давление меняется со временем</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.01.t02" value="1"> <span>Давление тоже сразу постоянно</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.01.t02" value="2"> <span>Жидкость не движется</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.01.t02" value="3"> <span>Давление растёт выше начального</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Давление меняется со временем</p>
+    <p class="fb-expl">В пласте возникает меняющийся во времени поток упругой жидкости. <a href="#how-9">Где это в тексте (стр. 481) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_1-01-t03" data-task="geo.basniev.s5_1.01.t03" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие допущения входят в постановку задачи?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.01.t03" value="0"> <span>Давление на галерее снижается постепенно</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.01.t03" value="1"> <span>До пуска давление одинаково по пласту</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.01.t03" value="2"> <span>Пласт горизонтальный и полубесконечный</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.01.t03" value="3"> <span>Толщина и ширина постоянны</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Пласт горизонтальный и полубесконечный; Толщина и ширина постоянны; До пуска давление одинаково по пласту</p>
+    <p class="fb-expl">Давление на галерее снижается мгновенно, остальные пункты — допущения автора. <a href="#how-4">Где это в тексте (стр. 481) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s5_1.01.c01"><p>Пласт в задаче полубесконечный и горизонтальный. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c02"><p>Толщина пласта постоянна. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c03"><p>Ширина пласта постоянна. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в полубесконечном горизонтальном пласте постоянной толщины $h$ и ширины $B$»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c04"><p>До пуска давление одинаково по всему пласту. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«начальное пластовое давление всюду постоянно и равно $p_\kappa$.»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c05"><p>На галерее давление снижается мгновенно до нового значения. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«На галерее (при $x = 0$) давление мгновенно снижено до $p_\tau$ и в дальнейшем поддерживается постоянным (т.е. $p_\tau = \text{const}$).»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c06"><p>После скачка давление галереи постоянно. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«На галерее (при $x = 0$) давление мгновенно снижено до $p_\tau$ и в дальнейшем поддерживается постоянным (т.е. $p_\tau = \text{const}$).»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c07"><p>На бесконечном удалении давление всё время остаётся начальным. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«В удаленных точках ($x \to \infty$) давление в любой момент времени остается равным $p_\kappa$.»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c08"><p>В деформируемом пласте возникает меняющийся со временем прямолинейно-параллельный поток упругой жидкости. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«При этих условиях в упругом (деформируемом) пласте образуется неустановившийся прямолинейно-параллельный поток упругой жидкости.»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c09"><p>Уравнение пьезопроводности позволяет находить давление в любой точке и в любой момент. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Давление в любой точке потока $x$ и в любой момент времени $t$ можно определить, интегрируя уравнение пьезопроводности (23.17)»</p><footer>— стр. 481</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.01.c10"><p>Скорость изменения давления во времени равна пьезопроводности, умноженной на вторую пространственную производную; уравнение действует внутри пласта. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$\frac{\partial p}{\partial t} = \kappa \frac{\partial^2 p}{\partial x^2}, \quad 0 &lt; x &lt; \infty. \quad (23.19)$$»</p><footer>— стр. 481</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-16.html">шаг 16 «Три условия для давления»</a>, <a href="step-24.html">шаг 24 «Пуск галереи с постоянным дебитом»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-14.html" rel="prev"><span>← Назад</span><b>Переход к одномерным потокам</b></a><a class="next" href="step-16.html" rel="next"><span>Дальше →</span><b>Три условия для давления</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s5_1.01.t01", "type": "cloze", "question": "Заполните пропуск.", "explanation": "Граничное условие: вдали от галереи давление остаётся начальным.", "page": 481, "link": "#how-5", "step_title": "Что задано у галереи", "step_index": 15, "node_id": "geo.basniev.s5_1.01", "parts": ["На бесконечном удалении давление всё время остаётся ", "."], "blanks": [{"options": ["равным давлению галереи", "нулевым", "начальным", "переменным"], "answers": ["начальным"]}], "key": [["начальным"]], "answer_text": "На бесконечном удалении давление всё время остаётся [начальным]."}, {"id": "geo.basniev.s5_1.01.t02", "type": "single", "question": "Давление на галерее держат постоянным. Что происходит внутри пласта?", "explanation": "В пласте возникает меняющийся во времени поток упругой жидкости.", "page": 481, "link": "#how-9", "step_title": "Что задано у галереи", "step_index": 15, "node_id": "geo.basniev.s5_1.01", "options": ["Давление меняется со временем", "Давление тоже сразу постоянно", "Жидкость не движется", "Давление растёт выше начального"], "key": [0], "answer_text": "Давление меняется со временем"}, {"id": "geo.basniev.s5_1.01.t03", "type": "multiple", "question": "Какие допущения входят в постановку задачи?", "explanation": "Давление на галерее снижается мгновенно, остальные пункты — допущения автора.", "page": 481, "link": "#how-4", "step_title": "Что задано у галереи", "step_index": 15, "node_id": "geo.basniev.s5_1.01", "options": ["Давление на галерее снижается постепенно", "До пуска давление одинаково по пласту", "Пласт горизонтальный и полубесконечный", "Толщина и ширина постоянны"], "key": [1, 2, 3], "answer_text": "Пласт горизонтальный и полубесконечный; Толщина и ширина постоянны; До пуска давление одинаково по пласту"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

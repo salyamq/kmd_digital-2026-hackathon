@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 26. Шаблон решения для скорости — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s5_1.12" data-index="26">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как управление галереей меняет давление и отбор › Шаг 26 из 60</p>
+    <h1>Шаблон решения для скорости</h1>
+    <p class="booktitle">В книге: «Прямолинейно-параллельный фильтрационный поток упругой жидкости» <span class="pg">стр. 486</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-25.html">шаг 25 «Уравнение для скорости фильтрации»</a> <span class="muted">(предпосылка)</span>, <a href="step-21.html">шаг 21 «От интеграла к давлению в пласте»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Решение для скорости ищут в том же виде, что для давления: функция ошибок с двумя постоянными.</p><p>Начальное условие даёт связь: сумма постоянных равна нулю.</p><p>Каждую постоянную по отдельности найдут из условия на галерее.</p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Форма решения</h3>          <div class="para" id="how-1">
+            <p>Уравнение для скорости по форме совпадает с уравнением теплопроводности. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c01"><p>«Уравнение (23.33) по форме также совпадает с уравнением теплопроводности (23.22).»</p><footer>— автор, стр. 486 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Поэтому берут решение того же типа, что для давления. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c02"><p>«Следовательно, решением уравнения (23.33) будет решение, аналогичное (23.26), с заменой давления $p$ на скорость фильтрации $w$»</p><footer>— автор, стр. 486 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Шаблон скорости — <strong class="term">функция ошибок</strong> с множителем C1 и постоянным смещением C2. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c03"><p>«$$w = C_1 \operatorname{erf} \left( \frac{x}{2\sqrt{\kappa t}} \right) + C_2. \quad (23.34)$$»</p><footer>— автор, стр. 486 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 422" role="img" aria-label="Как связаны постоянные C1 и C2" class="ill-svg"><title>Как связаны постоянные C1 и C2</title><rect class="ill-bg" x="0" y="0" width="360" height="422" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Как связаны постоянные C1 и C2</tspan></text><rect class="ill-box" x="12.0" y="63" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Шаблон: w = C1·erf(u) + C2</tspan></text><line class="ill-line" x1="180.0" y1="102.0" x2="180.0" y2="126.0"/><polygon class="ill-arrow" points="180.0,126.0 176.1,117.9 183.9,117.9"/><rect class="ill-box" x="12.0" y="130" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="154" text-anchor="middle"><tspan x="180.0" dy="0">До пуска w = 0</tspan></text><line class="ill-line" x1="180.0" y1="169.0" x2="180.0" y2="193.0"/><polygon class="ill-arrow" points="180.0,193.0 176.1,184.9 183.9,184.9"/><rect class="ill-box" x="12.0" y="197" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="221" text-anchor="middle"><tspan x="180.0" dy="0">При t → 0 в точке пласта u → ∞, erf</tspan><tspan x="180.0" dy="19">→ 1</tspan></text><line class="ill-line" x1="180.0" y1="255.0" x2="180.0" y2="279.0"/><polygon class="ill-arrow" points="180.0,279.0 176.1,270.9 183.9,270.9"/><rect class="ill-box" x="12.0" y="283" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="307" text-anchor="middle"><tspan x="180.0" dy="0">0 = C1 + C2</tspan></text><line class="ill-line" x1="180.0" y1="322.0" x2="180.0" y2="346.0"/><polygon class="ill-arrow" points="180.0,346.0 176.1,337.9 183.9,337.9"/><rect class="ill-box" x="12.0" y="350" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="374" text-anchor="middle"><tspan x="180.0" dy="0">Каждую постоянную даст условие на</tspan><tspan x="180.0" dy="19">галерее</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Начальное условие связывает две постоянные шаблона скорости.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 486</span>
+  </figcaption>
+</figure>
+<h3>Условия</h3>          <div class="para" id="how-4">
+            <p>До пуска скорость фильтрации равна нулю. Это <strong class="term">начальное условие</strong>. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c04"><p>«$$w(x, 0) = 0, \quad w(0, t) = w_1.$$»</p><footer>— автор, стр. 486 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>На галерее скорость равна заданному ненулевому значению при отборе. Это <strong class="term">граничное условие</strong>. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c05"><p>«$$w(x, 0) = 0, \quad w(0, t) = w_1.$$»</p><footer>— автор, стр. 486 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Обе постоянные определяют из этих двух условий. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c06"><p>«Используя эти условия, найдем константы интегрирования.»</p><footer>— автор, стр. 486 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Применение начального условия</h3>          <div class="para" id="how-7">
+            <p>При нулевом времени верхний предел интеграла становится бесконечным. Скорость при этом равна нулю. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c07"><p>«$$0 = C_1 \frac{2}{\sqrt{\pi}} \int_0^\infty e^{-u^2} du + C_2.$$»</p><footer>— автор, стр. 486 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-8">
+            <p>Делить на нуль нельзя. Поэтому для точки внутри пласта берут предел при времени, стремящемся к нулю. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+          </div>
+          <div class="para" id="how-9">
+            <p>Полный интеграл от нуля до бесконечности равен половине корня из пи. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c08"><p>«Так как $\int_0^\infty e^{-u^2} du = \sqrt{\pi}/2$, получаем»</p><footer>— автор, стр. 486 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-10">
+            <p>После подстановки сумма постоянных равна нулю. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_1.12.c09"><p>«$$0 = C_1 + C_2.$$»</p><footer>— автор, стр. 486 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-11">
+            <p>Одного начального условия хватает только для связи постоянных. Чтобы найти каждую, нужно условие на галерее. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как найти связь постоянных</p>        <ol class="proc"><li>Возьмите шаблон с функцией ошибок. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></li><li>Запишите начальную скорость и скорость на галерее. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></li><li>Примените начальное условие внутри пласта. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></li><li>Подставьте значение полного интеграла. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></li><li>Запишите связь постоянных. <span class="pg" title="Страница книги (по PDF)">стр. 486</span></li></ol>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.s5_1.12.f01">
+          <div class="tex-display" data-tex="w = C_1 \operatorname{erf} \left( \frac{x}{2\sqrt{\kappa t}} \right) + C_2. \quad (23.34)">$$w = C_1 \operatorname{erf} \left( \frac{x}{2\sqrt{\kappa t}} \right) + C_2. \quad (23.34)$$</div>
+          <p>Общий вид автомодельного профиля скорости. <span class="pg">стр. 486</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$w$</td><td>скорость фильтрации, положительная к галерее</td><td>м/с</td></tr><tr><td>$C_1$</td><td>постоянная решения для скорости при функции ошибок</td><td>м/с</td></tr><tr><td>$C_2$</td><td>аддитивная постоянная решения для скорости</td><td>м/с</td></tr><tr><td>$x$</td><td>расстояние от галереи</td><td>м</td></tr><tr><td>$\kappa$</td><td>коэффициент пьезопроводности</td><td>м²/с</td></tr><tr><td>$t$</td><td>время от пуска</td><td>с</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s5_1.12.f02">
+          <div class="tex-display" data-tex="w(x, 0) = 0, \quad w(0, t) = w_1.">$$w(x, 0) = 0, \quad w(0, t) = w_1.$$</div>
+          <p>Начальная скорость в пласте и граничная скорость у галереи. <span class="pg">стр. 486</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$w$</td><td>скорость фильтрации, положительная к галерее</td><td>м/с</td></tr><tr><td>$x$</td><td>расстояние от галереи</td><td>м</td></tr><tr><td>$t$</td><td>время от пуска</td><td>с</td></tr><tr><td>$w_1$</td><td>заданная скорость фильтрации у галереи</td><td>м/с</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s5_1.12.f03">
+          <div class="tex-display" data-tex="0 = C_1 \frac{2}{\sqrt{\pi}} \int_0^\infty e^{-u^2} du + C_2.">$$0 = C_1 \frac{2}{\sqrt{\pi}} \int_0^\infty e^{-u^2} du + C_2.$$</div>
+          <p>Начальное условие, выраженное через предельное значение функции ошибок. <span class="pg">стр. 486</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$C_1$</td><td>постоянная решения для скорости при функции ошибок</td><td>м/с</td></tr><tr><td>$C_2$</td><td>аддитивная постоянная решения для скорости</td><td>м/с</td></tr><tr><td>$\pi$</td><td>число пи</td><td>безразмерно</td></tr><tr><td>$u$</td><td>автомодельная координата</td><td>безразмерно</td></tr><tr><td>$e$</td><td>основание натурального логарифма</td><td>безразмерно</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s5_1.12.f04">
+          <div class="tex-display" data-tex="\int_0^\infty e^{-u^2}\,du=\frac{\sqrt\pi}{2}">$$\int_0^\infty e^{-u^2}\,du=\frac{\sqrt\pi}{2}$$</div>
+          <p>Значение полного интеграла. <span class="pg">стр. 486</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$u$</td><td>автомодельная координата</td><td>безразмерно</td></tr><tr><td>$e$</td><td>основание натурального логарифма</td><td>безразмерно</td></tr><tr><td>$\pi$</td><td>число пи</td><td>безразмерно</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s5_1.12.f05">
+          <div class="tex-display" data-tex="0 = C_1 + C_2.">$$0 = C_1 + C_2.$$</div>
+          <p>Связь постоянных из начального условия. <span class="pg">стр. 486</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$C_1$</td><td>постоянная решения для скорости при функции ошибок</td><td>м/с</td></tr><tr><td>$C_2$</td><td>аддитивная постоянная решения для скорости</td><td>м/с</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Один аналитический шаблон подходит для вычисления другой физической величины при её собственных условиях.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Пьезопроводность, начальная и граничная скорости.</dd>
+          <dt>Выход</dt><dd>Форма профиля с двумя константами.</dd>
+          <dt>Где ломается</dt><dd>Константы из решения для давления переносить нельзя.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Пьезопроводность, начальная и граничная скорости.</dd>
+            <dt>Ручные шаги</dt><dd>Переписать шаблон для другой величины и явно указать условия.</dd>
+            <dt>Точки суждения</dt><dd>Различить одинаковый вид уравнения и разные условия расчёта.</dd>
+            <dt>Время</dt><dd>Быстрее переиспользовать корректную форму, чем решать уравнение заново.</dd>
+            <dt>Типичные ошибки</dt><dd>Перенести старые постоянные вместе с функцией ошибок.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Похоже на повторное использование параметризованной функции с новыми граничными параметрами.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Одинаковая форма не делает давление и скорость одинаковыми по единицам.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Берём форму, а не значения <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Профиль скорости должен убывать от галереи в пласт. Знакомая функция ошибок сама растёт, поэтому множитель при ней в этом режиме получится отрицательным.</p></details><details class="deeper"><summary>Как понимать подстановку нулевого времени <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Нельзя делить на нуль в автомодельном аргументе. Для фиксированной точки с положительной координатой сначала берут предел при времени, стремящемся к нулю справа.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Функция ошибок <span class="en" lang="en">(error function)</span></dt><dd>Нормированный интеграл функции вида e в степени минус квадрат; здесь описывает безразмерный профиль давления.  <span class="chip chip-model">модель</span></dd><dt>Скорость фильтрации <span class="en" lang="en">(Darcy velocity)</span></dt><dd>Отношение объёмного расхода к полной площади поперечного сечения среды.  <span class="chip chip-model">модель</span></dd><dt>Начальное условие <span class="en" lang="en">(initial condition)</span></dt><dd>Состояние, заданное на момент начала расчёта.  <span class="chip chip-model">модель</span></dd><dt>Граничное условие <span class="en" lang="en">(boundary condition)</span></dt><dd>Ограничение, заданное на границе пространственной области задачи.  <span class="chip chip-model">модель</span></dd><dt>Автомодельная переменная <span class="en" lang="en">(similarity variable)</span></dt><dd>Комбинация исходных аргументов, позволяющая описать семейство профилей одной функцией.  <span class="chip chip-model">модель</span></dd><dt>Пьезопроводность <span class="en" lang="en">(hydraulic diffusivity)</span></dt><dd>Способность среды передавать изменения давления диффузионным образом; коэффициент имеет размерность площади, делённой на время.  <span class="chip chip-model">модель</span></dd><dt>Скорость фильтрации <span class="en" lang="en">(Darcy velocity)</span></dt><dd>Отношение объёмного расхода к полной площади поперечного сечения среды.  <span class="chip chip-model">модель</span></dd><dt>Функция ошибок <span class="en" lang="en">(error function)</span></dt><dd>Нормированный интеграл функции вида e в степени минус квадрат; здесь описывает безразмерный профиль давления.  <span class="chip chip-model">модель</span></dd><dt>Начальное условие <span class="en" lang="en">(initial condition)</span></dt><dd>Состояние, заданное на момент начала расчёта.  <span class="chip chip-model">модель</span></dd><dt>Автомодельная переменная <span class="en" lang="en">(similarity variable)</span></dt><dd>Комбинация исходных аргументов, позволяющая описать семейство профилей одной функцией.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s5_1-12-t01" data-task="geo.basniev.s5_1.12.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что даёт начальное условие для постоянных шаблона скорости?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t01" value="0"> <span>Значение каждой постоянной</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t01" value="1"> <span>Обе постоянные равны нулю</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t01" value="2"> <span>Ничего не даёт</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t01" value="3"> <span>Связь: сумма постоянных равна нулю</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Связь: сумма постоянных равна нулю</p>
+    <p class="fb-expl">Начальное условие даёт только связь C1 + C2 = 0. <a href="#how-10">Где это в тексте (стр. 486) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_1-12-t02" data-task="geo.basniev.s5_1.12.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие условия используют для нахождения постоянных?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.12.t02" value="0"> <span>Давление на галерее постоянно</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.12.t02" value="1"> <span>Пористость постоянна</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.12.t02" value="2"> <span>Скорость на галерее равна заданной при отборе</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s5_1.12.t02" value="3"> <span>Скорость до пуска равна нулю</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Скорость до пуска равна нулю; Скорость на галерее равна заданной при отборе</p>
+    <p class="fb-expl">Постоянные определяют из начального и граничного условий для скорости. <a href="#how-6">Где это в тексте (стр. 486) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_1-12-t03" data-task="geo.basniev.s5_1.12.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Почему для решения скорости берут функцию ошибок?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t03" value="0"> <span>Скорость всегда постоянна</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t03" value="1"> <span>Так проще нарисовать график</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t03" value="2"> <span>Потому что дебит равен нулю</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_1.12.t03" value="3"> <span>Уравнение для скорости того же типа, что уравнение теплопроводности</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Уравнение для скорости того же типа, что уравнение теплопроводности</p>
+    <p class="fb-expl">Одинаковая форма уравнения позволяет взять решение того же типа. <a href="#how-1">Где это в тексте (стр. 486) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s5_1.12.c01"><p>Форма уравнения для скорости совпадает с формой уравнения теплопроводности. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Уравнение (23.33) по форме также совпадает с уравнением теплопроводности (23.22).»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c02"><p>Для скорости используется тип решения, аналогичный решению для давления. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Следовательно, решением уравнения (23.33) будет решение, аналогичное (23.26), с заменой давления $p$ на скорость фильтрации $w$»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c03"><p>Шаблон скорости — функция ошибок с множителем и постоянным смещением. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$w = C_1 \operatorname{erf} \left( \frac{x}{2\sqrt{\kappa t}} \right) + C_2. \quad (23.34)$$»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c04"><p>До пуска начальная скорость фильтрации равна нулю. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«$$w(x, 0) = 0, \quad w(0, t) = w_1.$$»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c05"><p>Скорость на галерее равна заданному ненулевому значению при отборе. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«$$w(x, 0) = 0, \quad w(0, t) = w_1.$$»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c06"><p>Обе постоянные определяют из начального и граничного условий. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Используя эти условия, найдем константы интегрирования.»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c07"><p>При применении начального условия верхний предел интеграла становится бесконечным и скорость равна нулю. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$0 = C_1 \frac{2}{\sqrt{\pi}} \int_0^\infty e^{-u^2} du + C_2.$$»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c08"><p>Полный интеграл от нуля до бесконечности равен половине корня из пи. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Так как $\int_0^\infty e^{-u^2} du = \sqrt{\pi}/2$, получаем»</p><footer>— стр. 486</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_1.12.c09"><p>После подстановки интеграла сумма постоянных равна нулю. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$0 = C_1 + C_2.$$»</p><footer>— стр. 486</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-27.html">шаг 27 «Скорость от галереи вглубь пласта»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-25.html" rel="prev"><span>← Назад</span><b>Уравнение для скорости фильтрации</b></a><a class="next" href="step-27.html" rel="next"><span>Дальше →</span><b>Скорость от галереи вглубь пласта</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s5_1.12.t01", "type": "single", "question": "Что даёт начальное условие для постоянных шаблона скорости?", "explanation": "Начальное условие даёт только связь C1 + C2 = 0.", "page": 486, "link": "#how-10", "step_title": "Шаблон решения для скорости", "step_index": 26, "node_id": "geo.basniev.s5_1.12", "options": ["Значение каждой постоянной", "Обе постоянные равны нулю", "Ничего не даёт", "Связь: сумма постоянных равна нулю"], "key": [3], "answer_text": "Связь: сумма постоянных равна нулю"}, {"id": "geo.basniev.s5_1.12.t02", "type": "multiple", "question": "Какие условия используют для нахождения постоянных?", "explanation": "Постоянные определяют из начального и граничного условий для скорости.", "page": 486, "link": "#how-6", "step_title": "Шаблон решения для скорости", "step_index": 26, "node_id": "geo.basniev.s5_1.12", "options": ["Давление на галерее постоянно", "Пористость постоянна", "Скорость на галерее равна заданной при отборе", "Скорость до пуска равна нулю"], "key": [2, 3], "answer_text": "Скорость до пуска равна нулю; Скорость на галерее равна заданной при отборе"}, {"id": "geo.basniev.s5_1.12.t03", "type": "single", "question": "Почему для решения скорости берут функцию ошибок?", "explanation": "Одинаковая форма уравнения позволяет взять решение того же типа.", "page": 486, "link": "#how-1", "step_title": "Шаблон решения для скорости", "step_index": 26, "node_id": "geo.basniev.s5_1.12", "options": ["Скорость всегда постоянна", "Так проще нарисовать график", "Потому что дебит равен нулю", "Уравнение для скорости того же типа, что уравнение теплопроводности"], "key": [3], "answer_text": "Уравнение для скорости того же типа, что уравнение теплопроводности"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

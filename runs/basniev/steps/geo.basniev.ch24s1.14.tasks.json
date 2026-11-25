@@ -1,0 +1,74 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "question": "Какова погрешность депрессии по ПССС при f₀ = 10³ (в процентах)?",
+      "answer": 7.5,
+      "tolerance": 0.05,
+      "unit": "%",
+      "explanation": "Автор сообщает 7,5% при f₀ = 10³.",
+      "evidence": "При f₀ = 10³ она равна 7,5%.",
+      "claim_id": "geo.basniev.ch24s1.14.c05",
+      "page": 499,
+      "anchor": "how-4",
+      "id": "geo.basniev.ch24s1.14.t01",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "type": "single",
+      "question": "Как меняется погрешность депрессии по ПССС со временем?",
+      "options": [
+        "Убывает",
+        "Растёт",
+        "Не меняется"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Погрешность падает с 10,6% до 5,7% при росте f₀ от 100 до 10⁴.",
+      "evidence": "Относительная погрешность расчёта депрессии уменьшается с течением времени.",
+      "claim_id": "geo.basniev.ch24s1.14.c02",
+      "page": 499,
+      "anchor": "how-2",
+      "id": "geo.basniev.ch24s1.14.t02",
+      "node_id": "geo.basniev.ch24s1.14"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Безразмерное время f₀",
+      "back": "f₀ = κt/rс²: пьезопроводность на время, делённые на квадрат радиуса скважины.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c03"
+      ],
+      "kind": "term",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k01",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "front": "Погрешность депрессии ПССС при f₀ = 100, 10³, 10⁴",
+      "back": "10,6%, 7,5% и 5,7% соответственно.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c04",
+        "geo.basniev.ch24s1.14.c05",
+        "geo.basniev.ch24s1.14.c06"
+      ],
+      "kind": "number",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k02",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "front": "Эти погрешности относятся ко всему полю давления?",
+      "back": "Нет. Они относятся к депрессии на скважине при постоянном дебите.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c01"
+      ],
+      "kind": "mistake",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k03",
+      "node_id": "geo.basniev.ch24s1.14"
+    }
+  ]
+}

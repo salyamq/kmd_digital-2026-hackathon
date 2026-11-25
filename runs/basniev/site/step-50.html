@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 50. Давление у галереи и ошибка ПССС — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.ch24s1.06" data-index="50">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Когда точное решение применимо и как ввести движущуюся границу › Шаг 50 из 60</p>
+    <h1>Давление у галереи и ошибка ПССС</h1>
+    <p class="booktitle">В книге: «Метод последовательной смены стационарных состояний» <span class="pg">стр. 496</span></p>
+    <p class="meta">
+      <span class="chip">≈ 9 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-49.html">шаг 49 «Фронт давления растёт как корень»</a> <span class="muted">(предпосылка)</span>, <a href="step-29.html">шаг 29 «Дальняя граница даёт давление галереи»</a> <span class="muted">(предпосылка)</span>, <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a> <span class="muted">(переход к данным)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">При постоянном дебите давление по ПССС линейно внутри зоны длиной √(2κt), а за ней равно pк.</p><p>Депрессия на галерее по ПССС отличается от точного расчёта: погрешность составляет 25%.</p><p>Поэтому результат ПССС — оценка, его сверяют с точной формулой.</p><p class="threshold"><b>Пороговая идея.</b> Правильно выбирать ветвь профиля и показатель сравнения. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Профиль внутри зоны</h3>          <div class="para" id="how-1">
+            <p>Автор подставляет длину зоны l(t) = √(2κt) в линейный профиль (24.1). Получается формула (24.7). Она действует от галереи до границы включительно: 0 ≤ x ≤ √(2κt). <span class="pg" title="Страница книги (по PDF)">стр. 496</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.06.c01"><p>«$$p(x, t) = p_{\mathrm{k}} - \frac{Q \mu}{kBh} (\sqrt{2\kappa t} - x), \quad 0 \leq x \leq \sqrt{2\kappa t}, \quad (24.7)$$»</p><footer>— автор, стр. 496 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>За границей</h3>          <div class="para" id="how-2">
+            <p>Дальше <strong class="term">границы возмущения</strong> давление принимают равным начальному. При x &gt; √(2κt) давление p = pк. Значит, точка за фронтом ещё не чувствует отбора. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.06.c02"><p>«$$p(x, t) = p_{\mathrm{k}}, \quad x &gt; \sqrt{2\kappa t}.$$»</p><footer>— автор, стр. 496 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Насколько точно</h3>          <div class="para" id="how-3">
+            <p>Автор сравнивает депрессию pк − pг по формуле (24.7) с точной формулой (24.39). Значения значительно отличаются: погрешность составляет 25%. Эта погрешность относится к депрессии на галерее, а не ко всем точкам поля. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.06.c03"><p>«Значения депрессии $p_{\mathrm{k}} - p_{\mathrm{r}}$ по приближенной формуле (24.7) значительно отличаются от данных расчета по точной формуле (24.39): погрешность составляет 25%.»</p><footer>— автор, стр. 496 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как это делает специалист</h3>          <div class="para" id="how-4">
+            <p>Сначала найдите длину зоны для нужного момента. Затем решите, в какой ветви лежит точка. Депрессию по ПССС не считайте точной: сравните её с точным расчётом. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></p>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_ch24s1_06__1_m.svg"><img src="img/geo_basniev_ch24s1_06__1.svg" alt="Слева профили давления от расстояния: ломаные линии ПССС и плавные кривые точного решения. Справа давление на галерее во времени по обоим методам." loading="lazy"></picture>  </div>
+  <figcaption>
+    Профиль ПССС линеен до фронта и равен начальному давлению за ним. Точная кривая отличается, особенно в депрессии на галерее. Значения параметров условные.
+    <span class="ill-meta">Класс B · симуляция · нарисовано кодом · стр. 496</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как прочитать давление по ПССС</p>        <ol class="proc"><li>Определите длину зоны √(2κt) для нужного момента. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li><li>Проверьте, лежит ли точка x внутри зоны. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li><li>Внутри зоны считайте по (24.7), за границей берите pк. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li><li>Депрессию на галерее сопоставьте с точной формулой (24.39). <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_basniev_ch24s1_06_e01">
+          <h3>Сравнение депрессии при постоянном дебите <span class="pg">стр. 496</span></h3>
+          <p><b>Условие.</b> Прямолинейно-параллельный поток к галерее с постоянным дебитом.</p>
+<ol class="ex-steps"><li>По профилю (24.7) найдите давление на галерее.</li><li>Вычтите его из контурного давления и сравните с точной формулой (24.39).</li></ol>          <p class="ex-result"><b>Итог.</b> Погрешность депрессии составляет 25%.</p>
+        </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Какую ветвь профиля брать и можно ли верить депрессии</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Положение точки x относительно фронта √(2κt)</li><li>Какая величина нужна: давление в точке или депрессия на галерее</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>При x ≤ √(2κt) давление считают по (24.7), при x &gt; √(2κt) оно равно pк. Депрессия по ПССС при постоянном дебите отличается от точной на 25%. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Специалист выбирает ветвь по положению точки и использует депрессию ПССС как оценку, сверяя её с точной формулой (24.39).</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Точка лежит дальше фронта: x &gt; √(2κt). <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Давление равно pк</button><button type="button" class="btn ghost case-opt" data-i="1">Давление считают по (24.7)</button><button type="button" class="btn ghost case-opt" data-i="2">Давление равно давлению на галерее</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> За границей возмущения давление принимают равным начальному.</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Точка лежит между галереей и фронтом: 0 ≤ x ≤ √(2κt). <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Давление считают по линейному профилю (24.7)</button><button type="button" class="btn ghost case-opt" data-i="1">Давление равно pк</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Внутри зоны действует линейный профиль (24.7).</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Депрессию pк − pг на галерее при постоянном дебите посчитали по (24.7) и сравнили с точной формулой (24.39). <span class="muted small">(Разобранный пример, стр. 496)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Значения близки, ПССС можно считать точным</button><button type="button" class="btn ghost case-opt" data-i="1">Погрешность составляет 25%, результат — оценка</button><button type="button" class="btn ghost case-opt" data-i="2">Точная формула всегда даёт нулевую депрессию</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Автор сообщает погрешность депрессии 25%.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Формула (24.7) верна при 0 ≤ x ≤ √(2κt). <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li><li>При x &gt; √(2κt) давление равно pк. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li><li>Погрешность депрессии по ПССС при постоянном дебите — 25%. <span class="pg" title="Страница книги (по PDF)">стр. 496</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.ch24s1.06.f01">
+          <div class="tex-display" data-tex="p(x, t) = p_{\mathrm{k}} - \frac{Q \mu}{kBh} (\sqrt{2\kappa t} - x), \quad 0 \leq x \leq \sqrt{2\kappa t}, \quad (24.7)">$$p(x, t) = p_{\mathrm{k}} - \frac{Q \mu}{kBh} (\sqrt{2\kappa t} - x), \quad 0 \leq x \leq \sqrt{2\kappa t}, \quad (24.7)$$</div>
+          <p>Ветвь давления внутри затронутой зоны. <span class="pg">стр. 496</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>пластовое давление в рассматриваемой точке</td><td>Па</td></tr><tr><td>$x$</td><td>расстояние до галереи</td><td>м</td></tr><tr><td>$t$</td><td>время с начала отбора; dt — его малое приращение</td><td>с</td></tr><tr><td>$p_{\mathrm{k}}$</td><td>начальное давление в пласте и давление на границе возмущения</td><td>Па</td></tr><tr><td>$Q$</td><td>объёмный дебит жидкости</td><td>м³/с</td></tr><tr><td>$\mu$</td><td>динамическая вязкость жидкости</td><td>Па·с</td></tr><tr><td>$k$</td><td>проницаемость пласта</td><td>м²</td></tr><tr><td>$B$</td><td>ширина пласта</td><td>м</td></tr><tr><td>$h$</td><td>толщина пласта</td><td>м</td></tr><tr><td>$\kappa$</td><td>коэффициент пьезопроводности</td><td>м²/с</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.ch24s1.06.f02">
+          <div class="tex-display" data-tex="p(x, t) = p_{\mathrm{k}}, \quad x &gt; \sqrt{2\kappa t}.">$$p(x, t) = p_{\mathrm{k}}, \quad x &gt; \sqrt{2\kappa t}.$$</div>
+          <p>Неизменное давление за фронтом. <span class="pg">стр. 496</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>пластовое давление в рассматриваемой точке</td><td>Па</td></tr><tr><td>$x$</td><td>расстояние до галереи</td><td>м</td></tr><tr><td>$t$</td><td>время с начала отбора; dt — его малое приращение</td><td>с</td></tr><tr><td>$p_{\mathrm{k}}$</td><td>начальное давление в пласте и давление на границе возмущения</td><td>Па</td></tr><tr><td>$\kappa$</td><td>коэффициент пьезопроводности</td><td>м²/с</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для расчёта «Как читать давление и оценить ошибку при постоянном дебите» отделите исходные параметры от модельных выходов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Координата и время; начальное давление, дебит, свойства жидкости и пласта, геометрия.</dd>
+          <dt>Выход</dt><dd>Давление в точке; оценка погрешности депрессии для данного режима.</dd>
+          <dt>Где ломается</dt><dd>Авторская погрешность относится к депрессии, а не ко всем точкам поля.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Координата и время; начальное давление, дебит, свойства жидкости и пласта, геометрия.</dd>
+            <dt>Ручные шаги</dt><dd>Определите длину зоны для нужного момента.; Проверьте, находится ли точка внутри зоны.; Для оценки депрессии возьмите давление на галерее и сопоставьте с точным расчётом.</dd>
+            <dt>Точки суждения</dt><dd>Оценить, допустима ли погрешность для применения.</dd>
+            <dt>Время</dt><dd>Время не оценено в источнике.</dd>
+            <dt>Типичные ошибки</dt><dd>Приписать 25% ошибке дебита или точности всего поля.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Разные метрики одной модели могут давать разные ошибки валидации.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Оценка дана для конкретной постановки, а не для произвольной выборки.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Показывайте погрешность с подписью рассчитываемой величины и режима.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>галерея</dt><dd>Прямолинейная выработка, к которой в данной модели притекает жидкость. <span class="pg">стр. 496</span></dd><dt>дебит</dt><dd>Объём жидкости, отбираемый за единицу времени. <span class="pg">стр. 496</span></dd><dt>депрессия</dt><dd>Разность начального давления в пласте и давления на выработке. <span class="pg">стр. 496</span></dd><dt>ПССС</dt><dd>Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления. <span class="pg">стр. 496</span></dd><dt>граница возмущения</dt><dd>Подвижная граница между возмущённой и невозмущённой частями пласта. <span class="pg">стр. 496</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-ch24s1-06-t01" data-task="geo.basniev.ch24s1.06.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуск о давлении за фронтом.</p>
+  <p class="cloze">При x &gt; √(2κt) давление p = <select aria-label="Пропуск 1"><option value="">—</option><option>pк</option><option>0</option><option>pг</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При x &gt; √(2κt) давление p = [pк].</p>
+    <p class="fb-expl">За границей возмущения давление принимают равным начальному. <a href="#how-2">Где это в тексте (стр. 496) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-06-t02" data-task="geo.basniev.ch24s1.06.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-basniev-ch24s1-06-t02">Какова, по автору, погрешность депрессии по ПССС при постоянном дебите (в процентах)?</label>
+  <p class="numeric"><input id="in-geo-basniev-ch24s1-06-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">%</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 25 %</p>
+    <p class="fb-expl">Автор сравнил (24.7) с точной формулой (24.39) и получил 25%. <a href="#essence">Где это в тексте (стр. 496) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.ch24s1.06.c01"><p>Внутри зоны ПССС использует линейный профиль с l(t) по (24.6), включая галерею и границу. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$p(x, t) = p_{\mathrm{k}} - \frac{Q \mu}{kBh} (\sqrt{2\kappa t} - x), \quad 0 \leq x \leq \sqrt{2\kappa t}, \quad (24.7)$$»</p><footer>— стр. 496</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.06.c02"><p>Дальше границы возмущения давление принимается равным начальному. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$p(x, t) = p_{\mathrm{k}}, \quad x &gt; \sqrt{2\kappa t}.$$»</p><footer>— стр. 496</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.06.c03"><p>Для заданного дебита ошибка депрессии по (24.7) относительно точной формулы (24.39) составляет 25%. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Значения депрессии $p_{\mathrm{k}} - p_{\mathrm{r}}$ по приближенной формуле (24.7) значительно отличаются от данных расчета по точной формуле (24.39): погрешность составляет 25%.»</p><footer>— стр. 496</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-49.html" rel="prev"><span>← Назад</span><b>Фронт давления растёт как корень</b></a><a class="next" href="step-51.html" rel="next"><span>Дальше →</span><b>Постоянное давление на галерее</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.06.t01", "type": "cloze", "question": "Заполните пропуск о давлении за фронтом.", "explanation": "За границей возмущения давление принимают равным начальному.", "page": 496, "link": "#how-2", "step_title": "Давление у галереи и ошибка ПССС", "step_index": 50, "node_id": "geo.basniev.ch24s1.06", "parts": ["При x > √(2κt) давление p = ", "."], "blanks": [{"options": ["pк", "0", "pг"], "answers": ["pк"]}], "key": [["pк"]], "answer_text": "При x > √(2κt) давление p = [pк]."}, {"id": "geo.basniev.ch24s1.06.t02", "type": "numeric", "question": "Какова, по автору, погрешность депрессии по ПССС при постоянном дебите (в процентах)?", "explanation": "Автор сравнил (24.7) с точной формулой (24.39) и получил 25%.", "page": 496, "link": "#essence", "step_title": "Давление у галереи и ошибка ПССС", "step_index": 50, "node_id": "geo.basniev.ch24s1.06", "key": {"answer": 25, "tolerance": 0}, "unit": "%", "answer_text": "25 %"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

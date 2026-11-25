@@ -1,0 +1,553 @@
+{
+  "node_id": "geo.basniev.s5_1.11",
+  "chapter": "basniev",
+  "index": 25,
+  "part": {
+    "id": "part3",
+    "title": "Как управление галереей меняет давление и отбор"
+  },
+  "title_beginner": "Уравнение для скорости фильтрации",
+  "title_book": "Прямолинейно-параллельный фильтрационный поток упругой жидкости",
+  "section": "s5_1",
+  "pages": [
+    485,
+    486
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "text",
+  "format_rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике.",
+  "order_rationale": "Поскольку на галерее задан дебит, удобнее сначала найти скорость через ее собственное диффузионное уравнение.",
+  "essence": [
+    "Из уравнения для давления получают такое же уравнение для скорости фильтрации.",
+    "Коэффициент пьезопроводности в нём тот же."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        485,
+        486
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Вывод",
+          "text": "Уравнение для давления умножают на отношение проницаемости к вязкости.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c01"
+          ],
+          "pages": [
+            485
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.11.c01",
+              "quote": "Для интегрирования уравнения пьезопроводности в данном случае умножим обе части уравнения (23.22) на $k/\\mu$",
+              "page": 485,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Вывод",
+          "text": "Затем дифференцируют по координате. Слева появляется смешанная производная, справа — третья производная давления по координате.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c02"
+          ],
+          "pages": [
+            486
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.11.c02",
+              "quote": "$$\\frac{k}{\\mu} \\frac{\\partial^2 p}{\\partial x \\partial t} = \\frac{k}{\\mu} \\kappa \\frac{\\partial^3 p}{\\partial x^3},$$",
+              "page": 486,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Вывод",
+          "text": "Порядок производных переставляют. Тогда в обеих частях выделяется один и тот же градиентный множитель.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c03"
+          ],
+          "pages": [
+            486
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.11.c03",
+              "quote": "$$\\frac{\\partial}{\\partial t} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right) = \\kappa \\frac{\\partial^2}{\\partial x^2} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right). \\quad (23.32)$$",
+              "page": 486,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Вывод",
+          "text": "По **закону Дарси** этот множитель — **скорость фильтрации** в принятом направлении.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c04"
+          ],
+          "pages": [
+            486
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.11.c04",
+              "quote": "$$\\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} = w(x, t),$$",
+              "page": 486,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-5",
+          "section": "Результат",
+          "text": "Уравнение для скорости имеет тот же диффузионный вид. Коэффициент **пьезопроводности** тот же.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c05"
+          ],
+          "pages": [
+            486
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.11.c05",
+              "quote": "$$\\frac{\\partial w(x, t)}{\\partial t} = \\kappa \\frac{\\partial^2 w(x, t)}{\\partial x^2}. \\quad (23.33)$$",
+              "page": 486,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-6",
+          "section": "Результат",
+          "text": "Коэффициенты выносят из производных как постоянные. Если свойства меняются в пространстве, такой вывод без проверки не годится.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c01"
+          ],
+          "pages": [
+            485
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как получить уравнение для скорости",
+      "pages": [
+        485,
+        486
+      ],
+      "items": [
+        {
+          "text": "Умножьте уравнение давления на k/μ.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c01"
+          ],
+          "pages": [
+            485
+          ]
+        },
+        {
+          "text": "Продифференцируйте по координате и переставьте производные.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c02",
+            "geo.basniev.s5_1.11.c03"
+          ],
+          "pages": [
+            486
+          ]
+        },
+        {
+          "text": "Подставьте определение скорости фильтрации.",
+          "claim_ids": [
+            "geo.basniev.s5_1.11.c04"
+          ],
+          "pages": [
+            486
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        486
+      ],
+      "items": [
+        {
+          "id": "geo.basniev.s5_1.11.f01",
+          "latex": "\\frac{k}{\\mu} \\frac{\\partial^2 p}{\\partial x \\partial t} = \\frac{k}{\\mu} \\kappa \\frac{\\partial^3 p}{\\partial x^3},",
+          "meaning": "Производная уравнения давления по координате после умножения на отношение проницаемости к вязкости.",
+          "vars": [
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            }
+          ],
+          "page": 486,
+          "unit_id": "u486_01"
+        },
+        {
+          "id": "geo.basniev.s5_1.11.f02",
+          "latex": "\\frac{\\partial}{\\partial t} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right) = \\kappa \\frac{\\partial^2}{\\partial x^2} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right). \\quad (23.32)",
+          "meaning": "Вынесение выражения для скорости под производные.",
+          "vars": [
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            }
+          ],
+          "page": 486,
+          "unit_id": "u486_03"
+        },
+        {
+          "id": "geo.basniev.s5_1.11.f03",
+          "latex": "\\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} = w(x, t),",
+          "meaning": "Выражение скорости через градиент давления.",
+          "vars": [
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "w",
+              "meaning": "скорость фильтрации, положительная к галерее",
+              "unit": "м/с"
+            }
+          ],
+          "page": 486,
+          "unit_id": "u486_05"
+        },
+        {
+          "id": "geo.basniev.s5_1.11.f04",
+          "latex": "\\frac{\\partial w(x, t)}{\\partial t} = \\kappa \\frac{\\partial^2 w(x, t)}{\\partial x^2}. \\quad (23.33)",
+          "meaning": "Уравнение для скорости фильтрации.",
+          "vars": [
+            {
+              "symbol": "w",
+              "meaning": "скорость фильтрации, положительная к галерее",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            }
+          ],
+          "page": 486,
+          "unit_id": "u486_07"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Скорость становится удобной расчётной величиной, поскольку именно она задана на галерее.",
+        "inputs": "Уравнение давления, пьезопроводность, проницаемость и вязкость.",
+        "outputs": "Уравнение переноса для скорости.",
+        "breaks_where": "Прямой вывод не применим к независимо меняющимся коэффициентам.",
+        "hypotheses": [],
+        "by": "model",
+        "lens": {
+          "inputs": "Уравнение давления, пьезопроводность, проницаемость и вязкость.",
+          "manual_steps": "Записать смешанные производные и проверить подстановку Дарси по обеим частям.",
+          "judgment_points": "Проверить, действительно ли вынесенные коэффициенты постоянны.",
+          "time": "При постоянных параметрах выкладка короткая.",
+          "typical_errors": "Использовать неправильный знак скорости из-за другой ориентации оси.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как подставить другую переменную в пригодный решатель, сохранив форму диффузионного оператора.",
+        "breaks_where": "Новый вход вычисляем из градиента исходной величины; это не произвольная смена метки в схеме данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Место скрытого предположения",
+          "text": "Коэффициенты выносятся из производных как постоянные. При пространственно переменных свойствах такая запись для скорости без проверки не переносится.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "Пьезопроводность",
+          "definition": "Способность среды передавать изменения давления диффузионным образом; коэффициент имеет размерность площади, делённой на время.",
+          "en": "hydraulic diffusivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Закон Дарси",
+          "definition": "Связывает скорость фильтрации с градиентом давления, проницаемостью и вязкостью; знак зависит от направления отсчёта.",
+          "en": "Darcy’s law",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Градиент давления",
+          "definition": "В одномерной задаче — производная давления по расстоянию, то есть изменение давления на единицу длины.",
+          "en": "pressure gradient",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Скорость фильтрации",
+          "definition": "Отношение объёмного расхода к полной площади поперечного сечения среды.",
+          "en": "Darcy velocity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Проницаемость",
+          "definition": "Свойство пористой среды пропускать жидкость под действием перепада давления.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Уравнение в частных производных",
+          "definition": "Уравнение с производными от функции нескольких аргументов.",
+          "en": "partial differential equation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Цепочка вывода уравнения для скорости фильтрации из уравнения для давления.",
+      "alt": "Пять блоков сверху вниз: уравнение давления, умножение на k/μ, дифференцирование, подстановка скорости, итоговое уравнение для скорости.",
+      "file": "illustrations/geo.basniev.s5_1.11__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.basniev.s5_1.11.c01",
+        "geo.basniev.s5_1.11.c03",
+        "geo.basniev.s5_1.11.c04",
+        "geo.basniev.s5_1.11.c05"
+      ],
+      "pages": [
+        485,
+        486
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.basniev.s5_1.11.c01",
+      "kind": "inference",
+      "text": "Для вывода уравнение умножают на отношение проницаемости к вязкости.",
+      "quote": "Для интегрирования уравнения пьезопроводности в данном случае умножим обе части уравнения (23.22) на $k/\\mu$",
+      "page": 485,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.11.c02",
+      "kind": "inference",
+      "text": "Дифференцирование по координате даёт смешанную производную слева и третью пространственную производную давления справа.",
+      "quote": "$$\\frac{k}{\\mu} \\frac{\\partial^2 p}{\\partial x \\partial t} = \\frac{k}{\\mu} \\kappa \\frac{\\partial^3 p}{\\partial x^3},$$",
+      "page": 486,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.11.c03",
+      "kind": "inference",
+      "text": "Перестановка порядка производных позволяет выделить один и тот же градиентный множитель в обеих частях.",
+      "quote": "$$\\frac{\\partial}{\\partial t} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right) = \\kappa \\frac{\\partial^2}{\\partial x^2} \\left( \\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} \\right). \\quad (23.32)$$",
+      "page": 486,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.11.c04",
+      "kind": "observation",
+      "text": "По закону Дарси этот множитель представляет скорость фильтрации в принятом направлении.",
+      "quote": "$$\\frac{k}{\\mu} \\frac{\\partial p}{\\partial x} = w(x, t),$$",
+      "page": 486,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.11.c05",
+      "kind": "inference",
+      "text": "Уравнение для скорости имеет тот же диффузионный вид и тот же коэффициент пьезопроводности.",
+      "quote": "$$\\frac{\\partial w(x, t)}{\\partial t} = \\kappa \\frac{\\partial^2 w(x, t)}{\\partial x^2}. \\quad (23.33)$$",
+      "page": 486,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.basniev.s5_1.11.t01",
+    "geo.basniev.s5_1.11.t02"
+  ],
+  "card_ids": [
+    "geo.basniev.s5_1.11.k01",
+    "geo.basniev.s5_1.11.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.basniev.s5_1.10",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.basniev.s4.04",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.basniev.s3.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

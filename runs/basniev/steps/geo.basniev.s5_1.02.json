@@ -1,0 +1,474 @@
+{
+  "node_id": "geo.basniev.s5_1.02",
+  "chapter": "basniev",
+  "index": 16,
+  "part": {
+    "id": "part2",
+    "title": "От баланса массы к форме профиля давления"
+  },
+  "title_beginner": "Три условия для давления",
+  "title_book": "Прямолинейно-параллельный фильтрационный поток упругой жидкости",
+  "section": "s5_1",
+  "pages": [
+    482
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": null,
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "text",
+  "format_rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике.",
+  "order_rationale": "Геометрия позволяет различить состояние до пуска, давление на самой галерее и давление вдали. Теперь задача определена достаточно, чтобы менять способ записи.",
+  "essence": [
+    "Задачу о галерее задают тремя условиями: начальным и двумя граничными.",
+    "Ищут два результата: давление в любой точке во времени и дебит галереи во времени."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        482
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Условия задачи",
+          "text": "**Начальное условие** — состояние на момент начала расчёта. При нулевом времени давление в пласте равно начальному.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c01"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.02.c01",
+              "quote": "$$p(x, t) = p_\\kappa \\quad \\text{при} \\quad t = 0;$$",
+              "page": 482,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Условия задачи",
+          "text": "**Граничное условие** задают на границе области. На галерее после пуска задано сниженное давление.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c02"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.02.c02",
+              "quote": "$$p(x, t) = p_\\tau \\quad \\text{при} \\quad x = 0, \\quad t > 0; \\tag{23.20}$$",
+              "page": 482,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Условия задачи",
+          "text": "На бесконечном удалении сохраняется начальное давление. Это верно и в момент пуска.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c03"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.02.c03",
+              "quote": "$$p(x, t) = p_\\kappa \\quad \\text{при} \\quad x = \\infty, \\quad t \\geq 0.$$",
+              "page": 482,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Что ищут",
+          "text": "Ищут давление как функцию координаты и времени.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c05"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.02.c05",
+              "quote": "Задача заключается в определении дебита галереи $Q(t)$ и давления в любой точке потока, в любой момент времени, то есть функции $p(x, t)$.",
+              "page": 482,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-5",
+          "section": "Что ищут",
+          "text": "Ищут и **дебит** галереи — объём отбора за единицу времени — как функцию времени.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c04"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.02.c04",
+              "quote": "Задача заключается в определении дебита галереи $Q(t)$ и давления в любой точке потока, в любой момент времени",
+              "page": 482,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-6",
+          "section": "Нюанс",
+          "text": "Сниженное давление на галерее задано только при положительном времени. Начальное условие относится к пласту до скачка.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c01",
+            "geo.basniev.s5_1.02.c02"
+          ],
+          "pages": [
+            482
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как записать постановку",
+      "pages": [
+        482
+      ],
+      "items": [
+        {
+          "text": "Запишите давление в начальный момент.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c01"
+          ],
+          "pages": [
+            482
+          ]
+        },
+        {
+          "text": "Задайте давление на галерее после пуска.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c02"
+          ],
+          "pages": [
+            482
+          ]
+        },
+        {
+          "text": "Задайте давление на бесконечном удалении.",
+          "claim_ids": [
+            "geo.basniev.s5_1.02.c03"
+          ],
+          "pages": [
+            482
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        482
+      ],
+      "items": [
+        {
+          "id": "geo.basniev.s5_1.02.f01",
+          "latex": "p(x, t) = p_\\kappa \\quad \\text{при} \\quad t = 0;",
+          "meaning": "Начальное условие в пласте.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "p_\\kappa",
+              "meaning": "начальное и контурное давление",
+              "unit": "Па"
+            }
+          ],
+          "page": 482,
+          "unit_id": "u482_02"
+        },
+        {
+          "id": "geo.basniev.s5_1.02.f02",
+          "latex": "p(x, t) = p_\\tau \\quad \\text{при} \\quad x = 0, \\quad t > 0; \\tag{23.20}",
+          "meaning": "Условие на галерее после пуска.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "p_\\tau",
+              "meaning": "давление галереи",
+              "unit": "Па"
+            }
+          ],
+          "page": 482,
+          "unit_id": "u482_03"
+        },
+        {
+          "id": "geo.basniev.s5_1.02.f03",
+          "latex": "p(x, t) = p_\\kappa \\quad \\text{при} \\quad x = \\infty, \\quad t \\geq 0.",
+          "meaning": "Условие на бесконечном удалении.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "p_\\kappa",
+              "meaning": "начальное и контурное давление",
+              "unit": "Па"
+            }
+          ],
+          "page": 482,
+          "unit_id": "u482_04"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "У начального состояния и условий на границах различается область действия.",
+        "inputs": "Отсчёт от пуска, координата от галереи, оба давления.",
+        "outputs": "Условия для расчёта давления и дебита.",
+        "breaks_where": "При заданном расходе условие на галерее уже не подходит.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Отсчёт от пуска, координата от галереи, оба давления.",
+          "manual_steps": "Перенести каждое условие в явный вид с областью действия.",
+          "judgment_points": "Не спутать нулевое время с нулевой координатой.",
+          "time": "Запись быстрая; проверка постановки важнее вычислений.",
+          "typical_errors": "Задать новое давление всей области в момент пуска.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Начальное условие похоже на снимок состояния перед запуском, а граничные условия — на правила для входа и края области.",
+        "breaks_where": "Это ограничения одного непрерывного решения, а не отдельные шаги обновления данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Пуск и пространственная граница",
+          "text": "Начальное условие относится к пласту до скачка. На галерее модель предписывает новое давление только после пуска; не требуйте непрерывности решения в самом углу области.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "Галерея",
+          "definition": "Линейная выработка, через которую в этой задаче отбирают жидкость из пласта.",
+          "en": "gallery",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Дебит",
+          "definition": "Объём жидкости, отбираемый за единицу времени.",
+          "en": "volumetric flow rate",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Начальное условие",
+          "definition": "Состояние, заданное на момент начала расчёта.",
+          "en": "initial condition",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Граничное условие",
+          "definition": "Ограничение, заданное на границе пространственной области задачи.",
+          "en": "boundary condition",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Три условия задачи и два искомых результата.",
+      "alt": "Четыре блока сверху вниз: начальное условие, условие на галерее, условие на бесконечности, что ищут.",
+      "file": "illustrations/geo.basniev.s5_1.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.basniev.s5_1.02.c01",
+        "geo.basniev.s5_1.02.c02",
+        "geo.basniev.s5_1.02.c03",
+        "geo.basniev.s5_1.02.c04",
+        "geo.basniev.s5_1.02.c05"
+      ],
+      "pages": [
+        482
+      ],
+      "after_block": "how-6",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.basniev.s5_1.02.c01",
+      "kind": "assumption",
+      "text": "При нулевом времени давление в пласте равно начальному.",
+      "quote": "$$p(x, t) = p_\\kappa \\quad \\text{при} \\quad t = 0;$$",
+      "page": 482,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.02.c02",
+      "kind": "assumption",
+      "text": "В точке галереи после пуска задано сниженное давление.",
+      "quote": "$$p(x, t) = p_\\tau \\quad \\text{при} \\quad x = 0, \\quad t > 0; \\tag{23.20}$$",
+      "page": 482,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.02.c03",
+      "kind": "assumption",
+      "text": "На бесконечном удалении начальное давление сохраняется, включая момент пуска.",
+      "quote": "$$p(x, t) = p_\\kappa \\quad \\text{при} \\quad x = \\infty, \\quad t \\geq 0.$$",
+      "page": 482,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.02.c04",
+      "kind": "observation",
+      "text": "В задаче ищут дебит галереи как функцию времени.",
+      "quote": "Задача заключается в определении дебита галереи $Q(t)$ и давления в любой точке потока, в любой момент времени",
+      "page": 482,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.02.c05",
+      "kind": "observation",
+      "text": "В задаче ищут давление как функцию координаты и времени.",
+      "quote": "Задача заключается в определении дебита галереи $Q(t)$ и давления в любой точке потока, в любой момент времени, то есть функции $p(x, t)$.",
+      "page": 482,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.basniev.s5_1.02.t01",
+    "geo.basniev.s5_1.02.t02"
+  ],
+  "card_ids": [
+    "geo.basniev.s5_1.02.k01",
+    "geo.basniev.s5_1.02.k02",
+    "geo.basniev.s5_1.02.k03"
+  ],
+  "links": [
+    {
+      "to": "geo.basniev.s5_1.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.basniev.s1.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

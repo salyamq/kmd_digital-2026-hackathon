@@ -1,0 +1,660 @@
+{
+  "chapter": "basniev",
+  "nodes": 60,
+  "steps_done": 60,
+  "pending": [],
+  "tasks": 141,
+  "task_types": {
+    "cloze": 28,
+    "multiple": 27,
+    "numeric": 12,
+    "order": 25,
+    "single": 49
+  },
+  "cards": 163,
+  "decision_steps": [
+    "geo.basniev.s5_2.11",
+    "geo.basniev.ch24s1.06",
+    "geo.basniev.ch24s1.14",
+    "geo.basniev.ch24s1.15"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "geo.basniev.s1.01",
+      "status": "ok",
+      "title": "Почему пласт отвечает скважине",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s1.02",
+      "status": "ok",
+      "title": "Есть ли у пласта подпитка водой",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s1.03",
+      "status": "ok",
+      "title": "Что замедляет перераспределение давления",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s2.01",
+      "status": "ok",
+      "title": "Что такое упругий запас",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s2.02",
+      "status": "ok",
+      "title": "Один коэффициент для жидкости и пласта",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s2.03",
+      "status": "ok",
+      "title": "Как отбор меняет упругий запас",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s3.01",
+      "status": "ok",
+      "title": "Зачем изучать упругую фильтрацию",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s3.03",
+      "status": "ok",
+      "title": "Какие свойства зависят от давления",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s3.02",
+      "status": "ok",
+      "title": "Из чего складывается модель течения",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s4.01",
+      "status": "ok",
+      "title": "Одно уравнение для давления",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s4.02",
+      "status": "ok",
+      "title": "Как упростить накопление массы",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s4.03",
+      "status": "ok",
+      "title": "Как упрощают перенос жидкости",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s4.04",
+      "status": "ok",
+      "title": "Как работает уравнение пьезопроводности",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (pressure_diffusion): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 12"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5.01",
+      "status": "ok",
+      "title": "Переход к одномерным потокам",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.01",
+      "status": "ok",
+      "title": "Что задано у галереи",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (pressure_diffusion): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 24"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.02",
+      "status": "ok",
+      "title": "Три условия для давления",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.03",
+      "status": "ok",
+      "title": "Один аргумент вместо трёх",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.04",
+      "status": "ok",
+      "title": "Как меняются частные производные",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.05",
+      "status": "ok",
+      "title": "От уравнения к наклону профиля",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 1.05"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.06",
+      "status": "ok",
+      "title": "Границы задают масштаб профиля",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.07",
+      "status": "ok",
+      "title": "От интеграла к давлению в пласте",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 1.05, 10000, 300"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.08",
+      "status": "ok",
+      "title": "Как градиент превращается в дебит",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.05"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.09",
+      "status": "ok",
+      "title": "От дебита к добытому объёму",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.05"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.10",
+      "status": "ok",
+      "title": "Пуск галереи с постоянным дебитом",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.11",
+      "status": "ok",
+      "title": "Уравнение для скорости фильтрации",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.12",
+      "status": "ok",
+      "title": "Шаблон решения для скорости",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.13",
+      "status": "ok",
+      "title": "Скорость от галереи вглубь пласта",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 1.05, 10000, 300"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.14",
+      "status": "ok",
+      "title": "Давление из профиля скорости",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.15",
+      "status": "ok",
+      "title": "Дальняя граница даёт давление галереи",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 1.05"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_1.16",
+      "status": "ok",
+      "title": "Когда постоянный дебит невозможен",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.4, 1.05, 16"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.01",
+      "status": "ok",
+      "title": "Как задать пуск скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (pressure_diffusion): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 12"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.02",
+      "status": "ok",
+      "title": "Свернуть расстояние и время в одну координату",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.03",
+      "status": "ok",
+      "title": "Уравнение с одной переменной вместо двух",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.04",
+      "status": "ok",
+      "title": "Сначала найти производную давления",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.001, 2.5"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.05",
+      "status": "ok",
+      "title": "Восстановить давление по двум условиям",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.06",
+      "status": "ok",
+      "title": "Основная формула упругого режима",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (pressure_diffusion): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 24"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.07",
+      "status": "ok",
+      "title": "Как вычислить функцию Ei рядом",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.08",
+      "status": "ok",
+      "title": "Когда достаточно логарифма",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.001"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.09",
+      "status": "ok",
+      "title": "Расход и скорость вокруг скважины",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.15, 0.92"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.10",
+      "status": "ok",
+      "title": "Два масштаба безразмерного времени",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.12",
+      "status": "ok",
+      "title": "Проверить влияние внешней границы",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.11",
+      "status": "ok",
+      "title": "Насколько важен радиус скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.s5_2.13",
+      "status": "ok",
+      "title": "Как падает давление около скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (pressure_diffusion): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 24"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24.01",
+      "status": "ok",
+      "title": "Зачем нужны приближённые методы",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.01",
+      "status": "ok",
+      "title": "Нестационарный процесс как серия стационарных",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.02",
+      "status": "ok",
+      "title": "Где проходит условный фронт давления",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.03",
+      "status": "ok",
+      "title": "Галерея и линейный профиль давления",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.04",
+      "status": "ok",
+      "title": "Отбор равен убыли упругого запаса",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.05, 0.75, 0.95"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.05",
+      "status": "ok",
+      "title": "Фронт давления растёт как корень",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.45"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.06",
+      "status": "ok",
+      "title": "Давление у галереи и ошибка ПССС",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.07",
+      "status": "ok",
+      "title": "Постоянное давление на галерее",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.08",
+      "status": "ok",
+      "title": "Длина зоны при постоянной депрессии",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.09",
+      "status": "ok",
+      "title": "Профиль, дебит и точность при постоянной депрессии",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.10",
+      "status": "ok",
+      "title": "Скважина с постоянным дебитом: логарифмический профиль",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.11",
+      "status": "ok",
+      "title": "Средняя депрессия в кольце вокруг скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.12",
+      "status": "ok",
+      "title": "Как растёт радиус возмущения",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 3.5"
+      ],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.13",
+      "status": "ok",
+      "title": "Давление в пласте и на забое",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.14",
+      "status": "ok",
+      "title": "Ошибка ПССС убывает со временем",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.15",
+      "status": "ok",
+      "title": "Радиус по графику и дебит скважины",
+      "tasks": 2,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.16",
+      "status": "ok",
+      "title": "Где ПССС точен, а где груб",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 54. Скважина с постоянным дебитом: логарифмический профиль — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.ch24s1.10" data-index="54">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как применять ПССС и понимать погрешность › Шаг 54 из 60</p>
+    <h1>Скважина с постоянным дебитом: логарифмический профиль</h1>
+    <p class="booktitle">В книге: «Плоскорадиальный неустановившийся фильтрационный поток упругой жидкости» <span class="pg">стр. 497–498</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + процесс/прибор</span>    </p>
+<p class="relies">Опирается на: <a href="step-46.html">шаг 46 «Где проходит условный фронт давления»</a> <span class="muted">(предпосылка)</span>, <a href="step-31.html">шаг 31 «Как задать пуск скважины»</a> <span class="muted">(предпосылка)</span>, <a href="step-47.html">шаг 47 «Галерея и линейный профиль давления»</a> <span class="muted">(пример)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Вокруг скважины с постоянным дебитом по ПССС растёт возмущённая зона радиуса R(t).</p><p>Внутри неё давление распределено по стационарному логарифмическому закону, снаружи равно pк.</p><p>Закон роста R(t) ещё предстоит найти.</p><p class="threshold"><b>Пороговая идея.</b> Различать радиус скважины, координату точки и радиус возмущения. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Постановка задачи</h3>          <div class="para" id="how-1">
+            <p>Теперь автор рассматривает неустановившийся <strong class="term">плоскорадиальный поток</strong> упругой жидкости. Так называют течение к скважине, где давление зависит от расстояния до её оси. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c01"><p>«Плоскорадиальный неустановившийся фильтрационный поток упругой жидкости.»</p><footer>— автор, стр. 497 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Автор принимает допущения. Пласт неограничен, горизонтален и имеет постоянную толщину h. Добывающую скважину радиусом rс пускают в момент t = 0. Её дебит Q постоянен. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c02"><p>«в момент времени $t = 0$ пущена добывающая скважина радиусом $r_c$ с постоянным дебитом $Q$.»</p><footer>— автор, стр. 497 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c03"><p>«Пусть в неограниченном горизонтальном пласте постоянной толщины $h$ в момент времени»</p><footer>— автор, стр. 497 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c04"><p>«пущена добывающая скважина радиусом $r_c$ с постоянным дебитом $Q$.»</p><footer>— автор, стр. 497 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>До пуска давление во всём пласте одинаково и равно контурному pк. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c05"><p>«До пуска скважины давление во всем пласте было одинаковым и равным $p_\kappa$.»</p><footer>— автор, стр. 497 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Механизм</h3>          <div class="para" id="how-4">
+            <p>Через время t вокруг скважины выделяют возмущённую область радиусом R(t). Внутри неё давление распределено по стационарному закону. Это допущение ПССС для данного момента. <span class="pg" title="Страница книги (по PDF)">стр. 497–498</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c06"><p>«через время $t$ после пуска скважины вокруг нее образуется возмущенная область радиусом $R(t)$»</p><footer>— автор, стр. 497 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c07"><p>«в которой давление будет распределено по стационарному закону»</p><footer>— автор, стр. 498 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Формула профиля</h3>          <div class="para" id="how-5">
+            <p>По формуле (24.10) p = pк − Qμ/(2πkh)·ln(R(t)/r). Депрессия в точке пропорциональна логарифму отношения R(t) к расстоянию r от оси. Чем ближе к скважине, тем больше депрессия. <span class="pg" title="Страница книги (по PDF)">стр. 498</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c08"><p>«$$p(r, t) = p_\kappa - \frac{Q\mu}{2\pi kh} \ln \frac{R(t)}{r}. \quad (24.10)$$»</p><footer>— автор, стр. 498 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>За границей зоны</h3>          <div class="para" id="how-6">
+            <p>В остальной части пласта сохраняется начальное давление pк. Рисунок 24.2 показывает такие профили в разные моменты при постоянном дебите. <span class="pg" title="Страница книги (по PDF)">стр. 498</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c10"><p>«В остальной части пласта сохраняется начальное пластовое давление $p_\kappa$.»</p><footer>— автор, стр. 498 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c09"><p>«Рис. 24.2. Кривые распределения давления в плоскорадиальном потоке в разные моменты времени по методу ПССС (отбор осуществляется при условии $Q = \text{const}$)»</p><footer>— автор, стр. 498 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_ch24s1_10__1_m.svg"><img src="img/geo_basniev_ch24s1_10__1.svg" alt="График давления от расстояния до скважины в несколько моментов: крутые у скважины логарифмические кривые, каждая выходит на горизонталь начального давления у своей границы." loading="lazy"></picture>  </div>
+  <figcaption>
+    Внутри растущей зоны профиль логарифмический, за её границей давление начальное. Значения параметров условные. (перерисовано по рис. 24.2, стр. 498)
+    <span class="ill-meta">Класс B · симуляция · перерисовано по рис. 24.2, стр. 498 · нарисовано кодом · стр. 498</span>
+  </figcaption>
+</figure>
+<h3>Что осталось найти</h3>          <div class="para" id="how-7">
+            <p>Профиль зависит от неизвестного радиуса R(t). Поэтому нужно найти закон движения границы возмущённой области. <span class="pg" title="Страница книги (по PDF)">стр. 498</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.10.c11"><p>«Требуется найти закон движения границы возмущенной области $R(t)$.»</p><footer>— автор, стр. 498 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Пояснение</h3>          <div class="para para-model" id="how-8">
+            <p>В формуле три радиуса. rс — радиус самой скважины. r — точка, где смотрят давление. R(t) — докуда дошло возмущение. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как записать профиль у скважины</p>        <ol class="proc"><li>Зафиксируйте постоянный дебит Q и начальное давление pк. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></li><li>Выделите вокруг скважины зону радиусом R(t). <span class="pg" title="Страница книги (по PDF)">стр. 497</span></li><li>В пределах зоны задайте логарифмический профиль (24.10). <span class="pg" title="Страница книги (по PDF)">стр. 498</span></li><li>За текущей границей оставьте начальное давление pк. <span class="pg" title="Страница книги (по PDF)">стр. 498</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Скважину пускают в момент t = 0 с постоянным дебитом Q. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></li><li>Условия: пласт неограничен, горизонтален, толщина h постоянна. <span class="pg" title="Страница книги (по PDF)">стр. 497</span></li><li>Профиль (24.10) неприменим внутри ствола и вне возмущённой зоны. <span class="pg" title="Страница книги (по PDF)">стр. 498</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.ch24s1.10.f01">
+          <div class="tex-display" data-tex="p(r, t) = p_\kappa - \frac{Q\mu}{2\pi kh} \ln \frac{R(t)}{r}. \quad (24.10)">$$p(r, t) = p_\kappa - \frac{Q\mu}{2\pi kh} \ln \frac{R(t)}{r}. \quad (24.10)$$</div>
+          <p>Логарифмический профиль давления внутри зоны при постоянном дебите. <span class="pg">стр. 498</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>пластовое давление в рассматриваемой точке</td><td>Па</td></tr><tr><td>$r$</td><td>расстояние от оси скважины</td><td>м</td></tr><tr><td>$t$</td><td>время с начала отбора; dt — его малое приращение</td><td>с</td></tr><tr><td>$p_\kappa$</td><td>начальное давление в пласте и давление на границе возмущения</td><td>Па</td></tr><tr><td>$Q$</td><td>объёмный дебит жидкости</td><td>м³/с</td></tr><tr><td>$\mu$</td><td>динамическая вязкость жидкости</td><td>Па·с</td></tr><tr><td>$k$</td><td>проницаемость пласта</td><td>м²</td></tr><tr><td>$h$</td><td>толщина пласта</td><td>м</td></tr><tr><td>$R$</td><td>радиус возмущённой области</td><td>м</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для расчёта «Постоянный дебит скважины: область и форма профиля» отделите исходные параметры от модельных выходов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Дебит, радиус скважины, начальное давление, толщина, вязкость и проницаемость; для мгновенного профиля — радиус зоны.</dd>
+          <dt>Выход</dt><dd>Мгновенный профиль при заданной границе.</dd>
+          <dt>Где ломается</dt><dd>Профиль с логарифмом неприменим внутри ствола и вне возмущённой зоны.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Дебит, радиус скважины, начальное давление, толщина, вязкость и проницаемость; для мгновенного профиля — радиус зоны.</dd>
+            <dt>Ручные шаги</dt><dd>Зафиксируйте постоянный дебит и начальное давление.; В пределах текущей зоны задайте логарифмический профиль.; За текущей границей оставьте начальное давление.</dd>
+            <dt>Точки суждения</dt><dd>Проверить горизонтальную радиальную геометрию задачи.</dd>
+            <dt>Время</dt><dd>Время не оценено в источнике.</dd>
+            <dt>Типичные ошибки</dt><dd>Использовать для радиального притока линейную зависимость от расстояния.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как функция, включающая расчёт только внутри области интереса.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Рост области определяется физическим балансом, а не настройкой фильтра данных.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Не принимайте машинное описание рисунка за измерение; стройте теоретический профиль непосредственно по формуле.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 24.2. Рис. 24.2. Кривые распределения давления в плоскорадиальном потоке в разные моменты времени по методу ПССС (отбор осуществляется при условии $Q = \text{const}$) <span class="pg">стр. 498</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>ПССС</dt><dd>Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления. <span class="pg">стр. 497</span></dd><dt>плоскорадиальный поток</dt><dd>Течение к скважине, при котором в горизонтальной плоскости давление зависит от расстояния до её оси. <span class="pg">стр. 497</span></dd><dt>возмущённая область</dt><dd>Часть пласта, в которой модель учитывает вызванное отбором изменение давления. <span class="pg">стр. 497</span></dd><dt>граница возмущения</dt><dd>Подвижная граница между возмущённой и невозмущённой частями пласта. <span class="pg">стр. 497</span></dd><dt>стационарный профиль</dt><dd>Распределение давления, отвечающее установившемуся движению при границе, принятой неподвижной на данный момент. <span class="pg">стр. 497</span></dd><dt>дебит</dt><dd>Объём жидкости, отбираемый за единицу времени. <span class="pg">стр. 497</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-ch24s1-10-t01" data-task="geo.basniev.ch24s1.10.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие допущения принимает автор в задаче о скважине?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.10.t01" value="0"> <span>Давление на забое постоянно</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.10.t01" value="1"> <span>Дебит Q постоянен</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.10.t01" value="2"> <span>Толщина пласта h постоянна</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.10.t01" value="3"> <span>Пласт неограничен и горизонтален</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Пласт неограничен и горизонтален; Толщина пласта h постоянна; Дебит Q постоянен</p>
+    <p class="fb-expl">Здесь задан постоянный дебит, а не постоянное давление на забое. <a href="#how-2">Где это в тексте (стр. 497) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-10-t02" data-task="geo.basniev.ch24s1.10.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-basniev-ch24s1-10-t02">Расставьте шаги записи профиля по порядку.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-basniev-ch24s1-10-t02">
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">В пределах зоны задайте логарифмический профиль (24.10).</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="3"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">За текущей границей оставьте начальное давление pк.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Зафиксируйте постоянный дебит Q и начальное давление pк.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Выделите вокруг скважины зону радиусом R(t).</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Зафиксируйте постоянный дебит Q и начальное давление pк. → Выделите вокруг скважины зону радиусом R(t). → В пределах зоны задайте логарифмический профиль (24.10). → За текущей границей оставьте начальное давление pк.</p>
+    <p class="fb-expl">Сначала условия, затем зона, профиль внутри и давление снаружи. <a href="#how-4">Где это в тексте (стр. 497) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-10-t03" data-task="geo.basniev.ch24s1.10.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">От чего зависит депрессия в точке внутри зоны по формуле (24.10)?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.10.t03" value="0"> <span>От логарифма отношения R(t) к расстоянию r</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.10.t03" value="1"> <span>Только от радиуса скважины rс</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.10.t03" value="2"> <span>От квадрата расстояния r</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> От логарифма отношения R(t) к расстоянию r</p>
+    <p class="fb-expl">В (24.10) стоит ln(R(t)/r). <a href="#how-5">Где это в тексте (стр. 498) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.ch24s1.10.c01"><p>Рассматривается неустановившийся плоскорадиальный поток упругой жидкости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Плоскорадиальный неустановившийся фильтрационный поток упругой жидкости.»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c02"><p>Добывающую скважину запускают при t = 0 и удерживают постоянный дебит Q. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в момент времени $t = 0$ пущена добывающая скважина радиусом $r_c$ с постоянным дебитом $Q$.»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c03"><p>Пласт неограничен, горизонтален и имеет постоянную толщину h. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Пусть в неограниченном горизонтальном пласте постоянной толщины $h$ в момент времени»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c04"><p>Скважина имеет радиус r_c. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«пущена добывающая скважина радиусом $r_c$ с постоянным дебитом $Q$.»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c05"><p>Начальное давление одинаково во всём пласте и равно контурному. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«До пуска скважины давление во всем пласте было одинаковым и равным $p_\kappa$.»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c06"><p>Спустя время t в методе выделяют область вокруг скважины радиусом R(t). <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«через время $t$ после пуска скважины вокруг нее образуется возмущенная область радиусом $R(t)$»</p><footer>— стр. 497</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c07"><p>Внутри текущей области давление принимают стационарным по пространственному профилю. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в которой давление будет распределено по стационарному закону»</p><footer>— стр. 498</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c08"><p>Депрессия в точке пропорциональна логарифму отношения внешнего радиуса зоны к расстоянию от оси скважины. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$p(r, t) = p_\kappa - \frac{Q\mu}{2\pi kh} \ln \frac{R(t)}{r}. \quad (24.10)$$»</p><footer>— стр. 498</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c09"><p>На рисунке показаны профили давления в разные моменты при отборе с постоянным дебитом. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Рис. 24.2. Кривые распределения давления в плоскорадиальном потоке в разные моменты времени по методу ПССС (отбор осуществляется при условии $Q = \text{const}$)»</p><footer>— стр. 498</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c10"><p>За пределами текущей области сохраняется начальное пластовое давление. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«В остальной части пласта сохраняется начальное пластовое давление $p_\kappa$.»</p><footer>— стр. 498</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.10.c11"><p>Предстоит найти зависимость радиуса зоны от времени. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Требуется найти закон движения границы возмущенной области $R(t)$.»</p><footer>— стр. 498</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-55.html">шаг 55 «Средняя депрессия в кольце вокруг скважины»</a>, <a href="step-57.html">шаг 57 «Давление в пласте и на забое»</a>, <a href="step-59.html">шаг 59 «Радиус по графику и дебит скважины»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-53.html" rel="prev"><span>← Назад</span><b>Профиль, дебит и точность при постоянной депрессии</b></a><a class="next" href="step-55.html" rel="next"><span>Дальше →</span><b>Средняя депрессия в кольце вокруг скважины</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.10.t01", "type": "multiple", "question": "Какие допущения принимает автор в задаче о скважине?", "explanation": "Здесь задан постоянный дебит, а не постоянное давление на забое.", "page": 497, "link": "#how-2", "step_title": "Скважина с постоянным дебитом: логарифмический профиль", "step_index": 54, "node_id": "geo.basniev.ch24s1.10", "options": ["Давление на забое постоянно", "Дебит Q постоянен", "Толщина пласта h постоянна", "Пласт неограничен и горизонтален"], "key": [1, 2, 3], "answer_text": "Пласт неограничен и горизонтален; Толщина пласта h постоянна; Дебит Q постоянен"}, {"id": "geo.basniev.ch24s1.10.t02", "type": "order", "question": "Расставьте шаги записи профиля по порядку.", "explanation": "Сначала условия, затем зона, профиль внутри и давление снаружи.", "page": 497, "link": "#how-4", "step_title": "Скважина с постоянным дебитом: логарифмический профиль", "step_index": 54, "node_id": "geo.basniev.ch24s1.10", "items": [{"text": "В пределах зоны задайте логарифмический профиль (24.10).", "pos": 2}, {"text": "За текущей границей оставьте начальное давление pк.", "pos": 3}, {"text": "Зафиксируйте постоянный дебит Q и начальное давление pк.", "pos": 0}, {"text": "Выделите вокруг скважины зону радиусом R(t).", "pos": 1}], "key": [0, 1, 2, 3], "answer_text": "Зафиксируйте постоянный дебит Q и начальное давление pк. → Выделите вокруг скважины зону радиусом R(t). → В пределах зоны задайте логарифмический профиль (24.10). → За текущей границей оставьте начальное давление pк."}, {"id": "geo.basniev.ch24s1.10.t03", "type": "single", "question": "От чего зависит депрессия в точке внутри зоны по формуле (24.10)?", "explanation": "В (24.10) стоит ln(R(t)/r).", "page": 498, "link": "#how-5", "step_title": "Скважина с постоянным дебитом: логарифмический профиль", "step_index": 54, "node_id": "geo.basniev.ch24s1.10", "options": ["От логарифма отношения R(t) к расстоянию r", "Только от радиуса скважины rс", "От квадрата расстояния r"], "key": [0], "answer_text": "От логарифма отношения R(t) к расстоянию r"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "question": "Какую наибольшую погрешность логарифмического приближения указывает автор при x ≤ 0,1 (в процентах)?",
+      "answer": 5.7,
+      "tolerance": 0.05,
+      "unit": "%",
+      "explanation": "Автор связывает порог 0,1 с погрешностью 5,7%.",
+      "evidence": "При x ≤ 0,1 — не выше 5,7%.",
+      "claim_id": "geo.basniev.s5_2.08.c06",
+      "page": 491,
+      "anchor": "how-3",
+      "id": "geo.basniev.s5_2.08.t01",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "type": "single",
+      "question": "Можно ли считать, что при x ≤ 1 логарифм так же точен, как при x ≤ 0,01?",
+      "options": [
+        "Нет: оценки погрешности даны только для малых порогов",
+        "Да: погрешность одинакова при любом x",
+        "Да: при x ≤ 1 погрешность 0,25%"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Каждая оценка погрешности относится к своему порогу.",
+      "evidence": "Он шире подтверждённых порогов.",
+      "claim_id": "geo.basniev.s5_2.08.c08",
+      "page": 491,
+      "anchor": "how-4",
+      "id": "geo.basniev.s5_2.08.t02",
+      "node_id": "geo.basniev.s5_2.08"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Логарифмическое приближение −Ei(−x)",
+      "back": "ln(1/x) − 0,5772 при малом x = r²/(4κt).",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c04"
+      ],
+      "kind": "idea",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k01",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "front": "Пороги и погрешности приближения",
+      "back": "x ≤ 0,01 — 0,25%; x ≤ 0,1 — 5,7%; x ≤ 0,14 — 9,7%.",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c05",
+        "geo.basniev.s5_2.08.c06",
+        "geo.basniev.s5_2.08.c07"
+      ],
+      "kind": "number",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k02",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "front": "Логарифм заменяет Ei с одинаковой погрешностью при любом x?",
+      "back": "Нет. Каждая оценка погрешности связана со своим порогом аргумента.",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c05",
+        "geo.basniev.s5_2.08.c07"
+      ],
+      "kind": "mistake",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k03",
+      "node_id": "geo.basniev.s5_2.08"
+    }
+  ]
+}

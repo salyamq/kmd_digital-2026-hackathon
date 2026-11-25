@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 8. Какие свойства зависят от давления — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s3.03" data-index="8">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Что движет жидкость и как это описать › Шаг 8 из 60</p>
+    <h1>Какие свойства зависят от давления</h1>
+    <p class="booktitle">В книге: «Математическая модель неустановившейся фильтрации упругой жидкости в упругой пористой среде» <span class="pg">стр. 478</span></p>
+    <p class="meta">
+      <span class="chip">≈ 4 мин</span>
+      <span class="chip">▤ Карточки</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + неочевидное</span>    </p>
+<p class="relies">Опирается на: <a href="step-03.html">шаг 3 «Что замедляет перераспределение давления»</a> <span class="muted">(предпосылка)</span>, <a href="step-05.html">шаг 5 «Один коэффициент для жидкости и пласта»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">В модели от давления зависят плотность жидкости и пористость, а вязкость и проницаемость постоянны.</p><p>На деле деформация иногда меняет и проницаемость, особенно на больших глубинах; модель это сознательно не учитывает.</p><p class="threshold"><b>Пороговая идея.</b> Деформация может изменить не только пористость, но и проницаемость; ее постоянство — осознанное ограничение модели. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что берут в модель</h3>          <div class="para" id="how-1">
+            <p>Чтобы замкнуть систему уравнений, автор берёт <strong class="term">уравнения состояния</strong>. Это формулы, связывающие свойство с давлением. Их пишут для упругой жидкости и для упругой пористой среды. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c01"><p>«В качестве уравнений состояния среды и жидкости воспользуемся уравнениями состояния упругой жидкости и упругой пористой среды в ранее полученной форме (19.24) и (19.42):»</p><footer>— автор, стр. 478 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 356" role="img" aria-label="Свойства в модели упругого режима" class="ill-svg"><title>Свойства в модели упругого режима</title><rect class="ill-bg" x="0" y="0" width="360" height="356" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Свойства в модели упругого режима</tspan></text><rect class="ill-box ill-good" x="12" y="63" width="336" height="99" rx="10"/><text class="ill-title" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Зависят от давления</tspan></text><text class="ill-text" x="26" y="112" text-anchor="start"><tspan x="26" dy="0">• Плотность жидкости ρ</tspan></text><text class="ill-text" x="26" y="135" text-anchor="start"><tspan x="26" dy="0">• Пористость m</tspan></text><rect class="ill-box ill-bad" x="12" y="172" width="336" height="118" rx="10"/><text class="ill-title" x="180.0" y="196" text-anchor="middle"><tspan x="180.0" dy="0">Приняты постоянными</tspan></text><text class="ill-text" x="26" y="221" text-anchor="start"><tspan x="26" dy="0">• Вязкость μ</tspan></text><text class="ill-text" x="26" y="244" text-anchor="start"><tspan x="26" dy="0">• Проницаемость k (на деле может</tspan><tspan x="26" dy="19">меняться, особенно глубоко)</tspan></text><text class="ill-small" x="180.0" y="312" text-anchor="middle"><tspan x="180.0" dy="0">Постоянство проницаемости — ограничение</tspan><tspan x="180.0" dy="19">модели</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Слева свойства, которые в модели зависят от давления, справа — принятые постоянными. Постоянная проницаемость — сознательное упрощение.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 478</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-2">
+            <p>Плотность жидкости и пористость линейно меняются с давлением. <strong class="term">Вязкость</strong> и <strong class="term">проницаемость</strong> в этой модели принимают постоянными. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c02"><p>«Для проницаемости и вязкости примем $k = \text{const}$ и $\mu = \text{const}$,»</p><footer>— автор, стр. 478 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Что бывает на деле</h3>          <div class="para" id="how-3">
+            <p>Опыты и опыт разработки показывают: иногда при деформациях меняется не только пористость. Меняется и проницаемость. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c03"><p>«как показывают результаты лабораторных экспериментов, а также опыт разработки месторождений, в ряде случаев наряду с изменением пористости вследствие возникающих деформаций, происходят и изменения проницаемости пластов.»</p><footer>— автор, стр. 478 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p>Особенно это касается глубоко залегающих месторождений углеводородов. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c04"><p>«Особенно это относится к глубоко залегающим месторождениям углеводородов.»</p><footer>— автор, стр. 478 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Почему этим пренебрегают</h3>          <div class="para" id="how-5">
+            <p>В этой модели изменение проницаемости от деформации не учитывают. Это осознанное допущение. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c05"><p>«Понятно, что данное обстоятельство не учитывается в рассматриваемой модели.»</p><footer>— автор, стр. 478 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>По выводу автора, учёт зависимости проницаемости от пористости, а значит от давления, сильно усложнил бы модель. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c06"><p>«Однако введение еще одного уравнения состояния $k = k(m(p))$ приведет к существенному усложнению модели.»</p><footer>— автор, стр. 478 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>Такую зависимость изучали во многих работах. За более общей постановкой авторы отсылают к специальным монографиям. <span class="pg" title="Страница книги (по PDF)">стр. 478</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.03.c07"><p>«то, что развитию теории упругого режима с учетом зависимости $k = k(m(p))$ посвящено большое число исследований, изложение этого раздела в более общей постановке заметно усложнило бы изложение, и авторы считают целесообразным, сохранив традиционный подход, рекомендовать читателям обратиться к посвященным этому вопросу монографиям самостоятельно.»</p><footer>— автор, стр. 478 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.s3.03.f01">
+          <div class="tex-display" data-tex="\rho=\rho_0[1+\beta_{\text{ж}}(p-p_0)]">$$\rho=\rho_0[1+\beta_{\text{ж}}(p-p_0)]$$</div>
+          <p>Линейное изменение плотности жидкости относительно начального состояния. <span class="pg">стр. 478</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\rho$</td><td>плотность жидкости</td><td>кг/м³</td></tr><tr><td>$\rho_0$</td><td>плотность при начальном давлении</td><td>кг/м³</td></tr><tr><td>$\beta_{\text{ж}}$</td><td>объемная сжимаемость жидкости</td><td>Па⁻¹</td></tr><tr><td>$p$</td><td>пластовое давление</td><td>Па</td></tr><tr><td>$p_0$</td><td>начальное давление</td><td>Па</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s3.03.f02">
+          <div class="tex-display" data-tex="m=m_0+\beta_{\text{с}}(p-p_0)">$$m=m_0+\beta_{\text{с}}(p-p_0)$$</div>
+          <p>Линейное изменение пористости относительно начального состояния. <span class="pg">стр. 478</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$m$</td><td>пористость</td><td>безразмерная</td></tr><tr><td>$m_0$</td><td>пористость при начальном давлении</td><td>безразмерная</td></tr><tr><td>$\beta_{\text{с}}$</td><td>объемная упругость пористой среды</td><td>Па⁻¹</td></tr><tr><td>$p$</td><td>пластовое давление</td><td>Па</td></tr><tr><td>$p_0$</td><td>начальное давление</td><td>Па</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>В данной модели меняются плотность и пористость, но не проницаемость и не вязкость.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Начальные свойства и давление, коэффициенты объемного сжатия, текущие давления.</dd>
+          <dt>Выход</dt><dd>Плотность и пористость при текущем давлении.</dd>
+          <dt>Где ломается</dt><dd>Когда изменение проницаемости из-за деформации существенно, постоянное значение не описывает этот эффект.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Дана: разделить рутинную подстановку и экспертную проверку допущения о постоянстве проницаемости.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Уравнения состояния и результаты испытаний.</dd>
+            <dt>Ручные шаги</dt><dd>Отделить измеренные изменения свойств от параметров, зафиксированных в модели.</dd>
+            <dt>Точки суждения</dt><dd>Оценить, существенна ли зависимость проницаемости от деформации.</dd>
+            <dt>Время</dt><dd>Нужна экспертная проверка там, где упрощение спорно.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять постоянство проницаемости за наблюдаемое свойство всех пластов.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как фиксировать часть параметров при моделировании, а другим разрешить меняться вместе с состоянием.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Решение о фиксации зависит от физических данных, а не только от удобства модели.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>плотность</dt><dd>Масса жидкости на единицу ее объема.  <span class="chip chip-model">модель</span></dd><dt>пористость</dt><dd>Доля объема породы, занятая порами.  <span class="chip chip-model">модель</span></dd><dt>проницаемость</dt><dd>Способность породы пропускать жидкость.  <span class="chip chip-model">модель</span></dd><dt>вязкость</dt><dd>Мера сопротивления жидкости течению.  <span class="chip chip-model">модель</span></dd><dt>уравнение состояния</dt><dd>Формула, связывающая свойство материала с давлением.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s3-03-t01" data-task="geo.basniev.s3.03.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какое свойство в модели постоянно, хотя на практике иногда меняется при деформации?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.03.t01" value="0"> <span>Плотность жидкости</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.03.t01" value="1"> <span>Проницаемость</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.03.t01" value="2"> <span>Давление</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.03.t01" value="3"> <span>Пористость</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Проницаемость</p>
+    <p class="fb-expl">Опыты показывают изменение проницаемости, но модель его не учитывает. <a href="#how-3">Где это в тексте (стр. 478) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s3-03-t02" data-task="geo.basniev.s3.03.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуск.</p>
+  <p class="cloze">Изменение проницаемости особенно касается <select aria-label="Пропуск 1"><option value="">—</option><option>глубоко</option><option>морских</option><option>мелко</option><option>газовых</option></select> залегающих месторождений.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Изменение проницаемости особенно касается [глубоко] залегающих месторождений.</p>
+    <p class="fb-expl">Автор отмечает, что эффект особенно относится к глубоко залегающим месторождениям. <a href="#how-4">Где это в тексте (стр. 478) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s3.03.c01"><p>Для замыкания системы автор берет уравнения состояния упругой жидкости и упругой пористой среды. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«В качестве уравнений состояния среды и жидкости воспользуемся уравнениями состояния упругой жидкости и упругой пористой среды в ранее полученной форме (19.24) и (19.42):»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c02"><p>В рассматриваемой модели вязкость и проницаемость принимают постоянными. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Для проницаемости и вязкости примем $k = \text{const}$ и $\mu = \text{const}$,»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c03"><p>Опыты и разработка показывают, что иногда при деформациях меняется не только пористость, но и проницаемость. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«как показывают результаты лабораторных экспериментов, а также опыт разработки месторождений, в ряде случаев наряду с изменением пористости вследствие возникающих деформаций, происходят и изменения проницаемости пластов.»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c04"><p>Эффект особенно относится к глубоко залегающим месторождениям углеводородов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Особенно это относится к глубоко залегающим месторождениям углеводородов.»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c05"><p>Изменение проницаемости вследствие деформации в этой модели не учитывается. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Понятно, что данное обстоятельство не учитывается в рассматриваемой модели.»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c06"><p>Добавление зависимости проницаемости от пористости, зависящей от давления, существенно усложнило бы модель. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Однако введение еще одного уравнения состояния $k = k(m(p))$ приведет к существенному усложнению модели.»</p><footer>— стр. 478</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.03.c07"><p>Зависимость проницаемости от пористости изучалась во многих работах; за более общей постановкой авторы рекомендуют обратиться к специальным монографиям. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«то, что развитию теории упругого режима с учетом зависимости $k = k(m(p))$ посвящено большое число исследований, изложение этого раздела в более общей постановке заметно усложнило бы изложение, и авторы считают целесообразным, сохранив традиционный подход, рекомендовать читателям обратиться к посвященным этому вопросу монографиям самостоятельно.»</p><footer>— стр. 478</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-09.html">шаг 9 «Из чего складывается модель течения»</a>, <a href="step-10.html">шаг 10 «Одно уравнение для давления»</a>, <a href="step-11.html">шаг 11 «Как упростить накопление массы»</a>, <a href="step-12.html">шаг 12 «Как упрощают перенос жидкости»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-07.html" rel="prev"><span>← Назад</span><b>Зачем изучать упругую фильтрацию</b></a><a class="next" href="step-09.html" rel="next"><span>Дальше →</span><b>Из чего складывается модель течения</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s3.03.t01", "type": "single", "question": "Какое свойство в модели постоянно, хотя на практике иногда меняется при деформации?", "explanation": "Опыты показывают изменение проницаемости, но модель его не учитывает.", "page": 478, "link": "#how-3", "step_title": "Какие свойства зависят от давления", "step_index": 8, "node_id": "geo.basniev.s3.03", "options": ["Плотность жидкости", "Проницаемость", "Давление", "Пористость"], "key": [1], "answer_text": "Проницаемость"}, {"id": "geo.basniev.s3.03.t02", "type": "cloze", "question": "Заполните пропуск.", "explanation": "Автор отмечает, что эффект особенно относится к глубоко залегающим месторождениям.", "page": 478, "link": "#how-4", "step_title": "Какие свойства зависят от давления", "step_index": 8, "node_id": "geo.basniev.s3.03", "parts": ["Изменение проницаемости особенно касается ", " залегающих месторождений."], "blanks": [{"options": ["глубоко", "морских", "мелко", "газовых"], "answers": ["глубоко"]}], "key": [["глубоко"]], "answer_text": "Изменение проницаемости особенно касается [глубоко] залегающих месторождений."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

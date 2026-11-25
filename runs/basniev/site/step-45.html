@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 45. Нестационарный процесс как серия стационарных — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.ch24s1.01" data-index="45">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Разбор источника</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Когда точное решение применимо и как ввести движущуюся границу › Шаг 45 из 60</p>
+    <h1>Нестационарный процесс как серия стационарных</h1>
+    <p class="booktitle">В книге: «Метод последовательной смены стационарных состояний» <span class="pg">стр. 494</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">⟳ Разбор источника</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-44.html">шаг 44 «Зачем нужны приближённые методы»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">В ПССС нестационарный процесс считают серией стационарных состояний, сменяющих друг друга.</p><p>Это возможно при допущении: давление во времени меняется гораздо медленнее, чем по координатам.</p><p>Тогда в каждый момент давление описывает простое уравнение Лапласа.</p><p class="threshold"><b>Пороговая идея.</b> Отличать мгновенный стационарный профиль от неизменного во времени процесса. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      <details class="evidence">
+        <summary>ПССС — простой по идее приближённый метод решения задач теории упругого режима, развитый И.А.Чарным и широко применяемый на практике.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.ch24s1.01.c01">стр. 494</a></p>
+        <blockquote class="quote"><p>«Одним из наиболее простых по своей идее приближенных методов решения задач теории упругого режима является метод последовательной смены стационарных состояний (ПССС), развитый И.А.Чарным и широко применяющийся в практических расчетах.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Ключевое допущение ПССС: давление во времени меняется существенно медленнее, чем по координатам.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.01.c02">стр. 494</a></p>
+        <blockquote class="quote"><p>«Метод основан на предположении, что давление в пласте меняется во времени значительно медленнее, чем по координатам.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В первом приближении отбрасывание производной по времени даёт стационарное уравнение Лапласа.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.01.c03">стр. 494</a></p>
+        <blockquote class="quote"><p>«Поэтому производную по времени можно в первом приближении отбросить, в результате чего для давления получается уравнение Лапласа, описывающее стационарный процесс.»</p></blockquote>
+      </details>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что за метод</h3>          <div class="para" id="how-1">
+            <p><strong class="term">ПССС</strong> — метод последовательной смены стационарных состояний. В каждый момент в затронутой зоне принимают стационарный профиль давления. Метод развил И.А.Чарный. Он прост по идее и широко применяется в практических расчётах. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.01.c01"><p>«Одним из наиболее простых по своей идее приближенных методов решения задач теории упругого режима является метод последовательной смены стационарных состояний (ПССС), развитый И.А.Чарным и широко применяющийся в практических расчетах.»</p><footer>— автор, стр. 494 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Главное допущение</h3>          <div class="para" id="how-2">
+            <p>Автор принимает допущение: давление в пласте меняется во времени значительно медленнее, чем по координатам. От этого допущения зависит вся точность метода. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.01.c02"><p>«Метод основан на предположении, что давление в пласте меняется во времени значительно медленнее, чем по координатам.»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Что из него следует</h3>          <div class="para" id="how-3">
+            <p>Отсюда автор делает вывод: производную по времени можно в первом приближении отбросить. Для давления остаётся <strong class="term">уравнение Лапласа</strong> — уравнение стационарного распределения давления. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.01.c03"><p>«Поэтому производную по времени можно в первом приближении отбросить, в результате чего для давления получается уравнение Лапласа, описывающее стационарный процесс.»</p><footer>— автор, стр. 494 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Нюанс</h3>          <div class="para" id="how-4">
+            <p>Стационарен не процесс, а профиль в отдельный момент. <strong class="term">Стационарный профиль</strong> отвечает установившемуся движению при границе, принятой неподвижной на этот момент. В следующий момент профиль уже другой. Поэтому ПССС не точная подмена нестационарной задачи. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 441" role="img" aria-label="Идея ПССС" class="ill-svg"><title>Идея ПССС</title><rect class="ill-bg" x="0" y="0" width="360" height="441" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Идея ПССС</tspan></text><rect class="ill-box ill-accent" x="12.0" y="63" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Давление во времени меняется</tspan><tspan x="180.0" dy="19">медленнее, чем по координатам</tspan></text><line class="ill-line" x1="180.0" y1="121.0" x2="180.0" y2="145.0"/><polygon class="ill-arrow" points="180.0,145.0 176.1,136.9 183.9,136.9"/><rect class="ill-box ill-neutral" x="12.0" y="149" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="173" text-anchor="middle"><tspan x="180.0" dy="0">Производную по времени отбрасывают</tspan></text><line class="ill-line" x1="180.0" y1="188.0" x2="180.0" y2="212.0"/><polygon class="ill-arrow" points="180.0,212.0 176.1,203.9 183.9,203.9"/><rect class="ill-box ill-neutral" x="12.0" y="216" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="240" text-anchor="middle"><tspan x="180.0" dy="0">Остаётся уравнение Лапласа</tspan></text><line class="ill-line" x1="180.0" y1="255.0" x2="180.0" y2="279.0"/><polygon class="ill-arrow" points="180.0,279.0 176.1,270.9 183.9,270.9"/><rect class="ill-box ill-good" x="12.0" y="283" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="307" text-anchor="middle"><tspan x="180.0" dy="0">В каждый момент — стационарный</tspan><tspan x="180.0" dy="19">профиль</tspan></text><line class="ill-line" x1="180.0" y1="341.0" x2="180.0" y2="365.0"/><polygon class="ill-arrow" points="180.0,365.0 176.1,356.9 183.9,356.9"/><rect class="ill-box ill-good" x="12.0" y="369" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="393" text-anchor="middle"><tspan x="180.0" dy="0">Процесс — смена стационарных</tspan><tspan x="180.0" dy="19">состояний</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Из одного допущения получается вся идея метода. Процесс заменяют сменой стационарных профилей.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 494</span>
+  </figcaption>
+</figure>
+<h3>Пояснение</h3>          <div class="para para-model" id="how-5">
+            <p>Представьте мультфильм из отдельных кадров. Каждый кадр неподвижен, но вместе они дают движение. В ПССС каждый кадр — стационарный профиль давления. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как получить уравнение ПССС</p>        <ol class="proc"><li>Примите допущение о сравнительно медленном изменении давления во времени. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>Отбросьте производную по времени. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>Запишите стационарное уравнение Лапласа для давления в отдельный момент. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие применимости: давление во времени меняется значительно медленнее, чем по координатам. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для расчёта «Как нестационарную задачу заменить серией стационарных» отделите исходные параметры от модельных выходов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Поле давления и режим отбора.</dd>
+          <dt>Выход</dt><dd>Стационарное уравнение для мгновенного распределения.</dd>
+          <dt>Где ломается</dt><dd>Не годится как точная подмена нестационарной задачи.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Поле давления и режим отбора.</dd>
+            <dt>Ручные шаги</dt><dd>Примите допущение о сравнительно медленном изменении давления во времени.; Запишите стационарное уравнение для давления в отдельный момент.</dd>
+            <dt>Точки суждения</dt><dd>Решить, допустимо ли упрощение для нужного результата.</dd>
+            <dt>Время</dt><dd>Время не оценено в источнике.</dd>
+            <dt>Типичные ошибки</dt><dd>Приравнять приближённое уравнение к исходному.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как серия снимков состояния, каждый из которых строят статическим калькулятором.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Снимки — расчётные приближения, а не замеры реального состояния.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Маркируйте результат как приближённый уже в метаданных расчёта.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>ПССС</dt><dd>Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления. <span class="pg">стр. 494</span></dd><dt>уравнение Лапласа</dt><dd>Уравнение стационарного распределения давления, получаемое в этом методе после отбрасывания производной по времени. <span class="pg">стр. 494</span></dd><dt>стационарный профиль</dt><dd>Распределение давления, отвечающее установившемуся движению при границе, принятой неподвижной на данный момент. <span class="pg">стр. 494</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-ch24s1-01-t01" data-task="geo.basniev.ch24s1.01.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуски в описании ключевого допущения ПССС.</p>
+  <p class="cloze">Давление в пласте меняется во <select aria-label="Пропуск 1"><option value="">—</option><option>времени</option><option>глубине</option><option>координатам</option></select> значительно медленнее, чем по <select aria-label="Пропуск 2"><option value="">—</option><option>скважинам</option><option>координатам</option><option>времени</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Давление в пласте меняется во [времени] значительно медленнее, чем по [координатам].</p>
+    <p class="fb-expl">Именно это допущение позволяет отбросить производную по времени. <a href="#how-2">Где это в тексте (стр. 494) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-01-t02" data-task="geo.basniev.ch24s1.01.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какое уравнение получается для давления после отбрасывания производной по времени?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.01.t02" value="0"> <span>Уравнение Лапласа</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.01.t02" value="1"> <span>Уравнение пьезопроводности с полной производной по времени</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.01.t02" value="2"> <span>Уравнение состояния жидкости</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Уравнение Лапласа</p>
+    <p class="fb-expl">Без производной по времени остаётся стационарное уравнение Лапласа. <a href="#how-3">Где это в тексте (стр. 494) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.ch24s1.01.c01"><p>ПССС — простой по идее приближённый метод решения задач теории упругого режима, развитый И.А.Чарным и широко применяемый на практике. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Одним из наиболее простых по своей идее приближенных методов решения задач теории упругого режима является метод последовательной смены стационарных состояний (ПССС), развитый И.А.Чарным и широко применяющийся в практических расчетах.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.01.c02"><p>Ключевое допущение ПССС: давление во времени меняется существенно медленнее, чем по координатам. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Метод основан на предположении, что давление в пласте меняется во времени значительно медленнее, чем по координатам.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.01.c03"><p>В первом приближении отбрасывание производной по времени даёт стационарное уравнение Лапласа. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Поэтому производную по времени можно в первом приближении отбросить, в результате чего для давления получается уравнение Лапласа, описывающее стационарный процесс.»</p><footer>— стр. 494</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-46.html">шаг 46 «Где проходит условный фронт давления»</a>, <a href="step-47.html">шаг 47 «Галерея и линейный профиль давления»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-44.html" rel="prev"><span>← Назад</span><b>Зачем нужны приближённые методы</b></a><a class="next" href="step-46.html" rel="next"><span>Дальше →</span><b>Где проходит условный фронт давления</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.01.t01", "type": "cloze", "question": "Заполните пропуски в описании ключевого допущения ПССС.", "explanation": "Именно это допущение позволяет отбросить производную по времени.", "page": 494, "link": "#how-2", "step_title": "Нестационарный процесс как серия стационарных", "step_index": 45, "node_id": "geo.basniev.ch24s1.01", "parts": ["Давление в пласте меняется во ", " значительно медленнее, чем по ", "."], "blanks": [{"options": ["времени", "глубине", "координатам"], "answers": ["времени"]}, {"options": ["скважинам", "координатам", "времени"], "answers": ["координатам"]}], "key": [["времени"], ["координатам"]], "answer_text": "Давление в пласте меняется во [времени] значительно медленнее, чем по [координатам]."}, {"id": "geo.basniev.ch24s1.01.t02", "type": "single", "question": "Какое уравнение получается для давления после отбрасывания производной по времени?", "explanation": "Без производной по времени остаётся стационарное уравнение Лапласа.", "page": 494, "link": "#how-3", "step_title": "Нестационарный процесс как серия стационарных", "step_index": 45, "node_id": "geo.basniev.ch24s1.01", "options": ["Уравнение Лапласа", "Уравнение пьезопроводности с полной производной по времени", "Уравнение состояния жидкости"], "key": [0], "answer_text": "Уравнение Лапласа"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

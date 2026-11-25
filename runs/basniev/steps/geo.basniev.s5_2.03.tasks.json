@@ -1,0 +1,73 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "question": "Чему равно безразмерное давление P вдали от стока (ξ → ∞)?",
+      "answer": 1,
+      "tolerance": 0,
+      "unit": null,
+      "explanation": "Вдали от стока давление равно контурному, поэтому P = p/pк = 1.",
+      "evidence": "Вдали от стока P(ξ) = 1 при ξ → ∞.",
+      "claim_id": "geo.basniev.s5_2.03.c05",
+      "page": 489,
+      "anchor": "how-4",
+      "id": "geo.basniev.s5_2.03.t01",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "type": "single",
+      "question": "Почему уравнение удаётся свести к обыкновенному?",
+      "options": [
+        "Задача автомодельна: r и t входят через одну переменную ξ",
+        "Давление не зависит от времени",
+        "Пласт имеет конечный радиус"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Автомодельность объединяет радиус и время в ξ.",
+      "evidence": "Задача автомодельна: радиус и время входят в неё через одну переменную подобия ξ.",
+      "claim_id": "geo.basniev.s5_2.03.c01",
+      "page": 489,
+      "anchor": "how-1",
+      "id": "geo.basniev.s5_2.03.t02",
+      "node_id": "geo.basniev.s5_2.03"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Обыкновенное уравнение для P(ξ)",
+      "back": "d²P/dξ² + (1/ξ + 2ξ)·dP/dξ = 0.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c03"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k01",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "front": "Условия для P(ξ)",
+      "back": "P = 1 при ξ → ∞; ξ·dP/dξ = Q₀μ/(2πkhpк) при ξ = 0.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c05",
+        "geo.basniev.s5_2.03.c06"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k02",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "front": "После перехода к ξ граничные условия не нужны?",
+      "back": "Нужны. Их переписывают в безразмерном виде и интегрируют уравнение с ними.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c04"
+      ],
+      "kind": "mistake",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k03",
+      "node_id": "geo.basniev.s5_2.03"
+    }
+  ]
+}

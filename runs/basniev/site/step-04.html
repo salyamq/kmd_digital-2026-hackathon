@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 4. Что такое упругий запас — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s2.01" data-index="4">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Разбор источника</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Что движет жидкость и как это описать › Шаг 4 из 60</p>
+    <h1>Что такое упругий запас</h1>
+    <p class="booktitle">В книге: «Подсчет упругого запаса жидкости в пласте» <span class="pg">стр. 475–476</span></p>
+    <p class="meta">
+      <span class="chip">≈ 8 мин</span>
+      <span class="chip">⟳ Разбор источника</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-01.html">шаг 1 «Почему пласт отвечает скважине»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Что замедляет перераспределение давления»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Упругий запас — это жидкость, которую пласт отдаёт при снижении давления за счёт упругости.</p><p>Его считают как сумму двух вкладов: сжатия жидкости и уменьшения пор.</p><p>При росте давления запас накапливается, при падении — убывает.</p><p class="threshold"><b>Пороговая идея.</b> Упругий запас — объем, доступный при снижении давления, а не общий объем нефти в порах. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      <details class="evidence">
+        <summary>Упругий запас — жидкость, извлекаемая при снижении давления за счет упругости жидкости и породы.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s2.01.c01">стр. 475</a></p>
+        <blockquote class="quote"><p>«Под упругим запасом жидкости в пласте понимают количество жидкости, которое можно извлечь из пласта при снижении давления в нем за счет объемной упругости твердого скелета пласта и насыщающих его жидкостей.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Большой объем пласта может сделать упругий запас существенным, хотя коэффициенты деформации малы.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s2.01.c02">стр. 475</a></p>
+        <blockquote class="quote"><p>«Хотя коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы (см. гл. XIX), очень велики объемы пласта, поэтому упругий запас жидкости в пласте может быть весьма существенным.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При снижении давления упругий запас убывает.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s2.01.c03">стр. 475</a></p>
+        <blockquote class="quote"><p>«При снижении давления в пласте упругий запас жидкости естественно убывает,»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При повышении давления упругий запас накапливается.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s2.01.c04">стр. 475</a></p>
+        <blockquote class="quote"><p>«а при повышении давления происходит накопление упругого запаса жидкости в нем.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Выделяют элемент пласта и определяют исходный объем насыщающей его жидкости при начальном давлении.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.s2.01.c05">стр. 475</a></p>
+        <blockquote class="quote"><p>«Выделим мысленно элемент объема пласта $V_0$. Пусть $V_{0\text{ж}}$ есть объем жидкости, насыщающей этот элемент объема пласта $V_0$ при начальном давлении $p_0$.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Объем жидкости для подсчета запаса измеряют при начальном пластовом давлении.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.s2.01.c06">стр. 475</a></p>
+        <blockquote class="quote"><p>«Упругий запас жидкости будем определять по ее объему, замеряемому при начальном пластовом давлении.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В выделенном элементе задают одинаковое изменение давления во всех точках.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.s2.01.c07">стр. 475</a></p>
+        <blockquote class="quote"><p>«Обозначим через $\Delta V_\text{з}$ изменение упругого запаса жидкости внутри объема пласта $V_0$ при изменении давления во всех его точках на величину $\Delta p$.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Для подсчета автор переходит от дифференциалов к конечным разностям объемов и давления.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s2.01.c08">стр. 475</a></p>
+        <blockquote class="quote"><p>«заменив дифференциалы давления и объемов пор и жидкости на конечные разности,»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Формула объемного сжатия жидкости изначально относится к воздействию только сжимающего гидростатического давления.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.s2.01.c09">стр. 476</a></p>
+        <blockquote class="quote"><p>«При определении формулы для коэффициента объемного сжатия жидкости $\beta_{\text{ж}}$ считалось, что на жидкость действует только сжимающее гидростатическое давление,»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При гидростатическом воздействии объем жидкости уменьшается при росте давления и увеличивается при падении: отсюда минус в формуле.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s2.01.c10">стр. 476</a></p>
+        <blockquote class="quote"><p>«поэтому при увеличении давления (сжатие) объем жидкости уменьшается и, наоборот, при уменьшении давления объем возрастает. В результате перед коэффициентом $\beta_{\text{ж}}$ стоит знак «минус».»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При падении пластового давления поры уменьшаются, и скелет сжимает жидкость в порах.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s2.01.c11">стр. 476</a></p>
+        <blockquote class="quote"><p>«В случае упругого режима при падении давления в пласте объем жидкости уменьшается. Такое поведение жидкости обусловливается тем, что рассматривается жидкость в порах и, как следует из формулы для $\beta_{\text{с}}$, при уменьшении давления объем пор уменьшается, а жидкость испытывает сжимающее воздействие со стороны твердого скелета.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В подсчете изменения запаса автор опускает минус перед коэффициентом жидкости и складывает два вклада.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s2.01.c12">стр. 476</a></p>
+        <blockquote class="quote"><p>«Поэтому знак минус перед $\beta_{\text{ж}}$ опускается. Полагая, что изменение упругого запаса складывается из $\Delta V_{\text{ж}}$ и $\Delta V_{\text{п}}$ получаем:»</p></blockquote>
+      </details>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Определение</h3>          <div class="para" id="how-1">
+            <p><strong class="term">Упругий запас</strong> — жидкость, которую извлекают при снижении давления. Её выдавливает упругость жидкости и породы. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c01"><p>«Под упругим запасом жидкости в пласте понимают количество жидкости, которое можно извлечь из пласта при снижении давления в нем за счет объемной упругости твердого скелета пласта и насыщающих его жидкостей.»</p><footer>— автор, стр. 475 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Коэффициенты деформации малы. Но по выводу автора, большой объём пласта делает упругий запас существенным. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c02"><p>«Хотя коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы (см. гл. XIX), очень велики объемы пласта, поэтому упругий запас жидкости в пласте может быть весьма существенным.»</p><footer>— автор, стр. 475 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Запас меняется вместе с давлением. При снижении давления он убывает. При повышении — накапливается. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c03"><p>«При снижении давления в пласте упругий запас жидкости естественно убывает,»</p><footer>— автор, стр. 475 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c04"><p>«а при повышении давления происходит накопление упругого запаса жидкости в нем.»</p><footer>— автор, стр. 475 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как ставят расчёт</h3>          <div class="para" id="how-4">
+            <p>Выделяют элемент пласта. Определяют исходный объём насыщающей его жидкости при начальном давлении. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c05"><p>«Выделим мысленно элемент объема пласта $V_0$. Пусть $V_{0\text{ж}}$ есть объем жидкости, насыщающей этот элемент объема пласта $V_0$ при начальном давлении $p_0$.»</p><footer>— автор, стр. 475 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>Объём жидкости для подсчёта берут именно при начальном пластовом давлении. Это точка отсчёта. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c06"><p>«Упругий запас жидкости будем определять по ее объему, замеряемому при начальном пластовом давлении.»</p><footer>— автор, стр. 475 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Допускают, что давление меняется одинаково во всех точках элемента. Так расчёт становится простым. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c07"><p>«Обозначим через $\Delta V_\text{з}$ изменение упругого запаса жидкости внутри объема пласта $V_0$ при изменении давления во всех его точках на величину $\Delta p$.»</p><footer>— автор, стр. 475 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_s2_01__1_m.svg"><img src="img/geo_basniev_s2_01__1.svg" alt="Схема: блок «давление падает» ведёт к двум блокам — расширение жидкости и уменьшение пор; оба сходятся в блок «изменение запаса — сумма вкладов»; сбоку допущение об одинаковом изменении давления." loading="lazy"></picture>  </div>
+  <figcaption>
+    Падение давления даёт два вклада в упругий запас — от жидкости и от пор. Их складывают.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 475–476</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-7">
+            <p>Дальше автор переходит от дифференциалов к <strong class="term">конечным разностям</strong> — разностям величин до и после изменения. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c08"><p>«заменив дифференциалы давления и объемов пор и жидкости на конечные разности,»</p><footer>— автор, стр. 475 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Откуда минус и почему его убирают</h3>          <div class="para" id="how-8">
+            <p>Формула объёмного сжатия жидкости сначала относится к одному случаю. На жидкость действует только сжимающее <strong class="term">гидростатическое давление</strong> — давление со всех сторон. <span class="pg" title="Страница книги (по PDF)">стр. 476</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c09"><p>«При определении формулы для коэффициента объемного сжатия жидкости $\beta_{\text{ж}}$ считалось, что на жидкость действует только сжимающее гидростатическое давление,»</p><footer>— автор, стр. 476 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-9">
+            <p>В этом случае объём жидкости уменьшается при росте давления и растёт при падении. Отсюда минус в формуле. <span class="pg" title="Страница книги (по PDF)">стр. 476</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c10"><p>«поэтому при увеличении давления (сжатие) объем жидкости уменьшается и, наоборот, при уменьшении давления объем возрастает. В результате перед коэффициентом $\beta_{\text{ж}}$ стоит знак «минус».»</p><footer>— автор, стр. 476 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-10">
+            <p>В пласте иначе. При падении пластового давления поры уменьшаются. <strong class="term">Твёрдый скелет</strong> породы сжимает жидкость в порах. <span class="pg" title="Страница книги (по PDF)">стр. 476</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c11"><p>«В случае упругого режима при падении давления в пласте объем жидкости уменьшается. Такое поведение жидкости обусловливается тем, что рассматривается жидкость в порах и, как следует из формулы для $\beta_{\text{с}}$, при уменьшении давления объем пор уменьшается, а жидкость испытывает сжимающее воздействие со стороны твердого скелета.»</p><footer>— автор, стр. 476 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-11">
+            <p>Поэтому в подсчёте изменения запаса автор опускает минус перед коэффициентом жидкости. Два вклада складывают: жидкость и поры. <span class="pg" title="Страница книги (по PDF)">стр. 476</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s2.01.c12"><p>«Поэтому знак минус перед $\beta_{\text{ж}}$ опускается. Полагая, что изменение упругого запаса складывается из $\Delta V_{\text{ж}}$ и $\Delta V_{\text{п}}$ получаем:»</p><footer>— автор, стр. 476 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как подсчитать изменение упругого запаса</p>        <ol class="proc"><li>Выделите элемент пласта и зафиксируйте начальное давление. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></li><li>Задайте одинаковое изменение давления во всех точках элемента. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></li><li>Перейдите к конечным разностям и сложите вклады жидкости и пор. <span class="pg" title="Страница книги (по PDF)">стр. 475–476</span></li></ol>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.s2.01.f01">
+          <div class="tex-display" data-tex="- \beta_{\text{ж}} V_{0\text{ж}} \Delta p = \Delta V_{\text{ж}} \quad \text{и} \quad \beta_{\text{с}} V_0 \Delta p = \Delta V_{\text{п}}">$$- \beta_{\text{ж}} V_{0\text{ж}} \Delta p = \Delta V_{\text{ж}} \quad \text{и} \quad \beta_{\text{с}} V_0 \Delta p = \Delta V_{\text{п}}$$</div>
+          <p>Исходные конечные разности объема жидкости и пор до перехода к балансу упругого запаса. <span class="pg">стр. 476</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\beta_{\text{ж}}$</td><td>коэффициент объемного сжатия жидкости</td><td>Па⁻¹</td></tr><tr><td>$V_{0\text{ж}}$</td><td>начальный объем жидкости</td><td>м³</td></tr><tr><td>$\Delta\!p$</td><td>изменение давления; в модели истощения — снижение от начального до среднего</td><td>Па</td></tr><tr><td>$\Delta\!V_{\text{ж}}$</td><td>изменение объема жидкости</td><td>м³</td></tr><tr><td>$\beta_{\text{с}}$</td><td>коэффициент объемной упругости скелета</td><td>Па⁻¹</td></tr><tr><td>$V_0$</td><td>объем рассматриваемой части пласта</td><td>м³</td></tr><tr><td>$\Delta\!V_{\text{п}}$</td><td>изменение объема пор</td><td>м³</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s2.01.f02">
+          <div class="tex-display" data-tex="\Delta V_{\text{з}} = \beta_{\text{ж}} V_{0\text{ж}} \Delta p + \beta_{\text{с}} V_0 \Delta p.">$$\Delta V_{\text{з}} = \beta_{\text{ж}} V_{0\text{ж}} \Delta p + \beta_{\text{с}} V_0 \Delta p.$$</div>
+          <p>Сумма вкладов жидкости и скелета в изменение упругого запаса. <span class="pg">стр. 476</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\Delta\!V_{\text{з}}$</td><td>изменение упругого запаса</td><td>м³</td></tr><tr><td>$\beta_{\text{ж}}$</td><td>коэффициент объемного сжатия жидкости</td><td>Па⁻¹</td></tr><tr><td>$V_{0\text{ж}}$</td><td>начальный объем жидкости</td><td>м³</td></tr><tr><td>$\Delta\!p$</td><td>изменение давления; в модели истощения — снижение от начального до среднего</td><td>Па</td></tr><tr><td>$\beta_{\text{с}}$</td><td>коэффициент объемной упругости скелета</td><td>Па⁻¹</td></tr><tr><td>$V_0$</td><td>объем рассматриваемой части пласта</td><td>м³</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Упругий запас — это нефть, которая вытекает сама без снижения давления.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> В определение входит извлечение при снижении давления, за счет упругости жидкости и скелета. <span class="pg" title="Страница книги (по PDF)">стр. 475</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Для сопоставимости запас выражают объемом при начальном пластовом давлении.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Начальные объемы породы и жидкости, изменение давления и коэффициенты упругости.</dd>
+          <dt>Выход</dt><dd>Изменение упругого запаса.</dd>
+          <dt>Где ломается</dt><dd>Исходный расчет элемента предполагает одинаковое изменение давления во всех его точках.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> В витрине Ержана хранить базовое давление и соглашение о знаке изменения рядом с объемом.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Начальное давление, объемы и коэффициенты.</dd>
+            <dt>Ручные шаги</dt><dd>Уточнить базу измерения объема и отдельно посчитать вклады.</dd>
+            <dt>Точки суждения</dt><dd>Не смешивать знаки изменения запаса и расширения отдельной жидкости.</dd>
+            <dt>Время</dt><dd>Рутинно после согласования входов.</dd>
+            <dt>Типичные ошибки</dt><dd>Складывать объемы, относящиеся к различным давлениям.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как привести объемы данных к одной базе и затем сложить вклады от двух компонент.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Суммирование здесь выражает физический баланс, а шкала объема зависит от давления.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Как читать знак <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Различайте локальное сжатие отдельного образца и положительный объем, выбывший из запаса при падении давления. У этих величин разный смысл.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>упругий запас</dt><dd>Объем жидкости, извлекаемый из пласта при снижении давления благодаря объемной упругости жидкости и твердого скелета. <span class="pg">стр. 475</span></dd><dt>гидростатическое давление</dt><dd>Давление, действующее на жидкость со всех направлений.  <span class="chip chip-model">модель</span></dd><dt>твердый скелет</dt><dd>Твердая часть породы, окружающая поры.  <span class="chip chip-model">модель</span></dd><dt>конечная разность</dt><dd>Разность значений величины до изменения и после него.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s2-01-t01" data-task="geo.basniev.s2.01.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что верно об упругом запасе по тексту шага?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s2.01.t01" value="0"> <span>Его извлекают при снижении давления</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s2.01.t01" value="1"> <span>Это нефть, которая течёт без снижения давления</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s2.01.t01" value="2"> <span>При снижении давления он убывает</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s2.01.t01" value="3"> <span>При росте давления он накапливается</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Его извлекают при снижении давления; При росте давления он накапливается; При снижении давления он убывает</p>
+    <p class="fb-expl">Запас связан со снижением давления: при падении убывает, при росте накапливается. <a href="#how-3">Где это в тексте (стр. 475) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s2-01-t02" data-task="geo.basniev.s2.01.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-basniev-s2-01-t02">Расставьте шаги подсчёта изменения упругого запаса.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-basniev-s2-01-t02">
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Перейдите к конечным разностям и сложите вклады жидкости и пор.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Задайте одинаковое изменение давления во всех точках элемента.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Выделите элемент пласта и зафиксируйте начальное давление.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Выделите элемент пласта и зафиксируйте начальное давление. → Задайте одинаковое изменение давления во всех точках элемента. → Перейдите к конечным разностям и сложите вклады жидкости и пор.</p>
+    <p class="fb-expl">Так автор строит подсчёт: элемент, одинаковое Δp, разности и сумма вкладов. <a href="#procedure">Где это в тексте (стр. 475) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s2-01-t03" data-task="geo.basniev.s2.01.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Почему автор опускает минус перед коэффициентом жидкости?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s2.01.t03" value="0"> <span>Жидкость в пласте несжимаема</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s2.01.t03" value="1"> <span>Давление в пласте всегда растёт</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s2.01.t03" value="2"> <span>При падении пластового давления скелет сжимает жидкость в порах, вклады складываются</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s2.01.t03" value="3"> <span>Минус был опечаткой</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При падении пластового давления скелет сжимает жидкость в порах, вклады складываются</p>
+    <p class="fb-expl">Формула с минусом — для чисто гидростатического сжатия; в пласте поры сжимают жидкость, и вклады суммируют. <a href="#how-10">Где это в тексте (стр. 476) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s2.01.c01"><p>Упругий запас — жидкость, извлекаемая при снижении давления за счет упругости жидкости и породы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Под упругим запасом жидкости в пласте понимают количество жидкости, которое можно извлечь из пласта при снижении давления в нем за счет объемной упругости твердого скелета пласта и насыщающих его жидкостей.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c02"><p>Большой объем пласта может сделать упругий запас существенным, хотя коэффициенты деформации малы. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Хотя коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы (см. гл. XIX), очень велики объемы пласта, поэтому упругий запас жидкости в пласте может быть весьма существенным.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c03"><p>При снижении давления упругий запас убывает. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«При снижении давления в пласте упругий запас жидкости естественно убывает,»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c04"><p>При повышении давления упругий запас накапливается. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«а при повышении давления происходит накопление упругого запаса жидкости в нем.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c05"><p>Выделяют элемент пласта и определяют исходный объем насыщающей его жидкости при начальном давлении. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Выделим мысленно элемент объема пласта $V_0$. Пусть $V_{0\text{ж}}$ есть объем жидкости, насыщающей этот элемент объема пласта $V_0$ при начальном давлении $p_0$.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c06"><p>Объем жидкости для подсчета запаса измеряют при начальном пластовом давлении. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Упругий запас жидкости будем определять по ее объему, замеряемому при начальном пластовом давлении.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c07"><p>В выделенном элементе задают одинаковое изменение давления во всех точках. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Обозначим через $\Delta V_\text{з}$ изменение упругого запаса жидкости внутри объема пласта $V_0$ при изменении давления во всех его точках на величину $\Delta p$.»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c08"><p>Для подсчета автор переходит от дифференциалов к конечным разностям объемов и давления. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«заменив дифференциалы давления и объемов пор и жидкости на конечные разности,»</p><footer>— стр. 475</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c09"><p>Формула объемного сжатия жидкости изначально относится к воздействию только сжимающего гидростатического давления. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«При определении формулы для коэффициента объемного сжатия жидкости $\beta_{\text{ж}}$ считалось, что на жидкость действует только сжимающее гидростатическое давление,»</p><footer>— стр. 476</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c10"><p>При гидростатическом воздействии объем жидкости уменьшается при росте давления и увеличивается при падении: отсюда минус в формуле. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«поэтому при увеличении давления (сжатие) объем жидкости уменьшается и, наоборот, при уменьшении давления объем возрастает. В результате перед коэффициентом $\beta_{\text{ж}}$ стоит знак «минус».»</p><footer>— стр. 476</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c11"><p>При падении пластового давления поры уменьшаются, и скелет сжимает жидкость в порах. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В случае упругого режима при падении давления в пласте объем жидкости уменьшается. Такое поведение жидкости обусловливается тем, что рассматривается жидкость в порах и, как следует из формулы для $\beta_{\text{с}}$, при уменьшении давления объем пор уменьшается, а жидкость испытывает сжимающее воздействие со стороны твердого скелета.»</p><footer>— стр. 476</footer></blockquote></li>
+        <li id="src-geo.basniev.s2.01.c12"><p>В подсчете изменения запаса автор опускает минус перед коэффициентом жидкости и складывает два вклада. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Поэтому знак минус перед $\beta_{\text{ж}}$ опускается. Полагая, что изменение упругого запаса складывается из $\Delta V_{\text{ж}}$ и $\Delta V_{\text{п}}$ получаем:»</p><footer>— стр. 476</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-05.html">шаг 5 «Один коэффициент для жидкости и пласта»</a>, <a href="step-06.html">шаг 6 «Как отбор меняет упругий запас»</a>, <a href="step-07.html">шаг 7 «Зачем изучать упругую фильтрацию»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-03.html" rel="prev"><span>← Назад</span><b>Что замедляет перераспределение давления</b></a><a class="next" href="step-05.html" rel="next"><span>Дальше →</span><b>Один коэффициент для жидкости и пласта</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s2.01.t01", "type": "multiple", "question": "Что верно об упругом запасе по тексту шага?", "explanation": "Запас связан со снижением давления: при падении убывает, при росте накапливается.", "page": 475, "link": "#how-3", "step_title": "Что такое упругий запас", "step_index": 4, "node_id": "geo.basniev.s2.01", "options": ["Его извлекают при снижении давления", "Это нефть, которая течёт без снижения давления", "При снижении давления он убывает", "При росте давления он накапливается"], "key": [0, 2, 3], "answer_text": "Его извлекают при снижении давления; При росте давления он накапливается; При снижении давления он убывает"}, {"id": "geo.basniev.s2.01.t02", "type": "order", "question": "Расставьте шаги подсчёта изменения упругого запаса.", "explanation": "Так автор строит подсчёт: элемент, одинаковое Δp, разности и сумма вкладов.", "page": 475, "link": "#procedure", "step_title": "Что такое упругий запас", "step_index": 4, "node_id": "geo.basniev.s2.01", "items": [{"text": "Перейдите к конечным разностям и сложите вклады жидкости и пор.", "pos": 2}, {"text": "Задайте одинаковое изменение давления во всех точках элемента.", "pos": 1}, {"text": "Выделите элемент пласта и зафиксируйте начальное давление.", "pos": 0}], "key": [0, 1, 2], "answer_text": "Выделите элемент пласта и зафиксируйте начальное давление. → Задайте одинаковое изменение давления во всех точках элемента. → Перейдите к конечным разностям и сложите вклады жидкости и пор."}, {"id": "geo.basniev.s2.01.t03", "type": "single", "question": "Почему автор опускает минус перед коэффициентом жидкости?", "explanation": "Формула с минусом — для чисто гидростатического сжатия; в пласте поры сжимают жидкость, и вклады суммируют.", "page": 476, "link": "#how-10", "step_title": "Что такое упругий запас", "step_index": 4, "node_id": "geo.basniev.s2.01", "options": ["Жидкость в пласте несжимаема", "Давление в пласте всегда растёт", "При падении пластового давления скелет сжимает жидкость в порах, вклады складываются", "Минус был опечаткой"], "key": [2], "answer_text": "При падении пластового давления скелет сжимает жидкость в порах, вклады складываются"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

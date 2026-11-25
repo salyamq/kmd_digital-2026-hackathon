@@ -1,0 +1,107 @@
+{
+  "tasks": [
+    {
+      "type": "cloze",
+      "question": "Заполните пропуски о средней депрессии.",
+      "text": "При постоянном дебите средняя депрессия ___. Депрессия на ___ при этом может меняться.",
+      "blanks": [
+        {
+          "answers": [
+            "постоянна"
+          ],
+          "options": [
+            "постоянна",
+            "растёт",
+            "убывает"
+          ]
+        },
+        {
+          "answers": [
+            "стенке"
+          ],
+          "options": [
+            "стенке",
+            "границе зоны",
+            "контуре"
+          ]
+        }
+      ],
+      "explanation": "По (24.13) Δp = Qμ/(4πkh) не зависит от R(t).",
+      "evidence": "При постоянном дебите средняя депрессия постоянна. Депрессия на стенке при этом может меняться.",
+      "claim_id": "geo.basniev.ch24s1.11.c09",
+      "page": 498,
+      "anchor": "how-6",
+      "id": "geo.basniev.ch24s1.11.t01",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "type": "numeric",
+      "question": "Средняя депрессия равна Qμ/(N·πkh). Чему равно N?",
+      "answer": 4,
+      "tolerance": 0,
+      "unit": null,
+      "explanation": "По (24.13) Δp = Qμ/(4πkh).",
+      "evidence": "Δp = Qμ/(4πkh)",
+      "claim_id": "geo.basniev.ch24s1.11.c09",
+      "page": 498,
+      "anchor": "essence",
+      "id": "geo.basniev.ch24s1.11.t02",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "type": "single",
+      "question": "Какую депрессию используют в материальном балансе?",
+      "options": [
+        "Среднюю по объёму возмущённой зоны",
+        "Забойную pк − pс",
+        "Депрессию на границе зоны"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Упругий запас зависит от среднего снижения давления по объёму.",
+      "evidence": "В расчёт запаса входит средняя депрессия.",
+      "claim_id": "geo.basniev.ch24s1.11.c06",
+      "page": 498,
+      "anchor": "how-7",
+      "id": "geo.basniev.ch24s1.11.t03",
+      "node_id": "geo.basniev.ch24s1.11"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Средняя депрессия при постоянном дебите скважины по ПССС",
+      "back": "Δp = Qμ/(4πkh); постоянна при Q = const.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c09"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k01",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "front": "Объём возмущённой зоны вокруг скважины",
+      "back": "V(t) = π(R²(t) − rс²)h — площадь кольца на толщину пласта.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c05"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k02",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "front": "Забойная депрессия равна средней?",
+      "back": "Нет. В баланс входит средняя депрессия; с забойной её связывают геометрия и профиль.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c06",
+        "geo.basniev.ch24s1.11.c09"
+      ],
+      "kind": "mistake",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k03",
+      "node_id": "geo.basniev.ch24s1.11"
+    }
+  ]
+}

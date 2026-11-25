@@ -1,0 +1,78 @@
+{
+  "tasks": [
+    {
+      "type": "cloze",
+      "question": "Заполните пропуск о давлении за фронтом.",
+      "text": "При x > √(2κt) давление p = ___.",
+      "blanks": [
+        {
+          "answers": [
+            "pк"
+          ],
+          "options": [
+            "pк",
+            "pг",
+            "0"
+          ]
+        }
+      ],
+      "explanation": "За границей возмущения давление принимают равным начальному.",
+      "evidence": "При x > √(2κt) давление p = pк.",
+      "claim_id": "geo.basniev.ch24s1.06.c02",
+      "page": 496,
+      "anchor": "how-2",
+      "id": "geo.basniev.ch24s1.06.t01",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "type": "numeric",
+      "question": "Какова, по автору, погрешность депрессии по ПССС при постоянном дебите (в процентах)?",
+      "answer": 25,
+      "tolerance": 0,
+      "unit": "%",
+      "explanation": "Автор сравнил (24.7) с точной формулой (24.39) и получил 25%.",
+      "evidence": "погрешность составляет 25%",
+      "claim_id": "geo.basniev.ch24s1.06.c03",
+      "page": 496,
+      "anchor": "essence",
+      "id": "geo.basniev.ch24s1.06.t02",
+      "node_id": "geo.basniev.ch24s1.06"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Давление по ПССС при постоянном дебите галереи",
+      "back": "p = pк − Qμ/(kBh)·(√(2κt) − x) внутри зоны; p = pк за ней.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c01",
+        "geo.basniev.ch24s1.06.c02"
+      ],
+      "kind": "idea",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k01",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "front": "Погрешность депрессии ПССС при постоянном дебите",
+      "back": "25% относительно точной формулы (24.39).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c03"
+      ],
+      "kind": "number",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k02",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "front": "Погрешность 25% относится ко всему полю давления?",
+      "back": "Нет, автор говорит о депрессии на галерее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c03"
+      ],
+      "kind": "mistake",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k03",
+      "node_id": "geo.basniev.ch24s1.06"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "tasks": [
+    {
+      "type": "order",
+      "question": "Расставьте шаги по порядку.",
+      "items": [
+        "Подставьте нулевую координату в шаблон.",
+        "Найдите обе постоянные.",
+        "Запишите окончательный профиль скорости."
+      ],
+      "explanation": "Сначала условие на галерее, затем постоянные, затем профиль.",
+      "evidence": "Найдите обе постоянные.",
+      "claim_id": "geo.basniev.s5_1.13.c02",
+      "page": 486,
+      "anchor": "procedure",
+      "id": "geo.basniev.s5_1.13.t01",
+      "node_id": "geo.basniev.s5_1.13"
+    },
+    {
+      "type": "cloze",
+      "question": "Заполните пропуск.",
+      "text": "Аддитивная постоянная C2 равна заданной скорости ___.",
+      "blanks": [
+        {
+          "answers": [
+            "отбора"
+          ],
+          "options": [
+            "отбора",
+            "звука",
+            "закачки",
+            "нуля"
+          ]
+        }
+      ],
+      "explanation": "На галерее erf(0) = 0, поэтому C2 = w1.",
+      "evidence": "Поэтому аддитивная постоянная C2 равна заданной скорости отбора.",
+      "claim_id": "geo.basniev.s5_1.13.c02",
+      "page": 486,
+      "anchor": "how-2",
+      "id": "geo.basniev.s5_1.13.t02",
+      "node_id": "geo.basniev.s5_1.13"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Профиль скорости при постоянном дебите",
+      "back": "w = w1·[1 − erf(x/(2√(κt)))].",
+      "claim_ids": [
+        "geo.basniev.s5_1.13.c04"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.13.k01",
+      "node_id": "geo.basniev.s5_1.13"
+    },
+    {
+      "front": "Чему равны постоянные?",
+      "back": "C2 = w1, C1 = −w1.",
+      "claim_ids": [
+        "geo.basniev.s5_1.13.c02",
+        "geo.basniev.s5_1.13.c03"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.13.k02",
+      "node_id": "geo.basniev.s5_1.13"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 46. Где проходит условный фронт давления — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.ch24s1.02" data-index="46">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Разбор источника</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Когда точное решение применимо и как ввести движущуюся границу › Шаг 46 из 60</p>
+    <h1>Где проходит условный фронт давления</h1>
+    <p class="booktitle">В книге: «Метод последовательной смены стационарных состояний» <span class="pg">стр. 494–495</span></p>
+    <p class="meta">
+      <span class="chip">≈ 8 мин</span>
+      <span class="chip">⟳ Разбор источника</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + пространство</span>    </p>
+<p class="relies">Опирается на: <a href="step-45.html">шаг 45 «Нестационарный процесс как серия стационарных»</a> <span class="muted">(предпосылка)</span>, <a href="step-06.html">шаг 6 «Как отбор меняет упругий запас»</a> <span class="muted">(предпосылка)</span>, <a href="step-16.html">шаг 16 «Три условия для давления»</a> <span class="muted">(предпосылка)</span>, <a href="step-01.html">шаг 1 «Почему пласт отвечает скважине»</a> <span class="muted">(опровергает заблуждение)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">В ПССС пласт в каждый момент делят на возмущённую и невозмущённую области.</p><p>Граница между ними движется; её закон находят из материального баланса и граничных условий.</p><p>Когда граница доходит до края пласта, первая фаза сменяется второй.</p><p class="threshold"><b>Пороговая идея.</b> Назвать область постоянного давления и событие перехода к следующей фазе. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      <details class="evidence">
+        <summary>В каждый момент пласт условно разделяют на возмущённую и невозмущённую области.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.02.c01">стр. 494</a></p>
+        <blockquote class="quote"><p>«В каждый момент времени весь пласт условно разделяется на две области – возмущенную и невозмущенную.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Возмущённая область начинается у стенки скважины.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.02.c02">стр. 494</a></p>
+        <blockquote class="quote"><p>«в возмущенной области пласта, начинающейся от стенки скважины, давление распределяется так, как будто бы движение жидкости в ней установившееся»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В возмущённой области задают мгновенный профиль установившегося движения.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.02.c03">стр. 494</a></p>
+        <blockquote class="quote"><p>«давление распределяется так, как будто бы движение жидкости в ней установившееся и внешняя граница этой области служит в данный момент контуром питания.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Внешняя граница возмущённой области играет роль контура питания на рассматриваемый момент.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.02.c04">стр. 494</a></p>
+        <blockquote class="quote"><p>«внешняя граница этой области служит в данный момент контуром питания.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Вне возмущённой области давление повсюду остаётся равным начальному контурному.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.ch24s1.02.c05">стр. 494</a></p>
+        <blockquote class="quote"><p>«В невозмущенной области пласта давление всюду постоянно и равно начальному контурному давлению.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Закон движения границы определяют по материальному балансу и граничным условиям.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.02.c06">стр. 494</a></p>
+        <blockquote class="quote"><p>«Закон движения подвижной границы, разделяющей возмущенную и невозмущенную области, определяется при помощи уравнения материального баланса и граничных условий.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Разделение областей приводит к рассмотрению двух фаз перераспределения давления.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.02.c07">стр. 495</a></p>
+        <blockquote class="quote"><p>«Разделение фильтрационного потока на две области – возмущенную и невозмущенную – вызывает необходимость рассматривать процесс перераспределения пластового давления протекающим в две фазы.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В первой фазе область возмущения непрерывно расширяется.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.02.c08">стр. 495</a></p>
+        <blockquote class="quote"><p>«В течение первой фазы граница возмущенной области непрерывно расширяется.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Когда фронт достигает естественной границы пласта, начинается вторая фаза.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.02.c09">стр. 495</a></p>
+        <blockquote class="quote"><p>«И в тот момент, когда она достигает естественной границы пласта, начинается вторая фаза.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>В бесконечном пласте существует только первая фаза, и её продолжительность не ограничена.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.ch24s1.02.c10">стр. 495</a></p>
+        <blockquote class="quote"><p>«При теоретическом исследовании процесса в условиях бесконечного пласта приходится, естественно, иметь дело только с первой фазой, продолжительность которой не ограничивается.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Далее ПССС используется для расчёта одномерных неустановившихся потоков упругой жидкости.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.ch24s1.02.c11">стр. 495</a></p>
+        <blockquote class="quote"><p>«Рассмотрим теперь расчет неустановившихся одномерных потоков упругой жидкости при помощи метода ПССС.»</p></blockquote>
+      </details>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Две области</h3>          <div class="para" id="how-1">
+            <p>Автор принимает допущение: в каждый момент пласт условно делят на две области. <strong class="term">Возмущённая область</strong> — часть пласта, где учитывают изменение давления от отбора. <strong class="term">Невозмущённая область</strong> — часть пласта вне условной границы. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c01"><p>«В каждый момент времени весь пласт условно разделяется на две области – возмущенную и невозмущенную.»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Что внутри возмущённой области</h3>          <div class="para" id="how-2">
+            <p>Возмущённая область начинается от стенки скважины. В ней давление распределено так, будто движение установившееся. Это допущение автора о мгновенном профиле. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c02"><p>«в возмущенной области пласта, начинающейся от стенки скважины, давление распределяется так, как будто бы движение жидкости в ней установившееся»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c03"><p>«давление распределяется так, как будто бы движение жидкости в ней установившееся и внешняя граница этой области служит в данный момент контуром питания.»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Роль границы</h3>          <div class="para" id="how-3">
+            <p>Внешняя граница возмущённой области в данный момент служит <strong class="term">контуром питания</strong>. Так называют внешнюю границу, где задано поддерживаемое давление. Вне этой границы давление всюду постоянно и равно начальному контурному. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c04"><p>«внешняя граница этой области служит в данный момент контуром питания.»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c05"><p>«В невозмущенной области пласта давление всюду постоянно и равно начальному контурному давлению.»</p><footer>— автор, стр. 494 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Как движется граница</h3>          <div class="para" id="how-4">
+            <p>Граница возмущения подвижна. Закон её движения, по выводу автора, определяют уравнением <strong class="term">материального баланса</strong> и граничными условиями. Баланс здесь — равенство объёма отбора и уменьшения упругого запаса за то же время. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c06"><p>«Закон движения подвижной границы, разделяющей возмущенную и невозмущенную области, определяется при помощи уравнения материального баланса и граничных условий.»</p><footer>— автор, стр. 494 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Две фазы</h3>          <div class="para" id="how-5">
+            <p>Разделение на две области, по выводу автора, требует рассматривать процесс в две фазы. В первой фазе граница возмущённой области непрерывно расширяется. Когда она достигает естественной границы пласта, начинается вторая фаза. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c07"><p>«Разделение фильтрационного потока на две области – возмущенную и невозмущенную – вызывает необходимость рассматривать процесс перераспределения пластового давления протекающим в две фазы.»</p><footer>— автор, стр. 495 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c08"><p>«В течение первой фазы граница возмущенной области непрерывно расширяется.»</p><footer>— автор, стр. 495 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c09"><p>«И в тот момент, когда она достигает естественной границы пласта, начинается вторая фаза.»</p><footer>— автор, стр. 495 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 402" role="img" aria-label="Две фазы перераспределения давления" class="ill-svg"><title>Две фазы перераспределения давления</title><rect class="ill-bg" x="0" y="0" width="360" height="402" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Две фазы перераспределения</tspan><tspan x="180.0" dy="19">давления</tspan></text><rect class="ill-box ill-accent" x="12" y="82" width="336" height="122" rx="10"/><text class="ill-title" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Первая фаза</tspan></text><text class="ill-text" x="26" y="131" text-anchor="start"><tspan x="26" dy="0">• Граница возмущения расширяется</tspan></text><text class="ill-text" x="26" y="154" text-anchor="start"><tspan x="26" dy="0">• Вне границы — начальное давление</tspan></text><text class="ill-text" x="26" y="177" text-anchor="start"><tspan x="26" dy="0">• Граница служит контуром питания</tspan></text><rect class="ill-box ill-neutral" x="12" y="214" width="336" height="122" rx="10"/><text class="ill-title" x="180.0" y="238" text-anchor="middle"><tspan x="180.0" dy="0">Вторая фаза</tspan></text><text class="ill-text" x="26" y="263" text-anchor="start"><tspan x="26" dy="0">• Граница дошла до края пласта</tspan></text><text class="ill-text" x="26" y="286" text-anchor="start"><tspan x="26" dy="0">• Начинается после первой фазы</tspan></text><text class="ill-text" x="26" y="309" text-anchor="start"><tspan x="26" dy="0">• В бесконечном пласте её нет</tspan></text><text class="ill-small" x="180.0" y="358" text-anchor="middle"><tspan x="180.0" dy="0">Смена фазы — момент, когда фронт</tspan><tspan x="180.0" dy="19">достигает естественной границы пласта</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Первая фаза — рост возмущённой области. Вторая начинается, когда фронт достигает края пласта.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 495</span>
+  </figcaption>
+</figure>
+<h3>Бесконечный пласт</h3>          <div class="para" id="how-6">
+            <p>В бесконечном пласте естественной границы нет. Поэтому там рассматривают только первую фазу. Её продолжительность не ограничивается. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c10"><p>«При теоретическом исследовании процесса в условиях бесконечного пласта приходится, естественно, иметь дело только с первой фазой, продолжительность которой не ограничивается.»</p><footer>— автор, стр. 495 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Что дальше</h3>          <div class="para" id="how-7">
+            <p>Дальше автор применяет ПССС к расчёту одномерных неустановившихся потоков упругой жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.02.c11"><p>«Рассмотрим теперь расчет неустановившихся одномерных потоков упругой жидкости при помощи метода ПССС.»</p><footer>— автор, стр. 495 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Частая ошибка</h3>          <div class="para" id="how-8">
+            <p>Новичок думает, что при пуске давление падает во всём пласте сразу. В ПССС это не так: вне расширяющейся области давление остаётся начальным. <span class="pg" title="Страница книги (по PDF)">стр. 494–495</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как построить расчёт по ПССС</p>        <ol class="proc"><li>Отложите от выработки область с изменившимся давлением. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>Внутри области задайте стационарный профиль давления. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>На подвижной границе задайте начальное контурное давление. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>Найдите закон движения границы по балансу и условиям на границах. <span class="pg" title="Страница книги (по PDF)">стр. 494</span></li><li>Проверьте, дошла ли граница до естественного края пласта. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Первая фаза длится, пока граница возмущения не дошла до естественной границы пласта. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></li><li>В бесконечном пласте продолжительность первой фазы не ограничена. <span class="pg" title="Страница книги (по PDF)">стр. 495</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> При пуске выработки давление во всём пласте падает одновременно.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> В ПССС вне расширяющейся возмущённой области давление принимается неизменным. <span class="pg" title="Страница книги (по PDF)">стр. 494–495</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для расчёта «Где проходит условный фронт и когда меняется фаза» отделите исходные параметры от модельных выходов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Контурное давление, режим выработки, геометрия и положение края пласта.</dd>
+          <dt>Выход</dt><dd>Граница модели и текущая фаза перераспределения давления.</dd>
+          <dt>Где ломается</dt><dd>Нельзя продолжать решение первой фазы после встречи с естественным краем конечного пласта.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Контурное давление, режим выработки, геометрия и положение края пласта.</dd>
+            <dt>Ручные шаги</dt><dd>Отложите от выработки область с изменившимся давлением.; На её подвижной границе задайте начальное контурное давление.; Найдите закон движения границы по балансу и условиям на границах.; Проверьте достижение естественной границы пласта.</dd>
+            <dt>Точки суждения</dt><dd>Определить, можно ли считать пласт бесконечным в заданном промежутке.</dd>
+            <dt>Время</dt><dd>Время не оценено в источнике.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять подвижный контур питания за неподвижный край пласта.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Похоже на расчёт по активной области данных с меняющейся границей.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Граница определяется физическим балансом, а не ограничением вычислительного ресурса.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>В расчётном интерфейсе предупреждайте о достижении края пласта.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>возмущённая область</dt><dd>Часть пласта, в которой модель учитывает вызванное отбором изменение давления. <span class="pg">стр. 494</span></dd><dt>невозмущённая область</dt><dd>Часть пласта вне условной границы; в ней давление принимают неизменным. <span class="pg">стр. 494</span></dd><dt>контур питания</dt><dd>Внешняя граница области, на которой задаётся поддерживаемое давление; в ПССС её играет подвижная граница. <span class="pg">стр. 494</span></dd><dt>граница возмущения</dt><dd>Подвижная граница между возмущённой и невозмущённой частями пласта. <span class="pg">стр. 494</span></dd><dt>материальный баланс</dt><dd>В этой задаче равенство объёма отбора и уменьшения упругого запаса в течение того же промежутка времени. <span class="pg">стр. 494</span></dd><dt>ПССС</dt><dd>Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления. <span class="pg">стр. 494</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-ch24s1-02-t01" data-task="geo.basniev.ch24s1.02.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какое давление принимают в невозмущённой области пласта?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t01" value="0"> <span>Убывающее к скважине по стационарному профилю</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t01" value="1"> <span>Всюду равное начальному контурному</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t01" value="2"> <span>Равное забойному давлению</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Всюду равное начальному контурному</p>
+    <p class="fb-expl">Вне возмущённой области давление по допущению автора не меняется. <a href="#how-3">Где это в тексте (стр. 494) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-02-t02" data-task="geo.basniev.ch24s1.02.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Когда начинается вторая фаза?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t02" value="0"> <span>Когда дебит становится равным нулю</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t02" value="1"> <span>Когда граница возмущения достигает естественной границы пласта</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.ch24s1.02.t02" value="2"> <span>Сразу после пуска скважины</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Когда граница возмущения достигает естественной границы пласта</p>
+    <p class="fb-expl">Смену фаз автор связывает с выходом границы к краю пласта. <a href="#how-5">Где это в тексте (стр. 495) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-02-t03" data-task="geo.basniev.ch24s1.02.t03" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что верно для возмущённой области в ПССС?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.02.t03" value="0"> <span>Давление в ней распределено как при установившемся движении</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.02.t03" value="1"> <span>Она начинается от стенки скважины</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.02.t03" value="2"> <span>Давление в ней всюду равно начальному</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.ch24s1.02.t03" value="3"> <span>Её внешняя граница служит контуром питания</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Она начинается от стенки скважины; Давление в ней распределено как при установившемся движении; Её внешняя граница служит контуром питания</p>
+    <p class="fb-expl">Начальное давление сохраняется в невозмущённой, а не в возмущённой области. <a href="#how-2">Где это в тексте (стр. 494) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.ch24s1.02.c01"><p>В каждый момент пласт условно разделяют на возмущённую и невозмущённую области. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«В каждый момент времени весь пласт условно разделяется на две области – возмущенную и невозмущенную.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c02"><p>Возмущённая область начинается у стенки скважины. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«в возмущенной области пласта, начинающейся от стенки скважины, давление распределяется так, как будто бы движение жидкости в ней установившееся»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c03"><p>В возмущённой области задают мгновенный профиль установившегося движения. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«давление распределяется так, как будто бы движение жидкости в ней установившееся и внешняя граница этой области служит в данный момент контуром питания.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c04"><p>Внешняя граница возмущённой области играет роль контура питания на рассматриваемый момент. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«внешняя граница этой области служит в данный момент контуром питания.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c05"><p>Вне возмущённой области давление повсюду остаётся равным начальному контурному. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«В невозмущенной области пласта давление всюду постоянно и равно начальному контурному давлению.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c06"><p>Закон движения границы определяют по материальному балансу и граничным условиям. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Закон движения подвижной границы, разделяющей возмущенную и невозмущенную области, определяется при помощи уравнения материального баланса и граничных условий.»</p><footer>— стр. 494</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c07"><p>Разделение областей приводит к рассмотрению двух фаз перераспределения давления. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Разделение фильтрационного потока на две области – возмущенную и невозмущенную – вызывает необходимость рассматривать процесс перераспределения пластового давления протекающим в две фазы.»</p><footer>— стр. 495</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c08"><p>В первой фазе область возмущения непрерывно расширяется. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В течение первой фазы граница возмущенной области непрерывно расширяется.»</p><footer>— стр. 495</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c09"><p>Когда фронт достигает естественной границы пласта, начинается вторая фаза. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«И в тот момент, когда она достигает естественной границы пласта, начинается вторая фаза.»</p><footer>— стр. 495</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c10"><p>В бесконечном пласте существует только первая фаза, и её продолжительность не ограничена. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«При теоретическом исследовании процесса в условиях бесконечного пласта приходится, естественно, иметь дело только с первой фазой, продолжительность которой не ограничивается.»</p><footer>— стр. 495</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.02.c11"><p>Далее ПССС используется для расчёта одномерных неустановившихся потоков упругой жидкости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Рассмотрим теперь расчет неустановившихся одномерных потоков упругой жидкости при помощи метода ПССС.»</p><footer>— стр. 495</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-47.html">шаг 47 «Галерея и линейный профиль давления»</a>, <a href="step-49.html">шаг 49 «Фронт давления растёт как корень»</a>, <a href="step-54.html">шаг 54 «Скважина с постоянным дебитом: логарифмический профиль»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-45.html" rel="prev"><span>← Назад</span><b>Нестационарный процесс как серия стационарных</b></a><a class="next" href="step-47.html" rel="next"><span>Дальше →</span><b>Галерея и линейный профиль давления</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.02.t01", "type": "single", "question": "Какое давление принимают в невозмущённой области пласта?", "explanation": "Вне возмущённой области давление по допущению автора не меняется.", "page": 494, "link": "#how-3", "step_title": "Где проходит условный фронт давления", "step_index": 46, "node_id": "geo.basniev.ch24s1.02", "options": ["Убывающее к скважине по стационарному профилю", "Всюду равное начальному контурному", "Равное забойному давлению"], "key": [1], "answer_text": "Всюду равное начальному контурному"}, {"id": "geo.basniev.ch24s1.02.t02", "type": "single", "question": "Когда начинается вторая фаза?", "explanation": "Смену фаз автор связывает с выходом границы к краю пласта.", "page": 495, "link": "#how-5", "step_title": "Где проходит условный фронт давления", "step_index": 46, "node_id": "geo.basniev.ch24s1.02", "options": ["Когда дебит становится равным нулю", "Когда граница возмущения достигает естественной границы пласта", "Сразу после пуска скважины"], "key": [1], "answer_text": "Когда граница возмущения достигает естественной границы пласта"}, {"id": "geo.basniev.ch24s1.02.t03", "type": "multiple", "question": "Что верно для возмущённой области в ПССС?", "explanation": "Начальное давление сохраняется в невозмущённой, а не в возмущённой области.", "page": 494, "link": "#how-2", "step_title": "Где проходит условный фронт давления", "step_index": 46, "node_id": "geo.basniev.ch24s1.02", "options": ["Давление в ней распределено как при установившемся движении", "Она начинается от стенки скважины", "Давление в ней всюду равно начальному", "Её внешняя граница служит контуром питания"], "key": [0, 1, 3], "answer_text": "Она начинается от стенки скважины; Давление в ней распределено как при установившемся движении; Её внешняя граница служит контуром питания"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

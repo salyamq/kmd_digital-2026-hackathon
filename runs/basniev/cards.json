@@ -1,0 +1,1856 @@
+{
+  "chapter": "basniev",
+  "cards": [
+    {
+      "front": "Откуда берётся приток при упругом режиме?",
+      "back": "Из энергии упругой деформации жидкости и твёрдого скелета породы.",
+      "claim_ids": [
+        "geo.basniev.s1.01.c04"
+      ],
+      "kind": "idea",
+      "page": 474,
+      "id": "geo.basniev.s1.01.k01",
+      "node_id": "geo.basniev.s1.01"
+    },
+    {
+      "front": "Ошибка: давление во всём пласте падает сразу после пуска",
+      "back": "Нет: сначала движется жидкость у забоя, потом всё более дальние участки.",
+      "claim_ids": [
+        "geo.basniev.s1.01.c05"
+      ],
+      "kind": "mistake",
+      "page": 474,
+      "id": "geo.basniev.s1.01.k02",
+      "node_id": "geo.basniev.s1.01"
+    },
+    {
+      "front": "Условие однофазной модели",
+      "back": "Давление в любой точке потока выше давления насыщения газом.",
+      "claim_ids": [
+        "geo.basniev.s1.01.c09"
+      ],
+      "kind": "idea",
+      "page": 474,
+      "id": "geo.basniev.s1.01.k03",
+      "node_id": "geo.basniev.s1.01"
+    },
+    {
+      "front": "Упруговодонапорный режим",
+      "back": "Приток поддерживают и упругость, и напор воды из области питания.",
+      "claim_ids": [
+        "geo.basniev.s1.02.c01"
+      ],
+      "kind": "term",
+      "page": 474,
+      "id": "geo.basniev.s1.02.k01",
+      "node_id": "geo.basniev.s1.02"
+    },
+    {
+      "front": "Что может замкнуть ловушку?",
+      "back": "Выклинивание продуктивного пласта или близкий сброс.",
+      "claim_ids": [
+        "geo.basniev.s1.02.c02",
+        "geo.basniev.s1.02.c03"
+      ],
+      "kind": "idea",
+      "page": 474,
+      "id": "geo.basniev.s1.02.k02",
+      "node_id": "geo.basniev.s1.02"
+    },
+    {
+      "front": "Когда применим замкнуто-упругий режим?",
+      "back": "На начальной стадии разработки изолированной залежи, пока давление выше давления насыщения.",
+      "claim_ids": [
+        "geo.basniev.s1.02.c04"
+      ],
+      "kind": "idea",
+      "page": 474,
+      "id": "geo.basniev.s1.02.k03",
+      "node_id": "geo.basniev.s1.02"
+    },
+    {
+      "front": "Почему давление перераспределяется долго?",
+      "back": "Из-за большого сопротивления фильтрации вязкой жидкости.",
+      "claim_ids": [
+        "geo.basniev.s1.03.c02"
+      ],
+      "kind": "idea",
+      "page": 475,
+      "id": "geo.basniev.s1.03.k01",
+      "node_id": "geo.basniev.s1.03"
+    },
+    {
+      "front": "Проницаемость выросла — процесс…",
+      "back": "…ускоряется.",
+      "claim_ids": [
+        "geo.basniev.s1.03.c03"
+      ],
+      "kind": "idea",
+      "page": 475,
+      "id": "geo.basniev.s1.03.k02",
+      "node_id": "geo.basniev.s1.03"
+    },
+    {
+      "front": "Кто учёл упругость скелета и жидкостей?",
+      "back": "В.Н. Щелкачев — он наиболее полно разработал теорию упругого режима.",
+      "claim_ids": [
+        "geo.basniev.s1.03.c09"
+      ],
+      "kind": "idea",
+      "page": 475,
+      "id": "geo.basniev.s1.03.k03",
+      "node_id": "geo.basniev.s1.03"
+    },
+    {
+      "front": "Упругий запас",
+      "back": "Жидкость, извлекаемая при снижении давления за счёт упругости жидкости и породы.",
+      "claim_ids": [
+        "geo.basniev.s2.01.c01"
+      ],
+      "kind": "term",
+      "page": 475,
+      "id": "geo.basniev.s2.01.k01",
+      "node_id": "geo.basniev.s2.01"
+    },
+    {
+      "front": "Из чего складывается изменение запаса?",
+      "back": "Из вклада упругости жидкости и вклада уменьшения пор (скелета).",
+      "claim_ids": [
+        "geo.basniev.s2.01.c12"
+      ],
+      "kind": "idea",
+      "page": 476,
+      "id": "geo.basniev.s2.01.k02",
+      "node_id": "geo.basniev.s2.01"
+    },
+    {
+      "front": "При каком давлении берут исходный объём жидкости?",
+      "back": "При начальном пластовом давлении.",
+      "claim_ids": [
+        "geo.basniev.s2.01.c06"
+      ],
+      "kind": "idea",
+      "page": 475,
+      "id": "geo.basniev.s2.01.k03",
+      "node_id": "geo.basniev.s2.01"
+    },
+    {
+      "front": "Коэффициент упругоёмкости β*",
+      "back": "Изменение упругого запаса на единицу объёма пласта при изменении давления на единицу.",
+      "claim_ids": [
+        "geo.basniev.s2.02.c02"
+      ],
+      "kind": "term",
+      "page": 476,
+      "id": "geo.basniev.s2.02.k01",
+      "node_id": "geo.basniev.s2.02"
+    },
+    {
+      "front": "Из чего состоит β*?",
+      "back": "Из вклада жидкости, умноженного на пористость, и вклада скелета.",
+      "claim_ids": [
+        "geo.basniev.s2.02.c02"
+      ],
+      "kind": "idea",
+      "page": 476,
+      "id": "geo.basniev.s2.02.k02",
+      "node_id": "geo.basniev.s2.02"
+    },
+    {
+      "front": "Возмущённая часть пласта",
+      "back": "Объём пласта, охваченный изменением давления к данному моменту.",
+      "claim_ids": [
+        "geo.basniev.s2.03.c01"
+      ],
+      "kind": "term",
+      "page": 476,
+      "id": "geo.basniev.s2.03.k01",
+      "node_id": "geo.basniev.s2.03"
+    },
+    {
+      "front": "Что приравнивают в балансе?",
+      "back": "Малое изменение упругого запаса и объём нефти, отобранный за то же время.",
+      "claim_ids": [
+        "geo.basniev.s2.03.c04"
+      ],
+      "kind": "idea",
+      "page": 477,
+      "id": "geo.basniev.s2.03.k02",
+      "node_id": "geo.basniev.s2.03"
+    },
+    {
+      "front": "Для чего автор строит этот баланс?",
+      "back": "Чтобы дальше получать приближённые решения.",
+      "claim_ids": [
+        "geo.basniev.s2.03.c07"
+      ],
+      "kind": "idea",
+      "page": 477,
+      "id": "geo.basniev.s2.03.k03",
+      "node_id": "geo.basniev.s2.03"
+    },
+    {
+      "front": "Обратная задача",
+      "back": "Определение свойств пласта по изменениям давления или дебита.",
+      "claim_ids": [
+        "geo.basniev.s3.01.c04"
+      ],
+      "kind": "term",
+      "page": 477,
+      "id": "geo.basniev.s3.01.k01",
+      "node_id": "geo.basniev.s3.01"
+    },
+    {
+      "front": "Сколько обычно дают на естественном упругом режиме?",
+      "back": "Как правило, до 2–5% извлекаемых запасов.",
+      "claim_ids": [
+        "geo.basniev.s3.01.c05"
+      ],
+      "kind": "number",
+      "page": 477,
+      "id": "geo.basniev.s3.01.k02",
+      "node_id": "geo.basniev.s3.01"
+    },
+    {
+      "front": "Пример большой доли на упругом режиме",
+      "back": "Тенгиз: прогноз до 20% запасов нефти.",
+      "claim_ids": [
+        "geo.basniev.s3.01.c07"
+      ],
+      "kind": "number",
+      "page": 477,
+      "id": "geo.basniev.s3.01.k03",
+      "node_id": "geo.basniev.s3.01"
+    },
+    {
+      "front": "Уравнение состояния",
+      "back": "Формула, связывающая свойство жидкости или породы с давлением.",
+      "claim_ids": [
+        "geo.basniev.s3.03.c01"
+      ],
+      "kind": "term",
+      "page": 478,
+      "id": "geo.basniev.s3.03.k01",
+      "node_id": "geo.basniev.s3.03"
+    },
+    {
+      "front": "Что в модели постоянно?",
+      "back": "Вязкость и проницаемость.",
+      "claim_ids": [
+        "geo.basniev.s3.03.c02"
+      ],
+      "kind": "idea",
+      "page": 478,
+      "id": "geo.basniev.s3.03.k02",
+      "node_id": "geo.basniev.s3.03"
+    },
+    {
+      "front": "Почему не учитывают изменение проницаемости?",
+      "back": "Это существенно усложнило бы модель; общая постановка — в специальных монографиях.",
+      "claim_ids": [
+        "geo.basniev.s3.03.c06",
+        "geo.basniev.s3.03.c07"
+      ],
+      "kind": "idea",
+      "page": 478,
+      "id": "geo.basniev.s3.03.k03",
+      "node_id": "geo.basniev.s3.03"
+    },
+    {
+      "front": "Функция Лейбензона",
+      "back": "Интеграл по давлению от отношения проницаемости к вязкости, умноженного на плотность.",
+      "claim_ids": [
+        "geo.basniev.s3.02.c02"
+      ],
+      "kind": "term",
+      "page": 478,
+      "id": "geo.basniev.s3.02.k01",
+      "node_id": "geo.basniev.s3.02"
+    },
+    {
+      "front": "Три части модели",
+      "back": "Неразрывность (баланс массы), закон Дарси, уравнения состояния.",
+      "claim_ids": [
+        "geo.basniev.s3.02.c01"
+      ],
+      "kind": "idea",
+      "page": 478,
+      "id": "geo.basniev.s3.02.k02",
+      "node_id": "geo.basniev.s3.02"
+    },
+    {
+      "front": "Чем пренебрегают, вводя функцию Лейбензона?",
+      "back": "Массовыми силами, например силой тяжести.",
+      "claim_ids": [
+        "geo.basniev.s3.02.c02"
+      ],
+      "kind": "idea",
+      "page": 478,
+      "id": "geo.basniev.s3.02.k03",
+      "node_id": "geo.basniev.s3.02"
+    },
+    {
+      "front": "Какие допущения в выводе?",
+      "back": "Закон Дарси, деформируемая среда, постоянные проницаемость и вязкость.",
+      "claim_ids": [
+        "geo.basniev.s4.01.c01"
+      ],
+      "kind": "idea",
+      "page": 479,
+      "id": "geo.basniev.s4.01.k01",
+      "node_id": "geo.basniev.s4.01"
+    },
+    {
+      "front": "Что подставляют в баланс массы?",
+      "back": "Функцию Лейбензона.",
+      "claim_ids": [
+        "geo.basniev.s4.01.c04"
+      ],
+      "kind": "idea",
+      "page": 479,
+      "id": "geo.basniev.s4.01.k02",
+      "node_id": "geo.basniev.s4.01"
+    },
+    {
+      "front": "Линеаризация",
+      "back": "Приближение выражения постоянной частью и частью, пропорциональной изменению давления.",
+      "claim_ids": [
+        "geo.basniev.s4.02.c02"
+      ],
+      "kind": "term",
+      "page": 479,
+      "id": "geo.basniev.s4.02.k01",
+      "node_id": "geo.basniev.s4.02"
+    },
+    {
+      "front": "Порядок коэффициентов сжатия",
+      "back": "Около 10⁻¹⁰ Па⁻¹ для нефтей, вод и пласта.",
+      "claim_ids": [
+        "geo.basniev.s4.02.c03",
+        "geo.basniev.s4.02.c04",
+        "geo.basniev.s4.02.c05"
+      ],
+      "kind": "number",
+      "page": 479,
+      "id": "geo.basniev.s4.02.k02",
+      "node_id": "geo.basniev.s4.02"
+    },
+    {
+      "front": "Чему пропорционально накопление массы после линеаризации?",
+      "back": "Скорости изменения давления (с множителями ρ0 и β*).",
+      "claim_ids": [
+        "geo.basniev.s4.02.c06"
+      ],
+      "kind": "idea",
+      "page": 480,
+      "id": "geo.basniev.s4.02.k03",
+      "node_id": "geo.basniev.s4.02"
+    },
+    {
+      "front": "Слабая сжимаемость",
+      "back": "Малое изменение свойств жидкости в рассматриваемом диапазоне давления.",
+      "claim_ids": [
+        "geo.basniev.s4.03.c02"
+      ],
+      "kind": "term",
+      "page": 480,
+      "id": "geo.basniev.s4.03.k01",
+      "node_id": "geo.basniev.s4.03"
+    },
+    {
+      "front": "Что отбрасывают в правой части?",
+      "back": "Поправку с малым коэффициентом сжатия жидкости.",
+      "claim_ids": [
+        "geo.basniev.s4.03.c02"
+      ],
+      "kind": "idea",
+      "page": 480,
+      "id": "geo.basniev.s4.03.k02",
+      "node_id": "geo.basniev.s4.03"
+    },
+    {
+      "front": "Коэффициент пьезопроводности κ",
+      "back": "Характеризует скорость перераспределения давления; κ = k/(μβ*), размерность м²/с.",
+      "claim_ids": [
+        "geo.basniev.s4.04.c04",
+        "geo.basniev.s4.04.c06"
+      ],
+      "kind": "term",
+      "page": 480,
+      "id": "geo.basniev.s4.04.k01",
+      "node_id": "geo.basniev.s4.04"
+    },
+    {
+      "front": "Типичная пьезопроводность",
+      "back": "Чаще всего от 0,1 до 5 м²/с.",
+      "claim_ids": [
+        "geo.basniev.s4.04.c05"
+      ],
+      "kind": "number",
+      "page": 481,
+      "id": "geo.basniev.s4.04.k02",
+      "node_id": "geo.basniev.s4.04"
+    },
+    {
+      "front": "Ошибка: давление расходится с постоянной скоростью, как звук",
+      "back": "Нет: уравнение типа теплопроводности, давление диффундирует.",
+      "claim_ids": [
+        "geo.basniev.s4.04.c03"
+      ],
+      "kind": "mistake",
+      "page": 480,
+      "id": "geo.basniev.s4.04.k03",
+      "node_id": "geo.basniev.s4.04"
+    },
+    {
+      "front": "Одномерный поток",
+      "back": "Поток, который описывается одной пространственной координатой.",
+      "claim_ids": [
+        "geo.basniev.s5.01.c01"
+      ],
+      "kind": "term",
+      "page": 481,
+      "id": "geo.basniev.s5.01.k01",
+      "node_id": "geo.basniev.s5.01"
+    },
+    {
+      "front": "Зачем переходить к одномерным потокам?",
+      "back": "Для них можно получить точные решения уравнения пьезопроводности.",
+      "claim_ids": [
+        "geo.basniev.s5.01.c01"
+      ],
+      "kind": "idea",
+      "page": 481,
+      "id": "geo.basniev.s5.01.k02",
+      "node_id": "geo.basniev.s5.01"
+    },
+    {
+      "front": "Галерея",
+      "back": "Линейная выработка, через которую отбирают жидкость из пласта.",
+      "claim_ids": [
+        "geo.basniev.s5_1.01.c05"
+      ],
+      "kind": "term",
+      "page": 481,
+      "id": "geo.basniev.s5_1.01.k01",
+      "node_id": "geo.basniev.s5_1.01"
+    },
+    {
+      "front": "Полубесконечный пласт",
+      "back": "Пласт с границей у галереи и без внешней границы в направлении от неё.",
+      "claim_ids": [
+        "geo.basniev.s5_1.01.c01"
+      ],
+      "kind": "term",
+      "page": 481,
+      "id": "geo.basniev.s5_1.01.k02",
+      "node_id": "geo.basniev.s5_1.01"
+    },
+    {
+      "front": "Граничные условия задачи",
+      "back": "На галерее — постоянное пониженное давление; на бесконечности — начальное.",
+      "claim_ids": [
+        "geo.basniev.s5_1.01.c06",
+        "geo.basniev.s5_1.01.c07"
+      ],
+      "kind": "idea",
+      "page": 481,
+      "id": "geo.basniev.s5_1.01.k03",
+      "node_id": "geo.basniev.s5_1.01"
+    },
+    {
+      "front": "Начальное условие",
+      "back": "Состояние на момент начала расчёта: при t = 0 давление в пласте начальное.",
+      "claim_ids": [
+        "geo.basniev.s5_1.02.c01"
+      ],
+      "kind": "term",
+      "page": 482,
+      "id": "geo.basniev.s5_1.02.k01",
+      "node_id": "geo.basniev.s5_1.02"
+    },
+    {
+      "front": "Граничные условия задачи о галерее",
+      "back": "На галерее после пуска — сниженное давление; на бесконечности — начальное.",
+      "claim_ids": [
+        "geo.basniev.s5_1.02.c02",
+        "geo.basniev.s5_1.02.c03"
+      ],
+      "kind": "idea",
+      "page": 482,
+      "id": "geo.basniev.s5_1.02.k02",
+      "node_id": "geo.basniev.s5_1.02"
+    },
+    {
+      "front": "Два искомых результата",
+      "back": "Давление p(x, t) и дебит галереи во времени.",
+      "claim_ids": [
+        "geo.basniev.s5_1.02.c04",
+        "geo.basniev.s5_1.02.c05"
+      ],
+      "kind": "idea",
+      "page": 482,
+      "id": "geo.basniev.s5_1.02.k03",
+      "node_id": "geo.basniev.s5_1.02"
+    },
+    {
+      "front": "Автомодельная переменная",
+      "back": "Комбинация аргументов, позволяющая описать семейство профилей одной функцией: u = x/(2√(κt)).",
+      "claim_ids": [
+        "geo.basniev.s5_1.03.c06"
+      ],
+      "kind": "term",
+      "page": 482,
+      "id": "geo.basniev.s5_1.03.k01",
+      "node_id": "geo.basniev.s5_1.03"
+    },
+    {
+      "front": "Нормированное давление P",
+      "back": "Превышение над давлением галереи, делённое на начальный перепад.",
+      "claim_ids": [
+        "geo.basniev.s5_1.03.c02"
+      ],
+      "kind": "term",
+      "page": 482,
+      "id": "geo.basniev.s5_1.03.k02",
+      "node_id": "geo.basniev.s5_1.03"
+    },
+    {
+      "front": "Условия для P",
+      "back": "На галерее P = 0, вдали P → 1.",
+      "claim_ids": [
+        "geo.basniev.s5_1.03.c07",
+        "geo.basniev.s5_1.03.c08"
+      ],
+      "kind": "idea",
+      "page": 482,
+      "id": "geo.basniev.s5_1.03.k03",
+      "node_id": "geo.basniev.s5_1.03"
+    },
+    {
+      "front": "Обыкновенное дифференциальное уравнение",
+      "back": "Уравнение для функции одного аргумента и её производных.",
+      "claim_ids": [
+        "geo.basniev.s5_1.04.c05"
+      ],
+      "kind": "term",
+      "page": 483,
+      "id": "geo.basniev.s5_1.04.k01",
+      "node_id": "geo.basniev.s5_1.04"
+    },
+    {
+      "front": "Зачем вводят ξ = dP/du?",
+      "back": "Чтобы получить уравнение первого порядка для наклона профиля.",
+      "claim_ids": [
+        "geo.basniev.s5_1.04.c08",
+        "geo.basniev.s5_1.04.c09"
+      ],
+      "kind": "idea",
+      "page": 483,
+      "id": "geo.basniev.s5_1.04.k02",
+      "node_id": "geo.basniev.s5_1.04"
+    },
+    {
+      "front": "Разделение переменных",
+      "back": "Перенос частей уравнения так, чтобы в каждой была своя переменная и её дифференциал.",
+      "claim_ids": [
+        "geo.basniev.s5_1.05.c01"
+      ],
+      "kind": "term",
+      "page": 483,
+      "id": "geo.basniev.s5_1.05.k01",
+      "node_id": "geo.basniev.s5_1.05"
+    },
+    {
+      "front": "Наклон профиля ξ",
+      "back": "ξ = dP/du = C1·e^(−u²).",
+      "claim_ids": [
+        "geo.basniev.s5_1.05.c03"
+      ],
+      "kind": "idea",
+      "page": 483,
+      "id": "geo.basniev.s5_1.05.k02",
+      "node_id": "geo.basniev.s5_1.05"
+    },
+    {
+      "front": "Чему равна C1?",
+      "back": "C1 = 2/√π.",
+      "claim_ids": [
+        "geo.basniev.s5_1.06.c06"
+      ],
+      "kind": "idea",
+      "page": 483,
+      "id": "geo.basniev.s5_1.06.k01",
+      "node_id": "geo.basniev.s5_1.06"
+    },
+    {
+      "front": "Откуда начинают интеграл профиля?",
+      "back": "От галереи, где безразмерное давление равно нулю.",
+      "claim_ids": [
+        "geo.basniev.s5_1.06.c01"
+      ],
+      "kind": "idea",
+      "page": 483,
+      "id": "geo.basniev.s5_1.06.k02",
+      "node_id": "geo.basniev.s5_1.06"
+    },
+    {
+      "front": "Функция ошибок erf",
+      "back": "Нормированный интеграл e^(−v²); здесь — безразмерный профиль давления.",
+      "claim_ids": [
+        "geo.basniev.s5_1.07.c04"
+      ],
+      "kind": "term",
+      "page": 484,
+      "id": "geo.basniev.s5_1.07.k01",
+      "node_id": "geo.basniev.s5_1.07"
+    },
+    {
+      "front": "Профиль давления у галереи",
+      "back": "p = pг + (pк − pг)·erf(x/(2√(κt))).",
+      "claim_ids": [
+        "geo.basniev.s5_1.07.c06"
+      ],
+      "kind": "idea",
+      "page": 484,
+      "id": "geo.basniev.s5_1.07.k02",
+      "node_id": "geo.basniev.s5_1.07"
+    },
+    {
+      "front": "Ошибка: при постоянном давлении на галерее дебит постоянен",
+      "back": "Нет: дебит убывает как 1/√t, потому что уменьшается градиент.",
+      "claim_ids": [
+        "geo.basniev.s5_1.08.c09"
+      ],
+      "kind": "mistake",
+      "page": 485,
+      "id": "geo.basniev.s5_1.08.k01",
+      "node_id": "geo.basniev.s5_1.08"
+    },
+    {
+      "front": "Что такое B и h в формуле дебита?",
+      "back": "Ширина и толщина пласта.",
+      "claim_ids": [
+        "geo.basniev.s5_1.08.c05"
+      ],
+      "kind": "term",
+      "page": 484,
+      "id": "geo.basniev.s5_1.08.k02",
+      "node_id": "geo.basniev.s5_1.08"
+    },
+    {
+      "front": "Дебит при больших временах",
+      "back": "Стремится к нулю.",
+      "claim_ids": [
+        "geo.basniev.s5_1.08.c10"
+      ],
+      "kind": "idea",
+      "page": 485,
+      "id": "geo.basniev.s5_1.08.k03",
+      "node_id": "geo.basniev.s5_1.08"
+    },
+    {
+      "front": "Накопленная добыча",
+      "back": "Объём жидкости, добытый с начала отбора к выбранному моменту.",
+      "claim_ids": [
+        "geo.basniev.s5_1.09.c01"
+      ],
+      "kind": "term",
+      "page": 485,
+      "id": "geo.basniev.s5_1.09.k01",
+      "node_id": "geo.basniev.s5_1.09"
+    },
+    {
+      "front": "Ошибка: дебит падает — значит и добыча падает",
+      "back": "Нет: при положительном дебите объём растёт, только медленнее.",
+      "claim_ids": [
+        "geo.basniev.s5_1.09.c05"
+      ],
+      "kind": "mistake",
+      "page": 485,
+      "id": "geo.basniev.s5_1.09.k02",
+      "node_id": "geo.basniev.s5_1.09"
+    },
+    {
+      "front": "Ошибка: постоянный дебит = постоянное давление на галерее",
+      "back": "Нет: постоянный дебит задаёт градиент, давление на галерее нужно найти.",
+      "claim_ids": [
+        "geo.basniev.s5_1.10.c06"
+      ],
+      "kind": "mistake",
+      "page": 485,
+      "id": "geo.basniev.s5_1.10.k01",
+      "node_id": "geo.basniev.s5_1.10"
+    },
+    {
+      "front": "Контурное давление",
+      "back": "Давление вдали от работающей галереи; равно начальному.",
+      "claim_ids": [
+        "geo.basniev.s5_1.10.c05",
+        "geo.basniev.s5_1.10.c07"
+      ],
+      "kind": "term",
+      "page": 485,
+      "id": "geo.basniev.s5_1.10.k02",
+      "node_id": "geo.basniev.s5_1.10"
+    },
+    {
+      "front": "Уравнение для скорости фильтрации",
+      "back": "∂w/∂t = κ·∂²w/∂x² — того же вида, что для давления.",
+      "claim_ids": [
+        "geo.basniev.s5_1.11.c05"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.11.k01",
+      "node_id": "geo.basniev.s5_1.11"
+    },
+    {
+      "front": "Какой множитель выделяют в обеих частях?",
+      "back": "k/μ·∂p/∂x — скорость фильтрации по Дарси.",
+      "claim_ids": [
+        "geo.basniev.s5_1.11.c03",
+        "geo.basniev.s5_1.11.c04"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.11.k02",
+      "node_id": "geo.basniev.s5_1.11"
+    },
+    {
+      "front": "Шаблон решения для скорости",
+      "back": "w = C1·erf(x/(2√(κt))) + C2.",
+      "claim_ids": [
+        "geo.basniev.s5_1.12.c03"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.12.k01",
+      "node_id": "geo.basniev.s5_1.12"
+    },
+    {
+      "front": "Связь постоянных из начального условия",
+      "back": "C1 + C2 = 0.",
+      "claim_ids": [
+        "geo.basniev.s5_1.12.c09"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.12.k02",
+      "node_id": "geo.basniev.s5_1.12"
+    },
+    {
+      "front": "Профиль скорости при постоянном дебите",
+      "back": "w = w1·[1 − erf(x/(2√(κt)))].",
+      "claim_ids": [
+        "geo.basniev.s5_1.13.c04"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.13.k01",
+      "node_id": "geo.basniev.s5_1.13"
+    },
+    {
+      "front": "Чему равны постоянные?",
+      "back": "C2 = w1, C1 = −w1.",
+      "claim_ids": [
+        "geo.basniev.s5_1.13.c02",
+        "geo.basniev.s5_1.13.c03"
+      ],
+      "kind": "idea",
+      "page": 486,
+      "id": "geo.basniev.s5_1.13.k02",
+      "node_id": "geo.basniev.s5_1.13"
+    },
+    {
+      "front": "Интегрирование по частям",
+      "back": "Приём интегрирования, основанный на формуле производной произведения.",
+      "claim_ids": [
+        "geo.basniev.s5_1.14.c05"
+      ],
+      "kind": "term",
+      "page": 487,
+      "id": "geo.basniev.s5_1.14.k01",
+      "node_id": "geo.basniev.s5_1.14"
+    },
+    {
+      "front": "Давление в точке при постоянном дебите",
+      "back": "Давление галереи в этот момент плюс перепад с дополнением erf и экспонентой.",
+      "claim_ids": [
+        "geo.basniev.s5_1.14.c07",
+        "geo.basniev.s5_1.14.c09"
+      ],
+      "kind": "idea",
+      "page": 487,
+      "id": "geo.basniev.s5_1.14.k02",
+      "node_id": "geo.basniev.s5_1.14"
+    },
+    {
+      "front": "Правило Лопиталя",
+      "back": "Приём вычисления неопределённого предела отношения через отношение производных.",
+      "claim_ids": [
+        "geo.basniev.s5_1.15.c04"
+      ],
+      "kind": "term",
+      "page": 487,
+      "id": "geo.basniev.s5_1.15.k01",
+      "node_id": "geo.basniev.s5_1.15"
+    },
+    {
+      "front": "Как меняется давление галереи при постоянном дебите?",
+      "back": "Падает от контурного пропорционально корню из времени.",
+      "claim_ids": [
+        "geo.basniev.s5_1.15.c07"
+      ],
+      "kind": "idea",
+      "page": 488,
+      "id": "geo.basniev.s5_1.15.k02",
+      "node_id": "geo.basniev.s5_1.15"
+    },
+    {
+      "front": "Кавитация",
+      "back": "Образование полостей в жидкости при падении давления.",
+      "claim_ids": [
+        "geo.basniev.s5_1.16.c05"
+      ],
+      "kind": "term",
+      "page": 488,
+      "id": "geo.basniev.s5_1.16.k01",
+      "node_id": "geo.basniev.s5_1.16"
+    },
+    {
+      "front": "Ошибка: постоянный дебит можно держать сколь угодно долго",
+      "back": "Нет: при больших временах понадобилось бы отрицательное давление; на деле — кавитация.",
+      "claim_ids": [
+        "geo.basniev.s5_1.16.c03",
+        "geo.basniev.s5_1.16.c05"
+      ],
+      "kind": "mistake",
+      "page": 488,
+      "id": "geo.basniev.s5_1.16.k02",
+      "node_id": "geo.basniev.s5_1.16"
+    },
+    {
+      "front": "Точечный сток",
+      "back": "Модель добывающей скважины нулевого радиуса.",
+      "claim_ids": [
+        "geo.basniev.s5_2.01.c04"
+      ],
+      "kind": "term",
+      "page": 488,
+      "id": "geo.basniev.s5_2.01.k01",
+      "node_id": "geo.basniev.s5_2.01"
+    },
+    {
+      "front": "Краевая задача",
+      "back": "Уравнение вместе с начальным и граничными условиями.",
+      "claim_ids": [
+        "geo.basniev.s5_2.01.c13"
+      ],
+      "kind": "term",
+      "page": 488,
+      "id": "geo.basniev.s5_2.01.k02",
+      "node_id": "geo.basniev.s5_2.01"
+    },
+    {
+      "front": "Ошибка: постоянный дебит — давление сразу стационарно",
+      "back": "Нет: поток неустановившийся, возмущённая зона растёт.",
+      "claim_ids": [
+        "geo.basniev.s5_2.01.c08",
+        "geo.basniev.s5_2.01.c11"
+      ],
+      "kind": "mistake",
+      "page": 488,
+      "id": "geo.basniev.s5_2.01.k03",
+      "node_id": "geo.basniev.s5_2.01"
+    },
+    {
+      "front": "Координата подобия для скважины",
+      "back": "ξ = r/(2√(κt)): радиус, отнесённый к растущему со временем масштабу.",
+      "claim_ids": [
+        "geo.basniev.s5_2.02.c05"
+      ],
+      "kind": "term",
+      "page": 489,
+      "id": "geo.basniev.s5_2.02.k01",
+      "node_id": "geo.basniev.s5_2.02"
+    },
+    {
+      "front": "От чего зависит P = p/pк в радиальной задаче?",
+      "back": "От ξ и от Q₀μ/(2πkhpк) — всего от двух безразмерных аргументов.",
+      "claim_ids": [
+        "geo.basniev.s5_2.02.c04",
+        "geo.basniev.s5_2.02.c06"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.02.k02",
+      "node_id": "geo.basniev.s5_2.02"
+    },
+    {
+      "front": "Индекс «к» у pк — это коэффициент пьезопроводности?",
+      "back": "Нет. pк — контурное давление; пьезопроводность обозначают κ.",
+      "claim_ids": [
+        "geo.basniev.s5_2.02.c02"
+      ],
+      "kind": "mistake",
+      "page": 489,
+      "id": "geo.basniev.s5_2.02.k03",
+      "node_id": "geo.basniev.s5_2.02"
+    },
+    {
+      "front": "Обыкновенное уравнение для P(ξ)",
+      "back": "d²P/dξ² + (1/ξ + 2ξ)·dP/dξ = 0.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c03"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k01",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "front": "Условия для P(ξ)",
+      "back": "P = 1 при ξ → ∞; ξ·dP/dξ = Q₀μ/(2πkhpк) при ξ = 0.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c05",
+        "geo.basniev.s5_2.03.c06"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k02",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "front": "После перехода к ξ граничные условия не нужны?",
+      "back": "Нужны. Их переписывают в безразмерном виде и интегрируют уравнение с ними.",
+      "claim_ids": [
+        "geo.basniev.s5_2.03.c04"
+      ],
+      "kind": "mistake",
+      "page": 489,
+      "id": "geo.basniev.s5_2.03.k03",
+      "node_id": "geo.basniev.s5_2.03"
+    },
+    {
+      "front": "Производная безразмерного давления по ξ",
+      "back": "dP/dξ = C₁·e^(−ξ²)/ξ, формула (23.48).",
+      "claim_ids": [
+        "geo.basniev.s5_2.04.c04"
+      ],
+      "kind": "idea",
+      "page": 490,
+      "id": "geo.basniev.s5_2.04.k01",
+      "node_id": "geo.basniev.s5_2.04"
+    },
+    {
+      "front": "Потенцирование",
+      "back": "Переход от равенства логарифмов к равенству самих величин.",
+      "claim_ids": [
+        "geo.basniev.s5_2.04.c04"
+      ],
+      "kind": "term",
+      "page": 490,
+      "id": "geo.basniev.s5_2.04.k02",
+      "node_id": "geo.basniev.s5_2.04"
+    },
+    {
+      "front": "Зачем обозначать dP/dξ = v?",
+      "back": "Чтобы понизить порядок уравнения и разделить переменные.",
+      "claim_ids": [
+        "geo.basniev.s5_2.04.c01",
+        "geo.basniev.s5_2.04.c02"
+      ],
+      "kind": "idea",
+      "page": 489,
+      "id": "geo.basniev.s5_2.04.k03",
+      "node_id": "geo.basniev.s5_2.04"
+    },
+    {
+      "front": "Постоянная C₁ для скважины с постоянным дебитом",
+      "back": "C₁ = Q₀μ/(2πkhpк), из условия у стока.",
+      "claim_ids": [
+        "geo.basniev.s5_2.05.c04"
+      ],
+      "kind": "idea",
+      "page": 490,
+      "id": "geo.basniev.s5_2.05.k01",
+      "node_id": "geo.basniev.s5_2.05"
+    },
+    {
+      "front": "Формула (23.50)",
+      "back": "P(ξ) = 1 − Q₀μ/(2πkhpк)·∫ e^(−z²)/z dz от ξ до ∞.",
+      "claim_ids": [
+        "geo.basniev.s5_2.05.c05"
+      ],
+      "kind": "idea",
+      "page": 490,
+      "id": "geo.basniev.s5_2.05.k02",
+      "node_id": "geo.basniev.s5_2.05"
+    },
+    {
+      "front": "Несобственный интеграл",
+      "back": "Здесь — интеграл с верхним пределом на бесконечности.",
+      "claim_ids": [
+        "geo.basniev.s5_2.05.c01"
+      ],
+      "kind": "term",
+      "page": 490,
+      "id": "geo.basniev.s5_2.05.k03",
+      "node_id": "geo.basniev.s5_2.05"
+    },
+    {
+      "front": "Основная формула теории упругого режима",
+      "back": "p = pк − Q₀μ/(4πkh)·[−Ei(−r²/(4κt))].",
+      "claim_ids": [
+        "geo.basniev.s5_2.06.c06",
+        "geo.basniev.s5_2.06.c07"
+      ],
+      "kind": "idea",
+      "page": 491,
+      "id": "geo.basniev.s5_2.06.k01",
+      "node_id": "geo.basniev.s5_2.06"
+    },
+    {
+      "front": "Интегральная показательная функция",
+      "back": "Табулированная специальная функция −Ei(−x) = ∫ e^(−u)/u du от x до ∞.",
+      "claim_ids": [
+        "geo.basniev.s5_2.06.c03",
+        "geo.basniev.s5_2.06.c05"
+      ],
+      "kind": "term",
+      "page": 490,
+      "id": "geo.basniev.s5_2.06.k02",
+      "node_id": "geo.basniev.s5_2.06"
+    },
+    {
+      "front": "Какую запись брать для расчёта: (23.51) или (23.52)?",
+      "back": "(23.52): в ней учтён множитель 1/2 от замены переменной.",
+      "claim_ids": [
+        "geo.basniev.s5_2.06.c06"
+      ],
+      "kind": "mistake",
+      "page": 491,
+      "id": "geo.basniev.s5_2.06.k03",
+      "node_id": "geo.basniev.s5_2.06"
+    },
+    {
+      "front": "Постоянная Эйлера γ",
+      "back": "Иррациональное число; в подземной гидромеханике принимают 0,5772.",
+      "claim_ids": [
+        "geo.basniev.s5_2.07.c03",
+        "geo.basniev.s5_2.07.c04"
+      ],
+      "kind": "number",
+      "page": 491,
+      "id": "geo.basniev.s5_2.07.k01",
+      "node_id": "geo.basniev.s5_2.07"
+    },
+    {
+      "front": "Ряд для −Ei(−x) сходится только вблизи нуля?",
+      "back": "Нет. Он сходится при любом положительном x.",
+      "claim_ids": [
+        "geo.basniev.s5_2.07.c02"
+      ],
+      "kind": "mistake",
+      "page": 491,
+      "id": "geo.basniev.s5_2.07.k02",
+      "node_id": "geo.basniev.s5_2.07"
+    },
+    {
+      "front": "Степенной ряд",
+      "back": "Сумма членов, содержащих возрастающие степени аргумента.",
+      "claim_ids": [
+        "geo.basniev.s5_2.07.c01"
+      ],
+      "kind": "term",
+      "page": 491,
+      "id": "geo.basniev.s5_2.07.k03",
+      "node_id": "geo.basniev.s5_2.07"
+    },
+    {
+      "front": "Логарифмическое приближение −Ei(−x)",
+      "back": "ln(1/x) − 0,5772 при малом x = r²/(4κt).",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c04"
+      ],
+      "kind": "idea",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k01",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "front": "Пороги и погрешности приближения",
+      "back": "x ≤ 0,01 — 0,25%; x ≤ 0,1 — 5,7%; x ≤ 0,14 — 9,7%.",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c05",
+        "geo.basniev.s5_2.08.c06",
+        "geo.basniev.s5_2.08.c07"
+      ],
+      "kind": "number",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k02",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "front": "Логарифм заменяет Ei с одинаковой погрешностью при любом x?",
+      "back": "Нет. Каждая оценка погрешности связана со своим порогом аргумента.",
+      "claim_ids": [
+        "geo.basniev.s5_2.08.c05",
+        "geo.basniev.s5_2.08.c07"
+      ],
+      "kind": "mistake",
+      "page": 491,
+      "id": "geo.basniev.s5_2.08.k03",
+      "node_id": "geo.basniev.s5_2.08"
+    },
+    {
+      "front": "Расход через цилиндр радиуса r при упругом режиме",
+      "back": "Q(r, t) = Q₀·e^(−r²/(4κt)), формула (23.54).",
+      "claim_ids": [
+        "geo.basniev.s5_2.09.c03"
+      ],
+      "kind": "idea",
+      "page": 492,
+      "id": "geo.basniev.s5_2.09.k01",
+      "node_id": "geo.basniev.s5_2.09"
+    },
+    {
+      "front": "Почему вблизи скважины скорость быстро становится стационарной?",
+      "back": "Пьезопроводность κ обычно велика, и экспонента быстро стремится к единице.",
+      "claim_ids": [
+        "geo.basniev.s5_2.09.c04",
+        "geo.basniev.s5_2.09.c05"
+      ],
+      "kind": "idea",
+      "page": 492,
+      "id": "geo.basniev.s5_2.09.k02",
+      "node_id": "geo.basniev.s5_2.09"
+    },
+    {
+      "front": "Скорость фильтрации",
+      "back": "Расход на единицу площади поперечного сечения потока.",
+      "claim_ids": [
+        "geo.basniev.s5_2.09.c02"
+      ],
+      "kind": "term",
+      "page": 492,
+      "id": "geo.basniev.s5_2.09.k03",
+      "node_id": "geo.basniev.s5_2.09"
+    },
+    {
+      "front": "Параметры Фурье f₀ и F₀",
+      "back": "f₀ = κt/rс² (по радиусу скважины), F₀ = κt/Rк² (по радиусу границы пласта).",
+      "claim_ids": [
+        "geo.basniev.s5_2.10.c03",
+        "geo.basniev.s5_2.10.c04"
+      ],
+      "kind": "term",
+      "page": 492,
+      "id": "geo.basniev.s5_2.10.k01",
+      "node_id": "geo.basniev.s5_2.10"
+    },
+    {
+      "front": "Можно ли проверять порог для f₀ по значению F₀?",
+      "back": "Нет. Одно время даёт разные значения на разных масштабах.",
+      "claim_ids": [
+        "geo.basniev.s5_2.10.c05"
+      ],
+      "kind": "mistake",
+      "page": 492,
+      "id": "geo.basniev.s5_2.10.k02",
+      "node_id": "geo.basniev.s5_2.10"
+    },
+    {
+      "front": "Ошибка забойного давления в открытом конечном пласте",
+      "back": "0,08% при F₀ ≤ 0,2; 1% при F₀ ≤ 0,35; 1,9% при F₀ ≤ 0,5.",
+      "claim_ids": [
+        "geo.basniev.s5_2.12.c02",
+        "geo.basniev.s5_2.12.c03",
+        "geo.basniev.s5_2.12.c04"
+      ],
+      "kind": "number",
+      "page": 493,
+      "id": "geo.basniev.s5_2.12.k01",
+      "node_id": "geo.basniev.s5_2.12"
+    },
+    {
+      "front": "Открытый и закрытый пласт",
+      "back": "Открытый — с внешним контуром питания; закрытый — с непроницаемой внешней границей.",
+      "claim_ids": [
+        "geo.basniev.s5_2.12.c11",
+        "geo.basniev.s5_2.12.c12"
+      ],
+      "kind": "term",
+      "page": 493,
+      "id": "geo.basniev.s5_2.12.k02",
+      "node_id": "geo.basniev.s5_2.12"
+    },
+    {
+      "front": "Достаточно проверить только F₀ ≤ 0,2 для точки пласта?",
+      "back": "Нет. Нужны ещё r ≤ 0,1 Rк и Rк ≥ 10⁵ rс.",
+      "claim_ids": [
+        "geo.basniev.s5_2.12.c06",
+        "geo.basniev.s5_2.12.c07",
+        "geo.basniev.s5_2.12.c08"
+      ],
+      "kind": "mistake",
+      "page": 493,
+      "id": "geo.basniev.s5_2.12.k03",
+      "node_id": "geo.basniev.s5_2.12"
+    },
+    {
+      "front": "Ошибка основной формулы от конечного радиуса скважины",
+      "back": "0,6% при f₀ = 100; 2,3% при 25; 5% при 10; 9,4% при 5.",
+      "claim_ids": [
+        "geo.basniev.s5_2.11.c04",
+        "geo.basniev.s5_2.11.c05",
+        "geo.basniev.s5_2.11.c06",
+        "geo.basniev.s5_2.11.c07"
+      ],
+      "kind": "number",
+      "page": 492,
+      "id": "geo.basniev.s5_2.11.k01",
+      "node_id": "geo.basniev.s5_2.11"
+    },
+    {
+      "front": "Точечный сток",
+      "back": "Скважина, радиус которой в модели принят равным нулю.",
+      "claim_ids": [
+        "geo.basniev.s5_2.11.c01"
+      ],
+      "kind": "term",
+      "page": 492,
+      "id": "geo.basniev.s5_2.11.k02",
+      "node_id": "geo.basniev.s5_2.11"
+    },
+    {
+      "front": "Малая ошибка от радиуса скважины означает, что граница пласта не важна?",
+      "back": "Нет. Пример оценивает только эффект радиуса, а не влияние внешней границы.",
+      "claim_ids": [
+        "geo.basniev.s5_2.11.c03"
+      ],
+      "kind": "mistake",
+      "page": 492,
+      "id": "geo.basniev.s5_2.11.k03",
+      "node_id": "geo.basniev.s5_2.11"
+    },
+    {
+      "front": "Ближняя зона скважины при упругом режиме",
+      "back": "r² ≤ 0,03·4κt: там градиент почти не зависит от времени.",
+      "claim_ids": [
+        "geo.basniev.s5_2.13.c04",
+        "geo.basniev.s5_2.13.c05"
+      ],
+      "kind": "number",
+      "page": 493,
+      "id": "geo.basniev.s5_2.13.k01",
+      "node_id": "geo.basniev.s5_2.13"
+    },
+    {
+      "front": "Пьезометрическая кривая",
+      "back": "Профиль давления по расстоянию от скважины в выбранный момент.",
+      "claim_ids": [
+        "geo.basniev.s5_2.13.c07"
+      ],
+      "kind": "term",
+      "page": 493,
+      "id": "geo.basniev.s5_2.13.k02",
+      "node_id": "geo.basniev.s5_2.13"
+    },
+    {
+      "front": "Одинаковый наклон у забоя значит, что давление на забое не меняется?",
+      "back": "Нет. Наклоны одинаковы, но давление на забое продолжает падать.",
+      "claim_ids": [
+        "geo.basniev.s5_2.13.c08",
+        "geo.basniev.s5_2.13.c09"
+      ],
+      "kind": "mistake",
+      "page": 493,
+      "id": "geo.basniev.s5_2.13.k03",
+      "node_id": "geo.basniev.s5_2.13"
+    },
+    {
+      "front": "Почему в теории упругого режима нужны приближённые методы?",
+      "back": "Точные решения часто громоздки: медленно сходящиеся ряды или несобственные интегралы со специальными функциями.",
+      "claim_ids": [
+        "geo.basniev.ch24.01.c04",
+        "geo.basniev.ch24.01.c06"
+      ],
+      "kind": "idea",
+      "page": 494,
+      "id": "geo.basniev.ch24.01.k01",
+      "node_id": "geo.basniev.ch24.01"
+    },
+    {
+      "front": "Медленно сходящийся ряд",
+      "back": "Бесконечная сумма, которую приходится считать по многим членам, чтобы приблизиться к её значению.",
+      "claim_ids": [
+        "geo.basniev.ch24.01.c04"
+      ],
+      "kind": "term",
+      "page": 494,
+      "id": "geo.basniev.ch24.01.k02",
+      "node_id": "geo.basniev.ch24.01"
+    },
+    {
+      "front": "Приближения нужны, потому что точных решений нет?",
+      "back": "Нет. Точные решения есть, но они неудобны для вычислений.",
+      "claim_ids": [
+        "geo.basniev.ch24.01.c06"
+      ],
+      "kind": "mistake",
+      "page": 494,
+      "id": "geo.basniev.ch24.01.k03",
+      "node_id": "geo.basniev.ch24.01"
+    },
+    {
+      "front": "ПССС",
+      "back": "Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.01.c01"
+      ],
+      "kind": "term",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.01.k01",
+      "node_id": "geo.basniev.ch24s1.01"
+    },
+    {
+      "front": "На каком допущении стоит ПССС?",
+      "back": "Давление во времени меняется значительно медленнее, чем по координатам; производную по времени отбрасывают.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.01.c02",
+        "geo.basniev.ch24s1.01.c03"
+      ],
+      "kind": "idea",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.01.k02",
+      "node_id": "geo.basniev.ch24s1.01"
+    },
+    {
+      "front": "В ПССС процесс в пласте стационарен?",
+      "back": "Нет. Стационарен только профиль в отдельный момент; профили сменяют друг друга.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.01.c03"
+      ],
+      "kind": "mistake",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.01.k03",
+      "node_id": "geo.basniev.ch24s1.01"
+    },
+    {
+      "front": "Возмущённая область",
+      "back": "Часть пласта от стенки скважины до подвижной границы; в ней давление распределено как при установившемся движении.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.02.c02",
+        "geo.basniev.ch24s1.02.c03"
+      ],
+      "kind": "term",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.02.k01",
+      "node_id": "geo.basniev.ch24s1.02"
+    },
+    {
+      "front": "Как найти закон движения границы возмущения?",
+      "back": "По уравнению материального баланса и граничным условиям.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.02.c06"
+      ],
+      "kind": "idea",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.02.k02",
+      "node_id": "geo.basniev.ch24s1.02"
+    },
+    {
+      "front": "Сколько фаз в бесконечном пласте?",
+      "back": "Только первая; её продолжительность не ограничена.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.02.c10"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.02.k03",
+      "node_id": "geo.basniev.ch24s1.02"
+    },
+    {
+      "front": "При пуске скважины давление сразу падает во всём пласте?",
+      "back": "Нет. В ПССС вне расширяющейся возмущённой области давление остаётся начальным.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.02.c05",
+        "geo.basniev.ch24s1.02.c08"
+      ],
+      "kind": "mistake",
+      "page": 494,
+      "id": "geo.basniev.ch24s1.02.k04",
+      "node_id": "geo.basniev.ch24s1.02"
+    },
+    {
+      "front": "Профиль давления у галереи по ПССС",
+      "back": "Прямая: p = pк − Qμ/(kBh)·(l(t) − x) при 0 ≤ x ≤ l(t).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.03.c07",
+        "geo.basniev.ch24s1.03.c08"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.03.k01",
+      "node_id": "geo.basniev.ch24s1.03"
+    },
+    {
+      "front": "Чем x отличается от l(t)?",
+      "back": "x — точка, где смотрят давление; l(t) — расстояние от галереи до границы возмущения.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.03.c05"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.03.k02",
+      "node_id": "geo.basniev.ch24s1.03"
+    },
+    {
+      "front": "Галерея",
+      "back": "Прямолинейная выработка, к которой в модели притекает жидкость.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.03.c02"
+      ],
+      "kind": "term",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.03.k03",
+      "node_id": "geo.basniev.ch24s1.03"
+    },
+    {
+      "front": "Материальный баланс в ПССС",
+      "back": "Q·dt = β*·d[V(t)·Δp]: отбор за dt равен убыли упругого запаса в зоне.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c01",
+        "geo.basniev.ch24s1.04.c02"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k01",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "front": "Среднее падение давления при линейном профиле",
+      "back": "Δp = (pк − pг)/2 — половина депрессии на галерее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c05"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k02",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "front": "V(t) — это объём добытой жидкости?",
+      "back": "Нет. V(t) = Bh·l(t) — объём всей затронутой породы.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c03"
+      ],
+      "kind": "mistake",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k03",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "front": "Закон движения границы при постоянном дебите галереи",
+      "back": "l(t) = √(2κt), формула (24.6).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.05.c09"
+      ],
+      "kind": "idea",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.05.k01",
+      "node_id": "geo.basniev.ch24s1.05"
+    },
+    {
+      "front": "Пьезопроводность κ",
+      "back": "κ = k/(μβ*): проницаемость, делённая на вязкость и упругоёмкость.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.05.c08"
+      ],
+      "kind": "term",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.05.k02",
+      "node_id": "geo.basniev.ch24s1.05"
+    },
+    {
+      "front": "Граница возмущения идёт с постоянной скоростью?",
+      "back": "Нет. Постоянна скорость роста квадрата длины; сама длина растёт как корень из времени.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.05.c07",
+        "geo.basniev.ch24s1.05.c09"
+      ],
+      "kind": "mistake",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.05.k03",
+      "node_id": "geo.basniev.ch24s1.05"
+    },
+    {
+      "front": "Давление по ПССС при постоянном дебите галереи",
+      "back": "p = pк − Qμ/(kBh)·(√(2κt) − x) внутри зоны; p = pк за ней.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c01",
+        "geo.basniev.ch24s1.06.c02"
+      ],
+      "kind": "idea",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k01",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "front": "Погрешность депрессии ПССС при постоянном дебите",
+      "back": "25% относительно точной формулы (24.39).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c03"
+      ],
+      "kind": "number",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k02",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "front": "Погрешность 25% относится ко всему полю давления?",
+      "back": "Нет, автор говорит о депрессии на галерее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.06.c03"
+      ],
+      "kind": "mistake",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.06.k03",
+      "node_id": "geo.basniev.ch24s1.06"
+    },
+    {
+      "front": "Дебит галереи при постоянном забойном давлении",
+      "back": "Q(t) = k(pк − pг)Bh/(μl(t)) = (kBh/μ)·∂p/∂x у галереи.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.07.c05",
+        "geo.basniev.ch24s1.07.c06"
+      ],
+      "kind": "idea",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.07.k01",
+      "node_id": "geo.basniev.ch24s1.07"
+    },
+    {
+      "front": "Забойное давление",
+      "back": "Давление у забоя; в модели — на стенке выработки.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.07.c01"
+      ],
+      "kind": "term",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.07.k02",
+      "node_id": "geo.basniev.ch24s1.07"
+    },
+    {
+      "front": "В случае 2 меняется геометрия пласта?",
+      "back": "Нет. Пласт тот же, меняется только условие на галерее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.07.c02"
+      ],
+      "kind": "mistake",
+      "page": 496,
+      "id": "geo.basniev.ch24s1.07.k03",
+      "node_id": "geo.basniev.ch24s1.07"
+    },
+    {
+      "front": "Длина зоны при постоянной депрессии на галерее",
+      "back": "l(t) = 2√(κt).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.08.c07"
+      ],
+      "kind": "idea",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.08.k01",
+      "node_id": "geo.basniev.ch24s1.08"
+    },
+    {
+      "front": "Что постоянно и что меняется в балансе при постоянной депрессии?",
+      "back": "Постоянна средняя депрессия (pк − pг)/2; меняются длина зоны l и дебит Q(t).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.08.c03",
+        "geo.basniev.ch24s1.08.c04"
+      ],
+      "kind": "idea",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.08.k02",
+      "node_id": "geo.basniev.ch24s1.08"
+    },
+    {
+      "front": "При постоянном давлении длина зоны та же, что при постоянном дебите?",
+      "back": "Нет. Обе растут как корень, но здесь l = 2√(κt), а там √(2κt).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.08.c07"
+      ],
+      "kind": "mistake",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.08.k03",
+      "node_id": "geo.basniev.ch24s1.08"
+    },
+    {
+      "front": "Дебит галереи при постоянной депрессии по ПССС",
+      "back": "Q(t) = k(pк − pг)Bh/(μ·2√(κt)); убывает как корень из времени.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.09.c03"
+      ],
+      "kind": "idea",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.09.k01",
+      "node_id": "geo.basniev.ch24s1.09"
+    },
+    {
+      "front": "Погрешность дебита ПССС при постоянной депрессии",
+      "back": "11% по сравнению с точной формулой (23.27).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.09.c04"
+      ],
+      "kind": "number",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.09.k02",
+      "node_id": "geo.basniev.ch24s1.09"
+    },
+    {
+      "front": "Когда автор советует ПССС для галереи?",
+      "back": "Для неустановившихся прямолинейно-параллельных потоков при заданной постоянной депрессии.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.09.c05"
+      ],
+      "kind": "idea",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.09.k03",
+      "node_id": "geo.basniev.ch24s1.09"
+    },
+    {
+      "front": "Профиль давления у скважины по ПССС, Q = const",
+      "back": "p = pк − Qμ/(2πkh)·ln(R(t)/r) внутри зоны; p = pк снаружи.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.10.c08",
+        "geo.basniev.ch24s1.10.c10"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.10.k01",
+      "node_id": "geo.basniev.ch24s1.10"
+    },
+    {
+      "front": "Плоскорадиальный поток",
+      "back": "Течение к скважине, где давление зависит от расстояния до её оси.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.10.c01"
+      ],
+      "kind": "term",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.10.k02",
+      "node_id": "geo.basniev.ch24s1.10"
+    },
+    {
+      "front": "Чем r отличается от R(t) и rс?",
+      "back": "rс — радиус скважины, r — точка расчёта, R(t) — радиус возмущённой зоны.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.10.c04",
+        "geo.basniev.ch24s1.10.c06"
+      ],
+      "kind": "idea",
+      "page": 497,
+      "id": "geo.basniev.ch24s1.10.k03",
+      "node_id": "geo.basniev.ch24s1.10"
+    },
+    {
+      "front": "Средняя депрессия при постоянном дебите скважины по ПССС",
+      "back": "Δp = Qμ/(4πkh); постоянна при Q = const.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c09"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k01",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "front": "Объём возмущённой зоны вокруг скважины",
+      "back": "V(t) = π(R²(t) − rс²)h — площадь кольца на толщину пласта.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c05"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k02",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "front": "Забойная депрессия равна средней?",
+      "back": "Нет. В баланс входит средняя депрессия; с забойной её связывают геометрия и профиль.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.11.c06",
+        "geo.basniev.ch24s1.11.c09"
+      ],
+      "kind": "mistake",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.11.k03",
+      "node_id": "geo.basniev.ch24s1.11"
+    },
+    {
+      "front": "Радиус возмущения при постоянном дебите скважины",
+      "back": "R(t) = √(rс² + 4κt), формула (24.14).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.12.c05"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.12.k01",
+      "node_id": "geo.basniev.ch24s1.12"
+    },
+    {
+      "front": "Пределы интегрирования в выводе R(t)",
+      "back": "По времени от 0 до t, по радиусу от rс до R(t).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.12.c03",
+        "geo.basniev.ch24s1.12.c04"
+      ],
+      "kind": "idea",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.12.k02",
+      "node_id": "geo.basniev.ch24s1.12"
+    },
+    {
+      "front": "Радиус зоны растёт пропорционально времени?",
+      "back": "Нет. Пропорционально времени растёт R² − rс²; сам радиус растёт как корень.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.12.c02"
+      ],
+      "kind": "mistake",
+      "page": 498,
+      "id": "geo.basniev.ch24s1.12.k03",
+      "node_id": "geo.basniev.ch24s1.12"
+    },
+    {
+      "front": "Депрессия на скважине при постоянном дебите по ПССС",
+      "back": "Δpс = Qμ/(2πkh)·ln(√(rс² + 4κt)/rс), формула (24.16).",
+      "claim_ids": [
+        "geo.basniev.ch24s1.13.c05"
+      ],
+      "kind": "idea",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.13.k01",
+      "node_id": "geo.basniev.ch24s1.13"
+    },
+    {
+      "front": "Где действует формула (24.15)?",
+      "back": "От стенки скважины до фронта: rс ≤ r ≤ √(rс² + 4κt); дальше p = pк.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.13.c02",
+        "geo.basniev.ch24s1.13.c04"
+      ],
+      "kind": "idea",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.13.k02",
+      "node_id": "geo.basniev.ch24s1.13"
+    },
+    {
+      "front": "Безразмерное время f₀",
+      "back": "f₀ = κt/rс²: пьезопроводность на время, делённые на квадрат радиуса скважины.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c03"
+      ],
+      "kind": "term",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k01",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "front": "Погрешность депрессии ПССС при f₀ = 100, 10³, 10⁴",
+      "back": "10,6%, 7,5% и 5,7% соответственно.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c04",
+        "geo.basniev.ch24s1.14.c05",
+        "geo.basniev.ch24s1.14.c06"
+      ],
+      "kind": "number",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k02",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "front": "Эти погрешности относятся ко всему полю давления?",
+      "back": "Нет. Они относятся к депрессии на скважине при постоянном дебите.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.14.c01"
+      ],
+      "kind": "mistake",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.14.k03",
+      "node_id": "geo.basniev.ch24s1.14"
+    },
+    {
+      "front": "Почему при pс = const радиус берут по графику?",
+      "back": "Закон движения границы выражен интегралом с медленно сходящимся рядом; автор заменяет его рис. 24.3.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.15.c02",
+        "geo.basniev.ch24s1.15.c03"
+      ],
+      "kind": "idea",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.15.k01",
+      "node_id": "geo.basniev.ch24s1.15"
+    },
+    {
+      "front": "Погрешность дебита ПССС при постоянном забойном давлении",
+      "back": "Около 5% по сравнению с точными расчётами К.А.Царевича и И.Ф.Куранова.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.15.c05"
+      ],
+      "kind": "number",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.15.k02",
+      "node_id": "geo.basniev.ch24s1.15"
+    },
+    {
+      "front": "Что откладывают на рис. 24.3?",
+      "back": "Безразмерный радиус R(t)/rс против безразмерного времени f₀ при pс = const.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.15.c06"
+      ],
+      "kind": "idea",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.15.k03",
+      "node_id": "geo.basniev.ch24s1.15"
+    },
+    {
+      "front": "Почему ПССС расходится с точным решением?",
+      "back": "Одна из причин — разрыв градиента давления на границе возмущённой и невозмущённой зон.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.16.c01",
+        "geo.basniev.ch24s1.16.c02"
+      ],
+      "kind": "idea",
+      "page": 499,
+      "id": "geo.basniev.ch24s1.16.k01",
+      "node_id": "geo.basniev.ch24s1.16"
+    },
+    {
+      "front": "Где ещё применяют ПССС кроме однофазной фильтрации?",
+      "back": "В некоторых случаях — для газированной жидкости и перемещения границы раздела жидкостей и газов.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.16.c05",
+        "geo.basniev.ch24s1.16.c06"
+      ],
+      "kind": "idea",
+      "page": 500,
+      "id": "geo.basniev.ch24s1.16.k02",
+      "node_id": "geo.basniev.ch24s1.16"
+    },
+    {
+      "front": "Точный дебит по ПССС значит точное давление в каждой точке?",
+      "back": "Нет. Поле давления по ПССС грубое, а связь дебита с депрессией точнее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.16.c07",
+        "geo.basniev.ch24s1.16.c08"
+      ],
+      "kind": "mistake",
+      "page": 500,
+      "id": "geo.basniev.ch24s1.16.k03",
+      "node_id": "geo.basniev.ch24s1.16"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "question": "Во сколько раз среднее падение давления в зоне меньше депрессии на галерее pк − pг?",
+      "answer": 2,
+      "tolerance": 0,
+      "unit": null,
+      "explanation": "Для линейного профиля среднее давление — полусумма, поэтому Δp = (pк − pг)/2.",
+      "evidence": "Δp = (pк − pг)/2",
+      "claim_id": "geo.basniev.ch24s1.04.c05",
+      "page": 495,
+      "anchor": "how-4",
+      "id": "geo.basniev.ch24s1.04.t01",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "type": "single",
+      "question": "Что выражает баланс (24.2)?",
+      "options": [
+        "Отбор за dt равен изменению упругого запаса в зоне за тот же dt",
+        "Дебит равен объёму всей возмущённой зоны",
+        "Давление на границе зоны равно давлению на галерее"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Это условие материального баланса (23.7).",
+      "evidence": "Объём жидкости, добытой за время dt, равен изменению упругого запаса в возмущённой зоне за тот же dt.",
+      "claim_id": "geo.basniev.ch24s1.04.c01",
+      "page": 495,
+      "anchor": "how-1",
+      "id": "geo.basniev.ch24s1.04.t02",
+      "node_id": "geo.basniev.ch24s1.04"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Материальный баланс в ПССС",
+      "back": "Q·dt = β*·d[V(t)·Δp]: отбор за dt равен убыли упругого запаса в зоне.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c01",
+        "geo.basniev.ch24s1.04.c02"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k01",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "front": "Среднее падение давления при линейном профиле",
+      "back": "Δp = (pк − pг)/2 — половина депрессии на галерее.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c05"
+      ],
+      "kind": "idea",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k02",
+      "node_id": "geo.basniev.ch24s1.04"
+    },
+    {
+      "front": "V(t) — это объём добытой жидкости?",
+      "back": "Нет. V(t) = Bh·l(t) — объём всей затронутой породы.",
+      "claim_ids": [
+        "geo.basniev.ch24s1.04.c03"
+      ],
+      "kind": "mistake",
+      "page": 495,
+      "id": "geo.basniev.ch24s1.04.k03",
+      "node_id": "geo.basniev.ch24s1.04"
+    }
+  ]
+}

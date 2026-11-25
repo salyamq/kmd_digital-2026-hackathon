@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 43. Как падает давление около скважины — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s5_2.13" data-index="43">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Видео-разбор</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Когда точное решение применимо и как ввести движущуюся границу › Шаг 43 из 60</p>
+    <h1>Как падает давление около скважины</h1>
+    <p class="booktitle">В книге: «Плоскорадиальный фильтрационный поток упругой жидкости. Основная формула теории упругого режима фильтрации» <span class="pg">стр. 493</span></p>
+    <p class="meta">
+      <span class="chip">≈ 8 мин</span>
+      <span class="chip">▶ Видео-разбор</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-38.html">шаг 38 «Когда достаточно логарифма»</a> <span class="muted">(предпосылка)</span>, <a href="step-39.html">шаг 39 «Расход и скорость вокруг скважины»</a> <span class="muted">(предпосылка)</span>, <a href="step-31.html">шаг 31 «Как задать пуск скважины»</a> <span class="muted">(опровергает заблуждение)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Вблизи скважины с постоянным дебитом профили давления логарифмические.</p><p>Давление на забое со временем падает, а наклон профиля у забоя остаётся тем же.</p><p>В ближней зоне r² ≤ 0,03·4κt градиент почти не зависит от времени, как при установившейся фильтрации.</p><p class="threshold"><b>Пороговая идея.</b> Давление может продолжать снижаться, хотя радиальный градиент вблизи скважины почти не меняется во времени. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Видеоразбор</h2>
+      <div class="lesson-media">
+        <div class="video">
+        <video controls preload="metadata" playsinline src="../video/geo.basniev.s5_2.13/long.mp4" aria-label="Как падает давление около скважины">
+<track kind="subtitles" srclang="ru" label="Русские субтитры" src="media/geo-basniev-s5-2-13-long.vtt" default>          <a href="../video/geo.basniev.s5_2.13/long.mp4">Открыть ролик</a>
+        </video>
+        </div>
+        <div class="media-notes">
+<p class="kicker">130 с · 16:9</p>          <h3>После просмотра</h3><p>Как бы вы автоматически проверяли, к каким замерам можно применять эту формулу?</p>
+<a class="btn" href="#check">К заданиям <span aria-hidden="true">↓</span></a>        </div>
+        <details class="transcript">
+          <summary>Текст видео и источники</summary>
+          <ol>
+            <li><a class="cue-time" data-seek="0.35" href="../video/geo.basniev.s5_2.13/long.mp4#t=0.35" aria-label="Перейти к 0:00">0:00</a>
+              <span>Давление на забое всё время падает. Почему же наклон профиля у забоя не меняется? </span></li>
+            <li><a class="cue-time" data-seek="6.567" href="../video/geo.basniev.s5_2.13/long.mp4#t=6.567" aria-label="Перейти к 0:06">0:06</a>
+              <span>Смотрим на скважину, которую пустили в работу с постоянным дебитом. <a class="pg" href="#src-geo.basniev.s5_2.13.c01">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="10.813" href="../video/geo.basniev.s5_2.13/long.mp4#t=10.813" aria-label="Перейти к 0:10">0:10</a>
+              <span>Слева — вид сверху: цветом показано, насколько давление упало вокруг скважины. </span></li>
+            <li><a class="cue-time" data-seek="16.179" href="../video/geo.basniev.s5_2.13/long.mp4#t=16.179" aria-label="Перейти к 0:16">0:16</a>
+              <span>Справа — профиль: как давление меняется с расстоянием от скважины. Это пьезометрическая кривая. </span></li>
+            <li><a class="cue-time" data-seek="23.439" href="../video/geo.basniev.s5_2.13/long.mp4#t=23.439" aria-label="Перейти к 0:23">0:23</a>
+              <span>Как будет меняться давление на забое, пока скважина работает? </span></li>
+            <li><a class="cue-time" data-seek="28.703" href="../video/geo.basniev.s5_2.13/long.mp4#t=28.703" aria-label="Перейти к 0:28">0:28</a>
+              <span>Оно падает с течением времени: профиль у скважины опускается всё ниже. <a class="pg" href="#src-geo.basniev.s5_2.13.c08">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="33.221" href="../video/geo.basniev.s5_2.13/long.mp4#t=33.221" aria-label="Перейти к 0:33">0:33</a>
+              <span>Для примера тонкими линиями оставлены профили через час, шесть часов и сутки. </span></li>
+            <li><a class="cue-time" data-seek="38.361" href="../video/geo.basniev.s5_2.13/long.mp4#t=38.361" aria-label="Перейти к 0:38">0:38</a>
+              <span>Для масштаба: пласт условно толщиной десять метров, а область падения давления — сотни метров. </span></li>
+            <li><a class="cue-time" data-seek="44.267" href="../video/geo.basniev.s5_2.13/long.mp4#t=44.267" aria-label="Перейти к 0:44">0:44</a>
+              <span>Допустим, пласт однородный и горизонтальный: тогда жидкость идёт к скважине по горизонтали. </span></li>
+            <li><a class="cue-time" data-seek="50.12" href="../video/geo.basniev.s5_2.13/long.mp4#t=50.12" aria-label="Перейти к 0:50">0:50</a>
+              <span>Теперь растянем область у скважины: расстояние отложим в логарифмической шкале. </span></li>
+            <li><a class="cue-time" data-seek="55.04" href="../video/geo.basniev.s5_2.13/long.mp4#t=55.04" aria-label="Перейти к 0:55">0:55</a>
+              <span>Вблизи забоя профили становятся прямыми — значит, это логарифмические линии. <a class="pg" href="#src-geo.basniev.s5_2.13.c07">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="60.235" href="../video/geo.basniev.s5_2.13/long.mp4#t=60.235" aria-label="Перейти к 1:00">1:00</a>
+              <span>Для точек у забоя автор так и считает — по логарифмической формуле. Она показана штрихом. <a class="pg" href="#src-geo.basniev.s5_2.13.c02">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="67.052" href="../video/geo.basniev.s5_2.13/long.mp4#t=67.052" aria-label="Перейти к 1:07">1:07</a>
+              <span>Со временем вся линия опускается: давление на забое падает, это видно на графике справа. <a class="pg" href="#src-geo.basniev.s5_2.13.c08">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="72.58" href="../video/geo.basniev.s5_2.13/long.mp4#t=72.58" aria-label="Перейти к 1:12">1:12</a>
+              <span>Но новые линии параллельны старым: углы наклона касательных на забое одинаковы. <a class="pg" href="#src-geo.basniev.s5_2.13.c09">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="77.54" href="../video/geo.basniev.s5_2.13/long.mp4#t=77.54" aria-label="Перейти к 1:17">1:17</a>
+              <span>Одинаковый наклон не значит, что давление на забое стоит: оно продолжает падать. <a class="pg" href="#src-geo.basniev.s5_2.13.c08">стр. 493</a> <a class="pg" href="#src-geo.basniev.s5_2.13.c09">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="82.677" href="../video/geo.basniev.s5_2.13/long.mp4#t=82.677" aria-label="Перейти к 1:22">1:22</a>
+              <span>Наклон профиля — это градиент давления. Его находят, дифференцируя давление по радиусу. <a class="pg" href="#src-geo.basniev.s5_2.13.c03">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="89.916" href="../video/geo.basniev.s5_2.13/long.mp4#t=89.916" aria-label="Перейти к 1:29">1:29</a>
+              <span>Автор задаёт ближнюю зону: квадрат радиуса не больше трёх сотых от четырёх каппа тэ. <a class="pg" href="#src-geo.basniev.s5_2.13.c04">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="95.386" href="../video/geo.basniev.s5_2.13/long.mp4#t=95.386" aria-label="Перейти к 1:35">1:35</a>
+              <span>Каппа — пьезопроводность пласта, тэ — время после пуска скважины. </span></li>
+            <li><a class="cue-time" data-seek="100.255" href="../video/geo.basniev.s5_2.13/long.mp4#t=100.255" aria-label="Перейти к 1:40">1:40</a>
+              <span>Внутри этой зоны градиент давления практически не зависит от времени. <a class="pg" href="#src-geo.basniev.s5_2.13.c05">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="104.649" href="../video/geo.basniev.s5_2.13/long.mp4#t=104.649" aria-label="Перейти к 1:44">1:44</a>
+              <span>И считается он так же, как при установившемся притоке несжимаемой жидкости. <a class="pg" href="#src-geo.basniev.s5_2.13.c06">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="109.356" href="../video/geo.basniev.s5_2.13/long.mp4#t=109.356" aria-label="Перейти к 1:49">1:49</a>
+              <span>За границей зоны точное решение и логарифмическая формула расходятся — это видно на профиле. <a class="pg" href="#src-geo.basniev.s5_2.13.c04">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="115.123" href="../video/geo.basniev.s5_2.13/long.mp4#t=115.123" aria-label="Перейти к 1:55">1:55</a>
+              <span>Вывод для практики: у забоя градиент берут из логарифмической формулы, дифференцируя её по радиусу. <a class="pg" href="#src-geo.basniev.s5_2.13.c02">стр. 493</a> <a class="pg" href="#src-geo.basniev.s5_2.13.c03">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="121.667" href="../video/geo.basniev.s5_2.13/long.mp4#t=121.667" aria-label="Перейти к 2:01">2:01</a>
+              <span>Но сначала проверяют, что точка лежит в ближней зоне. <a class="pg" href="#src-geo.basniev.s5_2.13.c04">стр. 493</a> </span></li>
+            <li><a class="cue-time" data-seek="125.316" href="../video/geo.basniev.s5_2.13/long.mp4#t=125.316" aria-label="Перейти к 2:05">2:05</a>
+              <span>Как бы вы автоматически проверяли, к каким замерам можно применять эту формулу? </span></li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что рассматриваем</h3>          <div class="para" id="how-1">
+            <p>Автор показывает <strong class="term">пьезометрические кривые</strong> вблизи скважины с постоянным дебитом Q₀. Пьезометрическая кривая — профиль давления по расстоянию в выбранный момент. Их показывает рис. 23.4. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c01"><p>«В заключение покажем, как ведут себя пьезометрические кривые вблизи скважины, которая эксплуатируется с постоянным дебитом Q₀ (рис. 23.4).»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как получить градиент</h3>          <div class="para" id="how-2">
+            <p>Для точек вблизи забоя автор берёт логарифмическую формулу (23.53). Её дифференцируют по радиусу r и получают градиент давления. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c02"><p>«Для точек вблизи забоя можно пользоваться формулой (23.53).»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c03"><p>«Продифференцировав ее по координате r, найдем градиент давления»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Ближняя зона</h3>          <div class="para" id="how-3">
+            <p>Вывод о градиенте верен для радиусов, где r² ≤ 0,03·4κt. По выводу автора, там градиент практически не зависит от времени. Его формула та же, что для <strong class="term">установившейся фильтрации</strong> несжимаемой жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c04"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c05"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— автор, стр. 493 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c06"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— автор, стр. 493 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Форма кривых</h3>          <div class="para" id="how-4">
+            <p>Для этих радиусов пьезометрические кривые — логарифмические линии. Давление на забое падает с течением времени. Углы наклона касательных θ на забое одинаковы для всех кривых. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c07"><p>«Для указанных значений r пьезометрические кривые представляют собой логарифмические линии (рис. 23.4).»</p><footer>— автор, стр. 493 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c08"><p>«Давление на забое скважины падает с течением времени, углы наклона касательных θ на забое одинаковы для всех кривых.»</p><footer>— автор, стр. 493 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c09"><p>«Давление на забое скважины падает с течением времени, углы наклона касательных θ на забое одинаковы для всех кривых.»</p><footer>— автор, стр. 493 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_s5_2_13__1_m.svg"><img src="img/geo_basniev_s5_2_13__1.svg" alt="Слева профили давления от расстояния в логарифмической шкале для трёх моментов: у скважины линии параллельны и опускаются со временем. Справа падение забойного давления во времени." loading="lazy"></picture>  </div>
+  <figcaption>
+    У забоя профили — параллельные логарифмические линии: давление падает, наклон тот же. Отмечена ближняя зона r² ≤ 0,03·4κt. Значения параметров условные.
+    <span class="ill-meta">Класс B · симуляция · нарисовано кодом · стр. 493</span>
+  </figcaption>
+</figure>
+<h3>Обозначения на рисунке</h3>          <div class="para" id="how-5">
+            <p>На рис. 23.4 rс — радиус скважины. Rк — радиус кругового контура питания или круговой непроницаемой границы пласта. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c10"><p>«при пуске скважины с постоянным дебитом Q₀; rc – радиус скважины»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.s5_2.13.c11"><p>«Rк – радиус кругового контура питания или радиус круговой непроницаемой границы пласта.»</p><footer>— автор, стр. 493 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Частая ошибка</h3>          <div class="para" id="how-6">
+            <p>Одинаковый наклон у забоя не значит, что давление там не меняется. Кривые сдвигаются вниз целиком, сохраняя наклон. Вдали от скважины вывод о неизменном градиенте без проверки порога переносить нельзя. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+          </div>
+<h3>Нюанс</h3>          <div class="para" id="how-7">
+            <p>В извлечённой записи градиента нет толщины пласта h в знаменателе. При дифференцировании (23.53) множитель h остаётся. Без него размерность не совпадает с давлением на расстояние. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как исследовать давление у забоя</p>        <ol class="proc"><li>Вблизи забоя примените логарифмическую формулу давления (23.53). <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li><li>Продифференцируйте давление по радиусу. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li><li>Проверьте условие ближней зоны r² ≤ 0,03·4κt. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li><li>На профилях сравните изменение давления и наклоны касательных у забоя. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Ближняя зона: r² ≤ 0,03·4κt. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li><li>В ближней зоне градиент практически не зависит от времени. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.basniev.s5_2.13.f01">
+          <div class="tex-display" data-tex="\frac{\partial p}{\partial r}=\frac{Q_0\mu}{2\pi kr}">$$\frac{\partial p}{\partial r}=\frac{Q_0\mu}{2\pi kr}$$</div>
+          <p>Запись градиента в извлечённом источнике: в знаменателе нет толщины пласта. Не использовать для вычислений без проверки. <span class="pg">стр. 493</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>давление</td><td>Па</td></tr><tr><td>$r$</td><td>расстояние от оси скважины</td><td>м</td></tr><tr><td>$Q_0$</td><td>постоянный объёмный дебит скважины</td><td>м³/с</td></tr><tr><td>$\mu$</td><td>динамическая вязкость жидкости</td><td>Па·с</td></tr><tr><td>$k$</td><td>проницаемость породы</td><td>м²</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.basniev.s5_2.13.f02">
+          <div class="tex-display" data-tex="r^2\le0{,}03\cdot4\kappa t">$$r^2\le0{,}03\cdot4\kappa t$$</div>
+          <p>Граница области, где градиент практически не зависит от времени. <span class="pg">стр. 493</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$r$</td><td>расстояние от оси скважины</td><td>м</td></tr><tr><td>$\kappa$</td><td>коэффициент пьезопроводности</td><td>м²/с</td></tr><tr><td>$t$</td><td>время после пуска</td><td>с</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Одинаковый наклон профиля означает, что давление на забое не меняется.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> По автору, наклоны касательных при забое одинаковы, но давление на забое продолжает снижаться. <span class="pg" title="Страница книги (по PDF)">стр. 493</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Для точек вблизи забоя берут логарифмическую формулу давления и дифференцируют её по радиусу.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Дебит, радиус, время, пьезопроводность и параметры формулы для давления.</dd>
+          <dt>Выход</dt><dd>Градиент и форма пьезометрических кривых около скважины.</dd>
+          <dt>Где ломается</dt><dd>Далеко от скважины нельзя переносить вывод о неизменном во времени градиенте без проверки порога.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Дебит, радиус, время, пьезопроводность и параметры формулы для давления.</dd>
+            <dt>Ручные шаги</dt><dd>Вычислить аргумент, сверить границу ближней зоны, проверить градиент дифференцированием.</dd>
+            <dt>Точки суждения</dt><dd>Не смешивать производную по радиусу и изменение давления по времени.</dd>
+            <dt>Время</dt><dd>Дифференцирование быстрое, но нужна проверка размерностей.</dd>
+            <dt>Типичные ошибки</dt><dd>Из совпадения наклонов сделать вывод, что давление на забое перестало падать.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как несколько профилей сигнала могут иметь одинаковый наклон вблизи точки, хотя их уровни продолжают расходиться.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> У пластового давления пространственная форма следует из модели процесса, а не из вычитания постоянного смещения произвольного сигнала.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Проверка градиента по формуле давления <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>При дифференцировании (23.53) в знаменателе остаётся множитель h — толщина пласта. Напечатанная в извлечённом тексте правая часть без h имеет размерность давления, а не давления на расстояние.</p></details>
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 23.4. Рис. 23.4. Пьезометрические кривые при пуске скважины с постоянным дебитом Q₀; rc – радиус скважины; Rк – радиус кругового контура питания или радиус круговой непроницаемой границы пласта. <span class="pg">стр. 493</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Пьезометрическая кривая</dt><dd>Здесь профиль давления по расстоянию от скважины в выбранный момент. <span class="pg">стр. 493</span> <span class="chip chip-model">модель</span></dd><dt>Градиент давления</dt><dd>Изменение давления на единицу расстояния по радиусу. <span class="pg">стр. 493</span> <span class="chip chip-model">модель</span></dd><dt>Забой</dt><dd>Нижняя часть скважины, где она сообщается с пластом. <span class="pg">стр. 493</span> <span class="chip chip-model">модель</span></dd><dt>Установившаяся фильтрация</dt><dd>Движение жидкости, при котором характеристики потока в каждой точке не меняются со временем. <span class="pg">стр. 493</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s5_2-13-t01" data-task="geo.basniev.s5_2.13.t01" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-basniev-s5_2-13-t01">Ближняя зона задана неравенством r² ≤ N·4κt. Чему равно N?</label>
+  <p class="numeric"><input id="in-geo-basniev-s5_2-13-t01" type="text" inputmode="decimal" autocomplete="off" size="10"> </p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 0,03</p>
+    <p class="fb-expl">Автор задаёт ближнюю зону как r² ≤ 0,03·4κt. <a href="#numbers">Где это в тексте (стр. 493) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_2-13-t02" data-task="geo.basniev.s5_2.13.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что происходит у забоя со временем при постоянном дебите?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t02" value="0"> <span>Давление падает, а наклон касательной тот же</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t02" value="1"> <span>Давление растёт, наклон уменьшается</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t02" value="2"> <span>Давление и наклон не меняются</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Давление падает, а наклон касательной тот же</p>
+    <p class="fb-expl">Кривые сдвигаются вниз, сохраняя наклон у забоя. <a href="#how-4">Где это в тексте (стр. 493) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s5_2-13-t03" data-task="geo.basniev.s5_2.13.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">На какую формулу похож градиент в ближней зоне?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t03" value="0"> <span>Ни на какую: он растёт со временем</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t03" value="1"> <span>На формулу установившейся фильтрации несжимаемой жидкости</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s5_2.13.t03" value="2"> <span>На формулу для галереи по ПССС</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> На формулу установившейся фильтрации несжимаемой жидкости</p>
+    <p class="fb-expl">Автор прямо связывает градиент в ближней зоне с установившимся случаем. <a href="#how-3">Где это в тексте (стр. 493) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s5_2.13.c01"><p>Кривые рассматриваются после пуска скважины с постоянным дебитом. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В заключение покажем, как ведут себя пьезометрические кривые вблизи скважины, которая эксплуатируется с постоянным дебитом Q₀ (рис. 23.4).»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c02"><p>Для точек вблизи забоя автор применяет логарифмическую формулу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Для точек вблизи забоя можно пользоваться формулой (23.53).»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c03"><p>Градиент выводят дифференцированием давления по радиусу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Продифференцировав ее по координате r, найдем градиент давления»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c04"><p>Порог ближней зоны для вывода о градиенте: квадрат радиуса не больше 0,03 · 4κt. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c05"><p>В указанной ближней зоне градиент давления практически не зависит от времени. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c06"><p>В ближней зоне градиент описывается той же формулой, что и для стационарной плоскорадиальной фильтрации несжимаемой жидкости. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Из этой формулы следует, что градиент давления для значений r, удовлетворяющих неравенству r² ≤ 0,03 · 4κt, практически не зависит от времени и определяется по той же формуле, что и для установившейся плоскорадиальной фильтрации несжимаемой жидкости.»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c07"><p>Для указанных радиусов пьезометрические кривые логарифмические. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Для указанных значений r пьезометрические кривые представляют собой логарифмические линии (рис. 23.4).»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c08"><p>Давление на забое уменьшается со временем. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Давление на забое скважины падает с течением времени, углы наклона касательных θ на забое одинаковы для всех кривых.»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c09"><p>Углы наклона касательных на забое одинаковы для всех показанных кривых. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Давление на забое скважины падает с течением времени, углы наклона касательных θ на забое одинаковы для всех кривых.»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c10"><p>В подписи к рисунку радиус скважины обозначен как rc. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«при пуске скважины с постоянным дебитом Q₀; rc – радиус скважины»</p><footer>— стр. 493</footer></blockquote></li>
+        <li id="src-geo.basniev.s5_2.13.c11"><p>В подписи к рисунку внешний радиус определён как радиус кругового контура питания или круговой непроницаемой границы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Rк – радиус кругового контура питания или радиус круговой непроницаемой границы пласта.»</p><footer>— стр. 493</footer></blockquote></li>
+      </ol>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-42.html" rel="prev"><span>← Назад</span><b>Насколько важен радиус скважины</b></a><a class="next" href="step-44.html" rel="next"><span>Дальше →</span><b>Зачем нужны приближённые методы</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s5_2.13.t01", "type": "numeric", "question": "Ближняя зона задана неравенством r² ≤ N·4κt. Чему равно N?", "explanation": "Автор задаёт ближнюю зону как r² ≤ 0,03·4κt.", "page": 493, "link": "#numbers", "step_title": "Как падает давление около скважины", "step_index": 43, "node_id": "geo.basniev.s5_2.13", "key": {"answer": 0.03, "tolerance": 0.001}, "unit": "", "answer_text": "0,03"}, {"id": "geo.basniev.s5_2.13.t02", "type": "single", "question": "Что происходит у забоя со временем при постоянном дебите?", "explanation": "Кривые сдвигаются вниз, сохраняя наклон у забоя.", "page": 493, "link": "#how-4", "step_title": "Как падает давление около скважины", "step_index": 43, "node_id": "geo.basniev.s5_2.13", "options": ["Давление падает, а наклон касательной тот же", "Давление растёт, наклон уменьшается", "Давление и наклон не меняются"], "key": [0], "answer_text": "Давление падает, а наклон касательной тот же"}, {"id": "geo.basniev.s5_2.13.t03", "type": "single", "question": "На какую формулу похож градиент в ближней зоне?", "explanation": "Автор прямо связывает градиент в ближней зоне с установившимся случаем.", "page": 493, "link": "#how-3", "step_title": "Как падает давление около скважины", "step_index": 43, "node_id": "geo.basniev.s5_2.13", "options": ["Ни на какую: он растёт со временем", "На формулу установившейся фильтрации несжимаемой жидкости", "На формулу для галереи по ПССС"], "key": [1], "answer_text": "На формулу установившейся фильтрации несжимаемой жидкости"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

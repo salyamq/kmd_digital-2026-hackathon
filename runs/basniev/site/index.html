@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="index">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html" aria-current="page">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<main id="main" class="content wide" tabindex="-1">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="catalog-byline">К. С. Басниев и др. · 2005</p>
+      <h1>Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</h1>
+      <p class="booktitle">«Нефтегазовая гидромеханика»</p>
+      <div class="resume">
+        <a class="btn primary start" href="step-01.html">Начать с шага 1</a>
+<a href="before.html">Перед главой</a>        <span class="resume-note" aria-live="polite"></span>
+      </div>
+    </div>
+    <dl class="hero-stats">
+      <div><dt>Шагов</dt><dd>60</dd></div>
+      <div><dt>Время</dt><dd>≈ 359 мин</dd></div>
+      <div><dt>Заданий</dt><dd>141</dd></div>
+      <div><dt>Карточек</dt><dd>163</dd></div>
+    </dl>
+  </section>
+
+  <a class="feature-link" href="step-43.html#media">
+    <span class="muted">Видео · шаг 43</span>
+    <span><strong>Как падает давление около скважины</strong> <span aria-hidden="true">→</span></span>
+  </a>
+
+  <section aria-labelledby="h-path">
+    <h2 id="h-path">Путь по главе</h2>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 1</span> Что движет жидкость и как это описать</h3>
+      <ol class="path" start="1">
+        <li class="path-step" data-node="geo.basniev.s1.01">
+          <a href="step-01.html">
+            <span class="ps-num" aria-hidden="true">1</span>
+            <span class="ps-body"><span class="ps-title">Почему пласт отвечает скважине</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 7 мин · стр. 474</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s1.02">
+          <a href="step-02.html">
+            <span class="ps-num" aria-hidden="true">2</span>
+            <span class="ps-body"><span class="ps-title">Есть ли у пласта подпитка водой</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 474</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s1.03">
+          <a href="step-03.html">
+            <span class="ps-num" aria-hidden="true">3</span>
+            <span class="ps-body"><span class="ps-title">Что замедляет перераспределение давления</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 6 мин · стр. 475</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s2.01">
+          <a href="step-04.html">
+            <span class="ps-num" aria-hidden="true">4</span>
+            <span class="ps-body"><span class="ps-title">Что такое упругий запас</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 8 мин · стр. 475–476</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s2.02">
+          <a href="step-05.html">
+            <span class="ps-num" aria-hidden="true">5</span>
+            <span class="ps-body"><span class="ps-title">Один коэффициент для жидкости и пласта</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 476</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s2.03">
+          <a href="step-06.html">
+            <span class="ps-num" aria-hidden="true">6</span>
+            <span class="ps-body"><span class="ps-title">Как отбор меняет упругий запас</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 476–477</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s3.01">
+          <a href="step-07.html">
+            <span class="ps-num" aria-hidden="true">7</span>
+            <span class="ps-body"><span class="ps-title">Зачем изучать упругую фильтрацию</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 477</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s3.03">
+          <a href="step-08.html">
+            <span class="ps-num" aria-hidden="true">8</span>
+            <span class="ps-body"><span class="ps-title">Какие свойства зависят от давления</span>
+            <span class="ps-meta">▤ Карточки · ≈ 4 мин · стр. 478</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s3.02">
+          <a href="step-09.html">
+            <span class="ps-num" aria-hidden="true">9</span>
+            <span class="ps-body"><span class="ps-title">Из чего складывается модель течения</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 478</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s4.01">
+          <a href="step-10.html">
+            <span class="ps-num" aria-hidden="true">10</span>
+            <span class="ps-body"><span class="ps-title">Одно уравнение для давления</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 479</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 2</span> От баланса массы к форме профиля давления</h3>
+      <ol class="path" start="11">
+        <li class="path-step" data-node="geo.basniev.s4.02">
+          <a href="step-11.html">
+            <span class="ps-num" aria-hidden="true">11</span>
+            <span class="ps-body"><span class="ps-title">Как упростить накопление массы</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 479–480</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s4.03">
+          <a href="step-12.html">
+            <span class="ps-num" aria-hidden="true">12</span>
+            <span class="ps-body"><span class="ps-title">Как упрощают перенос жидкости</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 480</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s4.04">
+          <a href="step-13.html">
+            <span class="ps-num" aria-hidden="true">13</span>
+            <span class="ps-body"><span class="ps-title">Как работает уравнение пьезопроводности</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 8 мин · стр. 480–481</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5.01">
+          <a href="step-14.html">
+            <span class="ps-num" aria-hidden="true">14</span>
+            <span class="ps-body"><span class="ps-title">Переход к одномерным потокам</span>
+            <span class="ps-meta">¶ Текст · ≈ 3 мин · стр. 481</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.01">
+          <a href="step-15.html">
+            <span class="ps-num" aria-hidden="true">15</span>
+            <span class="ps-body"><span class="ps-title">Что задано у галереи</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 481</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.02">
+          <a href="step-16.html">
+            <span class="ps-num" aria-hidden="true">16</span>
+            <span class="ps-body"><span class="ps-title">Три условия для давления</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 482</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.03">
+          <a href="step-17.html">
+            <span class="ps-num" aria-hidden="true">17</span>
+            <span class="ps-body"><span class="ps-title">Один аргумент вместо трёх</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 482</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.04">
+          <a href="step-18.html">
+            <span class="ps-num" aria-hidden="true">18</span>
+            <span class="ps-body"><span class="ps-title">Как меняются частные производные</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 482–483</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.05">
+          <a href="step-19.html">
+            <span class="ps-num" aria-hidden="true">19</span>
+            <span class="ps-body"><span class="ps-title">От уравнения к наклону профиля</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 483</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.06">
+          <a href="step-20.html">
+            <span class="ps-num" aria-hidden="true">20</span>
+            <span class="ps-body"><span class="ps-title">Границы задают масштаб профиля</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 483</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 3</span> Как управление галереей меняет давление и отбор</h3>
+      <ol class="path" start="21">
+        <li class="path-step" data-node="geo.basniev.s5_1.07">
+          <a href="step-21.html">
+            <span class="ps-num" aria-hidden="true">21</span>
+            <span class="ps-body"><span class="ps-title">От интеграла к давлению в пласте</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 7 мин · стр. 483–484</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.08">
+          <a href="step-22.html">
+            <span class="ps-num" aria-hidden="true">22</span>
+            <span class="ps-body"><span class="ps-title">Как градиент превращается в дебит</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 484–485</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.09">
+          <a href="step-23.html">
+            <span class="ps-num" aria-hidden="true">23</span>
+            <span class="ps-body"><span class="ps-title">От дебита к добытому объёму</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 6 мин · стр. 485</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.10">
+          <a href="step-24.html">
+            <span class="ps-num" aria-hidden="true">24</span>
+            <span class="ps-body"><span class="ps-title">Пуск галереи с постоянным дебитом</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 485</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.11">
+          <a href="step-25.html">
+            <span class="ps-num" aria-hidden="true">25</span>
+            <span class="ps-body"><span class="ps-title">Уравнение для скорости фильтрации</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 485–486</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.12">
+          <a href="step-26.html">
+            <span class="ps-num" aria-hidden="true">26</span>
+            <span class="ps-body"><span class="ps-title">Шаблон решения для скорости</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 486</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.13">
+          <a href="step-27.html">
+            <span class="ps-num" aria-hidden="true">27</span>
+            <span class="ps-body"><span class="ps-title">Скорость от галереи вглубь пласта</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 486</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.14">
+          <a href="step-28.html">
+            <span class="ps-num" aria-hidden="true">28</span>
+            <span class="ps-body"><span class="ps-title">Давление из профиля скорости</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 487</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.15">
+          <a href="step-29.html">
+            <span class="ps-num" aria-hidden="true">29</span>
+            <span class="ps-body"><span class="ps-title">Дальняя граница даёт давление галереи</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 487–488</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_1.16">
+          <a href="step-30.html">
+            <span class="ps-num" aria-hidden="true">30</span>
+            <span class="ps-body"><span class="ps-title">Когда постоянный дебит невозможен</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 6 мин · стр. 488</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 4</span> Как рассчитать давление вокруг скважины</h3>
+      <ol class="path" start="31">
+        <li class="path-step" data-node="geo.basniev.s5_2.01">
+          <a href="step-31.html">
+            <span class="ps-num" aria-hidden="true">31</span>
+            <span class="ps-body"><span class="ps-title">Как задать пуск скважины</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 488</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.02">
+          <a href="step-32.html">
+            <span class="ps-num" aria-hidden="true">32</span>
+            <span class="ps-body"><span class="ps-title">Свернуть расстояние и время в одну координату</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 489</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.03">
+          <a href="step-33.html">
+            <span class="ps-num" aria-hidden="true">33</span>
+            <span class="ps-body"><span class="ps-title">Уравнение с одной переменной вместо двух</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 489</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.04">
+          <a href="step-34.html">
+            <span class="ps-num" aria-hidden="true">34</span>
+            <span class="ps-body"><span class="ps-title">Сначала найти производную давления</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 489–490</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.05">
+          <a href="step-35.html">
+            <span class="ps-num" aria-hidden="true">35</span>
+            <span class="ps-body"><span class="ps-title">Восстановить давление по двум условиям</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 490</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.06">
+          <a href="step-36.html">
+            <span class="ps-num" aria-hidden="true">36</span>
+            <span class="ps-body"><span class="ps-title">Основная формула упругого режима</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 490–491</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.07">
+          <a href="step-37.html">
+            <span class="ps-num" aria-hidden="true">37</span>
+            <span class="ps-body"><span class="ps-title">Как вычислить функцию Ei рядом</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 491</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.08">
+          <a href="step-38.html">
+            <span class="ps-num" aria-hidden="true">38</span>
+            <span class="ps-body"><span class="ps-title">Когда достаточно логарифма</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 7 мин · стр. 491</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.09">
+          <a href="step-39.html">
+            <span class="ps-num" aria-hidden="true">39</span>
+            <span class="ps-body"><span class="ps-title">Расход и скорость вокруг скважины</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 492</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.10">
+          <a href="step-40.html">
+            <span class="ps-num" aria-hidden="true">40</span>
+            <span class="ps-body"><span class="ps-title">Два масштаба безразмерного времени</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 492</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 5</span> Когда точное решение применимо и как ввести движущуюся границу</h3>
+      <ol class="path" start="41">
+        <li class="path-step" data-node="geo.basniev.s5_2.12">
+          <a href="step-41.html">
+            <span class="ps-num" aria-hidden="true">41</span>
+            <span class="ps-body"><span class="ps-title">Проверить влияние внешней границы</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 493</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.11">
+          <a href="step-42.html">
+            <span class="ps-num" aria-hidden="true">42</span>
+            <span class="ps-body"><span class="ps-title">Насколько важен радиус скважины</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 10 мин · стр. 492</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.s5_2.13">
+          <a href="step-43.html">
+            <span class="ps-num" aria-hidden="true">43</span>
+            <span class="ps-body"><span class="ps-title">Как падает давление около скважины</span>
+            <span class="ps-meta">▶ Видео-разбор · ≈ 8 мин · стр. 493</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24.01">
+          <a href="step-44.html">
+            <span class="ps-num" aria-hidden="true">44</span>
+            <span class="ps-body"><span class="ps-title">Зачем нужны приближённые методы</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 494</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.01">
+          <a href="step-45.html">
+            <span class="ps-num" aria-hidden="true">45</span>
+            <span class="ps-body"><span class="ps-title">Нестационарный процесс как серия стационарных</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 6 мин · стр. 494</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.02">
+          <a href="step-46.html">
+            <span class="ps-num" aria-hidden="true">46</span>
+            <span class="ps-body"><span class="ps-title">Где проходит условный фронт давления</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 8 мин · стр. 494–495</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.03">
+          <a href="step-47.html">
+            <span class="ps-num" aria-hidden="true">47</span>
+            <span class="ps-body"><span class="ps-title">Галерея и линейный профиль давления</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 495</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.04">
+          <a href="step-48.html">
+            <span class="ps-num" aria-hidden="true">48</span>
+            <span class="ps-body"><span class="ps-title">Отбор равен убыли упругого запаса</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 495</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.05">
+          <a href="step-49.html">
+            <span class="ps-num" aria-hidden="true">49</span>
+            <span class="ps-body"><span class="ps-title">Фронт давления растёт как корень</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 496</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.06">
+          <a href="step-50.html">
+            <span class="ps-num" aria-hidden="true">50</span>
+            <span class="ps-body"><span class="ps-title">Давление у галереи и ошибка ПССС</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 9 мин · стр. 496</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 6</span> Как применять ПССС и понимать погрешность</h3>
+      <ol class="path" start="51">
+        <li class="path-step" data-node="geo.basniev.ch24s1.07">
+          <a href="step-51.html">
+            <span class="ps-num" aria-hidden="true">51</span>
+            <span class="ps-body"><span class="ps-title">Постоянное давление на галерее</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 496</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.08">
+          <a href="step-52.html">
+            <span class="ps-num" aria-hidden="true">52</span>
+            <span class="ps-body"><span class="ps-title">Длина зоны при постоянной депрессии</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 497</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.09">
+          <a href="step-53.html">
+            <span class="ps-num" aria-hidden="true">53</span>
+            <span class="ps-body"><span class="ps-title">Профиль, дебит и точность при постоянной депрессии</span>
+            <span class="ps-meta">⟳ Разбор источника · ≈ 8 мин · стр. 497</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.10">
+          <a href="step-54.html">
+            <span class="ps-num" aria-hidden="true">54</span>
+            <span class="ps-body"><span class="ps-title">Скважина с постоянным дебитом: логарифмический профиль</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 497–498</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.11">
+          <a href="step-55.html">
+            <span class="ps-num" aria-hidden="true">55</span>
+            <span class="ps-body"><span class="ps-title">Средняя депрессия в кольце вокруг скважины</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 498</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.12">
+          <a href="step-56.html">
+            <span class="ps-num" aria-hidden="true">56</span>
+            <span class="ps-body"><span class="ps-title">Как растёт радиус возмущения</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 498</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.13">
+          <a href="step-57.html">
+            <span class="ps-num" aria-hidden="true">57</span>
+            <span class="ps-body"><span class="ps-title">Давление в пласте и на забое</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 499</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.14">
+          <a href="step-58.html">
+            <span class="ps-num" aria-hidden="true">58</span>
+            <span class="ps-body"><span class="ps-title">Ошибка ПССС убывает со временем</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 8 мин · стр. 499</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.15">
+          <a href="step-59.html">
+            <span class="ps-num" aria-hidden="true">59</span>
+            <span class="ps-body"><span class="ps-title">Радиус по графику и дебит скважины</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 7 мин · стр. 499</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.basniev.ch24s1.16">
+          <a href="step-60.html">
+            <span class="ps-num" aria-hidden="true">60</span>
+            <span class="ps-body"><span class="ps-title">Где ПССС точен, а где груб</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 499–500</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="tiles" aria-label="Другие разделы">
+    <a class="tile" href="tasks.html"><b>Задания</b><span>Все 141 заданий главы с проверкой</span></a>
+    <a class="tile" href="cards.html"><b>Карточки</b><span>Повторение: «знаю / повторить»</span></a>
+    <a class="tile" href="summary.html"><b>Конспект</b><span>Суть шагов и выводы для данных; печать в PDF</span></a>
+    <a class="tile" href="map.html"><b>Карта связей</b><span>Какой шаг на какой опирается</span></a>
+  </section>
+</main>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

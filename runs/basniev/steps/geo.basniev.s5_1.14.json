@@ -1,0 +1,904 @@
+{
+  "node_id": "geo.basniev.s5_1.14",
+  "chapter": "basniev",
+  "index": 28,
+  "part": {
+    "id": "part3",
+    "title": "Как управление галереей меняет давление и отбор"
+  },
+  "title_beginner": "Давление из профиля скорости",
+  "title_book": "Прямолинейно-параллельный фильтрационный поток упругой жидкости",
+  "section": "s5_1",
+  "pages": [
+    487
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": null,
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "text",
+  "format_rationale": "Тип Ф: шаг вывода держится на формулах — формулы в тексте с расшифровкой, не в ролике.",
+  "order_rationale": "Из известной скорости восстанавливаем перепад давления интегрированием, включая вычисление поправки с функцией ошибок.",
+  "essence": [
+    "Давление в любой точке находят, интегрируя скорость фильтрации по расстоянию от галереи.",
+    "Получается давление галереи плюс перепад с дополнением erf и экспоненциальной поправкой.",
+    "Давление самой галереи пока неизвестно и меняется со временем."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        487
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "По **закону Дарси** скорость пропорциональна производной давления по расстоянию. Поэтому давление восстанавливают интегрированием по расстоянию. Время при этом фиксируют.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c01"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c01",
+              "quote": "Чтобы найти распределение давления в потоке, необходимо проинтегрировать уравнение (23.35) по $x$ при фиксированном времени $t$.",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Механизм",
+          "text": "Скорость в интеграле записывают через интегральное определение **функции ошибок**.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c02"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c02",
+              "quote": "$$\\frac{k}{\\mu} \\int_0^x \\frac{\\partial p}{\\partial x} dx = w_1 \\int_0^x \\left( 1 - \\frac{2}{\\sqrt{\\pi}} \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx.$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Механизм",
+          "text": "Интеграл производной давления даёт разность давлений: в точке и на галерее.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c03"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c03",
+              "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu}{k} w_1 x - \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx. \\quad (23.36)$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Как считают интеграл",
+          "text": "Постоянная часть скорости даёт член, линейный по расстоянию. Поправка содержит вложенный интеграл.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c04"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c04",
+              "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu}{k} w_1 x - \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx. \\quad (23.36)$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-5",
+          "section": "Как считают интеграл",
+          "text": "Последнее слагаемое вычисляют **интегрированием по частям** — приёмом, основанным на производной произведения.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c05"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c05",
+              "quote": "Последнее слагаемое в (23.36) интегрируется по частям",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-6",
+          "section": "Как считают интеграл",
+          "text": "После этого появляются произведение расстояния на интеграл вероятности и член с экспонентой.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c06"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c06",
+              "quote": "$$\\begin{aligned} \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du \\right) dx &= \\\\ &= \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\left[ x \\times \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du \\Bigg|_0^x - \\int_0^x x e^{-x^2/4\\kappa t} \\frac{dx}{2\\sqrt{\\kappa t}} \\right] = \\\\ &= \\frac{2\\mu w_1}{k\\sqrt{\\pi}} \\left[ x \\times \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du - \\sqrt{\\kappa t} \\left( 1 - e^{-x^2/4\\kappa t} \\right) \\right]. \\end{aligned}$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-7",
+          "section": "Как считают интеграл",
+          "text": "Итоговый перепад включает дополнение функции ошибок до единицы и экспоненциальную поправку.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c07"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c07",
+              "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu w_1}{k} x \\left[ 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) + \\frac{1 - e^{-x^2/4\\kappa t}}{\\frac{\\sqrt{\\pi}x}{2\\sqrt{\\kappa t}}} \\right]. \\quad (23.37)$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-8",
+          "section": "Давление в точке",
+          "text": "Давление при нулевой координате — давление на галерее в данный момент.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c08"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c08",
+              "quote": "С учетом того, что $p(0, t)$ есть давление на галерее, т.е. $p(0, t) = p_\\text{r}(t)$",
+              "page": 487,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-9",
+          "section": "Давление в точке",
+          "text": "Давление в любой точке равно давлению галереи плюс найденный перепад.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c09"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.basniev.s5_1.14.c09",
+              "quote": "$$p(x, t) = p_\\text{r} + \\frac{\\mu w_1}{k} \\left[ x \\left( 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) \\right) + \\frac{2\\sqrt{\\kappa t}}{\\sqrt{\\pi}} \\left( 1 - e^{-x^2/4\\kappa t} \\right) \\right]. \\quad (23.38)$$",
+              "page": 487,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-10",
+          "section": "Давление в точке",
+          "text": "Здесь давление галереи — функция времени, а не заданная постоянная. Его найдут на следующем шаге.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c08"
+          ],
+          "pages": [
+            487
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как восстановить давление",
+      "pages": [
+        487
+      ],
+      "items": [
+        {
+          "text": "Зафиксируйте время.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c01"
+          ],
+          "pages": [
+            487
+          ]
+        },
+        {
+          "text": "Проинтегрируйте градиент от галереи до заданной точки.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c03"
+          ],
+          "pages": [
+            487
+          ]
+        },
+        {
+          "text": "Выделите линейный вклад и вклад функции ошибок.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c04"
+          ],
+          "pages": [
+            487
+          ]
+        },
+        {
+          "text": "Проинтегрируйте вложенное слагаемое по частям.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c05",
+            "geo.basniev.s5_1.14.c06"
+          ],
+          "pages": [
+            487
+          ]
+        },
+        {
+          "text": "Выразите результат через функцию ошибок.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c07"
+          ],
+          "pages": [
+            487
+          ]
+        },
+        {
+          "text": "Добавьте давление галереи в этот момент.",
+          "claim_ids": [
+            "geo.basniev.s5_1.14.c09"
+          ],
+          "pages": [
+            487
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        487
+      ],
+      "items": [
+        {
+          "id": "geo.basniev.s5_1.14.f01",
+          "latex": "\\frac{k}{\\mu}\\int_0^x \\frac{\\partial p(s,t)}{\\partial s}\\,ds=w_1\\int_0^x\\left(1-\\frac{2}{\\sqrt\\pi}\\int_0^{s/(2\\sqrt{\\kappa t})} e^{-v^2}\\,dv\\right)\\,ds",
+          "meaning": "Интегрирование уравнения Дарси при фиксированном времени; верхний предел внутреннего интеграла восстановлен по профилю скорости.",
+          "vars": [
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "s",
+              "meaning": "переменная пространственного интегрирования",
+              "unit": "м"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "w_1",
+              "meaning": "заданная скорость фильтрации у галереи",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "\\pi",
+              "meaning": "число пи",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            },
+            {
+              "symbol": "v",
+              "meaning": "переменная интегрирования в функции ошибок",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "e",
+              "meaning": "основание натурального логарифма",
+              "unit": "безразмерно"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_02"
+        },
+        {
+          "id": "geo.basniev.s5_1.14.f02",
+          "latex": "p(x,t)-p(0,t)=\\frac{\\mu}{k}w_1x-\\frac{2\\mu}{k\\sqrt\\pi}w_1\\int_0^x\\left(\\int_0^{s/(2\\sqrt{\\kappa t})}e^{-v^2}\\,dv\\right)\\,ds\\tag{23.36}",
+          "meaning": "Разность давлений после выделения постоянного вклада скорости; верхний предел уточнён по соседним формулам.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "w_1",
+              "meaning": "заданная скорость фильтрации у галереи",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "\\pi",
+              "meaning": "число пи",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "s",
+              "meaning": "переменная пространственного интегрирования",
+              "unit": "м"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            },
+            {
+              "symbol": "v",
+              "meaning": "переменная интегрирования в функции ошибок",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "e",
+              "meaning": "основание натурального логарифма",
+              "unit": "безразмерно"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_04"
+        },
+        {
+          "id": "geo.basniev.s5_1.14.f03",
+          "latex": "\\frac{2\\mu w_1}{k\\sqrt\\pi}\\int_0^x\\left(\\int_0^{s/(2\\sqrt{\\kappa t})} e^{-v^2}\\,dv\\right)\\,ds=\\frac{2\\mu w_1}{k\\sqrt\\pi}\\left[x\\int_0^{x/(2\\sqrt{\\kappa t})} e^{-v^2}\\,dv-\\sqrt{\\kappa t}\\left(1-e^{-x^2/(4\\kappa t)}\\right)\\right]",
+          "meaning": "Вклад вложенного интеграла после интегрирования по частям.",
+          "vars": [
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "w_1",
+              "meaning": "заданная скорость фильтрации у галереи",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "\\pi",
+              "meaning": "число пи",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "s",
+              "meaning": "переменная пространственного интегрирования",
+              "unit": "м"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "v",
+              "meaning": "переменная интегрирования в функции ошибок",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "e",
+              "meaning": "основание натурального логарифма",
+              "unit": "безразмерно"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_06"
+        },
+        {
+          "id": "geo.basniev.s5_1.14.f04",
+          "latex": "p(x, t) - p(0, t) = \\frac{\\mu w_1}{k} x \\left[ 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) + \\frac{1 - e^{-x^2/4\\kappa t}}{\\frac{\\sqrt{\\pi}x}{2\\sqrt{\\kappa t}}} \\right]. \\quad (23.37)",
+          "meaning": "Разность давлений в явном виде.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "w_1",
+              "meaning": "заданная скорость фильтрации у галереи",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            },
+            {
+              "symbol": "e",
+              "meaning": "основание натурального логарифма",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "\\pi",
+              "meaning": "число пи",
+              "unit": "безразмерно"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_08"
+        },
+        {
+          "id": "geo.basniev.s5_1.14.f05",
+          "latex": "p(0,t)=p_{\\mathrm{r}}(t)",
+          "meaning": "Давление при нулевой координате.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "p_{\\mathrm{r}}(t)",
+              "meaning": "давление галереи",
+              "unit": "Па"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_09"
+        },
+        {
+          "id": "geo.basniev.s5_1.14.f06",
+          "latex": "p(x, t) = p_\\text{r} + \\frac{\\mu w_1}{k} \\left[ x \\left( 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) \\right) + \\frac{2\\sqrt{\\kappa t}}{\\sqrt{\\pi}} \\left( 1 - e^{-x^2/4\\kappa t} \\right) \\right]. \\quad (23.38)",
+          "meaning": "Давление в точке через давление галереи и пространственную поправку.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление жидкости в пласте",
+              "unit": "Па"
+            },
+            {
+              "symbol": "x",
+              "meaning": "расстояние от галереи",
+              "unit": "м"
+            },
+            {
+              "symbol": "t",
+              "meaning": "время от пуска",
+              "unit": "с"
+            },
+            {
+              "symbol": "p_{\\mathrm{r}}",
+              "meaning": "давление галереи",
+              "unit": "Па"
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "динамическая вязкость жидкости",
+              "unit": "Па·с"
+            },
+            {
+              "symbol": "w_1",
+              "meaning": "заданная скорость фильтрации у галереи",
+              "unit": "м/с"
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость пласта",
+              "unit": "м²"
+            },
+            {
+              "symbol": "\\kappa",
+              "meaning": "коэффициент пьезопроводности",
+              "unit": "м²/с"
+            },
+            {
+              "symbol": "\\pi",
+              "meaning": "число пи",
+              "unit": "безразмерно"
+            },
+            {
+              "symbol": "e",
+              "meaning": "основание натурального логарифма",
+              "unit": "безразмерно"
+            }
+          ],
+          "page": 487,
+          "unit_id": "u487_10"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Из профиля градиента восстанавливаются перепады между точками, а не абсолютный уровень.",
+        "inputs": "Профиль скорости, фиксированное время, проницаемость и вязкость.",
+        "outputs": "Разность давлений между точкой и галереей.",
+        "breaks_where": "Без опорного давления нельзя получить абсолютное давление.",
+        "hypotheses": [],
+        "by": "model",
+        "lens": {
+          "inputs": "Профиль скорости, фиксированное время, проницаемость и вязкость.",
+          "manual_steps": "Развести предел интегрирования и его внутреннюю переменную и проверить их единицы.",
+          "judgment_points": "Не подменить текущую координату конечным расстоянием или константой.",
+          "time": "Ручной контроль вложенных интегралов снижает риск ошибки переноса.",
+          "typical_errors": "Интегрировать по времени вместо координаты.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Интегрирование похоже на суммирование приращений вдоль пути.",
+        "breaks_where": "Сумма по траектории координаты не заменяет опорное значение давления и не является накоплением по времени.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Почему в верхнем пределе нужна координата",
+          "text": "В первых двух строках на этой странице в числителе верхнего предела напечатана единица. Профиль скорости и следующая выкладка по частям требуют текущую координату интегрирования. Без неё подынтегральная функция потеряла бы зависимость от расстояния.",
+          "by": "model"
+        },
+        {
+          "title": "Удобная запись в точке галереи",
+          "text": "В записи разности давлений с вынесенным расстоянием деление на расстояние даёт неопределённость на галерее. Раскрытая запись следующей формулы позволяет подставить нулевую координату непосредственно, не меняя результат.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "Галерея",
+          "definition": "Линейная выработка, через которую в этой задаче отбирают жидкость из пласта.",
+          "en": "gallery",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Скорость фильтрации",
+          "definition": "Отношение объёмного расхода к полной площади поперечного сечения среды.",
+          "en": "Darcy velocity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Градиент давления",
+          "definition": "В одномерной задаче — производная давления по расстоянию, то есть изменение давления на единицу длины.",
+          "en": "pressure gradient",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Закон Дарси",
+          "definition": "Связывает скорость фильтрации с градиентом давления, проницаемостью и вязкостью; знак зависит от направления отсчёта.",
+          "en": "Darcy’s law",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Функция ошибок",
+          "definition": "Нормированный интеграл функции вида e в степени минус квадрат; здесь описывает безразмерный профиль давления.",
+          "en": "error function",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пьезопроводность",
+          "definition": "Способность среды передавать изменения давления диффузионным образом; коэффициент имеет размерность площади, делённой на время.",
+          "en": "hydraulic diffusivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Галерея",
+          "definition": "Линейная выработка, через которую в этой задаче отбирают жидкость из пласта.",
+          "en": "gallery",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Интегрирование по частям",
+          "definition": "Приём интегрирования, основанный на формуле производной произведения.",
+          "en": "integration by parts",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Функция ошибок",
+          "definition": "Нормированный интеграл функции вида e в степени минус квадрат; здесь описывает безразмерный профиль давления.",
+          "en": "error function",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пьезопроводность",
+          "definition": "Способность среды передавать изменения давления диффузионным образом; коэффициент имеет размерность площади, делённой на время.",
+          "en": "hydraulic diffusivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Скорость фильтрации",
+          "definition": "Отношение объёмного расхода к полной площади поперечного сечения среды.",
+          "en": "Darcy velocity",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Цепочка восстановления давления из профиля скорости фильтрации.",
+      "alt": "Пять блоков сверху вниз: закон Дарси, интегрирование, разложение на два вклада, интегрирование по частям, итог через давление галереи.",
+      "file": "illustrations/geo.basniev.s5_1.14__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.basniev.s5_1.14.c01",
+        "geo.basniev.s5_1.14.c03",
+        "geo.basniev.s5_1.14.c05",
+        "geo.basniev.s5_1.14.c09"
+      ],
+      "pages": [
+        487
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.basniev.s5_1.14.c01",
+      "kind": "inference",
+      "text": "Чтобы восстановить давление из скорости, интегрируют по расстоянию при фиксированном времени.",
+      "quote": "Чтобы найти распределение давления в потоке, необходимо проинтегрировать уравнение (23.35) по $x$ при фиксированном времени $t$.",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c02",
+      "kind": "inference",
+      "text": "В пространственном интеграле скорость выражают через интегральное определение функции ошибок.",
+      "quote": "$$\\frac{k}{\\mu} \\int_0^x \\frac{\\partial p}{\\partial x} dx = w_1 \\int_0^x \\left( 1 - \\frac{2}{\\sqrt{\\pi}} \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx.$$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c03",
+      "kind": "inference",
+      "text": "Интеграл производной давления даёт разность давлений в точке и на галерее.",
+      "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu}{k} w_1 x - \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx. \\quad (23.36)$$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c04",
+      "kind": "inference",
+      "text": "Постоянное слагаемое скорости даёт член, линейный по расстоянию, а поправка содержит вложенный интеграл.",
+      "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu}{k} w_1 x - \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{\\frac{1}{2\\sqrt{\\kappa t}}} e^{-u^2} du \\right) dx. \\quad (23.36)$$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c05",
+      "kind": "inference",
+      "text": "Последнее слагаемое разности давлений вычисляют интегрированием по частям.",
+      "quote": "Последнее слагаемое в (23.36) интегрируется по частям",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c06",
+      "kind": "inference",
+      "text": "После интегрирования по частям появляются произведение расстояния на интеграл вероятности и член с экспонентой.",
+      "quote": "$$\\begin{aligned} \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\int_0^x \\left( \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du \\right) dx &= \\\\ &= \\frac{\\mu}{k} \\frac{2}{\\sqrt{\\pi}} w_1 \\left[ x \\times \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du \\Bigg|_0^x - \\int_0^x x e^{-x^2/4\\kappa t} \\frac{dx}{2\\sqrt{\\kappa t}} \\right] = \\\\ &= \\frac{2\\mu w_1}{k\\sqrt{\\pi}} \\left[ x \\times \\int_0^{x/2\\sqrt{\\kappa t}} e^{-u^2} du - \\sqrt{\\kappa t} \\left( 1 - e^{-x^2/4\\kappa t} \\right) \\right]. \\end{aligned}$$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c07",
+      "kind": "inference",
+      "text": "Итоговый перепад включает дополнение функции ошибок до единицы и экспоненциальную поправку.",
+      "quote": "$$p(x, t) - p(0, t) = \\frac{\\mu w_1}{k} x \\left[ 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) + \\frac{1 - e^{-x^2/4\\kappa t}}{\\frac{\\sqrt{\\pi}x}{2\\sqrt{\\kappa t}}} \\right]. \\quad (23.37)$$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c08",
+      "kind": "observation",
+      "text": "Давление при нулевой координате — давление на галерее в рассматриваемый момент.",
+      "quote": "С учетом того, что $p(0, t)$ есть давление на галерее, т.е. $p(0, t) = p_\\text{r}(t)$",
+      "page": 487,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.basniev.s5_1.14.c09",
+      "kind": "inference",
+      "text": "Давление в любой точке равно давлению галереи, к которому прибавляют найденный перепад.",
+      "quote": "$$p(x, t) = p_\\text{r} + \\frac{\\mu w_1}{k} \\left[ x \\left( 1 - \\text{erf} \\left( \\frac{x}{2\\sqrt{\\kappa t}} \\right) \\right) + \\frac{2\\sqrt{\\kappa t}}{\\sqrt{\\pi}} \\left( 1 - e^{-x^2/4\\kappa t} \\right) \\right]. \\quad (23.38)$$",
+      "page": 487,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.basniev.s5_1.14.t01",
+    "geo.basniev.s5_1.14.t02",
+    "geo.basniev.s5_1.14.t03"
+  ],
+  "card_ids": [
+    "geo.basniev.s5_1.14.k01",
+    "geo.basniev.s5_1.14.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.basniev.s5_1.13",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.basniev.s3.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 7. Зачем изучать упругую фильтрацию — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s3.01" data-index="7">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Что движет жидкость и как это описать › Шаг 7 из 60</p>
+    <h1>Зачем изучать упругую фильтрацию</h1>
+    <p class="booktitle">В книге: «Математическая модель неустановившейся фильтрации упругой жидкости в упругой пористой среде» <span class="pg">стр. 477</span></p>
+    <p class="meta">
+      <span class="chip">≈ 4 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-01.html">шаг 1 «Почему пласт отвечает скважине»</a> <span class="muted">(предпосылка)</span>, <a href="step-02.html">шаг 2 «Есть ли у пласта подпитка водой»</a> <span class="muted">(предпосылка)</span>, <a href="step-04.html">шаг 4 «Что такое упругий запас»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Теория упругой фильтрации помогает полнее использовать упругий запас и оценивать напор воды.</p><p>По изменениям давления и дебита можно узнать свойства пласта — это обратная задача.</p><p>Обычно упругий режим даёт лишь до 2–5% извлекаемых запасов, но бывают исключения.</p><p class="threshold"><b>Пороговая идея.</b> История давления и дебита позволяет изучать свойства пласта, а размер упругого запаса нельзя универсально оценить по обычной доле добычи. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Зачем это нужно</h3>          <div class="para" id="how-1">
+            <p>Изучение упругой фильтрации важно и для теории, и для практики. Речь о разработке нефтяных и газовых месторождений. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c01"><p>«Изучение гидродинамики упругого режима фильтрации имеет важнейшее значение как для теории, так и для практики разработки нефтяных и газовых месторождений.»</p><footer>— автор, стр. 477 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Теория помогает полнее использовать <strong class="term">упругий запас</strong> для притока к скважинам. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c02"><p>«в наиболее полной мере использовать упругий запас пластовых флюидов для обеспечения притока к скважинам,»</p><footer>— автор, стр. 477 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Она же помогает оценить, может ли <strong class="term">упругая водонапорная система</strong> вытеснять флюиды. Это система, связанная с залежью и поддерживающая приток напором воды. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c03"><p>«правильно определять потенциальные возможности упругой водонапорной системы для вытеснения флюидов,»</p><footer>— автор, стр. 477 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Обратная задача</h3>          <div class="para" id="how-4">
+            <p>Есть и обратный путь. По изменениям дебита или давления определяют свойства коллектора. Это <strong class="term">обратная задача</strong>. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c04"><p>«ставить и решать так называемые обратные задачи определения коллекторских свойств пластов по наблюдениям за изменением дебитов или давлений и т.д.»</p><footer>— автор, стр. 477 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Сколько даёт упругий режим</h3>          <div class="para" id="how-5">
+            <p>При естественном упругом режиме, как правило, добывают лишь до 2–5% <strong class="term">извлекаемых запасов</strong>. Это запасы, доступные при принятых условиях разработки. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c05"><p>«при естественном упругом режиме добывается незначительная часть извлекаемых запасов (до 2–5%).»</p><footer>— автор, стр. 477 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_s3_01__1_m.svg"><img src="img/geo_basniev_s3_01__1.svg" alt="Два горизонтальных столбика: отрезок от 2 до 5 процентов с подписью «обычно» и столбик до 20 процентов с подписью «Тенгиз (прогноз)»." loading="lazy"></picture>  </div>
+  <figcaption>
+    Обычно упругий режим даёт до 2–5% извлекаемых запасов. Для Тенгиза прогноз — до 20%: так бывает при особенно большом упругом запасе.
+    <span class="ill-meta">Класс A · реальные данные · нарисовано кодом · стр. 477</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-6">
+            <p>Бывают исключения. Особенно большой упругий запас позволяет отобрать существенно большую долю. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c06"><p>«Однако известны случаи, когда упругий запас настолько велик»</p><footer>— автор, стр. 477 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>Пример автора — месторождение Тенгиз. Для него приводят прогноз до 20% запасов нефти на упругом режиме. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s3.01.c07"><p>«Так, например, на крупнейшем месторождении Тенгиз при упругом режиме будет отобрано до 20% запасов нефти.»</p><footer>— автор, стр. 477 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Обычно на естественном упругом режиме добывают до 2–5% извлекаемых запасов. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></li><li>Для Тенгиза прогноз — до 20% запасов нефти на упругом режиме. <span class="pg" title="Страница книги (по PDF)">стр. 477</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>В прямой задаче свойства объясняют отклик, в обратной отклик используют для оценки свойств.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Сведения о режиме и временные ряды давления или дебита.</dd>
+          <dt>Выход</dt><dd>Оценка свойств коллектора либо возможностей упругой отдачи.</dd>
+          <dt>Где ломается</dt><dd>Обычная доля добычи не переносится на месторождения с особенно большим упругим запасом.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Айгерим: испытывать переносимость оценки отдельно по месторождениям и режимам.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Замеры давления, дебиты, данные о запасах.</dd>
+            <dt>Ручные шаги</dt><dd>Раздельно сопоставить измерения и прогнозные доли.</dd>
+            <dt>Точки суждения</dt><dd>Определить, подтверждает ли история отбора наличие упругого режима.</dd>
+            <dt>Время</dt><dd>Зависит от полноты истории.</dd>
+            <dt>Типичные ошибки</dt><dd>Считать прогноз для Тенгиза фактом добычи или универсальным ориентиром.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Прямая задача похожа на запуск модели с настроенными параметрами; обратная — на подбор параметров по журналу наблюдений.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Различные сочетания свойств могут давать схожую историю давления.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>дебит</dt><dd>Объем, отбираемый за единицу времени.  <span class="chip chip-model">модель</span></dd><dt>упругий запас</dt><dd>Жидкость, извлекаемая за счет упругости породы и жидкости при снижении давления.  <span class="chip chip-model">модель</span></dd><dt>обратная задача</dt><dd>Определение свойств пласта по изменениям давления или дебита. <span class="pg">стр. 477</span></dd><dt>извлекаемые запасы</dt><dd>Часть запасов, доступная для добычи в принятых условиях разработки.  <span class="chip chip-model">модель</span></dd><dt>упругая водонапорная система</dt><dd>Связанная с залежью система, поддерживающая приток напором воды и упругостью.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s3-01-t01" data-task="geo.basniev.s3.01.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуск.</p>
+  <p class="cloze">Определение свойств коллектора по изменениям дебита или давления называют <select aria-label="Пропуск 1"><option value="">—</option><option>обратной</option><option>прямой</option><option>балансовой</option><option>краевой</option></select> задачей.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Определение свойств коллектора по изменениям дебита или давления называют [обратной] задачей.</p>
+    <p class="fb-expl">Автор называет это обратной задачей. <a href="#essence">Где это в тексте (стр. 477) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s3-01-t02" data-task="geo.basniev.s3.01.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какой вывод о доле добычи на упругом режиме верен?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.01.t02" value="0"> <span>Упругий режим не даёт добычи</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.01.t02" value="1"> <span>Обычно до 2–5%, но при особенно большом упругом запасе — существенно больше</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.01.t02" value="2"> <span>Упругий режим всегда даёт около 20%</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s3.01.t02" value="3"> <span>Упругий режим всегда даёт не больше 2–5%</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Обычно до 2–5%, но при особенно большом упругом запасе — существенно больше</p>
+    <p class="fb-expl">Обычная доля до 2–5%, а Тенгиз — пример исключения с прогнозом до 20%. <a href="#how-6">Где это в тексте (стр. 477) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s3.01.c01"><p>Изучение упругой фильтрации важно для теории и практики разработки нефтяных и газовых месторождений. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Изучение гидродинамики упругого режима фильтрации имеет важнейшее значение как для теории, так и для практики разработки нефтяных и газовых месторождений.»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c02"><p>Теория помогает полнее использовать упругий запас для притока к скважинам. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«в наиболее полной мере использовать упругий запас пластовых флюидов для обеспечения притока к скважинам,»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c03"><p>Теория помогает оценивать возможности водонапорной системы вытеснять флюиды. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«правильно определять потенциальные возможности упругой водонапорной системы для вытеснения флюидов,»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c04"><p>В обратной задаче свойства коллектора определяют по изменениям дебита или давления. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«ставить и решать так называемые обратные задачи определения коллекторских свойств пластов по наблюдениям за изменением дебитов или давлений и т.д.»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c05"><p>При естественном упругом режиме как правило добывают лишь до 2–5% извлекаемых запасов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«при естественном упругом режиме добывается незначительная часть извлекаемых запасов (до 2–5%).»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c06"><p>В отдельных случаях особенно большой упругий запас позволяет отобрать существенно большую долю извлекаемых запасов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Однако известны случаи, когда упругий запас настолько велик»</p><footer>— стр. 477</footer></blockquote></li>
+        <li id="src-geo.basniev.s3.01.c07"><p>Для месторождения Тенгиз автор приводит прогноз до 20% запасов нефти на упругом режиме. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Так, например, на крупнейшем месторождении Тенгиз при упругом режиме будет отобрано до 20% запасов нефти.»</p><footer>— стр. 477</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-01.html">шаг 1 «Почему пласт отвечает скважине»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-06.html" rel="prev"><span>← Назад</span><b>Как отбор меняет упругий запас</b></a><a class="next" href="step-08.html" rel="next"><span>Дальше →</span><b>Какие свойства зависят от давления</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s3.01.t01", "type": "cloze", "question": "Заполните пропуск.", "explanation": "Автор называет это обратной задачей.", "page": 477, "link": "#essence", "step_title": "Зачем изучать упругую фильтрацию", "step_index": 7, "node_id": "geo.basniev.s3.01", "parts": ["Определение свойств коллектора по изменениям дебита или давления называют ", " задачей."], "blanks": [{"options": ["обратной", "прямой", "балансовой", "краевой"], "answers": ["обратной"]}], "key": [["обратной"]], "answer_text": "Определение свойств коллектора по изменениям дебита или давления называют [обратной] задачей."}, {"id": "geo.basniev.s3.01.t02", "type": "single", "question": "Какой вывод о доле добычи на упругом режиме верен?", "explanation": "Обычная доля до 2–5%, а Тенгиз — пример исключения с прогнозом до 20%.", "page": 477, "link": "#how-6", "step_title": "Зачем изучать упругую фильтрацию", "step_index": 7, "node_id": "geo.basniev.s3.01", "options": ["Упругий режим не даёт добычи", "Обычно до 2–5%, но при особенно большом упругом запасе — существенно больше", "Упругий режим всегда даёт около 20%", "Упругий режим всегда даёт не больше 2–5%"], "key": [1], "answer_text": "Обычно до 2–5%, но при особенно большом упругом запасе — существенно больше"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

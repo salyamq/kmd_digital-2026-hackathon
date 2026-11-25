@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 1. Почему пласт отвечает скважине — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.s1.01" data-index="1">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Разбор источника</a></li><li><a href="#how">Как это работает</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Что движет жидкость и как это описать › Шаг 1 из 60</p>
+    <h1>Почему пласт отвечает скважине</h1>
+    <p class="booktitle">В книге: «Упругий режим пласта и его характерные особенности» <span class="pg">стр. 474</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">⟳ Разбор источника</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + неочевидное</span>    </p>
+<p class="relies">Опирается на: <a href="step-07.html">шаг 7 «Зачем изучать упругую фильтрацию»</a> <span class="muted">(переход к данным)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">После пуска скважины жидкость сначала движется у забоя, потом всё дальше от него.</p><p>Приток идёт за счёт упругости жидкости и породы, а не из «пустого резервуара».</p><p>Это основа всей главы об упругом режиме.</p><p class="threshold"><b>Пороговая идея.</b> После пуска скважины приток возникает за счет упругости и начинается рядом с забоем, не во всем пласте сразу. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Разбор источника</h2>
+      <p class="muted">Определите, где наблюдение, вывод или допущение. Раскройте утверждение, чтобы свериться с ответом и цитатой.</p>
+      <details class="evidence">
+        <summary>Пуск и остановка скважины или изменение отбора могут вызвать неустановившееся движение.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s1.01.c01">стр. 474</a></p>
+        <blockquote class="quote"><p>«При разработке и эксплуатации месторождений углеводородного сырья в пластах часто возникают неустановившиеся процессы, обусловленные пуском или остановкой скважин, изменением темпов отбора флюида из скважин и т.д.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При неустановившемся движении давление перераспределяется, скорости фильтрации и дебиты изменяются со временем.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s1.01.c02">стр. 474</a></p>
+        <blockquote class="quote"><p>«Для неустановившихся процессов характерно перераспределение пластового давления, изменение во времени скоростей фильтрационных потоков, дебитов скважин.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Величины этих изменений зависят от упругих свойств пласта и жидкости.</summary>
+        <p><strong>Наблюдение</strong> · <a href="#src-geo.basniev.s1.01.c03">стр. 474</a></p>
+        <blockquote class="quote"><p>«Количественные характеристики неустановившихся процессов (величины изменения давления, скоростей, дебитов) зависят от упругих свойств пластов и насыщающих их жидкостей.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Приток обеспечивается главным образом энергией упругой деформации нефти или воды и твердого скелета.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s1.01.c04">стр. 474</a></p>
+        <blockquote class="quote"><p>«Последнее означает, что основной формой пластовой энергии, обеспечивающей приток жидкости к скважинам в рассматриваемых неустановившихся процессах, является энергия упругой деформации жидкостей (нефти и/или воды) и твердого скелета пласта.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>При пуске упругая энергия вовлекает в движение сначала жидкость около забоя, потом все более удаленные участки.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s1.01.c05">стр. 474</a></p>
+        <blockquote class="quote"><p>«При пуске скважины в эксплуатацию в условиях упругого режима движение жидкости начинается за счет использования потенциальной энергии упругой деформации пласта и жидкости сначала в ближайших окрестностях забоя, затем во все более удаленных областях пласта.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Снижение давления уменьшает упругое противодействие пласта нагрузке вышележащих пород.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s1.01.c06">стр. 474</a></p>
+        <blockquote class="quote"><p>«В самом деле, при снижении пластового давления упругое противодействие пласта вышележащему горному массиву уменьшается,»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Уменьшение порового пространства усиливает сжатие жидкости и способствует ее вытеснению в скважину.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s1.01.c07">стр. 474</a></p>
+        <blockquote class="quote"><p>«и это приводит к уменьшению объема порового пространства, что, в свою очередь, увеличивает сжатие жидкости. Все это способствует вытеснению жидкости из пласта в скважину.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Даже при малых коэффициентах деформации большой объем пласта и жидкости может дать значительную добычу за счет упругости.</summary>
+        <p><strong>Вывод</strong> · <a href="#src-geo.basniev.s1.01.c08">стр. 474</a></p>
+        <blockquote class="quote"><p>«И несмотря на то, что коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы, из-за того, что очень велики объемы пласта и насыщающих его флюидов, объемы жидкости, извлекаемой из пласта за счет упругости пласта и жидкости, могут быть весьма значительными.»</p></blockquote>
+      </details>
+      <details class="evidence">
+        <summary>Модель предполагает однофазный поток: давление в любой его точке выше давления насыщения жидкости газом.</summary>
+        <p><strong>Допущение</strong> · <a href="#src-geo.basniev.s1.01.c09">стр. 474</a></p>
+        <blockquote class="quote"><p>«Математическая модель, которая будет сформулирована далее, учитывает проявление упругих сил в однофазном фильтрационном потоке, т.е. далее будет считаться, что давление в любой точке потока выше давления насыщения жидкости газом.»</p></blockquote>
+      </details>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что запускает процесс</h3>          <div class="para" id="how-1">
+            <p>Пуск или остановка скважины меняют условия в пласте. Изменение отбора действует так же. После этого движение становится <strong class="term">неустановившимся</strong> — меняющимся во времени. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c01"><p>«При разработке и эксплуатации месторождений углеводородного сырья в пластах часто возникают неустановившиеся процессы, обусловленные пуском или остановкой скважин, изменением темпов отбора флюида из скважин и т.д.»</p><footer>— автор, стр. 474 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>При таком движении давление перераспределяется по пласту. Скорости <strong class="term">фильтрации</strong> (течения жидкости через поры) меняются со временем. Меняется и <strong class="term">дебит</strong> — объём притока в скважину за единицу времени. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c02"><p>«Для неустановившихся процессов характерно перераспределение пластового давления, изменение во времени скоростей фильтрационных потоков, дебитов скважин.»</p><footer>— автор, стр. 474 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Насколько сильны эти изменения, зависит от упругих свойств. Важны свойства и пласта, и жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c03"><p>«Количественные характеристики неустановившихся процессов (величины изменения давления, скоростей, дебитов) зависят от упругих свойств пластов и насыщающих их жидкостей.»</p><footer>— автор, стр. 474 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Механизм: откуда берётся приток</h3>          <div class="para" id="how-4">
+            <p>Автор делает вывод: приток идёт главным образом за счёт энергии <strong class="term">упругой деформации</strong>. Это обратимое изменение объёма под нагрузкой. Деформируются нефть или вода и твёрдый скелет породы. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c04"><p>«Последнее означает, что основной формой пластовой энергии, обеспечивающей приток жидкости к скважинам в рассматриваемых неустановившихся процессах, является энергия упругой деформации жидкостей (нефти и/или воды) и твердого скелета пласта.»</p><footer>— автор, стр. 474 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_basniev_s1_01__1_m.svg"><img src="img/geo_basniev_s1_01__1.svg" alt="Схема из шести блоков: пуск скважины ведёт к падению давления у забоя, затем к сжатию пор и вытеснению жидкости, затем к вовлечению дальних участков; отдельный блок-условие о давлении насыщения." loading="lazy"></picture>  </div>
+  <figcaption>
+    Цепочка показывает, как падение давления у забоя превращается в приток. Возмущение идёт от скважины вглубь пласта, а не сразу везде.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 474</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-5">
+            <p>После пуска упругая энергия сначала двигает жидкость около <strong class="term">забоя</strong> — нижней части скважины. Потом в движение вовлекаются всё более удалённые участки пласта. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c05"><p>«При пуске скважины в эксплуатацию в условиях упругого режима движение жидкости начинается за счет использования потенциальной энергии упругой деформации пласта и жидкости сначала в ближайших окрестностях забоя, затем во все более удаленных областях пласта.»</p><footer>— автор, стр. 474 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Давление в пласте падает. Тогда пласт слабее противостоит весу вышележащих пород. Поровое пространство уменьшается. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c06"><p>«В самом деле, при снижении пластового давления упругое противодействие пласта вышележащему горному массиву уменьшается,»</p><footer>— автор, стр. 474 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>Меньше пор — сильнее сжата жидкость. Это помогает вытеснять её в скважину. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c07"><p>«и это приводит к уменьшению объема порового пространства, что, в свою очередь, увеличивает сжатие жидкости. Все это способствует вытеснению жидкости из пласта в скважину.»</p><footer>— автор, стр. 474 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Нюансы и условия</h3>          <div class="para" id="how-8">
+            <p>Коэффициенты деформации малы. Но объём пласта и жидкости огромен. Поэтому, по выводу автора, упругость может дать значительную добычу. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c08"><p>«И несмотря на то, что коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы, из-за того, что очень велики объемы пласта и насыщающих его флюидов, объемы жидкости, извлекаемой из пласта за счет упругости пласта и жидкости, могут быть весьма значительными.»</p><footer>— автор, стр. 474 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-9">
+            <p>Модель предполагает однофазный поток. Давление в любой точке должно быть выше <strong class="term">давления насыщения газом</strong>. Ниже него из нефти выделяется газ, и модель уже не годится. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.s1.01.c09"><p>«Математическая модель, которая будет сформулирована далее, учитывает проявление упругих сил в однофазном фильтрационном потоке, т.е. далее будет считаться, что давление в любой точке потока выше давления насыщения жидкости газом.»</p><footer>— автор, стр. 474 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> При пуске давление во всем пласте падает мгновенно.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Сначала жидкость начинает двигаться у забоя; позднее вовлекаются удаленные области. <span class="pg" title="Страница книги (по PDF)">стр. 474</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Временные изменения дебита связаны с перераспределением давления, а не с мгновенным откликом всего пласта.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Моменты пуска, остановки и изменения отбора; давление и свойства пласта.</dd>
+          <dt>Выход</dt><dd>Изменения скорости течения, давления и дебита.</dd>
+          <dt>Где ломается</dt><dd>При давлении не выше давления насыщения однофазная постановка не подходит.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Ержан: сопоставлять отклики только после синхронизации времени операции и регистрации давления.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>История отбора и давления.</dd>
+            <dt>Ручные шаги</dt><dd>Совместить журнал работы скважины и замеры.</dd>
+            <dt>Точки суждения</dt><dd>Проверить условие однофазности по всему рассматриваемому потоку.</dd>
+            <dt>Время</dt><dd>Зависит от полноты временных данных.</dd>
+            <dt>Типичные ошибки</dt><dd>Считать отклик всей области мгновенным.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как отклик распределенной системы на изменение нагрузки: ближайший участок реагирует первым.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Отклик пласта распространяется по законам фильтрации, а не как сетевой сигнал.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Откуда берется объем <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Упругая отдача похожа не на слив пустого резервуара, а на извлечение жидкости из сжимающегося насыщенного материала.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>фильтрация</dt><dd>Течение жидкости через поры породы.  <span class="chip chip-model">модель</span></dd><dt>дебит</dt><dd>Объем жидкости, проходящий через скважину за единицу времени.  <span class="chip chip-model">модель</span></dd><dt>забой</dt><dd>Нижний участок скважины, у которого начинается приток из пласта.  <span class="chip chip-model">модель</span></dd><dt>давление насыщения газом</dt><dd>Давление начала выделения растворенного газа при снижении давления.  <span class="chip chip-model">модель</span></dd><dt>упругая деформация</dt><dd>Изменение формы или объема, обратимое при снятии нагрузки.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-s1-01-t01" data-task="geo.basniev.s1.01.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какая область пласта первой начинает двигаться после пуска скважины?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t01" value="0"> <span>Весь пласт одновременно</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t01" value="1"> <span>Только газовая шапка</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t01" value="2"> <span>Жидкость около забоя</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t01" value="3"> <span>Самые удалённые участки у границы</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Жидкость около забоя</p>
+    <p class="fb-expl">Автор пишет, что упругая энергия сначала вовлекает жидкость около забоя. <a href="#how-5">Где это в тексте (стр. 474) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s1-01-t02" data-task="geo.basniev.s1.01.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что, по тексту шага, способствует вытеснению жидкости в скважину при падении давления?</legend>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s1.01.t02" value="0"> <span>Давление насыщения газом растёт</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s1.01.t02" value="1"> <span>Поровое пространство уменьшается</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s1.01.t02" value="2"> <span>Пласт слабее противостоит весу вышележащих пород</span></label>
+    <label class="opt"><input type="checkbox" name="geo.basniev.s1.01.t02" value="3"> <span>Жидкость сильнее сжата</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Пласт слабее противостоит весу вышележащих пород; Поровое пространство уменьшается; Жидкость сильнее сжата</p>
+    <p class="fb-expl">Падение давления ослабляет противодействие нагрузке, поры сжимаются, жидкость вытесняется. <a href="#how-7">Где это в тексте (стр. 474) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-s1-01-t03" data-task="geo.basniev.s1.01.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Почему малая деформация может дать большую добычу?</legend>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t03" value="0"> <span>Потому что коэффициенты деформации на деле велики</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t03" value="1"> <span>Потому что объём пласта и жидкости огромен</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t03" value="2"> <span>Потому что давление падает мгновенно во всём пласте</span></label>
+    <label class="opt"><input type="radio" name="geo.basniev.s1.01.t03" value="3"> <span>Потому что газ выделяется из нефти</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Потому что объём пласта и жидкости огромен</p>
+    <p class="fb-expl">Автор объясняет это большим объёмом пласта и жидкости. <a href="#how-8">Где это в тексте (стр. 474) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.s1.01.c01"><p>Пуск и остановка скважины или изменение отбора могут вызвать неустановившееся движение. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«При разработке и эксплуатации месторождений углеводородного сырья в пластах часто возникают неустановившиеся процессы, обусловленные пуском или остановкой скважин, изменением темпов отбора флюида из скважин и т.д.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c02"><p>При неустановившемся движении давление перераспределяется, скорости фильтрации и дебиты изменяются со временем. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Для неустановившихся процессов характерно перераспределение пластового давления, изменение во времени скоростей фильтрационных потоков, дебитов скважин.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c03"><p>Величины этих изменений зависят от упругих свойств пласта и жидкости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Количественные характеристики неустановившихся процессов (величины изменения давления, скоростей, дебитов) зависят от упругих свойств пластов и насыщающих их жидкостей.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c04"><p>Приток обеспечивается главным образом энергией упругой деформации нефти или воды и твердого скелета. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Последнее означает, что основной формой пластовой энергии, обеспечивающей приток жидкости к скважинам в рассматриваемых неустановившихся процессах, является энергия упругой деформации жидкостей (нефти и/или воды) и твердого скелета пласта.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c05"><p>При пуске упругая энергия вовлекает в движение сначала жидкость около забоя, потом все более удаленные участки. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«При пуске скважины в эксплуатацию в условиях упругого режима движение жидкости начинается за счет использования потенциальной энергии упругой деформации пласта и жидкости сначала в ближайших окрестностях забоя, затем во все более удаленных областях пласта.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c06"><p>Снижение давления уменьшает упругое противодействие пласта нагрузке вышележащих пород. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В самом деле, при снижении пластового давления упругое противодействие пласта вышележащему горному массиву уменьшается,»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c07"><p>Уменьшение порового пространства усиливает сжатие жидкости и способствует ее вытеснению в скважину. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«и это приводит к уменьшению объема порового пространства, что, в свою очередь, увеличивает сжатие жидкости. Все это способствует вытеснению жидкости из пласта в скважину.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c08"><p>Даже при малых коэффициентах деформации большой объем пласта и жидкости может дать значительную добычу за счет упругости. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«И несмотря на то, что коэффициенты объемной упругой деформации жидкости и твердого скелета пласта очень малы, из-за того, что очень велики объемы пласта и насыщающих его флюидов, объемы жидкости, извлекаемой из пласта за счет упругости пласта и жидкости, могут быть весьма значительными.»</p><footer>— стр. 474</footer></blockquote></li>
+        <li id="src-geo.basniev.s1.01.c09"><p>Модель предполагает однофазный поток: давление в любой его точке выше давления насыщения жидкости газом. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Математическая модель, которая будет сформулирована далее, учитывает проявление упругих сил в однофазном фильтрационном потоке, т.е. далее будет считаться, что давление в любой точке потока выше давления насыщения жидкости газом.»</p><footer>— стр. 474</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-02.html">шаг 2 «Есть ли у пласта подпитка водой»</a>, <a href="step-03.html">шаг 3 «Что замедляет перераспределение давления»</a>, <a href="step-04.html">шаг 4 «Что такое упругий запас»</a>, <a href="step-07.html">шаг 7 «Зачем изучать упругую фильтрацию»</a>, <a href="step-09.html">шаг 9 «Из чего складывается модель течения»</a>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a>, <a href="step-16.html">шаг 16 «Три условия для давления»</a>, <a href="step-46.html">шаг 46 «Где проходит условный фронт давления»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="index.html"><span>← К пути</span><b>Все шаги</b></a><a class="next" href="step-02.html" rel="next"><span>Дальше →</span><b>Есть ли у пласта подпитка водой</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.s1.01.t01", "type": "single", "question": "Какая область пласта первой начинает двигаться после пуска скважины?", "explanation": "Автор пишет, что упругая энергия сначала вовлекает жидкость около забоя.", "page": 474, "link": "#how-5", "step_title": "Почему пласт отвечает скважине", "step_index": 1, "node_id": "geo.basniev.s1.01", "options": ["Весь пласт одновременно", "Только газовая шапка", "Жидкость около забоя", "Самые удалённые участки у границы"], "key": [2], "answer_text": "Жидкость около забоя"}, {"id": "geo.basniev.s1.01.t02", "type": "multiple", "question": "Что, по тексту шага, способствует вытеснению жидкости в скважину при падении давления?", "explanation": "Падение давления ослабляет противодействие нагрузке, поры сжимаются, жидкость вытесняется.", "page": 474, "link": "#how-7", "step_title": "Почему пласт отвечает скважине", "step_index": 1, "node_id": "geo.basniev.s1.01", "options": ["Давление насыщения газом растёт", "Поровое пространство уменьшается", "Пласт слабее противостоит весу вышележащих пород", "Жидкость сильнее сжата"], "key": [1, 2, 3], "answer_text": "Пласт слабее противостоит весу вышележащих пород; Поровое пространство уменьшается; Жидкость сильнее сжата"}, {"id": "geo.basniev.s1.01.t03", "type": "single", "question": "Почему малая деформация может дать большую добычу?", "explanation": "Автор объясняет это большим объёмом пласта и жидкости.", "page": 474, "link": "#how-8", "step_title": "Почему пласт отвечает скважине", "step_index": 1, "node_id": "geo.basniev.s1.01", "options": ["Потому что коэффициенты деформации на деле велики", "Потому что объём пласта и жидкости огромен", "Потому что давление падает мгновенно во всём пласте", "Потому что газ выделяется из нефти"], "key": [1], "answer_text": "Потому что объём пласта и жидкости огромен"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

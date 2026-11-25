@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 59. Радиус по графику и дебит скважины — Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.basniev.ch24s1.15" data-index="59">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как применять ПССС и понимать погрешность › Шаг 59 из 60</p>
+    <h1>Радиус по графику и дебит скважины</h1>
+    <p class="booktitle">В книге: «Плоскорадиальный неустановившийся фильтрационный поток упругой жидкости» <span class="pg">стр. 499</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: процесс/прибор + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-55.html">шаг 55 «Средняя депрессия в кольце вокруг скважины»</a> <span class="muted">(предпосылка)</span>, <a href="step-54.html">шаг 54 «Скважина с постоянным дебитом: логарифмический профиль»</a> <span class="muted">(предпосылка)</span>, <a href="step-51.html">шаг 51 «Постоянное давление на галерее»</a> <span class="muted">(предпосылка)</span>, <a href="step-40.html">шаг 40 «Два масштаба безразмерного времени»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">При постоянном забойном давлении закон движения границы громоздок, поэтому радиус берут по графику рис. 24.3.</p><p>Затем дебит считают по формуле Дюпюи (24.11) с постоянным pс.</p><p>Погрешность такого дебита по ПССС — около 5%.</p><p class="threshold"><b>Пороговая идея.</b> Снять с графика безразмерный радиус, вернуть физические единицы и найти дебит. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что задано</h3>          <div class="para" id="how-1">
+            <p>Теперь автор принимает другое условие. На скважине поддерживают постоянное <strong class="term">забойное давление</strong> pс, а не постоянный дебит. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c01"><p>«Приток к скважине, на которой поддерживается постоянное давление $p_c = \text{const}$.»</p><footer>— автор, стр. 499 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<h3>Почему нужен график</h3>          <div class="para" id="how-2">
+            <p>В этом случае закон движения границы выражается интегралом. Его представляют в виде медленно сходящегося ряда. Поэтому автор не выписывает решение и предлагает определять движение границы по рис. 24.3. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c02"><p>«закон движения границы возмущенной области выражается интегралом, представляемым в виде медленно сходящегося ряда,»</p><footer>— автор, стр. 499 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c03"><p>«поэтому решение здесь не приводится. Расчет движения границы возмущенной области в этом случае можно определить по графику (рис. 24.3).»</p><footer>— автор, стр. 499 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Что на графике</h3>          <div class="para" id="how-3">
+            <p>Рис. 24.3 связывает безразмерный радиус R(t)/rс с безразмерным временем f₀. График построен для постоянного забойного давления pс. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c06"><p>«Рис. 24.3. Зависимость безразмерного радиуса возмущенной области $R(t)/r_c$ от безразмерного времени $f_0$ при отборе жидкости с постоянным забойным давлением $p_c = \text{const}$»</p><footer>— автор, стр. 499 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как найти дебит</h3>          <div class="para" id="how-4">
+            <p>По графику находят R(t)/rс и умножают на rс. Полученный радиус подставляют в <strong class="term">формулу Дюпюи</strong> (24.11) при постоянном pс. Формула связывает дебит, перепад давления и отношение радиусов. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c04"><p>«Дебит скважины определяется по формуле Дюпюи (24.11) при $p_c = \text{const}$.»</p><footer>— автор, стр. 499 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 421" role="img" aria-label="Постоянное забойное давление: путь к дебиту" class="ill-svg"><title>Постоянное забойное давление: путь к дебиту</title><rect class="ill-bg" x="0" y="0" width="360" height="421" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Постоянное забойное давление: путь</tspan><tspan x="180.0" dy="19">к дебиту</tspan></text><text class="ill-small" x="14" y="86">Признаки</text><rect class="ill-box ill-accent" x="12" y="94" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="115" text-anchor="start"><tspan x="24" dy="0">Задано pс = const</tspan></text><rect class="ill-box ill-accent" x="12" y="133" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="154" text-anchor="start"><tspan x="24" dy="0">Известно безразмерное время f₀</tspan></text><line class="ill-line" x1="180.0" y1="174.0" x2="180.0" y2="194.0"/><polygon class="ill-arrow" points="180.0,194.0 176.1,185.9 183.9,185.9"/><text class="ill-small" x="14" y="206">Правило</text><rect class="ill-box ill-neutral" x="12" y="214" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="235" text-anchor="start"><tspan x="24" dy="0">Радиус по рис. 24.3, дебит по (24.11)</tspan></text><line class="ill-line" x1="180.0" y1="253.0" x2="180.0" y2="273.0"/><polygon class="ill-arrow" points="180.0,273.0 176.1,264.9 183.9,264.9"/><text class="ill-small" x="14" y="285">Вывод</text><rect class="ill-box ill-good" x="12" y="293" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="314" text-anchor="start"><tspan x="24" dy="0">pс = const → R(t)/rс по графику → R(t)</tspan><tspan x="24" dy="19">→ дебит по Дюпюи</tspan></text><rect class="ill-box ill-bad" x="12" y="351" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="372" text-anchor="start"><tspan x="24" dy="0">Задан постоянный дебит → Этот график</tspan><tspan x="24" dy="19">не подходит</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Порядок действий при постоянном забойном давлении. Погрешность дебита по ПССС — около 5%.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 499</span>
+  </figcaption>
+</figure>
+<h3>Точность</h3>          <div class="para" id="how-5">
+            <p>Автор сравнивает результат с точными расчётами К.А.Царевича и И.Ф.Куранова. Погрешность определения дебита по ПССС составляет около 5%. График не подменяет точное решение. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p>
+            <blockquote class="quote" cite="#src-geo.basniev.ch24s1.15.c05"><p>«Сравнение с результатами точных расчетов, выполненных К.А.Царевичем и И.Ф.Курановым, показывает, что погрешность определения дебита по методу ПССС составляет около 5%.»</p><footer>— автор, стр. 499 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как найти дебит при постоянном забойном давлении</p>        <ol class="proc"><li>Проверьте, что задано постоянное забойное давление. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li><li>По безразмерному времени прочитайте отношение R(t)/rс на рис. 24.3. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li><li>Восстановите радиус и вычислите дебит по (24.11). <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li><li>Учитывайте погрешность дебита около 5%. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_basniev_ch24s1_15_e01">
+          <h3>Оценка дебита при постоянном забойном давлении <span class="pg">стр. 499</span></h3>
+          <p><b>Условие.</b> Плоскорадиальный приток при постоянном забойном давлении.</p>
+<ol class="ex-steps"><li>Найдите радиус зоны по рис. 24.3.</li><li>Определите дебит по (24.11) и сопоставьте с точными расчётами К.А.Царевича и И.Ф.Куранова.</li></ol>          <p class="ex-result"><b>Итог.</b> Автор сообщает погрешность дебита около 5%.</p>
+        </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Как получить дебит при постоянном забойном давлении</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>На скважине задано постоянное забойное давление pс</li><li>Известно безразмерное время f₀</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Радиус зоны берут по рис. 24.3, затем дебит считают по формуле Дюпюи (24.11) при pс = const. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Специалист получает дебит с погрешностью около 5% и помнит, что это оценка ПССС.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Скважина работает с постоянным забойным давлением; нужен дебит в момент с известным f₀. <span class="muted small">(Разобранный пример, стр. 499)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Взять R(t)/rс по рис. 24.3 и подставить радиус в (24.11)</button><button type="button" class="btn ghost case-opt" data-i="1">Считать радиус по формуле для постоянного дебита</button><button type="button" class="btn ghost case-opt" data-i="2">Выписать явное решение через ряд</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Автор предлагает определять движение границы по графику, а дебит — по (24.11).</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Дебит найден по ПССС и сопоставлен с точными расчётами К.А.Царевича и И.Ф.Куранова. <span class="muted small">(Разобранный пример, стр. 499)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Погрешность около 5%</button><button type="button" class="btn ghost case-opt" data-i="1">Погрешность около 25%</button><button type="button" class="btn ghost case-opt" data-i="2">Результаты совпадают точно</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Автор сообщает погрешность дебита около 5%.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Погрешность дебита по ПССС при постоянном забойном давлении — около 5%. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li><li>График рис. 24.3 годится только при постоянном забойном давлении. <span class="pg" title="Страница книги (по PDF)">стр. 499</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Для расчёта «Постоянное забойное давление: как определить радиус по графику и найти дебит» отделите исходные параметры от модельных выходов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Безразмерное время, график, радиус скважины, начальное и забойное давление, свойства пласта и жидкости.</dd>
+          <dt>Выход</dt><dd>Радиус зоны и расчётный дебит.</dd>
+          <dt>Где ломается</dt><dd>График относится к постоянному забойному давлению; не подменяет точное решение.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Безразмерное время, график, радиус скважины, начальное и забойное давление, свойства пласта и жидкости.</dd>
+            <dt>Ручные шаги</dt><dd>Проверьте, что задано постоянное забойное давление.; По безразмерному времени прочитайте отношение R(t)/r_c на рис. 24.3.; Восстановите радиус и вычислите дебит по (24.11).; Учитывайте сообщённую автором приближённую точность.</dd>
+            <dt>Точки суждения</dt><dd>Отделить погрешность метода от погрешности считывания кривой.</dd>
+            <dt>Время</dt><dd>Время не оценено в источнике.</dd>
+            <dt>Типичные ошибки</dt><dd>Подставить безразмерный радиус вместо размерного или использовать график для постоянного дебита.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как графическая таблица подстановок вместо явного вычисления ряда.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Точность чтения ограничена изображением, а зависимость получена для определённой физической постановки.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Если график оцифрован, храните его версию, проверяйте подписи и явно предупреждайте об экстраполяции.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 24.3. Рис. 24.3. Зависимость безразмерного радиуса возмущенной области $R(t)/r_c$ от безразмерного времени $f_0$ при отборе жидкости с постоянным забойным давлением $p_c = \text{const}$ <span class="pg">стр. 499</span> <span class="chip chip-author">перерисован кодом — ниже</span></li></ul>
+<figure class="ill" id="ill-r1">
+  <div class="ill-frame ill-raster">
+<a href="img/redraw_24.3.svg" target="_blank" title="Открыть рисунок крупно"><picture><img src="img/redraw_24.3.svg" alt="График: по горизонтали безразмерное время от 0 до 2,5·10⁷, по вертикали безразмерный радиус от 0 до 10 000. Кривая быстро растёт в начале и затем всё медленнее: около 6 300 при fo = 10⁷ и около 10 000 при 2,5·10⁷." loading="lazy"></picture></a>  </div>
+  <figcaption>
+    Зависимость безразмерного радиуса возмущённой области R(t)/rc от безразмерного времени fo при отборе жидкости с постоянным забойным давлением pc = const (метод ПССС). По оси абсцисс — fo в единицах 10⁷. (перерисовано по рис. 24.3, стр. 499)
+    <span class="ill-meta">Класс A · реальные данные · перерисовано по рис. 24.3, стр. 499 · нарисовано кодом · стр. 499</span>
+<span class="ill-meta">Упрощения перерисовки: Точки кривой сняты со скана вручную (около 1 % по обеим осям); Подпись оси абсцисс «10⁻⁷·fo» понята как fo, выраженное в единицах 10⁷</span>  </figcaption>
+</figure>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>плоскорадиальный поток</dt><dd>Течение к скважине, при котором в горизонтальной плоскости давление зависит от расстояния до её оси. <span class="pg">стр. 499</span></dd><dt>забойное давление</dt><dd>Давление у забоя: в расчётной модели — на стенке выработки. <span class="pg">стр. 499</span></dd><dt>дебит</dt><dd>Объём жидкости, отбираемый за единицу времени. <span class="pg">стр. 499</span></dd><dt>возмущённая область</dt><dd>Часть пласта, в которой модель учитывает вызванное отбором изменение давления. <span class="pg">стр. 499</span></dd><dt>безразмерное время</dt><dd>Время, умноженное на пьезопроводность и поделённое на квадрат радиуса скважины. <span class="pg">стр. 499</span></dd><dt>формула Дюпюи</dt><dd>Связь между дебитом, перепадом давления и отношением внешнего и внутреннего радиусов при плоскорадиальном потоке. <span class="pg">стр. 499</span></dd><dt>ПССС</dt><dd>Метод последовательной смены стационарных состояний: в каждый момент в затронутой зоне принимают стационарный профиль давления. <span class="pg">стр. 499</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-basniev-ch24s1-15-t01" data-task="geo.basniev.ch24s1.15.t01" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-basniev-ch24s1-15-t01">Расставьте шаги расчёта дебита по порядку.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-basniev-ch24s1-15-t01">
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Восстановите радиус и вычислите дебит по (24.11).</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="3"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Учитывайте погрешность дебита около 5%.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">По безразмерному времени прочитайте отношение R(t)/rс на рис. 24.3.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Проверьте, что задано постоянное забойное давление.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Проверьте, что задано постоянное забойное давление. → По безразмерному времени прочитайте отношение R(t)/rс на рис. 24.3. → Восстановите радиус и вычислите дебит по (24.11). → Учитывайте погрешность дебита около 5%.</p>
+    <p class="fb-expl">Сначала условие, затем радиус по графику, дебит и оценка точности. <a href="#how-4">Где это в тексте (стр. 499) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-basniev-ch24s1-15-t02" data-task="geo.basniev.ch24s1.15.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-basniev-ch24s1-15-t02">Какова, по автору, погрешность определения дебита по ПССС при постоянном забойном давлении (в процентах)?</label>
+  <p class="numeric"><input id="in-geo-basniev-ch24s1-15-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">%</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 5 %</p>
+    <p class="fb-expl">Автор сравнил ПССС с точными расчётами и получил около 5%. <a href="#how-5">Где это в тексте (стр. 499) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.basniev.ch24s1.15.c01"><p>Здесь постоянным служит забойное давление, не дебит. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«Приток к скважине, на которой поддерживается постоянное давление $p_c = \text{const}$.»</p><footer>— стр. 499</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.15.c02"><p>Закон движения границы выражен интегралом, представляемым медленно сходящимся рядом. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«закон движения границы возмущенной области выражается интегралом, представляемым в виде медленно сходящегося ряда,»</p><footer>— стр. 499</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.15.c03"><p>Автор не приводит явное решение и предлагает определять движение границы по рис. 24.3. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«поэтому решение здесь не приводится. Расчет движения границы возмущенной области в этом случае можно определить по графику (рис. 24.3).»</p><footer>— стр. 499</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.15.c04"><p>Дебит рассчитывают по (24.11), подставляя постоянное p_c. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Дебит скважины определяется по формуле Дюпюи (24.11) при $p_c = \text{const}$.»</p><footer>— стр. 499</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.15.c05"><p>Сравнение с точными расчётами К.А.Царевича и И.Ф.Куранова даёт погрешность определения дебита около 5%. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Сравнение с результатами точных расчетов, выполненных К.А.Царевичем и И.Ф.Курановым, показывает, что погрешность определения дебита по методу ПССС составляет около 5%.»</p><footer>— стр. 499</footer></blockquote></li>
+        <li id="src-geo.basniev.ch24s1.15.c06"><p>По подписи к рис. 24.3 для заданного постоянного забойного давления график связывает безразмерный радиус R(t)/r_c с безразмерным временем f₀. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Рис. 24.3. Зависимость безразмерного радиуса возмущенной области $R(t)/r_c$ от безразмерного времени $f_0$ при отборе жидкости с постоянным забойным давлением $p_c = \text{const}$»</p><footer>— стр. 499</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-58.html" rel="prev"><span>← Назад</span><b>Ошибка ПССС убывает со временем</b></a><a class="next" href="step-60.html" rel="next"><span>Дальше →</span><b>Где ПССС точен, а где груб</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
+<script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.15.t01", "type": "order", "question": "Расставьте шаги расчёта дебита по порядку.", "explanation": "Сначала условие, затем радиус по графику, дебит и оценка точности.", "page": 499, "link": "#how-4", "step_title": "Радиус по графику и дебит скважины", "step_index": 59, "node_id": "geo.basniev.ch24s1.15", "items": [{"text": "Восстановите радиус и вычислите дебит по (24.11).", "pos": 2}, {"text": "Учитывайте погрешность дебита около 5%.", "pos": 3}, {"text": "По безразмерному времени прочитайте отношение R(t)/rс на рис. 24.3.", "pos": 1}, {"text": "Проверьте, что задано постоянное забойное давление.", "pos": 0}], "key": [0, 1, 2, 3], "answer_text": "Проверьте, что задано постоянное забойное давление. → По безразмерному времени прочитайте отношение R(t)/rс на рис. 24.3. → Восстановите радиус и вычислите дебит по (24.11). → Учитывайте погрешность дебита около 5%."}, {"id": "geo.basniev.ch24s1.15.t02", "type": "numeric", "question": "Какова, по автору, погрешность определения дебита по ПССС при постоянном забойном давлении (в процентах)?", "explanation": "Автор сравнил ПССС с точными расчётами и получил около 5%.", "page": 499, "link": "#how-5", "step_title": "Радиус по графику и дебит скважины", "step_index": 59, "node_id": "geo.basniev.ch24s1.15", "key": {"answer": 5, "tolerance": 0}, "unit": "%", "answer_text": "5 %"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
