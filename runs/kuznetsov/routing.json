@@ -1,0 +1,773 @@
+[
+  {
+    "node_id": "geo.kuznetsov.s10_1.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": "Не путать площадь залежи с её высотой, а экономический интерес — с геологическим признаком рифа."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "scale_jump"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": true,
+    "rationale": "Тип П/Н: контринтуитивно, что небольшие по площади рифы содержат крупные запасы; скачок масштаба от постройки к залежи."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_1.02",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Сравнить собственную мощность постройки с мощностью отложений того же возраста вокруг."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: различение биострома и биогерма по форме — карточки с признаками."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_1.03",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Отличить состав массива от процесса, создавшего превышение над окружающими осадками."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Р: определение рифа в строгом смысле — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_1.04",
+    "format": "cards",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Сопоставить форму поперечного сечения с положением в древнем бассейне, не смешивая локальную возвышенность и границу глубин."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: одиночный риф и рифовая система — распознавание по признакам."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Отличить роль сооружения при росте от доли каркасной породы и доли остатков организмов уже внутри этой породы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Р: роль каркаса в росте рифа — текстовое объяснение."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Отличать распространённые обломочные породы от узнаваемых крупных обломков и от изменений, пережитых после накопления."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Р: происхождение обломочных и изменённых пород — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "П",
+      "threshold": "Проследить цепочку от рельефа к физическим условиям, сообществам организмов и типам осадков."
+    },
+    "video_criteria": [
+      "cause_effect",
+      "scale_jump"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип М/П: причина быстрой смены фаций на коротком расстоянии — разрез рифа с зонами."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Мысленно пройти поперёк рифа, различая центральное ядро, грубые осадки у ядра и более тонкие осадки дальше."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип П: зональность куполовидного рифа от ядра к периферии — интерактивный разрез с подсветкой зон."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.05",
+    "format": "cards",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Отличить центральную лагуну от ядра на кольце и распознать внутренний склон как отдельную зону."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: строение атолла — карточка-схема для распознавания."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.06",
+    "format": "cards",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Похожий порядок зон не делает линейную систему кольцом или симметричным телом."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: поперечная зональность линейной цепи — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.07",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "М",
+      "threshold": "Пустота может принадлежать одному скелету, а может возникнуть лишь при сложении множества остатков."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: виды пустот внутри и между скелетами — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.08",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "М",
+      "threshold": "Даже крупная пещеровидная пустота может быть первичной: размер и форма не определяют её происхождение."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р: первичные пустоты вне каркаса — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.09",
+    "format": "long",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "В",
+      "threshold": "Даже растущий риф уже теряет часть пустот, которые возникли при его образовании."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "timeline",
+    "hook_only": false,
+    "rationale": "Тип М/В: судьба первичной пористости во времени (цементация, перекристаллизация) опровергает заблуждение о неизменной пористости рифа; процесс на геологических масштабах — разбор 16:9."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.10",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "В",
+      "threshold": "Вода может растворять исходную породу и создавать вторичные пустоты — каверны; карст возможен ещё при росте рифа."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "timeline",
+    "hook_only": false,
+    "rationale": "Тип М/В: вода растворяет известняк и создаёт каверны — изменение во времени в одной сцене."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_2.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Вторичные пустоты — не только каверны: они могут возникать между кристаллами при изменении породы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Р: межкристаллические поры — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Где искать лучшие породы, зависит от типа рифа."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: связующий узел о положении коллектора в центре рифа — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Форма рифа, заполнение и типы пустот — разные признаки одного резервуара."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: состав рифа Рейнбоу по рисунку — текст с перерисованным разрезом."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.03",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Сопоставляйте пористость и проницаемость вместе и учитывайте породу и положение."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/Р: решение на данных — сравнение пористости и проницаемости ядра и крыльев рифа Рейнбоу по числам автора."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: другие примеры центральной зоны — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.05",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": "У крупного плосковершинного или кольцевого рифа лучшие породы часто искать не в центре, а на периферии."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип П/М: контринтуитивно, что лучшие коллекторы у края крупных рифов — причина в гребне и обломочном шлейфе."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": "Аномально высокий дебит на краю подсказывает гипотезу о трещинах, но сам по себе её не доказывает."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/М: возможная роль краевых трещин — гипотеза автора, текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.07",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Пористость рифа описывают диапазонами по зонам, а не одним средним для массива."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/Р: сравнение пористости трёх зон Тенгиза по числам автора — задание на данных."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.08",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "В",
+      "threshold": "Не смешивать интервалы разного возраста и не подменять один показатель пустотности другим."
+    },
+    "video_criteria": [
+      "scale_jump"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/В: положение лучших коллекторов в куполе и кольце — интерактивная карта с разрезом."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.09",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "В",
+      "threshold": "Различать геометрию рифа в одном срезе и смену положения гребня между этапами роста."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип П/В: коллекторы смещаются вместе с гребнем при росте асимметричного рифа — изменение во времени."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.10",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "И",
+      "threshold": "Отличить карту обстановок формирования от карты значений свойства и от поверхности кровли."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/И: сопоставить фациальные зоны с картой пористости — практикум на данных."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.19",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": "В кольцевой постройке лучшее место для фильтрации может находиться по краю, а не в центре."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/М: проницаемое кольцо рифа — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.20",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": "Лучшая зона вытянута вдоль рифа, а породы по соседству могут преградить движение поперёк."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/М: положение коллектора асимметричного рифа — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": "Сформулировать условие применимости приближения, не стирая вертикальную неоднородность."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Н: условия приближения к массивному резервуару — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.12",
+    "format": "long",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "М",
+      "threshold": "Связать изменение условий роста и обработки пород с тем, почему результат сохраняется слоями, а не заполняет весь риф."
+    },
+    "video_criteria": [
+      "time_change",
+      "scale_jump",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "Тип В/М: смена глубины и выход рифа над морем создают внутренние слои — процесс во времени на нескольких масштабах, разбор 16:9."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.14",
+    "format": "text",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": "Неоднородность разреза возникает уже при росте рифа; последующие изменения породы не обязательно её стирают."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип В/П: чередование коллекторов по глубине — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.15",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": "Большая доля хороших пород в разрезе не означает, что они образуют один сплошной пласт."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип П/Н: положение хороших пачек внутри рифа — интерактивный разрез."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.13",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Не отождествлять не измеренную количественно пористость с низкой, а классы пористости — с гидравлической связностью."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р/П: распознавание линз и пластов на разрезе — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.16",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "П",
+      "threshold": "Низкая проницаемость самой породы не доказывает, что соседние пористые пласты изолированы."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/П: плотные пачки и трещины Карачаганака — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.18",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "П",
+      "threshold": "Вертикальная фильтрация зависит от внутреннего строения рифа: массивный резервуар и чередование пачек ведут себя по-разному."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/П: ограничения вертикального перетока — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_3.17",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Пр",
+      "threshold": "Разведка ориентируется на геометрию лучших зон внутри ловушки, а не только на общий контур рифа."
+    },
+    "video_criteria": [],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/Пр держится на таблице — интерактив «форма рифа → схема разведки», а не ролик."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "М",
+      "threshold": "Риф растёт и получает защитное перекрытие в разные этапы."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "timeline",
+    "hook_only": false,
+    "rationale": "Тип В/М: риф получает покрышку после прекращения роста — последовательность событий."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Р",
+      "threshold": "Ловушка — замкнутая часть породы, а не любой риф целиком."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип М/Р: что замыкает ловушку — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": "Высота ловушки может меняться без изменения формы самого рифа."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Н: нижняя граница залежи — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.05",
+    "format": "cards",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Вид сверху и поперечный разрез дают разные признаки одной ловушки."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: распознавание типа ловушки по форме — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": "Небольшое превышение рифа не означает маленькой ловушки при непроницаемом экране."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/М: роль зарифовой стороны — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "В",
+      "threshold": "Современный свод ловушки не обязательно совпадает с древней вершиной рифа."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/В: смещение свода ловушки — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.08",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "При позднем изгибе важно не только наличие экрана, но и по какую сторону он расположен."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: складка дополняет экран — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.09",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Риф может быть резервуаром, даже когда замыкание почти целиком создаёт не риф, а складка."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р/П: ловушка, созданная складкой — карточки."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Форма рифа и причина, удерживающая залежь, — разные признаки."
+    },
+    "video_criteria": [],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип Р/П держится на таблице-схеме ловушек — интерактив вместо ролика."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Границы рифа, ловушки и фактической залежи не всегда совпадают."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Р: размещение рифовой залежи — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "П",
+      "threshold": "Максимальная высота нефтяной части определяется способом замыкания, а не одной лишь толщиной рифа."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/П: что ограничивает высоту залежи — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Сейсмика помогает выбрать, где проверять прогноз, а не заменяет проверку продуктивности."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/И: связь типа рифа и разведки — вводный текст к группам залежей."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.13",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Пр",
+      "threshold": "У простого купола центр — предпочтительная первая цель, но по вертикали хорошие породы не обязательно распределены одинаково."
+    },
+    "video_criteria": [
+      "scale_jump"
+    ],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "Тип П/Пр: где бурить в куполовидном рифе — интерактив «поставь скважину на карте и разрезе»."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.14",
+    "format": "text",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "П",
+      "threshold": "Простой контур ловушки не означает простого распределения пород, вмещающих нефть и газ."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Р/П: перспективность края крупного рифа — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.15",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Обнаружение залежи и достаточность данных для её оценки — разные результаты бурения."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/Н: порядок бурения по краям — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.16",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "В",
+      "threshold": "У асимметричного рифа сегодняшний запас пространства под залежь нельзя вывести только из исходной высоты гребня."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/В: высота асимметричной ловушки — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.17",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": "Самая высокая точка и лучшие породы могут занимать разные места."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/П: проверка фронта рифа первыми скважинами — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.18",
+    "format": "text",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Пр",
+      "threshold": "Критическое направление — место слабого замыкания, а не обязательно место лучших коллекторов."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип П/Пр: направление слабого замыкания — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.19",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Ф",
+      "threshold": "Равное покрытие площади скважинами не даёт равного покрытия объёма залежи."
+    },
+    "video_criteria": [
+      "scale_jump",
+      "counterintuitive"
+    ],
+    "scene_template": "block_3d",
+    "hook_only": false,
+    "rationale": "Тип П/Ф: контринтуитивно, что основной объём залежи сосредоточен под сводом — показ формы тела в истинном масштабе."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.20",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Выбор сетки зависит от цели: покрывать объём и покрывать площадь — не одно и то же."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/Н: сгущение скважин у свода — текст."
+  },
+  {
+    "node_id": "geo.kuznetsov.s10_4.21",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": "Скважинную схему привязывают к геометрии объекта и расположению основных запасов, а не выбирают как универсальный шаблон."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Тип Пр/П: решение на данных — по форме рифа выбрать схему разведки (пример автора)."
+  }
+]
