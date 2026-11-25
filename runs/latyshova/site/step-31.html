@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 31. Чем сложны карбонатные коллекторы — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.18" data-index="31">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Карбонатный разрез › Шаг 31 из 34</p>
+    <h1>Чем сложны карбонатные коллекторы</h1>
+    <p class="booktitle">В книге: «Карбонатный разрез: особенности межзерновых карбонатных коллекторов» <span class="pg">стр. 105, 107</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-14.html">шаг 14 «Прямые признаки коллектора на диаграммах»</a> <span class="muted">(предпосылка)</span>, <a href="step-05.html">шаг 5 «Водоотдача и давление раствора»</a> <span class="muted">(предпосылка)</span>, <a href="step-18.html">шаг 18 «Нефть или вода: параметр насыщения»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">В низкопористых карбонатах фильтрат уходит глубже, и сопротивление коллектора становится похожим на сопротивление неколлектора.</p><p>Поэтому привычные признаки слабеют, а оценка насыщения сильно затрудняется.</p><p>Свойства карбонатов слабо связаны с глинистостью, и СП с ГМ здесь работают хуже, чем в песчаниках.</p><p class="threshold"><b>Пороговая идея.</b> В низкопористых карбонатах фильтрат уходит глубже, и сопротивление коллектора становится похожим на сопротивление неколлектора — привычные признаки слабеют. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Те же принципы, другие условия</h3>          <div class="para" id="how-1">
+            <p>Основные принципы выделения и оценки насыщения межзерновых карбонатных коллекторов те же, что и в терригенном разрезе. Но у карбонатов свои особенности. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c01"><p>«Основные принципы выделения и оценки характера насыщения межзерновых карбонатных коллекторов те же, что и для терригенного разреза.»</p><footer>— автор, стр. 105 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Особенности карбонатов</h3>          <div class="para" id="how-2">
+            <p>Преобладают низкопористые разности. Пористость и <strong class="term">структура порового пространства</strong> — форма, размер и связность пор — сильно меняются в одном горизонте. Широк и диапазон <strong class="term">нижнего предела пористости коллектора</strong> — минимальной пористости, при которой порода ещё коллектор. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c02"><p>«являются преобладание низкопористых разностей, широкий диапазон изменения пористости и структуры порового пространства в одном и том же горизонте»</p><footer>— автор, стр. 105 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>При малой глинистости коллекторские свойства слабо связаны с содержанием глинистого материала, то есть нерастворимого остатка. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c03"><p>«слабая связь коллекторских свойств с содержанием глинистого материала (нерастворимого остатка) при малой глинистости»</p><footer>— автор, стр. 105 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Механизм: глубокое проникновение</h3>          <div class="para" id="how-4">
+            <p>Автор делает вывод: проникновение фильтрата в карбонатные коллекторы глубже, чем в терригенные. При прочих равных условиях с уменьшением пористости глубина проникновения растёт. Но только до некоторого предела. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c04"><p>«поскольку с уменьшением пористости (до некоторого предела) глубина проникновения в коллекторы при прочих равных условиях растет»</p><footer>— автор, стр. 105 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 374" role="img" aria-label="Почему карбонаты труднее песчаников" class="ill-svg"><title>Почему карбонаты труднее песчаников</title><rect class="ill-bg" x="0" y="0" width="360" height="374" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Почему карбонаты труднее</tspan><tspan x="180.0" dy="19">песчаников</tspan></text><rect class="ill-box ill-neutral" x="12.0" y="82" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Низкая пористость карбонатного</tspan><tspan x="180.0" dy="19">коллектора</tspan></text><line class="ill-line" x1="180.0" y1="140.0" x2="180.0" y2="164.0"/><polygon class="ill-arrow" points="180.0,164.0 176.1,155.9 183.9,155.9"/><rect class="ill-box ill-accent" x="12.0" y="168" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="192" text-anchor="middle"><tspan x="180.0" dy="0">Фильтрат проникает глубже</tspan></text><line class="ill-line" x1="180.0" y1="207.0" x2="180.0" y2="231.0"/><polygon class="ill-arrow" points="180.0,231.0 176.1,222.9 183.9,222.9"/><rect class="ill-box ill-bad" x="12.0" y="235" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="259" text-anchor="middle"><tspan x="180.0" dy="0">Сопротивления коллектора и</tspan><tspan x="180.0" dy="19">неколлектора соизмеримы</tspan></text><line class="ill-line" x1="180.0" y1="293.0" x2="180.0" y2="317.0"/><polygon class="ill-arrow" points="180.0,317.0 176.1,308.9 183.9,308.9"/><rect class="ill-box ill-bad" x="12.0" y="321" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="345" text-anchor="middle"><tspan x="180.0" dy="0">Оценка насыщения сильно затруднена</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Причинная цепочка автора для межзерновых карбонатных коллекторов.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 105, 107</span>
+  </figcaption>
+</figure>
+<figure class="ill" id="ill-2">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 354" role="img" aria-label="Песчаник и карбонат: что меняется" class="ill-svg"><title>Песчаник и карбонат: что меняется</title><rect class="ill-bg" x="0" y="0" width="360" height="354" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Песчаник и карбонат: что меняется</tspan></text><rect class="ill-box ill-good" x="12" y="63" width="336" height="122" rx="10"/><text class="ill-title" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Терригенный межзерновой коллектор</tspan></text><text class="ill-text" x="26" y="112" text-anchor="start"><tspan x="26" dy="0">• проникновение мельче</tspan></text><text class="ill-text" x="26" y="135" text-anchor="start"><tspan x="26" dy="0">• свойства связаны с глинистостью</tspan></text><text class="ill-text" x="26" y="158" text-anchor="start"><tspan x="26" dy="0">• СП и ГМ информативны</tspan></text><rect class="ill-box ill-bad" x="12" y="195" width="336" height="141" rx="10"/><text class="ill-title" x="180.0" y="219" text-anchor="middle"><tspan x="180.0" dy="0">Карбонатный межзерновой коллектор</tspan></text><text class="ill-text" x="26" y="244" text-anchor="start"><tspan x="26" dy="0">• проникновение глубже</tspan></text><text class="ill-text" x="26" y="267" text-anchor="start"><tspan x="26" dy="0">• свойства слабо связаны с</tspan><tspan x="26" dy="19">глинистостью</tspan></text><text class="ill-text" x="26" y="309" text-anchor="start"><tspan x="26" dy="0">• СП и ГМ малоэффективны</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Сравнение по автору: принципы те же, но в карбонатах привычные признаки работают хуже.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 105, 107</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-5">
+            <p>Отсюда следствие: сопротивления продуктивного коллектора и неколлектора становятся соизмеримыми. По сопротивлению их трудно различить. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c05"><p>«Эта же особенность — причина соизмеримости значений»</p><footer>— автор, стр. 105 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Что это значит для интерпретации</h3>          <div class="para" id="how-6">
+            <p>Глубокое проникновение, влияние структуры пор и широкий диапазон пористости вместе сильно затрудняют оценку характера насыщения. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c06"><p>«существенно затрудняют оценку характера насыщения коллектора»</p><footer>— автор, стр. 107 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>А раз свойства не связаны с глинистостью, падает эффективность методов СП и ГМ для межзерновых коллекторов в карбонатном разрезе. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.18.c07"><p>«Отсутствие корреляции коллекторских свойств с глинистостью снижает эффективность методов СП и ГМ при изучении межзерновых коллекторов в карбонатном разрезе.»</p><footer>— автор, стр. 107 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: глубина проникновения растёт с уменьшением пористости только до некоторого предела и при прочих равных. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></li><li>Условие: слабая связь свойств с глинистостью — при малой глинистости. <span class="pg" title="Страница книги (по PDF)">стр. 105</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Признаки, работающие в песчаниках, одинаково работают в карбонатах.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> В карбонатах проникновение глубже, сопротивления коллектора и неколлектора соизмеримы, а СП и ГМ малоэффективны. <span class="pg" title="Страница книги (по PDF)">стр. 105, 107</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Модели и правила, построенные на терригенном разрезе, не переносятся на карбонатный: меняются связи между кривыми и свойствами.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>тип разреза, диапазон пористости</dd>
+          <dt>Выход</dt><dd>выбор применимых методов и признаков</dd>
+          <dt>Где ломается</dt><dd>СП и ГМ теряют информативность; сопротивление перестаёт различать коллектор и неколлектор.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Перенос модели с песчаников на карбонаты без переобучения приведёт к деградации — это сдвиг домена.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>комплекс диаграмм карбонатного разреза</dd>
+            <dt>Ручные шаги</dt><dd>подбор методов, работающих в карбонатах</dd>
+            <dt>Точки суждения</dt><dd>доверять ли сопротивлению при глубоком проникновении</dd>
+            <dt>Время</dt><dd>сложные карбонатные разрезы требуют больше времени</dd>
+            <dt>Типичные ошибки</dt><dd>применять терригенные признаки к карбонатам</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сдвиг распределения (domain shift): те же признаки в новой среде связаны с целевой переменной иначе.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Причины сдвига физические и известны (проникновение, структура пор), их можно учесть моделью, а не только переобучением.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>нижний предел пористости коллектора <span class="en" lang="en">(porosity cutoff)</span></dt><dd>Минимальная пористость, при которой порода ещё является коллектором. <span class="pg">стр. 105</span> <span class="chip chip-model">модель</span></dd><dt>структура порового пространства <span class="en" lang="en">(pore structure)</span></dt><dd>Форма, размер и связность пор в породе. <span class="pg">стр. 105</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-18-t01" data-task="geo.latyshova.s20.18.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Почему в карбонатном разрезе сопротивления продуктивного коллектора и неколлектора часто соизмеримы?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.18.t01" value="0"> <span>Из-за нефильтрующегося раствора</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.18.t01" value="1"> <span>Потому что карбонаты всегда глинистые</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.18.t01" value="2"> <span>Из-за низкой пористости фильтрат проникает глубже</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.18.t01" value="3"> <span>Потому что в карбонатах нет нефти</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Из-за низкой пористости фильтрат проникает глубже</p>
+    <p class="fb-expl">С уменьшением пористости глубина проникновения растёт, и сопротивления выравниваются. <a href="#how-5">Где это в тексте (стр. 105) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-18-t02" data-task="geo.latyshova.s20.18.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие особенности карбонатных межзерновых коллекторов называет автор? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.18.t02" value="0"> <span>Проникновение мельче, чем в терригенных</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.18.t02" value="1"> <span>Свойства слабо связаны с глинистостью при малой глинистости</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.18.t02" value="2"> <span>Пористость и структура пор сильно меняются в одном горизонте</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.18.t02" value="3"> <span>Преобладают низкопористые разности</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Преобладают низкопористые разности; Пористость и структура пор сильно меняются в одном горизонте; Свойства слабо связаны с глинистостью при малой глинистости</p>
+    <p class="fb-expl">Проникновение в карбонатах, наоборот, глубже, чем в терригенных коллекторах. <a href="#how-2">Где это в тексте (стр. 105) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.18.c01"><p>Принципы для карбонатных межзерновых коллекторов те же, что для терригенных. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Основные принципы выделения и оценки характера насыщения межзерновых карбонатных коллекторов те же, что и для терригенного разреза.»</p><footer>— стр. 105</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c02"><p>Особенности: преобладание низкопористых разностей, широкий разброс пористости и структуры пор, широкий диапазон нижнего предела пористости, слабая связь свойств с глинистостью. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«являются преобладание низкопористых разностей, широкий диапазон изменения пористости и структуры порового пространства в одном и том же горизонте»</p><footer>— стр. 105</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c03"><p>При малой глинистости коллекторские свойства слабо связаны с нерастворимым остатком. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«слабая связь коллекторских свойств с содержанием глинистого материала (нерастворимого остатка) при малой глинистости»</p><footer>— стр. 105</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c04"><p>Проникновение в карбонатные коллекторы глубже: с уменьшением пористости глубина проникновения растёт. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«поскольку с уменьшением пористости (до некоторого предела) глубина проникновения в коллекторы при прочих равных условиях растет»</p><footer>— стр. 105</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c05"><p>Поэтому сопротивления продуктивного коллектора и неколлектора соизмеримы. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Эта же особенность — причина соизмеримости значений»</p><footer>— стр. 105</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c06"><p>Это и широкий диапазон пористости затрудняют оценку насыщения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«существенно затрудняют оценку характера насыщения коллектора»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.18.c07"><p>Отсутствие корреляции свойств с глинистостью снижает эффективность СП и ГМ в карбонатах. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Отсутствие корреляции коллекторских свойств с глинистостью снижает эффективность методов СП и ГМ при изучении межзерновых коллекторов в карбонатном разрезе.»</p><footer>— стр. 107</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-32.html">шаг 32 «Наложение кривых показывает нефть»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-30.html" rel="prev"><span>← Назад</span><b>Практикум по терригенному разрезу</b></a><a class="next" href="step-32.html" rel="next"><span>Дальше →</span><b>Наложение кривых показывает нефть</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.18.t01", "type": "single", "question": "Почему в карбонатном разрезе сопротивления продуктивного коллектора и неколлектора часто соизмеримы?", "explanation": "С уменьшением пористости глубина проникновения растёт, и сопротивления выравниваются.", "page": 105, "link": "#how-5", "step_title": "Чем сложны карбонатные коллекторы", "step_index": 31, "node_id": "geo.latyshova.s20.18", "options": ["Из-за нефильтрующегося раствора", "Потому что карбонаты всегда глинистые", "Из-за низкой пористости фильтрат проникает глубже", "Потому что в карбонатах нет нефти"], "key": [2], "answer_text": "Из-за низкой пористости фильтрат проникает глубже"}, {"id": "geo.latyshova.s20.18.t02", "type": "multiple", "question": "Какие особенности карбонатных межзерновых коллекторов называет автор? Выберите все верные.", "explanation": "Проникновение в карбонатах, наоборот, глубже, чем в терригенных коллекторах.", "page": 105, "link": "#how-2", "step_title": "Чем сложны карбонатные коллекторы", "step_index": 31, "node_id": "geo.latyshova.s20.18", "options": ["Проникновение мельче, чем в терригенных", "Свойства слабо связаны с глинистостью при малой глинистости", "Пористость и структура пор сильно меняются в одном горизонте", "Преобладают низкопористые разности"], "key": [1, 2, 3], "answer_text": "Преобладают низкопористые разности; Пористость и структура пор сильно меняются в одном горизонте; Свойства слабо связаны с глинистостью при малой глинистости"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 16. Порог «коллектор или неколлектор» — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.03" data-index="16">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как узнать коллектор › Шаг 16 из 34</p>
+    <h1>Порог «коллектор или неколлектор»</h1>
+    <p class="booktitle">В книге: «Косвенные количественные признаки: критическая проницаемость и рентабельный дебит» <span class="pg">стр. 96</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + процесс/прибор</span>    </p>
+<p class="relies">Опирается на: <a href="step-14.html">шаг 14 «Прямые признаки коллектора на диаграммах»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Граница между коллектором и неколлектором — это порог проницаемости, а не свойство породы само по себе.</p><p>Порог зависит от флюида, от свойств пласта и от того, какой дебит рентабелен в районе.</p><p>Поэтому порог одного района или флюида нельзя переносить на другой.</p><p class="threshold"><b>Пороговая идея.</b> Граница «коллектор / неколлектор» — не свойство породы само по себе, а порог проницаемости, зависящий от флюида и от экономики района. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Косвенные признаки</h3>          <div class="para" id="how-1">
+            <p>Кроме прямых качественных признаков, используют <strong class="term">косвенные количественные признаки коллектора</strong>. Это критические значения проницаемости, пористости и глинистости. И критические значения геофизических параметров, которые отражают изменение пористости и проницаемости. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c01"><p>«Кроме прямых качественных, используются также косвенные количественные признаки коллекторов.»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c02"><p>«К ним относятся критические значения проницаемости»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Главный критерий</h3>          <div class="para" id="how-2">
+            <p><strong class="term">Проницаемость</strong> — способность породы пропускать флюид. Главный критерий деления — <strong class="term">критическая проницаемость</strong>, то есть граничное значение. Если проницаемость выше него, порода — коллектор. Если не выше — неколлектор. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c03"><p>«является граничное или критическое значение коэффициента проницаемости»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 393" role="img" aria-label="Откуда берётся порог «коллектор / неколлектор»" class="ill-svg"><title>Откуда берётся порог «коллектор / неколлектор»</title><rect class="ill-bg" x="0" y="0" width="360" height="393" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Откуда берётся порог «коллектор /</tspan><tspan x="180.0" dy="19">неколлектор»</tspan></text><rect class="ill-box ill-neutral" x="12.0" y="82" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Геология, экономика района,</tspan><tspan x="180.0" dy="19">себестоимость нефти или газа</tspan></text><line class="ill-line" x1="180.0" y1="140.0" x2="180.0" y2="164.0"/><polygon class="ill-arrow" points="180.0,164.0 176.1,155.9 183.9,155.9"/><rect class="ill-box ill-accent" x="12.0" y="168" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="192" text-anchor="middle"><tspan x="180.0" dy="0">Нижний предел рентабельного дебита</tspan></text><line class="ill-line" x1="180.0" y1="207.0" x2="180.0" y2="231.0"/><polygon class="ill-arrow" points="180.0,231.0 176.1,222.9 183.9,222.9"/><rect class="ill-box ill-accent" x="12.0" y="235" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="259" text-anchor="middle"><tspan x="180.0" dy="0">Критическая проницаемость (с учётом</tspan><tspan x="180.0" dy="19">флюида и пласта)</tspan></text><line class="ill-line" x1="180.0" y1="293.0" x2="180.0" y2="317.0"/><polygon class="ill-arrow" points="180.0,317.0 176.1,308.9 183.9,308.9"/><rect class="ill-box ill-good" x="12.0" y="321" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="345" text-anchor="middle"><tspan x="180.0" dy="0">Выше порога — коллектор, не выше —</tspan><tspan x="180.0" dy="19">неколлектор</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Цепочка автора: экономика района задаёт рентабельный дебит, а он — порог проницаемости для разделения пород.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 96</span>
+  </figcaption>
+</figure>
+<h3>От чего зависит порог</h3>          <div class="para" id="how-3">
+            <p>Автор делает вывод: критическая проницаемость зависит от свойств флюидов и коллектора в пластовых условиях. И от величины рентабельного дебита для района. <strong class="term">Дебит</strong> — объём нефти, газа или воды из скважины за единицу времени. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c04"><p>«Критическое значение проницаемости зависит от свойств флюидов и коллектора в пластовых условиях и от величины рентабельного дебита для данного района.»</p><footer>— автор, стр. 96 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p>Для нефтеносных коллекторов критическая проницаемость лежит в пределах (1-10) · 10³ мкм², для газовых — (0,1-1) · 10³ мкм². Так записано в распознанном тексте. По смыслу единиц степень, вероятно, 10⁻³: сверьте со сканом страницы 96. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c05"><p>«Для нефтеносных коллекторов оно лежит в пределах (1-10) · 10³ мкм², для газовых - (0,1-1) · 10³ мкм².»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Экономика в геологии</h3>          <div class="para" id="how-5">
+            <p><strong class="term">Рентабельный дебит</strong> — дебит нефти или газа выше нижнего предела для данного района. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c06"><p>«Рентабельным считают дебит нефти Qₙ или газа Qᵣ, значение которого выше нижнего предела»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Этот предел, по автору, задают особенности геологии и экономики района. А ещё себестоимость тонны нефти или кубометра газа. Значит, одна и та же порода в разных районах может оказаться по разные стороны порога. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.03.c07"><p>«определяются особенностями геологии, экономики данного района и себестоимостью тонны нефти или кубометра газа»</p><footer>— автор, стр. 96 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Нефтеносные коллекторы: критическая проницаемость (1-10) · 10³ мкм² (как в распознанном тексте). <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li><li>Газовые коллекторы: (0,1-1) · 10³ мкм² — порог для газа ниже, чем для нефти. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li><li>Правило: проницаемость выше критической — коллектор, не выше — неколлектор. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Коллектор — это любая пористая порода.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Коллектором считают породу с проницаемостью выше критической, а критическое значение зависит от флюида и рентабельного дебита района. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Метка «коллектор» в данных — результат порога, зависящего от экономики; при смене экономических условий разметка меняется.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>проницаемость (или её геофизические заменители), рентабельный дебит района</dd>
+          <dt>Выход</dt><dd>класс коллектор/неколлектор</dd>
+          <dt>Где ломается</dt><dd>Порог одного района или флюида не годится для другого.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Порог стоит хранить как параметр конфигурации по району и флюиду, а не «зашивать» в модель.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>данные испытаний, экономические параметры района</dd>
+            <dt>Ручные шаги</dt><dd>обоснование порога для района</dd>
+            <dt>Точки суждения</dt><dd>какой дебит считать рентабельным</dd>
+            <dt>Время</dt><dd>долгое согласование порогов</dd>
+            <dt>Типичные ошибки</dt><dd>перенос порога с другого месторождения</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Порог решения классификатора, выбранный по бизнес-метрике (минимальная выгода), а не только по точности.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Порог зависит и от физики (флюид, пластовые условия), и от экономики, которая меняется со временем.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Граничные значения и сегодня устанавливают для каждого объекта при подсчёте запасов, сочетая петрофизические и экономические критерии.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Показатель степени в диапазонах <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>В распознанном тексте показатель степени записан как «10³»; при единицах мкм² по смыслу это, вероятно, 10⁻³ мкм² (знак минус мог потеряться при распознавании) — сверить со сканом стр. 96.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>косвенные количественные признаки коллектора <span class="en" lang="en">(quantitative cutoffs)</span></dt><dd>Критические значения проницаемости, пористости, глинистости или геофизических параметров, отделяющие коллекторы от неколлекторов. <span class="pg">стр. 96</span></dd><dt>критическая проницаемость <span class="en" lang="en">(permeability cutoff)</span></dt><dd>Граничное значение проницаемости: выше — коллектор, не выше — неколлектор. <span class="pg">стр. 96</span></dd><dt>проницаемость <span class="en" lang="en">(permeability)</span></dt><dd>Способность породы пропускать флюид. <span class="pg">стр. 96</span> <span class="chip chip-model">модель</span></dd><dt>рентабельный дебит <span class="en" lang="en">(economic rate limit)</span></dt><dd>Дебит выше нижнего экономического предела для района. <span class="pg">стр. 96</span></dd><dt>дебит <span class="en" lang="en">(flow rate)</span></dt><dd>Объём нефти, газа или воды, получаемый из скважины за единицу времени. <span class="pg">стр. 96</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-03-t01" data-task="geo.latyshova.s20.03.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что, по автору, является главным критерием деления пород на «коллектор» и «неколлектор»?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.03.t01" value="0"> <span>Критическое (граничное) значение проницаемости</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.03.t01" value="1"> <span>Цвет породы в керне</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.03.t01" value="2"> <span>Максимальные показания гамма-метода</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.03.t01" value="3"> <span>Наличие любой пористости</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Критическое (граничное) значение проницаемости</p>
+    <p class="fb-expl">Порода — коллектор, если её проницаемость выше критической. <a href="#how-2">Где это в тексте (стр. 96) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-03-t02" data-task="geo.latyshova.s20.03.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">От чего, по автору, зависит критическая проницаемость? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.03.t02" value="0"> <span>От рентабельного дебита для района</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.03.t02" value="1"> <span>От свойств флюидов в пластовых условиях</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.03.t02" value="2"> <span>Только от глубины пласта</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.03.t02" value="3"> <span>От свойств коллектора в пластовых условиях</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> От свойств флюидов в пластовых условиях; От свойств коллектора в пластовых условиях; От рентабельного дебита для района</p>
+    <p class="fb-expl">Порог определяют флюид, пласт и экономика района через рентабельный дебит. <a href="#how-3">Где это в тексте (стр. 96) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.03.c01"><p>Кроме прямых признаков используют косвенные количественные признаки коллекторов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Кроме прямых качественных, используются также косвенные количественные признаки коллекторов.»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c02"><p>К ним относятся критические значения проницаемости, пористости, глинистости и связанных с ними геофизических параметров. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«К ним относятся критические значения проницаемости»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c03"><p>Главный критерий «коллектор/неколлектор» — критическое значение проницаемости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«является граничное или критическое значение коэффициента проницаемости»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c04"><p>Критическая проницаемость зависит от флюидов, коллектора в пластовых условиях и рентабельного дебита района. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Критическое значение проницаемости зависит от свойств флюидов и коллектора в пластовых условиях и от величины рентабельного дебита для данного района.»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c05"><p>Для нефтеносных коллекторов критическая проницаемость в пределах (1-10) · 10³ мкм², для газовых — (0,1-1) · 10³ мкм². <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Для нефтеносных коллекторов оно лежит в пределах (1-10) · 10³ мкм², для газовых - (0,1-1) · 10³ мкм².»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c06"><p>Рентабельный дебит — выше нижнего предела для района. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Рентабельным считают дебит нефти Qₙ или газа Qᵣ, значение которого выше нижнего предела»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.03.c07"><p>Предел рентабельного дебита задают геология, экономика района и себестоимость нефти или газа. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«определяются особенностями геологии, экономики данного района и себестоимостью тонны нефти или кубометра газа»</p><footer>— стр. 96</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-17.html">шаг 17 «От дебита к порогу на диаграмме»</a>, <a href="step-17.html">шаг 17 «От дебита к порогу на диаграмме»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-15.html" rel="prev"><span>← Назад</span><b>Проникновение и повторные замеры</b></a><a class="next" href="step-17.html" rel="next"><span>Дальше →</span><b>От дебита к порогу на диаграмме</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.03.t01", "type": "single", "question": "Что, по автору, является главным критерием деления пород на «коллектор» и «неколлектор»?", "explanation": "Порода — коллектор, если её проницаемость выше критической.", "page": 96, "link": "#how-2", "step_title": "Порог «коллектор или неколлектор»", "step_index": 16, "node_id": "geo.latyshova.s20.03", "options": ["Критическое (граничное) значение проницаемости", "Цвет породы в керне", "Максимальные показания гамма-метода", "Наличие любой пористости"], "key": [0], "answer_text": "Критическое (граничное) значение проницаемости"}, {"id": "geo.latyshova.s20.03.t02", "type": "multiple", "question": "От чего, по автору, зависит критическая проницаемость? Выберите все верные.", "explanation": "Порог определяют флюид, пласт и экономика района через рентабельный дебит.", "page": 96, "link": "#how-3", "step_title": "Порог «коллектор или неколлектор»", "step_index": 16, "node_id": "geo.latyshova.s20.03", "options": ["От рентабельного дебита для района", "От свойств флюидов в пластовых условиях", "Только от глубины пласта", "От свойств коллектора в пластовых условиях"], "key": [0, 1, 3], "answer_text": "От свойств флюидов в пластовых условиях; От свойств коллектора в пластовых условиях; От рентабельного дебита для района"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

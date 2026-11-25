@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="index">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html" aria-current="page">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<main id="main" class="content wide" tabindex="-1">
+  <section class="hero">
+    <p class="kicker">Курс по главе книги</p>
+    <h1>Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</h1>
+    <p class="booktitle">М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин» (1991)</p>
+    <p class="stats"><span>34 шагов</span><span>≈ 256 мин</span><span>81 заданий</span><span>96 карточек</span></p>
+    <div class="resume">
+      <a class="btn primary start" href="step-01.html">Начать с шага 1</a>
+      <span class="resume-note muted" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="howto" aria-labelledby="h-howto">
+    <h2 id="h-howto">Как устроен курс</h2>
+    <ul>
+      <li>Шаги идут в порядке, в котором новичку легче понять главу. У каждого шага — суть, полное объяснение со ссылками на страницы книги и задания с проверкой.</li>
+      <li>Обычный текст — пересказ книги моделью, у каждого абзаца стоит «стр. N». Рядом — дословная цитата автора. Пометка <span class="chip chip-model">модель</span> значит: этого в книге нет.</li>
+      <li>Прогресс сохраняется в этом браузере. Можно закрыть курс и вернуться к месту, где остановились.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-path">
+    <h2 id="h-path">Путь по главе</h2>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 1</span> Зачем ГИС и как бурение портит или улучшает данные</h3>
+      <ol class="path" start="1">
+        <li class="path-step" data-node="geo.latyshova.ch5.01">
+          <a href="step-01.html">
+            <span class="ps-num" aria-hidden="true">1</span>
+            <span class="ps-body"><span class="ps-title">Какие задачи решают по данным ГИС</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 90</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s17.01">
+          <a href="step-02.html">
+            <span class="ps-num" aria-hidden="true">2</span>
+            <span class="ps-body"><span class="ps-title">Набор методов зависит от бурового раствора</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 90</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s18.01">
+          <a href="step-03.html">
+            <span class="ps-num" aria-hidden="true">3</span>
+            <span class="ps-body"><span class="ps-title">Какие бывают разрезы и коллекторы</span>
+            <span class="ps-meta">▤ Карточки · ≈ 7 мин · стр. 91</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s17.02">
+          <a href="step-04.html">
+            <span class="ps-num" aria-hidden="true">4</span>
+            <span class="ps-body"><span class="ps-title">Корка сужает скважину против коллектора</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 90</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s17.03">
+          <a href="step-05.html">
+            <span class="ps-num" aria-hidden="true">5</span>
+            <span class="ps-body"><span class="ps-title">Водоотдача и давление раствора</span>
+            <span class="ps-meta">¶ Текст · ≈ 9 мин · стр. 90–91</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s17.04">
+          <a href="step-06.html">
+            <span class="ps-num" aria-hidden="true">6</span>
+            <span class="ps-body"><span class="ps-title">Пресный или солёный фильтрат</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 91</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s17.05">
+          <a href="step-07.html">
+            <span class="ps-num" aria-hidden="true">7</span>
+            <span class="ps-body"><span class="ps-title">Бурение на воде и без фильтрации</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 91</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 2</span> Методы ГИС и литологический разрез</h3>
+      <ol class="path" start="8">
+        <li class="path-step" data-node="geo.latyshova.s18.02">
+          <a href="step-08.html">
+            <span class="ps-num" aria-hidden="true">8</span>
+            <span class="ps-body"><span class="ps-title">Какой метод для какой задачи</span>
+            <span class="ps-meta">▤ Карточки · ≈ 7 мин · стр. 91–92</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s18.03">
+          <a href="step-09.html">
+            <span class="ps-num" aria-hidden="true">9</span>
+            <span class="ps-body"><span class="ps-title">Как оценивают нефтенасыщенность пласта</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 92</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s18.04">
+          <a href="step-10.html">
+            <span class="ps-num" aria-hidden="true">10</span>
+            <span class="ps-body"><span class="ps-title">Методы ГИС дополняют друг друга</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 92</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s19.01">
+          <a href="step-11.html">
+            <span class="ps-num" aria-hidden="true">11</span>
+            <span class="ps-body"><span class="ps-title">Как строят разрез скважины по ГИС</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 92</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s19.02">
+          <a href="step-12.html">
+            <span class="ps-num" aria-hidden="true">12</span>
+            <span class="ps-body"><span class="ps-title">Подписи пород на диаграммах ГИС</span>
+            <span class="ps-meta">¶ Текст · ≈ 11 мин · стр. 92–95</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s19.03">
+          <a href="step-13.html">
+            <span class="ps-num" aria-hidden="true">13</span>
+            <span class="ps-body"><span class="ps-title">Простой разрез и сложный разрез</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 95</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 3</span> Как узнать коллектор</h3>
+      <ol class="path" start="14">
+        <li class="path-step" data-node="geo.latyshova.s20.01">
+          <a href="step-14.html">
+            <span class="ps-num" aria-hidden="true">14</span>
+            <span class="ps-body"><span class="ps-title">Прямые признаки коллектора на диаграммах</span>
+            <span class="ps-meta">⟳ Анимация · ≈ 9 мин · стр. 96</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.02">
+          <a href="step-15.html">
+            <span class="ps-num" aria-hidden="true">15</span>
+            <span class="ps-body"><span class="ps-title">Проникновение и повторные замеры</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 96</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.03">
+          <a href="step-16.html">
+            <span class="ps-num" aria-hidden="true">16</span>
+            <span class="ps-body"><span class="ps-title">Порог «коллектор или неколлектор»</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 96</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.04">
+          <a href="step-17.html">
+            <span class="ps-num" aria-hidden="true">17</span>
+            <span class="ps-body"><span class="ps-title">От дебита к порогу на диаграмме</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 96–97</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 4</span> Нефть или вода: характер насыщения</h3>
+      <ol class="path" start="18">
+        <li class="path-step" data-node="geo.latyshova.s20.05">
+          <a href="step-18.html">
+            <span class="ps-num" aria-hidden="true">18</span>
+            <span class="ps-body"><span class="ps-title">Нефть или вода: параметр насыщения</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 97</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.06">
+          <a href="step-19.html">
+            <span class="ps-num" aria-hidden="true">19</span>
+            <span class="ps-body"><span class="ps-title">Сопротивление против пористости</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 97</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.07">
+          <a href="step-20.html">
+            <span class="ps-num" aria-hidden="true">20</span>
+            <span class="ps-body"><span class="ps-title">Палетка: точка пласта решает</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 12 мин · стр. 97–98</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.08">
+          <a href="step-21.html">
+            <span class="ps-num" aria-hidden="true">21</span>
+            <span class="ps-body"><span class="ps-title">Два вида критических значений</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 98–99</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.09">
+          <a href="step-22.html">
+            <span class="ps-num" aria-hidden="true">22</span>
+            <span class="ps-body"><span class="ps-title">Три зоны течения в порах</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 99</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.10">
+          <a href="step-23.html">
+            <span class="ps-num" aria-hidden="true">23</span>
+            <span class="ps-body"><span class="ps-title">Зона неопределённости насыщения</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 10 мин · стр. 99–100</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.11">
+          <a href="step-24.html">
+            <span class="ps-num" aria-hidden="true">24</span>
+            <span class="ps-body"><span class="ps-title">Глинистость меняет пороги насыщения</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 14 мин · стр. 100</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 5</span> Эффективная толщина и контакты</h3>
+      <ol class="path" start="25">
+        <li class="path-step" data-node="geo.latyshova.s20.12">
+          <a href="step-25.html">
+            <span class="ps-num" aria-hidden="true">25</span>
+            <span class="ps-body"><span class="ps-title">Эффективная толщина у водонефтяного контакта</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 100–101</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.13">
+          <a href="step-26.html">
+            <span class="ps-num" aria-hidden="true">26</span>
+            <span class="ps-body"><span class="ps-title">Газ проявляется не сразу</span>
+            <span class="ps-meta">¶ Текст · ≈ 7 мин · стр. 101</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.14">
+          <a href="step-27.html">
+            <span class="ps-num" aria-hidden="true">27</span>
+            <span class="ps-body"><span class="ps-title">Вычесть прослои неколлектора</span>
+            <span class="ps-meta">▤ Карточки · ≈ 5 мин · стр. 101</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.15">
+          <a href="step-28.html">
+            <span class="ps-num" aria-hidden="true">28</span>
+            <span class="ps-body"><span class="ps-title">Тонкие слои: толщину считают расчётом</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 101–102</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.16">
+          <a href="step-29.html">
+            <span class="ps-num" aria-hidden="true">29</span>
+            <span class="ps-body"><span class="ps-title">Плотные прослои в пачке</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 102, 104</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.17">
+          <a href="step-30.html">
+            <span class="ps-num" aria-hidden="true">30</span>
+            <span class="ps-body"><span class="ps-title">Практикум по терригенному разрезу</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 104–105</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title"><span class="part-no">Часть 6</span> Карбонатный разрез</h3>
+      <ol class="path" start="31">
+        <li class="path-step" data-node="geo.latyshova.s20.18">
+          <a href="step-31.html">
+            <span class="ps-num" aria-hidden="true">31</span>
+            <span class="ps-body"><span class="ps-title">Чем сложны карбонатные коллекторы</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 105, 107</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.19">
+          <a href="step-32.html">
+            <span class="ps-num" aria-hidden="true">32</span>
+            <span class="ps-body"><span class="ps-title">Наложение кривых показывает нефть</span>
+            <span class="ps-meta">¶ Текст · ≈ 8 мин · стр. 107</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.20">
+          <a href="step-33.html">
+            <span class="ps-num" aria-hidden="true">33</span>
+            <span class="ps-body"><span class="ps-title">Решение на данных: нормализация кривых</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 9 мин · стр. 105, 107</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.latyshova.s20.21">
+          <a href="step-34.html">
+            <span class="ps-num" aria-hidden="true">34</span>
+            <span class="ps-body"><span class="ps-title">Свой порог пористости для карбонатов</span>
+            <span class="ps-meta">¶ Текст · ≈ 9 мин · стр. 107–108</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="tiles" aria-label="Другие разделы">
+    <a class="tile" href="tasks.html"><b>Задания</b><span>Все 81 заданий главы с проверкой</span></a>
+    <a class="tile" href="cards.html"><b>Карточки</b><span>Повторение: «знаю / повторить»</span></a>
+    <a class="tile" href="summary.html"><b>Конспект</b><span>Суть шагов и выводы для данных; печать в PDF</span></a>
+    <a class="tile" href="map.html"><b>Карта связей</b><span>Какой шаг на какой опирается</span></a>
+  </section>
+</main>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

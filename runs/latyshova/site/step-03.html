@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 3. Какие бывают разрезы и коллекторы — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s18.01" data-index="3">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Зачем ГИС и как бурение портит или улучшает данные › Шаг 3 из 34</p>
+    <h1>Какие бывают разрезы и коллекторы</h1>
+    <p class="booktitle">В книге: «§ 18. Типы изучаемых разрезов и коллекторов» <span class="pg">стр. 91</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">▤ Карточки</span>
+<span class="chip" title="Тип трудности узла">трудность: распознавание + пространство</span>    </p>
+<p class="relies">Опирается на: <a href="step-02.html">шаг 2 «Набор методов зависит от бурового раствора»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Коллекторы различаются формой пустот: межзерновые поры, трещины, каверны или их смесь.</p><p>От типа разреза и коллектора зависит, какими методами и признаками его искать.</p><p>Нефть и газ при этом всегда находятся в пустотах породы, а не в подземном озере.</p><p class="threshold"><b>Пороговая идея.</b> Коллекторы различаются формой порового пространства (поры, трещины, каверны), и от этого зависит, какими методами их искать. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Типы разрезов</h3>          <div class="para" id="how-1">
+            <p>Автор называет три основных типа разреза: терригенный, карбонатный и гидрохимический. Кроме них бывают смешанные разрезы: терригенно-карбонатные, карбонатно-гидрохимические, терригенно-гидрохимические. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c01"><p>«В качестве основных типов разреза рассматривают терригенный, карбонатный и гидрохимический.»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Отдельный случай — вулканогенные разрезы. По составу вещества они близки к терригенным. А по строению пустот в коллекторах — к карбонатным, кроме карстовых образований. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c02"><p>«вулканогенные, которые по вещественному составу близки к терригенным, а по структуре порового пространства коллекторов — к карбонатным»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Типы коллекторов по форме пустот</h3>          <div class="para" id="how-3">
+            <p>По форме порового пространства коллекторы делят на межзерновые, трещинные, кавернозно-трещинные и смешанные. В <strong class="term">трещинном коллекторе</strong> флюид содержится и движется по трещинам. В <strong class="term">кавернозном коллекторе</strong> есть крупные пустоты-каверны, обычно от растворения породы. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c03"><p>«По морфологии порового пространства коллекторы разделяют на межзерновые, трещинные, кавернозно-трещинные и смешанные типы.»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 412" role="img" aria-label="Как классифицируют коллекторы" class="ill-svg"><title>Как классифицируют коллекторы</title><rect class="ill-bg" x="0" y="0" width="360" height="412" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Как классифицируют коллекторы</tspan></text><rect class="ill-box ill-accent" x="12.0" y="63" width="336" height="75" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">По форме пустот: межзерновые,</tspan><tspan x="180.0" dy="19">трещинные, кавернозно-трещинные,</tspan><tspan x="180.0" dy="19">смешанные</tspan></text><line class="ill-line" x1="180.0" y1="140.0" x2="180.0" y2="164.0"/><polygon class="ill-arrow" points="180.0,164.0 176.1,155.9 183.9,155.9"/><rect class="ill-box ill-neutral" x="12.0" y="168" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="192" text-anchor="middle"><tspan x="180.0" dy="0">Терригенные межзерновые: высоко- и</tspan><tspan x="180.0" dy="19">низкопористые, чистые и глинистые</tspan></text><line class="ill-line" x1="180.0" y1="226.0" x2="180.0" y2="250.0"/><polygon class="ill-arrow" points="180.0,250.0 176.1,241.9 183.9,241.9"/><rect class="ill-box ill-neutral" x="12.0" y="254" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="278" text-anchor="middle"><tspan x="180.0" dy="0">Глинистые: глина рассеянная,</tspan><tspan x="180.0" dy="19">слоистая или гнездовидная</tspan></text><line class="ill-line" x1="180.0" y1="312.0" x2="180.0" y2="336.0"/><polygon class="ill-arrow" points="180.0,336.0 176.1,327.9 183.9,327.9"/><rect class="ill-box ill-neutral" x="12.0" y="340" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="364" text-anchor="middle"><tspan x="180.0" dy="0">Карбонатные высокопористые: часто</tspan><tspan x="180.0" dy="19">смешанные, со вторичными порами</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Классификация коллекторов по автору: сначала по форме пустот, затем внутри терригенных и карбонатных коллекторов.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 91</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-4">
+            <p>В терригенном разрезе преобладают межзерновые коллекторы. В карбонатном рядом с межзерновыми встречаются кавернозно-трещинные и смешанные. Трещинные коллекторы бывают в карбонатных, терригенных и вулканогенных породах. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c04"><p>«В терригенном разрезе преобладают межзерновые коллекторы, в карбонатном наряду с межзерновыми - кавернозно-трещинные и смешанные.»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c10"><p>«Трещинные коллекторы встречаются в карбонатных, терригенных и вулканогенных породах.»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Терригенные межзерновые коллекторы</h3>          <div class="para" id="how-5">
+            <p>Геофизики делят терригенные межзерновые коллекторы на высокопористые и низкопористые. Ещё их делят на чистые, то есть слабоглинистые, и глинистые. <strong class="term">Глинистость</strong> — содержание глинистого материала в породе. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c05"><p>«в терригенном разрезе среди межзерновых коллекторов выделяют высокопористые и низкопористые; чистые (слабоглинистые) и глинистые»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Глинистые коллекторы различают по тому, как в них распределена глина. Она бывает рассеянной, слоистой и гнездовидной. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c06"><p>«по характеру распределения глинистого материала на коллекторы с рассеянной, слоистой и гнездовидной глинистостью»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>Особая группа — породы с неактивным <strong class="term">цементом</strong>. Цемент — вещество, которое скрепляет зёрна породы. Неактивный цемент здесь карбонатный или силикатный, а не глинистый. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c07"><p>«Особую группу межзерновых коллекторов составляют породы с неактивным (карбонатным или силикатным) цементом.»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Карбонатные коллекторы</h3>          <div class="para" id="how-8">
+            <p>Высокопористые карбонатные коллекторы часто бывают смешанного типа. В них велика доля <strong class="term">вторичной пористости</strong> — пустот, возникших уже после образования породы. Это поры <strong class="term">выщелачивания</strong> (растворения части породы водой) и перекристаллизации. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c08"><p>«Высокопористые коллекторы часто бывают смешанного типа с присутствием значительной доли вторичных пор выщелачивания, перекристаллизации»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-9">
+            <p>Ещё одна особая группа — высокопродуктивные трещинно-кавернозно-межзерновые коллекторы. В них есть крупные пустоты и полости выщелачивания карстового типа. Но и эти пустоты — часть породы, а не подземное озеро. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.01.c09"><p>«высокопродуктивные трещинно-кавернозно-межзерновые коллекторы с наличием крупных пустот»</p><footer>— автор, стр. 91 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: вулканогенные разрезы похожи на карбонатные по строению пустот, кроме карстовых образований. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Пласт-коллектор — это пустота или подземное озеро.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Коллектор — порода; флюид находится в порах, трещинах и кавернах этой породы. <span class="pg" title="Страница книги (по PDF)">стр. 91</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Тип коллектора — скрытая категория, от которой зависит, какие признаки и связи применимы при интерпретации.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>тип разреза, сведения о породах</dd>
+          <dt>Выход</dt><dd>класс коллектора (межзерновой, трещинный, кавернозный, смешанный; чистый/глинистый)</dd>
+          <dt>Где ломается</dt><dd>Признаки межзерновых коллекторов не переносятся на трещинные и кавернозные.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Модели выделения коллекторов стоит обучать раздельно по типам разреза/коллектора.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>описание разреза, керн</dd>
+            <dt>Ручные шаги</dt><dd>отнесение коллектора к типу</dd>
+            <dt>Точки суждения</dt><dd>смешанный тип или преобладающий</dd>
+            <dt>Время</dt><dd>зависит от наличия керна</dd>
+            <dt>Типичные ошибки</dt><dd>считать все коллекторы межзерновыми</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как типы хранилищ данных: у каждой структуры свои способы доступа и свои метрики.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> В породе типы смешиваются в одном пласте (смешанные коллекторы), чёткой границы классов нет.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Зачем классификация интерпретатору <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Тип коллектора определяет, какие признаки на диаграммах работают: дальше в главе подробно разбираются только межзерновые коллекторы, для которых действуют признаки по корке и проникновению.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>трещинный коллектор <span class="en" lang="en">(fractured reservoir)</span></dt><dd>Коллектор, где флюид содержится и движется по трещинам. <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd><dt>кавернозный коллектор <span class="en" lang="en">(vuggy reservoir)</span></dt><dd>Коллектор с крупными пустотами-кавернами, обычно от растворения породы. <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd><dt>глинистость <span class="en" lang="en">(shaliness)</span></dt><dd>Содержание глинистого материала в породе. <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd><dt>вторичная пористость <span class="en" lang="en">(secondary porosity)</span></dt><dd>Пустоты, возникшие после образования породы (выщелачивание, перекристаллизация, трещины). <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd><dt>выщелачивание <span class="en" lang="en">(leaching)</span></dt><dd>Растворение части породы водой с образованием пустот. <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd><dt>цемент породы <span class="en" lang="en">(cement)</span></dt><dd>Вещество, скрепляющее зёрна обломочной породы; «неактивный» — карбонатный или силикатный, не глинистый. <span class="pg">стр. 91</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s18-01-t01" data-task="geo.latyshova.s18.01.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие коллекторы, по автору, преобладают в терригенном разрезе?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t01" value="0"> <span>Межзерновые</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t01" value="1"> <span>Карстовые</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t01" value="2"> <span>Только трещинные</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t01" value="3"> <span>Кавернозно-трещинные</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Межзерновые</p>
+    <p class="fb-expl">Автор: в терригенном разрезе преобладают межзерновые коллекторы, а кавернозно-трещинные типичны для карбонатного. <a href="#how-4">Где это в тексте (стр. 91) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s18-01-t02" data-task="geo.latyshova.s18.01.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенное слово.</p>
+  <p class="cloze">Глинистые коллекторы различают по распределению глины: она бывает рассеянной, слоистой и <select aria-label="Пропуск 1"><option value="">—</option><option>кавернозной</option><option>карстовой</option><option>трещинной</option><option>гнездовидной</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Глинистые коллекторы различают по распределению глины: она бывает рассеянной, слоистой и [гнездовидной].</p>
+    <p class="fb-expl">Автор выделяет три вида распределения глины: рассеянную, слоистую и гнездовидную. <a href="#how-6">Где это в тексте (стр. 91) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s18-01-t03" data-task="geo.latyshova.s18.01.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Чем вулканогенные разрезы похожи на карбонатные?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t03" value="0"> <span>Ничем, они похожи только на гидрохимические</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t03" value="1"> <span>Строением пустот в коллекторах</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t03" value="2"> <span>Тем, что в них нет трещинных коллекторов</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.01.t03" value="3"> <span>Составом вещества</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Строением пустот в коллекторах</p>
+    <p class="fb-expl">По составу вулканогенные разрезы близки к терригенным, а по строению пустот — к карбонатным. <a href="#how-2">Где это в тексте (стр. 91) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s18.01.c01"><p>Основные типы разреза — терригенный, карбонатный и гидрохимический; бывают смешанные. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В качестве основных типов разреза рассматривают терригенный, карбонатный и гидрохимический.»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c02"><p>Вулканогенные разрезы по составу близки к терригенным, а по строению пор — к карбонатным. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«вулканогенные, которые по вещественному составу близки к терригенным, а по структуре порового пространства коллекторов — к карбонатным»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c03"><p>По форме порового пространства коллекторы: межзерновые, трещинные, кавернозно-трещинные, смешанные. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«По морфологии порового пространства коллекторы разделяют на межзерновые, трещинные, кавернозно-трещинные и смешанные типы.»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c04"><p>В терригенном разрезе преобладают межзерновые коллекторы, в карбонатном есть также кавернозно-трещинные и смешанные. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В терригенном разрезе преобладают межзерновые коллекторы, в карбонатном наряду с межзерновыми - кавернозно-трещинные и смешанные.»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c05"><p>Терригенные межзерновые коллекторы делят на высоко- и низкопористые, чистые и глинистые. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«в терригенном разрезе среди межзерновых коллекторов выделяют высокопористые и низкопористые; чистые (слабоглинистые) и глинистые»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c06"><p>Глинистые коллекторы различают по распределению глины: рассеянная, слоистая, гнездовидная. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«по характеру распределения глинистого материала на коллекторы с рассеянной, слоистой и гнездовидной глинистостью»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c07"><p>Особая группа — межзерновые коллекторы с неактивным карбонатным или силикатным цементом. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Особую группу межзерновых коллекторов составляют породы с неактивным (карбонатным или силикатным) цементом.»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c08"><p>Высокопористые карбонатные коллекторы часто смешанного типа, с вторичными порами выщелачивания и перекристаллизации. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Высокопористые коллекторы часто бывают смешанного типа с присутствием значительной доли вторичных пор выщелачивания, перекристаллизации»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c09"><p>Особая группа — высокопродуктивные трещинно-кавернозно-межзерновые коллекторы с крупными карстовыми пустотами. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«высокопродуктивные трещинно-кавернозно-межзерновые коллекторы с наличием крупных пустот»</p><footer>— стр. 91</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.01.c10"><p>Трещинные коллекторы бывают в карбонатных, терригенных и вулканогенных породах. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Трещинные коллекторы встречаются в карбонатных, терригенных и вулканогенных породах.»</p><footer>— стр. 91</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-04.html">шаг 4 «Корка сужает скважину против коллектора»</a>, <a href="step-08.html">шаг 8 «Какой метод для какой задачи»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-02.html" rel="prev"><span>← Назад</span><b>Набор методов зависит от бурового раствора</b></a><a class="next" href="step-04.html" rel="next"><span>Дальше →</span><b>Корка сужает скважину против коллектора</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s18.01.t01", "type": "single", "question": "Какие коллекторы, по автору, преобладают в терригенном разрезе?", "explanation": "Автор: в терригенном разрезе преобладают межзерновые коллекторы, а кавернозно-трещинные типичны для карбонатного.", "page": 91, "link": "#how-4", "step_title": "Какие бывают разрезы и коллекторы", "step_index": 3, "node_id": "geo.latyshova.s18.01", "options": ["Межзерновые", "Карстовые", "Только трещинные", "Кавернозно-трещинные"], "key": [0], "answer_text": "Межзерновые"}, {"id": "geo.latyshova.s18.01.t02", "type": "cloze", "question": "Вставьте пропущенное слово.", "explanation": "Автор выделяет три вида распределения глины: рассеянную, слоистую и гнездовидную.", "page": 91, "link": "#how-6", "step_title": "Какие бывают разрезы и коллекторы", "step_index": 3, "node_id": "geo.latyshova.s18.01", "parts": ["Глинистые коллекторы различают по распределению глины: она бывает рассеянной, слоистой и ", "."], "blanks": [{"options": ["кавернозной", "карстовой", "трещинной", "гнездовидной"], "answers": ["гнездовидной"]}], "key": [["гнездовидной"]], "answer_text": "Глинистые коллекторы различают по распределению глины: она бывает рассеянной, слоистой и [гнездовидной]."}, {"id": "geo.latyshova.s18.01.t03", "type": "single", "question": "Чем вулканогенные разрезы похожи на карбонатные?", "explanation": "По составу вулканогенные разрезы близки к терригенным, а по строению пустот — к карбонатным.", "page": 91, "link": "#how-2", "step_title": "Какие бывают разрезы и коллекторы", "step_index": 3, "node_id": "geo.latyshova.s18.01", "options": ["Ничем, они похожи только на гидрохимические", "Строением пустот в коллекторах", "Тем, что в них нет трещинных коллекторов", "Составом вещества"], "key": [1], "answer_text": "Строением пустот в коллекторах"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

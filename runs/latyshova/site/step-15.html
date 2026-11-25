@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 15. Проникновение и повторные замеры — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.02" data-index="15">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Как узнать коллектор › Шаг 15 из 34</p>
+    <h1>Проникновение и повторные замеры</h1>
+    <p class="booktitle">В книге: «Радиальный градиент сопротивления и динамические методы выделения коллекторов» <span class="pg">стр. 96</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-14.html">шаг 14 «Прямые признаки коллектора на диаграммах»</a> <span class="muted">(предпосылка)</span>, <a href="step-10.html">шаг 10 «Методы ГИС дополняют друг друга»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Проникновение фильтрата видно по зондам разной глубинности: сопротивление меняется по мере удаления от скважины.</p><p>Если одного замера мало, наблюдают процесс во времени: зона проникновения формируется или расформировывается только в коллекторе.</p><p>Отсутствие заметного градиента сопротивления не значит, что коллектора нет.</p><p class="threshold"><b>Пороговая идея.</b> Если один замер не различает коллектор, наблюдают процесс во времени: зона проникновения формируется или расформировывается только в коллекторе. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как увидеть проникновение</h3>          <div class="para" id="how-1">
+            <p>Напомним: радиальный градиент сопротивления — это изменение сопротивления пласта от скважины вглубь. Его устанавливают по БЭЗ и по диаграммам разноглубинных фокусированных зондов. Проникновение бывает повышающим или понижающим. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c01"><p>«устанавливают при интерпретации БЭЗ и диаграмм разноглубинных фокусированных зондов»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-2">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_latyshova_s20_02__2_m.svg"><img src="img/geo_latyshova_s20_02__2.svg" alt="Срез от оси скважины в пласт: корка, промытая зона, зона проникновения, неизменённый пласт; ниже график сопротивления, которое у скважины выше, чем вдали; отметки глубинности зондов МБК и БК-3." loading="lazy"></picture>  </div>
+  <figcaption>
+    Схема одной модели: срез пласта от скважины и профиль сопротивления. Малоглубинный зонд видит зону проникновения, глубинный — пласт. Значения условные.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 96</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-2">
+            <p>Нагляднее всего изменение сопротивления видно по экранированным зондам. Это <strong class="term">микробоковой каротаж (МБК)</strong> — фокусированный микрозонд, который меряет прискважинную зону. И <strong class="term">БК-3</strong> — трёхэлектродный боковой зонд с большей глубинностью. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c02"><p>«Радиальное изменение сопротивления четко устанавливают визуально по диаграммам экранированных зондов»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>При <strong class="term">повышающем проникновении</strong> сопротивление зоны проникновения выше, чем у пласта. Тогда показания МБК больше, чем БК. При понижающем проникновении показания МБК меньше, чем БК. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c03"><p>«при повышающем проникновении ρₙМБК &gt; ρₙБК, при понижающем ρₙМБК &lt; ρₙБК»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" role="img" aria-label="МБК против БК-3: какое проникновение" class="ill-svg"><title>МБК против БК-3: какое проникновение</title><rect class="ill-bg" x="0" y="0" width="360" height="460" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">МБК против БК-3: какое</tspan><tspan x="180.0" dy="19">проникновение</tspan></text><text class="ill-small" x="14" y="86">Признаки</text><rect class="ill-box ill-accent" x="12" y="94" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="115" text-anchor="start"><tspan x="24" dy="0">Показания МБК (прискважинная зона)</tspan></text><rect class="ill-box ill-accent" x="12" y="133" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="154" text-anchor="start"><tspan x="24" dy="0">Показания БК-3 (глубже в пласт)</tspan></text><line class="ill-line" x1="180.0" y1="174.0" x2="180.0" y2="194.0"/><polygon class="ill-arrow" points="180.0,194.0 176.1,185.9 183.9,185.9"/><text class="ill-small" x="14" y="206">Правило</text><rect class="ill-box ill-neutral" x="12" y="214" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="235" text-anchor="start"><tspan x="24" dy="0">Сравнить показания двух экранированных</tspan><tspan x="24" dy="19">зондов</tspan></text><line class="ill-line" x1="180.0" y1="272.0" x2="180.0" y2="292.0"/><polygon class="ill-arrow" points="180.0,292.0 176.1,283.9 183.9,283.9"/><text class="ill-small" x="14" y="304">Вывод</text><rect class="ill-box ill-accent" x="12" y="312" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="333" text-anchor="start"><tspan x="24" dy="0">МБК &gt; БК → повышающее проникновение</tspan></text><rect class="ill-box ill-good" x="12" y="351" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="372" text-anchor="start"><tspan x="24" dy="0">МБК &lt; БК → понижающее проникновение</tspan></text><rect class="ill-box ill-neutral" x="12" y="390" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="411" text-anchor="start"><tspan x="24" dy="0">разницы нет → коллектор не исключён:</tspan><tspan x="24" dy="19">нужны динамические методы</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Правило автора для экранированных зондов. Последний вывод — тоже из главы: отсутствие градиента не отрицает коллектор.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 96</span>
+  </figcaption>
+</figure>
+<h3>Нюанс</h3>          <div class="para" id="how-4">
+            <p>Автор делает вывод: отсутствие заметного градиента сопротивления не отрицает коллектор. При некотором сочетании насыщения зоны и пласта и сопротивлений фильтрата и воды сопротивления зоны и пласта совпадают. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c04"><p>«Отсутствие заметного градиента сопротивления не является признаком, отрицающим коллектор.»</p><footer>— автор, стр. 96 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Динамические методы</h3>          <div class="para" id="how-5">
+            <p>Иногда по отдельным замерам коллектор не выделить. Тогда применяют <strong class="term">динамические методы</strong> — смотрят, как показания меняются во времени. Следят за формированием или расформированием зоны проникновения. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c05"><p>«используются динамические методы их обнаружения»</p><footer>— автор, стр. 96 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-6">
+            <p>Вариантов два. <strong class="term">Метод повторных замеров</strong> — повторяют один метод при неизменных условиях в скважине, например БЭЗ или комплекс фокусированных зондов. <strong class="term">Метод двух растворов</strong> — замеры до и после смены промывочной жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c06"><p>«с неизменными условиями в скважине — метод повторных замеров — или при смене скважинных условий — метод двух растворов»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-7">
+            <p>В обсаженных скважинах такие наблюдения ведут нейтронными методами. Цель — найти газовые коллекторы по мере расформирования зоны проникновения. Динамические исследования широко применяют и для выявления сложных коллекторов. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c07"><p>«Такие наблюдения в обсаженных скважинах с использованием нейтронных методов направлены на обнаружение газовых коллекторов»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.02.c08"><p>«Эти исследования широко применяются также и для выявления сложных коллекторов.»</p><footer>— автор, стр. 96 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Повышающее проникновение: показания МБК больше, чем БК. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li><li>Понижающее проникновение: показания МБК меньше, чем БК. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li><li>Условие метода повторных замеров: условия в скважине не меняются. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Если зоны проникновения нет, то пласт — не коллектор.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Сопротивления зоны и пласта могут совпасть; тогда помогают динамические методы. <span class="pg" title="Страница книги (по PDF)">стр. 96</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сравнение зондов разной глубинности и сравнение замеров во времени — два «дифференциальных» признака коллектора.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>МБК, БК-3, БЭЗ, повторные замеры</dd>
+          <dt>Выход</dt><dd>тип проникновения, выявленные коллекторы и газовые интервалы</dd>
+          <dt>Где ломается</dt><dd>При равенстве сопротивлений зоны и пласта градиента нет; динамические методы требуют повторных спусков приборов.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Ряды повторных замеров — данные с временной осью; изменение во времени можно использовать как признак для классификации.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>диаграммы зондов разной глубинности, повторные замеры</dd>
+            <dt>Ручные шаги</dt><dd>визуальное сравнение МБК и БК, совмещение замеров разных дат</dd>
+            <dt>Точки суждения</dt><dd>есть ли значимый градиент</dd>
+            <dt>Время</dt><dd>повторные замеры ждут расформирования зоны</dd>
+            <dt>Типичные ошибки</dt><dd>считать отсутствие градиента признаком неколлектора</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как сравнение двух снапшотов состояния: то, что не видно в одном снимке, проявляется в диффе между ними.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Между снимками меняются и условия измерения; дифф может отражать не пласт, а скважину.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Повторные (временные) замеры и сравнение зондов разной глубинности широко применяются и сейчас, в том числе в обсаженных скважинах.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>повышающее проникновение <span class="en" lang="en">(resistive invasion)</span></dt><dd>Сопротивление зоны проникновения выше, чем у неизменённого пласта. <span class="pg">стр. 96</span> <span class="chip chip-model">модель</span></dd><dt>микробоковой каротаж (МБК) <span class="en" lang="en">(microlaterolog)</span></dt><dd>Фокусированный микрозонд, измеряющий сопротивление прискважинной зоны. <span class="pg">стр. 96</span> <span class="chip chip-model">модель</span></dd><dt>БК-3 <span class="en" lang="en">(laterolog-3)</span></dt><dd>Трёхэлектродный боковой (экранированный) зонд с большей глубинностью. <span class="pg">стр. 96</span> <span class="chip chip-model">модель</span></dd><dt>динамические методы <span class="en" lang="en">(time-lapse methods)</span></dt><dd>Выделение коллекторов по изменению показаний во времени (формирование или расформирование зоны проникновения). <span class="pg">стр. 96</span></dd><dt>метод повторных замеров <span class="en" lang="en">(repeat logging)</span></dt><dd>Повторение одного метода при неизменных условиях в скважине. <span class="pg">стр. 96</span></dd><dt>метод двух растворов <span class="en" lang="en">(two-mud method)</span></dt><dd>Замеры до и после смены промывочной жидкости. <span class="pg">стр. 96</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-02-t01" data-task="geo.latyshova.s20.02.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенное слово.</p>
+  <p class="cloze">При повышающем проникновении показания МБК <select aria-label="Пропуск 1"><option value="">—</option><option>такие же</option><option>больше</option><option>меньше</option></select>, чем БК.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При повышающем проникновении показания МБК [больше], чем БК.</p>
+    <p class="fb-expl">Зона проникновения сопротивляется сильнее пласта, а МБК видит именно её. <a href="#how-3">Где это в тексте (стр. 96) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-02-t02" data-task="geo.latyshova.s20.02.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Отдельные замеры не позволяют выделить коллектор. Что делают, по автору?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.02.t02" value="0"> <span>Применяют динамические методы: наблюдают зону проникновения во времени</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.02.t02" value="1"> <span>Больше ничего не делают</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.02.t02" value="2"> <span>Признают пласт неколлектором</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.02.t02" value="3"> <span>Смотрят только кривую гамма-метода</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Применяют динамические методы: наблюдают зону проникновения во времени</p>
+    <p class="fb-expl">Формирование или расформирование зоны проникновения идёт только в коллекторе, поэтому смотрят изменение во времени. <a href="#how-5">Где это в тексте (стр. 96) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.02.c01"><p>Радиальный градиент сопротивления устанавливают по БЭЗ и разноглубинным фокусированным зондам. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«устанавливают при интерпретации БЭЗ и диаграмм разноглубинных фокусированных зондов»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c02"><p>По экранированным зондам (МБК и БК-3) радиальное изменение сопротивления видно визуально. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Радиальное изменение сопротивления четко устанавливают визуально по диаграммам экранированных зондов»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c03"><p>При повышающем проникновении показания МБК больше, чем БК; при понижающем — меньше. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«при повышающем проникновении ρₙМБК &gt; ρₙБК, при понижающем ρₙМБК &lt; ρₙБК»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c04"><p>Отсутствие заметного градиента сопротивления не означает, что пласт не коллектор. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Отсутствие заметного градиента сопротивления не является признаком, отрицающим коллектор.»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c05"><p>Если отдельные измерения не помогают, применяют динамические методы. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«используются динамические методы их обнаружения»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c06"><p>Метод повторных замеров — наблюдение одним методом при неизменных условиях; метод двух растворов — при смене условий. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«с неизменными условиями в скважине — метод повторных замеров — или при смене скважинных условий — метод двух растворов»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c07"><p>В обсаженных скважинах нейтронными методами ищут газовые коллекторы по расформированию зоны проникновения. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Такие наблюдения в обсаженных скважинах с использованием нейтронных методов направлены на обнаружение газовых коллекторов»</p><footer>— стр. 96</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.02.c08"><p>Динамические исследования широко применяют и для сложных коллекторов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Эти исследования широко применяются также и для выявления сложных коллекторов.»</p><footer>— стр. 96</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-26.html">шаг 26 «Газ проявляется не сразу»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-14.html" rel="prev"><span>← Назад</span><b>Прямые признаки коллектора на диаграммах</b></a><a class="next" href="step-16.html" rel="next"><span>Дальше →</span><b>Порог «коллектор или неколлектор»</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.02.t01", "type": "cloze", "question": "Вставьте пропущенное слово.", "explanation": "Зона проникновения сопротивляется сильнее пласта, а МБК видит именно её.", "page": 96, "link": "#how-3", "step_title": "Проникновение и повторные замеры", "step_index": 15, "node_id": "geo.latyshova.s20.02", "parts": ["При повышающем проникновении показания МБК ", ", чем БК."], "blanks": [{"options": ["такие же", "больше", "меньше"], "answers": ["больше"]}], "key": [["больше"]], "answer_text": "При повышающем проникновении показания МБК [больше], чем БК."}, {"id": "geo.latyshova.s20.02.t02", "type": "single", "question": "Отдельные замеры не позволяют выделить коллектор. Что делают, по автору?", "explanation": "Формирование или расформирование зоны проникновения идёт только в коллекторе, поэтому смотрят изменение во времени.", "page": 96, "link": "#how-5", "step_title": "Проникновение и повторные замеры", "step_index": 15, "node_id": "geo.latyshova.s20.02", "options": ["Применяют динамические методы: наблюдают зону проникновения во времени", "Больше ничего не делают", "Признают пласт неколлектором", "Смотрят только кривую гамма-метода"], "key": [0], "answer_text": "Применяют динамические методы: наблюдают зону проникновения во времени"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

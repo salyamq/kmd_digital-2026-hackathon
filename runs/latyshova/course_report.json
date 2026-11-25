@@ -1,20 +1,22 @@
 {
   "chapter": "latyshova",
   "nodes": 34,
-  "steps_done": 23,
+  "steps_done": 34,
   "pending": [],
-  "tasks": 55,
+  "tasks": 81,
   "task_types": {
-    "cloze": 11,
-    "multiple": 13,
-    "numeric": 3,
-    "order": 6,
-    "single": 22
+    "cloze": 16,
+    "multiple": 18,
+    "numeric": 7,
+    "order": 10,
+    "single": 30
   },
-  "cards": 67,
+  "cards": 96,
   "decision_steps": [
     "geo.latyshova.s20.07",
-    "geo.latyshova.s20.10"
+    "geo.latyshova.s20.10",
+    "geo.latyshova.s20.11",
+    "geo.latyshova.s20.20"
   ],
   "chapter_errors": [],
   "steps": [
@@ -256,47 +258,120 @@
     },
     {
       "node_id": "geo.latyshova.s20.11",
-      "status": "pending"
+      "status": "ok",
+      "title": "Глинистость меняет пороги насыщения",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (crossplot): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.65, 1.05, 1.4"
+      ],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.12",
-      "status": "pending"
+      "status": "ok",
+      "title": "Эффективная толщина у водонефтяного контакта",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.13",
-      "status": "pending"
+      "status": "ok",
+      "title": "Газ проявляется не сразу",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.14",
-      "status": "pending"
+      "status": "ok",
+      "title": "Вычесть прослои неколлектора",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.15",
-      "status": "pending"
+      "status": "ok",
+      "title": "Тонкие слои: толщину считают расчётом",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.16",
-      "status": "pending"
+      "status": "ok",
+      "title": "Плотные прослои в пачке",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.17",
-      "status": "pending"
+      "status": "ok",
+      "title": "Практикум по терригенному разрезу",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "задача 101: текст повреждён распознаванием (скрыт)",
+        "задача 102: текст повреждён распознаванием (скрыт)"
+      ],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.18",
-      "status": "pending"
+      "status": "ok",
+      "title": "Чем сложны карбонатные коллекторы",
+      "tasks": 2,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.19",
-      "status": "pending"
+      "status": "ok",
+      "title": "Наложение кривых показывает нефть",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.20",
-      "status": "pending"
+      "status": "ok",
+      "title": "Решение на данных: нормализация кривых",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [
+        "illustrations[0] (log_track): числа не найдены в источнике (проверьте, что это параметры модели, а не факты): 0.12, 1090"
+      ],
+      "dropped_tasks": 0
     },
     {
       "node_id": "geo.latyshova.s20.21",
-      "status": "pending"
+      "status": "ok",
+      "title": "Свой порог пористости для карбонатов",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
     }
   ]
 }

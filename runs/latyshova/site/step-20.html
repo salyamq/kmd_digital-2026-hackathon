@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 20. Палетка: точка пласта решает — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.07" data-index="20">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Нефть или вода: характер насыщения › Шаг 20 из 34</p>
+    <h1>Палетка: точка пласта решает</h1>
+    <p class="booktitle">В книге: «Оценка характера насыщения по графикам ρп = f(kп) (рис. 69)» <span class="pg">стр. 97–98</span></p>
+    <p class="meta">
+      <span class="chip">≈ 12 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-19.html">шаг 19 «Сопротивление против пористости»</a> <span class="muted">(предпосылка)</span>, <a href="step-19.html">шаг 19 «Сопротивление против пористости»</a> <span class="muted">(пример)</span>, <a href="step-19.html">шаг 19 «Сопротивление против пористости»</a> <span class="muted">(переход к данным)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Насыщение пласта определяют, нанося его точку с координатами (ρп, kп) на поле графиков рис. 69.</p><p>Область, куда попала точка, и есть ответ: неколлектор, безводная нефть, нефть с водой или вода.</p><p>Одно и то же сопротивление при разной пористости даёт разные ответы, поэтому нужны обе координаты.</p><p class="threshold"><b>Пороговая идея.</b> Насыщение определяют, нанося точку пласта на поле графиков: область, куда она попала (неколлектор, чистая нефть, нефть с водой, вода), и есть ответ. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как устроен рис. 69</h3>          <div class="para" id="how-1">
+            <p>Рис. 69 — это <strong class="term">палетка</strong>: набор заранее построенных кривых, на которые наносят точку пласта. По горизонтали — пористость kп, по вертикали — сопротивление ρп. Поле делится на неколлекторы (А) и коллекторы (Б) при граничной пористости 17%. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c01"><p>«Поле зависимостей ρн = f (kн) разделяется здесь на области неколлекторов (А) и коллекторов (Б) при kн* = 17%.»</p><footer>— автор, стр. 97 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>В области коллекторов лежит семейство кривых для разных значений <strong class="term">относительного водонасыщения</strong>. Это водонасыщенность на шкале от 0 до 1. Значение 0 — предельно нефтегазонасыщенный коллектор, где есть только <strong class="term">связанная вода</strong>, которая не вытесняется при притоке. Значение 1 — водоносный коллектор. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c02"><p>«В области коллекторов расположено семейство графиков ρn = f(kn) для различных значений относительного водонасыщения пор»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c03"><p>«соответствует предельно нефтегазонасыщенному коллектору»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Промежуточные кривые получены статистической обработкой петрофизических исследований. Кривая 2 описывает полностью водоносные коллекторы и продолжается в область неколлекторов. С уменьшением пористости кривые предельно нефтенасыщенных и водоносных пластов сближаются и сливаются. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c04"><p>«Промежуточные кривые для kn = const получены путем статистической обработки результатов петрофизических исследований.»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c05"><p>«для полностью водоносных коллекторов, которая продолжается и в области А для неколлекторов»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c06"><p>«графики 1 и 2 сближаются и сливаются в единый»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Области ответа</h3>          <div class="para" id="how-4">
+            <p>Кривые 3 ограничивают область <strong class="term">двухфазного течения</strong> — когда в порах одновременно движутся нефть и вода. Между кривой предельного насыщения и первой кривой 3 — коллекторы с <strong class="term">безводной нефтью</strong> (газом). Между двумя кривыми 3 — нефть с водой. Ниже — непродуктивные коллекторы. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c07"><p>«Эти графики ограничивают область двухфазного течения жидкости в порах коллекторов»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c08"><p>«область коллекторов, из которых может быть получена нефть (газ) с водой, - кривыми ρn* и ρn**»</p><footer>— автор, стр. 98 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Как пользоваться</h3>          <div class="para" id="how-5">
+            <p>Характер насыщения определяют так. Точку с координатами ρп и kп пласта наносят на графики рис. 69. Автор делает вывод: область, в которой окажется точка, и определяет характер насыщения. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c10"><p>«при этом область, в которой окажется точка, определяет характер насыщения распознаваемого пласта»</p><footer>— автор, стр. 98 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Примеры автора</h3>          <div class="para" id="how-6">
+            <p>Пример 46: пласт с ρп = 20 Ом·м и kп = 25 % при испытании даст безводную нефть. Пример 47: порода с ρп = 10 Ом·м. При пористости 15% это неколлектор, при 20% — нефтеносный коллектор, при 25 % — коллектор, который даст нефть с водой. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c11"><p>«для которого ρn = 20 Ом·м, kn = 25 %. Построив точку с указанными координатами, определяем, что коллектор даст при испытании безводную нефть.»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c12"><p>«Ответ: а) неколлектор; б) коллектор нефтеносный; в) коллектор, который при испытании даст нефть с водой.»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_latyshova_s20_07__1_m.svg"><img src="img/geo_latyshova_s20_07__1.svg" alt="График: по горизонтали пористость, по вертикали сопротивление в логарифмическом масштабе. Вертикальная линия на 17% отделяет неколлекторы. Четыре точки с подписями: 25 % и 20 Ом·м — безводная нефть; 15%, 20% и 25 % при 10 Ом·м — неколлектор, нефть и нефть с водой." loading="lazy"></picture>  </div>
+  <figcaption>
+    Точки примеров 46 и 47 с ответами автора и граница 17%. Кривые областей рис. 69 здесь не перерисованы: смотрите их в книге на стр. 98.
+    <span class="ill-meta">Класс A · схема · нарисовано кодом · стр. 97–98</span>
+  </figcaption>
+</figure>
+<h3>Практика</h3>          <div class="para" id="how-7">
+            <p>Для ускорения графики используют со шкалами показаний методов пористости вместо шкалы пористости. Например, со шкалами ΔJнт или ΔТ. Нормализация диаграмм основана на тех же эффектах и не требует построения графиков. Её автор разбирает в разделе о карбонатных коллекторах. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c13"><p>«могут быть использованы со шкалами ΔJm, ΔT, δn или ΔJno, а также ρno вместо шкалы пористости»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c14"><p>«разбираются ниже в разделе, посвященном карбонатным коллекторам»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюанс: палетка только для своего объекта</h3>          <div class="para" id="how-8">
+            <p>Это допущение автора: кривые 3 построены для конкретного геологического объекта. Их получают совместным анализом петрофизических зависимостей для всех классов коллекторов этого объекта. Значит, на другом объекте области смещаются, и палетку переносить нельзя. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.07.c09"><p>«для исследуемого геологического объекта, представленного совокупностью всех классов коллекторов и неколлекторами»</p><footer>— автор, стр. 98 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как определить насыщение по рис. 69</p>        <ol class="proc"><li>Определите для пласта сопротивление ρп и пористость kп. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li><li>Нанесите точку с этими координатами на графики рис. 69. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li><li>По области точки определите ответ: неколлектор, безводная нефть, нефть с водой или вода. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_latyshova_s20_07_e01">
+          <h3>Пример 46. Характер насыщения по точке на палетке <span class="pg">стр. 98</span></h3>
+          <p><b>Условие.</b> Нефтяное месторождение; для коллектора ρп = 20 Ом·м, kп = 25 %. Определить характер насыщения.</p>
+<ol class="ex-steps"><li>Построить на графиках рис. 69 точку с координатами ρп = 20 Ом·м и kп = 25 %.</li><li>Определить, в какую область попала точка.</li></ol>          <p class="ex-result"><b>Итог.</b> Коллектор при испытании даст безводную нефть.</p>
+        </div>
+        <div class="example" id="ex-geo_latyshova_s20_07_e02">
+          <h3>Пример 47. Одно сопротивление — разные ответы <span class="pg">стр. 98</span></h3>
+          <p><b>Условие.</b> Порода имеет ρп = 10 Ом·м при пористости а) 15%; б) 20%; в) 25 %. Установить, чем она представлена.</p>
+<ol class="ex-steps"><li>Для каждой пористости нанести точку с ρп = 10 Ом·м на графики рис. 69.</li><li>Определить область для каждой точки.</li></ol>          <p class="ex-result"><b>Итог.</b> а) неколлектор; б) коллектор нефтеносный; в) коллектор, который при испытании даст нефть с водой.</p>
+        </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Что даст пласт при испытании?</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Сопротивление пласта ρп</li><li>Пористость пласта kп</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Нанести точку (ρп, kп) на рис. 69; область точки определяет характер насыщения. <span class="pg" title="Страница книги (по PDF)">стр. 97–98</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Неколлектор, безводная нефть, нефть с водой или вода.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> ρп = 20 Ом·м, kп = 25 % <span class="muted small">(Пример 46, стр. 98)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">безводная нефть</button><button type="button" class="btn ghost case-opt" data-i="1">нефть с водой</button><button type="button" class="btn ghost case-opt" data-i="2">неколлектор</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Точка попадает в область безводной нефти.</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> ρп = 10 Ом·м, kп = 15% <span class="muted small">(Пример 47а, стр. 98)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">неколлектор</button><button type="button" class="btn ghost case-opt" data-i="1">коллектор нефтеносный</button><button type="button" class="btn ghost case-opt" data-i="2">нефть с водой</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Пористость ниже граничной 17%: область неколлекторов.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> ρп = 10 Ом·м, kп = 20% <span class="muted small">(Пример 47б, стр. 98)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">неколлектор</button><button type="button" class="btn ghost case-opt" data-i="1">коллектор нефтеносный</button><button type="button" class="btn ghost case-opt" data-i="2">нефть с водой</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Ответ автора в примере 47б.</p>
+          </div>
+          <div class="case" data-answer="2">
+            <p><b>Дано:</b> ρп = 10 Ом·м, kп = 25 % <span class="muted small">(Пример 47в, стр. 98)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">неколлектор</button><button type="button" class="btn ghost case-opt" data-i="1">коллектор нефтеносный</button><button type="button" class="btn ghost case-opt" data-i="2">нефть с водой</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Ответ автора в примере 47в: то же сопротивление при большей пористости — уже нефть с водой.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Граница неколлектор / коллектор на рис. 69 — пористость 17%. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li><li>Относительное водонасыщение: 0 — только связанная вода, 1 — водоносный пласт. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li><li>Условие: палетка верна только для объекта, по данным которого построена. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.latyshova.s20.07.f01">
+          <div class="tex-display" data-tex="k_в^{отн} = \frac{k_в - k_{в.св}}{1 - k_{в.св}}">$$k_в^{отн} = \frac{k_в - k_{в.св}}{1 - k_{в.св}}$$</div>
+          <p>Относительное водонасыщение пор (обозначения в тексте искажены распознаванием; восстановлено по смыслу) <span class="pg">стр. 98</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$k_в$</td><td>коэффициент водонасыщения</td><td>—</td></tr><tr><td>$k_{в.св}$</td><td>коэффициент связанной воды</td><td>—</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Высокое сопротивление всегда означает нефть.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Одно и то же сопротивление (10 Ом·м) в зависимости от пористости означает неколлектор, нефтеносный коллектор или нефть с водой (пример 47). <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Палетка — готовый классификатор с областями решений в координатах (пористость, сопротивление); пример 47 показывает, что без второй координаты решение неверно.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>ρп и kп пласта (или показания методов пористости)</dd>
+          <dt>Выход</dt><dd>класс: неколлектор / безводная нефть / нефть с водой / вода</dd>
+          <dt>Где ломается</dt><dd>Палетка построена статистически для конкретного объекта и классов коллекторов; на другом объекте области смещаются.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Пример 47 — готовый тест для модели насыщения: одинаковое сопротивление при разной пористости должно давать разные классы.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>ρп, kп пластов, палетка объекта</dd>
+            <dt>Ручные шаги</dt><dd>нанесение каждой точки на график, определение области</dd>
+            <dt>Точки суждения</dt><dd>точки у границ областей</dd>
+            <dt>Время</dt><dd>по точке на каждый пласт</dd>
+            <dt>Типичные ошибки</dt><dd>использовать палетку другого объекта</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Диаграмма областей решений (decision regions) классификатора в двумерном пространстве признаков.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Границы областей построены по петрофизике одного объекта; это не универсальная обученная модель.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Ручное нанесение точек на палетку сегодня заменено расчётом в программах интерпретации, но логика областей и граничных кривых сохраняется.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Относительное водонасыщение <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Формула приводит водонасыщенность к шкале от 0 до 1, где 0 — только связанная вода, 1 — полностью водоносный пласт. Это позволяет сравнивать пласты с разной связанной водой.</p></details>
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 69. Рис.69. Кривые зависимости ρn = f(kn), используемые для оценки продуктивности коллекторов.
+Шифр кривых – kn; цифры в кружках: 1 – ρnmax = f(kn); 2 – ρno = f(kn); 3 – ρn* = f(kn) и ρn** = f(kn); 4 – граница «коллектор - неколлектор», соответствующая kn,cp; I – область безводной нефти; II – двухфазная область нефти с водой; III – область воды; IV – кривые ρn = f(kn) для коллекторов с разной глинистостью. <span class="pg">стр. 98</span></li></ul>
+        <p class="muted small">Рисунки книги в курс не вставляются: смотрите их в книге по номеру страницы; нужные для примеров перерисованы кодом.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>палетка <span class="en" lang="en">(interpretation chart)</span></dt><dd>Набор заранее построенных кривых, на которые наносят точку, чтобы графически получить ответ. <span class="pg">стр. 98</span> <span class="chip chip-model">модель</span></dd><dt>относительное водонасыщение <span class="en" lang="en">(normalized water saturation)</span></dt><dd>Водонасыщенность, приведённая к шкале от 0 (только связанная вода) до 1 (полностью водоносный пласт). <span class="pg">стр. 98</span></dd><dt>связанная вода <span class="en" lang="en">(irreducible water)</span></dt><dd>Вода, удерживаемая в порах и не вытесняемая при притоке. <span class="pg">стр. 98</span> <span class="chip chip-model">модель</span></dd><dt>двухфазное течение <span class="en" lang="en">(two-phase flow)</span></dt><dd>Одновременное движение в порах двух флюидов (нефти и воды). <span class="pg">стр. 98</span> <span class="chip chip-model">модель</span></dd><dt>безводная нефть <span class="en" lang="en">(water-free oil)</span></dt><dd>Приток нефти без воды. <span class="pg">стр. 98</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-07-t01" data-task="geo.latyshova.s20.07.t01" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-latyshova-s20-07-t01">При какой граничной пористости на рис. 69 поле делится на неколлекторы и коллекторы? Ответ в процентах.</label>
+  <p class="numeric"><input id="in-geo-latyshova-s20-07-t01" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">%</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 17 %</p>
+    <p class="fb-expl">Автор указывает границу областей А и Б при пористости 17%. <a href="#how-1">Где это в тексте (стр. 97) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-07-t02" data-task="geo.latyshova.s20.07.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенные слова (пример 47, ρп = 10 Ом·м).</p>
+  <p class="cloze">При пористости 15% это <select aria-label="Пропуск 1"><option value="">—</option><option>водоносный коллектор</option><option>неколлектор</option><option>газовый коллектор</option></select>, при 20% — нефтеносный коллектор, при 25 % — коллектор, который даст нефть с <select aria-label="Пропуск 2"><option value="">—</option><option>водой</option><option>газом</option><option>песком</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При пористости 15% это [неколлектор], при 20% — нефтеносный коллектор, при 25 % — коллектор, который даст нефть с [водой].</p>
+    <p class="fb-expl">Одно и то же сопротивление при разной пористости означает разное: поэтому нужны обе координаты. <a href="#how-6">Где это в тексте (стр. 98) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-07-t03" data-task="geo.latyshova.s20.07.t03" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Можно ли взять палетку рис. 69 и применить её к другому месторождению?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.07.t03" value="0"> <span>Да, если сопротивление выше 20 Ом·м</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.07.t03" value="1"> <span>Да, палетка универсальна</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.07.t03" value="2"> <span>Да, если пористость выше 17%</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.07.t03" value="3"> <span>Нет: кривые построены для конкретного объекта</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Нет: кривые построены для конкретного объекта</p>
+    <p class="fb-expl">Кривые 3 построены по петрофизике конкретного объекта, на другом объекте области смещаются. <a href="#how-8">Где это в тексте (стр. 98) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.07.c01"><p>На рис. 69 поле ρп = f(kп) делится на неколлекторы (А) и коллекторы (Б) при граничной пористости 17%. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Поле зависимостей ρн = f (kн) разделяется здесь на области неколлекторов (А) и коллекторов (Б) при kн* = 17%.»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c02"><p>В области коллекторов — семейство кривых для разных значений относительного водонасыщения. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В области коллекторов расположено семейство графиков ρn = f(kn) для различных значений относительного водонасыщения пор»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c03"><p>Значение 0 — предельно нефтегазонасыщенный коллектор, 1 — водоносный. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«соответствует предельно нефтегазонасыщенному коллектору»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c04"><p>Промежуточные кривые получены статистической обработкой петрофизических исследований. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Промежуточные кривые для kn = const получены путем статистической обработки результатов петрофизических исследований.»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c05"><p>Кривая 2 — полностью водоносные коллекторы; она продолжается в область неколлекторов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«для полностью водоносных коллекторов, которая продолжается и в области А для неколлекторов»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c06"><p>С уменьшением пористости кривые предельно нефтенасыщенных и водоносных сближаются и сливаются. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«графики 1 и 2 сближаются и сливаются в единый»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c07"><p>Кривые 3 ограничивают область двухфазного течения. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Эти графики ограничивают область двухфазного течения жидкости в порах коллекторов»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c08"><p>Области: чистая нефть, нефть с водой, непродуктивные коллекторы — между соответствующими кривыми. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«область коллекторов, из которых может быть получена нефть (газ) с водой, - кривыми ρn* и ρn**»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c09"><p>Кривые 3 построены для конкретного объекта по совокупности петрофизических зависимостей. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«для исследуемого геологического объекта, представленного совокупностью всех классов коллекторов и неколлекторами»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c10"><p>Насыщение определяют по области, в которую попадает точка (ρп, kп). <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«при этом область, в которой окажется точка, определяет характер насыщения распознаваемого пласта»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c11"><p>Пример 46: ρп = 20 Ом·м, kп = 25 % — коллектор даст безводную нефть. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«для которого ρn = 20 Ом·м, kn = 25 %. Построив точку с указанными координатами, определяем, что коллектор даст при испытании безводную нефть.»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c12"><p>Пример 47: при ρп = 10 Ом·м и пористости 15%, 20%, 25 % — неколлектор, нефтеносный коллектор, нефть с водой. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Ответ: а) неколлектор; б) коллектор нефтеносный; в) коллектор, который при испытании даст нефть с водой.»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c13"><p>Для ускорения графики можно использовать со шкалами методов пористости вместо пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«могут быть использованы со шкалами ΔJm, ΔT, δn или ΔJno, а также ρno вместо шкалы пористости»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.07.c14"><p>Нормализация диаграмм основана на тех же эффектах, разобрана в разделе о карбонатных коллекторах. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«разбираются ниже в разделе, посвященном карбонатным коллекторам»</p><footer>— стр. 98</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-21.html">шаг 21 «Два вида критических значений»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-19.html" rel="prev"><span>← Назад</span><b>Сопротивление против пористости</b></a><a class="next" href="step-21.html" rel="next"><span>Дальше →</span><b>Два вида критических значений</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.07.t01", "type": "numeric", "question": "При какой граничной пористости на рис. 69 поле делится на неколлекторы и коллекторы? Ответ в процентах.", "explanation": "Автор указывает границу областей А и Б при пористости 17%.", "page": 97, "link": "#how-1", "step_title": "Палетка: точка пласта решает", "step_index": 20, "node_id": "geo.latyshova.s20.07", "key": {"answer": 17, "tolerance": 0}, "unit": "%", "answer_text": "17 %"}, {"id": "geo.latyshova.s20.07.t02", "type": "cloze", "question": "Вставьте пропущенные слова (пример 47, ρп = 10 Ом·м).", "explanation": "Одно и то же сопротивление при разной пористости означает разное: поэтому нужны обе координаты.", "page": 98, "link": "#how-6", "step_title": "Палетка: точка пласта решает", "step_index": 20, "node_id": "geo.latyshova.s20.07", "parts": ["При пористости 15% это ", ", при 20% — нефтеносный коллектор, при 25 % — коллектор, который даст нефть с ", "."], "blanks": [{"options": ["водоносный коллектор", "неколлектор", "газовый коллектор"], "answers": ["неколлектор"]}, {"options": ["водой", "газом", "песком"], "answers": ["водой"]}], "key": [["неколлектор"], ["водой"]], "answer_text": "При пористости 15% это [неколлектор], при 20% — нефтеносный коллектор, при 25 % — коллектор, который даст нефть с [водой]."}, {"id": "geo.latyshova.s20.07.t03", "type": "single", "question": "Можно ли взять палетку рис. 69 и применить её к другому месторождению?", "explanation": "Кривые 3 построены по петрофизике конкретного объекта, на другом объекте области смещаются.", "page": 98, "link": "#how-8", "step_title": "Палетка: точка пласта решает", "step_index": 20, "node_id": "geo.latyshova.s20.07", "options": ["Да, если сопротивление выше 20 Ом·м", "Да, палетка универсальна", "Да, если пористость выше 17%", "Нет: кривые построены для конкретного объекта"], "key": [3], "answer_text": "Нет: кривые построены для конкретного объекта"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

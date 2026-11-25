@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 34. Свой порог пористости для карбонатов — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.21" data-index="34">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#tables">Таблицы книги</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#problems">Задачи из книги</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Карбонатный разрез › Шаг 34 из 34</p>
+    <h1>Свой порог пористости для карбонатов</h1>
+    <p class="booktitle">В книге: «Критическая пористость межзерновых карбонатных коллекторов (пример 55, табл. 23)» <span class="pg">стр. 107–108</span></p>
+    <p class="meta">
+      <span class="chip">≈ 9 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-33.html">шаг 33 «Решение на данных: нормализация кривых»</a> <span class="muted">(предпосылка)</span>, <a href="step-17.html">шаг 17 «От дебита к порогу на диаграмме»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Граничная пористость карбонатных коллекторов не универсальна: она зависит от структуры пор.</p><p>По таблице 23 она меняется от 1 % у рифовых отложений до 13 % у мелоподобных известняков.</p><p>Порог, взятый для других отложений, приводит к серьёзным ошибкам в эффективной толщине.</p><p class="threshold"><b>Пороговая идея.</b> Граничная пористость карбонатов не универсальна: она зависит от структуры пор, и чужой порог даёт серьёзные ошибки в эффективной толщине. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Порог зависит от пор</h3>          <div class="para" id="how-1">
+            <p>Карбонатные коллекторы выделяют по методам пористости, используя <strong class="term">критическую пористость</strong> — границу между коллектором и неколлектором. Автор делает вывод: она меняется в широких пределах в зависимости от структуры порового пространства. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c01"><p>«в зависимости от структуры порового пространства»</p><footer>— автор, стр. 107 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Как оценить порог</h3>          <div class="para" id="how-2">
+            <p>Критическую пористость можно оценить по зависимости <strong class="term">связанной водонасыщенности</strong> от пористости. Связанная водонасыщенность — доля пор, занятая неподвижной водой. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c02"><p>«можно оценить критическое значение»</p><footer>— автор, стр. 107 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Рис. 77 показывает такие кривые для карбонатных коллекторов разных районов. Это рифовые отложения и коллекторы карбона Башкирии, известняки карбона Вуктыла. А также доломиты девона Белоруссии и поровые коллекторы перми Оренбурга. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c10"><p>«Кривые зависимости»</p><footer>— автор, стр. 107 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c11"><p>«1 – крупнопористые рифовые отложения (Башкирия)»</p><footer>— автор, стр. 107 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Пример 55 и таблица 23</h3>          <div class="para" id="how-4">
+            <p>В примере 55 критической принимают пористость, при которой связанная водонасыщенность равна 70%. Результаты сводят в таблицу 23. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c03"><p>«принимая в качестве»</p><footer>— автор, стр. 107 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c04"><p>«Результаты определений оформляем в виде табл. 23.»</p><footer>— автор, стр. 107 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>Разброс большой: у рифовых отложений критическая пористость 1 %, у мелоподобных известняков — 13 %. Граничная пористость растёт от крупнозернистых коллекторов с большими порами к тонкозернистым с малыми. <span class="pg" title="Страница книги (по PDF)">стр. 107–108</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c09"><p>«Мелоподобные известняки (АССР, верхний мел) | 13»</p><footer>— автор, стр. 108 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c05"><p>«растет при переходе от крупнозернистых коллекторов с большими порами к тонкозернистым с малыми порами»</p><footer>— автор, стр. 107 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_latyshova_s20_21__1_m.svg"><img src="img/geo_latyshova_s20_21__1.svg" alt="Горизонтальные столбики: рифовые отложения 1 %, крупнозернистые известняки 3 %, крупнозернистые доломиты 3 %, коллекторы Оренбургского месторождения 7 %, мелоподобные известняки 13 %." loading="lazy"></picture>  </div>
+  <figcaption>
+    Числа таблицы 23 (пример 55): порог растёт от крупнозернистых пород с большими порами к тонкозернистым с малыми. Типичное значение для крупнейших месторождений — 6-8 %.
+    <span class="ill-meta">Класс A · реальные данные · нарисовано кодом · стр. 107–108</span>
+  </figcaption>
+</figure>
+<h3>Типичное значение</h3>          <div class="para" id="how-6">
+            <p>Для большинства межзерновых карбонатных коллекторов крупнейших месторождений СССР граничная пористость — 6-8 %. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c06"><p>«заключено в пределах 6-8 %»</p><footer>— автор, стр. 107 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Цена ошибки</h3>          <div class="para" id="how-7">
+            <p>Правильный выбор критической пористости даёт надёжную эффективную толщину. Автор делает вывод: значение, не соответствующее изучаемым отложениям, приводит к серьёзным погрешностям. <span class="pg" title="Страница книги (по PDF)">стр. 108</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c07"><p>«не соответствующего изучаемым отложениям, приводит к серьезным погрешностям»</p><footer>— автор, стр. 108 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Не только карбонаты</h3>          <div class="para" id="how-8">
+            <p>Нормализация и критическая пористость эффективны не только в карбонатном разрезе. Они работают и в низкопористом слабоглинистом терригенном разрезе. <span class="pg" title="Страница книги (по PDF)">стр. 108</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.21.c08"><p>«эффективны не только в карбонатном, но и в низкопористом слабоглинистом терригенном разрезе»</p><footer>— автор, стр. 108 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как оценить критическую пористость (пример 55)</p>        <ol class="proc"><li>Возьмите зависимость связанной водонасыщенности от пористости для своего типа коллектора. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></li><li>Найдите пористость, при которой связанная водонасыщенность равна 70%. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></li><li>Примите её за критическую и используйте для выделения коллекторов и эффективной толщины. <span class="pg" title="Страница книги (по PDF)">стр. 107–108</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_latyshova_s20_21_e01">
+          <h3>Пример 55. Критическая пористость карбонатных коллекторов <span class="pg">стр. 107</span></h3>
+          <p><b>Условие.</b> Межзерновые карбонатные коллекторы характеризуются графиками зависимости связанной водонасыщенности от пористости (рис. 77). Критической считать пористость, при которой связанная водонасыщенность равна 70%.</p>
+<ol class="ex-steps"><li>Для каждой кривой рис. 77 найти пористость, соответствующую связанной водонасыщенности 70%.</li><li>Записать результаты в табл. 23.</li></ol>          <p class="ex-result"><b>Итог.</b> Рифовые отложения (Башкирия, пермь) — 1 %; крупнозернистые известняки (Башкирия, карбон) — 3 %; крупнозернистые доломиты (Белоруссия, девон) — 3 %; коллекторы Оренбургского газового месторождения (пермь) — 7 %; мелоподобные известняки (верхний мел) — 13 %.</p>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Критерий примера 55: связанная водонасыщенность 70%. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></li><li>Таблица 23: от 1 % (рифовые отложения) до 13 % (мелоподобные известняки). <span class="pg" title="Страница книги (по PDF)">стр. 108</span></li><li>Типичная граничная пористость крупнейших месторождений СССР — 6-8 %. <span class="pg" title="Страница книги (по PDF)">стр. 107</span></li></ul>
+
+    </section>
+    <section id="tables" class="block block-tables" aria-labelledby="h-tables">
+      <h2 id="h-tables">Таблицы книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="booktable">
+          <p class="tcap"><b>Таблица 23.
+Значения $k_n^*$ для карбонатных межзерновых коллекторов.</b> <span class="pg">стр. 108</span></p>
+          <div class="tscroll" tabindex="0" role="region" aria-label="Таблица: Таблица 23.
+Значения $k_n^*$ для карбонатных межзерновых коллекторов."><table>
+            <thead><tr><th scope="col">Коллектор</th><th scope="col">$k_{n_0}^*$ %</th></tr></thead>
+            <tbody><tr><td>Рифтовые отложения (Башкирия, пермь)</td><td>1</td></tr><tr><td>Крупнозернистые известняки (Башкирия, Карбон)</td><td>3</td></tr><tr><td>Крупнозернистые доломиты (Белоруссия, девон)</td><td>3</td></tr><tr><td>Коллекторы Оренбургского газового месторождения (пермь)</td><td>7</td></tr><tr><td>Мелоподобные известняки (АССР, верхний мел)</td><td>13</td></tr></tbody>
+          </table></div>
+<p class="ocr"><b>Исправления распознавания:</b> «Рифтовые отложения» → «Рифовые отложения» (опечатка распознавания; ср. подпись рис. 77 «крупнопористые рифовые отложения»); «Карбон» → «карбон»; заголовок «k_{n_0}^*» → kп* (критическая пористость)</p>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Порог пористости для коллектора один для всех пород.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Критическая пористость карбонатов — от 1 % до 13 % в зависимости от структуры пор (табл. 23). <span class="pg" title="Страница книги (по PDF)">стр. 107–108</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Порог пористости — параметр, зависящий от типа коллектора; ошибка в пороге прямо переходит в ошибку эффективной толщины и запасов.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>пористость по методам пористости, тип карбонатного коллектора, зависимость связанной воды от пористости</dd>
+          <dt>Выход</dt><dd>критическая пористость, интервалы коллекторов</dd>
+          <dt>Где ломается</dt><dd>Порог, взятый с другого типа коллектора, даёт серьёзные погрешности.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Порог стоит выбирать по классу пород (структуре пор), а не задавать глобально для всего месторождения.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>керн, зависимости связанной воды от пористости</dd>
+            <dt>Ручные шаги</dt><dd>построение зависимостей, снятие порогов</dd>
+            <dt>Точки суждения</dt><dd>к какому типу отнести коллектор</dd>
+            <dt>Время</dt><dd>нужны лабораторные данные</dd>
+            <dt>Типичные ошибки</dt><dd>использовать чужое значение критической пористости</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Порог классификации, зависящий от сегмента данных: один глобальный порог даёт систематические ошибки в сегментах.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Сегмент (структура пор) не наблюдается напрямую в каротаже — его определяют по керну.</p>
+
+    </section>
+    <section id="problems" class="block block-problems" aria-labelledby="h-problems">
+      <h2 id="h-problems">Задачи из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="problems"><li><b>Задача 104.</b> Выделить коллекторы с межзерновой пористостью по диаграммам комплекса методов, приведенным на рис. 63. <span class="muted">Нужен рисунок: 63.</span> <span class="pg">стр. 108</span></li><li><b>Задача 105.</b> Дать заключение об эффективной толщине коллекторов, выделяемых на основании комплекса диаграмм, приведенных на рис. 63, 58. Оценить характер насыщения этих коллекторов. <span class="muted">Нужен рисунок: 63, 58.</span> <span class="pg">стр. 108</span></li><li><b>Задача 106.</b> Дать заключение о наличии карбонатных коллекторов в разрезах скважин, приведенных на диаграммах рис. 14, 53, 68. <span class="muted">Нужен рисунок: 14, 53, 68.</span> <span class="pg">стр. 108</span></li><li><b>Задача 107.</b> На основании диаграмм, приведенных на рис. 76, определить эффективную толщину коллекторов в карбонатном разрезе. <span class="muted">Нужен рисунок: 76.</span> <span class="pg">стр. 108</span></li><li><b>Задача 108.</b> Дать заключение, в каком диапазоне меняется нижний предел пористости карбонатных коллекторов, рассмотренных в задачах 104-107. Сравнить полученные результаты с данными табл. 23.  <span class="pg">стр. 108</span></li></ul>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 77. Рис.77. Кривые зависимости  \( k_{n,cn} = f(k_{n}) \)  для карбонатных коллекторов разных районов:
+1 – крупнопористые рифовые отложения (Башкирия);
+2 – крупнопористые коллекторы карбона (Башкирия);
+3 – известняки карбона (Вуктыл); 4 – доломиты межсолевых отложений девона (Белоруссия);
+5 – поровые коллекторы перми (Оренбург) <span class="pg">стр. 107</span></li></ul>
+        <p class="muted small">Рисунки книги в курс не вставляются: смотрите их в книге по номеру страницы; нужные для примеров перерисованы кодом.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>критическая пористость <span class="en" lang="en">(porosity cutoff)</span></dt><dd>Граничное значение пористости, отделяющее коллектор от неколлектора для данного типа пород. <span class="pg">стр. 107</span> <span class="chip chip-model">модель</span></dd><dt>связанная водонасыщенность <span class="en" lang="en">(irreducible water saturation)</span></dt><dd>Доля пор, занятая связанной (неподвижной) водой. <span class="pg">стр. 107</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-21-t01" data-task="geo.latyshova.s20.21.t01" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-latyshova-s20-21-t01">При какой связанной водонасыщенности в примере 55 пористость считают критической? Ответ в процентах.</label>
+  <p class="numeric"><input id="in-geo-latyshova-s20-21-t01" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">%</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 70 %</p>
+    <p class="fb-expl">Автор принимает за критическую пористость, при которой связанная водонасыщенность равна 70%. <a href="#how-4">Где это в тексте (стр. 107) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-21-t02" data-task="geo.latyshova.s20.21.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-latyshova-s20-21-t02">Расставьте коллекторы из таблицы 23 по росту критической пористости.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-latyshova-s20-21-t02">
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Коллекторы Оренбургского газового месторождения</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Мелоподобные известняки</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Рифовые отложения</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Рифовые отложения → Коллекторы Оренбургского газового месторождения → Мелоподобные известняки</p>
+    <p class="fb-expl">1 %, 7 % и 13 %: порог растёт к тонкозернистым породам с малыми порами. <a href="#how-5">Где это в тексте (стр. 108) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-21-t03" data-task="geo.latyshova.s20.21.t03" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что верно о критической пористости карбонатных коллекторов? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.21.t03" value="0"> <span>Она растёт от крупнозернистых пород к тонкозернистым</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.21.t03" value="1"> <span>Она зависит от структуры порового пространства</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.21.t03" value="2"> <span>Неверно выбранное значение даёт серьёзные ошибки в эффективной толщине</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.21.t03" value="3"> <span>Она одинакова для всех карбонатов</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Она зависит от структуры порового пространства; Она растёт от крупнозернистых пород к тонкозернистым; Неверно выбранное значение даёт серьёзные ошибки в эффективной толщине</p>
+    <p class="fb-expl">По таблице 23 порог меняется от 1 % до 13 %, поэтому универсального значения нет. <a href="#how-5">Где это в тексте (стр. 107) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.21.c01"><p>Критическая пористость карбонатов меняется в широких пределах в зависимости от структуры пор. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«в зависимости от структуры порового пространства»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c02"><p>По зависимости связанной воды от пористости (рис. 77) можно оценить критическую пористость. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«можно оценить критическое значение»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c03"><p>В примере 55 критической принимают пористость при связанной водонасыщенности 70%. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«принимая в качестве»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c04"><p>Результаты сведены в табл. 23. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Результаты определений оформляем в виде табл. 23.»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c05"><p>Граничная пористость растёт от крупнозернистых коллекторов с большими порами к тонкозернистым с малыми. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«растет при переходе от крупнозернистых коллекторов с большими порами к тонкозернистым с малыми порами»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c06"><p>Для большинства карбонатных коллекторов крупнейших месторождений СССР типичная граничная пористость — 6-8 %. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«заключено в пределах 6-8 %»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c07"><p>Неверно выбранная критическая пористость ведёт к серьёзным ошибкам в эффективной толщине. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«не соответствующего изучаемым отложениям, приводит к серьезным погрешностям»</p><footer>— стр. 108</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c08"><p>Нормализация и критическая пористость работают и в низкопористом слабоглинистом терригенном разрезе. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«эффективны не только в карбонатном, но и в низкопористом слабоглинистом терригенном разрезе»</p><footer>— стр. 108</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c09"><p>Табл. 23: рифовые отложения — 1 %, мелоподобные известняки — 13 %. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Мелоподобные известняки (АССР, верхний мел) | 13»</p><footer>— стр. 108</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c10"><p>Рис. 77 — кривые связанной водонасыщенности от пористости для карбонатных коллекторов разных районов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Кривые зависимости»</p><footer>— стр. 107</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.21.c11"><p>Кривые: рифовые отложения и коллекторы карбона Башкирии, известняки карбона Вуктыла, доломиты девона Белоруссии, поровые коллекторы перми Оренбурга. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«1 – крупнопористые рифовые отложения (Башкирия)»</p><footer>— стр. 107</footer></blockquote></li>
+      </ol>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-33.html" rel="prev"><span>← Назад</span><b>Решение на данных: нормализация кривых</b></a><a class="next" href="summary.html"><span>Дальше →</span><b>Конспект главы</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.21.t01", "type": "numeric", "question": "При какой связанной водонасыщенности в примере 55 пористость считают критической? Ответ в процентах.", "explanation": "Автор принимает за критическую пористость, при которой связанная водонасыщенность равна 70%.", "page": 107, "link": "#how-4", "step_title": "Свой порог пористости для карбонатов", "step_index": 34, "node_id": "geo.latyshova.s20.21", "key": {"answer": 70, "tolerance": 0}, "unit": "%", "answer_text": "70 %"}, {"id": "geo.latyshova.s20.21.t02", "type": "order", "question": "Расставьте коллекторы из таблицы 23 по росту критической пористости.", "explanation": "1 %, 7 % и 13 %: порог растёт к тонкозернистым породам с малыми порами.", "page": 108, "link": "#how-5", "step_title": "Свой порог пористости для карбонатов", "step_index": 34, "node_id": "geo.latyshova.s20.21", "items": [{"text": "Коллекторы Оренбургского газового месторождения", "pos": 1}, {"text": "Мелоподобные известняки", "pos": 2}, {"text": "Рифовые отложения", "pos": 0}], "key": [0, 1, 2], "answer_text": "Рифовые отложения → Коллекторы Оренбургского газового месторождения → Мелоподобные известняки"}, {"id": "geo.latyshova.s20.21.t03", "type": "multiple", "question": "Что верно о критической пористости карбонатных коллекторов? Выберите все верные.", "explanation": "По таблице 23 порог меняется от 1 % до 13 %, поэтому универсального значения нет.", "page": 107, "link": "#how-5", "step_title": "Свой порог пористости для карбонатов", "step_index": 34, "node_id": "geo.latyshova.s20.21", "options": ["Она растёт от крупнозернистых пород к тонкозернистым", "Она зависит от структуры порового пространства", "Неверно выбранное значение даёт серьёзные ошибки в эффективной толщине", "Она одинакова для всех карбонатов"], "key": [0, 1, 2], "answer_text": "Она зависит от структуры порового пространства; Она растёт от крупнозернистых пород к тонкозернистым; Неверно выбранное значение даёт серьёзные ошибки в эффективной толщине"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

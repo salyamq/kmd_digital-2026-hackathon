@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 4. Корка сужает скважину против коллектора — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s17.02" data-index="4">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Зачем ГИС и как бурение портит или улучшает данные › Шаг 4 из 34</p>
+    <h1>Корка сужает скважину против коллектора</h1>
+    <p class="booktitle">В книге: «Особенности вскрытия разрезов на глинистом растворе» <span class="pg">стр. 90</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-02.html">шаг 2 «Набор методов зависит от бурового раствора»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Какие бывают разрезы и коллекторы»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Против проницаемого пласта скважина становится уже номинала: на стенке оседает глинистая корка.</p><p>Это прямой след того, что жидкость раствора ушла в поры, а не дефект ствола.</p><p>В плотных породах диаметр равен номиналу, а в глинах, трещиноватых породах и солях он может расти.</p><p class="threshold"><b>Пороговая идея.</b> Против проницаемого пласта скважина «сужается» из-за глинистой корки — это прямой след фильтрации, а не дефект ствола. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что происходит против коллектора</h3>          <div class="para" id="how-1">
+            <p>Возьмём бурение на глинистом растворе. Против <strong class="term">межзернового коллектора</strong> — породы с порами между зёрнами — раствор ведёт себя особо. Его жидкая часть, <strong class="term">фильтрат раствора</strong>, уходит в пласт. Так вокруг скважины возникает <strong class="term">зона проникновения</strong> — часть пласта, куда проник фильтрат. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.02.c01"><p>«К особенностям вскрытия разрезов на глинистом растворе относятся образование в межзерновых коллекторах зон проникновения фильтрата раствора и глинистых корок на стенках скважины»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 479" role="img" aria-label="Что говорит диаметр скважины" class="ill-svg"><title>Что говорит диаметр скважины</title><rect class="ill-bg" x="0" y="0" width="360" height="479" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Что говорит диаметр скважины</tspan></text><text class="ill-small" x="14" y="67">Признаки</text><rect class="ill-box ill-accent" x="12" y="75" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="96" text-anchor="start"><tspan x="24" dy="0">Фактический диаметр скважины</tspan></text><rect class="ill-box ill-accent" x="12" y="114" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="135" text-anchor="start"><tspan x="24" dy="0">Номинальный диаметр (диаметр долота)</tspan></text><line class="ill-line" x1="180.0" y1="155.0" x2="180.0" y2="175.0"/><polygon class="ill-arrow" points="180.0,175.0 176.1,166.9 183.9,166.9"/><text class="ill-small" x="14" y="187">Правило</text><rect class="ill-box ill-neutral" x="12" y="195" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="216" text-anchor="start"><tspan x="24" dy="0">Сравнить фактический диаметр с</tspan><tspan x="24" dy="19">номинальным</tspan></text><line class="ill-line" x1="180.0" y1="253.0" x2="180.0" y2="273.0"/><polygon class="ill-arrow" points="180.0,273.0 176.1,264.9 183.9,264.9"/><text class="ill-small" x="14" y="285">Вывод</text><rect class="ill-box ill-good" x="12" y="293" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="314" text-anchor="start"><tspan x="24" dy="0">меньше номинала → коллектор с</tspan><tspan x="24" dy="19">глинистой коркой</tspan></text><rect class="ill-box ill-neutral" x="12" y="351" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="372" text-anchor="start"><tspan x="24" dy="0">равен номиналу → плотная</tspan><tspan x="24" dy="19">сцементированная порода</tspan></text><rect class="ill-box ill-bad" x="12" y="409" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="430" text-anchor="start"><tspan x="24" dy="0">больше номинала → глины, трещиноватые</tspan><tspan x="24" dy="19">породы, карст или соли</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Правило автора для глинистого раствора: сужение ствола — след корки против коллектора. Расширение неоднозначно: его дают разные породы.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 90</span>
+  </figcaption>
+</figure>
+<figure class="ill" id="ill-2">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_latyshova_s17_02__2_m.svg"><img src="img/geo_latyshova_s17_02__2.svg" alt="Горизонтальный срез: слева раствор в скважине, затем тонкая коричневая глинистая корка, затем зона проникновения фильтрата и неизменённая часть пласта; ниже график сопротивления от расстояния до оси скважины." loading="lazy"></picture>  </div>
+  <figcaption>
+    Срез от оси скважины в пласт: на стенке — глинистая корка, за ней — зона проникновения фильтрата. Размеры и сопротивления условные, это схема механизма, а не данные книги.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 90</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-2">
+            <p>Глинистые частицы раствора в поры не проходят и оседают на стенке. Получается <strong class="term">глинистая корка</strong> — слой глины против проницаемого пласта. Поэтому фактический диаметр скважины становится меньше <strong class="term">номинального диаметра</strong>, то есть диаметра долота. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+          </div>
+<h3>Почему корка растёт только против коллектора</h3>          <div class="para" id="how-3">
+            <p>Корка — это частицы, отфильтрованные на стенке, когда жидкость уходит в поры. Если порода непроницаема, жидкость не уходит. Тогда и корка не образуется. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+          </div>
+<h3>Другие породы — другой диаметр</h3>          <div class="para" id="how-4">
+            <p>В плотных, сцементированных породах диаметр скважины остаётся равным номинальному. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.02.c02"><p>«В плотных, сцементированных породах диаметр скважины остается равным номинальному»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>В глинах, глинистых сланцах и аргиллитах диаметр увеличивается. Автор объясняет причину: глинистые частицы разбухают, и струя раствора их вымывает. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.02.c03"><p>«В глинах, глинистых сланцах, аргиллитах за счет разбухания глинистых частиц и вымывания их струей бурового раствора диаметр скважины увеличивается.»</p><footer>— автор, стр. 90 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Нюансы</h3>          <div class="para" id="how-6">
+            <p>Диаметр может увеличиваться и в других породах. Это трещиноватые разрушенные породы, зоны карста, растворимые каменные и калийные соли. Значит, расширение ствола само по себе ещё не говорит, какая это порода. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.02.c04"><p>«В трещиноватых разрушенных породах, зонах развития карста и растворимых каменных и калийных солях диаметр скважины также может увеличиваться»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Коллектор с коркой: фактический диаметр меньше номинального. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li><li>Плотные сцементированные породы: диаметр равен номинальному. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li><li>Глины, трещиноватые породы, карст и соли: диаметр может быть больше номинального. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li><li>Условие: всё это описано для бурения на глинистом растворе. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Кривая диаметра скважины (кавернограмма) несёт литологическую информацию: сужение указывает на коллектор с коркой, расширение — на глины, трещиноватые породы или соли.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>фактический диаметр скважины и номинальный диаметр</dd>
+          <dt>Выход</dt><dd>признак: сужение / номинал / расширение</dd>
+          <dt>Где ломается</dt><dd>Расширение неоднозначно (глины, трещины, карст, соли); без корки (бурение на воде или нефильтрующемся растворе) признак сужения пропадает.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Признак «фактический диаметр минус номинальный» — простая и информативная фича для автоматической разметки коллекторов.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>кавернограмма, диаметр долота</dd>
+            <dt>Ручные шаги</dt><dd>сравнение диаметра с номиналом по интервалам</dd>
+            <dt>Точки суждения</dt><dd>причина расширения ствола: глина, трещиноватость или соль</dd>
+            <dt>Время</dt><dd>быстро по одной кривой, но требует сверки с другими методами</dd>
+            <dt>Типичные ошибки</dt><dd>считать любое расширение глиной</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как побочный след работы системы: «отложения» (корка) появляются только там, где был поток (фильтрация), — по следу судят о проницаемости.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> След зависит от свойств раствора: при другом растворе поток есть, а следа нет.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Почему корка растёт именно против коллектора <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Корка — это глинистые частицы, отфильтрованные на стенке, когда жидкость уходит в поры. Если порода непроницаема, жидкость не уходит и корка не образуется.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>фильтрат раствора <span class="en" lang="en">(mud filtrate)</span></dt><dd>Жидкая часть бурового раствора, которая проникает из скважины в проницаемый пласт. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>зона проникновения <span class="en" lang="en">(invaded zone)</span></dt><dd>Часть пласта вокруг скважины, куда проник фильтрат раствора. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>глинистая корка <span class="en" lang="en">(mud cake)</span></dt><dd>Слой глинистых частиц на стенке скважины против проницаемого пласта. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>номинальный диаметр <span class="en" lang="en">(bit size)</span></dt><dd>Диаметр скважины, равный диаметру долота; с ним сравнивают фактический диаметр. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>межзерновой коллектор <span class="en" lang="en">(intergranular reservoir)</span></dt><dd>Коллектор, где пустоты — поры между зёрнами породы. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s17-02-t01" data-task="geo.latyshova.s17.02.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">В каких породах, по автору, диаметр скважины может стать больше номинального? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s17.02.t01" value="0"> <span>Каменные и калийные соли</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s17.02.t01" value="1"> <span>Глины, глинистые сланцы, аргиллиты</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s17.02.t01" value="2"> <span>Трещиноватые разрушенные породы и зоны карста</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s17.02.t01" value="3"> <span>Межзерновые коллекторы с глинистой коркой</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Глины, глинистые сланцы, аргиллиты; Трещиноватые разрушенные породы и зоны карста; Каменные и калийные соли</p>
+    <p class="fb-expl">Расширение дают глины, трещиноватые породы, карст и соли; против коллектора с коркой ствол, наоборот, сужается. <a href="#how-6">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s17-02-t02" data-task="geo.latyshova.s17.02.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-latyshova-s17-02-t02">Расставьте по порядку, как против коллектора появляется сужение ствола.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-latyshova-s17-02-t02">
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Глинистые частицы оседают на стенке и образуют корку</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Фактический диаметр становится меньше номинального</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Фильтрат раствора уходит в поры пласта</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Фильтрат раствора уходит в поры пласта → Глинистые частицы оседают на стенке и образуют корку → Фактический диаметр становится меньше номинального</p>
+    <p class="fb-expl">Корка — это частицы, отфильтрованные на стенке, когда жидкость уходит в поры; корка и сужает ствол. <a href="#how-3">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s17.02.c01"><p>В межзерновых коллекторах при бурении на глинистом растворе образуются зоны проникновения фильтрата и глинистые корки; диаметр скважины меньше номинального. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«К особенностям вскрытия разрезов на глинистом растворе относятся образование в межзерновых коллекторах зон проникновения фильтрата раствора и глинистых корок на стенках скважины»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.02.c02"><p>В плотных сцементированных породах диаметр скважины равен номинальному. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В плотных, сцементированных породах диаметр скважины остается равным номинальному»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.02.c03"><p>В глинах, глинистых сланцах и аргиллитах диаметр увеличивается из-за разбухания и вымывания глинистых частиц. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В глинах, глинистых сланцах, аргиллитах за счет разбухания глинистых частиц и вымывания их струей бурового раствора диаметр скважины увеличивается.»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.02.c04"><p>В трещиноватых разрушенных породах, карсте, каменных и калийных солях диаметр тоже может увеличиваться. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«В трещиноватых разрушенных породах, зонах развития карста и растворимых каменных и калийных солях диаметр скважины также может увеличиваться»</p><footer>— стр. 90</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-05.html">шаг 5 «Водоотдача и давление раствора»</a>, <a href="step-06.html">шаг 6 «Пресный или солёный фильтрат»</a>, <a href="step-07.html">шаг 7 «Бурение на воде и без фильтрации»</a>, <a href="step-14.html">шаг 14 «Прямые признаки коллектора на диаграммах»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-03.html" rel="prev"><span>← Назад</span><b>Какие бывают разрезы и коллекторы</b></a><a class="next" href="step-05.html" rel="next"><span>Дальше →</span><b>Водоотдача и давление раствора</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s17.02.t01", "type": "multiple", "question": "В каких породах, по автору, диаметр скважины может стать больше номинального? Выберите все верные.", "explanation": "Расширение дают глины, трещиноватые породы, карст и соли; против коллектора с коркой ствол, наоборот, сужается.", "page": 90, "link": "#how-6", "step_title": "Корка сужает скважину против коллектора", "step_index": 4, "node_id": "geo.latyshova.s17.02", "options": ["Каменные и калийные соли", "Глины, глинистые сланцы, аргиллиты", "Трещиноватые разрушенные породы и зоны карста", "Межзерновые коллекторы с глинистой коркой"], "key": [0, 1, 2], "answer_text": "Глины, глинистые сланцы, аргиллиты; Трещиноватые разрушенные породы и зоны карста; Каменные и калийные соли"}, {"id": "geo.latyshova.s17.02.t02", "type": "order", "question": "Расставьте по порядку, как против коллектора появляется сужение ствола.", "explanation": "Корка — это частицы, отфильтрованные на стенке, когда жидкость уходит в поры; корка и сужает ствол.", "page": 90, "link": "#how-3", "step_title": "Корка сужает скважину против коллектора", "step_index": 4, "node_id": "geo.latyshova.s17.02", "items": [{"text": "Глинистые частицы оседают на стенке и образуют корку", "pos": 1}, {"text": "Фактический диаметр становится меньше номинального", "pos": 2}, {"text": "Фильтрат раствора уходит в поры пласта", "pos": 0}], "key": [0, 1, 2], "answer_text": "Фильтрат раствора уходит в поры пласта → Глинистые частицы оседают на стенке и образуют корку → Фактический диаметр становится меньше номинального"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

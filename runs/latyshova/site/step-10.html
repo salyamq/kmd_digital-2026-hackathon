@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 10. Методы ГИС дополняют друг друга — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s18.04" data-index="10">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#problems">Задачи из книги</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Методы ГИС и литологический разрез › Шаг 10 из 34</p>
+    <h1>Методы ГИС дополняют друг друга</h1>
+    <p class="booktitle">В книге: «Сфера применения методов шире классификации; требования к комплексу» <span class="pg">стр. 92</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-08.html">шаг 8 «Какой метод для какой задачи»</a> <span class="muted">(предпосылка)</span>, <a href="step-09.html">шаг 9 «Как оценивают нефтенасыщенность пласта»</a> <span class="muted">(предпосылка)</span>, <a href="step-11.html">шаг 11 «Как строят разрез скважины по ГИС»</a> <span class="muted">(переход к данным)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Деление методов на группы условно: почти каждый метод косвенно говорит и о других свойствах породы.</p><p>Надёжный разрез получают только по полному комплексу ГИС при правильно подобранном растворе.</p><p>Если проникновение глубокое, газ находят повторными нейтронными замерами после обсадки скважины.</p><p class="threshold"><b>Пороговая идея.</b> Классификация методов условна: почти каждый метод косвенно говорит и о других свойствах, и надёжный разрез получается только из полного комплекса при правильном бурении. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Классификация условна</h3>          <div class="para" id="how-1">
+            <p>Автор подчёркивает: каждый метод применим шире, чем указано в классификации из прошлого шага. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c01"><p>«Сфера применения каждого из перечисленных методов шире, чем это предусмотрено данной классификацией.»</p><footer>— автор, стр. 92 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Например, диаграмма ЯМР в терригенном и карбонатном разрезах несёт информацию о пористости. В терригенном разрезе о пористости говорят и СП, и гамма-метод. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c02"><p>«диаграмма ЯМР в терригенном и карбонатном разрезах, диаграммы СП, ГМ - в терригенном, несут информацию о пористости»</p><footer>— автор, стр. 92 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>И наоборот, методы пористости ГГМ, НМ и АК содержат сведения о глинистости. Особенно хорошо это видно, когда их диаграммы используют вместе. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c03"><p>«методы пористости ГГМ, НМ, АК содержат сведения о глинистости, особенно при комплексном использовании диаграмм этих методов»</p><footer>— автор, стр. 92 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Косвенные сведения о коллекторе</h3>          <div class="para" id="how-4">
+            <p>Почти все методы пористости и глинистости косвенно говорят о коллекторе. При неглубоком проникновении микрозонды дают сведения о продуктивности. А ГГМ и НМ — о газонасыщенности породы. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c04"><p>«в условиях неглубокого проникновения диаграммы микрозондов дают сведения о продуктивности, диаграммы ГГМ и НМ - о газонасыщенности породы»</p><footer>— автор, стр. 92 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Когда проникновение глубокое</h3>          <div class="para" id="how-5">
+            <p>При глубоком проникновении нейтронные измерения делают как <strong class="term">повторные исследования</strong> — замеры одним методом в разное время. Повторяют их после обсадки скважины. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c05"><p>«При наличии глубоких проникновений геофизические измерения нейтронными методами проводят в виде повторных исследований после обсадки скважины.»</p><footer>— автор, стр. 92 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 422" role="img" aria-label="Как газ находят повторными замерами" class="ill-svg"><title>Как газ находят повторными замерами</title><rect class="ill-bg" x="0" y="0" width="360" height="422" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Как газ находят повторными</tspan><tspan x="180.0" dy="19">замерами</tspan></text><rect class="ill-box ill-bad" x="12.0" y="82" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Глубокое проникновение фильтрата</tspan></text><line class="ill-line" x1="180.0" y1="121.0" x2="180.0" y2="145.0"/><polygon class="ill-arrow" points="180.0,145.0 176.1,136.9 183.9,136.9"/><rect class="ill-box ill-neutral" x="12.0" y="149" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="173" text-anchor="middle"><tspan x="180.0" dy="0">Скважину обсаживают</tspan></text><line class="ill-line" x1="180.0" y1="188.0" x2="180.0" y2="212.0"/><polygon class="ill-arrow" points="180.0,212.0 176.1,203.9 183.9,203.9"/><rect class="ill-box ill-accent" x="12.0" y="216" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="240" text-anchor="middle"><tspan x="180.0" dy="0">Нейтронные замеры повторяют</tspan></text><line class="ill-line" x1="180.0" y1="255.0" x2="180.0" y2="279.0"/><polygon class="ill-arrow" points="180.0,279.0 176.1,270.9 183.9,270.9"/><rect class="ill-box ill-neutral" x="12.0" y="283" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="307" text-anchor="middle"><tspan x="180.0" dy="0">Зона проникновения</tspan><tspan x="180.0" dy="19">расформировывается</tspan></text><line class="ill-line" x1="180.0" y1="341.0" x2="180.0" y2="365.0"/><polygon class="ill-arrow" points="180.0,365.0 176.1,356.9 183.9,356.9"/><rect class="ill-box ill-good" x="12.0" y="369" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="393" text-anchor="middle"><tspan x="180.0" dy="0">Газонасыщенные интервалы выявляются</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Логика автора: при глубоком проникновении газ виден не сразу, а по повторным нейтронным замерам после обсадки.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 92</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-6">
+            <p>Со временем идёт <strong class="term">расформирование зоны проникновения</strong> — у скважины постепенно восстанавливается исходное насыщение. Автор делает вывод: по мере этого повторные замеры выявляют газонасыщенные интервалы. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c06"><p>«Это позволяет установить газонасыщенные интервалы по мере расформирования в них зоны проникновения.»</p><footer>— автор, стр. 92 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Итог: что нужно для надёжного разреза</h3>          <div class="para" id="how-7">
+            <p>Отсюда вывод автора. Для надёжного литологического разреза нужны оптимальные параметры промывочной жидкости и правильные репрессии при бурении. И нужен полный комплекс ГИС, подобранный под разрез и тип раствора. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s18.04.c07"><p>«требуется соблюдение оптимальных параметров промывочной жидкости, репрессий на пласты в процессе бурения и проведение в скважинах полного комплекса геофизических исследований»</p><footer>— автор, стр. 92 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: микрозонды говорят о продуктивности, а ГГМ и НМ о газе — только при неглубоком проникновении. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></li><li>Условие: при глубоком проникновении нейтронные замеры повторяют после обсадки. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Один метод ГИС может однозначно определить литологию и насыщение.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Методы дают перекрывающуюся, косвенную информацию; надёжный вывод — по полному комплексу при правильных условиях бурения. <span class="pg" title="Страница книги (по PDF)">стр. 92</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Кривые избыточны и взаимосвязаны: информация о свойстве распределена по нескольким методам; время замера (до/после обсадки) — тоже признак.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>полный комплекс кривых, повторные замеры во времени</dd>
+          <dt>Выход</dt><dd>согласованная оценка литологии, пористости, глинистости, газонасыщенности</dd>
+          <dt>Где ломается</dt><dd>При глубоком проникновении однократный замер не выявляет газ; неполный комплекс не даёт однозначного заключения.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Разность повторных нейтронных замеров — естественный признак газа для автоматического поиска.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>все кривые комплекса, повторные замеры</dd>
+            <dt>Ручные шаги</dt><dd>перекрёстная сверка методов, сравнение замеров во времени</dd>
+            <dt>Точки суждения</dt><dd>достаточен ли комплекс для однозначного заключения</dd>
+            <dt>Время</dt><dd>повторные замеры растягиваются во времени</dd>
+            <dt>Типичные ошибки</dt><dd>делать вывод по неполному комплексу</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как избыточность признаков в ML: один признак коррелирует с несколькими целевыми свойствами, и совместная модель извлекает больше, чем каждый по отдельности.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Связи здесь физические и зависят от условий (проникновение, раствор), их нельзя просто «выучить» на другом месторождении.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Повторные (временные) нейтронные замеры и их сравнение по-прежнему применяются для поиска газа; данные хранят в цифровом виде, что упрощает сравнение замеров.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Задачи книги к параграфу <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Задачи 86–89 тренируют выбор комплекса методов по диаграммам из предыдущих глав книги (рис. 14, 24, 47, 58, 74): какие методы нужны, чтобы дать однозначное заключение.</p></details>
+    </section>
+    <section id="problems" class="block block-problems" aria-labelledby="h-problems">
+      <h2 id="h-problems">Задачи из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="problems"><li><b>Задача 86.</b> Диаграммы каких методов геофизических исследований необходимо иметь, чтобы дать заключение о продуктивности коллекторов, выделяемых на основании рис. 14? <span class="muted">Нужен рисунок: 14.</span> <span class="pg">стр. 92</span></li><li><b>Задача 87.</b> Какими геофизическими методами желательно дополнить комплекс диаграмм, приведенных на рис. 24 и 74? Какие задачи должны решать эти методы? <span class="muted">Нужен рисунок: 24, 74.</span> <span class="pg">стр. 92</span></li><li><b>Задача 88.</b> Какие методы геофизического комплекса требуется использовать, чтобы дать однозначное заключение об участке разреза, представленного на рис. 47? <span class="muted">Нужен рисунок: 47.</span> <span class="pg">стр. 92</span></li><li><b>Задача 89.</b> Какими методами необходимо дополнить комплекс диаграмм, представленных на рис. 58, для однозначной характеристики выделенного участка разреза? <span class="muted">Нужен рисунок: 58.</span> <span class="pg">стр. 92</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>расформирование зоны проникновения <span class="en" lang="en">(invasion dissipation)</span></dt><dd>Постепенное восстановление исходного насыщения прискважинной зоны после бурения. <span class="pg">стр. 92</span> <span class="chip chip-model">модель</span></dd><dt>повторные исследования <span class="en" lang="en">(time-lapse logging)</span></dt><dd>Замеры одним методом в разное время для наблюдения изменений в пласте. <span class="pg">стр. 92</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s18-04-t01" data-task="geo.latyshova.s18.04.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенное слово.</p>
+  <p class="cloze">При глубоком проникновении нейтронные измерения повторяют после <select aria-label="Пропуск 1"><option value="">—</option><option>промывки</option><option>кислотной обработки</option><option>обсадки</option><option>остановки бурения</option></select> скважины.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При глубоком проникновении нейтронные измерения повторяют после [обсадки] скважины.</p>
+    <p class="fb-expl">По мере расформирования зоны проникновения повторные нейтронные замеры после обсадки выявляют газ. <a href="#how-5">Где это в тексте (стр. 92) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s18-04-t02" data-task="geo.latyshova.s18.04.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что, по автору, нужно для надёжного литологического разреза по ГИС?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.04.t02" value="0"> <span>Только данные о диаметре скважины</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.04.t02" value="1"> <span>Один самый точный метод</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.04.t02" value="2"> <span>Оптимальный раствор, правильные репрессии и полный комплекс ГИС под разрез и раствор</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s18.04.t02" value="3"> <span>Только кривые сопротивления</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Оптимальный раствор, правильные репрессии и полный комплекс ГИС под разрез и раствор</p>
+    <p class="fb-expl">Методы дают перекрывающуюся косвенную информацию, поэтому нужен полный комплекс при правильном бурении. <a href="#how-7">Где это в тексте (стр. 92) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s18.04.c01"><p>Каждый метод применим шире своей группы в классификации. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Сфера применения каждого из перечисленных методов шире, чем это предусмотрено данной классификацией.»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c02"><p>ЯМР, а в терригенном разрезе СП и ГМ несут информацию о пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«диаграмма ЯМР в терригенном и карбонатном разрезах, диаграммы СП, ГМ - в терригенном, несут информацию о пористости»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c03"><p>ГГМ, НМ, АК содержат сведения о глинистости, особенно при совместном использовании. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«методы пористости ГГМ, НМ, АК содержат сведения о глинистости, особенно при комплексном использовании диаграмм этих методов»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c04"><p>При неглубоком проникновении микрозонды говорят о продуктивности, ГГМ и НМ — о газонасыщенности. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«в условиях неглубокого проникновения диаграммы микрозондов дают сведения о продуктивности, диаграммы ГГМ и НМ - о газонасыщенности породы»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c05"><p>При глубоком проникновении нейтронные замеры повторяют после обсадки скважины. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«При наличии глубоких проникновений геофизические измерения нейтронными методами проводят в виде повторных исследований после обсадки скважины.»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c06"><p>Повторные замеры выявляют газонасыщенные интервалы по мере расформирования зоны проникновения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Это позволяет установить газонасыщенные интервалы по мере расформирования в них зоны проникновения.»</p><footer>— стр. 92</footer></blockquote></li>
+        <li id="src-geo.latyshova.s18.04.c07"><p>Надёжный разрез требует оптимального раствора, умеренных репрессий и полного комплекса ГИС под разрез и тип раствора. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«требуется соблюдение оптимальных параметров промывочной жидкости, репрессий на пласты в процессе бурения и проведение в скважинах полного комплекса геофизических исследований»</p><footer>— стр. 92</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-11.html">шаг 11 «Как строят разрез скважины по ГИС»</a>, <a href="step-15.html">шаг 15 «Проникновение и повторные замеры»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-09.html" rel="prev"><span>← Назад</span><b>Как оценивают нефтенасыщенность пласта</b></a><a class="next" href="step-11.html" rel="next"><span>Дальше →</span><b>Как строят разрез скважины по ГИС</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s18.04.t01", "type": "cloze", "question": "Вставьте пропущенное слово.", "explanation": "По мере расформирования зоны проникновения повторные нейтронные замеры после обсадки выявляют газ.", "page": 92, "link": "#how-5", "step_title": "Методы ГИС дополняют друг друга", "step_index": 10, "node_id": "geo.latyshova.s18.04", "parts": ["При глубоком проникновении нейтронные измерения повторяют после ", " скважины."], "blanks": [{"options": ["промывки", "кислотной обработки", "обсадки", "остановки бурения"], "answers": ["обсадки"]}], "key": [["обсадки"]], "answer_text": "При глубоком проникновении нейтронные измерения повторяют после [обсадки] скважины."}, {"id": "geo.latyshova.s18.04.t02", "type": "single", "question": "Что, по автору, нужно для надёжного литологического разреза по ГИС?", "explanation": "Методы дают перекрывающуюся косвенную информацию, поэтому нужен полный комплекс при правильном бурении.", "page": 92, "link": "#how-7", "step_title": "Методы ГИС дополняют друг друга", "step_index": 10, "node_id": "geo.latyshova.s18.04", "options": ["Только данные о диаметре скважины", "Один самый точный метод", "Оптимальный раствор, правильные репрессии и полный комплекс ГИС под разрез и раствор", "Только кривые сопротивления"], "key": [2], "answer_text": "Оптимальный раствор, правильные репрессии и полный комплекс ГИС под разрез и раствор"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

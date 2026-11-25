@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 1. Какие задачи решают по данным ГИС — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.ch5.01" data-index="1">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Зачем ГИС и как бурение портит или улучшает данные › Шаг 1 из 34</p>
+    <h1>Какие задачи решают по данным ГИС</h1>
+    <p class="booktitle">В книге: «Глава V. Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным методов ГИС» <span class="pg">стр. 90</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + неочевидное</span>    </p>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">По данным ГИС шаг за шагом решают цепочку задач: литология, коллекторы, их насыщение и параметры пласта.</p><p>Кривые ГИС — это отклики приборов, а не сама порода; ответ получают интерпретацией.</p><p>Простые случаи решают по признакам на диаграммах, сложные и промышленные — только расчётом.</p><p class="threshold"><b>Пороговая идея.</b> Геофизика скважин не «видит» нефть: по откликам приборов решают цепочку задач — от литологии к коллекторам и их насыщению, и сложные случаи требуют количественной интерпретации. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что такое ГИС и зачем они нужны</h3>          <div class="para" id="how-1">
+            <p><strong class="term">Геофизические исследования скважин (ГИС)</strong> — измерения приборами, которые опускают в скважину. Результат — диаграммы, то есть кривые по глубине. Автор перечисляет, для чего используют данные ГИС поисковых, разведочных и эксплуатационных скважин. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.ch5.01.c01"><p>«Данные геофизических исследований поисковых, разведочных и эксплуатационных скважин на нефть и газ используются для составления литологического разреза скважины»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 441" role="img" aria-label="Цепочка задач, которые решают по ГИС" class="ill-svg"><title>Цепочка задач, которые решают по ГИС</title><rect class="ill-bg" x="0" y="0" width="360" height="441" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Цепочка задач, которые решают по</tspan><tspan x="180.0" dy="19">ГИС</tspan></text><rect class="ill-box ill-neutral" x="12.0" y="82" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Литологический разрез скважины</tspan></text><line class="ill-line" x1="180.0" y1="121.0" x2="180.0" y2="145.0"/><polygon class="ill-arrow" points="180.0,145.0 176.1,136.9 183.9,136.9"/><rect class="ill-box ill-accent" x="12.0" y="149" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="173" text-anchor="middle"><tspan x="180.0" dy="0">Выделение коллекторов</tspan></text><line class="ill-line" x1="180.0" y1="188.0" x2="180.0" y2="212.0"/><polygon class="ill-arrow" points="180.0,212.0 176.1,203.9 183.9,203.9"/><rect class="ill-box ill-accent" x="12.0" y="216" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="240" text-anchor="middle"><tspan x="180.0" dy="0">Характер насыщения коллекторов</tspan></text><line class="ill-line" x1="180.0" y1="255.0" x2="180.0" y2="279.0"/><polygon class="ill-arrow" points="180.0,279.0 176.1,270.9 183.9,270.9"/><rect class="ill-box ill-good" x="12.0" y="283" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="307" text-anchor="middle"><tspan x="180.0" dy="0">Эффективная толщина, пористость,</tspan><tspan x="180.0" dy="19">нефтегазонасыщение</tspan></text><line class="ill-line" x1="180.0" y1="341.0" x2="180.0" y2="365.0"/><polygon class="ill-arrow" points="180.0,365.0 176.1,356.9 183.9,356.9"/><rect class="ill-box ill-good" x="12.0" y="369" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="393" text-anchor="middle"><tspan x="180.0" dy="0">Проницаемость и глинистость</tspan><tspan x="180.0" dy="19">продуктивных коллекторов</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Задачи главы по порядку: от того, какие породы вскрыты, к параметрам продуктивных коллекторов.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 90</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-2">
+            <p>Первая задача — составить <strong class="term">литологический разрез</strong>: какие породы и пласты вскрыла скважина. Дальше выделяют <strong class="term">коллекторы</strong> — породы, которые могут вмещать и отдавать нефть, газ или воду. Для них оценивают <strong class="term">характер насыщения</strong> — чем заполнены поры. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+          </div>
+          <div class="para" id="how-3">
+            <p>Затем определяют <strong class="term">эффективную толщину</strong> — толщину той части пласта, которая является коллектором. Ещё находят коэффициенты пористости и нефтегазонасыщения. Также оценивают проницаемость и глинистость продуктивных коллекторов. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+          </div>
+<h3>Качественно или количественно</h3>          <div class="para" id="how-4">
+            <p>Литологический разрез обычно строят <strong class="term">качественной интерпретацией</strong> — выводом по признакам без расчёта параметров. Используют признаки основных типов пород на главных диаграммах комплекса. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.ch5.01.c02"><p>«Первая из перечисленных задач решается обычно методами качественной интерпретации путем применения признаков основных типов пород на главных диаграммах геофизического комплекса.»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>Простейшие коллекторы с межзерновой пористостью тоже выделяют и оценивают качественно. Для более сложных автор требует <strong class="term">количественную интерпретацию</strong> — расчёт параметров пласта по показаниям методов. Считают коэффициенты пористости, глинистости, нефтегазонасыщения или параметр насыщения. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.ch5.01.c03"><p>«для простейшего случая коллекторов с межзерновой пористостью также на основании качественной интерпретации, а для более сложных — методами количественной интерпретации»</p><footer>— автор, стр. 90 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Где без расчёта не обойтись</h3>          <div class="para" id="how-6">
+            <p>Промышленная оценка коллекторов опирается на количественные определения пористости, нефтегазонасыщения и проницаемости. Эти числа используют при подсчёте запасов и проектировании разработки месторождений. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.ch5.01.c04"><p>«Промышленная оценка коллекторов базируется на количественных определениях пористости, нефтегазонасыщения, проницаемости»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-7">
+            <p>В эксплуатационных скважинах у ГИС есть ещё задача. По ним следят, как при разработке продвигаются контакты флюидов. Это <strong class="term">водонефтяной контакт (ВНК)</strong> — граница нефти и воды, и <strong class="term">газожидкостный контакт (ГЖК)</strong> — граница газа и жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.ch5.01.c05"><p>«устанавливается характер продвижения водонефтяного (ВНК) и газожидкостного (ГЖК) контактов в процессе разработки месторождения»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: качественной интерпретации хватает для литологии и для простейших межзерновых коллекторов. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li><li>Условие: для сложных коллекторов и промышленной оценки нужны количественные определения. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Каротажная кривая — это и есть порода, а не косвенное измерение.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Диаграммы ГИС — отклики приборов; литологию, коллекторы и насыщение получают их интерпретацией, качественной или количественной. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Вход — набор кривых ГИС по глубине; выходы — разметка интервалов (литология, коллектор/неколлектор, насыщение) и числовые параметры пласта.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>диаграммы методов ГИС по скважине</dd>
+          <dt>Выход</dt><dd>литологический разрез, коллекторы, характер насыщения, эффективная толщина, пористость, нефтегазонасыщение, проницаемость, глинистость</dd>
+          <dt>Где ломается</dt><dd>Для сложных коллекторов качественных признаков недостаточно — нужна количественная интерпретация.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Задачи образуют конвейер разметки: литология → коллектор → насыщение → параметры, и ошибка на раннем шаге переносится дальше.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>кривые ГИС по скважине, данные керна и испытаний</dd>
+            <dt>Ручные шаги</dt><dd>просмотр диаграмм, разметка пластов и коллекторов, расчёт параметров</dd>
+            <dt>Точки суждения</dt><dd>выбор между качественной и количественной интерпретацией; отнесение пласта к коллекторам</dd>
+            <dt>Время</dt><dd>много ручной работы на каждую скважину</dd>
+            <dt>Типичные ошибки</dt><dd>перенос признаков простых коллекторов на сложные</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Это как конвейер обработки сигнала: сырые метрики (кривые) → разметка событий (пласты, коллекторы) → вычисление показателей (пористость, насыщение).</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> В отличие от логов приложения, связь «сигнал → свойство породы» физическая и неоднозначная: одинаковый отклик могут дать разные породы.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сегодня интерпретацию ГИС выполняют в специализированных программных комплексах с цифровыми кривыми; логика задач (литология → коллектор → насыщение → параметры) сохраняется.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Качественная и количественная интерпретация <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Качественная интерпретация отвечает на вопрос «да/нет» по набору признаков на диаграммах (коллектор или нет, нефть или вода). Количественная — вычисляет параметры пласта (пористость, насыщенность) по формулам и связям «показание → свойство». Дальше в главе показано, что граница между ними проходит по сложности коллектора.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>геофизические исследования скважин (ГИС) <span class="en" lang="en">(well logging)</span></dt><dd>Измерения физических свойств пород приборами, опускаемыми в скважину; результат — диаграммы (кривые) по глубине. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>литологический разрез <span class="en" lang="en">(lithological column)</span></dt><dd>Последовательность пород, вскрытых скважиной, с границами и толщинами пластов. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>коллектор <span class="en" lang="en">(reservoir rock)</span></dt><dd>Порода, которая может вмещать нефть, газ или воду и отдавать их. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>характер насыщения <span class="en" lang="en">(fluid type / saturation)</span></dt><dd>Чем заполнены поры коллектора: нефтью, газом или водой. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>эффективная толщина <span class="en" lang="en">(net pay)</span></dt><dd>Толщина той части пласта, которая является (продуктивным) коллектором. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>качественная интерпретация <span class="en" lang="en">(qualitative interpretation)</span></dt><dd>Вывод по признакам на диаграммах без расчёта параметров. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>количественная интерпретация <span class="en" lang="en">(quantitative interpretation)</span></dt><dd>Расчёт параметров пласта (пористости, насыщения и др.) по показаниям методов. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>водонефтяной контакт (ВНК) <span class="en" lang="en">(oil-water contact)</span></dt><dd>Граница между нефтенасыщенной и водонасыщенной частями пласта. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>газожидкостный контакт (ГЖК) <span class="en" lang="en">(gas-liquid contact)</span></dt><dd>Граница между газом и жидкостью (нефтью или водой) в пласте. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-ch5-01-t01" data-task="geo.latyshova.ch5.01.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">На что, по автору, опирается промышленная оценка коллекторов (подсчёт запасов, проект разработки)?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.ch5.01.t01" value="0"> <span>На внешний вид кривых без расчётов</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.ch5.01.t01" value="1"> <span>На количественные определения пористости, нефтегазонасыщения и проницаемости</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.ch5.01.t01" value="2"> <span>Только на признаки пород на главных диаграммах</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.ch5.01.t01" value="3"> <span>Только на литологический разрез</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> На количественные определения пористости, нефтегазонасыщения и проницаемости</p>
+    <p class="fb-expl">Для запасов и проекта разработки нужны числа, поэтому автор называет количественные определения. <a href="#how-6">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-ch5-01-t02" data-task="geo.latyshova.ch5.01.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие задачи автор называет среди задач, решаемых по данным ГИС? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.ch5.01.t02" value="0"> <span>Найти нефть напрямую, без интерпретации кривых</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.ch5.01.t02" value="1"> <span>Составить литологический разрез скважины</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.ch5.01.t02" value="2"> <span>Определить эффективную толщину и коэффициент пористости</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.ch5.01.t02" value="3"> <span>Выделить коллекторы и оценить характер их насыщения</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Составить литологический разрез скважины; Выделить коллекторы и оценить характер их насыщения; Определить эффективную толщину и коэффициент пористости</p>
+    <p class="fb-expl">Автор перечисляет литологию, коллекторы, насыщение, толщину и коэффициенты; ответ всегда получают интерпретацией. <a href="#how-2">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.ch5.01.c01"><p>Данные ГИС используют, чтобы построить литологический разрез, выделить коллекторы, оценить их насыщение, эффективную толщину, пористость, нефтегазонасыщение, проницаемость и глинистость. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Данные геофизических исследований поисковых, разведочных и эксплуатационных скважин на нефть и газ используются для составления литологического разреза скважины»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.ch5.01.c02"><p>Литологический разрез обычно строят качественной интерпретацией — по признакам типов пород на главных диаграммах. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Первая из перечисленных задач решается обычно методами качественной интерпретации путем применения признаков основных типов пород на главных диаграммах геофизического комплекса.»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.ch5.01.c03"><p>Простые межзерновые коллекторы выделяют и оценивают качественно, а сложные — количественно, через коэффициенты или параметр насыщения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«для простейшего случая коллекторов с межзерновой пористостью также на основании качественной интерпретации, а для более сложных — методами количественной интерпретации»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.ch5.01.c04"><p>Промышленная оценка коллекторов (запасы, проект разработки) опирается на количественные определения пористости, нефтегазонасыщения и проницаемости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Промышленная оценка коллекторов базируется на количественных определениях пористости, нефтегазонасыщения, проницаемости»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.ch5.01.c05"><p>В эксплуатационных скважинах по ГИС отслеживают продвижение ВНК и ГЖК при разработке. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«устанавливается характер продвижения водонефтяного (ВНК) и газожидкостного (ГЖК) контактов в процессе разработки месторождения»</p><footer>— стр. 90</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-02.html">шаг 2 «Набор методов зависит от бурового раствора»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="index.html"><span>← К пути</span><b>Все шаги</b></a><a class="next" href="step-02.html" rel="next"><span>Дальше →</span><b>Набор методов зависит от бурового раствора</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.ch5.01.t01", "type": "single", "question": "На что, по автору, опирается промышленная оценка коллекторов (подсчёт запасов, проект разработки)?", "explanation": "Для запасов и проекта разработки нужны числа, поэтому автор называет количественные определения.", "page": 90, "link": "#how-6", "step_title": "Какие задачи решают по данным ГИС", "step_index": 1, "node_id": "geo.latyshova.ch5.01", "options": ["На внешний вид кривых без расчётов", "На количественные определения пористости, нефтегазонасыщения и проницаемости", "Только на признаки пород на главных диаграммах", "Только на литологический разрез"], "key": [1], "answer_text": "На количественные определения пористости, нефтегазонасыщения и проницаемости"}, {"id": "geo.latyshova.ch5.01.t02", "type": "multiple", "question": "Какие задачи автор называет среди задач, решаемых по данным ГИС? Выберите все верные.", "explanation": "Автор перечисляет литологию, коллекторы, насыщение, толщину и коэффициенты; ответ всегда получают интерпретацией.", "page": 90, "link": "#how-2", "step_title": "Какие задачи решают по данным ГИС", "step_index": 1, "node_id": "geo.latyshova.ch5.01", "options": ["Найти нефть напрямую, без интерпретации кривых", "Составить литологический разрез скважины", "Определить эффективную толщину и коэффициент пористости", "Выделить коллекторы и оценить характер их насыщения"], "key": [1, 2, 3], "answer_text": "Составить литологический разрез скважины; Выделить коллекторы и оценить характер их насыщения; Определить эффективную толщину и коэффициент пористости"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 19. Сопротивление против пористости — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.06" data-index="19">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Нефть или вода: характер насыщения › Шаг 19 из 34</p>
+    <h1>Сопротивление против пористости</h1>
+    <p class="booktitle">В книге: «Сопоставление диаграмм методов сопротивления и пористости» <span class="pg">стр. 97</span></p>
+    <p class="meta">
+      <span class="chip">≈ 5 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: процесс/прибор + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-18.html">шаг 18 «Нефть или вода: параметр насыщения»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Когда пористость сильно меняется, сопротивления нефтеносных и водоносных пластов перекрываются.</p><p>Тогда решает сравнение сопротивления пласта с «водным» сопротивлением при той же пористости.</p><p>Сравнивают тремя способами: точками на двух графиках или наложением диаграмм — нормализацией.</p><p class="threshold"><b>Пороговая идея.</b> Когда пористость сильно меняется, сопротивления нефтеносных и водоносных пластов перекрываются — тогда решает только сравнение сопротивления с «водным» сопротивлением для той же пористости. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Почему одного сопротивления мало</h3>          <div class="para" id="how-1">
+            <p>Возьмём межзерновые коллекторы с большим разбросом пористости. Нефтегазонасыщенность у них невысокая или сильно колеблется. Автор делает вывод: диапазоны сопротивлений нефтеносных и водоносных пластов тогда могут сильно перекрываться. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c01"><p>«могут в значительной степени перекрываться»</p><footer>— автор, стр. 97 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Поэтому для оценки насыщения таких коллекторов нужен параметр насыщения Pн, а не одно сопротивление. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c02"><p>«В связи с этим для оценки характера насыщения таких коллекторов требуется использовать величину параметра насыщения.»</p><footer>— автор, стр. 97 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Три способа сопоставления</h3>          <div class="para" id="how-3">
+            <p>Процедура основана на сопоставлении диаграмм методов сопротивления и пористости. Способов три. Первый — <strong class="term">сопоставление в координатах</strong> сопротивления и пористости: точки пластов наносят на график ρп = f(kп). Второй — точки на графике сопротивления против показаний метода пористости, например ΔJнт или ΔТ. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c03"><p>«процедура определения характера насыщения базируется на сопоставлении диаграмм методов сопротивления и пористости, которое проводят разными способами»</p><footer>— автор, стр. 97 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p>Третий способ — <strong class="term">нормализация диаграмм</strong>, или наложение. Кривую сопротивления совмещают с кривой метода пористости. Для этого кривые сначала приводят к единому масштабу. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c04"><p>«Последняя методика носит название нормализации, или наложения диаграмм, для чего требуется предварительная их трансформация с целью приведения к единому масштабу.»</p><footer>— автор, стр. 97 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Общий принцип</h3>          <div class="para" id="how-5">
+            <p>Все три способа сравнивают сопротивление пласта с сопротивлением водонасыщенного пласта. О последнем говорит метод пористости. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c05"><p>«Все три операции основаны на сравнении значений удельного сопротивления пласта с ρвн, информацию о котором дает метод пористости.»</p><footer>— автор, стр. 97 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 401" role="img" aria-label="Три способа — одна проверка" class="ill-svg"><title>Три способа — одна проверка</title><rect class="ill-bg" x="0" y="0" width="360" height="401" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Три способа — одна проверка</tspan></text><text class="ill-small" x="14" y="67">Признаки</text><rect class="ill-box ill-accent" x="12" y="75" width="336" height="33" rx="8"/><text class="ill-text" x="24" y="96" text-anchor="start"><tspan x="24" dy="0">Сопротивление пласта</tspan></text><rect class="ill-box ill-accent" x="12" y="114" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="135" text-anchor="start"><tspan x="24" dy="0">Пористость или показание метода</tspan><tspan x="24" dy="19">пористости</tspan></text><line class="ill-line" x1="180.0" y1="174.0" x2="180.0" y2="194.0"/><polygon class="ill-arrow" points="180.0,194.0 176.1,185.9 183.9,185.9"/><text class="ill-small" x="14" y="206">Правило</text><rect class="ill-box ill-neutral" x="12" y="214" width="336" height="71" rx="8"/><text class="ill-text" x="24" y="235" text-anchor="start"><tspan x="24" dy="0">Сравнить сопротивление пласта с</tspan><tspan x="24" dy="19">сопротивлением водонасыщенного пласта</tspan><tspan x="24" dy="19">той же пористости</tspan></text><line class="ill-line" x1="180.0" y1="291.0" x2="180.0" y2="311.0"/><polygon class="ill-arrow" points="180.0,311.0 176.1,302.9 183.9,302.9"/><text class="ill-small" x="14" y="323">Вывод</text><rect class="ill-box ill-good" x="12" y="331" width="336" height="52" rx="8"/><text class="ill-text" x="24" y="352" text-anchor="start"><tspan x="24" dy="0">сопротивление выше «водного» → Pн &gt; 1:</tspan><tspan x="24" dy="19">нефть или газ</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Точки на графике или наложение кривых — это разные формы одной проверки автора.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 97</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-6">
+            <p>Выделяют пласты, где сопротивление больше «водного». Автор делает вывод: у них Pн &gt; 1, то есть в порах есть нефть или газ. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c06"><p>«что свидетельствует о величине ρн/ρвн = Pн &gt; 1»</p><footer>— автор, стр. 97 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Примечание к методике порога</h3>          <div class="para" id="how-7">
+            <p>Здесь же автор даёт сноску к расчёту критической проницаемости. Этап через коэффициент продуктивности иногда пропускают. Тогда строят корреляционную связь дебита прямо с критической проницаемостью. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.06.c07"><p>«Данный этап иногда минуют, получая корреляционную связь Qн непосредственно с kпр*.»</p><footer>— автор, стр. 97 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как сопоставить сопротивление и пористость</p>        <ol class="proc"><li>Получите для каждого пласта сопротивление и показание метода пористости. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li><li>Сопоставьте их одним из трёх способов: два графика точек или наложение кривых в едином масштабе. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li><li>Выделите пласты, где сопротивление больше сопротивления водонасыщенного пласта той же пористости. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Pн &gt; 1 — в порах нефть или газ. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li><li>Условие нормализации: кривые сначала приводят к единому масштабу. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Высокое сопротивление всегда означает нефть.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> При меняющейся пористости сопротивления нефтеносных и водоносных пластов перекрываются; решает сравнение с сопротивлением водонасыщенного пласта той же пористости. <span class="pg" title="Страница книги (по PDF)">стр. 97</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Задача насыщения — двумерная: по паре (сопротивление, пористость) пласт относят к классу; по одной оси классы перекрываются.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>сопротивление пласта, пористость или показания методов пористости</dd>
+          <dt>Выход</dt><dd>пласты с Pн &gt; 1 (нефтегазонасыщенные)</dd>
+          <dt>Где ломается</dt><dd>Нормализация требует корректного приведения шкал; без этого расхождение кривых ничего не значит.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Кроссплот сопротивление–пористость — естественное пространство признаков для классификатора насыщения.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>диаграммы сопротивления и пористости</dd>
+            <dt>Ручные шаги</dt><dd>снятие значений по пластам, построение графиков, приведение шкал</dd>
+            <dt>Точки суждения</dt><dd>выбор способа и опорных пластов для нормализации</dd>
+            <dt>Время</dt><dd>трудоёмко при большом числе пластов</dd>
+            <dt>Типичные ошибки</dt><dd>наложение кривых без приведения к единому масштабу</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Классы, неразделимые по одному признаку, разделяются в двумерном пространстве признаков (кроссплот).</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Граница классов задаётся физической моделью (сопротивление воды и пористость), а не подбирается свободно по данным.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Кроссплоты и наложения кривых сегодня строят автоматически в программах интерпретации, но выбор шкал и опорных пластов остаётся за специалистом.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>нормализация диаграмм <span class="en" lang="en">(log overlay normalization)</span></dt><dd>Совмещение кривой сопротивления с кривой метода пористости в едином масштабе, чтобы расхождение показывало нефтегазонасыщенные пласты. <span class="pg">стр. 97</span></dd><dt>сопоставление в координатах <span class="en" lang="en">(crossplot)</span></dt><dd>Построение точек пластов на графике (кроссплоте) двух величин, например сопротивления и пористости. <span class="pg">стр. 97</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-06-t01" data-task="geo.latyshova.s20.06.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какими способами, по автору, сопоставляют диаграммы сопротивления и пористости? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.06.t01" value="0"> <span>Точки в координатах сопротивление — пористость</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.06.t01" value="1"> <span>Точки в координатах сопротивление — показание метода пористости</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.06.t01" value="2"> <span>Сравнение кривой сопротивления с кривой диаметра скважины</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.06.t01" value="3"> <span>Нормализация (наложение) диаграмм в едином масштабе</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Точки в координатах сопротивление — пористость; Точки в координатах сопротивление — показание метода пористости; Нормализация (наложение) диаграмм в едином масштабе</p>
+    <p class="fb-expl">Все три способа сравнивают сопротивление пласта с «водным» сопротивлением при той же пористости. <a href="#how-4">Где это в тексте (стр. 97) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-06-t02" data-task="geo.latyshova.s20.06.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-latyshova-s20-06-t02">Расставьте шаги сопоставления по порядку.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-latyshova-s20-06-t02">
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Выделить пласты, где сопротивление выше «водного»</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Сопоставить их на графике или наложением кривых</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Получить сопротивление и показание метода пористости для каждого пласта</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Получить сопротивление и показание метода пористости для каждого пласта → Сопоставить их на графике или наложением кривых → Выделить пласты, где сопротивление выше «водного»</p>
+    <p class="fb-expl">Сначала нужны оба замера, затем сопоставление, затем вывод о Pн &gt; 1. <a href="#procedure">Где это в тексте (стр. 97) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.06.c01"><p>При большом разбросе пористости диапазоны сопротивлений нефтеносных и водоносных пластов могут перекрываться. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«могут в значительной степени перекрываться»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c02"><p>Поэтому для таких коллекторов нужен параметр насыщения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В связи с этим для оценки характера насыщения таких коллекторов требуется использовать величину параметра насыщения.»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c03"><p>Процедура основана на сопоставлении диаграмм методов сопротивления и пористости, способов три. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«процедура определения характера насыщения базируется на сопоставлении диаграмм методов сопротивления и пористости, которое проводят разными способами»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c04"><p>Третий способ — нормализация (наложение) диаграмм, требующая приведения кривых к единому масштабу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Последняя методика носит название нормализации, или наложения диаграмм, для чего требуется предварительная их трансформация с целью приведения к единому масштабу.»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c05"><p>Все способы сравнивают сопротивление пласта с сопротивлением водонасыщенного пласта, которое дают методы пористости. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Все три операции основаны на сравнении значений удельного сопротивления пласта с ρвн, информацию о котором дает метод пористости.»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c06"><p>Пласты с сопротивлением выше «водного» имеют параметр насыщения больше 1 — в них есть углеводороды. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«что свидетельствует о величине ρн/ρвн = Pн &gt; 1»</p><footer>— стр. 97</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.06.c07"><p>Этап через коэффициент продуктивности иногда пропускают, связывая дебит прямо с критической проницаемостью. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Данный этап иногда минуют, получая корреляционную связь Qн непосредственно с kпр*.»</p><footer>— стр. 97</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-20.html">шаг 20 «Палетка: точка пласта решает»</a>, <a href="step-20.html">шаг 20 «Палетка: точка пласта решает»</a>, <a href="step-20.html">шаг 20 «Палетка: точка пласта решает»</a>, <a href="step-32.html">шаг 32 «Наложение кривых показывает нефть»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-18.html" rel="prev"><span>← Назад</span><b>Нефть или вода: параметр насыщения</b></a><a class="next" href="step-20.html" rel="next"><span>Дальше →</span><b>Палетка: точка пласта решает</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.06.t01", "type": "multiple", "question": "Какими способами, по автору, сопоставляют диаграммы сопротивления и пористости? Выберите все верные.", "explanation": "Все три способа сравнивают сопротивление пласта с «водным» сопротивлением при той же пористости.", "page": 97, "link": "#how-4", "step_title": "Сопротивление против пористости", "step_index": 19, "node_id": "geo.latyshova.s20.06", "options": ["Точки в координатах сопротивление — пористость", "Точки в координатах сопротивление — показание метода пористости", "Сравнение кривой сопротивления с кривой диаметра скважины", "Нормализация (наложение) диаграмм в едином масштабе"], "key": [0, 1, 3], "answer_text": "Точки в координатах сопротивление — пористость; Точки в координатах сопротивление — показание метода пористости; Нормализация (наложение) диаграмм в едином масштабе"}, {"id": "geo.latyshova.s20.06.t02", "type": "order", "question": "Расставьте шаги сопоставления по порядку.", "explanation": "Сначала нужны оба замера, затем сопоставление, затем вывод о Pн > 1.", "page": 97, "link": "#procedure", "step_title": "Сопротивление против пористости", "step_index": 19, "node_id": "geo.latyshova.s20.06", "items": [{"text": "Выделить пласты, где сопротивление выше «водного»", "pos": 2}, {"text": "Сопоставить их на графике или наложением кривых", "pos": 1}, {"text": "Получить сопротивление и показание метода пористости для каждого пласта", "pos": 0}], "key": [0, 1, 2], "answer_text": "Получить сопротивление и показание метода пористости для каждого пласта → Сопоставить их на графике или наложением кривых → Выделить пласты, где сопротивление выше «водного»"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

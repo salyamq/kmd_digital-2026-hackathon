@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 2. Набор методов зависит от бурового раствора — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s17.01" data-index="2">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Зачем ГИС и как бурение портит или улучшает данные › Шаг 2 из 34</p>
+    <h1>Набор методов зависит от бурового раствора</h1>
+    <p class="booktitle">В книге: «§ 17. Условия вскрытия разрезов скважин и их влияние на комплекс геофизических исследований» <span class="pg">стр. 90</span></p>
+    <p class="meta">
+      <span class="chip">≈ 5 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-01.html">шаг 1 «Какие задачи решают по данным ГИС»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Качество данных ГИС закладывается ещё при бурении: многое решает промывочная жидкость.</p><p>Поэтому в каждом районе подбирают свой набор методов — под тип разреза и тип раствора.</p><p>Признаки пород из этой главы рассчитаны на глинистый раствор; для воды и нефильтрующихся растворов их надо проверять.</p><p class="threshold"><b>Пороговая идея.</b> Качество геофизических данных задаётся ещё при бурении: тип и параметры промывочной жидкости определяют, какие методы вообще будут работать. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Почему набор методов разный</h3>          <div class="para" id="how-1">
+            <p>Скважину исследуют не одним прибором, а <strong class="term">комплексом геофизических исследований</strong> — набором методов ГИС, которые применяют совместно. По автору, в каждом районе и на каждом объекте нужен свой оптимальный комплекс. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.01.c01"><p>«должен применяться оптимальный, соответствующий условиям района комплекс геофизических исследований»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Состав комплекса зависит от разреза. <strong class="term">Терригенный разрез</strong> сложен обломочными породами: песками, песчаниками, глинами. <strong class="term">Карбонатный разрез</strong> — известняками и доломитами. <strong class="term">Гидрохимический разрез</strong> содержит соли, гипсы, ангидриты. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.01.c02"><p>«Состав методов оптимального комплекса зависит от особенностей разреза (терригенный, карбонатный, гидрохимический и др.).»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 383" role="img" aria-label="От чего зависит набор методов ГИС" class="ill-svg"><title>От чего зависит набор методов ГИС</title><rect class="ill-bg" x="0" y="0" width="360" height="383" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">От чего зависит набор методов ГИС</tspan></text><rect class="ill-box ill-accent" x="12" y="63" width="336" height="122" rx="10"/><text class="ill-title" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Тип разреза</tspan></text><text class="ill-text" x="26" y="112" text-anchor="start"><tspan x="26" dy="0">• терригенный</tspan></text><text class="ill-text" x="26" y="135" text-anchor="start"><tspan x="26" dy="0">• карбонатный</tspan></text><text class="ill-text" x="26" y="158" text-anchor="start"><tspan x="26" dy="0">• гидрохимический</tspan></text><rect class="ill-box ill-neutral" x="12" y="195" width="336" height="122" rx="10"/><text class="ill-title" x="180.0" y="219" text-anchor="middle"><tspan x="180.0" dy="0">Промывочная жидкость</tspan></text><text class="ill-text" x="26" y="244" text-anchor="start"><tspan x="26" dy="0">• глинистый раствор</tspan></text><text class="ill-text" x="26" y="267" text-anchor="start"><tspan x="26" dy="0">• техническая вода</tspan></text><text class="ill-text" x="26" y="290" text-anchor="start"><tspan x="26" dy="0">• нефильтрующийся раствор</tspan></text><text class="ill-small" x="180.0" y="339" text-anchor="middle"><tspan x="180.0" dy="0">Признаки на диаграммах сформулированы</tspan><tspan x="180.0" dy="19">для глинистого раствора</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Два фактора, от которых зависит оптимальный комплекс ГИС в районе: тип разреза и промывочная жидкость.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 90</span>
+  </figcaption>
+</figure>
+<h3>Главный фактор — раствор</h3>          <div class="para" id="how-3">
+            <p>Скважину бурят с <strong class="term">промывочной жидкостью</strong> — буровым раствором, который закачивают в скважину. Автор делает вывод: тип и параметры этой жидкости в первую очередь влияют на выбор методов. Они же во многом определяют достоверность и качество данных ГИС. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.01.c03"><p>«в первую очередь тип и параметры промывочной жидкости, которые в значительной степени определяют достоверность и качество получаемой по геофизическим данным информации»</p><footer>— автор, стр. 90 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-4">
+            <p>Промывочные жидкости бывают трёх видов. Это глинистые растворы, техническая вода и нефильтрующиеся растворы. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.01.c04"><p>«Промывочными жидкостями являются глинистые растворы, техническая вода и нефильтрующиеся растворы.»</p><footer>— автор, стр. 90 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюанс: на какой раствор рассчитаны признаки</h3>          <div class="para" id="how-5">
+            <p>Глинистый раствор применяют чаще всего. Поэтому основные признаки пород и коллекторов на диаграммах сформулированы в расчёте на него. Это допущение: на воде или нефильтрующемся растворе такие признаки нельзя применять без проверки. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s17.01.c05"><p>«основные признаки выделения в разрезе литологических разностей, в том числе коллекторов, по геофизическим данным формулируются в расчете на применение глинистого раствора»</p><footer>— автор, стр. 90 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие: признаки пород и коллекторов из главы рассчитаны на бурение на глинистом растворе. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Геофизические данные объективны и не зависят от того, как бурили скважину.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Тип и параметры промывочной жидкости в значительной степени определяют достоверность данных ГИС и набор применимых методов. <span class="pg" title="Страница книги (по PDF)">стр. 90</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Тип раствора — обязательный метаданный признак скважины: от него зависит, какие кривые информативны и как их читать.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>тип разреза, тип и параметры промывочной жидкости</dd>
+          <dt>Выход</dt><dd>состав комплекса методов и применимые правила интерпретации</dd>
+          <dt>Где ломается</dt><dd>Правила, выведенные для скважин на глинистом растворе, перестают работать на воде и нефильтрующихся растворах.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Модель, обученная на скважинах с одним типом раствора, может деградировать на скважинах с другим — тип раствора стоит включать в признаки или фильтровать выборку.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>сведения о разрезе района, программа бурения, параметры раствора</dd>
+            <dt>Ручные шаги</dt><dd>подбор комплекса методов под район и раствор</dd>
+            <dt>Точки суждения</dt><dd>какие методы обязательны при данном растворе</dd>
+            <dt>Время</dt><dd>решается при планировании скважины</dd>
+            <dt>Типичные ошибки</dt><dd>применение признаков глинистого раствора к скважинам на воде или нефильтрующемся растворе</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как среда сбора данных: один и тот же сенсор в разных условиях (шум, помехи) даёт данные разного качества, и набор полезных сенсоров меняется.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Здесь «среда» (раствор) меняет саму породу у скважины — эффект нельзя убрать фильтрацией сигнала.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>промывочная жидкость <span class="en" lang="en">(drilling fluid (mud))</span></dt><dd>Жидкость, которую закачивают в скважину при бурении (буровой раствор): глинистый раствор, техническая вода или нефильтрующийся раствор. <span class="pg">стр. 90</span></dd><dt>комплекс геофизических исследований <span class="en" lang="en">(logging suite)</span></dt><dd>Набор методов ГИС, применяемых в скважине совместно. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>терригенный разрез <span class="en" lang="en">(clastic section)</span></dt><dd>Разрез из обломочных пород (пески, песчаники, глины). <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>карбонатный разрез <span class="en" lang="en">(carbonate section)</span></dt><dd>Разрез из известняков и доломитов. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd><dt>гидрохимический разрез <span class="en" lang="en">(evaporite section)</span></dt><dd>Разрез с солями, гипсами, ангидритами. <span class="pg">стр. 90</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s17-01-t01" data-task="geo.latyshova.s17.01.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Вставьте пропущенное слово.</p>
+  <p class="cloze">Основные признаки пород и коллекторов на диаграммах сформулированы в расчёте на <select aria-label="Пропуск 1"><option value="">—</option><option>известковый</option><option>солёный</option><option>глинистый</option><option>нефильтрующийся</option></select> раствор.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Основные признаки пород и коллекторов на диаграммах сформулированы в расчёте на [глинистый] раствор.</p>
+    <p class="fb-expl">Глинистый раствор применяют чаще всего, поэтому признаки сформулированы под него. <a href="#how-5">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s17-01-t02" data-task="geo.latyshova.s17.01.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Скважину пробурили на технической воде. Можно ли сразу применять признаки коллекторов из этой главы?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s17.01.t02" value="0"> <span>Нет: признаки рассчитаны на глинистый раствор, их надо проверять</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s17.01.t02" value="1"> <span>Нет: на воде ГИС вообще не проводят</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s17.01.t02" value="2"> <span>Да: признаки не зависят от раствора</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s17.01.t02" value="3"> <span>Да, если разрез терригенный</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Нет: признаки рассчитаны на глинистый раствор, их надо проверять</p>
+    <p class="fb-expl">Автор формулирует признаки в расчёте на глинистый раствор, а раствор во многом определяет достоверность данных. <a href="#how-5">Где это в тексте (стр. 90) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s17.01.c01"><p>В каждом районе нужен свой оптимальный комплекс ГИС. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«должен применяться оптимальный, соответствующий условиям района комплекс геофизических исследований»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.01.c02"><p>Состав комплекса зависит от типа разреза: терригенный, карбонатный, гидрохимический и др. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Состав методов оптимального комплекса зависит от особенностей разреза (терригенный, карбонатный, гидрохимический и др.).»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.01.c03"><p>Тип и параметры промывочной жидкости сильно влияют на выбор методов и на достоверность данных. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«в первую очередь тип и параметры промывочной жидкости, которые в значительной степени определяют достоверность и качество получаемой по геофизическим данным информации»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.01.c04"><p>Промывочные жидкости: глинистые растворы, техническая вода и нефильтрующиеся растворы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Промывочными жидкостями являются глинистые растворы, техническая вода и нефильтрующиеся растворы.»</p><footer>— стр. 90</footer></blockquote></li>
+        <li id="src-geo.latyshova.s17.01.c05"><p>Основные признаки пород и коллекторов по ГИС сформулированы для глинистого раствора как самого распространённого. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«основные признаки выделения в разрезе литологических разностей, в том числе коллекторов, по геофизическим данным формулируются в расчете на применение глинистого раствора»</p><footer>— стр. 90</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-03.html">шаг 3 «Какие бывают разрезы и коллекторы»</a>, <a href="step-04.html">шаг 4 «Корка сужает скважину против коллектора»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-01.html" rel="prev"><span>← Назад</span><b>Какие задачи решают по данным ГИС</b></a><a class="next" href="step-03.html" rel="next"><span>Дальше →</span><b>Какие бывают разрезы и коллекторы</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s17.01.t01", "type": "cloze", "question": "Вставьте пропущенное слово.", "explanation": "Глинистый раствор применяют чаще всего, поэтому признаки сформулированы под него.", "page": 90, "link": "#how-5", "step_title": "Набор методов зависит от бурового раствора", "step_index": 2, "node_id": "geo.latyshova.s17.01", "parts": ["Основные признаки пород и коллекторов на диаграммах сформулированы в расчёте на ", " раствор."], "blanks": [{"options": ["известковый", "солёный", "глинистый", "нефильтрующийся"], "answers": ["глинистый"]}], "key": [["глинистый"]], "answer_text": "Основные признаки пород и коллекторов на диаграммах сформулированы в расчёте на [глинистый] раствор."}, {"id": "geo.latyshova.s17.01.t02", "type": "single", "question": "Скважину пробурили на технической воде. Можно ли сразу применять признаки коллекторов из этой главы?", "explanation": "Автор формулирует признаки в расчёте на глинистый раствор, а раствор во многом определяет достоверность данных.", "page": 90, "link": "#how-5", "step_title": "Набор методов зависит от бурового раствора", "step_index": 2, "node_id": "geo.latyshova.s17.01", "options": ["Нет: признаки рассчитаны на глинистый раствор, их надо проверять", "Нет: на воде ГИС вообще не проводят", "Да: признаки не зависят от раствора", "Да, если разрез терригенный"], "key": [0], "answer_text": "Нет: признаки рассчитаны на глинистый раствор, их надо проверять"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

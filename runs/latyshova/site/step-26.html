@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 26. Газ проявляется не сразу — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.13" data-index="26">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Эффективная толщина и контакты › Шаг 26 из 34</p>
+    <h1>Газ проявляется не сразу</h1>
+    <p class="booktitle">В книге: «Определение положения ГНК по повторным нейтронным замерам» <span class="pg">стр. 101</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-25.html">шаг 25 «Эффективная толщина у водонефтяного контакта»</a> <span class="muted">(предпосылка)</span>, <a href="step-15.html">шаг 15 «Проникновение и повторные замеры»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Газ за обсадной колонной видно не сразу: показания нейтронного метода растут, пока из пласта уходит фильтрат.</p><p>Поэтому газонефтяной контакт находят по повторным нейтронным замерам — до стабилизации показаний.</p><p>Чем ниже проницаемость и глубже проникновение, тем дольше ждать.</p><p class="threshold"><b>Пороговая идея.</b> Газ за обсадной колонной «проявляется» не сразу: показания нейтронного метода растут по мере того, как уходит фильтрат, — время становится измерительным инструментом. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Два способа найти ГНК</h3>          <div class="para" id="how-1">
+            <p><strong class="term">Газонефтяной контакт (ГНК)</strong> — граница газовой и нефтяной частей залежи. Его устанавливают по диаграммам стационарных нейтронных методов. Для этого делают повторные замеры в обсаженной скважине — скважине, закреплённой стальной <strong class="term">обсадной колонной</strong>. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.13.c01"><p>«Положение ГНК устанавливают по диаграммам стационарных нейтронных методов, полученным при повторных замерах в обсаженной скважине»</p><footer>— автор, стр. 101 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Второй способ — однократные исследования стационарными или импульсными нейтронными методами. Их делают в необсаженной скважине, пробуренной на нефильтрующемся растворе. Проникновения там почти нет, поэтому одного замера хватает. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.13.c02"><p>«по данным однократных исследований стационарными или импульсными нейтронными методами в необсаженной скважине, пробуренной на нефильтрующемся растворе»</p><footer>— автор, стр. 101 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Почему нужны повторные замеры</h3>          <div class="para para-model" id="how-3">
+            <p>Нейтронные методы чувствительны к водороду в породе. В газе водорода в единице объёма меньше, чем в нефти и воде, поэтому над газом показания выше. Но пока поры у скважины заполнены фильтратом, этот эффект скрыт. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+          <div class="para" id="how-4">
+            <p>Поэтому замеры повторяют до стабилизации повышенных показаний нейтронного метода во времени. Автор делает вывод: стабилизация — признак того, что зона проникновения расформировалась. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.13.c03"><p>«до стабилизации повышенных показаний НМ во времени, что является признаком завершения расформирования зоны проникновения»</p><footer>— автор, стр. 101 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 393" role="img" aria-label="Как газ «проявляется» за колонной" class="ill-svg"><title>Как газ «проявляется» за колонной</title><rect class="ill-bg" x="0" y="0" width="360" height="393" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Как газ «проявляется» за колонной</tspan></text><rect class="ill-box ill-neutral" x="12.0" y="63" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Скважину обсадили: у стенки в порах</tspan><tspan x="180.0" dy="19">фильтрат</tspan></text><line class="ill-line" x1="180.0" y1="121.0" x2="180.0" y2="145.0"/><polygon class="ill-arrow" points="180.0,145.0 176.1,136.9 183.9,136.9"/><rect class="ill-box ill-accent" x="12.0" y="149" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="173" text-anchor="middle"><tspan x="180.0" dy="0">Фильтрат постепенно уходит, зона</tspan><tspan x="180.0" dy="19">проникновения расформировывается</tspan></text><line class="ill-line" x1="180.0" y1="207.0" x2="180.0" y2="231.0"/><polygon class="ill-arrow" points="180.0,231.0 176.1,222.9 183.9,222.9"/><rect class="ill-box ill-accent" x="12.0" y="235" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="259" text-anchor="middle"><tspan x="180.0" dy="0">Показания нейтронного метода против</tspan><tspan x="180.0" dy="19">газа растут</tspan></text><line class="ill-line" x1="180.0" y1="293.0" x2="180.0" y2="317.0"/><polygon class="ill-arrow" points="180.0,317.0 176.1,308.9 183.9,308.9"/><rect class="ill-box ill-good" x="12.0" y="321" width="336" height="56" rx="10"/><text class="ill-text" x="180.0" y="345" text-anchor="middle"><tspan x="180.0" dy="0">Показания стабилизировались: можно</tspan><tspan x="180.0" dy="19">проводить ГНК</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Последовательность по автору: признак газа — рост и стабилизация показаний во времени, а не одно значение.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 101</span>
+  </figcaption>
+</figure>
+<h3>Сколько ждать</h3>          <div class="para" id="how-5">
+            <p>Время полного расформирования зоны тем больше, чем меньше проницаемость коллектора. И чем больше радиус зоны проникновения к моменту спуска колонны. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.13.c05"><p>«Время, необходимое для полного расформирования зоны тем больше, чем меньше проницаемость коллектора и больше радиус зоны проникновения»</p><footer>— автор, стр. 101 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Пример в книге</h3>          <div class="para" id="how-6">
+            <p>Рис. 71 книги показывает, как определяют газонефтяной контакт по диаграммам НГМ вместе с данными других методов. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.13.c04"><p>«Пример определения газонефтяного контакта по диаграммам НГМ в комплексе с данными других геофизических методов»</p><footer>— автор, стр. 101 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Как найти ГНК в обсаженной скважине</p>        <ol class="proc"><li>Проведите нейтронные замеры в обсаженной скважине повторно, по программе. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></li><li>Следите, как растут показания нейтронного метода, пока они не стабилизируются. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></li><li>По интервалу повышенных стабильных показаний определите газонасыщенную часть и ГНК. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></li></ol>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Условие окончания замеров: повышенные показания нейтронного метода стабилизировались. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></li><li>Ждать дольше: при меньшей проницаемости и большем радиусе зоны проникновения. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Если газа не видно на первом замере, его нет.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> В обсаженной скважине газ проявляется по мере расформирования зоны проникновения; нужны повторные замеры до стабилизации. <span class="pg" title="Страница книги (по PDF)">стр. 101</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Признак газа — динамика показаний НМ во времени, а не одно значение; время стабилизации зависит от проницаемости и глубины проникновения.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>серия нейтронных замеров в обсаженной скважине с датами</dd>
+          <dt>Выход</dt><dd>газонасыщенный интервал, положение ГНК</dd>
+          <dt>Где ломается</dt><dd>При низкой проницаемости и глубоком проникновении стабилизация может занять долго, и ранние замеры дадут ложный отрицательный результат.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Ряды повторных замеров можно анализировать как временные ряды: рост и выход на плато — признак газа.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>повторные диаграммы НМ, даты замеров</dd>
+            <dt>Ручные шаги</dt><dd>совмещение и сравнение замеров разных дат</dd>
+            <dt>Точки суждения</dt><dd>достигнута ли стабилизация</dd>
+            <dt>Время</dt><dd>растянуто во времени из-за ожидания расформирования</dd>
+            <dt>Типичные ошибки</dt><dd>вывод по замеру до стабилизации</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как «прогрев» системы после перезапуска: истинное состояние видно только после выхода метрики на плато.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Время выхода на плато зависит от свойств пласта и неизвестно заранее.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Импульсные нейтронные методы и повторные замеры в обсаженных скважинах широко применяются и сегодня, в том числе для контроля разработки.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Почему нейтронный метод «видит» газ <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Нейтронные методы чувствительны к содержанию водорода; в газе его в единице объёма меньше, чем в нефти и воде, поэтому показания над газом выше. Пока поры у скважины заполнены фильтратом, этот эффект скрыт.</p></details>
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 71. Рис.71. Пример определения газонефтяного контакта по диаграммам НГМ в комплексе с данными других геофизических методов:
+1 – глины; 2 – коллекторы; 3 – нефть; 4 - газ <span class="pg">стр. 101</span></li></ul>
+        <p class="muted small">Рисунки книги в курс не вставляются: смотрите их в книге по номеру страницы; нужные для примеров перерисованы кодом.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>газонефтяной контакт (ГНК) <span class="en" lang="en">(gas-oil contact)</span></dt><dd>Граница между газовой и нефтяной частями залежи. <span class="pg">стр. 101</span> <span class="chip chip-model">модель</span></dd><dt>стационарные и импульсные нейтронные методы <span class="en" lang="en">(steady-state and pulsed neutron logs)</span></dt><dd>Нейтронные методы с постоянным источником нейтронов и с импульсным генератором нейтронов. <span class="pg">стр. 101</span> <span class="chip chip-model">модель</span></dd><dt>обсадная колонна <span class="en" lang="en">(casing)</span></dt><dd>Стальные трубы, которыми закрепляют ствол скважины. <span class="pg">стр. 101</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-13-t01" data-task="geo.latyshova.s20.13.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Когда можно прекращать повторные нейтронные замеры в обсаженной скважине?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.13.t01" value="0"> <span>Когда повышенные показания нейтронного метода стабилизируются во времени</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.13.t01" value="1"> <span>Когда показания начнут падать</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.13.t01" value="2"> <span>Через фиксированный один час</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.13.t01" value="3"> <span>Сразу после первого замера</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Когда повышенные показания нейтронного метода стабилизируются во времени</p>
+    <p class="fb-expl">Стабилизация показаний — признак того, что зона проникновения расформировалась. <a href="#how-4">Где это в тексте (стр. 101) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-13-t02" data-task="geo.latyshova.s20.13.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">От чего зависит, как долго расформировывается зона проникновения? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.13.t02" value="0"> <span>Чем больше радиус зоны проникновения к спуску колонны, тем дольше</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.13.t02" value="1"> <span>Время всегда одинаковое</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.13.t02" value="2"> <span>Чем меньше проницаемость коллектора, тем дольше</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.13.t02" value="3"> <span>Чем выше проницаемость, тем дольше</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Чем меньше проницаемость коллектора, тем дольше; Чем больше радиус зоны проникновения к спуску колонны, тем дольше</p>
+    <p class="fb-expl">Автор связывает время расформирования с проницаемостью и радиусом зоны проникновения. <a href="#how-5">Где это в тексте (стр. 101) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.13.c01"><p>ГНК устанавливают по стационарным нейтронным методам при повторных замерах в обсаженной скважине. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Положение ГНК устанавливают по диаграммам стационарных нейтронных методов, полученным при повторных замерах в обсаженной скважине»</p><footer>— стр. 101</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.13.c02"><p>Или по однократным нейтронным исследованиям в необсаженной скважине на нефильтрующемся растворе. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«по данным однократных исследований стационарными или импульсными нейтронными методами в необсаженной скважине, пробуренной на нефильтрующемся растворе»</p><footer>— стр. 101</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.13.c03"><p>Стабилизация повышенных показаний НМ во времени — признак завершения расформирования зоны проникновения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«до стабилизации повышенных показаний НМ во времени, что является признаком завершения расформирования зоны проникновения»</p><footer>— стр. 101</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.13.c04"><p>Рис. 71 — пример определения ГНК по НГМ в комплексе с другими методами. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Пример определения газонефтяного контакта по диаграммам НГМ в комплексе с данными других геофизических методов»</p><footer>— стр. 101</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.13.c05"><p>Расформирование идёт дольше при меньшей проницаемости и большем радиусе зоны проникновения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Время, необходимое для полного расформирования зоны тем больше, чем меньше проницаемость коллектора и больше радиус зоны проникновения»</p><footer>— стр. 101</footer></blockquote></li>
+      </ol>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-25.html" rel="prev"><span>← Назад</span><b>Эффективная толщина у водонефтяного контакта</b></a><a class="next" href="step-27.html" rel="next"><span>Дальше →</span><b>Вычесть прослои неколлектора</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.13.t01", "type": "single", "question": "Когда можно прекращать повторные нейтронные замеры в обсаженной скважине?", "explanation": "Стабилизация показаний — признак того, что зона проникновения расформировалась.", "page": 101, "link": "#how-4", "step_title": "Газ проявляется не сразу", "step_index": 26, "node_id": "geo.latyshova.s20.13", "options": ["Когда повышенные показания нейтронного метода стабилизируются во времени", "Когда показания начнут падать", "Через фиксированный один час", "Сразу после первого замера"], "key": [0], "answer_text": "Когда повышенные показания нейтронного метода стабилизируются во времени"}, {"id": "geo.latyshova.s20.13.t02", "type": "multiple", "question": "От чего зависит, как долго расформировывается зона проникновения? Выберите все верные.", "explanation": "Автор связывает время расформирования с проницаемостью и радиусом зоны проникновения.", "page": 101, "link": "#how-5", "step_title": "Газ проявляется не сразу", "step_index": 26, "node_id": "geo.latyshova.s20.13", "options": ["Чем больше радиус зоны проникновения к спуску колонны, тем дольше", "Время всегда одинаковое", "Чем меньше проницаемость коллектора, тем дольше", "Чем выше проницаемость, тем дольше"], "key": [0, 2], "answer_text": "Чем меньше проницаемость коллектора, тем дольше; Чем больше радиус зоны проникновения к спуску колонны, тем дольше"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

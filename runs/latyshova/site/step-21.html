@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 21. Два вида критических значений — Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС</title>
+<script>
+(function(){try{var t=localStorage.getItem("kmd:theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" title="Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС"><span class="brand-mark" aria-hidden="true">◧</span><span class="brand-text">М. Г. Латышова: курс по главе</span></a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.latyshova.s20.08" data-index="21">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <p class="crumbs"><a href="index.html">Путь</a> › Нефть или вода: характер насыщения › Шаг 21 из 34</p>
+    <h1>Два вида критических значений</h1>
+    <p class="booktitle">В книге: «Критические значения параметра насыщения и водонасыщенности» <span class="pg">стр. 98–99</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + процесс/прибор</span>    </p>
+<p class="relies">Опирается на: <a href="step-20.html">шаг 20 «Палетка: точка пласта решает»</a> <span class="muted">(предпосылка)</span>, <a href="step-18.html">шаг 18 «Нефть или вода: параметр насыщения»</a> <span class="muted">(предпосылка)</span></p>
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Продуктивность пласта можно оценить, сравнив его Pн и kв с критическими значениями.</p><p>Граница бывает двух родов: «чистая нефть или нет» и «промышленный приток или нет»; для запасов чаще берут вторую.</p><p>Получают границу статистически по испытаниям — поздно, или петрофизически по керну — уже в начале разведки.</p><p class="threshold"><b>Пороговая идея.</b> Граница «продуктивный/непродуктивный» бывает двух родов — «чистая нефть» и «промышленный приток», и способ её получения определяет, когда она станет доступна. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Правило сравнения</h3>          <div class="para" id="how-1">
+            <p>Насыщение можно оценить и по рассчитанным значениям параметра насыщения Pн и коэффициента водонасыщения kв. Их считают по формулам (10) и (11) книги или находят графически по рис. 7. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c01"><p>«для определения характера насыщения можно использовать значения параметра насыщения и коэффициента водонасыщения»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-2">
+            <p>Вычисленные для пласта значения сравнивают с критическими. Это <strong class="term">критическое значение параметра насыщения</strong> — граничное Pн, и такое же граничное kв. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c02"><p>«сравнивают с критическими значениями этих параметров»</p><footer>— автор, стр. 98 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-3">
+            <p>Правило автора: если Pн больше критического, а kв меньше критического, коллектор считают продуктивным. Если Pн меньше критического, а kв больше — непродуктивным. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c03"><p>«коллектор считают продуктивным; при Pn &lt; Pn,xp, kn &gt; kn,xp - непродуктивным»</p><footer>— автор, стр. 98 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Два рода границ</h3>          <div class="para" id="how-4">
+            <p>Первый вид критических значений — Pн* и kв*. Они отделяют коллекторы, которые при испытании дают чистую нефть или газ, от всех прочих. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c04"><p>«соответствующие границе между коллекторами, дающими при испытании чистую нефть (газ), и прочими коллекторами»</p><footer>— автор, стр. 99 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-5">
+            <p>Второй вид — Pн,кр и kв,кр. Они отделяют коллекторы с <strong class="term">промышленным притоком</strong> — достаточным для рентабельной добычи, даже с некоторым количеством воды. От них — коллекторы с непромышленным притоком. При подсчёте запасов чаще используют второй вид. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c05"><p>«разделяющие области коллекторов, дающих при испытании промышленный приток нефти (газа), в том числе с некоторым количеством воды, и коллекторов с непромышленным притоком»</p><footer>— автор, стр. 99 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c06"><p>«При подсчете запасов чаще используют критерии»</p><footer>— автор, стр. 99 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Как получить границу</h3>          <div class="para" id="how-6">
+            <p>Способ первый — статистический. Берут данные <strong class="term">опробования</strong> — испытаний, когда из интервала получают приток. Строят распределения Pн для продуктивных и непродуктивных объектов и находят их пересечение. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c07"><p>«в котором эти значения находят по пересечению распределений параметров»</p><footer>— автор, стр. 99 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 392" role="img" aria-label="Два способа получить критические значения" class="ill-svg"><title>Два способа получить критические значения</title><rect class="ill-bg" x="0" y="0" width="360" height="392" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Два способа получить критические</tspan><tspan x="180.0" dy="19">значения</tspan></text><rect class="ill-box ill-neutral" x="12" y="82" width="336" height="141" rx="10"/><text class="ill-title" x="180.0" y="106" text-anchor="middle"><tspan x="180.0" dy="0">Статистический</tspan></text><text class="ill-text" x="26" y="131" text-anchor="start"><tspan x="26" dy="0">• данные опробования пластов</tspan></text><text class="ill-text" x="26" y="154" text-anchor="start"><tspan x="26" dy="0">• пересечение распределений Pн</tspan></text><text class="ill-text" x="26" y="177" text-anchor="start"><tspan x="26" dy="0">• доступен в конце разведки, с</tspan><tspan x="26" dy="19">опозданием</tspan></text><rect class="ill-box ill-good" x="12" y="233" width="336" height="141" rx="10"/><text class="ill-title" x="180.0" y="257" text-anchor="middle"><tspan x="180.0" dy="0">Петрофизический</tspan></text><text class="ill-text" x="26" y="282" text-anchor="start"><tspan x="26" dy="0">• керн из первых разведочных скважин</tspan></text><text class="ill-text" x="26" y="305" text-anchor="start"><tspan x="26" dy="0">• связи Pн = f(kв) и фазовые</tspan><tspan x="26" dy="19">проницаемости</tspan></text><text class="ill-text" x="26" y="347" text-anchor="start"><tspan x="26" dy="0">• даёт значения уже в начале разведки</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Сравнение способов по автору: что нужно на входе и когда граница становится доступна.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 99</span>
+  </figcaption>
+</figure>
+          <div class="para" id="how-7">
+            <p>Способ второй — петрофизический. Используют лабораторные связи Pн = f(kв). И зависимости <strong class="term">относительной фазовой проницаемости</strong> от водонасыщенности — проницаемости для одного флюида при наличии другого. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c08"><p>«зависимость относительной фазовой проницаемости по нефти, воде и газу [3] от коэффициента водонасыщения»</p><footer>— автор, стр. 99 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюанс: когда граница становится доступна</h3>          <div class="para" id="how-8">
+            <p>Автор делает вывод: статистический способ применим в конце разведки, когда испытанных интервалов много. Его значения появляются с опозданием и не обслуживают начало разведки, когда особенно нужны. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c09"><p>«полученные статистически критические значения устанавливаются с опозданием и не могут обслуживать начало и процесс разведки, когда они особенно нужны»</p><footer>— автор, стр. 99 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+          <div class="para" id="how-9">
+            <p>Петрофизический способ требует представительного керна из первых разведочных скважин. Зато он даёт критические значения уже в начале разведки и на всех стадиях дальше. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+            <blockquote class="quote" cite="#src-geo.latyshova.s20.08.c10"><p>«Второй способ требует отбора представительного керна из первых разведочных скважин на данном месторождении»</p><footer>— автор, стр. 99 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Продуктивный коллектор: Pн больше критического и kв меньше критического. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li><li>Непродуктивный: Pн меньше критического и kв больше критического. <span class="pg" title="Страница книги (по PDF)">стр. 98</span></li><li>Условие статистического способа: много испытанных интервалов, то есть конец разведки. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></li><li>Условие петрофизического способа: представительный керн из первых разведочных скважин. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></li></ul>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Коллектор либо отдаёт чистую нефть, либо чистую воду.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Есть промежуточная область — нефть с водой; поэтому критических значений два вида. <span class="pg" title="Страница книги (по PDF)">стр. 99</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Порог можно получить двумя путями: обучением на размеченных испытаниях (статистический) или из физической модели по керну (петрофизический).</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Pн или kв пласта; критические значения объекта</dd>
+          <dt>Выход</dt><dd>продуктивный / непродуктивный</dd>
+          <dt>Где ломается</dt><dd>Статистический порог недоступен в начале разведки; петрофизический зависит от представительности керна.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Статистический способ — по сути подбор порога по пересечению распределений классов, что прямо переводится в задачу ML с данными опробования.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>данные опробования, лабораторные зависимости по керну</dd>
+            <dt>Ручные шаги</dt><dd>построение распределений или лабораторных зависимостей, выбор порога</dd>
+            <dt>Точки суждения</dt><dd>какой вид критерия использовать</dd>
+            <dt>Время</dt><dd>статистический способ ждёт окончания разведки</dd>
+            <dt>Типичные ошибки</dt><dd>путать критерии «чистая нефть» и «промышленный приток»</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Порог классификатора можно подобрать по размеченным данным (ROC, пересечение распределений) или вывести из модели предметной области.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Разметка (испытания) появляется только в конце разведки — «обучающие данные» запаздывают к моменту решения.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сегодня оба подхода сочетают: лабораторные исследования керна и статистику испытаний по мере их накопления.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>критическое значение параметра насыщения <span class="en" lang="en">(cutoff resistivity index)</span></dt><dd>Граничное Pн, отделяющее продуктивные коллекторы от непродуктивных (или «чистую нефть» от остальных). <span class="pg">стр. 98</span></dd><dt>опробование (испытание) <span class="en" lang="en">(well test)</span></dt><dd>Получение притока из интервала скважины, чтобы узнать, что он даёт. <span class="pg">стр. 99</span> <span class="chip chip-model">модель</span></dd><dt>относительная фазовая проницаемость <span class="en" lang="en">(relative permeability)</span></dt><dd>Проницаемость породы для одного флюида при наличии другого, в долях от полной. <span class="pg">стр. 99</span> <span class="chip chip-model">модель</span></dd><dt>промышленный приток <span class="en" lang="en">(commercial flow)</span></dt><dd>Приток нефти или газа, достаточный для рентабельной добычи. <span class="pg">стр. 99</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-latyshova-s20-08-t01" data-task="geo.latyshova.s20.08.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Для пласта Pн больше критического, а kв меньше критического. Какой вывод по правилу автора?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t01" value="0"> <span>Коллектор непродуктивный</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t01" value="1"> <span>Коллектор продуктивный</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t01" value="2"> <span>Это неколлектор</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t01" value="3"> <span>Вывод сделать нельзя</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Коллектор продуктивный</p>
+    <p class="fb-expl">Высокий Pн и низкая водонасыщенность относительно критических — признак продуктивного коллектора. <a href="#how-3">Где это в тексте (стр. 98) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-08-t02" data-task="geo.latyshova.s20.08.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какой вид критических значений чаще используют при подсчёте запасов?</legend>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t02" value="0"> <span>Границу промышленного и непромышленного притока (Pн,кр, kв,кр)</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t02" value="1"> <span>Только граничную пористость</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t02" value="2"> <span>Критические значения не используют</span></label>
+    <label class="opt"><input type="radio" name="geo.latyshova.s20.08.t02" value="3"> <span>Границу «чистая нефть или нет» (Pн*, kв*)</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Границу промышленного и непромышленного притока (Pн,кр, kв,кр)</p>
+    <p class="fb-expl">Для запасов важен промышленный приток, даже с некоторым количеством воды. <a href="#how-5">Где это в тексте (стр. 99) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-latyshova-s20-08-t03" data-task="geo.latyshova.s20.08.t03" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что верно о петрофизическом способе получения критических значений? Выберите все верные.</legend>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.08.t03" value="0"> <span>Требует множества испытанных интервалов в конце разведки</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.08.t03" value="1"> <span>Даёт значения уже в начале разведки</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.08.t03" value="2"> <span>Нужен представительный керн из первых разведочных скважин</span></label>
+    <label class="opt"><input type="checkbox" name="geo.latyshova.s20.08.t03" value="3"> <span>Опирается на связи Pн = f(kв) и фазовые проницаемости</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Нужен представительный керн из первых разведочных скважин; Даёт значения уже в начале разведки; Опирается на связи Pн = f(kв) и фазовые проницаемости</p>
+    <p class="fb-expl">Последний вариант описывает статистический способ, а не петрофизический. <a href="#how-9">Где это в тексте (стр. 99) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.latyshova.s20.08.c01"><p>Насыщение можно оценить по рассчитанным параметру насыщения и водонасыщенности. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«для определения характера насыщения можно использовать значения параметра насыщения и коэффициента водонасыщения»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c02"><p>Вычисленные значения сравнивают с критическими. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«сравнивают с критическими значениями этих параметров»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c03"><p>Pн выше критического и kв ниже критического — коллектор продуктивный; наоборот — непродуктивный. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«коллектор считают продуктивным; при Pn &lt; Pn,xp, kn &gt; kn,xp - непродуктивным»</p><footer>— стр. 98</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c04"><p>Первый вид критических значений отделяет коллекторы, дающие чистую нефть (газ), от остальных. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«соответствующие границе между коллекторами, дающими при испытании чистую нефть (газ), и прочими коллекторами»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c05"><p>Второй вид отделяет промышленный приток (в т.ч. с водой) от непромышленного. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«разделяющие области коллекторов, дающих при испытании промышленный приток нефти (газа), в том числе с некоторым количеством воды, и коллекторов с непромышленным притоком»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c06"><p>При подсчёте запасов чаще используют критерии второго вида. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«При подсчете запасов чаще используют критерии»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c07"><p>Статистический способ: по пересечению распределений Pн продуктивных и непродуктивных объектов по опробованию. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«в котором эти значения находят по пересечению распределений параметров»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c08"><p>Петрофизический способ: по лабораторным связям Pн = f(kв) и фазовым проницаемостям. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«зависимость относительной фазовой проницаемости по нефти, воде и газу [3] от коэффициента водонасыщения»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c09"><p>Статистический способ применим в конце разведки и даёт значения с опозданием. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«полученные статистически критические значения устанавливаются с опозданием и не могут обслуживать начало и процесс разведки, когда они особенно нужны»</p><footer>— стр. 99</footer></blockquote></li>
+        <li id="src-geo.latyshova.s20.08.c10"><p>Петрофизический способ требует керна из первых скважин, но даёт значения с начала разведки. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Второй способ требует отбора представительного керна из первых разведочных скважин на данном месторождении»</p><footer>— стр. 99</footer></blockquote></li>
+      </ol>
+<p>На этот шаг опираются: <a href="step-22.html">шаг 22 «Три зоны течения в порах»</a>, <a href="step-22.html">шаг 22 «Три зоны течения в порах»</a>, <a href="step-25.html">шаг 25 «Эффективная толщина у водонефтяного контакта»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-20.html" rel="prev"><span>← Назад</span><b>Палетка: точка пласта решает</b></a><a class="next" href="step-22.html" rel="next"><span>Дальше →</span><b>Три зоны течения в порах</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<script>window.KMD_COURSE = {"chapter": "latyshova", "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "md": "md/train_latyshova.md", "pdf": "pdf/latyshova.pdf", "md_path": "/home/s_tokhtobayev/kmd_data/md/train_latyshova.md", "pdf_path": "/home/s_tokhtobayev/kmd_data/pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.latyshova.ch5.01", "index": 1, "title": "Какие задачи решают по данным ГИС", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.01", "index": 2, "title": "Набор методов зависит от бурового раствора", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.latyshova.s18.01", "index": 3, "title": "Какие бывают разрезы и коллекторы", "url": "step-03.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.02", "index": 4, "title": "Корка сужает скважину против коллектора", "url": "step-04.html", "minutes": 7}, {"node_id": "geo.latyshova.s17.03", "index": 5, "title": "Водоотдача и давление раствора", "url": "step-05.html", "minutes": 9}, {"node_id": "geo.latyshova.s17.04", "index": 6, "title": "Пресный или солёный фильтрат", "url": "step-06.html", "minutes": 8}, {"node_id": "geo.latyshova.s17.05", "index": 7, "title": "Бурение на воде и без фильтрации", "url": "step-07.html", "minutes": 6}, {"node_id": "geo.latyshova.s18.02", "index": 8, "title": "Какой метод для какой задачи", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.latyshova.s18.03", "index": 9, "title": "Как оценивают нефтенасыщенность пласта", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.latyshova.s18.04", "index": 10, "title": "Методы ГИС дополняют друг друга", "url": "step-10.html", "minutes": 6}, {"node_id": "geo.latyshova.s19.01", "index": 11, "title": "Как строят разрез скважины по ГИС", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.latyshova.s19.02", "index": 12, "title": "Подписи пород на диаграммах ГИС", "url": "step-12.html", "minutes": 11}, {"node_id": "geo.latyshova.s19.03", "index": 13, "title": "Простой разрез и сложный разрез", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.01", "index": 14, "title": "Прямые признаки коллектора на диаграммах", "url": "step-14.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.02", "index": 15, "title": "Проникновение и повторные замеры", "url": "step-15.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.03", "index": 16, "title": "Порог «коллектор или неколлектор»", "url": "step-16.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.04", "index": 17, "title": "От дебита к порогу на диаграмме", "url": "step-17.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.05", "index": 18, "title": "Нефть или вода: параметр насыщения", "url": "step-18.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.06", "index": 19, "title": "Сопротивление против пористости", "url": "step-19.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.07", "index": 20, "title": "Палетка: точка пласта решает", "url": "step-20.html", "minutes": 12}, {"node_id": "geo.latyshova.s20.08", "index": 21, "title": "Два вида критических значений", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.09", "index": 22, "title": "Три зоны течения в порах", "url": "step-22.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.10", "index": 23, "title": "Зона неопределённости насыщения", "url": "step-23.html", "minutes": 10}, {"node_id": "geo.latyshova.s20.11", "index": 24, "title": "Глинистость меняет пороги насыщения", "url": "step-24.html", "minutes": 14}, {"node_id": "geo.latyshova.s20.12", "index": 25, "title": "Эффективная толщина у водонефтяного контакта", "url": "step-25.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.13", "index": 26, "title": "Газ проявляется не сразу", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.latyshova.s20.14", "index": 27, "title": "Вычесть прослои неколлектора", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.15", "index": 28, "title": "Тонкие слои: толщину считают расчётом", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.16", "index": 29, "title": "Плотные прослои в пачке", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.17", "index": 30, "title": "Практикум по терригенному разрезу", "url": "step-30.html", "minutes": 5}, {"node_id": "geo.latyshova.s20.18", "index": 31, "title": "Чем сложны карбонатные коллекторы", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.latyshova.s20.19", "index": 32, "title": "Наложение кривых показывает нефть", "url": "step-32.html", "minutes": 8}, {"node_id": "geo.latyshova.s20.20", "index": 33, "title": "Решение на данных: нормализация кривых", "url": "step-33.html", "minutes": 9}, {"node_id": "geo.latyshova.s20.21", "index": 34, "title": "Свой порог пористости для карбонатов", "url": "step-34.html", "minutes": 9}], "minutes": 256, "n_tasks": 81, "n_cards": 96};</script>
+<script>window.KMD_TASKS = [{"id": "geo.latyshova.s20.08.t01", "type": "single", "question": "Для пласта Pн больше критического, а kв меньше критического. Какой вывод по правилу автора?", "explanation": "Высокий Pн и низкая водонасыщенность относительно критических — признак продуктивного коллектора.", "page": 98, "link": "#how-3", "step_title": "Два вида критических значений", "step_index": 21, "node_id": "geo.latyshova.s20.08", "options": ["Коллектор непродуктивный", "Коллектор продуктивный", "Это неколлектор", "Вывод сделать нельзя"], "key": [1], "answer_text": "Коллектор продуктивный"}, {"id": "geo.latyshova.s20.08.t02", "type": "single", "question": "Какой вид критических значений чаще используют при подсчёте запасов?", "explanation": "Для запасов важен промышленный приток, даже с некоторым количеством воды.", "page": 99, "link": "#how-5", "step_title": "Два вида критических значений", "step_index": 21, "node_id": "geo.latyshova.s20.08", "options": ["Границу промышленного и непромышленного притока (Pн,кр, kв,кр)", "Только граничную пористость", "Критические значения не используют", "Границу «чистая нефть или нет» (Pн*, kв*)"], "key": [0], "answer_text": "Границу промышленного и непромышленного притока (Pн,кр, kв,кр)"}, {"id": "geo.latyshova.s20.08.t03", "type": "multiple", "question": "Что верно о петрофизическом способе получения критических значений? Выберите все верные.", "explanation": "Последний вариант описывает статистический способ, а не петрофизический.", "page": 99, "link": "#how-9", "step_title": "Два вида критических значений", "step_index": 21, "node_id": "geo.latyshova.s20.08", "options": ["Требует множества испытанных интервалов в конце разведки", "Даёт значения уже в начале разведки", "Нужен представительный керн из первых разведочных скважин", "Опирается на связи Pн = f(kв) и фазовые проницаемости"], "key": [1, 2, 3], "answer_text": "Нужен представительный керн из первых разведочных скважин; Даёт значения уже в начале разведки; Опирается на связи Pн = f(kв) и фазовые проницаемости"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
