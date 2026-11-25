@@ -1,0 +1,1040 @@
+{
+  "video_id": "short",
+  "rebuild_command": "python -m vidpipe rebuild /home/s_tokhtobayev/kmd_product/runs/latyshova/tmp/vidpipe/geo.latyshova.s20.03/short",
+  "rebuild_from_scratch_command": "python -m kmd video latyshova geo.latyshova.s20.03 --format short --planner llm --tts microsoft",
+  "output": "short.mp4",
+  "format": "short",
+  "node_card": {
+    "node_id": "geo.latyshova.s20.03",
+    "title": "Порог «коллектор/неколлектор»",
+    "difficulty_types": [
+      "н",
+      "пр"
+    ],
+    "misconception_fixed": {
+      "wrong": "Коллектор — это любая пористая порода.",
+      "right": "Коллектором считают породу с проницаемостью выше критической, а критическое значение зависит от флюида и рентабельного дебита района.",
+      "claim_id": "geo.latyshova.s20.03.c03",
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "Построение разрезов скважин. Выделение коллекторов и оценка их продуктивности по данным ГИС",
+      "book": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин",
+      "chapter": "latyshova",
+      "pages": [
+        96
+      ]
+    },
+    "node_file_sha1": "4eff180eb9badd5b"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Любая пористая порода — *коллектор*?",
+      "t0": 0.25,
+      "t1": 2.64,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Как думаете, что *решает*, считать ли пласт коллектором?",
+      "t0": 2.86,
+      "t1": 6.278,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "Главный критерий — *критическое* значение проницаемости.",
+      "t0": 6.883,
+      "t1": 10.358,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.latyshova.s20.03.c03",
+          "page": 96,
+          "quote": "является граничное или критическое значение коэффициента проницаемости"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Этот порог зависит от *флюидов*, от самого коллектора в пласте и от рентабельного дебита района.",
+      "t0": 10.578,
+      "t1": 15.852,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.latyshova.s20.03.c04",
+          "page": 96,
+          "quote": "Критическое значение проницаемости зависит от свойств флюидов и коллектора в пластовых условиях и от величины рентабельного дебита для данного района."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "Рентабельный дебит — тот, что выше *нижнего предела* для района.",
+      "t0": 16.483,
+      "t1": 20.218,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.latyshova.s20.03.c06",
+          "page": 96,
+          "quote": "Рентабельным считают дебит нефти Qₙ или газа Qᵣ, значение которого выше нижнего предела"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L6",
+      "role": "mechanism",
+      "text": "А предел задают геология, *экономика* района и себестоимость нефти или газа.",
+      "t0": 20.438,
+      "t1": 25.291,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.latyshova.s20.03.c07",
+          "page": 96,
+          "quote": "определяются особенностями геологии, экономики данного района и себестоимостью тонны нефти или кубометра газа"
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L7",
+      "role": "mechanism",
+      "text": "Кроме порога проницаемости, есть и другие *косвенные* количественные признаки.",
+      "t0": 25.917,
+      "t1": 30.446,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.latyshova.s20.03.c01",
+          "page": 96,
+          "quote": "Кроме прямых качественных, используются также косвенные количественные признаки коллекторов."
+        }
+      ],
+      "asserts_fact": true
+    },
+    {
+      "id": "L8",
+      "role": "bridge",
+      "text": "Для дата-инженера это *порог классификатора*, выбранный по экономике, а не только по точности.",
+      "t0": 31.05,
+      "t1": 36.673,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L9",
+      "role": "bridge",
+      "text": "Гипотеза: порог лучше хранить *параметром* по району и флюиду, а не зашивать в модель.",
+      "t0": 36.893,
+      "t1": 41.958,
+      "sources": [],
+      "asserts_fact": false
+    },
+    {
+      "id": "L10",
+      "role": "transfer",
+      "text": "Себестоимость нефти в районе выросла. Куда сдвинется *граница* коллектора?",
+      "t0": 42.178,
+      "t1": 47.462,
+      "sources": [],
+      "asserts_fact": false
+    }
+  ],
+  "source_table": [
+    {
+      "kind": "reference",
+      "ref": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин",
+      "chapter": "latyshova",
+      "used_by": [],
+      "id": "src1",
+      "status": "reference"
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.latyshova.s20.03.c03",
+      "page": 96,
+      "quote": "является граничное или критическое значение коэффициента проницаемости",
+      "claim_text": "Главный критерий «коллектор/неколлектор» — критическое значение проницаемости.",
+      "used_by": [
+        "L3"
+      ],
+      "id": "src2",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 96,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.latyshova.s20.03.c04",
+      "page": 96,
+      "quote": "Критическое значение проницаемости зависит от свойств флюидов и коллектора в пластовых условиях и от величины рентабельного дебита для данного района.",
+      "claim_text": "Критическая проницаемость зависит от флюидов, коллектора в пластовых условиях и рентабельного дебита района.",
+      "used_by": [
+        "L4"
+      ],
+      "id": "src3",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 96,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.latyshova.s20.03.c06",
+      "page": 96,
+      "quote": "Рентабельным считают дебит нефти Qₙ или газа Qᵣ, значение которого выше нижнего предела",
+      "claim_text": "Рентабельный дебит — выше нижнего предела для района.",
+      "used_by": [
+        "L5"
+      ],
+      "id": "src4",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 96,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.latyshova.s20.03.c07",
+      "page": 96,
+      "quote": "определяются особенностями геологии, экономики данного района и себестоимостью тонны нефти или кубометра газа",
+      "claim_text": "Предел рентабельного дебита задают геология, экономика района и себестоимость нефти или газа.",
+      "used_by": [
+        "L6"
+      ],
+      "id": "src5",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 96,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "claim",
+      "ref": "geo.latyshova.s20.03.c01",
+      "page": 96,
+      "quote": "Кроме прямых качественных, используются также косвенные количественные признаки коллекторов.",
+      "claim_text": "Кроме прямых признаков используют косвенные количественные признаки коллекторов.",
+      "used_by": [
+        "L7"
+      ],
+      "id": "src6",
+      "status": "verified",
+      "match": {
+        "status": "verified",
+        "page_found": 96,
+        "ratio": 1.0,
+        "page_match": true,
+        "exact": true
+      }
+    },
+    {
+      "kind": "assumption",
+      "ref": "разрез условный, без масштаба",
+      "used_by": [
+        "S1"
+      ],
+      "id": "src7",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "поровая структура условная",
+      "used_by": [
+        "S2"
+      ],
+      "id": "src8",
+      "status": "assumption"
+    },
+    {
+      "kind": "dataset",
+      "ref": "open dataset",
+      "file": "volve_daily_production.csv",
+      "curve": "BORE_OIL_VOL",
+      "used_by": [
+        "S3"
+      ],
+      "selection": "NPD_WELL_BORE_NAME=15/9-F-12",
+      "window": [
+        null,
+        null
+      ],
+      "id": "src9",
+      "status": "dataset"
+    },
+    {
+      "kind": "assumption",
+      "ref": "скважина Volve показана как пример дебита, а не как пример из главы",
+      "used_by": [
+        "S3"
+      ],
+      "id": "src10",
+      "status": "assumption"
+    },
+    {
+      "kind": "dataset",
+      "ref": "open dataset",
+      "file": "15-9-19_SR_COMP.las",
+      "curve": "GR",
+      "used_by": [
+        "S4",
+        "S5"
+      ],
+      "selection": null,
+      "window": [
+        4285,
+        4360
+      ],
+      "id": "src11",
+      "status": "dataset"
+    },
+    {
+      "kind": "assumption",
+      "ref": "окно глубин выбрано для наглядности",
+      "used_by": [
+        "S4"
+      ],
+      "id": "src12",
+      "status": "assumption"
+    },
+    {
+      "kind": "assumption",
+      "ref": "аналогия с классификатором — гипотеза, не из книги",
+      "used_by": [
+        "S5"
+      ],
+      "id": "src13",
+      "status": "assumption"
+    }
+  ],
+  "scene_specs": [
+    {
+      "shot_id": "S1",
+      "file": "03_scene_specs/S1.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "порядок слоёв не меняется",
+        "глубина растёт вниз"
+      ],
+      "assumptions": [
+        "разрез условный, без масштаба"
+      ]
+    },
+    {
+      "shot_id": "S2",
+      "file": "03_scene_specs/S2.json",
+      "template": "overlay_card",
+      "class": "B",
+      "model": null,
+      "invariants": [
+        "зёрна касаются друг друга",
+        "флюиды только в порах"
+      ],
+      "assumptions": [
+        "поровая структура условная"
+      ]
+    },
+    {
+      "shot_id": "S3",
+      "file": "03_scene_specs/S3.json",
+      "template": "overlay_card",
+      "class": "A",
+      "model": {
+        "type": "csv",
+        "file": "volve_daily_production.csv",
+        "x": "DATEPRD",
+        "y": [
+          "BORE_OIL_VOL"
+        ],
+        "filter": {
+          "NPD_WELL_BORE_NAME": "15/9-F-12"
+        }
+      },
+      "invariants": [
+        "кривая — реальные данные без сглаживания"
+      ],
+      "assumptions": [
+        "скважина Volve показана как пример дебита, а не как пример из главы"
+      ]
+    },
+    {
+      "shot_id": "S4",
+      "file": "03_scene_specs/S4.json",
+      "template": "depth_track",
+      "class": "A",
+      "model": {
+        "type": "las",
+        "file": "15-9-19_SR_COMP.las",
+        "curve": "GR",
+        "depth_from": 4285,
+        "depth_to": 4360
+      },
+      "invariants": [
+        "точка кривой всегда на глубине прибора",
+        "глубина растёт вниз"
+      ],
+      "assumptions": [
+        "окно глубин выбрано для наглядности"
+      ]
+    },
+    {
+      "shot_id": "S5",
+      "file": "03_scene_specs/S5.json",
+      "template": "overlay_card",
+      "class": "A",
+      "model": {
+        "type": "las",
+        "file": "15-9-19_SR_COMP.las",
+        "curve": "GR",
+        "depth_from": 4285,
+        "depth_to": 4360
+      },
+      "invariants": [
+        "кривая — реальные данные"
+      ],
+      "assumptions": [
+        "аналогия с классификатором — гипотеза, не из книги"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 6.633,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S2",
+      "t0": 6.633,
+      "t1": 16.233,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null
+    },
+    {
+      "shot": "S3",
+      "t0": 16.233,
+      "t1": 25.667,
+      "class": "A",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "csv",
+      "ai": null
+    },
+    {
+      "shot": "S4",
+      "t0": 25.667,
+      "t1": 30.8,
+      "class": "A",
+      "template": "depth_track",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "las",
+      "ai": null
+    },
+    {
+      "shot": "S5",
+      "t0": 30.8,
+      "t1": 47.833,
+      "class": "A",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "реальные данные",
+      "state_model": "las",
+      "ai": null
+    }
+  ],
+  "exaggerations": [
+    {
+      "shot": "S1",
+      "what": "толщины слоёв условные"
+    },
+    {
+      "shot": "S2",
+      "what": "поры увеличены во много раз, масштаб не указан"
+    },
+    {
+      "shot": "S4",
+      "what": "ширина ствола увеличена относительно глубины"
+    },
+    {
+      "shot": "S4",
+      "what": "Cutaway is zoomed and not to scale horizontally; borehole and tool widths exaggerated for visibility."
+    }
+  ],
+  "prediction_question": {
+    "text": "Что решает, считать ли пласт коллектором?",
+    "options": [
+      "Сама пористость породы",
+      "Проницаемость выше критического значения"
+    ]
+  },
+  "transfer_question": {
+    "text": "Себестоимость нефти в районе выросла. Куда сдвинется граница «коллектор/неколлектор»?"
+  },
+  "data_it_bridge": {
+    "where_in_data": "Метка «коллектор/неколлектор» в разметке ГИС — результат порога по проницаемости или её геофизическим заменителям.",
+    "manual_work": "Порог подбирают для района и флюида, исходя из рентабельного дебита.",
+    "hypotheses": [
+      "Порог одного района или флюида не переносится на другой без пересчёта.",
+      "Порог стоит хранить как параметр конфигурации, а не зашивать в модель."
+    ]
+  },
+  "metrics": {
+    "person_minutes": 0.0,
+    "machine_minutes": 1.71,
+    "machine_seconds_by_stage": {
+      "script": 0.02,
+      "shotlist": 0.39,
+      "specs": 0.38,
+      "models": 1.01,
+      "audio": 0.76,
+      "layout": 0.36,
+      "render": 45.55,
+      "overlays": 0.01,
+      "compose": 54.09,
+      "qa": 0.28,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {},
+    "tts_chars": 1682,
+    "tts_audio_s": 105.9,
+    "money_note": "some external calls have unknown cost",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:14:30"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:15:18"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:15:18"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:19:11"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:19:12"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 35,
+        "audio_s": 2.389875,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T14:19:24"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.41825,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T14:19:29"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.474833333333333,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T14:19:43"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:23:28"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:23:28"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 35,
+        "audio_s": 2.389875,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T14:23:30"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.41825,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T14:23:30"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.474833333333333,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T14:23:30"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:29:38"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:29:38"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 35,
+        "audio_s": 2.389875,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T14:29:40"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.41825,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T14:29:40"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.474833333333333,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T14:29:40"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 94,
+        "audio_s": 5.274041666666666,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T14:29:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 63,
+        "audio_s": 3.7347916666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T14:30:03"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 74,
+        "audio_s": 4.853291666666666,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T14:30:09"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 76,
+        "audio_s": 4.529125,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T14:30:16"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 92,
+        "audio_s": 5.62325,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T14:30:24"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 84,
+        "audio_s": 5.064875,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-25T14:30:30"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 72,
+        "audio_s": 5.284083333333333,
+        "stage": "audio",
+        "line": "L10",
+        "ts": "2026-11-25T14:30:30"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:33:43"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-25T14:33:43"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 35,
+        "audio_s": 2.389875,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.41825,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 54,
+        "audio_s": 3.474833333333333,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 94,
+        "audio_s": 5.274041666666666,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 63,
+        "audio_s": 3.7347916666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 74,
+        "audio_s": 4.853291666666666,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 76,
+        "audio_s": 4.529125,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 92,
+        "audio_s": 5.62325,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 84,
+        "audio_s": 5.064875,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-25T14:33:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 72,
+        "audio_s": 5.284083333333333,
+        "stage": "audio",
+        "line": "L10",
+        "ts": "2026-11-25T14:33:46"
+      }
+    ]
+  },
+  "tools": {
+    "planner": "llm:kmd:kmd",
+    "tts": {
+      "provider": "microsoft",
+      "voice": "ru-RU-DmitryNeural",
+      "role": null,
+      "speed": null,
+      "rate": null,
+      "numbers": "words"
+    },
+    "renderer": "vidpipe.render2d (Cairo) — deterministic, from scene specs",
+    "text_layer": "vidpipe.overlays (PIL glyphs + Cairo) composited at compose time",
+    "encoder": "ffmpeg libx264 / AAC",
+    "ai_video": {
+      "provider": "none"
+    }
+  },
+  "qa_summary": {
+    "pass": 24,
+    "fail": 0,
+    "warn": 1,
+    "manual": 33,
+    "info": 2
+  },
+  "qa_failures": [],
+  "coverage_gaps": [],
+  "open_questions": [
+    "разрез условный, без масштаба",
+    "поровая структура условная",
+    "скважина Volve показана как пример дебита, а не как пример из главы",
+    "окно глубин выбрано для наглядности",
+    "аналогия с классификатором — гипотеза, не из книги"
+  ],
+  "datasets": [
+    "open dataset · 15-9-19_SR_COMP.las",
+    "open dataset · volve_daily_production.csv"
+  ],
+  "engine": "vidpipe",
+  "node_id": "geo.latyshova.s20.03",
+  "vidpipe_format": {
+    "name": "short",
+    "size": [
+      720,
+      1280
+    ],
+    "fps": 30,
+    "duration_s": 47.833,
+    "style": "F"
+  },
+  "duration_s": 47.833,
+  "data_bridge": {
+    "where_in_data": "Метка «коллектор/неколлектор» в разметке ГИС — результат порога по проницаемости или её геофизическим заменителям.",
+    "manual_work": "Порог подбирают для района и флюида, исходя из рентабельного дебита.",
+    "hypotheses": [
+      "Порог одного района или флюида не переносится на другой без пересчёта.",
+      "Порог стоит хранить как параметр конфигурации, а не зашивать в модель."
+    ]
+  },
+  "speech_check": {
+    "asr_model": "faster-whisper medium (int8, CPU, local)",
+    "wer": 0.0,
+    "wer_stem": 0.0,
+    "ref_words": 98,
+    "heard_text": "Любая пористая порода, коллектор, как думаете, что решает, считать ли пласт коллектором? Главный критерий – критическое значение проницаемости. Этот порог зависит от флюидов, от самого коллектора в пласте и от рентабельного дебита района. Рентабельный дебит – тот, что выше нижнего предела для района, а предел задают геология, экономика района и себестоимость нефти или газа. Кроме порога проницаемости есть и другие косвенные количественные признаки. Для дата инженера это порог классификатора, выбранный по экономике, а не только по точности. Гипотеза – порог лучше хранить параметром по району и флюиду, а не зашивать в модель. Себестоимость нефти в районе выросла. Куда сдвинется граница коллектора?",
+    "terms": [
+      {
+        "term": "рентабельный дебит",
+        "ok": true
+      },
+      {
+        "term": "дебит",
+        "ok": true
+      }
+    ],
+    "terms_ok": true,
+    "sync_max_s": 0.25,
+    "sync_mean_s": 0.13,
+    "sync_per_phrase": [
+      {
+        "id": "L1",
+        "heard_start": 0.0,
+        "offset": -0.25
+      },
+      {
+        "id": "L2",
+        "heard_start": 2.96,
+        "offset": 0.1
+      },
+      {
+        "id": "L3",
+        "heard_start": 7.06,
+        "offset": 0.18
+      },
+      {
+        "id": "L4",
+        "heard_start": 10.68,
+        "offset": 0.1
+      },
+      {
+        "id": "L5",
+        "heard_start": 16.56,
+        "offset": 0.08
+      },
+      {
+        "id": "L6",
+        "heard_start": 20.54,
+        "offset": 0.1
+      },
+      {
+        "id": "L7",
+        "heard_start": 25.9,
+        "offset": -0.02
+      },
+      {
+        "id": "L8",
+        "heard_start": 31.16,
+        "offset": 0.11
+      },
+      {
+        "id": "L9",
+        "heard_start": 37.08,
+        "offset": 0.19
+      },
+      {
+        "id": "L10",
+        "heard_start": 42.36,
+        "offset": 0.18
+      }
+    ]
+  },
+  "build_directory": "tmp/vidpipe/geo.latyshova.s20.03/short"
+}
