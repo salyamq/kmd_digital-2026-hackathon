@@ -1,13 +1,24 @@
-# Python >= 3.9 (tested on 3.9.25 and 3.13). Pinned versions = the set the selftest passed with on Python 3.9.
-# System packages (not pip): ffmpeg, Cairo (for pycairo), RHVoice (offline TTS) — see README.md.
-numpy==1.26.4
-scipy==1.13.1
-pandas==2.2.3
-pillow==11.0.0
-pycairo==1.27.0
-lasio==0.31
-pint==0.24.4
+# Python 3.9 – 3.13. Two pinned sets, chosen automatically by pip:
+#   3.9 – 3.12: the set the full selftest passed with on Python 3.9.25
+#   3.13+     : the set the full selftest passed with on Python 3.13.18 (numpy 1.26 / scipy 1.13 have no 3.13 wheels)
+# System packages (not pip): ffmpeg, Cairo + pkg-config (for pycairo), RHVoice or espeak-ng — see README.md.
+numpy==1.26.4; python_version < "3.13"
+numpy==2.5.3; python_version >= "3.13"
+scipy==1.13.1; python_version < "3.13"
+scipy==1.18.1; python_version >= "3.13"
+pandas==2.2.3; python_version < "3.13"
+pandas==3.0.5; python_version >= "3.13"
+pillow==11.0.0; python_version < "3.13"
+pillow==12.3.0; python_version >= "3.13"
+pycairo==1.27.0; python_version < "3.13"
+pycairo==1.29.2; python_version >= "3.13"
+lasio==0.31; python_version < "3.13"
+lasio==0.34; python_version >= "3.13"
+pint==0.24.4; python_version < "3.13"
+pint==0.26.2; python_version >= "3.13"
+soundfile==0.12.1; python_version < "3.13"
+soundfile==0.14.0; python_version >= "3.13"
+pyloudnorm==0.1.1; python_version < "3.13"
+pyloudnorm==0.2.0; python_version >= "3.13"
 num2words==0.5.14
-soundfile==0.12.1
-pyloudnorm==0.1.1
 openpyxl==3.1.5

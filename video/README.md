@@ -30,7 +30,7 @@ Limitations and the TODO list: **[TODO.md](TODO.md)**.
 
 ## Install
 
-Python **≥ 3.9** (tested on 3.9.25 and 3.13). Run every command from this `video/` folder.
+Python **3.9 – 3.13** (`requirements.txt` pins one tested set for 3.9–3.12 and one for 3.13; full selftest passed on 3.9.25 and 3.13.18). Run every command from this `video/` folder.
 
 **macOS (Homebrew)**
 
