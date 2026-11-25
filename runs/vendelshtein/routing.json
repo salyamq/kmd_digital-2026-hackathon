@@ -1,0 +1,452 @@
+[
+  {
+    "node_id": "geo.vendelshtein.x1.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Коллектор можно выделять не только по следам фильтрации, но и по количественному порогу параметра — границе «коллектор — неколлектор»."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: вводная идея количественных порогов — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр: расчёт по формулам — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Граница «коллектор — неколлектор» по проницаемости не универсальна: для нефти и газа она различается на порядок и зависит от района и экономики."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н: контринтуитивно — порог не 1 мД, а 3—10 мД и зависит от района."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Пр/И: порог через регрессию — интерактивный кроссплот проницаемость–пористость с порогом."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Пр: линия отсечки на кривой пористости — интерактив с ползунком порога."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.06",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Аномалия СП отражает не пористость и не нефть, а относительную глинистость — комплексный параметр, который лучше всего разделяет коллекторы и неколлекторы."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип И: аномалия СП показывает глинистость, а не нефть — прибор и кривая СП из одной модели."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Ф",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Ф: нормировка αСП — текст с формулой."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.08",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Отрицательная аномалия СП сама по себе — не признак коллектора: коллектор только тот, у кого αСП выше порога."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Тип Н: порог αСП* и ложные коллекторы с карбонатным цементом — интерактив."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.09",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н/Пр: решение на данных — порог по пересечению распределений испытаний."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Пр: замена СП гамма-методом — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.11",
+    "format": "cards",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Высокая радиоактивность не всегда означает глину: полевые шпаты, глауконит, вулканиты и радиогеохимические эффекты дают ложные «глины»."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Р: перечень исключений ГМ — карточки."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.12",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Н",
+      "threshold": "ЯМР — единственный метод, прямо выделяющий межзерновой коллектор по подвижному флюиду; остальные методы надёжны только в комплексе."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Н: комплекс методов и ЯМР — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x1.13",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н: границы применимости — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Н",
+      "threshold": "Сопротивление пласта говорит о нефти, только если надёжно измерено (неглубокое проникновение, нет экранирующих прослоев) и сравнено с порогом для своего типа коллектора."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип И/Н: глубокое проникновение «прячет» нефть от зондов — причина → следствие."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.02",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н: решение на данных — порог ρп*/Pн* по распределениям продуктивных и водоносных пластов."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "Н",
+      "threshold": "Пока водонасыщенность ниже критической, течёт только нефть: вода в порах есть, но неподвижна."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Тип Ф: кривые фазовых проницаемостей — ползунок водонасыщенности."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/И: применимость простых порогов — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Нефть в глинистом коллекторе видна не по сопротивлению, а по «отскоку» точки пласта от линии водоносных пластов на кроссплоте."
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Пр: кроссплот СП — сопротивления с линией «воды» — интерактив."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.06",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": ""
+    },
+    "video_criteria": [
+      "invisible_visible"
+    ],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Пр/И: кроссплот сопротивление–пористость и наложение кривых — интерактив."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.07",
+    "format": "long",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Продуктивный коллектор выдаёт себя изменением показаний во времени — при расформировании зоны проникновения или после испытания."
+    },
+    "video_criteria": [
+      "time_change",
+      "invisible_visible",
+      "scale_jump"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип И/М: расформирование зоны проникновения во времени и рост нейтронных показаний — разбор 16:9: прискважинная зона и кривые повторных замеров."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.08",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр: регламент повторных замеров — текст со списком."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.09",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": "Изменение пласта выявляют статистически: строят регрессию по заведомо неизменным пластам, и всё, что вышло за полосу ±2σ, — изменилось."
+    },
+    "video_criteria": [],
+    "scene_template": "crossplot",
+    "hook_only": false,
+    "rationale": "Тип Пр/Н: решение на данных — регрессия по неизменным пластам и полоса ±2σ."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.10",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Р: ИНМ-КВ — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.11",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/М: низкочастотная акустика — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x2.12",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "И",
+      "threshold": "Когда геофизика не даёт однозначного ответа, насыщение устанавливают прямо — по газу в растворе и притоку при испытании, но и они имеют ложные срабатывания."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Н/И: прямые методы и их ложные аномалии — карточки."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.01",
+    "format": "text",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Р",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип Пр/Р: правила определения эффективной мощности — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.02",
+    "format": "long",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": "ВНК — не резкая линия, а выбранная по критерию граница в переходной зоне, где нефтенасыщение постепенно падает из-за капиллярных сил."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive",
+      "scale_jump"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "Тип Пр/П: переходная зона и ВНК по критерию — разбор 16:9: разрез, кривая сопротивления и шкала решения рядом."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": "Ниже настоящего ВНК пресный фильтрат может «стечь» вниз и выглядеть как нефть на сопротивлении — ВНК окажется ниже истинного."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "invasion_profile",
+    "hook_only": false,
+    "rationale": "Тип Н/М: ложный ВНК — фильтрат стекает ниже контакта и имитирует нефть."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.04",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Н: нейтронные методы для контактов — текст."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.05",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Выбор порога — это выбор баланса двух ошибок: принять воду за нефть или нефть за воду."
+    },
+    "video_criteria": [
+      "counterintuitive"
+    ],
+    "scene_template": "threshold_slider",
+    "hook_only": false,
+    "rationale": "Тип Н: решение на данных — порог по λ и выбор баланса ошибок двух родов."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.06",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Если забойное давление ниже давления насыщения, из нефти выделяется газ — и работающая скважина «подсвечивает» нефтеотдающие интервалы на нейтронных методах."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "tool_in_borehole",
+    "hook_only": false,
+    "rationale": "Тип И/М: газ, выделяющийся из нефти в работающей скважине, подсвечивает пласт — невидимое видимо."
+  },
+  {
+    "node_id": "geo.vendelshtein.x3.07",
+    "format": "text",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Пр",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Тип И/Пр: газ и ГЖК с поправками — текст."
+  }
+]
