@@ -1,0 +1,748 @@
+{
+  "node_id": "geo.test_asquith.x1.26",
+  "chapter": "test_asquith",
+  "index": 30,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Диаграмма Баклса и размер зёрен",
+  "title_book": "BULK VOLUME WATER",
+  "section": "x1",
+  "pages": [
+    131
+  ],
+  "minutes": 10,
+  "difficulty": {
+    "primary": "Р",
+    "secondary": "Н",
+    "threshold": "Скопление точек на одной линии равной доли воды и разброс по нескольким линиям — разные признаки."
+  },
+  "threshold": "Скопление точек на одной линии равной доли воды и разброс по нескольким линиям — разные признаки.",
+  "format": "interactive",
+  "format_rationale": "Сопоставьте расположение точек с линиями Баклса, чтобы отличить удерживаемую воду от иных состояний.",
+  "order_rationale": "Переводит идею удержания воды в признаки на диаграмме Баклса.",
+  "essence": [
+    "Смотрите, лежат ли точки вдоль одной кривой или заметно разбросаны.",
+    "Размер зёрен даёт дополнительный контекст для объёмной доли воды."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как читать график",
+          "text": "**Диаграмма Баклса** сопоставляет пористость и водонасыщенность. **Гипербола** здесь соединяет точки одинаковой объёмной доли воды. Вне неснижаемой водонасыщенности эта доля может сильно различаться. Графики авторов используют данные трёх скважин ордовикской зоны B Ред-Ривер. Скважины расположены на месторождении Бивер-Крик в Северной Дакоте.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c01",
+            "geo.test_asquith.x1.26.c02",
+            "geo.test_asquith.x1.26.c03",
+            "geo.test_asquith.x1.26.c04"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.26.c01",
+              "quote": "A formation not at irreducible water saturation ($S_{w\\ irr}$) exhibits wide variations in bulk volume water values.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c02",
+              "quote": "The Buckles plot (Buckles, 1965) is a graph of porosity ($\\phi$) versus $S_w$.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c03",
+              "quote": "Points of equal $BVW$ form hyperbolic curves across this plot.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c04",
+              "quote": "Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota.",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что видно",
+          "text": "При неснижаемой водонасыщенности точки ложатся вдоль одной гиперболы. При большей доле добываемой воды точки сильнее разбросаны.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c05",
+            "geo.test_asquith.x1.26.c06"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.26.c05",
+              "quote": "If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a).",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c06",
+              "quote": "If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).",
+              "page": 131,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Размер зёрен",
+          "text": "При уменьшении зёрен порода удерживает больше воды капиллярным давлением. Поэтому объёмная доля воды увеличивается. Авторы сравнивают долю воды по размерам зёрен и типам породы в таблице.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c07",
+            "geo.test_asquith.x1.26.c08",
+            "geo.test_asquith.x1.26.c09"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.26.c07",
+              "quote": "Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size,",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c08",
+              "quote": "the bulk volume water also increases with decreasing grain size.",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c09",
+              "quote": "Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Обломочные породы",
+          "text": "**Алеврит** — материал из очень мелких зёрен. У крупных обломков размером 1,0–0,5 мм доля воды равна 0,02–0,025. У средних обломков размером 0,5–0,25 мм доля воды равна 0,025–0,035. У мелких обломков размером 0,25–0,125 мм доля воды равна 0,035–0,05. Для очень мелких обломков размером 0,125–0,062 мм доля воды равна 0,05–0,07. Для алеврита с размером зёрен меньше 0,062 мм доля воды равна 0,07–0,09.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c10",
+            "geo.test_asquith.x1.26.c11",
+            "geo.test_asquith.x1.26.c12"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.26.c10",
+              "quote": "|  Coarse | 1.0 to 0.5 | 0.02 to 0.025  |\n|  Medium | 0.5 to 0.25 | 0.025 to 0.035  |",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c11",
+              "quote": "|  Fine | 0.25 to 0.125 | 0.035 to 0.05  |\n|  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  |",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c12",
+              "quote": "|  Silt | < 0.062 | 0.07 to 0.09  |",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-5",
+          "section": "Карбонатные породы",
+          "text": "**Кавернозные поры** — полости в породе. **Межкристаллические поры** находятся между кристаллами. У кавернозных карбонатов доля воды равна 0,005–0,015. У кавернозных карбонатов с межкристаллическими порами доля воды равна 0,015–0,025. Для межкристаллического типа доля воды равна 0,025–0,04, для мелоподобного — 0,05. Авторы советуют использовать эти значения только как очень общий ориентир.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c13",
+            "geo.test_asquith.x1.26.c14",
+            "geo.test_asquith.x1.26.c15"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.26.c13",
+              "quote": "|  Vuggy |   | 0.005 to 0.015  |\n|  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  |",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c14",
+              "quote": "|  Intercrystalline |   | 0.025 to 0.04  |\n|  Chalky |   | 0.05  |",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.26.c15",
+              "quote": "The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.",
+              "page": 131,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Пары пористости и водонасыщенности",
+          "Положение относительно гипербол равной доли воды"
+        ],
+        "rule": "Сопоставляйте весь рисунок точек с линиями равной доли воды.",
+        "conclusion": "Одна гипербола согласуется с неснижаемым состоянием; разброс характерен при большей доле добываемой воды.",
+        "claim_ids": [
+          "geo.test_asquith.x1.26.c01",
+          "geo.test_asquith.x1.26.c03",
+          "geo.test_asquith.x1.26.c05",
+          "geo.test_asquith.x1.26.c06",
+          "geo.test_asquith.x1.26.c15"
+        ],
+        "cases": [
+          {
+            "given": "Точки лежат вдоль одной гиперболы.",
+            "options": [
+              "Данные согласуются с неснижаемой водонасыщенностью",
+              "Удержание воды обязательно отсутствует"
+            ],
+            "answer": 0,
+            "why": "Одна гипербола означает постоянную долю воды.",
+            "source": "модель"
+          },
+          {
+            "given": "Точки сильно разбросаны по гиперболам.",
+            "options": [
+              "Доля воды почти постоянна",
+              "Картина согласуется с большей долей добываемой воды"
+            ],
+            "answer": 1,
+            "why": "Авторы показывают больший разброс у коллекторов с большей долей добываемой воды.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "text": "У крупных обломков размером 1,0–0,5 мм доля воды равна 0,02–0,025.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c10"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "У средних обломков размером 0,5–0,25 мм доля воды равна 0,025–0,035.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c10"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "У мелких обломков размером 0,25–0,125 мм доля воды равна 0,035–0,05.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c11"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "Для очень мелких обломков размером 0,125–0,062 мм доля воды равна 0,05–0,07.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c11"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "Для алеврита с размером зёрен меньше 0,062 мм доля воды равна 0,07–0,09.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c12"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "У кавернозных карбонатов доля воды равна 0,005–0,015.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c13"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "У кавернозных карбонатов с межкристаллическими порами доля воды равна 0,015–0,025.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c13"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "Для межкристаллического типа доля воды равна 0,025–0,04, для мелоподобного — 0,05.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c14"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "Карбонатные значения — лишь очень общий ориентир по типу пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x1.26.c15"
+          ],
+          "pages": [
+            131
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "kind": "tables",
+      "title": "Таблицы книги",
+      "by": "author",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.26.t01",
+          "number": "7.1",
+          "caption": "Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart.",
+          "page": 131,
+          "page_end": 131,
+          "columns": [
+            "Lithology",
+            "Grain Size (millimeters)",
+            "Bulk Volume Water ($BVW$)"
+          ],
+          "rows": [
+            [
+              "*Clastics*",
+              "",
+              ""
+            ],
+            [
+              "Coarse",
+              "1.0 to 0.5",
+              "0.02 to 0.025"
+            ],
+            [
+              "Medium",
+              "0.5 to 0.25",
+              "0.025 to 0.035"
+            ],
+            [
+              "Fine",
+              "0.25 to 0.125",
+              "0.035 to 0.05"
+            ],
+            [
+              "Very Fine",
+              "0.125 to 0.062",
+              "0.05 to 0.07"
+            ],
+            [
+              "Silt",
+              "< 0.062",
+              "0.07 to 0.09"
+            ],
+            [
+              "*Carbonates*",
+              "",
+              ""
+            ],
+            [
+              "Vuggy",
+              "",
+              "0.005 to 0.015"
+            ],
+            [
+              "Vuggy and intercrystalline (intergranular)",
+              "",
+              "0.015 to 0.025"
+            ],
+            [
+              "Intercrystalline",
+              "",
+              "0.025 to 0.04"
+            ],
+            [
+              "Chalky",
+              "",
+              "0.05"
+            ]
+          ],
+          "ocr_fixes": [],
+          "unit_id": "u131_26"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Форма облака точек несёт информацию, которую не видно в отдельных значениях.",
+        "inputs": "Пары пористости и водонасыщенности, сравнительные сведения о породе.",
+        "outputs": "Положение относительно гипербол, степень разброса, контекст для интерпретации типа породы.",
+        "breaks_where": "Для карбонатов таблица не даёт надёжной однозначной классификации.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Парные данные и справочная таблица.",
+          "manual_steps": "Построить диаграмму, сравнить с гиперболами и описать разброс.",
+          "judgment_points": "Оценить, насколько данные сосредоточены вокруг одной гиперболы и уместен ли табличный ориентир.",
+          "time": "График можно строить повторно; длительность не указана.",
+          "typical_errors": "Обращаться с общими карбонатными ориентирами как со строгой классификацией.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Нанести наблюдения на диаграмму рассеяния с линиями одного значения производного признака.",
+        "breaks_where": "Геологический смысл рассеяния не сводится к отсечению аномалий по универсальному порогу.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Объёмная доля воды",
+          "definition": "Произведение водонасыщенности на пористость, обозначение BVW.",
+          "en": "bulk volume water",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "definition": "Состояние, при котором вода в неизменённой зоне удерживается на зёрнах и не перемещается.",
+          "en": "irreducible water saturation",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Капиллярное давление",
+          "definition": "В данном контексте давление, удерживающее воду на зёрнах породы.",
+          "en": "capillary pressure",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Баклса",
+          "definition": "График пористости против водонасыщенности с гиперболами равной объёмной доли воды.",
+          "en": "Buckles plot",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Гипербола",
+          "definition": "В этом графике кривая, вдоль которой произведение двух координат постоянно.",
+          "en": "hyperbola",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коллектор",
+          "definition": "Порода, в которой находятся и могут перемещаться флюиды.",
+          "en": "reservoir",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Карбонатные породы",
+          "definition": "Породы, сложенные главным образом карбонатными минералами.",
+          "en": "carbonates",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Обломочные породы",
+          "definition": "Породы из обломков ранее существовавших пород или минералов.",
+          "en": "clastics",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Алеврит",
+          "definition": "Материал с очень мелкими частицами, мельче песка.",
+          "en": "silt",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Кавернозные поры",
+          "definition": "Полости в породе, называемые кавернами.",
+          "en": "vuggy porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Межкристаллические поры",
+          "definition": "Пространства между кристаллами; межзерновые поры располагаются между зёрнами.",
+          "en": "intercrystalline porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Мелоподобный тип",
+          "definition": "Карбонатная порода, отнесённая в таблице к типу, похожему на мел.",
+          "en": "chalky",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "comparison_bar",
+      "class": "A",
+      "provenance": "реальные данные",
+      "caption": "Табличные диапазоны для обломочных пород. Чем мельче зёрна, тем выше доля удерживаемой воды.",
+      "alt": "На горизонтальной шкале пять диапазонов; от крупных обломков к алевриту полосы смещаются вправо.",
+      "file": "illustrations/geo_test_asquith_x1_26__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_26__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.26.c07",
+        "geo.test_asquith.x1.26.c08",
+        "geo.test_asquith.x1.26.c09",
+        "geo.test_asquith.x1.26.c10",
+        "geo.test_asquith.x1.26.c11",
+        "geo.test_asquith.x1.26.c12"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.26.c01",
+      "kind": "observation",
+      "text": "Вне состояния неснижаемой водонасыщенности объёмная доля воды изменяется в широких пределах.",
+      "quote": "A formation not at irreducible water saturation ($S_{w\\ irr}$) exhibits wide variations in bulk volume water values.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c02",
+      "kind": "observation",
+      "text": "На диаграмме Баклса сопоставляют пористость и водонасыщенность.",
+      "quote": "The Buckles plot (Buckles, 1965) is a graph of porosity ($\\phi$) versus $S_w$.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c03",
+      "kind": "observation",
+      "text": "Точки одинаковой объёмной доли воды образуют гиперболы.",
+      "quote": "Points of equal $BVW$ form hyperbolic curves across this plot.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c04",
+      "kind": "observation",
+      "text": "Графики автора построены по трём скважинам ордовикской зоны B Ред-Ривер месторождения Бивер-Крик в Северной Дакоте.",
+      "quote": "Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c05",
+      "kind": "inference",
+      "text": "При неснижаемой водонасыщенности точки ложатся вдоль одной гиперболы.",
+      "quote": "If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a).",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c06",
+      "kind": "inference",
+      "text": "Если коллекторы дают большую долю добываемой воды, точки на диаграмме сильнее разбросаны.",
+      "quote": "If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c07",
+      "kind": "inference",
+      "text": "При уменьшении размера зёрен капиллярное удержание воды увеличивается.",
+      "quote": "Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size,",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c08",
+      "kind": "inference",
+      "text": "Объёмная доля воды увеличивается при уменьшении зёрен.",
+      "quote": "the bulk volume water also increases with decreasing grain size.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c09",
+      "kind": "observation",
+      "text": "Сравнительная таблица связывает долю воды с размером зёрен и типом породы.",
+      "quote": "Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c10",
+      "kind": "observation",
+      "text": "Для крупных обломков при 1.0–0.5 мм доля воды 0.02–0.025; для средних при 0.5–0.25 мм — 0.025–0.035.",
+      "quote": "|  Coarse | 1.0 to 0.5 | 0.02 to 0.025  |\n|  Medium | 0.5 to 0.25 | 0.025 to 0.035  |",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c11",
+      "kind": "observation",
+      "text": "Для мелких обломков при 0.25–0.125 мм доля воды 0.035–0.05; для очень мелких при 0.125–0.062 мм — 0.05–0.07.",
+      "quote": "|  Fine | 0.25 to 0.125 | 0.035 to 0.05  |\n|  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  |",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c12",
+      "kind": "observation",
+      "text": "Для алеврита при размере зёрен < 0.062 мм доля воды 0.07–0.09.",
+      "quote": "|  Silt | < 0.062 | 0.07 to 0.09  |",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c13",
+      "kind": "observation",
+      "text": "Для кавернозных карбонатов доля воды 0.005–0.015; для кавернозных с межкристаллическими (межзерновыми) порами — 0.015–0.025.",
+      "quote": "|  Vuggy |   | 0.005 to 0.015  |\n|  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  |",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c14",
+      "kind": "observation",
+      "text": "Для межкристаллического типа доля воды 0.025–0.04; для мелоподобного — 0.05.",
+      "quote": "|  Intercrystalline |   | 0.025 to 0.04  |\n|  Chalky |   | 0.05  |",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.26.c15",
+      "kind": "assumption",
+      "text": "Карбонатные значения пригодны лишь как очень общий ориентир по типу пористости.",
+      "quote": "The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.",
+      "page": 131,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.26.t01",
+    "geo.test_asquith.x1.26.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.26.k01",
+    "geo.test_asquith.x1.26.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.25",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "request": {
+    "task": "scene.geo.test_asquith.x1.26.interactive",
+    "key": "cbfa4e94cc50e1da9692",
+    "prompt": "scene_spec",
+    "system": "Ты — режиссёр научно-популярных роликов и инженер-визуализатор. Ты пишешь СПЕЦИФИКАЦИЮ СЦЕНЫ как данные: какие виды одного мира показать, какими параметрами шаблонов, в каком порядке кадров, что обязано оставаться неизменным. Кадры потом рендерит код из детерминированных шаблонов (классы A и B): движение и кривые вычисляются из модели состояния шаблона, а не рисуются «на глаз». Ментор-геолог проверит спецификацию до рендера.\n\nЗритель — новичок без профильного образования (ИТ-специалист, аналитик данных).\n\nЖёсткие правила:\n1. Единственный источник фактов — узел учебного слоя ниже. Сцена не утверждает ничего, чего нет в узле. Каждый кадр ссылается на claim_ids узла, которые он показывает (кроме чисто вводного кадра-вопроса).\n2. Используй ТОЛЬКО шаблоны из каталога и ТОЛЬКО параметры из их params_schema. Параметры должны быть физически правдоподобны и согласованы с узлом: если в узле есть числа (глубины, давления, пористость, водоотдача, плотности, сопротивления, проницаемость и т. п.) — бери их; если чисел нет — бери типичные правдоподобные значения и запиши это в assumptions («значение условное, в книге не задано»).\n3. Один мир: все кадры — это виды одной и той же модели (одни и те же пласты, та же скважина, тот же пласт с теми же параметрами). Разные виды одного мира задаются в views; если вид отличается только масштабом (например, истинный масштаб без вертикального преувеличения) — используй params_override в кадре, а не новый мир.\n4. Формат interactive: интерактив в курсе: 2–5 кадров-состояний, пользователь двигает параметр анимации шаблона; спецификация нужна для паспорта и для анимации на странице шага.\n5. Честность: преувеличения перечисли с числом (шаблоны сами вычислят вертикальный масштаб — допиши то, что ты преувеличиваешь сознательно). Наблюдение (что измерено) отделено от вывода (что из этого следует). Если правило имеет условие применимости (в узле) — покажи и условие. Хотя бы один кадр — в истинном масштабе (true_scale: true), если в сцене есть разрез, пласт или ствол скважины.\n6. Сначала проблема, потом механизм, потом название: термин появляется после того, как ясно, зачем он нужен. Первый кадр поддерживает крючок (вопрос/парадокс), а не определение.\n7. Метка происхождения кадра определяется тем, как он сделан: симуляция (рассчитано моделью), схема (условная схема), реальные данные (только если параметры — реальные данные из узла/таблицы книги). Класс кадра A — данные/кривые/графики, B — процесс/механизм.\n8. Не закрепляй заблуждения из списка ниже. Проверь сцену по чек-листу физической корректности и заполни checklist: пункт, ok (true/false), короткое пояснение. Пункты, которые не относятся к сцене, не перечисляй; включи не меньше 5 относящихся.\n9. Язык всех текстовых полей — русский.\n\nОтвет — только JSON по схеме, без пояснений.",
+    "user": "# Узел учебного слоя (единственный источник фактов)\n```json\n{\n \"id\": \"geo.test_asquith.x1.26\",\n \"section\": \"x1\",\n \"title_book\": \"BULK VOLUME WATER\",\n \"title_beginner\": \"Диаграмма Баклса и размер зёрен\",\n \"difficulty\": {\n  \"primary\": \"Р\",\n  \"secondary\": \"Н\",\n  \"threshold\": \"Скопление точек на одной линии равной доли воды и разброс по нескольким линиям — разные признаки.\"\n },\n \"layers\": {\n  \"mechanism\": {\n   \"text\": \"На графике пористости против водонасыщенности равная объёмная доля воды образует гиперболы. Чем мельче зёрна, тем больше воды порода способна удержать капиллярным давлением, тем выше объёмная доля воды.\",\n   \"by\": \"author\"\n  },\n  \"practice\": {\n   \"text\": \"Сопоставляют распределение точек с гиперболами равной доли воды. При неснижаемой водонасыщенности точки идут вдоль одной гиперболы, при большей доле добываемой воды разброс выше. Для сопоставления размеров зёрен и типов пород используют сравнительную таблицу.\",\n   \"by\": \"author\"\n  },\n  \"nuances\": {\n   \"text\": \"Значения для карбонатных пород — только очень общий ориентир по типам пористости.\",\n   \"by\": \"author\"\n  },\n  \"deeper\": []\n },\n \"procedure\": [],\n \"claims\": [\n  {\n   \"id\": \"geo.test_asquith.x1.26.c01\",\n   \"kind\": \"observation\",\n   \"text\": \"Вне состояния неснижаемой водонасыщенности объёмная доля воды изменяется в широких пределах.\",\n   \"quote\": \"A formation not at irreducible water saturation ($S_{w\\\\ irr}$) exhibits wide variations in bulk volume water values.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c02\",\n   \"kind\": \"observation\",\n   \"text\": \"На диаграмме Баклса сопоставляют пористость и водонасыщенность.\",\n   \"quote\": \"The Buckles plot (Buckles, 1965) is a graph of porosity ($\\\\phi$) versus $S_w$.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c03\",\n   \"kind\": \"observation\",\n   \"text\": \"Точки одинаковой объёмной доли воды образуют гиперболы.\",\n   \"quote\": \"Points of equal $BVW$ form hyperbolic curves across this plot.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c04\",\n   \"kind\": \"observation\",\n   \"text\": \"Графики автора построены по трём скважинам ордовикской зоны B Ред-Ривер месторождения Бивер-Крик в Северной Дакоте.\",\n   \"quote\": \"Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c05\",\n   \"kind\": \"inference\",\n   \"text\": \"При неснижаемой водонасыщенности точки ложатся вдоль одной гиперболы.\",\n   \"quote\": \"If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a).\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c06\",\n   \"kind\": \"inference\",\n   \"text\": \"Если коллекторы дают большую долю добываемой воды, точки на диаграмме сильнее разбросаны.\",\n   \"quote\": \"If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c07\",\n   \"kind\": \"inference\",\n   \"text\": \"При уменьшении размера зёрен капиллярное удержание воды увеличивается.\",\n   \"quote\": \"Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size,\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c08\",\n   \"kind\": \"inference\",\n   \"text\": \"Объёмная доля воды увеличивается при уменьшении зёрен.\",\n   \"quote\": \"the bulk volume water also increases with decreasing grain size.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c09\",\n   \"kind\": \"observation\",\n   \"text\": \"Сравнительная таблица связывает долю воды с размером зёрен и типом породы.\",\n   \"quote\": \"Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c10\",\n   \"kind\": \"observation\",\n   \"text\": \"Для крупных обломков при 1.0–0.5 мм доля воды 0.02–0.025; для средних при 0.5–0.25 мм — 0.025–0.035.\",\n   \"quote\": \"|  Coarse | 1.0 to 0.5 | 0.02 to 0.025  |\\n|  Medium | 0.5 to 0.25 | 0.025 to 0.035  |\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c11\",\n   \"kind\": \"observation\",\n   \"text\": \"Для мелких обломков при 0.25–0.125 мм доля воды 0.035–0.05; для очень мелких при 0.125–0.062 мм — 0.05–0.07.\",\n   \"quote\": \"|  Fine | 0.25 to 0.125 | 0.035 to 0.05  |\\n|  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  |\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c12\",\n   \"kind\": \"observation\",\n   \"text\": \"Для алеврита при размере зёрен < 0.062 мм доля воды 0.07–0.09.\",\n   \"quote\": \"|  Silt | < 0.062 | 0.07 to 0.09  |\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c13\",\n   \"kind\": \"observation\",\n   \"text\": \"Для кавернозных карбонатов доля воды 0.005–0.015; для кавернозных с межкристаллическими (межзерновыми) порами — 0.015–0.025.\",\n   \"quote\": \"|  Vuggy |   | 0.005 to 0.015  |\\n|  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  |\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c14\",\n   \"kind\": \"observation\",\n   \"text\": \"Для межкристаллического типа доля воды 0.025–0.04; для мелоподобного — 0.05.\",\n   \"quote\": \"|  Intercrystalline |   | 0.025 to 0.04  |\\n|  Chalky |   | 0.05  |\",\n   \"page\": 131\n  },\n  {\n   \"id\": \"geo.test_asquith.x1.26.c15\",\n   \"kind\": \"assumption\",\n   \"text\": \"Карбонатные значения пригодны лишь как очень общий ориентир по типу пористости.\",\n   \"quote\": \"The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.\",\n   \"page\": 131\n  }\n ],\n \"worked_examples\": [],\n \"book_problems\": [],\n \"terms\": [\n  {\n   \"term\": \"Пористость\",\n   \"definition\": \"Доля общего объёма породы, занятая порами.\",\n   \"en\": \"porosity\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Водонасыщенность\",\n   \"definition\": \"Доля объёма пор, заполненная водой.\",\n   \"en\": \"water saturation\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Объёмная доля воды\",\n   \"definition\": \"Произведение водонасыщенности на пористость, обозначение BVW.\",\n   \"en\": \"bulk volume water\",\n   \"page\": 131,\n   \"by\": \"author\"\n  },\n  {\n   \"term\": \"Неснижаемая водонасыщенность\",\n   \"definition\": \"Состояние, при котором вода в неизменённой зоне удерживается на зёрнах и не перемещается.\",\n   \"en\": \"irreducible water saturation\",\n   \"page\": 131,\n   \"by\": \"author\"\n  },\n  {\n   \"term\": \"Капиллярное давление\",\n   \"definition\": \"В данном контексте давление, удерживающее воду на зёрнах породы.\",\n   \"en\": \"capillary pressure\",\n   \"page\": 131,\n   \"by\": \"author\"\n  },\n  {\n   \"term\": \"Диаграмма Баклса\",\n   \"definition\": \"График пористости против водонасыщенности с гиперболами равной объёмной доли воды.\",\n   \"en\": \"Buckles plot\",\n   \"page\": 131,\n   \"by\": \"author\"\n  },\n  {\n   \"term\": \"Гипербола\",\n   \"definition\": \"В этом графике кривая, вдоль которой произведение двух координат постоянно.\",\n   \"en\": \"hyperbola\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Коллектор\",\n   \"definition\": \"Порода, в которой находятся и могут перемещаться флюиды.\",\n   \"en\": \"reservoir\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Карбонатные породы\",\n   \"definition\": \"Породы, сложенные главным образом карбонатными минералами.\",\n   \"en\": \"carbonates\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Обломочные породы\",\n   \"definition\": \"Породы из обломков ранее существовавших пород или минералов.\",\n   \"en\": \"clastics\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Алеврит\",\n   \"definition\": \"Материал с очень мелкими частицами, мельче песка.\",\n   \"en\": \"silt\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Кавернозные поры\",\n   \"definition\": \"Полости в породе, называемые кавернами.\",\n   \"en\": \"vuggy porosity\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Межкристаллические поры\",\n   \"definition\": \"Пространства между кристаллами; межзерновые поры располагаются между зёрнами.\",\n   \"en\": \"intercrystalline porosity\",\n   \"page\": null,\n   \"by\": \"model\"\n  },\n  {\n   \"term\": \"Мелоподобный тип\",\n   \"definition\": \"Карбонатная порода, отнесённая в таблице к типу, похожему на мел.\",\n   \"en\": \"chalky\",\n   \"page\": null,\n   \"by\": \"model\"\n  }\n ],\n \"formulas\": [],\n \"tables\": [\n  {\n   \"id\": \"geo.test_asquith.x1.26.t01\",\n   \"number\": \"7.1\",\n   \"caption\": \"Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart.\",\n   \"page\": 131,\n   \"page_end\": 131,\n   \"columns\": [\n    \"Lithology\",\n    \"Grain Size (millimeters)\",\n    \"Bulk Volume Water ($BVW$)\"\n   ],\n   \"rows\": [\n    [\n     \"*Clastics*\",\n     \"\",\n     \"\"\n    ],\n    [\n     \"Coarse\",\n     \"1.0 to 0.5\",\n     \"0.02 to 0.025\"\n    ],\n    [\n     \"Medium\",\n     \"0.5 to 0.25\",\n     \"0.025 to 0.035\"\n    ],\n    [\n     \"Fine\",\n     \"0.25 to 0.125\",\n     \"0.035 to 0.05\"\n    ],\n    [\n     \"Very Fine\",\n     \"0.125 to 0.062\",\n     \"0.05 to 0.07\"\n    ],\n    [\n     \"Silt\",\n     \"< 0.062\",\n     \"0.07 to 0.09\"\n    ],\n    [\n     \"*Carbonates*\",\n     \"\",\n     \"\"\n    ],\n    [\n     \"Vuggy\",\n     \"\",\n     \"0.005 to 0.015\"\n    ],\n    [\n     \"Vuggy and intercrystalline (intergranular)\",\n     \"\",\n     \"0.015 to 0.025\"\n    ],\n    [\n     \"Intercrystalline\",\n     \"\",\n     \"0.025 to 0.04\"\n    ],\n    [\n     \"Chalky\",\n     \"\",\n     \"0.05\"\n    ]\n   ],\n   \"ocr_fixes\": [],\n   \"unit_id\": \"u131_26\"\n  }\n ],\n \"figures\": [],\n \"misconception\": null,\n \"data_meaning\": {\n  \"text\": \"Форма облака точек несёт информацию, которую не видно в отдельных значениях.\",\n  \"inputs\": \"Пары пористости и водонасыщенности, сравнительные сведения о породе.\",\n  \"outputs\": \"Положение относительно гипербол, степень разброса, контекст для интерпретации типа породы.\",\n  \"breaks_where\": \"Для карбонатов таблица не даёт надёжной однозначной классификации.\",\n  \"hypotheses\": [],\n  \"by\": \"author\"\n },\n \"it_analogy\": {\n  \"text\": \"Нанести наблюдения на диаграмму рассеяния с линиями одного значения производного признака.\",\n  \"breaks_where\": \"Геологический смысл рассеяния не сводится к отсечению аномалий по универсальному порогу.\",\n  \"by\": \"model\"\n },\n \"current_practice\": {\n  \"text\": \"\",\n  \"by\": \"model\"\n },\n \"pages\": [\n  131\n ]\n}\n```\n\n# Маршрутизация узла\nФормат: interactive. Критерии видеоёмкости: —. Обоснование: Сопоставьте расположение точек с линиями Баклса, чтобы отличить удерживаемую воду от иных состояний.. Шаблон, предложенный маршрутизацией: feature_compare (можно взять другой из каталога, если он точнее показывает узел; можно сочетать несколько видов).\n\n# Каталог шаблонов сцен (используй только эти имена и параметры)\n### comparison_bar — Сравнение чисел из главы (столбики с подписями)\nГоризонтальные столбики для сравнения величин, взятых из главы (диапазоны — отрезками min–max). Каждое число подписано на столбике. Для тем: сравнение пород/методов/параметров по числу, пороги и диапазоны применимости. Только числа из источника.\nКласс по умолчанию: A, метка: «реальные данные». Для типов: М, Р, И, сравнение, диапазоны, пороги. Анимация: t∈[0,1]: столбики растут до значений.\n\nparams schema: {\"type\": \"object\", \"required\": [\"items\"], \"properties\": {\"items\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 14, \"items\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"value\": {\"type\": \"number\"}, \"min\": {\"type\": \"number\"}, \"max\": {\"type\": \"number\"}, \"note\": {\"type\": \"string\"}, \"color\": {\"type\": \"string\"}}}}, \"value_label\": {\"type\": \"string\", \"default\": \"\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"highlight\": {\"type\": [\"string\", \"null\"], \"default\": null}, \"threshold\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}}\n\nexample params: {\"title\": \"Пористость пород (пример)\", \"items\": [{\"label\": \"песчаник\", \"min\": 15, \"max\": 30}, {\"label\": \"известняк\", \"min\": 1, \"max\": 10}, {\"label\": \"глина\", \"value\": 30, \"note\": \"поры есть, но они не проницаемы\"}], \"value_label\": \"пористость\", \"unit\": \"%\", \"threshold\": {\"value\": 9, \"label\": \"граничное значение\"}}\n\n### cross_section — Геологический разрез: слои, структура, разлом, флюиды в ловушке, скважины\nВертикальный разрез: слои сверху вниз (молодые над старыми), форма структуры (горизонтально, антиклиналь, синклиналь, моноклиналь), разлом с одинаковым смещением всех слоёв, флюиды в ПОРАХ пласта-коллектора по горизонтальным контактам (газ над нефтью над водой), покрышка, скважины. Вертикальное преувеличение вычисляется и подписывается числом; vertical_exaggeration=1 даёт истинный масштаб («пласт как лист бумаги»). Для ловушек, контактов ВНК/ГНК, корреляции разрезов скважин, «почему нефть не озеро», масштабов.\nКласс по умолчанию: B, метка: «схема». Для типов: П, М, В, Н, ловушка, контакты флюидов, разлом, масштаб. Анимация: t∈[0,1]: заполнение ловушки — контакты опускаются от кровли до заданных глубин (накопление УВ).\n\nparams schema: {\"type\": \"object\", \"required\": [\"layers\"], \"properties\": {\"layers\": {\"type\": \"array\", \"minItems\": 2, \"description\": \"Слои сверху вниз (от молодых к древним)\", \"items\": {\"type\": \"object\", \"required\": [\"lith\", \"thickness_m\"], \"properties\": {\"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"thickness_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0}, \"name\": {\"type\": \"string\"}}}}, \"top_depth_m\": {\"type\": \"number\", \"default\": 1000, \"description\": \"глубина кровли верхнего слоя на краях\"}, \"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 5000}, \"structure\": {\"type\": \"object\", \"default\": {\"type\": \"flat\"}, \"properties\": {\"type\": {\"enum\": [\"flat\", \"anticline\", \"syncline\", \"monocline\"]}, \"amplitude_m\": {\"type\": \"number\", \"minimum\": 0}, \"center_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"width_frac\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"maximum\": 2}, \"dip_deg\": {\"type\": \"number\", \"minimum\": -30, \"maximum\": 30}}}, \"fault\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"x_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"throw_m\": {\"type\": \"number\", \"description\": \"+: правый блок опущен\"}, \"dip_deg\": {\"type\": \"number\", \"minimum\": 30, \"maximum\": 90, \"default\": 70}, \"sealing\": {\"type\": \"boolean\", \"default\": true}}}, \"traps\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"layer\"], \"properties\": {\"layer\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"индекс слоя-коллектора\"}, \"goc_m\": {\"type\": [\"number\", \"null\"], \"description\": \"глубина ГНК\"}, \"owc_m\": {\"type\": [\"number\", \"null\"], \"description\": \"глубина ВНК\"}, \"transition_m\": {\"type\": \"number\", \"minimum\": 0, \"default\": 0, \"description\": \"переходная зона над ВНК (показывается градиентом)\"}}}}, \"wells\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x_frac\"], \"properties\": {\"x_frac\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"name\": {\"type\": \"string\"}, \"depth_m\": {\"type\": \"number\"}}}}, \"vertical_exaggeration\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"null — подобрать; 1 — истинный масштаб; иначе ×N\"}, \"show_labels\": {\"type\": \"boolean\", \"default\": true}}}\n\nexample params: {\"title\": \"Антиклинальная ловушка: газ, нефть и вода в порах песчаника\", \"layers\": [{\"lith\": \"shale\", \"thickness_m\": 60, \"name\": \"покрышка\"}, {\"lith\": \"sand\", \"thickness_m\": 40, \"name\": \"пласт-коллектор\"}, {\"lith\": \"shale\", \"thickness_m\": 50}, {\"lith\": \"limestone\", \"thickness_m\": 40}], \"top_depth_m\": 1500, \"width_m\": 6000, \"structure\": {\"type\": \"anticline\", \"amplitude_m\": 70, \"center_frac\": 0.5, \"width_frac\": 0.6}, \"traps\": [{\"layer\": 1, \"goc_m\": 1525, \"owc_m\": 1555}], \"wells\": [{\"x_frac\": 0.5, \"name\": \"Скв. 1\"}, {\"x_frac\": 0.82, \"name\": \"Скв. 2\"}]}\n\n### crossplot — График / кроссплот / палетка: точки, оцифрованные кривые, формулы, области\nДвумерный график: точки данных, кривые (оцифрованные с рисунка книги или из таблицы), кривые по формуле из главы (вычисляются кодом: x, log, log10, exp, sqrt, erf, erfc, E1), подписанные области (например «коллектор/неколлектор», «нефть/вода»), пороговые линии и точка запроса («ваш образец»). Линейные и логарифмические оси. Для перерисовки рисунков книги (палетки, зависимости), решения на данных (признак → порог → вывод), сравнения зависимостей.\nКласс по умолчанию: A, метка: «реальные данные». Для типов: Ф, Р, Пр, И, data_practice, палетка, зависимость, перерисовка рисунка. Анимация: t∈[0,1]: точка запроса движется по заданному пути / кривые прорисовываются слева направо.\n\nparams schema: {\"type\": \"object\", \"required\": [\"x\", \"y\"], \"properties\": {\"x\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"invert\": {\"type\": \"boolean\", \"default\": false}}}, \"y\": {\"type\": \"object\", \"required\": [\"label\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"invert\": {\"type\": \"boolean\", \"default\": false}}}, \"series\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"points\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"points\": {\"type\": \"array\", \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}}, \"kind\": {\"enum\": [\"line\", \"points\", \"smooth\"], \"default\": \"line\"}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}, \"label_at_end\": {\"type\": \"boolean\", \"default\": false, \"description\": \"подписать кривую у её правого конца (шифр кривой), а не в легенде\"}}}}, \"functions\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"expr\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"expr\": {\"type\": \"string\"}, \"x_range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}}}}, \"regions\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"label\", \"polygon\"], \"properties\": {\"label\": {\"type\": \"string\"}, \"polygon\": {\"type\": \"array\", \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"color\": {\"type\": \"string\"}}}}, \"hlines\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"value\"], \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}, \"vlines\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"value\"], \"properties\": {\"value\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}}, \"query\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"label\": {\"type\": \"string\"}}}, \"annotations\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\", \"text\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"text\": {\"type\": \"string\"}}}}}}\n\nexample params: {\"title\": \"Сопротивление пласта по формуле Арчи при разной водонасыщенности\", \"x\": {\"label\": \"пористость\", \"unit\": \"д. ед.\", \"range\": [0.05, 0.35]}, \"y\": {\"label\": \"сопротивление\", \"unit\": \"Ом·м\", \"scale\": \"log\", \"range\": [0.1, 1000]}, \"functions\": [{\"label\": \"водоносный (Sв = 1)\", \"expr\": \"0.05 / x**2\"}, {\"label\": \"нефтеносный (Sв = 0,25)\", \"expr\": \"0.05 / (x**2 * 0.25**2)\"}], \"query\": {\"x\": 0.2, \"y\": 20, \"label\": \"пласт A\"}, \"provenance\": \"симуляция\"}\n\n### log_plot — Каротажная диаграмма по данным (оцифровка рисунка книги или LAS)\nПланшет ГИС, построенный по ТОЧКАМ кривых (оцифровка рисунка книги или реальные данные): треки с кривыми (глубина вниз, шкалы и единицы в шапке), необязательная литологическая колонка по интерпретации и выделенные интервалы с подписями (коллектор, ВНК, плотный прослой…). Для перерисовки рисунков-диаграмм, на которых держатся примеры и задачи главы, и для «решения на данных».\nКласс по умолчанию: A, метка: «реальные данные». Для типов: И, Р, Пр, Н, data_practice, перерисовка рисунка, диаграммы ГИС. Анимация: t∈[0,1]: кривые прорисовываются снизу вверх (как при записи на подъёме).\n\nparams schema: {\"type\": \"object\", \"required\": [\"tracks\"], \"properties\": {\"tracks\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 6, \"items\": {\"type\": \"object\", \"required\": [\"curves\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"curves\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 4, \"items\": {\"type\": \"object\", \"required\": [\"name\", \"points\"], \"properties\": {\"name\": {\"type\": \"string\", \"description\": \"как в книге: ПС, ГК, КС (А2М0,5N), НГК…\"}, \"unit\": {\"type\": \"string\", \"default\": \"\"}, \"points\": {\"type\": \"array\", \"minItems\": 2, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"description\": \"[[глубина, значение], …] по глубине\"}, \"scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\"}, \"range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2, \"description\": \"шкала трека слева→справа (может убывать)\"}, \"color\": {\"type\": \"string\"}, \"dashed\": {\"type\": \"boolean\", \"default\": false}}}}}}}, \"depth_range\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2}, \"lith_column\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"lith\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"fluid\": {\"enum\": [\"water\", \"oil\", \"gas\", null]}, \"label\": {\"type\": \"string\"}}}}, \"intervals\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"text\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"text\": {\"type\": \"string\"}, \"kind\": {\"enum\": [\"observation\", \"inference\", \"assumption\"], \"default\": \"inference\"}}}}}}\n\nexample params: {\"title\": \"ПС и сопротивление по участку разреза (пример)\", \"tracks\": [{\"title\": \"ПС\", \"curves\": [{\"name\": \"ПС\", \"unit\": \"мВ\", \"range\": [-60, 10], \"points\": [[1200, 0], [1204, 0], [1205, -40], [1210, -42], [1211, 0], [1220, 0]]}]}, {\"title\": \"КС\", \"curves\": [{\"name\": \"КС\", \"unit\": \"Ом·м\", \"scale\": \"log\", \"range\": [1, 100], \"points\": [[1200, 3], [1204, 3], [1205, 25], [1208, 25], [1209, 4], [1211, 3], [1220, 3]]}]}], \"lith_column\": [{\"top\": 1200, \"base\": 1204.5, \"lith\": \"shale\"}, {\"top\": 1204.5, \"base\": 1210.5, \"lith\": \"sand\"}, {\"top\": 1210.5, \"base\": 1220, \"lith\": \"shale\"}], \"intervals\": [{\"top\": 1204.5, \"base\": 1210.5, \"text\": \"коллектор\", \"kind\": \"inference\"}]}\n\n### log_track — Каротажный планшет: литоколонка, скважина с прибором и кривые ГИС\nЛитологическая колонка (цвет и знак породы по стайлгайду, флюид в порах точками), ствол скважины с глинистой коркой и кавернами, прибор на кабеле, и синтетические кривые ГИС (ГК, ПС, кавернометрия, сопротивления двух глубинностей, микрозонды, НК/НГК, ГГК-П, АК), рассчитанные из ОДНОЙ модели пласта (Арчи, ПС по ρф/ρв, плотность/АК по пористости). Глубина вниз. Для вопросов «как по кривым выделить коллектор / глину / плотную породу / нефть и воду, ВНК, эффективная толщина», «что регистрирует прибор».\nКласс по умолчанию: B, метка: «симуляция». Для типов: И, Пр, Н, Р, data_practice, прибор в скважине, выделение коллекторов. Анимация: t∈[0,1]: прибор идёт от забоя вверх (кабельный каротаж), кривые дописываются до глубины прибора.\n\nparams schema: {\"type\": \"object\", \"required\": [\"layers\"], \"properties\": {\"layers\": {\"type\": \"array\", \"minItems\": 1, \"description\": \"Пласты сверху вниз; глубины в метрах\", \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"lith\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"fluid\": {\"enum\": [\"water\", \"oil\", \"gas\", null], \"default\": null, \"description\": \"флюид в порах (только для проницаемых пород)\"}, \"phi\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 0.45, \"description\": \"пористость, д.ед.\"}, \"vsh\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1, \"description\": \"глинистость, д.ед.\"}, \"sw\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1, \"description\": \"водонасыщенность\"}, \"permeable\": {\"type\": \"boolean\", \"description\": \"коллектор (проницаем) или нет\"}, \"rt\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"description\": \"задать сопротивление явно, Ом·м\"}, \"label\": {\"type\": \"string\"}}}}, \"curves\": {\"type\": \"array\", \"items\": {\"enum\": [\"GR\", \"SP\", \"CALI\", \"RD\", \"RS\", \"MNOR\", \"MINV\", \"NPHI\", \"NGK\", \"RHOB\", \"DT\"]}, \"default\": [\"GR\", \"SP\", \"CALI\", \"RD\", \"RS\"]}, \"rw\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 0.05, \"description\": \"ρв пластовой воды, Ом·м\"}, \"rmf\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 0.5, \"description\": \"ρф фильтрата раствора, Ом·м (пресный раствор: ρф > ρв)\"}, \"bit_mm\": {\"type\": \"number\", \"default\": 216}, \"mudcake_mm\": {\"type\": \"number\", \"default\": 10}, \"show_well\": {\"type\": \"boolean\", \"default\": true}, \"show_invasion\": {\"type\": \"boolean\", \"default\": true, \"description\": \"показать зону проникновения фильтрата у стенки против коллекторов\"}, \"tool_depth\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"статичное положение прибора (м)\"}, \"logging_direction\": {\"enum\": [\"up\", \"down\"], \"default\": \"up\"}, \"annotations\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"top\", \"base\", \"text\"], \"properties\": {\"top\": {\"type\": \"number\"}, \"base\": {\"type\": \"number\"}, \"text\": {\"type\": \"string\"}, \"kind\": {\"enum\": [\"observation\", \"inference\", \"assumption\"], \"default\": \"inference\"}}}}, \"noise\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 0.2, \"default\": 0.02}}}\n\nexample params: {\"title\": \"Песчаник с нефтью над водой между глинами\", \"layers\": [{\"top\": 1000, \"base\": 1006, \"lith\": \"shale\"}, {\"top\": 1006, \"base\": 1010, \"lith\": \"sand\", \"fluid\": \"oil\", \"phi\": 0.22}, {\"top\": 1010, \"base\": 1014, \"lith\": \"sand\", \"fluid\": \"water\", \"phi\": 0.22}, {\"top\": 1014, \"base\": 1018, \"lith\": \"shale\"}, {\"top\": 1018, \"base\": 1021, \"lith\": \"limestone\", \"phi\": 0.03}, {\"top\": 1021, \"base\": 1025, \"lith\": \"shale\"}], \"curves\": [\"GR\", \"SP\", \"CALI\", \"RD\", \"RS\"], \"annotations\": [{\"top\": 1010, \"base\": 1010, \"text\": \"ВНК\", \"kind\": \"inference\"}]}\n\n### plan_map — Карта (вид сверху): структурные изолинии кровли, контур залежи, скважины\nВид сверху: изогипсы кровли пласта (купол, антиклиналь, моноклиналь или по точкам скважин), внешний контур нефтеносности по ВНК и газоносности по ГНК (контакт горизонтален, поэтому контур = изогипса), скважины с результатом, линия разреза А–А′, масштабная линейка и север. Для тем: строение залежи, размещение скважин, связь карты и разреза.\nКласс по умолчанию: B, метка: «схема». Для типов: П, М, Р, карта, залежь, размещение скважин. Анимация: t∈[0,1]: скважины появляются по порядку.\n\nparams schema: {\"type\": \"object\", \"properties\": {\"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 6000}, \"height_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 5000}, \"structure\": {\"type\": \"object\", \"default\": {\"type\": \"dome\"}, \"properties\": {\"type\": {\"enum\": [\"dome\", \"anticline\", \"monocline\", \"points\"]}, \"center\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}, \"minItems\": 2, \"maxItems\": 2, \"description\": \"доли ширины/высоты\"}, \"crest_depth_m\": {\"type\": \"number\"}, \"amplitude_m\": {\"type\": \"number\"}, \"radius_frac\": {\"type\": \"number\"}, \"elongation\": {\"type\": \"number\"}, \"azimuth_deg\": {\"type\": \"number\"}, \"dip_deg\": {\"type\": \"number\"}}}, \"points\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\", \"z\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"z\": {\"type\": \"number\"}}}}, \"contour_interval_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"owc_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"goc_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"wells\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"x\", \"y\"], \"properties\": {\"x\": {\"type\": \"number\"}, \"y\": {\"type\": \"number\"}, \"name\": {\"type\": \"string\"}, \"result\": {\"enum\": [\"oil\", \"gas\", \"water\", \"dry\", null]}}}}, \"section_line\": {\"type\": [\"array\", \"null\"], \"default\": null, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}}}\n\nexample params: {\"title\": \"Купол: изогипсы кровли и контур залежи по ВНК\", \"structure\": {\"type\": \"dome\", \"center\": [0.5, 0.5], \"crest_depth_m\": 1500, \"amplitude_m\": 80, \"radius_frac\": 0.35, \"elongation\": 1.6, \"azimuth_deg\": 30}, \"owc_m\": 1545, \"goc_m\": 1515, \"wells\": [{\"x\": 3000, \"y\": 2500, \"name\": \"1\", \"result\": \"gas\"}, {\"x\": 4300, \"y\": 3300, \"name\": \"2\", \"result\": \"oil\"}, {\"x\": 5200, \"y\": 1200, \"name\": \"3\", \"result\": \"water\"}], \"section_line\": [[600, 1000], [5400, 4000]]}\n\n### pressure_diffusion — Волна давления в пласте: p(r) и p(t) из одного решения\nНеустановившаяся фильтрация упругой жидкости: давление вокруг скважины (плоскорадиальный поток) или у галереи (прямолинейный поток) после пуска. Точное решение уравнения пьезопроводности (интеграл вероятности erf, интегральная показательная функция −Ei) и/или приближение ПССС (возмущённая область радиуса R(t), стационарный профиль внутри). Виды: профиль p(r) в момент t, история p(t) в точке наблюдения, план воронки депрессии. Все виды считаются из одной модели. Для тем: упругий режим, пьезопроводность, воронка депрессии, «давление расходится не с постоянной скоростью».\nКласс по умолчанию: B, метка: «симуляция». Для типов: Ф, М, В, волна давления, фильтрация, приток к скважине. Анимация: t∈[0,1]: время после пуска скважины от 0 до t_max_h (линейно); все виды синхронно.\n\nparams schema: {\"type\": \"object\", \"properties\": {\"geometry\": {\"enum\": [\"radial\", \"linear\"], \"default\": \"radial\"}, \"bc\": {\"enum\": [\"const_rate\", \"const_pressure\"], \"default\": \"const_rate\", \"description\": \"на скважине/галерее: постоянный дебит или постоянное забойное давление\"}, \"method\": {\"enum\": [\"exact\", \"pssc\", \"both\", \"exact_log\"], \"default\": \"exact\", \"description\": \"точное решение, ПССС, оба для сравнения, или точное + логарифмическое приближение у скважины (радиальный поток, постоянный дебит)\"}, \"r_scale\": {\"enum\": [\"linear\", \"log\"], \"default\": \"linear\", \"description\": \"шкала расстояния на профиле p(r)\"}, \"near_zone_factor\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"отметить ближнюю зону r² ≤ factor·4κt (например 0.03 по книге)\"}, \"k_md\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 100, \"description\": \"проницаемость, мД\"}, \"mu_mpas\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 1.0, \"description\": \"вязкость, мПа·с\"}, \"h_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 10}, \"B_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 100, \"description\": \"ширина пласта (для галереи), м\"}, \"beta_star_1_per_mpa\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 0.001, \"description\": \"коэффициент упругоёмкости пласта β*, 1/МПа\"}, \"kappa_m2_s\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"задать пьезопроводность κ напрямую, м²/с\"}, \"q_m3_day\": {\"type\": \"number\", \"default\": 100, \"description\": \"дебит, м³/сут (>0 — отбор)\"}, \"p0_mpa\": {\"type\": \"number\", \"default\": 20, \"description\": \"начальное пластовое давление, МПа\"}, \"pw_mpa\": {\"type\": \"number\", \"default\": 15, \"description\": \"забойное давление (для const_pressure), МПа\"}, \"rw_m\": {\"type\": \"number\", \"default\": 0.1}, \"t_max_h\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 24}, \"snapshots_h\": {\"type\": \"array\", \"items\": {\"type\": \"number\", \"exclusiveMinimum\": 0}, \"default\": []}, \"r_max_m\": {\"type\": [\"number\", \"null\"], \"default\": null}, \"r_obs_m\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"точка наблюдения для p(t), м\"}, \"views\": {\"type\": \"array\", \"items\": {\"enum\": [\"profile\", \"history\", \"plan\"]}, \"default\": [\"profile\", \"history\"]}, \"history_points\": {\"type\": \"array\", \"items\": {\"enum\": [\"obs\", \"well\"]}, \"default\": [\"obs\"], \"description\": \"что показывать на p(t): точку наблюдения и/или забой\"}, \"show_front\": {\"type\": \"boolean\", \"default\": true, \"description\": \"граница возмущённой области ПССС\"}, \"show_flow\": {\"type\": \"boolean\", \"default\": true}}}\n\nexample params: {\"title\": \"Пуск скважины с постоянным дебитом: воронка депрессии растёт как √t\", \"geometry\": \"radial\", \"bc\": \"const_rate\", \"method\": \"both\", \"k_md\": 100, \"mu_mpas\": 1, \"h_m\": 10, \"beta_star_1_per_mpa\": 0.001, \"q_m3_day\": 100, \"p0_mpa\": 20, \"t_max_h\": 24, \"snapshots_h\": [1, 6, 24], \"views\": [\"profile\", \"history\"]}\n\n### process_chain — Цепочка «причина → следствие» / «признак → правило → вывод»\nСхема из блоков и стрелок. Виды блоков различаются цветом: наблюдение (сигнал, что измерено), вывод (интерпретация), допущение, действие специалиста, причина, следствие, «иначе…» (предупреждение/контрпример). Подходит для порядка операций, причинно-следственных цепочек, логики интерпретации «признаки → правило → вывод», «решение на данных». Метка «схема».\nКласс по умолчанию: B, метка: «схема». Для типов: П, Пр, Р, Н, И, решение на данных, порядок действий, причинность. Анимация: t∈[0,1]: блоки появляются по порядку причинности.\n\nparams schema: {\"type\": \"object\", \"required\": [\"nodes\"], \"properties\": {\"nodes\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 14, \"items\": {\"type\": \"object\", \"required\": [\"id\", \"text\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"text\": {\"type\": \"string\", \"maxLength\": 120}, \"kind\": {\"enum\": [\"observation\", \"inference\", \"assumption\", \"action\", \"cause\", \"effect\", \"warning\"], \"default\": \"cause\"}}}}, \"edges\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"from\", \"to\"], \"properties\": {\"from\": {\"type\": \"string\"}, \"to\": {\"type\": \"string\"}, \"label\": {\"type\": \"string\", \"maxLength\": 40}}}}, \"direction\": {\"enum\": [\"auto\", \"lr\", \"tb\"], \"default\": \"auto\"}, \"show_kind_labels\": {\"type\": \"boolean\", \"default\": true}}}\n\nexample params: {\"title\": \"От сигнала к выводу: коллектор или нет\", \"nodes\": [{\"id\": \"a\", \"text\": \"ПС отклоняется влево от линии глин\", \"kind\": \"observation\"}, {\"id\": \"b\", \"text\": \"Диаметр скважины меньше номинального\", \"kind\": \"observation\"}, {\"id\": \"c\", \"text\": \"Пласт проницаем: фильтрат уходит в породу, на стенке корка\", \"kind\": \"inference\"}, {\"id\": \"d\", \"text\": \"Пресный раствор: ρф > ρв\", \"kind\": \"assumption\"}, {\"id\": \"e\", \"text\": \"Выделить пласт как коллектор и оценить насыщение\", \"kind\": \"action\"}], \"edges\": [{\"from\": \"a\", \"to\": \"c\"}, {\"from\": \"b\", \"to\": \"c\"}, {\"from\": \"d\", \"to\": \"c\", \"label\": \"условие\"}, {\"from\": \"c\", \"to\": \"e\"}]}\n\n### radial_invasion — Зона проникновения фильтрата вокруг скважины и профиль сопротивления\nГоризонтальный срез пласта от оси скважины наружу: раствор, глинистая корка, промытая зона, зона проникновения, неизменённая часть пласта; ниже — радиальный профиль удельного сопротивления из тех же радиусов (повышающее проникновение ρзп > ρп для водоносного пласта при пресном растворе, понижающее — для продуктивного). Отметки глубинности зондов. Для тем: условия вскрытия, проникновение, почему зонды разной глубинности показывают разное.\nКласс по умолчанию: B, метка: «схема». Для типов: Н, И, М, проникновение, глубинность, условия вскрытия. Анимация: t∈[0,1]: фронт проникновения продвигается от стенки (∝√t).\n\nparams schema: {\"type\": \"object\", \"properties\": {\"lith\": {\"type\": \"string\", \"default\": \"sand\"}, \"fluid\": {\"enum\": [\"water\", \"oil\", \"gas\"], \"default\": \"water\"}, \"rw_m\": {\"type\": \"number\", \"default\": 0.108}, \"mudcake_mm\": {\"type\": \"number\", \"default\": 10}, \"rxo_m\": {\"type\": \"number\", \"default\": 0.3, \"description\": \"радиус промытой зоны\"}, \"ri_m\": {\"type\": \"number\", \"default\": 0.6, \"description\": \"радиус зоны проникновения (D/2)\"}, \"r_max_m\": {\"type\": \"number\", \"default\": 1.6}, \"Rm\": {\"type\": \"number\", \"default\": 0.6}, \"Rmc\": {\"type\": \"number\", \"default\": 0.9}, \"Rxo\": {\"type\": \"number\", \"default\": 12.0}, \"Rt\": {\"type\": \"number\", \"default\": 2.0}, \"tools\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"name\", \"radius_m\"], \"properties\": {\"name\": {\"type\": \"string\"}, \"radius_m\": {\"type\": \"number\"}}}}}}\n\nexample params: {\"title\": \"Повышающее проникновение: водоносный пласт, пресный раствор\", \"fluid\": \"water\", \"Rxo\": 12.0, \"Rt\": 2.0, \"tools\": [{\"name\": \"микрозонд\", \"radius_m\": 0.15}, {\"name\": \"малый зонд\", \"radius_m\": 0.45}, {\"name\": \"большой зонд\", \"radius_m\": 1.3}]}\n\n### timeline_growth — Геологическая история: накопление, рост рифа, проградация, размыв, погружение\nРазрез, который строится во времени по событиям: накопление слоя (пласт, клин, линза, постройка-риф, проградирующий клин дельты), колебания уровня моря, размыв (несогласие как событие: размыв → перерыв → новое накопление), погружение. Молодые слои всегда ложатся на текущую поверхность. Внизу — шкала времени с текущим событием. Для тем: рост рифа, проградация дельты, формирование ловушки и покрышки, «как пласт оказался на глубине».\nКласс по умолчанию: B, метка: «схема». Для типов: В, П, М, геологическое время, рост рифа, несогласие. Анимация: t∈[0,1]: события по порядку; текущее событие выполняется частично.\n\nparams schema: {\"type\": \"object\", \"required\": [\"events\"], \"properties\": {\"width_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 3000}, \"base_lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"], \"default\": \"basement\"}, \"base_thickness_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 30}, \"sea_level_m\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"уровень моря над исходной поверхностью, м\"}, \"events\": {\"type\": \"array\", \"minItems\": 1, \"maxItems\": 12, \"items\": {\"type\": \"object\", \"required\": [\"kind\"], \"properties\": {\"kind\": {\"enum\": [\"deposit\", \"erode\", \"sea_level\", \"subside\"]}, \"label\": {\"type\": \"string\"}, \"time_label\": {\"type\": \"string\"}, \"lith\": {\"enum\": [\"sand\", \"shaly_sand\", \"siltstone\", \"shale\", \"limestone\", \"dolomite\", \"marl\", \"anhydrite\", \"salt\", \"coal\", \"conglomerate\", \"basement\", \"generic\"]}, \"shape\": {\"enum\": [\"sheet\", \"wedge\", \"lens\", \"mound\", \"prograde\", \"fill\"], \"default\": \"sheet\", \"description\": \"fill — заполнить рельеф до отметки level_m (облекание/захоронение)\"}, \"thickness_m\": {\"type\": \"number\", \"minimum\": 0}, \"center_frac\": {\"type\": \"number\"}, \"width_frac\": {\"type\": \"number\"}, \"thicken\": {\"enum\": [\"left\", \"right\"]}, \"up_to_sea_level\": {\"type\": \"boolean\", \"default\": false, \"description\": \"рост не выше уровня моря (риф)\"}, \"level_m\": {\"type\": \"number\", \"description\": \"erode: срезать до отметки; sea_level: новый уровень\"}, \"amount_m\": {\"type\": \"number\", \"description\": \"subside: на сколько погрузить\"}}}}}}\n\nexample params: {\"title\": \"Рост рифа и его захоронение\", \"width_m\": 3000, \"sea_level_m\": 40, \"base_lith\": \"limestone\", \"events\": [{\"kind\": \"deposit\", \"lith\": \"limestone\", \"shape\": \"mound\", \"thickness_m\": 35, \"center_frac\": 0.5, \"width_frac\": 0.4, \"up_to_sea_level\": true, \"label\": \"риф растёт к свету\", \"time_label\": \"этап 1\"}, {\"kind\": \"sea_level\", \"level_m\": 80, \"label\": \"море углубляется\", \"time_label\": \"этап 2\"}, {\"kind\": \"deposit\", \"lith\": \"limestone\", \"shape\": \"mound\", \"thickness_m\": 35, \"center_frac\": 0.5, \"width_frac\": 0.3, \"up_to_sea_level\": true, \"label\": \"риф догоняет уровень моря\", \"time_label\": \"этап 3\"}, {\"kind\": \"deposit\", \"lith\": \"shale\", \"shape\": \"fill\", \"level_m\": 78, \"label\": \"глины перекрывают риф\", \"time_label\": \"этап 4\"}]}\n\n### well_column — Скважина: конструкция, столб раствора и давление по глубине (в т.ч. газ в стволе)\nСхема ствола скважины (обсадные колонны до башмаков, открытый ствол, бурильная колонна, раствор) рядом с графиком давления по глубине из той же модели: гидростатика ρgh, давление при циркуляции (ЭЦП), пластовое давление и давление гидроразрыва (если заданы), всплытие газовой пачки в закрытой (давление растёт по всему стволу) или открытой скважине (газ расширяется у устья). Для глав о бурении: гидростатика, ГНВП, глушение, конструкция скважины.\nКласс по умолчанию: B, метка: «симуляция». Для типов: Ф, П, М, бурение, гидростатика, газ в стволе, конструкция скважины. Анимация: t∈[0,1]: газовая пачка всплывает от забоя к устью; давления пересчитываются синхронно.\n\nparams schema: {\"type\": \"object\", \"properties\": {\"depth_m\": {\"type\": \"number\", \"exclusiveMinimum\": 0, \"default\": 3000}, \"casings\": {\"type\": \"array\", \"default\": [], \"items\": {\"type\": \"object\", \"required\": [\"shoe_m\"], \"properties\": {\"name\": {\"type\": \"string\"}, \"shoe_m\": {\"type\": \"number\"}, \"od_mm\": {\"type\": \"number\"}}}}, \"hole_mm\": {\"type\": \"number\", \"default\": 216}, \"mud_density_g_cc\": {\"type\": \"number\", \"default\": 1.2}, \"ecd_g_cc\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"эквивалентная циркуляционная плотность\"}, \"pore_gradient_g_cc\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"пластовое давление как эквивалентная плотность\"}, \"frac_gradient_g_cc\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"давление гидроразрыва как эквивалентная плотность\"}, \"drill_string\": {\"type\": \"boolean\", \"default\": true}, \"kick\": {\"type\": [\"object\", \"null\"], \"default\": null, \"properties\": {\"mode\": {\"enum\": [\"closed\", \"open\"]}, \"volume_m3\": {\"type\": \"number\", \"default\": 1.0}, \"start_depth_m\": {\"type\": \"number\"}}}, \"bubble_depth_m\": {\"type\": [\"number\", \"null\"], \"default\": null, \"description\": \"статичное положение пачки\"}}}\n\nexample params: {\"title\": \"Газовая пачка в закрытой скважине: давление растёт по всему стволу\", \"depth_m\": 3000, \"casings\": [{\"name\": \"кондуктор\", \"shoe_m\": 500, \"od_mm\": 324}, {\"name\": \"промежуточная колонна\", \"shoe_m\": 1800, \"od_mm\": 245}], \"mud_density_g_cc\": 1.2, \"frac_gradient_g_cc\": 1.75, \"kick\": {\"mode\": \"closed\", \"volume_m3\": 1.5}}\n\n# Легенда и конвенции (стайлгайд домена)\n- Конвенция планшета: международная (API) — глубина вниз, ГК 0–150 API, сопротивление в лог. шкале, нейтронная пористость справа налево\n- Разрез: глубина растёт вниз; молодые слои над старыми; вертикальное преувеличение подписывается числом\n- Полярность SEG (нормальная): рост акустического импеданса вниз → положительная амплитуда → пик; пик залит чёрным; в цвете положительная амплитуда синяя, отрицательная красная\n- время идёт слева направо\n- стрелки потока направлены от высокого давления к низкому\n- север вверху, масштабная линейка обязательна\n- Цвета флюидов: газ — #E53935, нефть — #2E7D32, вода — #1E66C9; сверху вниз по плотности: газ → нефть → вода\n- Коды литологии для параметров lith: generic = порода, sand = песчаник, shaly_sand = глинистый песчаник, siltstone = алевролит, shale = глина, limestone = известняк, dolomite = доломит, marl = мергель, anhydrite = ангидрит, salt = каменная соль, coal = уголь, conglomerate = конгломерат, basement = фундамент (кристаллические породы)\n\n# Чек-лист физической и предметной корректности\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.\n\n\n# Типичные заблуждения (сцена не должна их закреплять)\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\n\n# Что вернуть\n- node_id: «geo.test_asquith.x1.26»; format: «interactive».\n- title (до 8 слов), idea (один когнитивный шаг), hook (вопрос или парадокс для первых 3 секунд — на материале узла).\n- views: 1–4 вида одного мира (имя → template, params, purpose). Параметры — по params_schema шаблона, физически согласованные между видами.\n- objects: что изображено (пласты, скважина, прибор, флюиды…) и на что опирается образ (страница/рисунок книги из узла или «типовой фото-референс: …»).\n- invariants: что неизменно во всех кадрах (порядок слоёв, положение контактов, конструкция прибора, параметры модели…), не меньше 3.\n- assumptions: упрощения модели и условные значения (не из книги).\n- exaggerations: сознательные преувеличения с числом или словом («условно»).\n- frames: 2–5 кадров. Для каждого: id (f1, f2…), view, t=[начало, конец] параметра анимации шаблона (см. «Анимация» в каталоге), class, provenance, description (что видно и что понять), claim_ids, true_scale, при необходимости params_override.\n- checklist: самопроверка по чек-листу.\n- data_bridge: где здесь данные и что из этого может автоматизировать цифровик (только на основе узла: data_meaning, it_analogy).\n- interactive: что пользователь меняет (параметр шаблона) и что видит в ответ.\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"Scene spec (спецификация сцены ролика / интерактива)\", \"type\": \"object\", \"required\": [\"node_id\", \"format\", \"title\", \"idea\", \"hook\", \"views\", \"objects\", \"invariants\", \"assumptions\", \"exaggerations\", \"frames\", \"checklist\", \"data_bridge\"], \"properties\": {\"node_id\": {\"type\": \"string\"}, \"format\": {\"enum\": [\"short\", \"long\", \"interactive\"]}, \"title\": {\"type\": \"string\", \"description\": \"название ролика, до 8 слов\"}, \"idea\": {\"type\": \"string\", \"description\": \"один когнитивный шаг: что зритель должен понять (1–2 фразы)\"}, \"hook\": {\"type\": \"string\", \"description\": \"вопрос, парадокс или нарушенное ожидание для первых 3 секунд\"}, \"views\": {\"type\": \"object\", \"minProperties\": 1, \"maxProperties\": 5, \"description\": \"виды одного мира: имя -> шаблон и его параметры (params по params_schema шаблона)\", \"additionalProperties\": {\"type\": \"object\", \"required\": [\"template\", \"params\", \"purpose\"], \"properties\": {\"template\": {\"type\": \"string\"}, \"params\": {\"type\": \"object\"}, \"purpose\": {\"type\": \"string\", \"description\": \"что этот вид показывает\"}}}}, \"objects\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"name\", \"description\"], \"properties\": {\"name\": {\"type\": \"string\"}, \"description\": {\"type\": \"string\"}, \"reference\": {\"type\": \"string\", \"description\": \"фото-референс или страница книги\"}}}}, \"invariants\": {\"type\": \"array\", \"minItems\": 3, \"items\": {\"type\": \"string\"}, \"description\": \"что обязано оставаться неизменным во всех кадрах\"}, \"assumptions\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"exaggerations\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"what\", \"factor\"], \"properties\": {\"what\": {\"type\": \"string\"}, \"factor\": {\"type\": [\"number\", \"string\"]}}}}, \"frames\": {\"type\": \"array\", \"minItems\": 3, \"maxItems\": 14, \"items\": {\"type\": \"object\", \"required\": [\"id\", \"view\", \"t\", \"class\", \"provenance\", \"description\", \"claim_ids\"], \"properties\": {\"id\": {\"type\": \"string\", \"pattern\": \"^f[0-9]{1,2}$\"}, \"view\": {\"type\": \"string\", \"description\": \"имя вида из views\"}, \"t\": {\"type\": \"array\", \"items\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 1}, \"minItems\": 2, \"maxItems\": 2, \"description\": \"состояние модели в начале и в конце кадра (параметр анимации шаблона)\"}, \"class\": {\"enum\": [\"A\", \"B\"]}, \"provenance\": {\"enum\": [\"реальные данные\", \"симуляция\", \"схема\"]}, \"description\": {\"type\": \"string\", \"description\": \"что видно в кадре и что зритель должен понять\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"true_scale\": {\"type\": \"boolean\", \"default\": false}, \"params_override\": {\"type\": \"object\", \"description\": \"изменения параметров вида только для этого кадра (например vertical_exaggeration: 1)\"}}}}, \"checklist\": {\"type\": \"array\", \"minItems\": 5, \"description\": \"самопроверка по чек-листу физической и предметной корректности\", \"items\": {\"type\": \"object\", \"required\": [\"item\", \"ok\", \"note\"], \"properties\": {\"item\": {\"type\": \"string\"}, \"ok\": {\"type\": \"boolean\"}, \"note\": {\"type\": \"string\"}}}}, \"data_bridge\": {\"type\": \"string\", \"description\": \"где здесь данные и ИТ: какие данные, что можно автоматизировать\"}, \"interactive\": {\"type\": \"string\", \"description\": \"для формата interactive: что зритель меняет и что видит\"}}}",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Scene spec (спецификация сцены ролика / интерактива)",
+      "type": "object",
+      "required": [
+        "node_id",
+        "format",
+        "title",
+        "idea",
+        "hook",
+        "views",
+        "objects",
+        "invariants",
+        "assumptions",
+        "exaggerations",
+        "frames",
+        "checklist",
+        "data_bridge"
+      ],
+      "properties": {
+        "node_id": {
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "short",
+            "long",
+            "interactive"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "description": "название ролика, до 8 слов"
+        },
+        "idea": {
+          "type": "string",
+          "description": "один когнитивный шаг: что зритель должен понять (1–2 фразы)"
+        },
+        "hook": {
+          "type": "string",
+          "description": "вопрос, парадокс или нарушенное ожидание для первых 3 секунд"
+        },
+        "views": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 5,
+          "description": "виды одного мира: имя -> шаблон и его параметры (params по params_schema шаблона)",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "template",
+              "params",
+              "purpose"
+            ],
+            "properties": {
+              "template": {
+                "type": "string"
+              },
+              "params": {
+                "type": "object"
+              },
+              "purpose": {
+                "type": "string",
+                "description": "что этот вид показывает"
+              }
+            }
+          }
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "description"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string",
+                "description": "фото-референс или страница книги"
+              }
+            }
+          }
+        },
+        "invariants": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          },
+          "description": "что обязано оставаться неизменным во всех кадрах"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exaggerations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "what",
+              "factor"
+            ],
+            "properties": {
+              "what": {
+                "type": "string"
+              },
+              "factor": {
+                "type": [
+                  "number",
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "frames": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 14,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "view",
+              "t",
+              "class",
+              "provenance",
+              "description",
+              "claim_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^f[0-9]{1,2}$"
+              },
+              "view": {
+                "type": "string",
+                "description": "имя вида из views"
+              },
+              "t": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "description": "состояние модели в начале и в конце кадра (параметр анимации шаблона)"
+              },
+              "class": {
+                "enum": [
+                  "A",
+                  "B"
+                ]
+              },
+              "provenance": {
+                "enum": [
+                  "реальные данные",
+                  "симуляция",
+                  "схема"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "description": "что видно в кадре и что зритель должен понять"
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "true_scale": {
+                "type": "boolean",
+                "default": false
+              },
+              "params_override": {
+                "type": "object",
+                "description": "изменения параметров вида только для этого кадра (например vertical_exaggeration: 1)"
+              }
+            }
+          }
+        },
+        "checklist": {
+          "type": "array",
+          "minItems": 5,
+          "description": "самопроверка по чек-листу физической и предметной корректности",
+          "items": {
+            "type": "object",
+            "required": [
+              "item",
+              "ok",
+              "note"
+            ],
+            "properties": {
+              "item": {
+                "type": "string"
+              },
+              "ok": {
+                "type": "boolean"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data_bridge": {
+          "type": "string",
+          "description": "где здесь данные и ИТ: какие данные, что можно автоматизировать"
+        },
+        "interactive": {
+          "type": "string",
+          "description": "для формата interactive: что зритель меняет и что видит"
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/test_asquith/llm/scene.geo.test_asquith.x1.26.interactive/cbfa4e94cc50e1da9692.json",
+    "created": "2026-11-26T06:00:20"
+  },
+  "response": {
+    "node_id": "geo.test_asquith.x1.26",
+    "format": "interactive",
+    "title": "Рисунок точек и удержание воды",
+    "idea": "Сравнение точек с линиями одинаковой объёмной доли воды помогает увидеть, удерживается ли вода в породе.",
+    "hook": "Несколько интервалов дают разные водонасыщенности. Как понять, одинаковая ли в них объёмная доля воды?",
+    "views": {
+      "buckles": {
+        "template": "crossplot",
+        "params": {
+          "x": {
+            "label": "Пористость",
+            "unit": "доля ед.",
+            "range": [
+              0.08,
+              0.35
+            ],
+            "scale": "linear"
+          },
+          "y": {
+            "label": "Водонасыщенность",
+            "unit": "доля ед.",
+            "range": [
+              0,
+              1
+            ],
+            "scale": "linear"
+          },
+          "functions": [
+            {
+              "label": "Объёмная доля воды 0.025",
+              "expr": "0.025 / x",
+              "dashed": false
+            },
+            {
+              "label": "Объёмная доля воды 0.05",
+              "expr": "0.05 / x",
+              "dashed": true
+            },
+            {
+              "label": "Объёмная доля воды 0.07",
+              "expr": "0.07 / x",
+              "dashed": true
+            }
+          ],
+          "series": [
+            {
+              "label": "Условно: вдоль одной гиперболы",
+              "points": [
+                [
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.125,
+                  0.2
+                ],
+                [
+                  0.25,
+                  0.1
+                ]
+              ],
+              "kind": "points",
+              "dashed": false
+            },
+            {
+              "label": "Условно: разброс",
+              "points": [
+                [
+                  0.1,
+                  0.5
+                ],
+                [
+                  0.16,
+                  0.44
+                ],
+                [
+                  0.25,
+                  0.34
+                ]
+              ],
+              "kind": "points",
+              "dashed": false
+            }
+          ]
+        },
+        "purpose": "Сравнить условные пары пористости и насыщенности с гиперболами."
+      },
+      "rocks": {
+        "template": "comparison_bar",
+        "params": {
+          "items": [
+            {
+              "label": "Крупные, 1.0–0.5 мм",
+              "min": 0.02,
+              "max": 0.025
+            },
+            {
+              "label": "Средние, 0.5–0.25 мм",
+              "min": 0.025,
+              "max": 0.035
+            },
+            {
+              "label": "Мелкие, 0.25–0.125 мм",
+              "min": 0.035,
+              "max": 0.05
+            },
+            {
+              "label": "Очень мелкие, 0.125–0.062 мм",
+              "min": 0.05,
+              "max": 0.07
+            },
+            {
+              "label": "Алеврит, < 0.062 мм",
+              "min": 0.07,
+              "max": 0.09
+            },
+            {
+              "label": "Кавернозные карбонаты",
+              "min": 0.005,
+              "max": 0.015
+            },
+            {
+              "label": "Кавернозные с межкристаллическими порами",
+              "min": 0.015,
+              "max": 0.025
+            },
+            {
+              "label": "Межкристаллические",
+              "min": 0.025,
+              "max": 0.04
+            },
+            {
+              "label": "Мелоподобные",
+              "value": 0.05
+            }
+          ],
+          "value_label": "Объёмная доля воды в породе",
+          "unit": "доля ед.",
+          "scale": "linear"
+        },
+        "purpose": "Сопоставить диапазоны из таблицы для обломочных и карбонатных пород."
+      }
+    },
+    "objects": [
+      {
+        "name": "Гиперболы",
+        "description": "Линии постоянного произведения пористости и водонасыщенности.",
+        "reference": "Книжная страница 131"
+      },
+      {
+        "name": "Табличные диапазоны",
+        "description": "Сравнительные значения по размеру зёрен или типу пор в карбонатах.",
+        "reference": "Книжная страница 131"
+      }
+    ],
+    "invariants": [
+      "Обе координаты диаграммы — объёмные доли.",
+      "На одной гиперболе их произведение постоянно.",
+      "Таблица даёт контекст к диаграмме, а не значения условных интервалов."
+    ],
+    "assumptions": [
+      "Пары координат точек условные: исходных измерений скважин узел не содержит.",
+      "Изолинии 0.025, 0.05 и 0.07 взяты как демонстрационные уровни в пределах названных в узле значений; они не пороги."
+    ],
+    "exaggerations": [],
+    "frames": [
+      {
+        "id": "f1",
+        "view": "buckles",
+        "t": [
+          0,
+          0.25
+        ],
+        "description": "Начните с вопроса: можно ли сравнить зоны только по тому, сколько воды в порах?",
+        "provenance": "симуляция",
+        "claim_ids": [],
+        "true_scale": false,
+        "class": "A"
+      },
+      {
+        "id": "f2",
+        "view": "buckles",
+        "t": [
+          0.25,
+          1
+        ],
+        "description": "Гиперболы показывают одинаковое произведение двух координат. Сравните условную группу вдоль одной гиперболы с группой с большим разбросом.",
+        "provenance": "симуляция",
+        "claim_ids": [
+          "geo.test_asquith.x1.26.c01",
+          "geo.test_asquith.x1.26.c02",
+          "geo.test_asquith.x1.26.c03",
+          "geo.test_asquith.x1.26.c05",
+          "geo.test_asquith.x1.26.c06"
+        ],
+        "true_scale": false,
+        "class": "A"
+      },
+      {
+        "id": "f3",
+        "view": "rocks",
+        "t": [
+          0,
+          1
+        ],
+        "description": "В таблице с уменьшением зёрен обломочных пород растут удержание воды и объёмная доля воды. Карбонатные числа — только очень общий ориентир по типу пор.",
+        "provenance": "реальные данные",
+        "claim_ids": [
+          "geo.test_asquith.x1.26.c07",
+          "geo.test_asquith.x1.26.c08",
+          "geo.test_asquith.x1.26.c09",
+          "geo.test_asquith.x1.26.c10",
+          "geo.test_asquith.x1.26.c11",
+          "geo.test_asquith.x1.26.c12",
+          "geo.test_asquith.x1.26.c13",
+          "geo.test_asquith.x1.26.c14",
+          "geo.test_asquith.x1.26.c15"
+        ],
+        "true_scale": false,
+        "class": "A"
+      }
+    ],
+    "checklist": [
+      {
+        "item": "Сигнал отделён от свойства",
+        "note": "Состояние воды — вывод по рисунку точек.",
+        "ok": true
+      },
+      {
+        "item": "Измеренное не выдано за расчёт и наоборот",
+        "note": "Произведение вычисляется, а не измеряется напрямую.",
+        "ok": true
+      },
+      {
+        "item": "Условия применимости названы",
+        "note": "Для карбонатов диапазоны только ориентировочные.",
+        "ok": true
+      },
+      {
+        "item": "Совпадают объекты и параметры между кадрами",
+        "note": "Таблица и график сопоставляют одну и ту же величину; точки не приписаны строкам таблицы.",
+        "ok": true
+      },
+      {
+        "item": "Метка происхождения соответствует данным",
+        "note": "График — расчётная иллюстрация, диапазоны — из узла.",
+        "ok": true
+      },
+      {
+        "item": "Диапазоны и единицы сохранены",
+        "note": "Столбики показывают исходные границы, диаметры подписаны в миллиметрах.",
+        "ok": true
+      }
+    ],
+    "data_bridge": "Постройте диаграмму рассеяния по парам пористости и водонасыщенности и вычисляйте их произведение по интервалам. Интерпретация относится к рисунку группы.",
+    "interactive": "Ползунок t прорисовывает гиперболы по пористости; в табличном виде раскрывает сравниваемые диапазоны."
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 55866,
+    "output_chars": 7249
+  }
+}

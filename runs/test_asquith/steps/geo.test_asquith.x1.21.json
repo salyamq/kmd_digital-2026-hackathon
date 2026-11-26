@@ -1,0 +1,427 @@
+{
+  "node_id": "geo.test_asquith.x1.21",
+  "chapter": "test_asquith",
+  "index": 25,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Как получить пористость по сопротивлению",
+  "title_book": "Conductivity-derived porosity",
+  "section": "x1",
+  "pages": [
+    129,
+    130
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "И",
+    "secondary": "Пр",
+    "threshold": "Расчётная пористость под водяной гипотезой — диагностический признак, а не независимое измерение."
+  },
+  "threshold": "Расчётная пористость под водяной гипотезой — диагностический признак, а не независимое измерение.",
+  "format": "data_practice",
+  "format_rationale": "Сравните условную пористость с отдельной кривой и выберите интервалы для дальнейшей проверки.",
+  "order_rationale": "Меняет направление расчёта: берёт сопротивление и получает условную пористость по водяной модели.",
+  "essence": [
+    "Сначала рассчитайте пористость для случая, будто поры заполнены только водой.",
+    "Затем сравните её значения в пористых и проницаемых интервалах."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Первоначально метод использовал кривую проводимости — отклика, связанного с прохождением тока. Её теперь редко показывают. Авторы используют сопротивление незатронутой зоны в уравнении Арчи. В расчёт подставляют водонасыщенность 1,0: поры считают полностью заполненными водой.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c01",
+            "geo.test_asquith.x1.21.c02",
+            "geo.test_asquith.x1.21.c04"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.21.c01",
+              "quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.21.c02",
+              "quote": "This technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$).",
+              "page": 130,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.21.c04",
+              "quote": "1. Calculate the porosity from Archie's equation (assuming $S_w = 1.0$), using the uninvaded zone resistivity measurement.",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "На дорожке ПС большие значения откладывают слева, малые — справа. Положение и значения кривой сравнивают в пористых проницаемых зонах. Для оценки водонасыщенности её можно сравнить с акустической, плотностной или нейтронной пористостью.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c03",
+            "geo.test_asquith.x1.21.c05",
+            "geo.test_asquith.x1.21.c06"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.21.c03",
+              "quote": "The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.21.c05",
+              "quote": "2. Compare the curve values and the relative position of the curve in porous and permeable zones.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.21.c06",
+              "quote": "3. If desired, an Archie water saturation can be calculated by comparing the conductivity-derived porosity ty to porosity from one of the porosity measurements (sonic, density, or neutron).",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "text": "Рассчитайте пористость по сопротивлению незатронутой зоны при водонасыщенности 1,0.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c02",
+            "geo.test_asquith.x1.21.c04"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "Сопоставьте значения кривой между пористыми проницаемыми зонами.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c05"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "При необходимости сравните расчёт с отдельной кривой пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c06"
+          ],
+          "pages": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Сопротивление незатронутой зоны",
+          "Признаки пористости и проницаемости",
+          "Отдельная кривая пористости, если есть"
+        ],
+        "rule": "Считайте пористость при полном водонасыщении и сопоставляйте её в пористых проницаемых интервалах.",
+        "conclusion": "При необходимости сравните с независимой кривой, чтобы оценить водонасыщенность.",
+        "claim_ids": [
+          "geo.test_asquith.x1.21.c02",
+          "geo.test_asquith.x1.21.c04",
+          "geo.test_asquith.x1.21.c05",
+          "geo.test_asquith.x1.21.c06"
+        ],
+        "cases": [
+          {
+            "given": "Есть сопротивление незатронутой зоны и пригодные интервалы.",
+            "options": [
+              "Рассчитать кривую при полном водонасыщении",
+              "Считать сопротивление прямым замером пористости"
+            ],
+            "answer": 0,
+            "why": "Метод использует водоносную форму уравнения Арчи.",
+            "source": "модель"
+          },
+          {
+            "given": "Нужна оценка насыщенности; есть плотностная пористость.",
+            "options": [
+              "Ничего больше не сравнивать",
+              "Сопоставить с плотностной пористостью"
+            ],
+            "answer": 1,
+            "why": "Авторы используют сравнение с отдельной кривой для оценки насыщенности.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "text": "В расчёт подставляют водонасыщенность 1,0: поры считают полностью заполненными водой.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c04"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "Сравнивают пористые и проницаемые зоны.",
+          "claim_ids": [
+            "geo.test_asquith.x1.21.c05"
+          ],
+          "pages": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сопротивление незатронутой зоны и водяное допущение Арчи → Кривая пористости для сравнения зон.",
+        "inputs": "Сопротивление незатронутой зоны и водяное допущение Арчи",
+        "outputs": "Кривая пористости для сравнения зон",
+        "breaks_where": "Если расчёт принимают за независимое измерение порового пространства",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Сопротивление незатронутой зоны и водяное допущение Арчи",
+          "manual_steps": "Возьмите сопротивление незатронутой зоны, примите полную водонасыщенность и сравните расчётные значения и форму кривой в проницаемых пористых зонах.",
+          "judgment_points": "Какие пористые проницаемые зоны сравнимы",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Перепутать направление шкалы пористости",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Рассчитать скрытый признак при заведомо заданном состоянии и проверить расхождение с независимым каналом.",
+        "breaks_where": "Смена состояния флюида влияет на одно из измерений физически, а не через логику сравнения.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        129,
+        130
+      ],
+      "items": [
+        {
+          "term": "Пористость по сопротивлению",
+          "definition": "Расчётная пористость из уравнения Арчи при допущении полного насыщения водой.",
+          "en": "conductivity-derived porosity",
+          "page": 130,
+          "by": "author"
+        },
+        {
+          "term": "Истинное сопротивление",
+          "definition": "Сопротивление незатронутой зоны пласта.",
+          "en": "true formation resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля порового объёма, занятая водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Проницаемость",
+          "definition": "Способность породы пропускать флюид.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "ПС",
+          "definition": "Кривая самопроизвольной поляризации, отклик на различие сопротивлений пластовой воды и фильтрата.",
+          "en": "spontaneous potential",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Электропроводность",
+          "definition": "Величина, обратная удельному электрическому сопротивлению.",
+          "en": "conductivity",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Первая кривая — расчёт при водяном допущении, а не независимое измерение.",
+      "alt": "Последовательность: Рассчитать при полном водонасыщении → Сравнить пригодные интервалы → Сопоставить с независимой пористостью.",
+      "file": "illustrations/geo.test_asquith.x1.21__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.21.c04",
+        "geo.test_asquith.x1.21.c05",
+        "geo.test_asquith.x1.21.c06"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.21.c01",
+      "kind": "observation",
+      "text": "Метод возник с кривой проводимости, которую теперь редко показывают на диаграммах; здесь используют сопротивление.",
+      "quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.21.c02",
+      "kind": "assumption",
+      "text": "Пористость вычисляют по форме Арчи для полностью водоносной зоны.",
+      "quote": "This technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$).",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.21.c03",
+      "kind": "observation",
+      "text": "Кривую показывают на дорожке ПС, с большими значениями слева и малыми справа.",
+      "quote": "The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.21.c04",
+      "kind": "observation",
+      "text": "В расчёт Арчи подставляют сопротивление незатронутой зоны и насыщенность 1.0.",
+      "quote": "1. Calculate the porosity from Archie's equation (assuming $S_w = 1.0$), using the uninvaded zone resistivity measurement.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.21.c05",
+      "kind": "observation",
+      "text": "Значения и положение кривой сравнивают в пористых и проницаемых зонах.",
+      "quote": "2. Compare the curve values and the relative position of the curve in porous and permeable zones.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.21.c06",
+      "kind": "observation",
+      "text": "При необходимости можно оценить водонасыщенность по сравнению с акустической, плотностной или нейтронной пористостью.",
+      "quote": "3. If desired, an Archie water saturation can be calculated by comparing the conductivity-derived porosity ty to porosity from one of the porosity measurements (sonic, density, or neutron).",
+      "page": 130,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.21.t01",
+    "geo.test_asquith.x1.21.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.21.k01",
+    "geo.test_asquith.x1.21.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.14",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.15",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

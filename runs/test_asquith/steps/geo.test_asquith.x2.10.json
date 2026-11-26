@@ -1,0 +1,678 @@
+{
+  "node_id": "geo.test_asquith.x2.10",
+  "chapter": "test_asquith",
+  "index": 47,
+  "part": {
+    "id": "part5",
+    "title": "Диаграмма Хингла: другой масштаб, те же данные"
+  },
+  "title_beginner": "Что извлечь из водной линии",
+  "title_book": "SATURATION CROSSPLOTS",
+  "section": "x2",
+  "pages": [
+    133,
+    134,
+    135
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "И",
+    "threshold": "Одна опорная прямая даёт разные оценки: сопротивление воды по точке линии, параметр матрицы по пересечению, насыщенность по сравнению сопротивлений."
+  },
+  "threshold": "Одна опорная прямая даёт разные оценки: сопротивление воды по точке линии, параметр матрицы по пересечению, насыщенность по сравнению сопротивлений.",
+  "format": "data_practice",
+  "format_rationale": "От водяной линии последовательно считайте сведения о матрице и сопротивлении воды.",
+  "order_rationale": "Связывает водяную прямую и точку пересечения с расчётом свойств матрицы и воды.",
+  "essence": [
+    "По водной линии Хингла оценивают сопротивление воды, свойства матрицы или насыщенность отдельной точки.",
+    "Для каждой оценки нужен свой способ считывания."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Сопротивление пластовой воды",
+          "text": "Как и Пикетт, Хингл позволяет оценивать параметры из каротажа, измерений вдоль скважины. Выберите любую точку **водной линии**, прямой водоносных точек. Считайте её пористость и сопротивление. Примите коэффициент извилистости и показатель цементации по выбранной сетке. Сопротивление воды вычисляют по формуле $R_w=R_o\\phi^m/a$.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c01",
+            "geo.test_asquith.x2.10.c02",
+            "geo.test_asquith.x2.10.c03",
+            "geo.test_asquith.x2.10.c04",
+            "geo.test_asquith.x2.10.c05"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.10.c01",
+              "quote": "As with the Pickett plot, the Hingle plot allows the interpreter to predict some of the parameters from the logs rather than estimating them by other methods.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c02",
+              "quote": "The formation water resistivity ($R_w$) can be estimated by choosing any point along the water-bearing line.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c03",
+              "quote": "The point's resistivity ($R_o$) and porosity can be read from the plot",
+              "page": 134,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c04",
+              "quote": "values of tortuosity factor ($a$) and cementation exponent ($m$) are assumed based on the chart that is chosen.",
+              "page": 134,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c05",
+              "quote": "$$R_w = \\frac{R_o \\times \\phi^m}{a} \\tag{7.29}$$",
+              "page": 134,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Параметры твёрдой части",
+          "text": "Чтобы оценить параметр **матрицы**, твёрдой части породы, отложите по горизонтали объёмную плотность или время пробега. При достаточном диапазоне пористости продолжите водную линию до нулевой проводимости. Подставьте координату пересечения в формулу пористости как плотность или время пробега матрицы.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c06",
+            "geo.test_asquith.x2.10.c07",
+            "geo.test_asquith.x2.10.c08"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.10.c06",
+              "quote": "By plotting the bulk density ($\\rho_b$) or sonic travel time ($\\Delta t$) values on the x-axis, rather than the porosity, the matrix density or matrix travel time ($\\rho_{ma}$ or $\\Delta t_{ma}$) can be estimated.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c07",
+              "quote": "If there is a sufficient range of porosities used to determine the water-bearing line, the line can be extrapolated to the zero-conductivity value (the bottom of the chart).",
+              "page": 134,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c08",
+              "quote": "The value of this intercept is the matrix value for the porosity equation.",
+              "page": 134,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Где окажется пересечение",
+          "text": "Выбор места нулевой пористости на готовой диаграмме произволен. На оси пористости ноль удобнее поставить слева. При плотности или времени пробега пересечение может быть не в левом нижнем углу. Так бывает, если фактическое значение матрицы отличается от ожидаемого. Значения по горизонтальной оси всегда возрастают слева направо.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c09",
+            "geo.test_asquith.x2.10.c10",
+            "geo.test_asquith.x2.10.c11",
+            "geo.test_asquith.x2.10.c12"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.10.c09",
+              "quote": "On Figure 7.5 or Figure 7.6, the placement of the zero porosity point is arbitrary.",
+              "page": 134,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c10",
+              "quote": "If porosity is plotted on the x-axis, setting the zero porosity point at the left side of the plot makes the most sense.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c11",
+              "quote": "If $\\rho_b$ or $\\Delta t$ is used, the anticipated zero porosity point (the anticipated matrix value) could be displaced from the lower left corner if the matrix value is different than the expected matrix value.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c12",
+              "quote": "Regardless of the values used on the x-axis (porosity, $\\rho_b$, or $\\Delta t$), the values increase from left to right.",
+              "page": 134,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Водонасыщенность вне линии",
+          "text": "Считайте сопротивление выбранной точки и водной линии при той же пористости. Оцените **показатель насыщения**, параметр зависимости от доли воды. Затем примените уравнение 7.26 для расчёта водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c13",
+            "geo.test_asquith.x2.10.c14"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.10.c13",
+              "quote": "The water saturation of a point plotting away from the water-bearing line can be determined by Equation 7.26.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.10.c14",
+              "quote": "In practice, this means reading the resistivity of the point ($R_t$) and the resistivity of the water-bearing line ($R_o$) at the same porosity value as the point, estimating a value for saturation exponent ($n$), and making the calculation.",
+              "page": 134,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "text": "Чтобы определить сопротивление воды, выберите любую точку водной линии.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c02"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "Считайте пористость и сопротивление выбранной точки.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c03"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "Подставьте координаты и параметры выбранной сетки в формулу сопротивления воды.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c04",
+            "geo.test_asquith.x2.10.c05"
+          ],
+          "pages": [
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "data": {
+        "title": "Как оценить параметр матрицы",
+        "signs": [
+          "Объёмная плотность или время пробега по горизонтали",
+          "Достаточный диапазон пористости опорных точек",
+          "Водная линия"
+        ],
+        "rule": "При достаточном диапазоне пористости продолжите водную линию до нулевой проводимости.",
+        "conclusion": "Координата пересечения оценивает плотность матрицы или время пробега в ней, в зависимости от оси.",
+        "claim_ids": [
+          "geo.test_asquith.x2.10.c06",
+          "geo.test_asquith.x2.10.c07",
+          "geo.test_asquith.x2.10.c08"
+        ],
+        "cases": [
+          {
+            "given": "По горизонтали отложена объёмная плотность. Диапазон пористости опорных точек достаточный.",
+            "options": [
+              "Читать плотность матрицы по пересечению при нулевой проводимости",
+              "Читать её по наклону водной линии"
+            ],
+            "answer": 0,
+            "why": "Для выбранной оси пересечение даёт оценку плотности матрицы.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "text": "Продолжайте водную линию до нулевой проводимости при достаточном диапазоне пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c07"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "Сравнивайте сопротивления при одной пористости и оцените показатель насыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.10.c14"
+          ],
+          "pages": [
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.10.f01",
+          "latex": "R_w=\\frac{R_o\\phi^m}{a}",
+          "meaning": "Сопротивление пластовой воды из точки водной линии.",
+          "vars": [
+            {
+              "symbol": "R_w",
+              "meaning": "удельное сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "R_o",
+              "meaning": "удельное сопротивление полностью водонасыщенной породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            }
+          ],
+          "page": 134,
+          "unit_id": "u134_03"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Данные водной линии используются как опора для раздельных оценок.",
+        "inputs": "Горизонтальная координата, удельные сопротивления, параметры сетки, показатель насыщения.",
+        "outputs": "Оценки сопротивления пластовой воды, параметра матрицы или водонасыщенности.",
+        "breaks_where": "Узкий диапазон пористостей ослабляет оценку пересечения; насыщенность зависит от принятого показателя насыщения.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Координаты точек, исходные параметры сетки и показатель насыщения.",
+          "manual_steps": "Считать пары значений или продолжить водную линию.",
+          "judgment_points": "Оценить достаточность диапазона пористостей.",
+          "time": "Пересечение требует больше суждения, чем арифметическая подстановка.",
+          "typical_errors": "Сравнить сопротивления на разных пористостях.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как брать эталон из другой кривой по совпадающему ключу: здесь ключ — пористость.",
+        "breaks_where": "Опорное значение считывается с физически интерпретируемой линии, а не возвращается из точного справочника.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        133,
+        134,
+        135
+      ],
+      "items": [
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "проводимость",
+          "definition": "Величина, обратная удельному электрическому сопротивлению.",
+          "en": "conductivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водная линия",
+          "definition": "Прямая, по которой распределяются точки полностью водонасыщенной породы.",
+          "en": "water-bearing line",
+          "page": 134,
+          "by": "author"
+        },
+        {
+          "term": "матрица",
+          "definition": "Твёрдая часть породы, без порового пространства.",
+          "en": "matrix",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "время пробега",
+          "definition": "Время, требуемое акустическому сигналу, чтобы пройти заданный интервал.",
+          "en": "travel time",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "объёмная плотность",
+          "definition": "Плотность породы в целом, вместе с содержащимися в порах флюидами.",
+          "en": "bulk density",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "экстраполяция",
+          "definition": "Продолжение выявленного тренда за пределы диапазона исходных точек.",
+          "en": "extrapolation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "диаграмма Хингла",
+          "definition": "Кроссплот с линейной шкалой пористости и нелинейной шкалой сопротивления, задаваемой коэффициентом извилистости и показателем цементации.",
+          "en": "Hingle plot",
+          "page": 133,
+          "by": "author"
+        },
+        {
+          "term": "диаграмма Пикетта",
+          "definition": "Кроссплот сопротивления и пористости на логарифмических шкалах.",
+          "en": "Pickett plot",
+          "page": 135,
+          "by": "author"
+        },
+        {
+          "term": "кроссплот",
+          "definition": "График, на котором точка представляет пару значений, относящихся к одному интервалу.",
+          "en": "crossplot",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи, учитывающий извилистость путей электрического тока.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "показатель цементации",
+          "definition": "Показатель m, определяющий зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "показатель насыщения",
+          "definition": "Показатель n, задающий в уравнении Арчи зависимость сопротивления от доли воды в порах.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пластовая вода",
+          "definition": "Вода, находящаяся в порах пласта.",
+          "en": "formation water",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Даже одна точка водной линии даёт оценку сопротивления воды, если параметры сетки приняты.",
+      "alt": "Четыре блока от выбора водоносной точки до расчётного сопротивления воды.",
+      "file": "illustrations/geo.test_asquith.x2.10__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.10.c02",
+        "geo.test_asquith.x2.10.c03",
+        "geo.test_asquith.x2.10.c04",
+        "geo.test_asquith.x2.10.c05"
+      ],
+      "pages": [
+        134
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.10.c01",
+      "kind": "inference",
+      "text": "Как и диаграмма Пикетта, диаграмма Хингла позволяет оценить ряд параметров непосредственно по каротажу.",
+      "quote": "As with the Pickett plot, the Hingle plot allows the interpreter to predict some of the parameters from the logs rather than estimating them by other methods.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c02",
+      "kind": "inference",
+      "text": "Для расчёта удельного сопротивления пластовой воды подходит любая точка водной линии.",
+      "quote": "The formation water resistivity ($R_w$) can be estimated by choosing any point along the water-bearing line.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c03",
+      "kind": "observation",
+      "text": "С водной линии считывают сопротивление и пористость точки.",
+      "quote": "The point's resistivity ($R_o$) and porosity can be read from the plot",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c04",
+      "kind": "assumption",
+      "text": "Коэффициент извилистости и показатель цементации принимают по выбранной диаграмме.",
+      "quote": "values of tortuosity factor ($a$) and cementation exponent ($m$) are assumed based on the chart that is chosen.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c05",
+      "kind": "inference",
+      "text": "Сопротивление пластовой воды вычисляют как сопротивление водонасыщенной породы, умноженное на пористость в степени показателя цементации и разделённое на коэффициент извилистости.",
+      "quote": "$$R_w = \\frac{R_o \\times \\phi^m}{a} \\tag{7.29}$$",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c06",
+      "kind": "inference",
+      "text": "Используя объёмную плотность или время пробега вместо пористости, оценивают плотность или время пробега матрицы.",
+      "quote": "By plotting the bulk density ($\\rho_b$) or sonic travel time ($\\Delta t$) values on the x-axis, rather than the porosity, the matrix density or matrix travel time ($\\rho_{ma}$ or $\\Delta t_{ma}$) can be estimated.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c07",
+      "kind": "assumption",
+      "text": "Экстраполяцию водной линии до нулевой проводимости выполняют при достаточном диапазоне пористостей опорных точек.",
+      "quote": "If there is a sufficient range of porosities used to determine the water-bearing line, the line can be extrapolated to the zero-conductivity value (the bottom of the chart).",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c08",
+      "kind": "inference",
+      "text": "Значение в точке пересечения используют как параметр матрицы в формуле пористости.",
+      "quote": "The value of this intercept is the matrix value for the porosity equation.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c09",
+      "kind": "observation",
+      "text": "На готовых диаграммах расположение нулевой пористости само по себе произвольно.",
+      "quote": "On Figure 7.5 or Figure 7.6, the placement of the zero porosity point is arbitrary.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c10",
+      "kind": "inference",
+      "text": "Если по горизонтали отложена пористость, ноль удобнее ставить слева.",
+      "quote": "If porosity is plotted on the x-axis, setting the zero porosity point at the left side of the plot makes the most sense.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c11",
+      "kind": "inference",
+      "text": "При оси плотности или времени пробега пересечение может не совпасть с нижним левым углом, если фактический параметр матрицы отличается от ожидаемого.",
+      "quote": "If $\\rho_b$ or $\\Delta t$ is used, the anticipated zero porosity point (the anticipated matrix value) could be displaced from the lower left corner if the matrix value is different than the expected matrix value.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c12",
+      "kind": "observation",
+      "text": "Независимо от выбора величины, значения на горизонтальной оси возрастают слева направо.",
+      "quote": "Regardless of the values used on the x-axis (porosity, $\\rho_b$, or $\\Delta t$), the values increase from left to right.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c13",
+      "kind": "inference",
+      "text": "Водонасыщенность для точки вне водной линии определяют по уравнению 7.26.",
+      "quote": "The water saturation of a point plotting away from the water-bearing line can be determined by Equation 7.26.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.10.c14",
+      "kind": "observation",
+      "text": "Для расчёта считывают сопротивление точки и сопротивление водной линии при той же пористости, а также оценивают показатель насыщения.",
+      "quote": "In practice, this means reading the resistivity of the point ($R_t$) and the resistivity of the water-bearing line ($R_o$) at the same porosity value as the point, estimating a value for saturation exponent ($n$), and making the calculation.",
+      "page": 134,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.10.t01",
+    "geo.test_asquith.x2.10.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.10.k01",
+    "geo.test_asquith.x2.10.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.09",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)"
+    ],
+    "dropped_tasks": []
+  }
+}

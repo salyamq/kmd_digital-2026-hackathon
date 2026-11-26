@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 30. Диаграмма Баклса и размер зёрен — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.26" data-index="30">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Интерактив</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#tables">Таблицы книги</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 30 из 66</p>
+    <h1>Диаграмма Баклса и размер зёрен</h1>
+    <p class="booktitle">В книге: «BULK VOLUME WATER» <span class="pg">стр. 131</span></p>
+    <p class="meta">
+      <span class="chip">≈ 10 мин</span>
+      <span class="chip">⟳ Интерактив</span>
+<span class="chip" title="Тип трудности узла">трудность: распознавание + неочевидное</span>    </p>
+<p class="relies">Опирается на: <a href="step-29.html">шаг 29 «Почему вода может не двигаться»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Смотрите, лежат ли точки вдоль одной кривой или заметно разбросаны.</p><p>Размер зёрен даёт дополнительный контекст для объёмной доли воды.</p><p class="threshold"><b>Пороговая идея.</b> Скопление точек на одной линии равной доли воды и разброс по нескольким линиям — разные признаки. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Интерактив: как это происходит</h2>
+      <div class="anim" data-frames="3">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-26/m00.svg"><img src="media/geo-test-asquith-x1-26/f00.svg" alt="Кадр 1 из 3: Начните с вопроса: можно ли сравнить зоны только по тому, сколько воды в порах?" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-26/m01.svg"><img src="media/geo-test-asquith-x1-26/f01.svg" alt="Кадр 2 из 3: Гиперболы показывают одинаковое произведение двух координат. Сравните условную группу вдоль одной гиперболы с группой с большим разбросом." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-26/m02.svg"><img src="media/geo-test-asquith-x1-26/f02.svg" alt="Кадр 3 из 3: В таблице с уменьшением зёрен обломочных пород растут удержание воды и объёмная доля воды. Карбонатные числа — только очень общий ориентир по типу пор." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="2" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 3</span>
+        </div>
+        <p class="anim-cap">Начните с вопроса: можно ли сравнить зоны только по тому, сколько воды в порах?</p>
+        <script type="application/json" class="anim-caps">["\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u0441 \u0432\u043e\u043f\u0440\u043e\u0441\u0430: \u043c\u043e\u0436\u043d\u043e \u043b\u0438 \u0441\u0440\u0430\u0432\u043d\u0438\u0442\u044c \u0437\u043e\u043d\u044b \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u043e \u0442\u043e\u043c\u0443, \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u043e\u0434\u044b \u0432 \u043f\u043e\u0440\u0430\u0445?", "\u0413\u0438\u043f\u0435\u0440\u0431\u043e\u043b\u044b \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u044e\u0442 \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u043e\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0434\u0432\u0443\u0445 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442. \u0421\u0440\u0430\u0432\u043d\u0438\u0442\u0435 \u0443\u0441\u043b\u043e\u0432\u043d\u0443\u044e \u0433\u0440\u0443\u043f\u043f\u0443 \u0432\u0434\u043e\u043b\u044c \u043e\u0434\u043d\u043e\u0439 \u0433\u0438\u043f\u0435\u0440\u0431\u043e\u043b\u044b \u0441 \u0433\u0440\u0443\u043f\u043f\u043e\u0439 \u0441 \u0431\u043e\u043b\u044c\u0448\u0438\u043c \u0440\u0430\u0437\u0431\u0440\u043e\u0441\u043e\u043c.", "\u0412 \u0442\u0430\u0431\u043b\u0438\u0446\u0435 \u0441 \u0443\u043c\u0435\u043d\u044c\u0448\u0435\u043d\u0438\u0435\u043c \u0437\u0451\u0440\u0435\u043d \u043e\u0431\u043b\u043e\u043c\u043e\u0447\u043d\u044b\u0445 \u043f\u043e\u0440\u043e\u0434 \u0440\u0430\u0441\u0442\u0443\u0442 \u0443\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435 \u0432\u043e\u0434\u044b \u0438 \u043e\u0431\u044a\u0451\u043c\u043d\u0430\u044f \u0434\u043e\u043b\u044f \u0432\u043e\u0434\u044b. \u041a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u044b\u0435 \u0447\u0438\u0441\u043b\u0430 \u2014 \u0442\u043e\u043b\u044c\u043a\u043e \u043e\u0447\u0435\u043d\u044c \u043e\u0431\u0449\u0438\u0439 \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440 \u043f\u043e \u0442\u0438\u043f\u0443 \u043f\u043e\u0440."]</script>
+<p class="muted small">Допущения: Пары координат точек условные: исходных измерений скважин узел не содержит.; Изолинии 0.025, 0.05 и 0.07 взяты как демонстрационные уровни в пределах названных в узле значений; они не пороги..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как читать график</h3>          <div class="para" id="how-1">
+            <p><strong class="term">Диаграмма Баклса</strong> сопоставляет пористость и водонасыщенность. <strong class="term">Гипербола</strong> здесь соединяет точки одинаковой объёмной доли воды. Вне неснижаемой водонасыщенности эта доля может сильно различаться. Графики авторов используют данные трёх скважин ордовикской зоны B Ред-Ривер. Скважины расположены на месторождении Бивер-Крик в Северной Дакоте. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c01"><p>«A formation not at irreducible water saturation ($S_{w\ irr}$) exhibits wide variations in bulk volume water values.»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c02"><p>«The Buckles plot (Buckles, 1965) is a graph of porosity ($\phi$) versus $S_w$.»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c03"><p>«Points of equal $BVW$ form hyperbolic curves across this plot.»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c04"><p>«Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota.»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Что видно</h3>          <div class="para" id="how-2">
+            <p>При неснижаемой водонасыщенности точки ложатся вдоль одной гиперболы. При большей доле добываемой воды точки сильнее разбросаны. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c05"><p>«If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a).»</p><footer>— автор, стр. 131 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c06"><p>«If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).»</p><footer>— автор, стр. 131 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Размер зёрен</h3>          <div class="para" id="how-3">
+            <p>При уменьшении зёрен порода удерживает больше воды капиллярным давлением. Поэтому объёмная доля воды увеличивается. Авторы сравнивают долю воды по размерам зёрен и типам породы в таблице. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c07"><p>«Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size,»</p><footer>— автор, стр. 131 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c08"><p>«the bulk volume water also increases with decreasing grain size.»</p><footer>— автор, стр. 131 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c09"><p>«Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x1_26__1_m.svg"><img src="img/geo_test_asquith_x1_26__1.svg" alt="На горизонтальной шкале пять диапазонов; от крупных обломков к алевриту полосы смещаются вправо." loading="lazy"></picture>  </div>
+  <figcaption>
+    Табличные диапазоны для обломочных пород. Чем мельче зёрна, тем выше доля удерживаемой воды.
+    <span class="ill-meta">Класс A · реальные данные · нарисовано кодом · стр. 131</span>
+  </figcaption>
+</figure>
+<h3>Обломочные породы</h3>          <div class="para" id="how-4">
+            <p><strong class="term">Алеврит</strong> — материал из очень мелких зёрен. У крупных обломков размером 1,0–0,5 мм доля воды равна 0,02–0,025. У средних обломков размером 0,5–0,25 мм доля воды равна 0,025–0,035. У мелких обломков размером 0,25–0,125 мм доля воды равна 0,035–0,05. Для очень мелких обломков размером 0,125–0,062 мм доля воды равна 0,05–0,07. Для алеврита с размером зёрен меньше 0,062 мм доля воды равна 0,07–0,09. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c10"><p>«|  Coarse | 1.0 to 0.5 | 0.02 to 0.025  |
+|  Medium | 0.5 to 0.25 | 0.025 to 0.035  |»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c11"><p>«|  Fine | 0.25 to 0.125 | 0.035 to 0.05  |
+|  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  |»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c12"><p>«|  Silt | &lt; 0.062 | 0.07 to 0.09  |»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Карбонатные породы</h3>          <div class="para" id="how-5">
+            <p><strong class="term">Кавернозные поры</strong> — полости в породе. <strong class="term">Межкристаллические поры</strong> находятся между кристаллами. У кавернозных карбонатов доля воды равна 0,005–0,015. У кавернозных карбонатов с межкристаллическими порами доля воды равна 0,015–0,025. Для межкристаллического типа доля воды равна 0,025–0,04, для мелоподобного — 0,05. Авторы советуют использовать эти значения только как очень общий ориентир. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c13"><p>«|  Vuggy |   | 0.005 to 0.015  |
+|  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  |»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c14"><p>«|  Intercrystalline |   | 0.025 to 0.04  |
+|  Chalky |   | 0.05  |»</p><footer>— автор, стр. 131 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.26.c15"><p>«The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.»</p><footer>— автор, стр. 131 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Решение на данных</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Пары пористости и водонасыщенности</li><li>Положение относительно гипербол равной доли воды</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сопоставляйте весь рисунок точек с линиями равной доли воды. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Одна гипербола согласуется с неснижаемым состоянием; разброс характерен при большей доле добываемой воды.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Точки лежат вдоль одной гиперболы. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Данные согласуются с неснижаемой водонасыщенностью</button><button type="button" class="btn ghost case-opt" data-i="1">Удержание воды обязательно отсутствует</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Одна гипербола означает постоянную долю воды.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Точки сильно разбросаны по гиперболам. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Доля воды почти постоянна</button><button type="button" class="btn ghost case-opt" data-i="1">Картина согласуется с большей долей добываемой воды</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Авторы показывают больший разброс у коллекторов с большей долей добываемой воды.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>У крупных обломков размером 1,0–0,5 мм доля воды равна 0,02–0,025. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>У средних обломков размером 0,5–0,25 мм доля воды равна 0,025–0,035. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>У мелких обломков размером 0,25–0,125 мм доля воды равна 0,035–0,05. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>Для очень мелких обломков размером 0,125–0,062 мм доля воды равна 0,05–0,07. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>Для алеврита с размером зёрен меньше 0,062 мм доля воды равна 0,07–0,09. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>У кавернозных карбонатов доля воды равна 0,005–0,015. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>У кавернозных карбонатов с межкристаллическими порами доля воды равна 0,015–0,025. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>Для межкристаллического типа доля воды равна 0,025–0,04, для мелоподобного — 0,05. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li><li>Карбонатные значения — лишь очень общий ориентир по типу пористости. <span class="pg" title="Страница книги (по PDF)">стр. 131</span></li></ul>
+
+    </section>
+    <section id="tables" class="block block-tables" aria-labelledby="h-tables">
+      <h2 id="h-tables">Таблицы книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="booktable">
+          <p class="tcap"><b>Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart.</b> <span class="pg">стр. 131</span></p>
+          <div class="tscroll" tabindex="0" role="region" aria-label="Таблица: Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart."><table>
+            <thead><tr><th scope="col">Lithology</th><th scope="col">Grain Size (millimeters)</th><th scope="col">Bulk Volume Water ($BVW$)</th></tr></thead>
+            <tbody><tr><td>*Clastics*</td><td></td><td></td></tr><tr><td>Coarse</td><td>1.0 to 0.5</td><td>0.02 to 0.025</td></tr><tr><td>Medium</td><td>0.5 to 0.25</td><td>0.025 to 0.035</td></tr><tr><td>Fine</td><td>0.25 to 0.125</td><td>0.035 to 0.05</td></tr><tr><td>Very Fine</td><td>0.125 to 0.062</td><td>0.05 to 0.07</td></tr><tr><td>Silt</td><td>&lt; 0.062</td><td>0.07 to 0.09</td></tr><tr><td>*Carbonates*</td><td></td><td></td></tr><tr><td>Vuggy</td><td></td><td>0.005 to 0.015</td></tr><tr><td>Vuggy and intercrystalline (intergranular)</td><td></td><td>0.015 to 0.025</td></tr><tr><td>Intercrystalline</td><td></td><td>0.025 to 0.04</td></tr><tr><td>Chalky</td><td></td><td>0.05</td></tr></tbody>
+          </table></div>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Форма облака точек несёт информацию, которую не видно в отдельных значениях.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Пары пористости и водонасыщенности, сравнительные сведения о породе.</dd>
+          <dt>Выход</dt><dd>Положение относительно гипербол, степень разброса, контекст для интерпретации типа породы.</dd>
+          <dt>Где ломается</dt><dd>Для карбонатов таблица не даёт надёжной однозначной классификации.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Парные данные и справочная таблица.</dd>
+            <dt>Ручные шаги</dt><dd>Построить диаграмму, сравнить с гиперболами и описать разброс.</dd>
+            <dt>Точки суждения</dt><dd>Оценить, насколько данные сосредоточены вокруг одной гиперболы и уместен ли табличный ориентир.</dd>
+            <dt>Время</dt><dd>График можно строить повторно; длительность не указана.</dd>
+            <dt>Типичные ошибки</dt><dd>Обращаться с общими карбонатными ориентирами как со строгой классификацией.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Нанести наблюдения на диаграмму рассеяния с линиями одного значения производного признака.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Геологический смысл рассеяния не сводится к отсечению аномалий по универсальному порогу.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Пористость <span class="en" lang="en">(porosity)</span></dt><dd>Доля общего объёма породы, занятая порами.  <span class="chip chip-model">модель</span></dd><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля объёма пор, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Объёмная доля воды <span class="en" lang="en">(bulk volume water)</span></dt><dd>Произведение водонасыщенности на пористость, обозначение BVW. <span class="pg">стр. 131</span></dd><dt>Неснижаемая водонасыщенность <span class="en" lang="en">(irreducible water saturation)</span></dt><dd>Состояние, при котором вода в неизменённой зоне удерживается на зёрнах и не перемещается. <span class="pg">стр. 131</span></dd><dt>Капиллярное давление <span class="en" lang="en">(capillary pressure)</span></dt><dd>В данном контексте давление, удерживающее воду на зёрнах породы. <span class="pg">стр. 131</span></dd><dt>Диаграмма Баклса <span class="en" lang="en">(Buckles plot)</span></dt><dd>График пористости против водонасыщенности с гиперболами равной объёмной доли воды. <span class="pg">стр. 131</span></dd><dt>Гипербола <span class="en" lang="en">(hyperbola)</span></dt><dd>В этом графике кривая, вдоль которой произведение двух координат постоянно.  <span class="chip chip-model">модель</span></dd><dt>Коллектор <span class="en" lang="en">(reservoir)</span></dt><dd>Порода, в которой находятся и могут перемещаться флюиды.  <span class="chip chip-model">модель</span></dd><dt>Карбонатные породы <span class="en" lang="en">(carbonates)</span></dt><dd>Породы, сложенные главным образом карбонатными минералами.  <span class="chip chip-model">модель</span></dd><dt>Обломочные породы <span class="en" lang="en">(clastics)</span></dt><dd>Породы из обломков ранее существовавших пород или минералов.  <span class="chip chip-model">модель</span></dd><dt>Алеврит <span class="en" lang="en">(silt)</span></dt><dd>Материал с очень мелкими частицами, мельче песка.  <span class="chip chip-model">модель</span></dd><dt>Кавернозные поры <span class="en" lang="en">(vuggy porosity)</span></dt><dd>Полости в породе, называемые кавернами.  <span class="chip chip-model">модель</span></dd><dt>Межкристаллические поры <span class="en" lang="en">(intercrystalline porosity)</span></dt><dd>Пространства между кристаллами; межзерновые поры располагаются между зёрнами.  <span class="chip chip-model">модель</span></dd><dt>Мелоподобный тип <span class="en" lang="en">(chalky)</span></dt><dd>Карбонатная порода, отнесённая в таблице к типу, похожему на мел.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-26-t01" data-task="geo.test_asquith.x1.26.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Заполните пропуск по правилу этого шага.</p>
+  <p class="cloze">При неснижаемой водонасыщенности точки ложатся вдоль <select aria-label="Пропуск 1"><option value="">—</option><option>одной гиперболы</option><option>границы всех типов пород</option><option>вертикальной оси</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При неснижаемой водонасыщенности точки ложатся вдоль [одной гиперболы].</p>
+    <p class="fb-expl">Равная доля воды отмечается одной гиперболой. <a href="#how-2">Где это в тексте (стр. 131) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-26-t02" data-task="geo.test_asquith.x1.26.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-test_asquith-x1-26-t02">Какова верхняя граница доли воды для очень мелких обломков?</label>
+  <p class="numeric"><input id="in-geo-test_asquith-x1-26-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">доля</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 0,07 доля</p>
+    <p class="fb-expl">В таблице для самых мелких обломков этой группы указан соответствующий диапазон. <a href="#how-4">Где это в тексте (стр. 131) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.26.c01"><p>Вне состояния неснижаемой водонасыщенности объёмная доля воды изменяется в широких пределах. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«A formation not at irreducible water saturation ($S_{w\ irr}$) exhibits wide variations in bulk volume water values.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c02"><p>На диаграмме Баклса сопоставляют пористость и водонасыщенность. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The Buckles plot (Buckles, 1965) is a graph of porosity ($\phi$) versus $S_w$.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c03"><p>Точки одинаковой объёмной доли воды образуют гиперболы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Points of equal $BVW$ form hyperbolic curves across this plot.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c04"><p>Графики автора построены по трём скважинам ордовикской зоны B Ред-Ривер месторождения Бивер-Крик в Северной Дакоте. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c05"><p>При неснижаемой водонасыщенности точки ложатся вдоль одной гиперболы. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a).»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c06"><p>Если коллекторы дают большую долю добываемой воды, точки на диаграмме сильнее разбросаны. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c07"><p>При уменьшении размера зёрен капиллярное удержание воды увеличивается. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size,»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c08"><p>Объёмная доля воды увеличивается при уменьшении зёрен. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«the bulk volume water also increases with decreasing grain size.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c09"><p>Сравнительная таблица связывает долю воды с размером зёрен и типом породы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c10"><p>Для крупных обломков при 1.0–0.5 мм доля воды 0.02–0.025; для средних при 0.5–0.25 мм — 0.025–0.035. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Coarse | 1.0 to 0.5 | 0.02 to 0.025  |
+|  Medium | 0.5 to 0.25 | 0.025 to 0.035  |»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c11"><p>Для мелких обломков при 0.25–0.125 мм доля воды 0.035–0.05; для очень мелких при 0.125–0.062 мм — 0.05–0.07. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Fine | 0.25 to 0.125 | 0.035 to 0.05  |
+|  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  |»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c12"><p>Для алеврита при размере зёрен &lt; 0.062 мм доля воды 0.07–0.09. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Silt | &lt; 0.062 | 0.07 to 0.09  |»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c13"><p>Для кавернозных карбонатов доля воды 0.005–0.015; для кавернозных с межкристаллическими (межзерновыми) порами — 0.015–0.025. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Vuggy |   | 0.005 to 0.015  |
+|  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  |»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c14"><p>Для межкристаллического типа доля воды 0.025–0.04; для мелоподобного — 0.05. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Intercrystalline |   | 0.025 to 0.04  |
+|  Chalky |   | 0.05  |»</p><footer>— стр. 131</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.26.c15"><p>Карбонатные значения пригодны лишь как очень общий ориентир по типу пористости. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.»</p><footer>— стр. 131</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u131_24-1" tabindex="-1">
+          <p class="pg">Стр. 131 · BULK VOLUME WATER</p>
+          <blockquote>A formation not at irreducible water saturation ($S_{w\ irr}$) exhibits wide variations in bulk volume water values. The Buckles plot (Buckles, 1965) is a graph of porosity ($\phi$) versus $S_w$. Points of equal $BVW$ form hyperbolic curves across this plot. Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota. If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a). If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u131_25-1" tabindex="-1">
+          <p class="pg">Стр. 131 · BULK VOLUME WATER</p>
+          <blockquote>Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size, the bulk volume water also increases with decreasing grain size. Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u131_26-1" tabindex="-1">
+          <p class="pg">Стр. 131 · BULK VOLUME WATER</p>
+          <blockquote>Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart. | Lithology | Grain Size (millimeters) | Bulk Volume Water ($BVW$) | | --- | --- | --- | | *Clastics* | | | | Coarse | 1.0 to 0.5 | 0.02 to 0.025 | | Medium | 0.5 to 0.25 | 0.025 to 0.035 | | Fine | 0.25 to 0.125 | 0.035 to 0.05 | | Very Fine | 0.125 to 0.062 | 0.05 to 0.07 | | Silt | &lt; 0.062 | 0.07 to 0.09 | | *Carbonates* | | | | Vuggy | | 0.005 to 0.015 | | Vuggy and intercrystalline (intergranular) | | 0.015 to 0.025 | | Intercrystalline | | 0.025 to 0.04 | | Chalky | | 0.05 |</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u131_27-1" tabindex="-1">
+          <p class="pg">Стр. 131 · BULK VOLUME WATER</p>
+          <blockquote>The bulk volume water values for carbonates should be used only as a very general guide to different types of porosity.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-31.html">шаг 31 «Что говорит разброс точек»</a>, <a href="step-32.html">шаг 32 «Как точки связаны с добычей»</a>, <a href="step-33.html">шаг 33 «Зачем нужны диаграммы насыщения»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-29.html" rel="prev"><span>← Назад</span><b>Почему вода может не двигаться</b></a><a class="next" href="step-31.html" rel="next"><span>Дальше →</span><b>Что говорит разброс точек</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Диаграмма Баклса и размер зёрен</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.26">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.26.t01", "type": "cloze", "question": "Заполните пропуск по правилу этого шага.", "explanation": "Равная доля воды отмечается одной гиперболой.", "page": 131, "link": "#how-2", "step_title": "Диаграмма Баклса и размер зёрен", "step_index": 30, "node_id": "geo.test_asquith.x1.26", "parts": ["При неснижаемой водонасыщенности точки ложатся вдоль ", "."], "blanks": [{"options": ["одной гиперболы", "границы всех типов пород", "вертикальной оси"], "answers": ["одной гиперболы"]}], "key": [["одной гиперболы"]], "answer_text": "При неснижаемой водонасыщенности точки ложатся вдоль [одной гиперболы]."}, {"id": "geo.test_asquith.x1.26.t02", "type": "numeric", "question": "Какова верхняя граница доли воды для очень мелких обломков?", "explanation": "В таблице для самых мелких обломков этой группы указан соответствующий диапазон.", "page": 131, "link": "#how-4", "step_title": "Диаграмма Баклса и размер зёрен", "step_index": 30, "node_id": "geo.test_asquith.x1.26", "key": {"answer": 0.07, "tolerance": 0}, "unit": "доля", "answer_text": "0,07 доля"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

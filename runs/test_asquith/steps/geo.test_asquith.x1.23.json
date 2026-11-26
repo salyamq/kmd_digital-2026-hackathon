@@ -1,0 +1,653 @@
+{
+  "node_id": "geo.test_asquith.x1.23",
+  "chapter": "test_asquith",
+  "index": 26,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Что выдаёт пористость по сопротивлению",
+  "title_book": "Basis for the technique",
+  "section": "x1",
+  "pages": [
+    130
+  ],
+  "minutes": 9,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "Пористость, вычисленная при допущении полного водонасыщения, не равна фактической во всех пластах."
+  },
+  "threshold": "Пористость, вычисленная при допущении полного водонасыщения, не равна фактической во всех пластах.",
+  "format": "interactive",
+  "format_rationale": "На графике сопоставьте изменение расчётной и независимой пористости при смене входа.",
+  "order_rationale": "Даёт алгебраическое основание предыдущего приёма и связывает его с истинной пористостью и оценкой воды.",
+  "essence": [
+    "Пористость по сопротивлению не всегда равна фактической.",
+    "При углеводородах расчёт по водяной модели даёт меньшую пористость."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Уравнение Арчи можно решить для пористости. Для водяного варианта принимают водонасыщенность равной единице. Если поры действительно заполнены водой, истинное сопротивление совпадает с сопротивлением полностью водонасыщенного пласта. Если параметры близки к фактическим, расчёт в водоносном пласте близок к фактической пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x1.23.c01",
+            "geo.test_asquith.x1.23.c02",
+            "geo.test_asquith.x1.23.c03",
+            "geo.test_asquith.x1.23.c04",
+            "geo.test_asquith.x1.23.c05"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.23.c01",
+              "quote": "From Chapter 1, Archie's equation can be solved for porosity:",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c02",
+              "quote": "If the water-bearing case is considered, where $S_w = 1$, the equation reduces to:",
+              "page": 130,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c03",
+              "quote": "By using the form of the equation above (7.19), the water-filled porosity is determined.",
+              "page": 130,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c04",
+              "quote": "Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$).",
+              "page": 130,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c05",
+              "quote": "The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters.",
+              "page": 130,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что видно",
+          "text": "При углеводородах истинное сопротивление выше водного эталона, а расчётная пористость ниже фактической. Традиционно кривую строят на дорожке ПС и сравнивают её ход с кривой ПС. Можно наложить её на приборную пористость. Снижение расчётной кривой относительно приборной авторы считают признаком углеводородов.",
+          "claim_ids": [
+            "geo.test_asquith.x1.23.c06",
+            "geo.test_asquith.x1.23.c07",
+            "geo.test_asquith.x1.23.c08",
+            "geo.test_asquith.x1.23.c09"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.23.c06",
+              "quote": "When the formation contains hydrocarbons, $R_t$ is greater than $R_o$,",
+              "page": 130,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c07",
+              "quote": "When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.",
+              "page": 130,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c08",
+              "quote": "Traditionally this curve has been plotted in the same log track as the SP curve, and its movement compared to the SP.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.23.c09",
+              "quote": "It can also be plotted in the same track as a porosity curve from one of the porosity tools, where decreases in conductivity-derived porosity with respect to the porosity curve indicate the presence of hydrocarbons.",
+              "page": 130,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Оценка насыщения",
+          "text": "Авторы предлагают оценивать водонасыщенность отношением пористости по проводимости к фактической. Это отдельная оценка, приведённая авторами.",
+          "claim_ids": [
+            "geo.test_asquith.x1.23.c10"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.23.c10",
+              "quote": "Water saturation can be estimated by the following equation:",
+              "page": 130,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Пояснение модели",
+          "text": "Не следует считать отношение пористостей общей алгебраической перестановкой формул для произвольных показателей.",
+          "claim_ids": [],
+          "pages": [],
+          "by": "model",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Расчёт при полном водонасыщении",
+          "Приборная пористость",
+          "Оценки параметров Арчи"
+        ],
+        "rule": "Сопоставьте кривые, учитывая пригодность параметров расчёта.",
+        "conclusion": "Уменьшение расчётной пористости относительно приборной указывает на возможные углеводороды.",
+        "claim_ids": [
+          "geo.test_asquith.x1.23.c04",
+          "geo.test_asquith.x1.23.c05",
+          "geo.test_asquith.x1.23.c06",
+          "geo.test_asquith.x1.23.c07",
+          "geo.test_asquith.x1.23.c09"
+        ],
+        "cases": [
+          {
+            "given": "Поры заполнены водой, а параметры расчёта близки к фактическим.",
+            "options": [
+              "Расчёт близок к фактической пористости",
+              "Расчёт обязан быть ниже фактической пористости"
+            ],
+            "answer": 0,
+            "why": "В водоносном случае сопротивление совпадает с водным эталоном.",
+            "source": "модель"
+          },
+          {
+            "given": "Расчёт по водному допущению ниже приборной пористости.",
+            "options": [
+              "Совпадение подтверждает водную модель",
+              "Расхождение даёт признак углеводородов"
+            ],
+            "answer": 1,
+            "why": "При углеводородах авторы ожидают снижение расчётной пористости.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "text": "Для полностью водонасыщенного случая водонасыщенность равна единице.",
+          "claim_ids": [
+            "geo.test_asquith.x1.23.c02"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "Если параметры близки к фактическим, расчёт в водоносном пласте близок к фактической пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x1.23.c05"
+          ],
+          "pages": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.23.f01",
+          "latex": "\\phi = \\left(\\frac{a \\times R_w}{R_t \\times S_w^n}\\right)^{\\frac{1}{m}}",
+          "meaning": "Пористость из общего уравнения Арчи.",
+          "vars": [
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            }
+          ],
+          "page": 130,
+          "unit_id": "u130_24"
+        },
+        {
+          "id": "geo.test_asquith.x1.23.f02",
+          "latex": "\\phi = \\left(\\frac{a \\times R_w}{R_t}\\right)^{\\frac{1}{m}}",
+          "meaning": "Пористость при допущении полного водонасыщения.",
+          "vars": [
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            }
+          ],
+          "page": 130,
+          "unit_id": "u130_26"
+        },
+        {
+          "id": "geo.test_asquith.x1.23.f03",
+          "latex": "S_w = \\frac{\\phi_{conductivity}}{\\phi_{actual}}",
+          "meaning": "Приведённая авторами оценка водонасыщенности по отношению пористостей.",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            },
+            {
+              "symbol": "\\phi_{conductivity}",
+              "meaning": "пористость по проводимости",
+              "unit": "доля"
+            },
+            {
+              "symbol": "\\phi_{actual}",
+              "meaning": "фактическая пористость",
+              "unit": "доля"
+            }
+          ],
+          "page": 130,
+          "unit_id": "u130_30"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        130
+      ],
+      "data": {
+        "text": "Пористость по сопротивлению всегда равна фактической.",
+        "correction": "При углеводородах полное водонасыщение — неверное допущение, и расчётная пористость ниже фактической.",
+        "claim_ids": [
+          "geo.test_asquith.x1.23.c05",
+          "geo.test_asquith.x1.23.c06",
+          "geo.test_asquith.x1.23.c07"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Расхождение расчёта и приборной пористости — интерпретируемый признак.",
+        "inputs": "Истинное сопротивление, сопротивление пластовой воды, коэффициенты Арчи, приборная пористость или кривая ПС.",
+        "outputs": "Пористость по проводимости, расхождение кривых и оценка водонасыщенности.",
+        "breaks_where": "При неточных параметрах даже в воде расчёт не обязан совпадать с фактической пористостью.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Согласованные по глубине кривые, оценённые коэффициенты и выбранная пористость.",
+          "manual_steps": "Совместить дорожки, сопоставить кривые и выделить расхождения.",
+          "judgment_points": "Проверить, что параметры описывают изучаемый пласт.",
+          "time": "Подготовка и сопоставление кривых занимают часть интерпретации; длительность не указана.",
+          "typical_errors": "Выдать расчёт в предположении воды за фактическую пористость.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Сравнить расчётную метрику при эталонном состоянии с отдельно измеренной метрикой.",
+        "breaks_where": "Здесь эталон зависит от свойств породы и пластовой воды, а не от заведомо исправного сервиса.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Отдельная формула оценки",
+          "text": "Отношение пористостей воспроизведено как оценка авторов. Не следует считать его общей алгебраической перестановкой предыдущих формул для произвольных показателей.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водонасыщенного пласта",
+          "definition": "Сопротивление, которое имел бы пласт при полном водонасыщении; обозначение R_o.",
+          "en": "wet resistivity",
+          "page": 130,
+          "by": "author"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Сопротивление самого пласта, обозначение R_t.",
+          "en": "true resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель цементации",
+          "definition": "Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "definition": "Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Уравнение Арчи",
+          "definition": "Связь сопротивления пласта с его пористостью, водонасыщенностью и электрическими параметрами.",
+          "en": "Archie equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "ПС",
+          "definition": "Кривая самопроизвольного потенциала.",
+          "en": "spontaneous potential",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж",
+          "definition": "Скважинные измерения, которые записывают как кривые по глубине.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пористость по проводимости",
+          "definition": "Расчёт пористости по электрическим данным при допущении о полном водонасыщении.",
+          "en": "conductivity-derived porosity",
+          "page": 130,
+          "by": "author"
+        },
+        {
+          "term": "Дорожка",
+          "definition": "Область графика каротажа, в которой строят одну или несколько кривых.",
+          "en": "log track",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Один расчёт по водному допущению даёт разные признаки в двух случаях.",
+      "alt": "Слева Водоносный пласт: Близкие оценки при верных параметрах. Справа Присутствуют углеводороды: Расчёт ниже фактической пористости.",
+      "file": "illustrations/geo.test_asquith.x1.23__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.23.c04",
+        "geo.test_asquith.x1.23.c05",
+        "geo.test_asquith.x1.23.c06",
+        "geo.test_asquith.x1.23.c07"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.23.c01",
+      "kind": "observation",
+      "text": "Уравнение Арчи можно решить относительно пористости.",
+      "quote": "From Chapter 1, Archie's equation can be solved for porosity:",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c02",
+      "kind": "assumption",
+      "text": "В полностью водонасыщенном случае водонасыщенность равна единице.",
+      "quote": "If the water-bearing case is considered, where $S_w = 1$, the equation reduces to:",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c03",
+      "kind": "inference",
+      "text": "Подстановка допущения о полном заполнении водой даёт пористость в предположении водонасыщения.",
+      "quote": "By using the form of the equation above (7.19), the water-filled porosity is determined.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c04",
+      "kind": "inference",
+      "text": "Там, где поры действительно заполнены водой, истинное сопротивление становится сопротивлением водонасыщенного пласта.",
+      "quote": "Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$).",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c05",
+      "kind": "assumption",
+      "text": "Расчёт близок к фактической пористости, если значения параметров в формуле близки к фактическим.",
+      "quote": "The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c06",
+      "kind": "inference",
+      "text": "При углеводородах истинное сопротивление выше сопротивления водонасыщенного пласта.",
+      "quote": "When the formation contains hydrocarbons, $R_t$ is greater than $R_o$,",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c07",
+      "kind": "inference",
+      "text": "При углеводородах расчётная пористость меньше фактической.",
+      "quote": "When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c08",
+      "kind": "observation",
+      "text": "Традиционно эту кривую строят на дорожке ПС и сопоставляют изменения кривых.",
+      "quote": "Traditionally this curve has been plotted in the same log track as the SP curve, and its movement compared to the SP.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c09",
+      "kind": "inference",
+      "text": "При совмещении с приборной кривой понижение расчётной пористости относительно приборной указывает на присутствие углеводородов.",
+      "quote": "It can also be plotted in the same track as a porosity curve from one of the porosity tools, where decreases in conductivity-derived porosity with respect to the porosity curve indicate the presence of hydrocarbons.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.23.c10",
+      "kind": "inference",
+      "text": "Для оценки водонасыщенности авторы предлагают делить пористость по проводимости на фактическую пористость.",
+      "quote": "Water saturation can be estimated by the following equation:",
+      "page": 130,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.23.t01",
+    "geo.test_asquith.x1.23.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.23.k01",
+    "geo.test_asquith.x1.23.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.21",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

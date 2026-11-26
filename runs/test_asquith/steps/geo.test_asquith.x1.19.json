@@ -1,0 +1,338 @@
+{
+  "node_id": "geo.test_asquith.x1.19",
+  "chapter": "test_asquith",
+  "index": 23,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Какие параметры нужны для расчёта",
+  "title_book": "Apparent water resistivity (Rwa)",
+  "section": "x1",
+  "pages": [
+    129,
+    130
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "И",
+    "threshold": "Возможности расчёта на скважине зависят от доступных пористостных кривых."
+  },
+  "threshold": "Возможности расчёта на скважине зависят от доступных пористостных кривых.",
+  "format": "data_practice",
+  "format_rationale": "По доступным измерениям и условиям выберите материал для расчёта пористости.",
+  "order_rationale": "Уточняет, какие измерения и параметры доступны для оперативной оценки.",
+  "essence": [
+    "Быстрая оценка опирается на глубинное сопротивление и пористость.",
+    "Выбор источника пористости зависит от доступных данных."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Входы",
+          "text": "Для простоты при каротаже принимают коэффициент извилистости $a$ равным 1,0. Показатель цементации $m$ принимают равным 2,0. Глубинное сопротивление получают индукционным или боковым методом, обычно без поправок за условия среды.",
+          "claim_ids": [
+            "geo.test_asquith.x1.19.c01",
+            "geo.test_asquith.x1.19.c02"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.19.c01",
+              "quote": "In practice, especially when calculated and displayed as a curve during a logging job, the following values are used for simplicity: $a = 1.0$, $m = 2.0$.",
+              "page": 130,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.19.c02",
+              "quote": "The deep induction log or deep laterolog is used as $R_t$, usually without any environmental corrections.",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Выбор пористости",
+          "text": "Обычно берут пористость по акустическому или плотностному каротажу. Параметры породы и жидкости выбирают для ожидаемого разреза. Если нейтронно-плотностный график доступен в реальном времени, авторы предпочитают оценку пористости по нему.",
+          "claim_ids": [
+            "geo.test_asquith.x1.19.c03",
+            "geo.test_asquith.x1.19.c04"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.19.c03",
+              "quote": "Porosity is usually derived from the sonic or density log using the proper matrix and fluid parameters for the formations to be encountered.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.19.c04",
+              "quote": "If available in real time during logging, the neutron-density crossplot porosity should be used for the best estimate of porosity.",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Наличие глубинного сопротивления",
+          "Доступные данные для пористости"
+        ],
+        "rule": "При доступности в реальном времени предпочтите нейтронно-плотностный график; иначе опирайтесь на обычные источники пористости.",
+        "conclusion": "Метка способа расчёта помогает понимать, из каких входов получена оценка.",
+        "claim_ids": [
+          "geo.test_asquith.x1.19.c02",
+          "geo.test_asquith.x1.19.c03",
+          "geo.test_asquith.x1.19.c04"
+        ],
+        "cases": [
+          {
+            "given": "Нейтронная и плотностная оценки доступны вместе на графике в реальном времени.",
+            "options": [
+              "Выбрать нейтронно-плотностный график",
+              "Всегда использовать только акустическую кривую"
+            ],
+            "answer": 0,
+            "why": "Авторы предпочитают доступную совместную оценку.",
+            "source": "модель"
+          },
+          {
+            "given": "Совместный график недоступен, но есть акустическая пористость.",
+            "options": [
+              "Заменить пористость сопротивлением",
+              "Использовать акустический каротаж с параметрами ожидаемого разреза"
+            ],
+            "answer": 1,
+            "why": "Акустический каротаж — один из обычных источников пористости.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "text": "Для простоты при каротаже принимают a = 1,0 и m = 2,0.",
+          "claim_ids": [
+            "geo.test_asquith.x1.19.c01"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "Глубинное сопротивление обычно берут без поправок за условия среды.",
+          "claim_ids": [
+            "geo.test_asquith.x1.19.c02"
+          ],
+          "pages": [
+            130
+          ]
+        },
+        {
+          "text": "Если нейтронно-плотностный график доступен в реальном времени, авторы предпочитают оценку пористости по нему.",
+          "claim_ids": [
+            "geo.test_asquith.x1.19.c04"
+          ],
+          "pages": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида → Входы для оперативной оценки кажущегося сопротивления воды.",
+        "inputs": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида",
+        "outputs": "Входы для оперативной оценки кажущегося сопротивления воды",
+        "breaks_where": "Если параметры породы и флюида не соответствуют разрезу",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида",
+          "manual_steps": "Используйте глубинное сопротивление. Пористость получите по акустическому или плотностному каротажу с подходящими параметрами породы и жидкости; если доступно, предпочтите нейтронно-плотностную оценку.",
+          "judgment_points": "Когда доступно совместное измерение и подходят ли параметры",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Перенести принятые для экспресс-оценки параметры на любой разрез",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Задать приоритет источников и отдельно предусмотреть запасные варианты.",
+        "breaks_where": "Качество пористости зависит от способа измерения и подобранных физических параметров.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "definition": "Доля объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление",
+          "definition": "Сопротивление незатронутой зоны пласта.",
+          "en": "true formation resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Кажущееся сопротивление воды",
+          "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+          "en": "apparent water resistivity",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Нейтронно-плотностной график",
+          "definition": "Совместная оценка пористости по нейтронным и плотностным измерениям.",
+          "en": "neutron-density crossplot",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверка доступных данных определяет выбор источника пористости.",
+      "alt": "Последовательность: Взять глубинное сопротивление → Проверить доступность графика → Выбрать оценку пористости.",
+      "file": "illustrations/geo.test_asquith.x1.19__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.19.c02",
+        "geo.test_asquith.x1.19.c03",
+        "geo.test_asquith.x1.19.c04"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.19.c01",
+      "kind": "assumption",
+      "text": "Для простоты при расчёте в ходе каротажа принимают a = 1.0 и m = 2.0.",
+      "quote": "In practice, especially when calculated and displayed as a curve during a logging job, the following values are used for simplicity: $a = 1.0$, $m = 2.0$.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.19.c02",
+      "kind": "observation",
+      "text": "Берут глубинное индукционное или боковое сопротивление, обычно без поправок за условия среды.",
+      "quote": "The deep induction log or deep laterolog is used as $R_t$, usually without any environmental corrections.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.19.c03",
+      "kind": "observation",
+      "text": "Пористость обычно получают акустическим или плотностным методом с параметрами породы и жидкости для ожидаемого разреза.",
+      "quote": "Porosity is usually derived from the sonic or density log using the proper matrix and fluid parameters for the formations to be encountered.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.19.c04",
+      "kind": "observation",
+      "text": "При доступности в реальном времени предпочтительна оценка пористости с нейтронно-плотностного графика.",
+      "quote": "If available in real time during logging, the neutron-density crossplot porosity should be used for the best estimate of porosity.",
+      "page": 130,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.19.t01",
+    "geo.test_asquith.x1.19.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.19.k01",
+    "geo.test_asquith.x1.19.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.17",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.18",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

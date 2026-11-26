@@ -1,0 +1,354 @@
+{
+  "node_id": "geo.test_asquith.x1.09",
+  "chapter": "test_asquith",
+  "index": 13,
+  "part": {
+    "id": "part2",
+    "title": "Сравниваем две зоны и две оценки воды"
+  },
+  "title_beginner": "Пороги подвижности для разных пород",
+  "title_book": "Ratio Method",
+  "section": "x1",
+  "pages": [
+    127
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "Р",
+    "threshold": "Один и тот же высокий индекс не отвечает на вопрос о наличии углеводородов."
+  },
+  "threshold": "Один и тот же высокий индекс не отвечает на вопрос о наличии углеводородов.",
+  "format": "data_practice",
+  "format_rationale": "Примените отдельный критерий породы и проверьте, следует ли из индекса подвижность или лишь нет признака смещения.",
+  "order_rationale": "Проверяет интерпретацию индекса отдельно для разных пород и отделяет наличие от подвижности.",
+  "essence": [
+    "**Индекс подвижности** — отношение двух водонасыщенностей, незатронутой зоны к промытой.",
+    "Порог для признака подвижности зависит от того, песчаник перед вами или карбонат."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "При индексе не меньше 1,0 автор не отмечает смещения углеводородов при проникновении. Это правило действует независимо от их наличия. Отсутствие смещения не доказывает, что углеводородов нет.",
+          "claim_ids": [
+            "geo.test_asquith.x1.09.c01",
+            "geo.test_asquith.x1.09.c02"
+          ],
+          "pages": [
+            127
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.09.c01",
+              "quote": "If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion.",
+              "page": 127,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.09.c02",
+              "quote": "This is true regardless of whether or not a formation contains hydrocarbons.",
+              "page": 127,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "**Песчаник** — обломочная порода из песчаных зёрен. У песчаника индекс ниже 0,7 указывает на подвижные углеводороды. Для **карбоната**, породы из карбонатных минералов, нужен индекс ниже 0,6.",
+          "claim_ids": [
+            "geo.test_asquith.x1.09.c03",
+            "geo.test_asquith.x1.09.c04"
+          ],
+          "pages": [
+            127
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.09.c03",
+              "quote": "Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).",
+              "page": 127,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.09.c04",
+              "quote": "Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).",
+              "page": 127,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "data": {
+        "title": "Примените порог своей породы",
+        "signs": [
+          "Тип породы",
+          "Рассчитанное отношение насыщенностей"
+        ],
+        "rule": "Для признака подвижности сравните индекс с порогом своей породы.",
+        "conclusion": "Отсутствие смещения не доказывает отсутствие углеводородов.",
+        "cases": [
+          {
+            "given": "Индекс в песчанике ниже 0,7.",
+            "options": [
+              "Есть признак подвижности",
+              "Можно судить только о точных запасах"
+            ],
+            "answer": 0,
+            "why": "Индекс сделан для признака смещения, не для оценки запасов.",
+            "source": "модель"
+          }
+        ],
+        "claim_ids": [
+          "geo.test_asquith.x1.09.c01",
+          "geo.test_asquith.x1.09.c02",
+          "geo.test_asquith.x1.09.c03",
+          "geo.test_asquith.x1.09.c04"
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "text": "При индексе не меньше 1,0 смещения не отмечено.",
+          "claim_ids": [
+            "geo.test_asquith.x1.09.c01"
+          ],
+          "pages": [
+            127
+          ]
+        },
+        {
+          "text": "Подвижность в песчанике указывает индекс ниже 0,7.",
+          "claim_ids": [
+            "geo.test_asquith.x1.09.c03"
+          ],
+          "pages": [
+            127
+          ]
+        },
+        {
+          "text": "Подвижность в карбонате указывает индекс ниже 0,6.",
+          "claim_ids": [
+            "geo.test_asquith.x1.09.c04"
+          ],
+          "pages": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        127
+      ],
+      "data": {
+        "text": "Если индекс не показывает смещения, углеводородов нет.",
+        "correction": "Отсутствие смещения не исключает наличия углеводородов.",
+        "claim_ids": [
+          "geo.test_asquith.x1.09.c01",
+          "geo.test_asquith.x1.09.c02"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Индекс подвижности и тип породы → Признак подвижности или отсутствия вытеснения.",
+        "inputs": "Индекс подвижности и тип породы",
+        "outputs": "Признак подвижности или отсутствия вытеснения",
+        "breaks_where": "Если нет типа породы или признак подвижности понимают как наличие нефти",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Индекс подвижности и тип породы",
+          "manual_steps": "Сопоставьте индекс с порогом своей породы. Отдельно зафиксируйте случай, когда смещения при проникновении не наблюдается.",
+          "judgment_points": "Какой тип породы брать и не смешано ли наличие с подвижностью",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Применить порог карбоната к песчанику",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Настроить пороги отдельно для разных групп данных.",
+        "breaks_where": "Пороги описывают физическую интерпретацию, а не гарантируют класс по любой точке.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "term": "Индекс подвижности",
+          "definition": "Отношение водонасыщенности незатронутой зоны к водонасыщенности промытой зоны.",
+          "en": "moveable hydrocarbon index",
+          "page": 127,
+          "by": "author"
+        },
+        {
+          "term": "Проникновение",
+          "definition": "Вторжение фильтрата бурового раствора в пласт.",
+          "en": "invasion",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Подвижность углеводородов",
+          "definition": "Способность нефти или газа перемещаться из порового пространства под действием вытеснения.",
+          "en": "hydrocarbon moveability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Песчаник",
+          "definition": "Обломочная порода, преимущественно из песчаных зёрен.",
+          "en": "sandstone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Карбонат",
+          "definition": "Порода, преимущественно сложенная карбонатными минералами.",
+          "en": "carbonate",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Вход: индекс и порода → Проверить порог своей породы → Подвижность не равна наличию.",
+      "file": "illustrations/geo_test_asquith_x1_09__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_09__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.09.c01",
+        "geo.test_asquith.x1.09.c02",
+        "geo.test_asquith.x1.09.c03",
+        "geo.test_asquith.x1.09.c04"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.09.c01",
+      "kind": "observation",
+      "text": "Если индекс не меньше 1.0, при проникновении углеводороды не перемещались.",
+      "quote": "If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion.",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.09.c02",
+      "kind": "observation",
+      "text": "Критерий отсутствия смещения действует независимо от наличия углеводородов.",
+      "quote": "This is true regardless of whether or not a formation contains hydrocarbons.",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.09.c03",
+      "kind": "observation",
+      "text": "Для песчаника индекс ниже 0.7 указывает на подвижные углеводороды.",
+      "quote": "Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.09.c04",
+      "kind": "observation",
+      "text": "Для карбоната индекс ниже 0.6 указывает на подвижные углеводороды.",
+      "quote": "Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).",
+      "page": 127,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.09.t01",
+    "geo.test_asquith.x1.09.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.09.k01",
+    "geo.test_asquith.x1.09.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.08",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

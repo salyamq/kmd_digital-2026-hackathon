@@ -1,0 +1,424 @@
+{
+  "node_id": "geo.test_asquith.x3.01",
+  "chapter": "test_asquith",
+  "index": 4,
+  "part": {
+    "id": "part1",
+    "title": "От приборов к интервалам интереса"
+  },
+  "title_beginner": "Два пути первичного просмотра",
+  "title_book": "Первичный просмотр каротажа",
+  "section": "x3",
+  "pages": [
+    140
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Р",
+    "threshold": "Первичный просмотр находит как кандидатов в продуктивные зоны, так и водоносные зоны сравнения."
+  },
+  "threshold": "Первичный просмотр находит как кандидатов в продуктивные зоны, так и водоносные зоны сравнения.",
+  "format": "data_practice",
+  "format_rationale": "Дайте признаки интервала и предложите выбрать следующую ветвь процедуры.",
+  "order_rationale": "Схема переводит идею двух маршрутов в карту первичного просмотра.",
+  "essence": [
+    "Первый признак выбирают по типу породы.",
+    "Начальный просмотр выделяет зоны интереса, но не заменяет детальный анализ."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "На схеме две ветви — для терригенных и карбонатных пород. Начинают с чистых интервалов. В терригенных породах сначала оценивают сопротивление. В карбонатных породах сначала оценивают пористость.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c03"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x3.01.c01",
+              "quote": "KEYWORDS: flowchart, reservoir evaluation, pay zone identification, clean zones, resistivity, porosity, baseline comparison, tight zones, detailed analysis",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x3.01.c03",
+              "quote": "The scanning flowchart has two paths, one for clastics and one for carbonates.",
+              "page": 140,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "Найдите чистый интервал и определите тип породы. Проверьте основной признак для этого типа. Передайте отобранный интервал на детальный анализ. В терригенной ветви при высоком сопротивлении проверяют пористость. В карбонатной ветви при высокой пористости проверяют сопротивление.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c02",
+            "geo.test_asquith.x3.01.c03"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x3.01.c02",
+              "quote": "Flowchart for scanning logs to identify zones of interest (both pay and wet).",
+              "page": 140,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Нюансы",
+          "text": "Первичный отбор выделяет продуктивные и водоносные зоны интереса. Водоносный интервал сохраняют как опору для сравнения. Низкая пористость на схеме указывает на плотный интервал, который вряд ли окажется продуктивным.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c02"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Найдите чистый интервал и определите тип породы.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c03"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Идите по нужной ветви: начинайте с сопротивления в терригенных породах, с пористости в карбонатных.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c03"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "При высоком значении первого признака проверьте второй.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c03"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Сохраните водоносную опору, а зоны интереса передайте на детальный анализ.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01",
+            "geo.test_asquith.x3.01.c02"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Чистота интервала",
+          "Тип породы",
+          "Сопротивление и пористость"
+        ],
+        "rule": "Для терригенной породы начните с сопротивления; для карбонатной — с пористости.",
+        "conclusion": "Водоносные зоны оставьте как опоры, а зоны интереса разберите детально.",
+        "claim_ids": [
+          "geo.test_asquith.x3.01.c01",
+          "geo.test_asquith.x3.01.c02",
+          "geo.test_asquith.x3.01.c03"
+        ],
+        "cases": [
+          {
+            "given": "В чистом терригенном интервале найдено высокое сопротивление.",
+            "options": [
+              "Проверить пористость",
+              "Считать интервал продуктивным без проверки"
+            ],
+            "answer": 0,
+            "why": "При высоком сопротивлении терригенная ветвь требует проверки пористости.",
+            "source": "модель"
+          },
+          {
+            "given": "В чистом карбонатном интервале пористость высокая.",
+            "options": [
+              "Остановить анализ",
+              "Проверить сопротивление"
+            ],
+            "answer": 1,
+            "why": "При высокой пористости карбонатная ветвь требует проверки сопротивления.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Низкая пористость указывает на плотный интервал.",
+          "claim_ids": [
+            "geo.test_asquith.x3.01.c01"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Отбор не является бинарной отметкой «нефть или ничего»: водоносные интервалы тоже нужны.",
+        "inputs": "Каротаж, тип породы, пористость и удельное сопротивление.",
+        "outputs": "Зоны интереса, в том числе водоносные для сравнения.",
+        "breaks_where": "Заданный тип породы определяет порядок просмотра параметров; предварительный отбор не заменяет детального анализа.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Кривые каротажа и тип породы.",
+          "manual_steps": "Просмотреть кривые в порядке, соответствующем ветке, и выделить зоны интереса.",
+          "judgment_points": "Решить, какой интервал годится для водоносного сравнения.",
+          "time": "Это предварительный проход перед более подробным разбором.",
+          "typical_errors": "Выбросить водоносные зоны из дальнейшего сравнения или применить одну ветку ко всем породам.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как дерево маршрутизации для предварительного отбора с отдельными ветками для разных типов объектов.",
+        "breaks_where": "Пороговые решения здесь геологические, а в данном фрагменте нет численных порогов для автоматического дерева.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "number": "7.1",
+          "page": 140,
+          "caption": "Figure 7.1. Flowchart for scanning logs to identify zones of interest (both pay and wet). The scanning flowchart has two paths, one for clastics and one for carbonates.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u140_02",
+          "scan": "pages/p140.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "терригенные породы",
+          "definition": "Осадочные породы, составленные из обломков более ранних пород или минералов.",
+          "en": "clastics",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "карбонатная порода",
+          "definition": "Порода, состоящая преимущественно из карбонатных минералов.",
+          "en": "carbonate rock",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "чистый интервал",
+          "definition": "Интервал без существенной примеси глинистого вещества.",
+          "en": "clean zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "продуктивный интервал",
+          "definition": "Интервал, который может давать нефть или газ при добыче.",
+          "en": "pay zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "опорный водоносный интервал",
+          "definition": "Водоносный интервал, с которым сравнивают отклики других интервалов.",
+          "en": "wet baseline",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "плотный интервал",
+          "definition": "Интервал породы, свойства которого неблагоприятны для притока флюида; на схеме это низкая пористость.",
+          "en": "tight zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Тип породы определяет, в каком порядке смотрят кривые.",
+      "alt": "Слева Терригенные породы: Сначала сопротивление. Справа Карбонатные породы: Сначала пористость.",
+      "file": "illustrations/geo.test_asquith.x3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x3.01.c01",
+        "geo.test_asquith.x3.01.c03"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x3.01.c01",
+      "kind": "observation",
+      "text": "Ключевые понятия схемы включают чистые интервалы, сравнение с опорным интервалом, плотные зоны и переход к детальному анализу.",
+      "quote": "KEYWORDS: flowchart, reservoir evaluation, pay zone identification, clean zones, resistivity, porosity, baseline comparison, tight zones, detailed analysis",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x3.01.c02",
+      "kind": "observation",
+      "text": "Схема первичного просмотра каротажа предназначена для отбора как продуктивных, так и водоносных зон интереса.",
+      "quote": "Flowchart for scanning logs to identify zones of interest (both pay and wet).",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x3.01.c03",
+      "kind": "observation",
+      "text": "На схеме два пути: для терригенных и карбонатных пород.",
+      "quote": "The scanning flowchart has two paths, one for clastics and one for carbonates.",
+      "page": 140,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x3.01.t01",
+    "geo.test_asquith.x3.01.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x3.01.k01",
+    "geo.test_asquith.x3.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.02",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

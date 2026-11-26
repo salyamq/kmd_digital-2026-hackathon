@@ -1,0 +1,526 @@
+{
+  "node_id": "geo.test_asquith.x1.18",
+  "chapter": "test_asquith",
+  "index": 21,
+  "part": {
+    "id": "part2",
+    "title": "Сравниваем две зоны и две оценки воды"
+  },
+  "title_beginner": "Почему минимум служит ориентиром",
+  "title_book": "Apparent water resistivity (Rwa)",
+  "section": "x1",
+  "pages": [
+    129,
+    130
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "При полной водонасыщенности кажущееся сопротивление становится оценкой сопротивления самой воды."
+  },
+  "threshold": "При полной водонасыщенности кажущееся сопротивление становится оценкой сопротивления самой воды.",
+  "format": "interactive",
+  "format_rationale": "Сравните случай, когда кажущаяся оценка равна сопротивлению воды, с отклонением от водяной опоры.",
+  "order_rationale": "Прежде чем выбирать минимум, объясняет, что именно вычисляется и почему водоносная зона может служить опорой.",
+  "essence": [
+    "Водяная опора работает при условии полного водонасыщения.",
+    "Если сам минимум приходится на смесь, выводы об остальных зонах надо пересмотреть."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        129,
+        130
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "**Форм-фактор** связывает сопротивление полностью водонасыщенной породы с сопротивлением воды. Его рассчитывают как $F=a/\\phi^m$. Тогда $R_w=R_o\\phi^m/a$. В формуле кажущегося сопротивления берут истинное сопротивление: $R_{wa}=R_t\\phi^m/a$.",
+          "claim_ids": [
+            "geo.test_asquith.x1.18.c01",
+            "geo.test_asquith.x1.18.c02"
+          ],
+          "pages": [
+            129
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.18.c01",
+              "quote": "Combining Equations 7.5 and 7.6, and solving for $R_w$ yields:",
+              "page": 129,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.18.c02",
+              "quote": "From Equation 7.7 above, define apparent water resistivity ($R_{wa}$) as:",
+              "page": 129,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что видно",
+          "text": "При полном водонасыщении истинное сопротивление породы равно сопротивлению полностью водонасыщенной породы. В водоносной зоне кажущееся сопротивление воды равно истинному сопротивлению пластовой воды. Углеводороды повышают и истинное сопротивление породы, и кажущуюся оценку воды относительно водяного случая.",
+          "claim_ids": [
+            "geo.test_asquith.x1.18.c03",
+            "geo.test_asquith.x1.18.c04"
+          ],
+          "pages": [
+            129
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.18.c03",
+              "quote": "When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$.",
+              "page": 129,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.18.c04",
+              "quote": "If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$.",
+              "page": 129,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Нюансы",
+          "text": "Авторы переносят минимум на сравниваемые зоны, предполагая, что опора водоносна. Если опорная зона содержит углеводороды, авторы считают их содержание в остальных зонах выше первоначальной оценки.",
+          "claim_ids": [
+            "geo.test_asquith.x1.18.c05",
+            "geo.test_asquith.x1.18.c06"
+          ],
+          "pages": [
+            129,
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.18.c05",
+              "quote": "By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered.",
+              "page": 129,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.18.c06",
+              "quote": "some hydrocarbons, then the other zones contain even more hydrocarbons than anticipated.",
+              "page": 130,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        129,
+        130
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Положение минимума",
+          "Известное или предполагаемое насыщение опоры"
+        ],
+        "rule": "Считайте минимум оценкой сопротивления воды, если опорная зона водоносна.",
+        "conclusion": "Если условие нарушено, пересмотрите вывод о других зонах.",
+        "claim_ids": [
+          "geo.test_asquith.x1.18.c03",
+          "geo.test_asquith.x1.18.c04",
+          "geo.test_asquith.x1.18.c05",
+          "geo.test_asquith.x1.18.c06"
+        ],
+        "cases": [
+          {
+            "given": "Минимум найден в подтверждённой водоносной зоне.",
+            "options": [
+              "Использовать как оценку сопротивления воды",
+              "Считать насыщение опоры углеводородным"
+            ],
+            "answer": 0,
+            "why": "В водоносной зоне кажущаяся и истинная оценки воды совпадают.",
+            "source": "модель"
+          },
+          {
+            "given": "Опорная зона содержит смесь воды и углеводородов.",
+            "options": [
+              "В остальных зонах углеводородов меньше первоначальной оценки",
+              "В остальных зонах углеводородов больше первоначальной оценки"
+            ],
+            "answer": 1,
+            "why": "При углеводородах опорная оценка сопротивления воды повышается.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "text": "Минимум переносится на другие зоны при допущении, что опора водоносна.",
+          "claim_ids": [
+            "geo.test_asquith.x1.18.c05"
+          ],
+          "pages": [
+            129
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.18.f01",
+          "latex": "R_o = F \\times R_w \\tag{7.13}",
+          "meaning": "Сопротивление водонасыщенной породы",
+          "vars": [
+            {
+              "symbol": "R_o",
+              "meaning": "сопротивление водонасыщенной незатронутой зоны",
+              "unit": null
+            },
+            {
+              "symbol": "F",
+              "meaning": "форм-фактор",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            }
+          ],
+          "page": 129,
+          "unit_id": "u129_25"
+        },
+        {
+          "id": "geo.test_asquith.x1.18.f02",
+          "latex": "F = \\frac{a}{\\phi^m} \\tag{7.14}",
+          "meaning": "Связь форм-фактора с пористостью",
+          "vars": [
+            {
+              "symbol": "F",
+              "meaning": "форм-фактор",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент в форм-факторе",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель степени в форм-факторе",
+              "unit": null
+            }
+          ],
+          "page": 129,
+          "unit_id": "u129_27"
+        },
+        {
+          "id": "geo.test_asquith.x1.18.f03",
+          "latex": "R_w = \\frac{R_o \\times \\phi^m}{a} \\tag{7.15}",
+          "meaning": "Сопротивление воды водонасыщенной зоны",
+          "vars": [
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "R_o",
+              "meaning": "сопротивление водонасыщенной незатронутой зоны",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель степени в форм-факторе",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент в форм-факторе",
+              "unit": null
+            }
+          ],
+          "page": 129,
+          "unit_id": "u129_29"
+        },
+        {
+          "id": "geo.test_asquith.x1.18.f04",
+          "latex": "R_{wa} = \\frac{R_t \\times \\phi^m}{a} \\tag{7.16}",
+          "meaning": "Кажущееся сопротивление воды",
+          "vars": [
+            {
+              "symbol": "R_{wa}",
+              "meaning": "кажущееся сопротивление воды",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель степени в форм-факторе",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент в форм-факторе",
+              "unit": null
+            }
+          ],
+          "page": 129,
+          "unit_id": "u129_31"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Истинное сопротивление и пористость → Расчёт кажущегося сопротивления воды.",
+        "inputs": "Истинное сопротивление и пористость",
+        "outputs": "Расчёт кажущегося сопротивления воды",
+        "breaks_where": "Если опорный минимум не соответствует чисто водоносной зоне",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Истинное сопротивление и пористость",
+          "manual_steps": "Примените форм-фактор и сравните минимальное значение с другими результатами.",
+          "judgment_points": "Может ли опорная зона сама содержать углеводороды",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Считать кажущееся сопротивление независимым измерением воды",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Оценить базовое состояние по опорному минимуму.",
+        "breaks_where": "Если опорная зона уже изменилась, смещение переносится на всю оценку.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Ссылки в тексте",
+          "text": "Ссылки на уравнения в абзацах о выводе расходятся с номерами у видимых формул; связь можно проследить по символам.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "term": "Кажущееся сопротивление воды",
+          "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+          "en": "apparent water resistivity",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Электрическое сопротивление самой воды в пласте.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водонасыщенного пласта",
+          "definition": "Сопротивление незатронутой зоны пласта, заполненной водой.",
+          "en": "wet resistivity",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Истинное сопротивление",
+          "definition": "Сопротивление незатронутой зоны пласта.",
+          "en": "true formation resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Форм-фактор",
+          "definition": "Отношение сопротивления водонасыщенной породы к сопротивлению воды в порах.",
+          "en": "formation factor",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Подмена водной опоры смесью меняет смысл минимума.",
+      "alt": "Слева Водоносная зона: Оценки воды совпадают. Справа Углеводородная зона: Кажущаяся оценка повышается.",
+      "file": "illustrations/geo.test_asquith.x1.18__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.18.c03",
+        "geo.test_asquith.x1.18.c04"
+      ],
+      "pages": [
+        129
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.18.c01",
+      "kind": "observation",
+      "text": "Сопротивление воды получают совместным использованием зависимости сопротивлений и форм-фактора.",
+      "quote": "Combining Equations 7.5 and 7.6, and solving for $R_w$ yields:",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.18.c02",
+      "kind": "observation",
+      "text": "Кажущееся сопротивление воды определяют по формуле с истинным сопротивлением.",
+      "quote": "From Equation 7.7 above, define apparent water resistivity ($R_{wa}$) as:",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.18.c03",
+      "kind": "observation",
+      "text": "Для водоносного интервала истинное сопротивление равно водонасыщенному, а кажущееся сопротивление воды — истинному сопротивлению воды.",
+      "quote": "When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.18.c04",
+      "kind": "observation",
+      "text": "Присутствие углеводородов в интервале повышает оба расчётных показателя относительно водяного случая.",
+      "quote": "If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.18.c05",
+      "kind": "assumption",
+      "text": "Минимум служит оценкой сопротивления воды для всех сопоставляемых интервалов при допущении, что опорная зона водоносна.",
+      "quote": "By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.18.c06",
+      "kind": "inference",
+      "text": "Если опорный минимум соответствует смеси с углеводородами, остальные зоны содержат их больше, чем предполагалось.",
+      "quote": "some hydrocarbons, then the other zones contain even more hydrocarbons than anticipated.",
+      "page": 130,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.18.t01",
+    "geo.test_asquith.x1.18.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.18.k01",
+    "geo.test_asquith.x1.18.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.14",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

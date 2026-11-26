@@ -1,0 +1,1535 @@
+{
+  "chapter": "test_asquith",
+  "routes": [
+    {
+      "node_id": "geo.test_asquith.x1.01",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н",
+        "threshold": "Каротажная оценка — не готовое решение о заканчивании."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Общее решение требует сопоставить источники; текст удержит порядок и оговорку без анимации.",
+      "why": "Общее решение требует сопоставить источники; текст удержит порядок и оговорку без анимации.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.02",
+      "format": "карточки",
+      "difficulty": {
+        "primary": "Р",
+        "secondary": "Н",
+        "threshold": "Водяная зона — не лишняя запись, а опора для сравнения."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Карточки закрепят различие между водяной опорой и кандидатом на дальнейший анализ.",
+      "why": "Карточки закрепят различие между водяной опорой и кандидатом на дальнейший анализ.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.03",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Р",
+        "threshold": "Отправная кривая зависит от типа разреза."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "Переключение типа породы меняет выбранную кривую и делает причину развилки заметной.",
+      "why": "Переключение типа породы меняет выбранную кривую и делает причину развилки заметной.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x3.01",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Р",
+        "threshold": "Первичный просмотр находит как кандидатов в продуктивные зоны, так и водоносные зоны сравнения."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Дайте признаки интервала и предложите выбрать следующую ветвь процедуры.",
+      "why": "Дайте признаки интервала и предложите выбрать следующую ветвь процедуры.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x4.01",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Р",
+        "threshold": "Фоновый отклик соседних сланцев позволяет выделить аномалию сопротивления, но первичный отклик не заменяет интерпретацию."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "Сравнение сигнала на устойчивом глинистом фоне с изменением в коллекторе требует видеть обе кривые.",
+      "why": "Сравнение сигнала на устойчивом глинистом фоне с изменением в коллекторе требует видеть обе кривые.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.01",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "И",
+        "threshold": "В карбонатах первым ориентиром служит пористость; сама по себе она не определяет, что заполняет поры."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Отберите пористый интервал до вывода о флюиде; выбор требует проверки контрпримера с низким сопротивлением.",
+      "why": "Отберите пористый интервал до вывода о флюиде; выбор требует проверки контрпримера с низким сопротивлением.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.02",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "И",
+        "threshold": "Каротажная кривая, оценённый промежуточный параметр и итоговый показатель — разные ступени."
+      },
+      "video_criteria": [],
+      "scene_template": "process_chain",
+      "hook_only": false,
+      "rationale": "По доступным входам выберите следующий шаг схемы и обоснуйте итоговый выход.",
+      "why": "По доступным входам выберите следующий шаг схемы и обоснуйте итоговый выход.",
+      "template": "process_chain",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.04",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Воду не измеряют напрямую: её долю рассчитывают."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Изменяя вход Арчи, обучающийся увидит, чем вычисленная доля воды отличается от одного измерения.",
+      "why": "Изменяя вход Арчи, обучающийся увидит, чем вычисленная доля воды отличается от одного измерения.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.05",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Пр",
+        "threshold": "Низкая водонасыщенность сама по себе не обещает добычу."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "По сочетанию признаков решите, каких данных не хватает для вывода о продуктивности.",
+      "why": "По сочетанию признаков решите, каких данных не хватает для вывода о продуктивности.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.06",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Для промытой зоны меняются два сопротивления."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Переключение сопротивлений покажет, почему одна форма модели рассчитывает разные области вокруг скважины.",
+      "why": "Переключение сопротивлений покажет, почему одна форма модели рассчитывает разные области вокруг скважины.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.07",
+      "format": "длинное видео",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Н",
+        "threshold": "Резкий контраст двух зон даёт косвенный признак подвижности."
+      },
+      "video_criteria": [
+        "time_change",
+        "invisible_visible",
+        "cause_effect"
+      ],
+      "scene_template": "invasion_profile",
+      "hook_only": false,
+      "rationale": "В разрезе можно проследить вторжение фильтрата, визуально сравнить промытую и незатронутую области и показать условный вывод о подвижности.",
+      "why": "В разрезе можно проследить вторжение фильтрата, визуально сравнить промытую и незатронутую области и показать условный вывод о подвижности.",
+      "template": "invasion_profile",
+      "hook_short": false,
+      "video_scores": {
+        "time": 1,
+        "invisible": 1,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 1
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.08",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Общий множитель сокращается, и сравнение возможно без кривой пористости."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Проследите, что меняется при изменении общего множителя, и почему при делении его влияние исчезает.",
+      "why": "Проследите, что меняется при изменении общего множителя, и почему при делении его влияние исчезает.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.09",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Р",
+        "threshold": "Один и тот же высокий индекс не отвечает на вопрос о наличии углеводородов."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Примените отдельный критерий породы и проверьте, следует ли из индекса подвижность или лишь нет признака смещения.",
+      "why": "Примените отдельный критерий породы и проверьте, следует ли из индекса подвижность или лишь нет признака смещения.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.10",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Оценка незатронутой зоны зависит от допущения о промытой зоне."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Нужно спокойно сверить формулы и допущения, не маскируя противоречие в напечатанной записи плавной анимацией.",
+      "why": "Нужно спокойно сверить формулы и допущения, не маскируя противоречие в напечатанной записи плавной анимацией.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.11",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "И",
+        "threshold": "Согласие двух оценок проверяет предпосылку о форме проникновения."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Сопоставьте рассчитанные оценки и решите, согласуется ли результат с моделью проникновения.",
+      "why": "Сопоставьте рассчитанные оценки и решите, согласуется ли результат с моделью проникновения.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.12",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "И",
+        "threshold": "Знак расхождения подсказывает, где искать проблему в сопротивлениях."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Разберите знак остатка, затем выберите проверку глубинности измерений.",
+      "why": "Разберите знак остатка, затем выберите проверку глубинности измерений.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.13",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Ф",
+        "threshold": "Один знак расхождения допускает поправку и несколько физических объяснений."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Разветвите объяснения одного и того же знака и решите, когда допустима модельная поправка.",
+      "why": "Разветвите объяснения одного и того же знака и решите, когда допустима модельная поправка.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.14",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Р",
+        "threshold": "Флаг требует проверки: он не подтверждает наличие нефти или газа."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Это короткая карта быстрых методов, а не физический или числовой разбор.",
+      "why": "Это короткая карта быстрых методов, а не физический или числовой разбор.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.16",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "ПС и отношение сопротивлений чувствительны к разным вещам при наличии углеводородов."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "При переключении наличия углеводородов видны разные зависимости двух сигналов.",
+      "why": "При переключении наличия углеводородов видны разные зависимости двух сигналов.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.15",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Р",
+        "threshold": "Вода даёт согласованное движение кривых, а не отдельный порог сопротивления."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "Наложите формы, затем по относительному направлению выберите предварительное объяснение.",
+      "why": "Наложите формы, затем по относительному направлению выберите предварительное объяснение.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.18",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "При полной водонасыщенности кажущееся сопротивление становится оценкой сопротивления самой воды."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Сравните случай, когда кажущаяся оценка равна сопротивлению воды, с отклонением от водяной опоры.",
+      "why": "Сравните случай, когда кажущаяся оценка равна сопротивлению воды, с отклонением от водяной опоры.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.17",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н",
+        "threshold": "Опорное значение ищут в пористой и проницаемой зоне, а не среди всех минимумов."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Выберите минимум среди подходящих зон, отвергая низкопористую ложную опору.",
+      "why": "Выберите минимум среди подходящих зон, отвергая низкопористую ложную опору.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.19",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "И",
+        "threshold": "Возможности расчёта на скважине зависят от доступных пористостных кривых."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "По доступным измерениям и условиям выберите материал для расчёта пористости.",
+      "why": "По доступным измерениям и условиям выберите материал для расчёта пористости.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.20",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Отношение кажущихся сопротивлений преобразуется в водонасыщенность по модели."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Проверьте авторские соотношения сопротивлений с квадратным корнем и интерпретируйте долю воды.",
+      "why": "Проверьте авторские соотношения сопротивлений с квадратным корнем и интерпретируйте долю воды.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.21",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Пр",
+        "threshold": "Расчётная пористость под водяной гипотезой — диагностический признак, а не независимое измерение."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "Сравните условную пористость с отдельной кривой и выберите интервалы для дальнейшей проверки.",
+      "why": "Сравните условную пористость с отдельной кривой и выберите интервалы для дальнейшей проверки.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.23",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Пористость, вычисленная при допущении полного водонасыщения, не равна фактической во всех пластах."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "На графике сопоставьте изменение расчётной и независимой пористости при смене входа.",
+      "why": "На графике сопоставьте изменение расчётной и независимой пористости при смене входа.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.22",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "И",
+        "threshold": "Ошибочное сопротивление воды меняет сравнение с истинной пористостью, но не картину сравнения зон."
+      },
+      "video_criteria": [],
+      "scene_template": "threshold_slider",
+      "hook_only": false,
+      "rationale": "Изменяя сопротивление воды, можно отдельно увидеть смещение абсолютных значений и сохранение картины сравнения.",
+      "why": "Изменяя сопротивление воды, можно отдельно увидеть смещение абсолютных значений и сохранение картины сравнения.",
+      "template": "threshold_slider",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.24",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "И",
+        "threshold": "Сравнивают измерение не с универсальным порогом, а с расчётным сопротивлением того же пласта, если он заполнен водой."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "По измеренному сопротивлению и водяному эталону выберите, оправдан ли признак углеводородов.",
+      "why": "По измеренному сопротивлению и водяному эталону выберите, оправдан ли признак углеводородов.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.25",
+      "format": "шортс",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Н",
+        "threshold": "Вода в порах не обязательно движется при добыче: при неснижаемой водонасыщенности она удерживается на зёрнах."
+      },
+      "video_criteria": [
+        "scale_jump",
+        "invisible_visible",
+        "cause_effect"
+      ],
+      "scene_template": "pore_scale",
+      "hook_only": false,
+      "rationale": "Удержание воды на масштабе пор можно наглядно связать с её неподвижностью без выкладок и новых чисел.",
+      "why": "Удержание воды на масштабе пор можно наглядно связать с её неподвижностью без выкладок и новых чисел.",
+      "template": "pore_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 1,
+        "scale": 1,
+        "counterintuitive": 0,
+        "cause_effect": 1
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x1.26",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Р",
+        "secondary": "Н",
+        "threshold": "Скопление точек на одной линии равной доли воды и разброс по нескольким линиям — разные признаки."
+      },
+      "video_criteria": [],
+      "scene_template": "feature_compare",
+      "hook_only": false,
+      "rationale": "Сопоставьте расположение точек с линиями Баклса, чтобы отличить удерживаемую воду от иных состояний.",
+      "why": "Сопоставьте расположение точек с линиями Баклса, чтобы отличить удерживаемую воду от иных состояний.",
+      "template": "feature_compare",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.03",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Р",
+        "secondary": "И",
+        "threshold": "Судят не по одной высокой водонасыщенности, а по рисунку точек с постоянным объёмным содержанием воды."
+      },
+      "video_criteria": [],
+      "scene_template": "feature_compare",
+      "hook_only": false,
+      "rationale": "По виду облака точек найдите согласованный тренд и сделайте условный вывод.",
+      "why": "По виду облака точек найдите согласованный тренд и сделайте условный вывод.",
+      "template": "feature_compare",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.04",
+      "format": "карточки",
+      "difficulty": {
+        "primary": "Р",
+        "secondary": "Н",
+        "threshold": "От почти постоянного объёмного содержания воды до выраженного разброса меняется картина добычи."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Карточки закрепят, чем отличаются картины добычи нефти и воды на графике.",
+      "why": "Карточки закрепят, чем отличаются картины добычи нефти и воды на графике.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.01",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Р",
+        "threshold": "Водонасыщенность получают не из одного показания прибора, а из положения точек на диаграмме."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "Выбор разных положений точки показывает, почему нужны обе координаты для косвенного вывода.",
+      "why": "Выбор разных положений точки показывает, почему нужны обе координаты для косвенного вывода.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.02",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Если поры целиком заполнены водой, в логарифмических координатах член, связанный с насыщением, исчезает."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Переключение шкалы делает видимой смену формы зависимости Арчи.",
+      "why": "Переключение шкалы делает видимой смену формы зависимости Арчи.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.03",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Если поменять оси местами, изменится то, как с графика читают наклон и пересечение."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Движение наклона и пересечения разделяет влияние параметров на рисунок прямой.",
+      "why": "Движение наклона и пересечения разделяет влияние параметров на рисунок прямой.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.04",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н",
+        "threshold": "Если водные точки хорошего качества охватывают разные пористости, кривизна линии помогает проверить выбранный параметр матрицы."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "По типу пористостного измерения сопоставьте предполагаемую матрицу и положение линии.",
+      "why": "По типу пористостного измерения сопоставьте предполагаемую матрицу и положение линии.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.05",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Ф",
+        "threshold": "Для точки берут водное сопротивление именно на её пористости — иначе сравниваются разные породы по пористости."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Отсчитайте опорное сопротивление для той же пористости, затем используйте формулу на точке.",
+      "why": "Отсчитайте опорное сопротивление для той же пористости, затем используйте формулу на точке.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.06",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н",
+        "threshold": "Параллельные линии — справочник только для того показателя насыщения и набора параметров, по которым их построили."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Проведите уровни насыщенности от исходной водяной линии и проверьте направление смещения.",
+      "why": "Проведите уровни насыщенности от исходной водяной линии и проверьте направление смещения.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.14",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Р",
+        "threshold": "При равной пористости сопротивление может существенно различаться; это разные поля наблюдений, а не взаимозаменяемые величины."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "По таблице сопоставьте интервалы равной пористости и объясните, почему одной координаты недостаточно.",
+      "why": "По таблице сопоставьте интервалы равной пористости и объясните, почему одной координаты недостаточно.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.05",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Ф",
+        "threshold": "Наклон водоносной линии — вывод из группы точек, а не безошибочная константа."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "На данных автора выберите опорное облако точек и обоснуйте линию.",
+      "why": "На данных автора выберите опорное облако точек и обоснуйте линию.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.06",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Сопротивление пластовой воды выводят из сопротивления водоносной породы, учитывая пористость и параметры формулы."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Подставьте считываемые параметры в авторский расчёт и отметьте расхождение в напечатанной подстановке.",
+      "why": "Подставьте считываемые параметры в авторский расчёт и отметьте расхождение в напечатанной подстановке.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.07",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Ф",
+        "threshold": "На диаграмме Пикетта линии заданной насыщенности параллельны водоносной линии."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Постройте заданную линию на палетке, применив опорное сопротивление и множитель.",
+      "why": "Постройте заданную линию на палетке, применив опорное сопротивление и множитель.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.08",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Сопротивление аномальной точки сравнивают с линией воды на той же пористости."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Считайте сопротивление при заданной пористости и оцените насыщенность аномальной точки.",
+      "why": "Считайте сопротивление при заданной пористости и оцените насыщенность аномальной точки.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.07",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Н",
+        "threshold": "Неизвестный параметр матрицы или сопротивление пластовой воды не обязательно делает оценку водонасыщенности невозможной."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "По задаче и имеющимся данным определите, чем поможет представление Хингла.",
+      "why": "По задаче и имеющимся данным определите, чем поможет представление Хингла.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.08",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "По Хинглу линейность появляется не в измерении, а после преобразования шкалы сопротивления."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Переключение вертикальной шкалы делает видимым эффект преобразования на форме зависимости.",
+      "why": "Переключение вертикальной шкалы делает видимым эффект преобразования на форме зависимости.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.09",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "П",
+        "threshold": "Опорная водная линия задаёт геометрию, а положение ниже неё отражает степень водонасыщенности, не количество нефти напрямую."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "Перемещение по вееру позволяет понять роль пересечения и не спутать его с параллельными линиями Пикетта.",
+      "why": "Перемещение по вееру позволяет понять роль пересечения и не спутать его с параллельными линиями Пикетта.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.10",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "И",
+        "threshold": "Одна опорная прямая даёт разные оценки: сопротивление воды по точке линии, параметр матрицы по пересечению, насыщенность по сравнению сопротивлений."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "От водяной линии последовательно считайте сведения о матрице и сопротивлении воды.",
+      "why": "От водяной линии последовательно считайте сведения о матрице и сопротивлении воды.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.11",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Ф",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Начав от водяной линии, примените множитель и выберите геометрически верное построение.",
+      "why": "Начав от водяной линии, примените множитель и выберите геометрически верное построение.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.09",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Выбор сетки сразу задаёт коэффициент извилистости и показатель цементации."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Сопоставьте тип породы и параметры сетки, а не выбирайте её по внешнему сходству.",
+      "why": "Сопоставьте тип породы и параметры сетки, а не выбирайте её по внешнему сходству.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.10",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Н",
+        "threshold": "Пересечение водоносной линии даёт оценку плотности матрицы, но разброс точек оставляет альтернативы."
+      },
+      "video_criteria": [],
+      "scene_template": "crossplot",
+      "hook_only": false,
+      "rationale": "На авторском графике найдите водяной тренд и выберите точку отсчёта плотности.",
+      "why": "На авторском графике найдите водяной тренд и выберите точку отсчёта плотности.",
+      "template": "crossplot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.11",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "С графика читают сопротивление водоносной породы, а искомое сопротивление самой воды вычисляют."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "При выбранной пористости считайте опорное сопротивление и примените параметры сетки.",
+      "why": "При выбранной пористости считайте опорное сопротивление и примените параметры сетки.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.12",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Ф",
+        "threshold": "На диаграмме Хингла линии насыщенности сходятся к водоносной линии при бесконечном сопротивлении."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Возьмите опору и множитель из примера на данных, затем постройте нужную линию.",
+      "why": "Возьмите опору и множитель из примера на данных, затем постройте нужную линию.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.13",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Сравнивают сопротивления при одинаковой пористости, а не произвольные точки графика."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Оцените конкретную точку по сопротивлению линии при той же пористости, а не на глаз.",
+      "why": "Оцените конкретную точку по сопротивлению линии при той же пористости, а не на глаз.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.12",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "И",
+        "threshold": "Диаграммы позволяют оценивать разные неизвестные, но обе теряют надёжность, если сравниваемые интервалы не сопоставимы."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Используйте сравнительную таблицу для выбора метода по параметрам и данным; анимация не заменит таблицу.",
+      "why": "Используйте сравнительную таблицу для выбора метода по параметрам и данным; анимация не заменит таблицу.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.13",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Пр",
+        "threshold": "Формула по каротажу не даёт универсальной абсолютной проницаемости: сначала проверяют состояние воды, затем сравнивают с соседними скважинами."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Сначала выберите применимый интервал по состоянию воды, лишь потом оценивайте проницаемость.",
+      "why": "Сначала выберите применимый интервал по состоянию воды, лишь потом оценивайте проницаемость.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.15",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "В этой модели тип флюида выбирает вариант формулы до того, как подставляют пористость и насыщенность."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Сначала выберите уравнение по флюиду, затем проследите влияние пористости и насыщенности на оценку.",
+      "why": "Сначала выберите уравнение по флюиду, затем проследите влияние пористости и насыщенности на оценку.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.16",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": null,
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Достаточно кратко разобрать входы и смысл эмпирической формулы Тимура.",
+      "why": "Достаточно кратко разобрать входы и смысл эмпирической формулы Тимура.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.17",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Вместо выбора коэффициента по типу флюида этот метод принимает плотность углеводородов непосредственно."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Текст связывает обозначения и порядок вычислений перед разбором двух путей к коэффициенту.",
+      "why": "Текст связывает обозначения и порядок вычислений перед разбором двух путей к коэффициенту.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.18",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "По доступной плотности выберите подходящий вход и примените формулу коэффициента.",
+      "why": "По доступной плотности выберите подходящий вход и примените формулу коэффициента.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.19",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Дайте сопротивления и проверяемые условия, чтобы обучающийся выбрал альтернативный путь.",
+      "why": "Дайте сопротивления и проверяемые условия, чтобы обучающийся выбрал альтернативный путь.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.20",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Рассчитанные постоянные — лишь промежуточные результаты; итоговая формула также сохраняет пористость и отношение сопротивлений."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Соберите вычисленные параметры в итоговую оценку и проверьте, что входы не перепутаны.",
+      "why": "Соберите вычисленные параметры в итоговую оценку и проверьте, что входы не перепутаны.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.14",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Ф",
+        "threshold": "Одна и та же точка даёт разные величины на двух разных семействах кривых."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "На авторской палетке проведите отсчёт от пористости и насыщенности до искомых величин.",
+      "why": "На авторской палетке проведите отсчёт от пористости и насыщенности до искомых величин.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x5.15",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Р",
+        "threshold": "Сначала проверьте состояние зоны по рисунку точек, затем оценивайте проницаемость."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "По состоянию интервала решите, применима ли палетка; ошибочный выбор важнее чтения шкалы.",
+      "why": "По состоянию интервала решите, применима ли палетка; ошибочный выбор важнее чтения шкалы.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.21",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Н",
+        "threshold": "Сланец — порода, глина — компонент породы; сходные названия входов не делают их физически взаимозаменяемыми."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "Сопоставьте сценарии чистого и глинистого песчаника, чтобы различить сигнал и вывод модели.",
+      "why": "Сопоставьте сценарии чистого и глинистого песчаника, чтобы различить сигнал и вывод модели.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.22",
+      "format": "шортс",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Ф",
+        "threshold": "В модели вода в глинистой породе не едина по подвижности: часть остаётся у поверхности глины, часть могут вытеснить углеводороды."
+      },
+      "video_criteria": [
+        "scale_jump",
+        "invisible_visible",
+        "cause_effect"
+      ],
+      "scene_template": "pore_scale",
+      "hook_only": false,
+      "rationale": "Переход от поверхности глины к порам сделает видимой разницу между связанной и свободной водой.",
+      "why": "Переход от поверхности глины к порам сделает видимой разницу между связанной и свободной водой.",
+      "template": "pore_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 1,
+        "scale": 1,
+        "counterintuitive": 0,
+        "cause_effect": 1
+      }
+    },
+    {
+      "node_id": "geo.test_asquith.x2.23",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "И",
+        "threshold": "Глина ослабляет различие между водоносными и продуктивными интервалами; завышенная поправка может создать ложный признак углеводородов."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Сопоставьте признаки глины, расчётный результат и ограничения, прежде чем выбрать интервал для проверки.",
+      "why": "Сопоставьте признаки глины, расчётный результат и ограничения, прежде чем выбрать интервал для проверки.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    }
+  ]
+}

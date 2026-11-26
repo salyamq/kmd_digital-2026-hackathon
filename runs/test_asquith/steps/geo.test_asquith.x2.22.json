@@ -1,0 +1,347 @@
+{
+  "node_id": "geo.test_asquith.x2.22",
+  "chapter": "test_asquith",
+  "index": 65,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Где вода остаётся неподвижной",
+  "title_book": "SHALY SAND ANALYSIS",
+  "section": "x2",
+  "pages": [
+    136
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "М",
+    "secondary": "Ф",
+    "threshold": "В модели вода в глинистой породе не едина по подвижности: часть остаётся у поверхности глины, часть могут вытеснить углеводороды."
+  },
+  "threshold": "В модели вода в глинистой породе не едина по подвижности: часть остаётся у поверхности глины, часть могут вытеснить углеводороды.",
+  "format": "short",
+  "format_rationale": "Переход от поверхности глины к порам сделает видимой разницу между связанной и свободной водой.",
+  "order_rationale": "Объясняет различие между водой, связанной с породой, и свободной водой.",
+  "essence": [
+    "**Двухводная модель** оценки водонасыщенности различает связанную и свободную воду.",
+    "Разница в подвижности помогает понять отклик глинистого песчаника."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Откуда появилась модель",
+          "text": "Работы Ваксмана со Смитсом и Томасом объясняли причины отклика **глинистого песчаника**, песчаника с глинистыми минералами. Эти работы приближали модели к реальному пласту. Клавье с соавторами развили подход Ваксмана для оценки водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.22.c01",
+            "geo.test_asquith.x2.22.c02"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.22.c01",
+              "quote": "Beginning in the late 1960s, the work of Waxman and Smits (1968) and Waxman and Thomas (1974) helped to better understand the physical causes of the responses of logging measurements to shaly sands and to develop interpretive models to better approximate the physical reality of formations.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.22.c02",
+              "quote": "Clavier et al. (1977) built on the work of Waxman and his colleagues with the introduction of the dual water model for the determination of water saturation.",
+              "page": 136,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Две роли воды",
+          "text": "**Связанная вода** образует неподвижный слой у поверхности глинистых минералов. **Свободная вода** — другая часть воды в модели. В модели свободная вода подвижна, и углеводороды могут её вытеснить. Автор отмечает: модель сложнее, но лучше описывает каротажный отклик в широком диапазоне условий. Это помогло её распространению.",
+          "claim_ids": [
+            "geo.test_asquith.x2.22.c03",
+            "geo.test_asquith.x2.22.c04",
+            "geo.test_asquith.x2.22.c05"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.22.c03",
+              "quote": "The dual water model postulates two different types of water in a shaly formation, a immovable water layer next to the clay surfaces (bound water)",
+              "page": 136,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.22.c04",
+              "quote": "movable water that can be displaced by hydrocarbons (free water).",
+              "page": 136,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.22.c05",
+              "quote": "This technique, while more complex in its use, continues to gain popularity because of its closer approximation to the responses of shaly sands in a wide variety of conditions.",
+              "page": 136,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "data": {
+        "title": "Отличить две части воды",
+        "claim_ids": [
+          "geo.test_asquith.x2.22.c03",
+          "geo.test_asquith.x2.22.c04"
+        ],
+        "signs": [
+          "Положение относительно поверхности минерала",
+          "Подвижность воды"
+        ],
+        "rule": "Неподвижный слой называют связанным. Подвижная вода, которую могут вытеснить углеводороды, свободна.",
+        "conclusion": "Два вида воды имеют разные роли в модели.",
+        "cases": [
+          {
+            "given": "Неподвижный слой у поверхности глинистого минерала.",
+            "options": [
+              "Связанная вода",
+              "Свободная вода"
+            ],
+            "answer": 0,
+            "why": "Он соответствует определению связанной воды.",
+            "source": "модель"
+          },
+          {
+            "given": "Вода подвижна и может быть вытеснена углеводородами.",
+            "options": [
+              "Связанная вода",
+              "Свободная вода"
+            ],
+            "answer": 1,
+            "why": "Вытеснение возможно для свободной воды.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Модель различает компоненты воды по подвижности; речь идёт об интерпретации откликов, а не о прямом замере каждого компонента.",
+        "inputs": "Каротажные отклики глинистого песчаника.",
+        "outputs": "Оценка водонасыщенности по двухводной модели.",
+        "breaks_where": "Не отождествляйте связанную воду со свободной водой.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Отклики каротажа и сведения о применяемой модели.",
+          "manual_steps": "Выбрать модель и проверить смысл расчётных компонентов.",
+          "judgment_points": "Взвесить сложность метода и адекватность отклика для конкретной породы.",
+          "time": "Более сложную модель труднее применять и проверять.",
+          "typical_errors": "Считать всю воду одинаково вытесняемой.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как модель, в которой наблюдаемый сигнал объясняется разными скрытыми компонентами.",
+        "breaks_where": "Здесь компоненты заданы поведением воды в порах, а не произвольным математическим разложением.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "связанная вода",
+          "definition": "В двухводной модели неподвижный слой воды у поверхностей глинистых минералов.",
+          "en": "bound water",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "свободная вода",
+          "definition": "В двухводной модели подвижная вода, которую могут вытеснить углеводороды.",
+          "en": "free water",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "двухводная модель",
+          "definition": "Модель, которая различает связанную и свободную воду в глинистой породе.",
+          "en": "dual water model",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "глинистые минералы",
+          "definition": "Группа тонкодисперсных минералов; это компоненты породы, а не обозначение отдельного слоя сланца.",
+          "en": "clay minerals",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый песчаник",
+          "definition": "В описании автора это обычно песчаная порода, содержащая глинистые минералы, а не просто песок с примесью сланца.",
+          "en": "shaly sand",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "углеводороды",
+          "definition": "Вещества, основу которых составляют углерод и водород; в данном контексте нефть или газ.",
+          "en": "hydrocarbons",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пласт",
+          "definition": "Слой горной породы, отличаемый от соседних слоёв.",
+          "en": "formation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Слой у глинистых минералов и подвижная вода представлены раздельно.",
+      "alt": "Две колонки показывают неподвижный слой и воду, которую могут вытеснить углеводороды.",
+      "file": "illustrations/geo.test_asquith.x2.22__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.22.c03",
+        "geo.test_asquith.x2.22.c04"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.22.c01",
+      "kind": "observation",
+      "text": "Работы Ваксмана со Смитсом и Томасом помогли объяснить физические причины каротажного отклика глинистых песчаников и приблизить модели к реальному пласту.",
+      "quote": "Beginning in the late 1960s, the work of Waxman and Smits (1968) and Waxman and Thomas (1974) helped to better understand the physical causes of the responses of logging measurements to shaly sands and to develop interpretive models to better approximate the physical reality of formations.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.22.c02",
+      "kind": "observation",
+      "text": "Клавье с соавторами развили работы Ваксмана, предложив двухводную модель оценки водонасыщенности.",
+      "quote": "Clavier et al. (1977) built on the work of Waxman and his colleagues with the introduction of the dual water model for the determination of water saturation.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.22.c03",
+      "kind": "assumption",
+      "text": "Связанная вода в двухводной модели — неподвижный слой у поверхностей глинистых минералов.",
+      "quote": "The dual water model postulates two different types of water in a shaly formation, a immovable water layer next to the clay surfaces (bound water)",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.22.c04",
+      "kind": "assumption",
+      "text": "Свободная вода в модели подвижна и может быть вытеснена углеводородами.",
+      "quote": "movable water that can be displaced by hydrocarbons (free water).",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.22.c05",
+      "kind": "inference",
+      "text": "Хотя модель сложнее в использовании, автор отмечает её распространение, потому что она лучше приближает каротажные отклики глинистых песчаников в широком диапазоне условий.",
+      "quote": "This technique, while more complex in its use, continues to gain popularity because of its closer approximation to the responses of shaly sands in a wide variety of conditions.",
+      "page": 136,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.22.t01",
+    "geo.test_asquith.x2.22.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.22.k01",
+    "geo.test_asquith.x2.22.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.21",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.25",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

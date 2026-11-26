@@ -1,0 +1,413 @@
+{
+  "node_id": "geo.test_asquith.x5.07",
+  "chapter": "test_asquith",
+  "index": 42,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как провести линию равной насыщенности",
+  "title_book": "Диаграмма Пикетта",
+  "section": "x5",
+  "pages": [
+    142
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Ф",
+    "threshold": "На диаграмме Пикетта линии заданной насыщенности параллельны водоносной линии."
+  },
+  "threshold": "На диаграмме Пикетта линии заданной насыщенности параллельны водоносной линии.",
+  "format": "data_practice",
+  "format_rationale": "Постройте заданную линию на палетке, применив опорное сопротивление и множитель.",
+  "order_rationale": "Показывает, как построить параллельные уровни насыщенности на выбранной опоре.",
+  "essence": [
+    "На Пикетте линию водонасыщенности проводят параллельно водоносной.",
+    "Табличный множитель даёт сопротивление опорной точки при той же пористости."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как получить опорную точку",
+          "text": "Возьмите сопротивление **водоносной линии**, линии полного водонасыщения, при фиксированной пористости. Умножьте его на **табличный множитель**, коэффициент для выбранной водонасыщенности. Табличные множители применяют при показателе насыщения $n=2{,}0$. Через найденную точку проведите линию параллельно водоносной.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c01",
+            "geo.test_asquith.x5.07.c02",
+            "geo.test_asquith.x5.07.c03"
+          ],
+          "pages": [
+            142
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.07.c01",
+              "quote": "The water saturation lines are constructed on the plot from the value for $R_{a}$ and the multipliers from Table 7.2.",
+              "page": 142,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.07.c02",
+              "quote": "The multipliers are for a saturation exponent ($n$) of 2.0.",
+              "page": 142,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.07.c03",
+              "quote": "For each line to be plotted, multiply $R_{a}$ by the multiplier to get the $y$-intercept and draw a line from the $y$-intercept parallel to the water-bearing line.",
+              "page": 142,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Линия для половины объёма пор",
+          "text": "В примере строят линию водонасыщенности 50%. При плотностной пористости DPHI = 0,10 сопротивление водоносной линии равно 4,6, а табличный множитель равен 4. Умножение даёт 18,4 при той же пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c04"
+          ],
+          "pages": [
+            142
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.07.c04",
+              "quote": "To plot the line for $50\\%$ water saturation, for example, if $R_{a}$ (at $\\mathrm{DPHI} = 0.10$) is 4.6 and the multiplier (from Table 7.2) is 4, the $y$-intercept for the $50\\%$ water saturation line (at $\\mathrm{DPHI} = 0.10$) is 18.4.",
+              "page": 142,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "text": "Считайте сопротивление водоносной линии при выбранной пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c01"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "Умножьте сопротивление на множитель для выбранной водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c01",
+            "geo.test_asquith.x5.07.c02",
+            "geo.test_asquith.x5.07.c03"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "Проведите линию через найденную точку параллельно водоносной.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c03"
+          ],
+          "pages": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_asquith_x5_07_e01",
+          "title": "Линия водонасыщенности 50%",
+          "page": 142,
+          "condition": "При DPHI = 0.10 R_a = 4.6; множитель из таблицы 7.2 равен 4.",
+          "steps": [
+            "Умножить 4.6 на 4.",
+            "Найти точку при DPHI = 0.10 и сопротивлении 18.4.",
+            "Провести линию параллельно водоносной."
+          ],
+          "result": "Опорное значение для линии 50% равно 18.4.",
+          "numbers": [
+            "0.10",
+            "4",
+            "4.6",
+            "7.2",
+            "18.4",
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "data": {
+        "title": "Как построить линию для 50%",
+        "signs": [
+          "Плотностная пористость 0,10",
+          "Опорное сопротивление 4,6",
+          "Табличный множитель 4"
+        ],
+        "rule": "Умножьте сопротивление на множитель и сохраните прежнюю пористость.",
+        "conclusion": "Через точку с сопротивлением 18,4 проведите параллель к водоносной линии.",
+        "claim_ids": [
+          "geo.test_asquith.x5.07.c01",
+          "geo.test_asquith.x5.07.c02",
+          "geo.test_asquith.x5.07.c03",
+          "geo.test_asquith.x5.07.c04"
+        ],
+        "cases": [
+          {
+            "given": "Искомая линия соответствует 50% воды. При пористости 0,10 опора равна 4,6, показатель насыщения равен 2,0.",
+            "options": [
+              "Отметить 18,4 при той же пористости",
+              "Отметить 4,6 при изменённой пористости"
+            ],
+            "answer": 0,
+            "why": "Множитель 4 относится к сопротивлению, а пористость не меняется.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "text": "Табличные множители применяют при показателе насыщения $n=2{,}0$.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c02"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "При DPHI = 0,10 для линии 50% исходное сопротивление 4,6 умножают на 4 и получают 18,4.",
+          "claim_ids": [
+            "geo.test_asquith.x5.07.c04"
+          ],
+          "pages": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Параллельные линии вычислены по опорной, а не подгоняются по отдельным группам точек.",
+        "inputs": "Водоносная линия и множители.",
+        "outputs": "Линии заданной водонасыщенности.",
+        "breaks_where": "Приведённые множители рассчитаны для n = 2.0.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Водоносная линия и таблица множителей.",
+          "manual_steps": "Рассчитать опоры и построить параллели.",
+          "judgment_points": "Проверить, что показатель насыщения соответствует таблице.",
+          "time": "Действия повторяются для каждой линии.",
+          "typical_errors": "Заменить умножение на произвольный сдвиг по числовой шкале.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как семейство параллельных порогов с общей опорной линией.",
+        "breaks_where": "Положение линий и масштаб зависят от модели и способа построения диаграммы.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "term": "Водонасыщенность",
+          "en": "water saturation",
+          "definition": "Доля объёма пор, занятая водой.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Плотностная пористость",
+          "en": "density porosity",
+          "definition": "Пористость, которую вычисляют по объёмной плотности с учётом плотности матрицы и флюида.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водоносной породы",
+          "en": "resistivity in the undisturbed, water-bearing zone",
+          "definition": "R_a: удельное сопротивление в неизменённой водоносной зоне.",
+          "page": 142,
+          "by": "author"
+        },
+        {
+          "term": "Водоносная линия",
+          "en": "water-bearing line",
+          "definition": "Линия, проведённая через группу точек пласта, насыщенного водой.",
+          "page": 142,
+          "by": "author"
+        },
+        {
+          "term": "Показатель насыщения",
+          "en": "saturation exponent",
+          "definition": "Степенной параметр n в уравнении насыщенности.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Диаграмма Пикетта",
+          "en": "Pickett plot",
+          "definition": "График сопоставления сопротивления и пористости для различения водоносных и углеводородоносных зон.",
+          "page": 142,
+          "by": "author"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема передаёт расчёт для книжного примера. Пористость остаётся равной 0,10.",
+      "alt": "Последовательность блоков показывает исходное сопротивление, множитель, результат и построение параллели.",
+      "file": "illustrations/geo.test_asquith.x5.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.07.c01",
+        "geo.test_asquith.x5.07.c02",
+        "geo.test_asquith.x5.07.c03",
+        "geo.test_asquith.x5.07.c04"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.07.c01",
+      "kind": "inference",
+      "text": "Для линий водонасыщенности используют значение сопротивления водоносной линии и множители таблицы 7.2.",
+      "quote": "The water saturation lines are constructed on the plot from the value for $R_{a}$ and the multipliers from Table 7.2.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.07.c02",
+      "kind": "assumption",
+      "text": "Табличные множители применяются для показателя насыщения n = 2.0.",
+      "quote": "The multipliers are for a saturation exponent ($n$) of 2.0.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.07.c03",
+      "kind": "inference",
+      "text": "Умножением получают координату опорной точки и проводят через неё линию параллельно водоносной.",
+      "quote": "For each line to be plotted, multiply $R_{a}$ by the multiplier to get the $y$-intercept and draw a line from the $y$-intercept parallel to the water-bearing line.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.07.c04",
+      "kind": "observation",
+      "text": "Для линии водонасыщенности 50% при DPHI = 0.10 сопротивление 4.6 и множитель 4 дают опорное значение 18.4.",
+      "quote": "To plot the line for $50\\%$ water saturation, for example, if $R_{a}$ (at $\\mathrm{DPHI} = 0.10$) is 4.6 and the multiplier (from Table 7.2) is 4, the $y$-intercept for the $50\\%$ water saturation line (at $\\mathrm{DPHI} = 0.10$) is 18.4.",
+      "page": 142,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.07.t01",
+    "geo.test_asquith.x5.07.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.07.k01",
+    "geo.test_asquith.x5.07.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x5.05",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x5.06",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.06",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)"
+    ],
+    "dropped_tasks": []
+  }
+}

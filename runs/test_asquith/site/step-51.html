@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 51. Как найти сопротивление пластовой воды — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x5.11" data-index="51">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 51 из 66</p>
+    <h1>Как найти сопротивление пластовой воды</h1>
+    <p class="booktitle">В книге: «Диаграмма Хингла» <span class="pg">стр. 145</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + процесс/прибор</span>    </p>
+<p class="relies">Опирается на: <a href="step-50.html">шаг 50 «Как оценить плотность твёрдой породы»</a> <span class="muted">(предпосылка)</span>, <a href="step-47.html">шаг 47 «Что извлечь из водной линии»</a> <span class="muted">(пример)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Сопротивление воды вычисляют, а не считывают прямо с водоносной линии.</p><p>Считанное сопротивление, пористость и параметры сетки входят в одну формулу.</p><p class="threshold"><b>Пороговая идея.</b> С графика читают сопротивление водоносной породы, а искомое сопротивление самой воды вычисляют. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Что берут с диаграммы</h3>          <div class="para" id="how-1">
+            <p><strong class="term">Сопротивление пластовой воды</strong> — удельное сопротивление самой воды в пласте. <strong class="term">Водоносная линия</strong> построена по водоносным точкам. При пористости 10% и объёмной плотности 2,485 г/см³ на линии считывают 4,1 Ом·м. <strong class="term">Коэффициент извилистости</strong> a и <strong class="term">показатель цементации</strong> m заданы выбором сетки. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.11.c01"><p>«R_w is determined using Equation 7.28:»</p><footer>— автор, стр. 145 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.11.c02"><p>«For some porosity value, read the value of R_a from the water-bearing line on the crossplot.»</p><footer>— автор, стр. 145 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.11.c03"><p>«In this case, for a porosity of 10% (bulk density = 2.485 g/cm³), R_a = 4.1 ohm-m.»</p><footer>— автор, стр. 145 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.11.c04"><p>«The values of tortuosity factor (a) and cementation exponent (m) were assumed by choice of the particular crossplot grid.»</p><footer>— автор, стр. 145 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 284" role="img" aria-label="Сопротивление водоносной линии → Пористость и параметры сетки → Подстановка в формулу → Сопротивление пластовой воды" class="ill-svg"><title>Сопротивление водоносной линии → Пористость и параметры сетки → Подстановка в формулу → Сопротивление пластовой воды</title><rect class="ill-bg" x="0" y="0" width="360" height="284" rx="8"/><rect class="ill-box" x="12.0" y="30" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Сопротивление водоносной линии</tspan></text><line class="ill-line" x1="180.0" y1="69.0" x2="180.0" y2="93.0"/><polygon class="ill-arrow" points="180.0,93.0 176.1,84.9 183.9,84.9"/><rect class="ill-box" x="12.0" y="97" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="121" text-anchor="middle"><tspan x="180.0" dy="0">Пористость и параметры сетки</tspan></text><line class="ill-line" x1="180.0" y1="136.0" x2="180.0" y2="160.0"/><polygon class="ill-arrow" points="180.0,160.0 176.1,151.9 183.9,151.9"/><rect class="ill-box" x="12.0" y="164" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="188" text-anchor="middle"><tspan x="180.0" dy="0">Подстановка в формулу</tspan></text><line class="ill-line" x1="180.0" y1="203.0" x2="180.0" y2="227.0"/><polygon class="ill-arrow" points="180.0,227.0 176.1,218.9 183.9,218.9"/><rect class="ill-box" x="12.0" y="231" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="255" text-anchor="middle"><tspan x="180.0" dy="0">Сопротивление пластовой воды</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Вход и результат описывают разные объекты.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 145</span>
+  </figcaption>
+</figure>
+<h3>Как подставить значения</h3>          <div class="para" id="how-2">
+            <p>Умножьте сопротивление линии на пористость в степени m и разделите на a. В примере пористость подставляют как 0,10. Сетка задаёт m = 2,0 и a = 1,0. Сопротивление пластовой воды при пластовой температуре равно 0,041 Ом·м. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.11.c05"><p>«R_w = 0.041 ohm-m at formation temperature»</p><footer>— автор, стр. 145 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Оговорка об обозначениях</h3>          <div class="para para-model" id="how-3">
+            <p>В общей формуле вход помечен R_c. В абзаце и подстановке используется считанное сопротивление R_a. В разобранном примере это не два независимых входа. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Рассчитать сопротивление воды</p>        <ol class="proc"><li>Выберите пористость и найдите соответствующую объёмную плотность на шкале. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li><li>Считайте сопротивление водоносной линии. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li><li>Подставьте сопротивление, пористость и параметры сетки. Запишите результат для пластовой температуры. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_test_asquith_x5_11_e01">
+          <h3>Сопротивление воды по диаграмме Хингла <span class="pg">стр. 145</span></h3>
+          <p><b>Условие.</b> Пористость 10%, объёмная плотность 2.485 г/см³; сетка задаёт a = 1.0 и m = 2.0.</p>
+<ol class="ex-steps"><li>Считать R_a = 4.1 Ом·м по водоносной линии.</li><li>Подставить 4.1, пористость 0.10, m = 2.0 и a = 1.0.</li></ol>          <p class="ex-result"><b>Итог.</b> R_w = 0.041 Ом·м при пластовой температуре.</p>
+        </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Различить вход и результат</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Пористость и соответствующая объёмная плотность</li><li>Считанное сопротивление водоносной линии</li><li>Параметры сетки</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сопротивление линии умножают на пористость в степени m и делят на a. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Результат описывает воду при пластовой температуре, вход — водоносную породу.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> С водоносной линии считано 4,1 Ом·м. <span class="muted small">(Пример 1, стр. 145)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Это сопротивление пластовой воды</button><button type="button" class="btn ghost case-opt" data-i="1">Это вход для расчёта сопротивления воды</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Ординату линии используют в подстановке.</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> После подстановки получено 0,041 Ом·м. <span class="muted small">(Пример 1, стр. 145)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Сообщить как сопротивление пластовой воды при пластовой температуре</button><button type="button" class="btn ghost case-opt" data-i="1">Принять как считанную ординату линии</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Это выход формулы, а не показание диаграммы.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>В примере пористости 10% и плотности 2,485 г/см³ соответствует сопротивление линии 4,1 Ом·м. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li><li>Сетка в разобранном примере задаёт a = 1,0 и m = 2,0. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li><li>Автор получает 0,041 Ом·м при пластовой температуре. <span class="pg" title="Страница книги (по PDF)">стр. 145</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_asquith.x5.11.f01">
+          <div class="tex-display" data-tex="R_w = \frac{R_c\phi^m}{a}">$$R_w = \frac{R_c\phi^m}{a}$$</div>
+          <p>Общее уравнение оценки сопротивления пластовой воды; R_c — символ в исходной формуле, а сопротивление водоносной линии автор далее обозначает R_a. <span class="pg">стр. 145</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$R_w$</td><td>Сопротивление пластовой воды</td><td>Ом·м</td></tr><tr><td>$R_c$</td><td>Сопротивление, подставляемое с водоносной линии</td><td>Ом·м</td></tr><tr><td>$\phi$</td><td>Пористость</td><td>доля единицы</td></tr><tr><td>$m$</td><td>Показатель цементации</td><td>—</td></tr><tr><td>$a$</td><td>Коэффициент извилистости</td><td>—</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.test_asquith.x5.11.f02">
+          <div class="tex-display" data-tex="R_w = \frac{4.1\times 0.10^{2.0}}{1.0}">$$R_w = \frac{4.1\times 0.10^{2.0}}{1.0}$$</div>
+          <p>Подстановка измеренного по линии сопротивления и параметров сетки. <span class="pg">стр. 145</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$R_w$</td><td>Сопротивление пластовой воды</td><td>Ом·м</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Считанное и рассчитанное сопротивления описывают разные объекты.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Пористость или соответствующая объёмная плотность, водоносная линия, параметры сетки.</dd>
+          <dt>Выход</dt><dd>Оценка сопротивления пластовой воды при пластовой температуре.</dd>
+          <dt>Где ломается</dt><dd>Коэффициенты предполагаются при выборе сетки.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Водоносная линия и параметры сетки.</dd>
+            <dt>Ручные шаги</dt><dd>Считать ординату в выбранной точке и выполнить подстановку.</dd>
+            <dt>Точки суждения</dt><dd>Выбор опорной точки по пористости.</dd>
+            <dt>Время</dt><dd>Зависит от того, построена ли линия заранее.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять считанное сопротивление породы за сопротивление воды.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Похоже на извлечение опорного значения из таблицы с последующим преобразованием.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Линию строят по измерениям; она не задана точным справочником.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Обозначения в исходном фрагменте <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>В общей формуле напечатано R_c. В следующем абзаце ордината названа R_a, именно её значение автор использует при подстановке. Не следует трактовать R_c и R_a как два измеренных входа этого примера.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Сопротивление пластовой воды <span class="en" lang="en">(formation water resistivity)</span></dt><dd>Удельное электрическое сопротивление воды в пласте. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Сопротивление водоносной линии <span class="en" lang="en">(water-bearing line resistivity)</span></dt><dd>Сопротивление, считанное с линии водоносных точек при заданной пористости. <span class="pg">стр. 145</span></dd><dt>Пористость <span class="en" lang="en">(porosity)</span></dt><dd>Доля объёма пор в породе. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Объёмная плотность <span class="en" lang="en">(bulk density)</span></dt><dd>Масса породы и содержимого её пор на единицу общего объёма. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Диаграмма Хингла <span class="en" lang="en">(Hingle plot)</span></dt><dd>Диаграмма для совместной интерпретации сопротивления и пористости или её показателя. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Коэффициент извилистости <span class="en" lang="en">(tortuosity factor)</span></dt><dd>Коэффициент a в уравнении связи пористости, насыщенности и сопротивления. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Показатель цементации <span class="en" lang="en">(cementation exponent)</span></dt><dd>Степень m при пористости в уравнении сопротивления. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd><dt>Водоносная линия <span class="en" lang="en">(water-bearing line)</span></dt><dd>Линия, построенная по водоносным точкам. <span class="pg">стр. 145</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x5-11-t01" data-task="geo.test_asquith.x5.11.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что означает 4,1 Ом·м в примере?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x5.11.t01" value="0"> <span>Сопротивление водоносной линии</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x5.11.t01" value="1"> <span>Показатель цементации</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x5.11.t01" value="2"> <span>Результат расчёта для пластовой воды</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Сопротивление водоносной линии</p>
+    <p class="fb-expl">Это считанное сопротивление водоносной породы, которое используют в подстановке. <a href="#how-1">Где это в тексте (стр. 145) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x5-11-t02" data-task="geo.test_asquith.x5.11.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-test_asquith-x5-11-t02">Какое сопротивление пластовой воды получилось в примере?</label>
+  <p class="numeric"><input id="in-geo-test_asquith-x5-11-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">Ом·м</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 0,041 Ом·м</p>
+    <p class="fb-expl">При заданных входах автор получил 0,041 Ом·м при пластовой температуре. <a href="#how-2">Где это в тексте (стр. 145) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x5.11.c01"><p>Сопротивление пластовой воды находят по указанному автором уравнению. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«R_w is determined using Equation 7.28:»</p><footer>— стр. 145</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.11.c02"><p>Для выбранной пористости сопротивление считывают по водоносной линии. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«For some porosity value, read the value of R_a from the water-bearing line on the crossplot.»</p><footer>— стр. 145</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.11.c03"><p>При пористости 10% и объёмной плотности 2.485 г/см³ сопротивление водоносной линии равно 4.1 Ом·м. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«In this case, for a porosity of 10% (bulk density = 2.485 g/cm³), R_a = 4.1 ohm-m.»</p><footer>— стр. 145</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.11.c04"><p>Коэффициент извилистости и показатель цементации предполагают, выбирая сетку. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The values of tortuosity factor (a) and cementation exponent (m) were assumed by choice of the particular crossplot grid.»</p><footer>— стр. 145</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.11.c05"><p>В примере сопротивление пластовой воды равно 0.041 Ом·м при пластовой температуре. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«R_w = 0.041 ohm-m at formation temperature»</p><footer>— стр. 145</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u145_04-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>R_w is determined using Equation 7.28:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_05-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>$$R_w = \frac{R_c \times \phi^m}{a}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_06-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>For some porosity value, read the value of R_a from the water-bearing line on the crossplot. In this case, for a porosity of 10% (bulk density = 2.485 g/cm³), R_a = 4.1 ohm-m.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_07-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>The values of tortuosity factor (a) and cementation exponent (m) were assumed by choice of the particular crossplot grid.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_08-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>By substitution in the above equation,</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_09-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>$$R_w = \frac{4.1 \times 0.10^{2.0}}{1.0}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u145_10-1" tabindex="-1">
+          <p class="pg">Стр. 145 · **Carbonates:**</p>
+          <blockquote>R_w = 0.041 ohm-m at formation temperature</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-52.html">шаг 52 «Как провести линию водонасыщенности»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-50.html" rel="prev"><span>← Назад</span><b>Как оценить плотность твёрдой породы</b></a><a class="next" href="step-52.html" rel="next"><span>Дальше →</span><b>Как провести линию водонасыщенности</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Как найти сопротивление пластовой воды</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x5.11">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x5.11.t01", "type": "single", "question": "Что означает 4,1 Ом·м в примере?", "explanation": "Это считанное сопротивление водоносной породы, которое используют в подстановке.", "page": 145, "link": "#how-1", "step_title": "Как найти сопротивление пластовой воды", "step_index": 51, "node_id": "geo.test_asquith.x5.11", "options": ["Сопротивление водоносной линии", "Показатель цементации", "Результат расчёта для пластовой воды"], "key": [0], "answer_text": "Сопротивление водоносной линии"}, {"id": "geo.test_asquith.x5.11.t02", "type": "numeric", "question": "Какое сопротивление пластовой воды получилось в примере?", "explanation": "При заданных входах автор получил 0,041 Ом·м при пластовой температуре.", "page": 145, "link": "#how-2", "step_title": "Как найти сопротивление пластовой воды", "step_index": 51, "node_id": "geo.test_asquith.x5.11", "key": {"answer": 0.041, "tolerance": 0}, "unit": "Ом·м", "answer_text": "0,041 Ом·м"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

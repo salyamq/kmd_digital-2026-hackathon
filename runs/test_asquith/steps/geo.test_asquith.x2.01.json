@@ -1,0 +1,373 @@
+{
+  "node_id": "geo.test_asquith.x2.01",
+  "chapter": "test_asquith",
+  "index": 33,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Зачем нужны диаграммы насыщения",
+  "title_book": "SATURATION CROSSPLOTS",
+  "section": "x2",
+  "pages": [
+    132
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "И",
+    "secondary": "Р",
+    "threshold": "Водонасыщенность получают не из одного показания прибора, а из положения точек на диаграмме."
+  },
+  "threshold": "Водонасыщенность получают не из одного показания прибора, а из положения точек на диаграмме.",
+  "format": "interactive",
+  "format_rationale": "Выбор разных положений точки показывает, почему нужны обе координаты для косвенного вывода.",
+  "order_rationale": "Вводит другую роль диаграмм: оценку насыщенности и параметров по совместным измерениям.",
+  "essence": [
+    "Две кривые можно совместить на одном графике, чтобы оценить **водонасыщенность**, долю воды в порах.",
+    "График помогает сравнить перспективные интервалы без длинных вычислений."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Две координаты",
+          "text": "На **диаграмме насыщения** сопоставляют удельное сопротивление и пористость, долю объёма пор. Диаграмма похожа на график пористости, но по обеим координатам здесь находят водонасыщенность. Диаграммы Пикетта и Хингла дают графическое решение **уравнения Арчи**, которое связывает эти величины.",
+          "claim_ids": [
+            "geo.test_asquith.x2.01.c01",
+            "geo.test_asquith.x2.01.c02",
+            "geo.test_asquith.x2.01.c03"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.01.c01",
+              "quote": "Saturation crossplots, also called resistivity-porosity crossplots (or specifically, Pickett plots and Hingle plots) are similar to the porosity crossplots discussed in Chapter 4.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.01.c02",
+              "quote": "They are x-y plots of log data from which quantities of interest are derived; in this case, that quantity is water saturation ($S_w$).",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.01.c03",
+              "quote": "Both the Pickett and Hingle methods are essentially graphical solutions to the Archie saturation equation.",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Зачем график сохранился",
+          "text": "Такие графики появились до компьютерной интерпретации каротажа, измерений вдоль скважины. Они сокращали вычисления и облегчали сравнение потенциально продуктивных зон, где ожидают приток. Ранние программы обычно не строили графиков, и этим приёмом пользовались реже.",
+          "claim_ids": [
+            "geo.test_asquith.x2.01.c04",
+            "geo.test_asquith.x2.01.c05",
+            "geo.test_asquith.x2.01.c06"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.01.c04",
+              "quote": "They were created before the use of computers to aid log interpretation.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.01.c05",
+              "quote": "These techniques minimize the number of calculations that must be done and aid the comparison of potentially productive zones.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.01.c06",
+              "quote": "With the advent of early (mostly nongraphic) log-interpretation software, their use declined,",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Что даёт взгляд на данные",
+          "text": "К графикам вернулись, поскольку специалист замечает на них закономерности. Авторы считают графики необходимой частью полнофункциональной компьютерной интерпретации каротажа.",
+          "claim_ids": [
+            "geo.test_asquith.x2.01.c07",
+            "geo.test_asquith.x2.01.c08"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.01.c07",
+              "quote": "but this decline was reversed as people realized the power of the techniques to use the ability of the human mind to recognize patterns in data.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.01.c08",
+              "quote": "These techniques are currently regarded as necessary components of full-functioned computer-based log-interpretation systems.",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Значение имеет геометрия набора парных наблюдений, а не только автоматический расчёт.",
+        "inputs": "Каротажные данные сопротивления и пористости.",
+        "outputs": "Оценка водонасыщенности и наглядное сравнение зон.",
+        "breaks_where": "Вывод зависит от интерпретации рисунка точек.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Согласованные по глубине ряды каротажа.",
+          "manual_steps": "Построить диаграмму и сравнить зоны по рисунку точек.",
+          "judgment_points": "Распознать закономерность и её геологический смысл.",
+          "time": "Авторы отмечают сокращение вычислений, но не приводят длительность.",
+          "typical_errors": "Подменить распознавание на диаграмме просмотром несвязанных рядов.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "У диаграммы рассеяния роль интерактивной проверки результатов модели.",
+        "breaks_where": "В этом случае координаты связаны физической моделью, и график сам по себе не доказывает продуктивность.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "now",
+      "kind": "now",
+      "title": "Как это делается сейчас",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Графики строят средствами интерпретации данных; визуальную проверку структуры точек совмещают с расчётом.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Сопротивление самого пласта, обозначение R_t.",
+          "en": "true resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Уравнение Арчи",
+          "definition": "Связь сопротивления пласта с его пористостью, водонасыщенностью и электрическими параметрами.",
+          "en": "Archie equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж",
+          "definition": "Скважинные измерения, которые записывают как кривые по глубине.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Кроссплот",
+          "definition": "Диаграмма, на которой по двум координатам каротажных данных находят интересующую величину.",
+          "en": "crossplot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Хингла",
+          "definition": "Графическое решение уравнения Арчи по диаграмме сопротивления и пористости.",
+          "en": "Hingle plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма сопротивления и пористости",
+          "definition": "Диаграмма, по которой графически определяют водонасыщенность из каротажных данных.",
+          "en": "resistivity–porosity crossplot",
+          "page": 132,
+          "by": "author"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Две координаты позволяют оценить водонасыщенность. Схема не показывает конкретных измерений.",
+      "alt": "Четыре блока сверху вниз ведут от двух измерений к сравнению зон.",
+      "file": "illustrations/geo.test_asquith.x2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.01.c02",
+        "geo.test_asquith.x2.01.c03",
+        "geo.test_asquith.x2.01.c05"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.01.c01",
+      "kind": "observation",
+      "text": "Диаграммы водонасыщенности называют диаграммами сопротивления и пористости; они похожи на рассмотренные ранее диаграммы пористости.",
+      "quote": "Saturation crossplots, also called resistivity-porosity crossplots (or specifically, Pickett plots and Hingle plots) are similar to the porosity crossplots discussed in Chapter 4.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c02",
+      "kind": "observation",
+      "text": "По двум координатам каротажных данных на графике определяют водонасыщенность.",
+      "quote": "They are x-y plots of log data from which quantities of interest are derived; in this case, that quantity is water saturation ($S_w$).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c03",
+      "kind": "observation",
+      "text": "Диаграммы Пикетта и Хингла дают графическое решение уравнения Арчи.",
+      "quote": "Both the Pickett and Hingle methods are essentially graphical solutions to the Archie saturation equation.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c04",
+      "kind": "observation",
+      "text": "Эти методы созданы до применения компьютеров в интерпретации каротажа.",
+      "quote": "They were created before the use of computers to aid log interpretation.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c05",
+      "kind": "observation",
+      "text": "Методы сокращают вычисления и облегчают сравнение потенциально продуктивных зон.",
+      "quote": "These techniques minimize the number of calculations that must be done and aid the comparison of potentially productive zones.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c06",
+      "kind": "observation",
+      "text": "Применение графиков снизилось с появлением ранних, преимущественно неграфических программ интерпретации.",
+      "quote": "With the advent of early (mostly nongraphic) log-interpretation software, their use declined,",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c07",
+      "kind": "observation",
+      "text": "Применение возобновилось, когда специалисты оценили пользу человеческого распознавания закономерностей в данных.",
+      "quote": "but this decline was reversed as people realized the power of the techniques to use the ability of the human mind to recognize patterns in data.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.01.c08",
+      "kind": "observation",
+      "text": "Авторы считают графики необходимой частью полнофункциональной компьютерной интерпретации каротажа.",
+      "quote": "These techniques are currently regarded as necessary components of full-functioned computer-based log-interpretation systems.",
+      "page": 132,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.01.t01",
+    "geo.test_asquith.x2.01.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.01.k01",
+    "geo.test_asquith.x2.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.26",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

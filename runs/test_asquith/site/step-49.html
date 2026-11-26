@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 49. Как выбрать сетку Хингла — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x5.09" data-index="49">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 49 из 66</p>
+    <h1>Как выбрать сетку Хингла</h1>
+    <p class="booktitle">В книге: «Диаграмма Хингла» <span class="pg">стр. 143–144</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + неочевидное</span>    </p>
+<p class="relies">Опирается на: <a href="step-45.html">шаг 45 «Почему Хингл меняет шкалу»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Как выбрать первую кривую»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">У сеток для песчаника и карбонатных пород разные параметры вертикальной шкалы.</p><p>Перед нанесением точек проверьте породу и параметры сетки.</p><p class="threshold"><b>Пороговая идея.</b> Выбор сетки сразу задаёт коэффициент извилистости и показатель цементации. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Две вертикальные шкалы</h3>          <div class="para" id="how-1">
+            <p>На <strong class="term">диаграмме Хингла</strong>, графике сопротивления и пористости, вертикальную ось строят под выбранные параметры. <strong class="term">Коэффициент извилистости</strong> обозначен a. <strong class="term">Показатель цементации</strong>, степень при пористости в уравнении, обозначен m. Для песчаника приняты a = 1,0 и m = 2,0. Для карбонатных пород приняты a = 0,62 и m = 2,15. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.09.c01"><p>«Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for sandstones.»</p><footer>— автор, стр. 143 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.09.c02"><p>«The y-axis is constructed with tortuosity factor (a) = 1.0 and cementation exponent (m) = 2.0.»</p><footer>— автор, стр. 143 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.09.c03"><p>«Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for carbonates.»</p><footer>— автор, стр. 144 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.09.c04"><p>«The y-axis is constructed with tortuosity factor (a) = 0.62 and cementation exponent (m) = 2.15»</p><footer>— автор, стр. 144 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 285" role="img" aria-label="Песчаник / Карбонатная порода" class="ill-svg"><title>Песчаник / Карбонатная порода</title><rect class="ill-bg" x="0" y="0" width="360" height="285" rx="8"/><rect class="ill-box ill-neutral" x="12" y="30" width="336" height="99" rx="10"/><text class="ill-title" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Песчаник</tspan></text><text class="ill-text" x="26" y="79" text-anchor="start"><tspan x="26" dy="0">• a = 1,0</tspan></text><text class="ill-text" x="26" y="102" text-anchor="start"><tspan x="26" dy="0">• m = 2,0</tspan></text><rect class="ill-box ill-accent" x="12" y="139" width="336" height="99" rx="10"/><text class="ill-title" x="180.0" y="163" text-anchor="middle"><tspan x="180.0" dy="0">Карбонатная порода</tspan></text><text class="ill-text" x="26" y="188" text-anchor="start"><tspan x="26" dy="0">• a = 0,62</tspan></text><text class="ill-text" x="26" y="211" text-anchor="start"><tspan x="26" dy="0">• m = 2,15</tspan></text><text class="ill-small" x="180.0" y="260" text-anchor="middle"><tspan x="180.0" dy="0">Параметры задают вертикальную шкалу</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Сравнение параметров из подписей. Это не перерисовка двух сеток.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 143–144</span>
+  </figcaption>
+</figure>
+<h3>Выбор по породе</h3>          <div class="para" id="how-2">
+            <p>Сетку рисунка 7.5 обычно применяют для песчаников. Сетку рисунка 7.6 обычно применяют для карбонатных пород. Авторы описывают обычное применение, а не универсальное правило. Определите породу, подберите сетку и проверьте a и m. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Проверить настройки сетки</p>        <ol class="proc"><li>Определите тип породы. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></li><li>Выберите соответствующую сетку Хингла. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></li><li>Проверьте a и m вертикальной шкалы. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></li></ol>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Сопоставить сетку с породой</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Тип породы</li><li>Параметры a и m в подписи к сетке</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Выбирайте сетку по типу породы и сверяйте параметры шкалы. <span class="pg" title="Страница книги (по PDF)">стр. 143–144</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Переход между типами пород может потребовать другой вертикальной шкалы.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Изучается песчаник. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Обычно сетка с a = 1,0 и m = 2,0</button><button type="button" class="btn ghost case-opt" data-i="1">Обычно сетка с a = 0,62 и m = 2,15</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Первый набор приведён для песчаника.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Изучается карбонатная порода. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Обычно сетка с a = 1,0 и m = 2,0</button><button type="button" class="btn ghost case-opt" data-i="1">Обычно сетка с a = 0,62 и m = 2,15</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Второй набор приведён для карбонатной породы.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Для песчаника в вертикальной шкале заданы a = 1,0 и m = 2,0. <span class="pg" title="Страница книги (по PDF)">стр. 143</span></li><li>Для карбонатных пород заданы a = 0,62 и m = 2,15. <span class="pg" title="Страница книги (по PDF)">стр. 144</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Вертикальная шкала кодирует выбор параметров, а не только единицы измерения.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Тип породы и доступные палетки.</dd>
+          <dt>Выход</dt><dd>Выбранная шкала сопротивления и заложенные параметры a и m.</dd>
+          <dt>Где ломается</dt><dd>Сетки предназначены для разных типов пород и предполагают конкретные параметры.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Сведения о породе и палетки.</dd>
+            <dt>Ручные шаги</dt><dd>Проверить подписи и подобрать сетку.</dd>
+            <dt>Точки суждения</dt><dd>Решить, какой набор параметров оправдан.</dd>
+            <dt>Время</dt><dd>Сам выбор короткий при уверенной литологии.</dd>
+            <dt>Типичные ошибки</dt><dd>Считать сетки для песчаника и карбонатов взаимозаменяемыми.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как выбор преобразования признака из нескольких заранее настроенных шаблонов.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Выбор должен быть обоснован свойствами породы, а не форматом исходных данных.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>При цифровом построении выбор параметров можно сохранять вместе с диаграммой, чтобы было понятно, какая шкала использована.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 7.5. Figure 7.5. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for sandstones. (Western Atlas International, Inc., 1995, Chart 7-79)
+The y-axis is constructed with tortuosity factor (a) = 1.0 and cementation exponent (m) = 2.0. <span class="pg">стр. 143</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li><li>Рис. 7.6. Figure 7.6. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for carbonates. (Western Atlas International, Inc., 1995, Chart 7-80) The y-axis is constructed with tortuosity factor (a) = 0.62 and cementation exponent (m) = 2.15 <span class="pg">стр. 144</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Диаграмма Хингла <span class="en" lang="en">(Hingle plot)</span></dt><dd>График сопротивления и пористости или её показателя на выбранной сетке. <span class="pg">стр. 143</span> <span class="chip chip-model">модель</span></dd><dt>Коэффициент извилистости <span class="en" lang="en">(tortuosity factor)</span></dt><dd>Коэффициент a в уравнении связи пористости, насыщенности и сопротивления. <span class="pg">стр. 143</span> <span class="chip chip-model">модель</span></dd><dt>Показатель цементации <span class="en" lang="en">(cementation exponent)</span></dt><dd>Степень m при пористости в уравнении сопротивления. <span class="pg">стр. 143</span> <span class="chip chip-model">модель</span></dd><dt>Палетка <span class="en" lang="en">(chart)</span></dt><dd>Специально размеченная сетка для построения и чтения диаграммы. <span class="pg">стр. 143</span> <span class="chip chip-model">модель</span></dd><dt>Карбонатные породы <span class="en" lang="en">(carbonates)</span></dt><dd>Породы, главным образом сложенные карбонатными минералами. <span class="pg">стр. 143</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x5-09-t01" data-task="geo.test_asquith.x5.09.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что верно о настройках вертикальных шкал?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x5.09.t01" value="0"> <span>Показатель m одинаков для обеих шкал</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x5.09.t01" value="1"> <span>Для песчаника: a = 1,0 и m = 2,0</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x5.09.t01" value="2"> <span>Обе шкалы используют a = 1,0</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x5.09.t01" value="3"> <span>Для карбонатных пород: a = 0,62 и m = 2,15</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Для песчаника: a = 1,0 и m = 2,0; Для карбонатных пород: a = 0,62 и m = 2,15</p>
+    <p class="fb-expl">Автор приводит различные пары a и m для этих пород. <a href="#how-1">Где это в тексте (стр. 143) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x5-09-t02" data-task="geo.test_asquith.x5.09.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-test_asquith-x5-09-t02">Как выбрать и проверить сетку?</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-test_asquith-x5-09-t02">
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Выбрать соответствующую сетку</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Установить тип породы</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Проверить параметры a и m</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Установить тип породы → Выбрать соответствующую сетку → Проверить параметры a и m</p>
+    <p class="fb-expl">Сначала определяют породу, затем проверяют параметры выбранной сетки. <a href="#how-2">Где это в тексте (стр. 143) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x5.09.c01"><p>Сетку рисунка 7.5 обычно применяют для песчаников. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for sandstones.»</p><footer>— стр. 143</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.09.c02"><p>Вертикальная ось сетки для песчаников построена с a = 1.0 и m = 2.0. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The y-axis is constructed with tortuosity factor (a) = 1.0 and cementation exponent (m) = 2.0.»</p><footer>— стр. 143</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.09.c03"><p>Сетку рисунка 7.6 обычно применяют для карбонатных пород. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for carbonates.»</p><footer>— стр. 144</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.09.c04"><p>Вертикальная ось сетки для карбонатов построена с a = 0.62 и m = 2.15. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The y-axis is constructed with tortuosity factor (a) = 0.62 and cementation exponent (m) = 2.15»</p><footer>— стр. 144</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u143_01-1" tabindex="-1">
+          <p class="pg">Стр. 143 · **Carbonates:**</p>
+          <blockquote>Figure 7.5. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for sandstones. (Western Atlas International, Inc., 1995, Chart 7-79) The y-axis is constructed with tortuosity factor (a) = 1.0 and cementation exponent (m) = 2.0.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u144_01-1" tabindex="-1">
+          <p class="pg">Стр. 144 · **Carbonates:**</p>
+          <blockquote>Figure 7.6. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for carbonates. (Western Atlas International, Inc., 1995, Chart 7-80) The y-axis is constructed with tortuosity factor (a) = 0.62 and cementation exponent (m) = 2.15</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-50.html">шаг 50 «Как оценить плотность твёрдой породы»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-48.html" rel="prev"><span>← Назад</span><b>Как провести веер насыщения</b></a><a class="next" href="step-50.html" rel="next"><span>Дальше →</span><b>Как оценить плотность твёрдой породы</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Как выбрать сетку Хингла</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x5.09">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x5.09.t01", "type": "multiple", "question": "Что верно о настройках вертикальных шкал?", "explanation": "Автор приводит различные пары a и m для этих пород.", "page": 143, "link": "#how-1", "step_title": "Как выбрать сетку Хингла", "step_index": 49, "node_id": "geo.test_asquith.x5.09", "options": ["Показатель m одинаков для обеих шкал", "Для песчаника: a = 1,0 и m = 2,0", "Обе шкалы используют a = 1,0", "Для карбонатных пород: a = 0,62 и m = 2,15"], "key": [1, 3], "answer_text": "Для песчаника: a = 1,0 и m = 2,0; Для карбонатных пород: a = 0,62 и m = 2,15"}, {"id": "geo.test_asquith.x5.09.t02", "type": "order", "question": "Как выбрать и проверить сетку?", "explanation": "Сначала определяют породу, затем проверяют параметры выбранной сетки.", "page": 143, "link": "#how-2", "step_title": "Как выбрать сетку Хингла", "step_index": 49, "node_id": "geo.test_asquith.x5.09", "items": [{"text": "Выбрать соответствующую сетку", "pos": 1}, {"text": "Установить тип породы", "pos": 0}, {"text": "Проверить параметры a и m", "pos": 2}], "key": [0, 1, 2], "answer_text": "Установить тип породы → Выбрать соответствующую сетку → Проверить параметры a и m"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

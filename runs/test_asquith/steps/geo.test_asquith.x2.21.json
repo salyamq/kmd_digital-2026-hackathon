@@ -1,0 +1,422 @@
+{
+  "node_id": "geo.test_asquith.x2.21",
+  "chapter": "test_asquith",
+  "index": 64,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Почему сланец и глина различаются",
+  "title_book": "SHALY SAND ANALYSIS",
+  "section": "x2",
+  "pages": [
+    136
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "И",
+    "secondary": "Н",
+    "threshold": "Сланец — порода, глина — компонент породы; сходные названия входов не делают их физически взаимозаменяемыми."
+  },
+  "threshold": "Сланец — порода, глина — компонент породы; сходные названия входов не делают их физически взаимозаменяемыми.",
+  "format": "interactive",
+  "format_rationale": "Сопоставьте сценарии чистого и глинистого песчаника, чтобы различить сигнал и вывод модели.",
+  "order_rationale": "Вводит предел простой модели Арчи при наличии глины после освоения её стандартных применений.",
+  "essence": [
+    "Похожее имя параметра не делает долю сланца и долю глины взаимозаменяемыми.",
+    "Перед оценкой водонасыщенности проверьте, какой вход требует модель."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Ограничение метода Арчи",
+          "text": "Авторы отмечают ограниченную применимость **уравнения Арчи**, связи сопротивления с пористостью и насыщением. Особенно это касается пород со сланцами или глинистыми минералами. Ранние модификации добавляли объёмную долю сланца и другие параметры. Большинство методов для глинистых песчаников использует долю сланца.",
+          "claim_ids": [
+            "geo.test_asquith.x2.21.c01",
+            "geo.test_asquith.x2.21.c02",
+            "geo.test_asquith.x2.21.c06"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.21.c01",
+              "quote": "Not long after the work of Archie and others in devising a method to quantify water saturation from logs, it became clear that there were limitations to the method, especially in formations containing shale and/or clay and commonly referred to as *shaly sands*.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.21.c02",
+              "quote": "The early literature tended to refer to the formations as containing *shale*, and a number of modifications were made to Archie’s equation using shale volume (among other parameters) to account for those effects.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.21.c06",
+              "quote": "Most of the shaly sand techniques developed over the years concern themselves with shale volume",
+              "page": 136,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Различайте входы",
+          "text": "Названия объёмных долей сланца и глины часто смешивают. Сланец — порода, а глина — компонент породы. **Глинистый песчаник** обычно содержит глинистые минералы, а не просто примесь сланца. Его глинистые минералы могут отличаться от минералов соседних сланцев. Методы Ваксмана — Смитса и двухводный опираются на электрические свойства глинистых минералов в пласте.",
+          "claim_ids": [
+            "geo.test_asquith.x2.21.c03",
+            "geo.test_asquith.x2.21.c04",
+            "geo.test_asquith.x2.21.c05",
+            "geo.test_asquith.x2.21.c07"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.21.c03",
+              "quote": "As our understanding of geological processes matured, it became understood that *shale* and *clay* are different and that shaly sands are usually not just sands with shales mixed in but sands that contain clays.",
+              "page": 136,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.21.c04",
+              "quote": "These clays could be very different from the clays present in the shales near those sands of interest.",
+              "page": 136,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.21.c05",
+              "quote": "Again, the literature and our interpretive techniques commonly use the terms *shale volume* and *clay volume* interchangeably.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.21.c07",
+              "quote": "but a few, notably the Waxman-Smits and dual water methods, seek to use the electrical properties of the clays in the formations to predict an accurate water saturation.",
+              "page": 136,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "data": {
+        "title": "Сопоставить вход с моделью",
+        "claim_ids": [
+          "geo.test_asquith.x2.21.c03",
+          "geo.test_asquith.x2.21.c04",
+          "geo.test_asquith.x2.21.c05",
+          "geo.test_asquith.x2.21.c06",
+          "geo.test_asquith.x2.21.c07"
+        ],
+        "signs": [
+          "Вход указан как доля сланца или электрические свойства глины",
+          "Известно, из какой породы получены входные данные"
+        ],
+        "rule": "Проверяйте физический смысл, не только название поля.",
+        "conclusion": "Не подменяйте долю породы свойством её компонента.",
+        "cases": [
+          {
+            "given": "Модель требует объёмную долю сланца, а в наборе есть только электрические свойства глины.",
+            "options": [
+              "Подставить напрямую",
+              "Входы не взаимозаменяемы"
+            ],
+            "answer": 1,
+            "why": "Количественная доля породы и электрическое свойство минералов — разные входы.",
+            "source": "модель"
+          },
+          {
+            "given": "Для глинистого песчаника предлагают автоматически взять свойства глины соседнего сланца.",
+            "options": [
+              "Сходство нужно проверить",
+              "Свойства заведомо совпадают"
+            ],
+            "answer": 0,
+            "why": "Минералы могут различаться.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "text": "При наличии сланца или глинистых минералов применимость Арчи ограничена.",
+          "claim_ids": [
+            "geo.test_asquith.x2.21.c01"
+          ],
+          "pages": [
+            136
+          ]
+        },
+        {
+          "text": "Свойства глины соседних сланцев нельзя считать заведомо такими же, как в песчанике.",
+          "claim_ids": [
+            "geo.test_asquith.x2.21.c04"
+          ],
+          "pages": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        136
+      ],
+      "data": {
+        "text": "Глинистый песчаник — это песок, перемешанный с кусками сланца.",
+        "correction": "Обычно это песчаная порода, содержащая глинистые минералы, которые могут отличаться от глины в соседнем сланце.",
+        "claim_ids": [
+          "geo.test_asquith.x2.21.c03",
+          "geo.test_asquith.x2.21.c04"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Похожее название параметра не проясняет его физический смысл.",
+        "inputs": "Каротаж и доля сланца либо электрические свойства глины, в зависимости от модели.",
+        "outputs": "Оценка водонасыщенности в глинистой породе.",
+        "breaks_where": "Смешение доли сланца и доли глины или перенос электрических свойств соседних сланцев без проверки.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротаж, сведения о глине или сланце, описание выбранной модели.",
+          "manual_steps": "Сопоставить параметры модели с тем, что действительно есть в данных.",
+          "judgment_points": "Понять, что именно обозначает каждый входной показатель.",
+          "time": "Проверка семантики входов требует экспертного внимания.",
+          "typical_errors": "Автоматически считать долю глины и долю сланца одним и тем же параметром.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как два почти одинаковых имени поля в схемах данных, чей смысл расходится при сравнении источников.",
+        "breaks_where": "Различаются не только имена, но и физический состав породы и измеряемые свойства.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "уравнение Арчи",
+          "definition": "Связь водонасыщенности, пористости и сопротивлений породы и пластовой воды.",
+          "en": "Archie's equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый сланец",
+          "definition": "Тонкозернистая осадочная порода, в которой могут присутствовать глинистые минералы.",
+          "en": "shale",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистые минералы",
+          "definition": "Группа тонкодисперсных минералов; это компоненты породы, а не обозначение отдельного слоя сланца.",
+          "en": "clay minerals",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый песчаник",
+          "definition": "В описании автора это обычно песчаная порода, содержащая глинистые минералы, а не просто песок с примесью сланца.",
+          "en": "shaly sand",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "двухводная модель",
+          "definition": "Модель, которая различает связанную и свободную воду в глинистой породе.",
+          "en": "dual water model",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "пласт",
+          "definition": "Слой горной породы, отличаемый от соседних слоёв.",
+          "en": "formation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Два семейства моделей используют физически разные входы.",
+      "alt": "Слева доля сланца, справа электрические свойства глинистых минералов пласта.",
+      "file": "illustrations/geo.test_asquith.x2.21__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.21.c03",
+        "geo.test_asquith.x2.21.c04",
+        "geo.test_asquith.x2.21.c06",
+        "geo.test_asquith.x2.21.c07"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.21.c01",
+      "kind": "observation",
+      "text": "После появления метода Арчи выяснилось, что его применение ограничено, особенно в породах со сланцами и/или глинистыми минералами.",
+      "quote": "Not long after the work of Archie and others in devising a method to quantify water saturation from logs, it became clear that there were limitations to the method, especially in formations containing shale and/or clay and commonly referred to as *shaly sands*.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c02",
+      "kind": "observation",
+      "text": "В ранних работах говорили о сланце и добавляли его объёмную долю и другие параметры в модификации уравнения Арчи.",
+      "quote": "The early literature tended to refer to the formations as containing *shale*, and a number of modifications were made to Archie’s equation using shale volume (among other parameters) to account for those effects.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c03",
+      "kind": "inference",
+      "text": "Сланец и глина — не одно и то же; глинистые песчаники обычно содержат глину, а не просто примесь сланца.",
+      "quote": "As our understanding of geological processes matured, it became understood that *shale* and *clay* are different and that shaly sands are usually not just sands with shales mixed in but sands that contain clays.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c04",
+      "kind": "assumption",
+      "text": "Глинистые минералы внутри песчаника могут существенно отличаться от глинистых минералов в расположенных рядом сланцах.",
+      "quote": "These clays could be very different from the clays present in the shales near those sands of interest.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c05",
+      "kind": "observation",
+      "text": "В литературе и методах интерпретации названия объёмных долей сланца и глины часто употребляются как взаимозаменяемые.",
+      "quote": "Again, the literature and our interpretive techniques commonly use the terms *shale volume* and *clay volume* interchangeably.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c06",
+      "kind": "observation",
+      "text": "Большинство методов оценки глинистых песчаников опирается на объёмную долю сланца.",
+      "quote": "Most of the shaly sand techniques developed over the years concern themselves with shale volume",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.21.c07",
+      "kind": "inference",
+      "text": "Метод Ваксмана — Смитса и двухводный метод стремятся оценивать водонасыщенность по электрическим свойствам глинистых минералов пласта.",
+      "quote": "but a few, notably the Waxman-Smits and dual water methods, seek to use the electrical properties of the clays in the formations to predict an accurate water saturation.",
+      "page": 136,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.21.t01",
+    "geo.test_asquith.x2.21.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.21.k01",
+    "geo.test_asquith.x2.21.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x5.15",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

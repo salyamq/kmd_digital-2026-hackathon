@@ -1,0 +1,469 @@
+{
+  "node_id": "geo.test_asquith.x1.08",
+  "chapter": "test_asquith",
+  "index": 12,
+  "part": {
+    "id": "part2",
+    "title": "Сравниваем две зоны и две оценки воды"
+  },
+  "title_beginner": "Как обойтись без кривой пористости",
+  "title_book": "Ratio Method",
+  "section": "x1",
+  "pages": [
+    126,
+    127
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "Общий множитель сокращается, и сравнение возможно без кривой пористости."
+  },
+  "threshold": "Общий множитель сокращается, и сравнение возможно без кривой пористости.",
+  "format": "interactive",
+  "format_rationale": "Проследите, что меняется при изменении общего множителя, и почему при делении его влияние исчезает.",
+  "order_rationale": "После знакомства с обеими формами показывает, как общий множитель сокращается.",
+  "essence": [
+    "Иногда кривой пористости нет. Метод отношений всё равно позволяет оценить подвижность.",
+    "Это возможно, если для двух зон принят одинаковый множитель породы."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Сопоставьте водонасыщенности промытой и незатронутой зон. Для этого автор делит уравнение Арчи для незатронутой зоны на уравнение для промытой. **Форм-фактор** — коэффициент a, делённый на пористость в степени m. Одинаковый форм-фактор сокращается при делении.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c01",
+            "geo.test_asquith.x1.08.c02",
+            "geo.test_asquith.x1.08.c03"
+          ],
+          "pages": [
+            127
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.08.c01",
+              "quote": "The ratio method identifies hydrocarbons from the difference between water saturations in the flushed zone ($S_{xo}$) and the uninvaded zone ($S_w$).",
+              "page": 127,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.08.c02",
+              "quote": "When the uninvaded zone form of Archie's equation (Equation 7.1) is divided by the flushed zone form (Equation 7.2), the following results:",
+              "page": 127,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.08.c03",
+              "quote": "When $S_w$ is divided by $S_{xo}$, the formation factor ($F = a/\\phi^m$) is cancelled out of the equation because the same formation factor is used to calculate both $S_w$ and $S_{xo}$.",
+              "page": 127,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "**Индекс подвижности** — отношение водонасыщенности незатронутой зоны к водонасыщенности промытой. Сначала разделите мелкое сопротивление на истинное. Нормируйте результат на отношение сопротивлений фильтрата и пластовой воды. При принятом автором n = 2,0 извлеките квадратный корень. По сопротивлениям можно также получить оценку воды без кривой пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c04",
+            "geo.test_asquith.x1.08.c05"
+          ],
+          "pages": [
+            127
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.08.c04",
+              "quote": "This can be very helpful in log analysis because, from the ratio $(R_{xo}/R_t)/(R_{mf}/R_w)$, the geologist can determine a value for both the moveable hydrocarbon index ($S_w/S_{xo}$) and water saturation by the ratio method without knowing porosity.",
+              "page": 127,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.08.c05",
+              "quote": "The cementation exponent ($n$) is assumed to be 2.0",
+              "page": 127,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Обозначения",
+          "text": "В данном фрагменте n назван по-разному. Сверяйте букву с уравнениями для двух зон.",
+          "claim_ids": [],
+          "pages": [],
+          "by": "model",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Что сделать",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "text": "Разделите мелкое сопротивление на истинное.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c04"
+          ],
+          "pages": [
+            127
+          ]
+        },
+        {
+          "text": "Разделите это отношение на отношение сопротивлений фильтрата и воды.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c04"
+          ],
+          "pages": [
+            127
+          ]
+        },
+        {
+          "text": "Извлеките квадратный корень при указанном допущении.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c05"
+          ],
+          "pages": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "text": "В авторской записи показатель n принят равным 2,0.",
+          "claim_ids": [
+            "geo.test_asquith.x1.08.c05"
+          ],
+          "pages": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        127
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.08.f01",
+          "latex": "\\left( \\frac{S_w}{S_{xo}} \\right)^2 = \\frac{R_{xo} / R_t}{R_{mf} / R_w} \\tag{7.3}",
+          "meaning": "Квадрат отношения водонасыщенностей выражен через сопротивления",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "водонасыщенность незатронутой зоны",
+              "unit": null
+            },
+            {
+              "symbol": "S_{xo}",
+              "meaning": "водонасыщенность промытой зоны",
+              "unit": null
+            },
+            {
+              "symbol": "R_{xo}",
+              "meaning": "сопротивление промытой зоны по мелким измерениям",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "R_{mf}",
+              "meaning": "сопротивление фильтрата при пластовой температуре",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды при пластовой температуре",
+              "unit": null
+            }
+          ],
+          "page": 127,
+          "unit_id": "u127_19"
+        },
+        {
+          "id": "geo.test_asquith.x1.08.f02",
+          "latex": "\\frac{S_w}{S_{xo}} = \\left( \\frac{R_{xo} / R_t}{R_{mf} / R_w} \\right)^{\\frac{1}{2}} \\tag{7.4}",
+          "meaning": "Индекс подвижности через измеренные сопротивления",
+          "vars": [
+            {
+              "symbol": "S_w/S_{xo}",
+              "meaning": "индекс подвижности углеводородов",
+              "unit": null
+            },
+            {
+              "symbol": "R_{xo}",
+              "meaning": "сопротивление промытой зоны по мелким измерениям",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "R_{mf}",
+              "meaning": "сопротивление фильтрата при пластовой температуре",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды при пластовой температуре",
+              "unit": null
+            }
+          ],
+          "page": 127,
+          "unit_id": "u127_29"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Четыре сопротивления для двух зон и их жидкостей → Индекс подвижности без каротажа пористости.",
+        "inputs": "Четыре сопротивления для двух зон и их жидкостей",
+        "outputs": "Индекс подвижности без каротажа пористости",
+        "breaks_where": "Если форм-факторы для двух частей различаются",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Четыре сопротивления для двух зон и их жидкостей",
+          "manual_steps": "Образуйте отношение мелкого сопротивления к истинному, нормируйте на отношение сопротивлений фильтрата и пластовой воды, затем получите индекс подвижности.",
+          "judgment_points": "Насколько сопоставимы две зоны и сопротивления жидкостей",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Убрать из расчёта не только пористость, но и необходимые сопротивления",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Взять отношение двух показаний, чтобы сократился общий коэффициент калибровки.",
+        "breaks_where": "Сокращение не убирает несоответствие глубинности измерений.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Одна буква — два названия в тексте",
+          "text": "В перечнях переменных Арчи n назван показателем насыщения, а в абзаце о методе отношений — показателем цементации. В формулах сохранено обозначение автора; не принимайте различие в названии за новую переменную.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        126,
+        127
+      ],
+      "items": [
+        {
+          "term": "Промытая зона",
+          "definition": "Прилегающая к стволу часть пласта, изменённая фильтратом раствора.",
+          "en": "flushed zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Незатронутая зона",
+          "definition": "Часть пласта, куда не проник фильтрат бурового раствора.",
+          "en": "uninvaded zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля порового пространства, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Индекс подвижности",
+          "definition": "Отношение водонасыщенности незатронутой зоны к водонасыщенности промытой зоны.",
+          "en": "moveable hydrocarbon index",
+          "page": 127,
+          "by": "author"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Значение по глубинному индукционному или глубинному боковому каротажу после поправки на проникновение.",
+          "en": "true formation resistivity",
+          "page": 126,
+          "by": "author"
+        },
+        {
+          "term": "Мелкое сопротивление",
+          "definition": "Сопротивление, измеренное прибором, исследующим область непосредственно у ствола.",
+          "en": "shallow resistivity",
+          "page": 127,
+          "by": "author"
+        },
+        {
+          "term": "Фильтрат раствора",
+          "definition": "Жидкая часть бурового раствора, проникающая в пласт.",
+          "en": "mud filtrate",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Форм-фактор",
+          "definition": "Общий для обеих частей пласта множитель a, делённый на пористость в степени m.",
+          "en": "formation factor",
+          "page": 127,
+          "by": "author"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Две формы уравнения Арчи → Разделить одну на другую → Общий форм-фактор сокращается → Индекс из сопротивлений.",
+      "file": "illustrations/geo_test_asquith_x1_08__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_08__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.08.c02",
+        "geo.test_asquith.x1.08.c03",
+        "geo.test_asquith.x1.08.c04"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.08.c01",
+      "kind": "observation",
+      "text": "Метод отношений выделяет углеводороды по разности водонасыщенностей промытой и незатронутой зон.",
+      "quote": "The ratio method identifies hydrocarbons from the difference between water saturations in the flushed zone ($S_{xo}$) and the uninvaded zone ($S_w$).",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.08.c02",
+      "kind": "observation",
+      "text": "Формулу отношения получают делением уравнения для незатронутой зоны на уравнение для промытой зоны.",
+      "quote": "When the uninvaded zone form of Archie's equation (Equation 7.1) is divided by the flushed zone form (Equation 7.2), the following results:",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.08.c03",
+      "kind": "observation",
+      "text": "Одинаковый форм-фактор сокращается при делении насыщенностей.",
+      "quote": "When $S_w$ is divided by $S_{xo}$, the formation factor ($F = a/\\phi^m$) is cancelled out of the equation because the same formation factor is used to calculate both $S_w$ and $S_{xo}$.",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.08.c04",
+      "kind": "observation",
+      "text": "По отношениям сопротивлений можно оценить индекс подвижности и водонасыщенность без каротажа пористости.",
+      "quote": "This can be very helpful in log analysis because, from the ratio $(R_{xo}/R_t)/(R_{mf}/R_w)$, the geologist can determine a value for both the moveable hydrocarbon index ($S_w/S_{xo}$) and water saturation by the ratio method without knowing porosity.",
+      "page": 127,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.08.c05",
+      "kind": "assumption",
+      "text": "В этом месте автор принимает показатель n равным 2.0.",
+      "quote": "The cementation exponent ($n$) is assumed to be 2.0",
+      "page": 127,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.08.t01",
+    "geo.test_asquith.x1.08.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.08.k01",
+    "geo.test_asquith.x1.08.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.06",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.07",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

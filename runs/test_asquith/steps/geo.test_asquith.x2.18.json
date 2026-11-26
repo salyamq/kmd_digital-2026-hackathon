@@ -1,0 +1,359 @@
+{
+  "node_id": "geo.test_asquith.x2.18",
+  "chapter": "test_asquith",
+  "index": 59,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Как найти коэффициент по плотности",
+  "title_book": "Coates and Dumanoir (1973)",
+  "section": "x2",
+  "pages": [
+    136
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "data_practice",
+  "format_rationale": "По доступной плотности выберите подходящий вход и примените формулу коэффициента.",
+  "order_rationale": "Разбирает путь оценки коэффициента через измерения плотности.",
+  "essence": [
+    "Постоянную C для формулы проницаемости находят из плотности углеводородов.",
+    "Нужны сама плотность и её квадрат: их вклад в сумму различается по знаку."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Где нужен коэффициент",
+          "text": "Коутс и Дюмануар сначала определяют две постоянные: C и W. **Постоянная C** — величина для подстановки в их формулу проницаемости. Её значение зависит от **плотности углеводородов**, массы на единицу объёма.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c01",
+            "geo.test_asquith.x2.18.c03"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.18.c01",
+              "quote": "A first step in the Coates and Dumanoir permeability formula is calculation of values for two constants: $C$ and $W$.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.18.c03",
+              "quote": "$C =$ constant in Coates and Dumanoir permeability formula",
+              "page": 136,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Расчёт постоянной",
+          "text": "Возьмите плотность в г/см³. Умножьте плотность на 465. Из суммы 23 и этого произведения вычтите 188, умноженное на квадрат плотности. Это даёт C; постоянную W готовят отдельно.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c02",
+            "geo.test_asquith.x2.18.c03"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.18.c02",
+              "quote": "$$\nC = 23 + 465 \\times \\rho_{h} - 188 \\times \\rho_{h}^{2} \\tag{7.33}\n$$",
+              "page": 136,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Получить C",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "text": "Возьмите плотность углеводородов в г/см³.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c02"
+          ],
+          "pages": [
+            136
+          ]
+        },
+        {
+          "text": "Подставьте её в линейный и квадратичный члены, сохраняя знак вычитания.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c02"
+          ],
+          "pages": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "data": {
+        "title": "Проверить подстановку плотности",
+        "claim_ids": [
+          "geo.test_asquith.x2.18.c01",
+          "geo.test_asquith.x2.18.c02",
+          "geo.test_asquith.x2.18.c03"
+        ],
+        "signs": [
+          "Плотность в г/см³",
+          "Знак перед членом с квадратом плотности"
+        ],
+        "rule": "Одна плотность входит и в линейный член, и в вычитаемый квадратичный.",
+        "conclusion": "Эта подстановка даёт C, а не готовую проницаемость.",
+        "cases": [
+          {
+            "given": "При переносе формулы квадратный член прибавили.",
+            "options": [
+              "Оставить знак",
+              "Исправить на вычитание"
+            ],
+            "answer": 1,
+            "why": "Квадратичный член в формуле вычитают.",
+            "source": "модель"
+          },
+          {
+            "given": "Постоянная C уже вычислена, W нет.",
+            "options": [
+              "Можно считать обе постоянные известными",
+              "Нужно отдельно определить W"
+            ],
+            "answer": 1,
+            "why": "На первом этапе готовят обе постоянные.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "text": "В записи для C стоят 23, 465 перед плотностью и −188 перед её квадратом.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c02"
+          ],
+          "pages": [
+            136
+          ]
+        },
+        {
+          "text": "Плотность углеводородов подставляют в г/см³.",
+          "claim_ids": [
+            "geo.test_asquith.x2.18.c02"
+          ],
+          "pages": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.18.f01",
+          "latex": "C=23+465\\times\\rho_h-188\\times\\rho_h^2",
+          "meaning": "Промежуточная постоянная по плотности углеводородов.",
+          "vars": [
+            {
+              "symbol": "C",
+              "meaning": "постоянная формулы, зависящая от плотности углеводородов",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho_h",
+              "meaning": "плотность углеводородов",
+              "unit": "g/cm³"
+            }
+          ],
+          "page": 136,
+          "unit_id": "u136_04"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Из плотности получают промежуточный параметр, а не саму проницаемость.",
+        "inputs": "Плотность углеводородов.",
+        "outputs": "Постоянная $C$ для формулы проницаемости.",
+        "breaks_where": "Если неверно задана плотность, неверный $C$ перейдёт в общий расчёт.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Плотность углеводородов.",
+          "manual_steps": "Вычислить постоянную для последующей подстановки.",
+          "judgment_points": "Удостовериться в единице и относимости входа к флюиду.",
+          "time": "Короткое вычисление после проверки входа.",
+          "typical_errors": "Потерять знак вычитания у члена с квадратом плотности.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как материализованный вычисляемый столбец для последующего шага модели.",
+        "breaks_where": "Столбец имеет конкретную физическую зависимость; вычислять его без правильной единицы входа нельзя.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "плотность углеводородов",
+          "definition": "Масса нефти или газа на единицу объёма.",
+          "en": "hydrocarbon density",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "углеводороды",
+          "definition": "Вещества, основу которых составляют углерод и водород; в данном контексте нефть или газ.",
+          "en": "hydrocarbons",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Следите за знаком перед членом с квадратом плотности.",
+      "alt": "Четыре блока показывают вход, знаки слагаемых и результат подстановки.",
+      "file": "illustrations/geo.test_asquith.x2.18__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.18.c02"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.18.c01",
+      "kind": "observation",
+      "text": "На первом шаге определяют две постоянные формулы: $C$ и $W$.",
+      "quote": "A first step in the Coates and Dumanoir permeability formula is calculation of values for two constants: $C$ and $W$.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.18.c02",
+      "kind": "inference",
+      "text": "Постоянную $C$ рассчитывают как сумму 23 и произведения 465 на плотность углеводородов за вычетом 188, умноженного на квадрат плотности.",
+      "quote": "$$\nC = 23 + 465 \\times \\rho_{h} - 188 \\times \\rho_{h}^{2} \\tag{7.33}\n$$",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.18.c03",
+      "kind": "observation",
+      "text": "Символ $C$ обозначает постоянную формулы проницаемости Коутса и Дюмануара.",
+      "quote": "$C =$ constant in Coates and Dumanoir permeability formula",
+      "page": 136,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.18.t01",
+    "geo.test_asquith.x2.18.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.18.k01",
+    "geo.test_asquith.x2.18.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.17",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

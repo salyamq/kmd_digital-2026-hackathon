@@ -1,0 +1,677 @@
+{
+  "node_id": "geo.test_asquith.x2.03",
+  "chapter": "test_asquith",
+  "index": 35,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как читать оси Пикетта",
+  "title_book": "Pickett Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132
+  ],
+  "minutes": 9,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": "Если поменять оси местами, изменится то, как с графика читают наклон и пересечение."
+  },
+  "threshold": "Если поменять оси местами, изменится то, как с графика читают наклон и пересечение.",
+  "format": "interactive",
+  "format_rationale": "Движение наклона и пересечения разделяет влияние параметров на рисунок прямой.",
+  "order_rationale": "Связывает форму прямой и параметры модели с осями; это нужно перед построением.",
+  "essence": [
+    "По наклону водоносной прямой оценивают показатель цементации.",
+    "Сдвиг точки вправо от прямой помогает оценить, сколько воды в её порах."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Почему оси переставили",
+          "text": "Если сопротивление по вертикали, наклон **водной линии**, прямой водоносных точек, даёт показатель цементации. Пересечение даёт произведение коэффициента извилистости и сопротивления воды. На практике сопротивление отложили по горизонтали, а пористость по вертикали из-за доступной логарифмической бумаги. Для пористости берут две декады, для сопротивления — три. **Декада** — интервал изменения величины в десять раз.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c01",
+            "geo.test_asquith.x2.03.c02",
+            "geo.test_asquith.x2.03.c03",
+            "geo.test_asquith.x2.03.c04",
+            "geo.test_asquith.x2.03.c05",
+            "geo.test_asquith.x2.03.c06"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.03.c01",
+              "quote": "This form of the equation ($y = b + mx$) indicates that by plotting $R_t$ on the y-axis (on a logarithmic scale) against porosity ($\\phi$) on the x-axis (on a logarithmic scale), one can determine the product ($a \\times R_w$) from intercept of the line (b), and the cementation exponent ($m$) from the slope of the line ($m$).",
+              "page": 132,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c02",
+              "quote": "In practice, the resistivity ($R_t$) is usually plotted on the x-axis and the porosity ($\\phi$) on the y-axis (Figure 7.4).",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c03",
+              "quote": "This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c04",
+              "quote": "The best format to use (for the best data resolution) is two decades for porosity (0.01 to 1.0, or 1% to 100%) and three decades for the resistivity (0.1 to 100, or 1 to 1000).",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c05",
+              "quote": "The only 2-by-3 full-logarithmic paper available was constructed with 2 decades on the y-axis and 3 decades on the x-axis so the plot was modified to fit the paper",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c06",
+              "quote": "Using the convention driven by graph-paper availability, the equation becomes:",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Шкалы",
+          "text": "По вертикали берут 0,01–1,0, то есть 1%–100% пористости. По горизонтали подходят диапазоны сопротивления 0,1–100 или 1–1000. Автор приводит запись уравнения именно для этого расположения осей.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c04",
+            "geo.test_asquith.x2.03.c05",
+            "geo.test_asquith.x2.03.c06"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": []
+        },
+        {
+          "id": "how-3",
+          "section": "Водная линия",
+          "text": "На график можно нанести водоносные точки и точки с углеводородами, то есть нефтью или газом. Водоносные точки разной пористости лежат на прямой, линии полного водонасыщения. Если сопротивление по горизонтали, наклон водной линии равен $-1/m$, где $m$ — показатель цементации. Пересечение при пористости 1,0 даёт произведение $aR_w$. При известном или оценённом $a$ из произведения получают сопротивление пластовой воды.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c07",
+            "geo.test_asquith.x2.03.c08",
+            "geo.test_asquith.x2.03.c09",
+            "geo.test_asquith.x2.03.c10"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.03.c07",
+              "quote": "Plotting a mixture of water-bearing and hydrocarbon-bearing points on a Pickett plot results in the following attributes (as shown in Figure 7.4):",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c08",
+              "quote": "Water-bearing points of different porosities plot along a straight line with a slope of ($-1/m$) and an intercept (at porosity = 1.0) of ($a \\times R_w$).",
+              "page": 132,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c09",
+              "quote": "From this line, the cementation exponent ($m$) can be determined, and if the tortuosity factor ($a$) is known (or can be estimated), $R_w$ can be predicted.",
+              "page": 132,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c10",
+              "quote": "This is the water-bearing, or $R_o$, line.",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Что значит сдвиг",
+          "text": "Точки с углеводородами сдвигаются вправо по сравнению с водной линией из-за большего сопротивления. Величина горизонтального отступа зависит от водонасыщенности, доли воды в порах. Для её определения нужен известный или оценённый **показатель насыщения**, степень при водонасыщенности. Линии постоянной водонасыщенности параллельны водной линии. По графику оценивают сопротивление воды и показатель цементации без опоры только на местные сведения или дорогие измерения на керне.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c11",
+            "geo.test_asquith.x2.03.c12",
+            "geo.test_asquith.x2.03.c13",
+            "geo.test_asquith.x2.03.c14",
+            "geo.test_asquith.x2.03.c15"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.03.c11",
+              "quote": "Hydrocarbon-bearing points lie away from the line, moved horizontally to the right from the water-bearing line by their increased resistivity.",
+              "page": 132,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c12",
+              "quote": "The horizontal distance of a point from the water-bearing line depends on the water saturation ($S_w$) of that point.",
+              "page": 132,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c13",
+              "quote": "If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined.",
+              "page": 132,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c14",
+              "quote": "Lines of constant water saturation lie parallel to the water-bearing line.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.03.c15",
+              "quote": "The power in the Pickett plot is that water resistivity ($R_w$) and cementation exponent ($m$) can be estimated from the data, rather than having to be derived from local knowledge or from expensive core measurements.",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "data": {
+        "title": "Что означает сдвиг точки",
+        "signs": [
+          "Пористость точки",
+          "Сопротивление точки",
+          "Водная линия"
+        ],
+        "rule": "Сравните координаты по горизонтали при одной пористости.",
+        "conclusion": "Больший отступ вправо соответствует меньшей водонасыщенности при известных параметрах.",
+        "claim_ids": [
+          "geo.test_asquith.x2.03.c11",
+          "geo.test_asquith.x2.03.c12",
+          "geo.test_asquith.x2.03.c13"
+        ],
+        "cases": [
+          {
+            "given": "Точка лежит правее водной линии при той же пористости.",
+            "options": [
+              "Сопротивление больше",
+              "Сопротивление меньше"
+            ],
+            "answer": 0,
+            "why": "Горизонтальная ось показывает сопротивление.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "text": "Две декады по пористости охватывают 0,01–1,0, то есть 1%–100%.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c04"
+          ],
+          "pages": [
+            132
+          ]
+        },
+        {
+          "text": "Три декады по сопротивлению охватывают 0,1–100 или 1–1000.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c04"
+          ],
+          "pages": [
+            132
+          ]
+        },
+        {
+          "text": "Пересечение при пористости 1,0 даёт произведение $aR_w$.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c08"
+          ],
+          "pages": [
+            132
+          ]
+        },
+        {
+          "text": "Для оценки насыщенности нужен известный или оценённый показатель насыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.03.c13"
+          ],
+          "pages": [
+            132
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.03.f01",
+          "latex": "\\log(\\phi) = \\log(a \\times R_w) - \\frac{1}{m} \\log(R_t) - n \\log(S_w)",
+          "meaning": "Запись для практического расположения осей, воспроизведённая из фрагмента без исправления коэффициентов.",
+          "vars": [
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            }
+          ],
+          "page": 132,
+          "unit_id": "u132_17"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Водная линия даёт параметры через наклон и пересечение, а насыщение появляется как смещение относительно этой линии.",
+        "inputs": "Точки сопротивления и пористости; оценки коэффициента извилистости и показателя насыщения.",
+        "outputs": "Водная линия, показатель цементации и условные оценки сопротивления воды и водонасыщенности.",
+        "breaks_where": "Обмен осей меняет наклон; без оценок коэффициентов нельзя однозначно получить соответствующие параметры.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротажные точки и оценки параметров.",
+          "manual_steps": "Выбрать шкалы, провести водную линию, снять наклон и пересечение.",
+          "judgment_points": "Определить, какие точки относятся к водной линии и как оценить коэффициенты.",
+          "time": "Число операций зависит от подготовки данных; в главе оно качественно не оценено.",
+          "typical_errors": "Перепутать оси или измерить кратчайшее расстояние вместо горизонтального смещения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "На диаграмме рассеяния сначала калибруют базовую линию, затем оценивают отклонения.",
+        "breaks_where": "У отклонения здесь задано физическое направление: по сопротивлению при той же пористости, а не любое расстояние до прямой.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "now",
+      "kind": "now",
+      "title": "Как это делается сейчас",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Оси и их диапазоны настраивают в цифровом графике, а не подгоняют под доступный формат логарифмической бумаги.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Неоднозначности записи",
+          "text": "Формулу для переставленных осей фрагмент даёт в виде, который при алгебраической проверке не совпадает с предыдущей логарифмической записью. Пары границ сопротивления также различаются; причина не указана. Для водной линии авторы отдельно описывают наклон и пересечение.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Сопротивление самого пласта, обозначение R_t.",
+          "en": "true resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель цементации",
+          "definition": "Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "definition": "Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водная линия",
+          "definition": "Прямая, на которой лежат водонасыщенные точки разной пористости; также линия R_o.",
+          "en": "water-bearing line",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Логарифмическая шкала",
+          "definition": "Шкала, где одинаковый шаг соответствует одинаковому изменению во столько же раз.",
+          "en": "logarithmic scale",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Декада",
+          "definition": "Интервал шкалы, в котором верхнее значение в десять раз больше нижнего.",
+          "en": "decade",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пересечение",
+          "definition": "Точка встречи прямой с указанной осью или опорной линией.",
+          "en": "intercept",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Керн",
+          "definition": "Образец породы, извлечённый из скважины.",
+          "en": "core",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Наклон прямой",
+          "definition": "Изменение вертикальной логарифмической координаты на единицу горизонтальной логарифмической координаты.",
+          "en": "slope",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Водная линия служит опорой для чтения горизонтального отклонения.",
+      "alt": "Блоки ведут от водной линии к интерпретации сдвига вправо.",
+      "file": "illustrations/geo.test_asquith.x2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.03.c08",
+        "geo.test_asquith.x2.03.c11",
+        "geo.test_asquith.x2.03.c12",
+        "geo.test_asquith.x2.03.c14"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.03.c01",
+      "kind": "inference",
+      "text": "При сопротивлении на вертикальной оси и пористости на горизонтальной произведение определяют из пересечения, показатель цементации — из наклона.",
+      "quote": "This form of the equation ($y = b + mx$) indicates that by plotting $R_t$ on the y-axis (on a logarithmic scale) against porosity ($\\phi$) on the x-axis (on a logarithmic scale), one can determine the product ($a \\times R_w$) from intercept of the line (b), and the cementation exponent ($m$) from the slope of the line ($m$).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c02",
+      "kind": "observation",
+      "text": "На практике сопротивление обычно откладывают горизонтально, а пористость вертикально.",
+      "quote": "In practice, the resistivity ($R_t$) is usually plotted on the x-axis and the porosity ($\\phi$) on the y-axis (Figure 7.4).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c03",
+      "kind": "observation",
+      "text": "Принятое расположение осей исторически объясняется доступностью бумаги с двумя логарифмическими шкалами.",
+      "quote": "This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c04",
+      "kind": "observation",
+      "text": "Для лучшего разрешения предложены две декады пористости, 0.01–1.0, или 1%–100%, и три декады сопротивления; в тексте указаны 0.1–100 или 1–1000.",
+      "quote": "The best format to use (for the best data resolution) is two decades for porosity (0.01 to 1.0, or 1% to 100%) and three decades for the resistivity (0.1 to 100, or 1 to 1000).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c05",
+      "kind": "observation",
+      "text": "График подстроили под доступную бумагу: 2 декады по вертикали, 3 по горизонтали.",
+      "quote": "The only 2-by-3 full-logarithmic paper available was constructed with 2 decades on the y-axis and 3 decades on the x-axis so the plot was modified to fit the paper",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c06",
+      "kind": "observation",
+      "text": "Автор приводит запись уравнения для осей, принятых в практике построения.",
+      "quote": "Using the convention driven by graph-paper availability, the equation becomes:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c07",
+      "kind": "observation",
+      "text": "Для чтения графика автор рассматривает смесь водоносных и углеводородных точек.",
+      "quote": "Plotting a mixture of water-bearing and hydrocarbon-bearing points on a Pickett plot results in the following attributes (as shown in Figure 7.4):",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c08",
+      "kind": "inference",
+      "text": "Точки водоносных зон разной пористости ложатся на прямую с наклоном −1/m; пересечение при пористости 1.0 даёт произведение коэффициента извилистости на сопротивление воды.",
+      "quote": "Water-bearing points of different porosities plot along a straight line with a slope of ($-1/m$) and an intercept (at porosity = 1.0) of ($a \\times R_w$).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c09",
+      "kind": "inference",
+      "text": "Из линии определяют показатель цементации, а при известном или оценённом коэффициенте извилистости можно оценить сопротивление пластовой воды.",
+      "quote": "From this line, the cementation exponent ($m$) can be determined, and if the tortuosity factor ($a$) is known (or can be estimated), $R_w$ can be predicted.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c10",
+      "kind": "observation",
+      "text": "Эта прямая называется водной линией, или линией сопротивления полного водонасыщения.",
+      "quote": "This is the water-bearing, or $R_o$, line.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c11",
+      "kind": "inference",
+      "text": "Углеводородные точки отстоят вправо от водной линии из-за повышенного сопротивления.",
+      "quote": "Hydrocarbon-bearing points lie away from the line, moved horizontally to the right from the water-bearing line by their increased resistivity.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c12",
+      "kind": "inference",
+      "text": "Горизонтальное расстояние от водной линии зависит от водонасыщенности точки.",
+      "quote": "The horizontal distance of a point from the water-bearing line depends on the water saturation ($S_w$) of that point.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c13",
+      "kind": "assumption",
+      "text": "Для определения водонасыщенности требуется известный или оценённый показатель насыщения.",
+      "quote": "If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c14",
+      "kind": "observation",
+      "text": "Линии постоянной водонасыщенности параллельны водной линии.",
+      "quote": "Lines of constant water saturation lie parallel to the water-bearing line.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.03.c15",
+      "kind": "observation",
+      "text": "Диаграмма позволяет оценить сопротивление воды и показатель цементации по данным, а не только по местным сведениям или дорогим измерениям на керне.",
+      "quote": "The power in the Pickett plot is that water resistivity ($R_w$) and cementation exponent ($m$) can be estimated from the data, rather than having to be derived from local knowledge or from expensive core measurements.",
+      "page": 132,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.03.t01",
+    "geo.test_asquith.x2.03.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.03.k01",
+    "geo.test_asquith.x2.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

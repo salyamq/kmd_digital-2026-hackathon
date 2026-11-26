@@ -1,0 +1,316 @@
+{
+  "node_id": "geo.test_asquith.x4.01",
+  "chapter": "test_asquith",
+  "index": 5,
+  "part": {
+    "id": "part1",
+    "title": "От приборов к интервалам интереса"
+  },
+  "title_beginner": "Сначала сопротивление в терригенных породах",
+  "title_book": "Clastics:",
+  "section": "x4",
+  "pages": [
+    140
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "И",
+    "secondary": "Р",
+    "threshold": "Фоновый отклик соседних сланцев позволяет выделить аномалию сопротивления, но первичный отклик не заменяет интерпретацию."
+  },
+  "threshold": "Фоновый отклик соседних сланцев позволяет выделить аномалию сопротивления, но первичный отклик не заменяет интерпретацию.",
+  "format": "interactive",
+  "format_rationale": "Сравнение сигнала на устойчивом глинистом фоне с изменением в коллекторе требует видеть обе кривые.",
+  "order_rationale": "Первый маршрут начинается с сопротивления в терригенном разрезе.",
+  "essence": [
+    "Начните со скважинной кривой сопротивления.",
+    "Сравните выделяющийся участок с соседним глинистым фоном."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Почему есть фон",
+          "text": "В терригенных породах первичный просмотр начинают с сопротивления. Терригенные коллекторы обычно окружены глинистыми сланцами. Сопротивление сланцев меняется с глубиной плавно.",
+          "claim_ids": [
+            "geo.test_asquith.x4.01.c01",
+            "geo.test_asquith.x4.01.c02"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x4.01.c01",
+              "quote": "The resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x4.01.c02",
+              "quote": "because clastics tend to consist of reservoirs surrounded by shales whose resistivities vary gradually with depth.",
+              "page": 140,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что ищет специалист",
+          "text": "Различия во флюидах коллектора могут выделить его сопротивление на плавном фоне соседних сланцев. Это типичная возможность, а не обязательный признак для каждого интервала.",
+          "claim_ids": [
+            "geo.test_asquith.x4.01.c03"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x4.01.c03",
+              "quote": "Differences in the fluid content of the reservoirs tend to produce reservoir resistivities that stand out against the relatively constant resistivity of the surrounding shales.",
+              "page": 140,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Кривая сопротивления",
+          "Плавный фон соседних сланцев",
+          "Заметное отклонение"
+        ],
+        "rule": "Сравнивайте выделяющийся отклик с ближайшим сланцевым фоном.",
+        "conclusion": "Смена флюида может сделать отклик коллектора заметным, но не доказывается одним отклонением.",
+        "claim_ids": [
+          "geo.test_asquith.x4.01.c01",
+          "geo.test_asquith.x4.01.c02",
+          "geo.test_asquith.x4.01.c03"
+        ],
+        "cases": [
+          {
+            "given": "Терригенный разрез, соседние глинистые сланцы дают плавный фон.",
+            "options": [
+              "Начать с сопротивления и сравнить участки с фоном",
+              "Не учитывать соседние интервалы"
+            ],
+            "answer": 0,
+            "why": "Сопротивление — основное измерение при первичном просмотре.",
+            "source": "модель"
+          },
+          {
+            "given": "Сопротивление участка заметно отличается от плавного фона.",
+            "options": [
+              "Тип флюида установлен однозначно",
+              "Отметить отличие как признак для проверки"
+            ],
+            "answer": 1,
+            "why": "Различия флюидов могут объяснить отклик, но вывод не безусловен.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Плавный фон характерен для типичного терригенного разреза, а не для каждого интервала.",
+          "claim_ids": [
+            "geo.test_asquith.x4.01.c02"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Локальный фон помогает выделить интервал, а не превращает сопротивление в прямое измерение состава флюида.",
+        "inputs": "Кривая сопротивления с глубиной и фон окружающих сланцев.",
+        "outputs": "Интервалы, заметные на этапе первичного просмотра.",
+        "breaks_where": "Смысл контраста зависит от подходящего локального фона.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Профиль сопротивления по глубине и сведения об окружающих сланцах.",
+          "manual_steps": "Выделить относительно плавный фон и сопоставить с ним соседние интервалы.",
+          "judgment_points": "Проверить, действительно ли выбранный фон представляет окружающие сланцы.",
+          "time": "Быстрый предварительный просмотр не заменяет разбор зоны.",
+          "typical_errors": "Принять любое отличие сопротивления от фона за доказательство нефти.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как поиск выбросов относительно локального базового уровня временного ряда.",
+        "breaks_where": "Здесь координата — глубина, а выделяющийся сигнал может быть реальным изменением породы или флюида, а не ошибкой данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "терригенные породы",
+          "definition": "Осадочные породы, составленные из обломков более ранних пород или минералов.",
+          "en": "clastics",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый сланец",
+          "definition": "Тонкозернистая осадочная порода, в которой могут присутствовать глинистые минералы.",
+          "en": "shale",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "коллектор",
+          "definition": "Порода, в которой могут находиться и перемещаться флюиды.",
+          "en": "reservoir",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "флюид",
+          "definition": "Жидкость или газ в поровом пространстве породы.",
+          "en": "fluid",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "На плавном фоне локальное отличие легче заметить.",
+      "alt": "Слева Соседние сланцы: Плавный фон с глубиной. Справа Коллектор: Отклик может отличаться.",
+      "file": "illustrations/geo.test_asquith.x4.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x4.01.c02",
+        "geo.test_asquith.x4.01.c03"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x4.01.c01",
+      "kind": "observation",
+      "text": "В терригенных породах сопротивление — основное измерение для первичного просмотра.",
+      "quote": "The resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x4.01.c02",
+      "kind": "inference",
+      "text": "Терригенные коллекторы обычно окружены сланцами, сопротивление которых с глубиной изменяется плавно.",
+      "quote": "because clastics tend to consist of reservoirs surrounded by shales whose resistivities vary gradually with depth.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x4.01.c03",
+      "kind": "inference",
+      "text": "Различия во флюидах коллектора могут сделать его сопротивление заметным на относительно постоянном фоне соседних сланцев.",
+      "quote": "Differences in the fluid content of the reservoirs tend to produce reservoir resistivities that stand out against the relatively constant resistivity of the surrounding shales.",
+      "page": 140,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x4.01.t01",
+    "geo.test_asquith.x4.01.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x4.01.k01",
+    "geo.test_asquith.x4.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x3.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.03",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

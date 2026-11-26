@@ -1,0 +1,410 @@
+{
+  "node_id": "geo.test_asquith.x2.05",
+  "chapter": "test_asquith",
+  "index": 37,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как оценить насыщенность отдельной точки",
+  "title_book": "Pickett Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132,
+    133
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Ф",
+    "threshold": "Для точки берут водное сопротивление именно на её пористости — иначе сравниваются разные породы по пористости."
+  },
+  "threshold": "Для точки берут водное сопротивление именно на её пористости — иначе сравниваются разные породы по пористости.",
+  "format": "data_practice",
+  "format_rationale": "Отсчитайте опорное сопротивление для той же пористости, затем используйте формулу на точке.",
+  "order_rationale": "Применяет водяную линию при пористости отдельной точки для расчёта доли воды.",
+  "essence": [
+    "Сравнивайте сопротивление выбранной точки и водной линии при одинаковой пористости.",
+    "Это даёт входы для расчёта **водонасыщенности**, доли воды в порах."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что считать с графика",
+          "text": "Сначала считайте сопротивление точки. Затем считайте сопротивление водной линии при той же пористости. **Водная линия** здесь задаёт сопротивление полного водонасыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c01",
+            "geo.test_asquith.x2.05.c02"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.05.c01",
+              "quote": "The water saturation of a point plotting away from the water-bearing line can be determined by the equation:",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.05.c02",
+              "quote": "In practice, this means reading the resistivity of the point $$(R_t)$$ and the resistivity of the water-bearing line $$(R_o)$$ at the same porosity value as the point,",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как получить долю воды",
+          "text": "Оцените **показатель насыщения**, степень в уравнении Арчи, и рассчитайте водонасыщенность. В формуле $S_w=(R_o/R_t)^{1/n}$ сопротивление водной линии делят на сопротивление точки. Полученное отношение возводят в степень, обратную показателю насыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c01",
+            "geo.test_asquith.x2.05.c03"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.05.c03",
+              "quote": "estimating a value for saturation exponent (n) and making the calculation.",
+              "page": 133,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Считайте сопротивление выбранной точки.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Считайте сопротивление водной линии при той же пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Оцените показатель насыщения и рассчитайте водонасыщенность.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c01",
+            "geo.test_asquith.x2.05.c03"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "data": {
+        "title": "Как выбрать опорное сопротивление",
+        "signs": [
+          "Пористость выбранной точки",
+          "Сопротивление выбранной точки",
+          "Водная линия",
+          "Оценка показателя насыщения"
+        ],
+        "rule": "Считайте сопротивление водной линии при пористости выбранной точки.",
+        "conclusion": "Подставьте оба сопротивления и показатель насыщения в формулу.",
+        "claim_ids": [
+          "geo.test_asquith.x2.05.c01",
+          "geo.test_asquith.x2.05.c02",
+          "geo.test_asquith.x2.05.c03"
+        ],
+        "cases": [
+          {
+            "given": "Есть две соседние точки на водной линии, но только одна совпадает по пористости.",
+            "options": [
+              "Взять совпадающую по пористости",
+              "Взять точку с ближайшим сопротивлением"
+            ],
+            "answer": 0,
+            "why": "Для расчёта сопоставляют сопротивления при равной пористости.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Оба сопротивления берут при одной и той же пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Для расчёта требуется оценка показателя насыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.05.c03"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.05.f01",
+          "latex": "S_w = \\left(\\frac{R_o}{R_t}\\right)^{\\frac{1}{n}}",
+          "meaning": "Водонасыщенность точки относительно водной линии на той же пористости.",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            },
+            {
+              "symbol": "R_o",
+              "meaning": "сопротивление пласта при полном водонасыщении",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            }
+          ],
+          "page": 133,
+          "unit_id": "u133_07"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Каждой точке сопоставляют водный эталон на её уровне пористости.",
+        "inputs": "Истинное сопротивление и пористость точки, водная линия и показатель насыщения.",
+        "outputs": "Оценка водонасыщенности точки.",
+        "breaks_where": "Показатель насыщения и водная линия должны быть пригодны для точки; нельзя считывать эталон при другой пористости.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Координаты точки, водная линия, показатель насыщения.",
+          "manual_steps": "Снять два сопротивления на одном уровне пористости и рассчитать насыщение.",
+          "judgment_points": "Обосновать показатель насыщения и выбор водной линии.",
+          "time": "Длительность не указана; считывание приходится повторять для отдельных точек.",
+          "typical_errors": "Считать водное сопротивление не при пористости точки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Сравнить запись с условным базовым уровнем для того же входного признака.",
+        "breaks_where": "Базовый уровень здесь геологический; его нельзя заменить средним по всему набору.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Водная линия",
+          "definition": "Прямая, на которой лежат водонасыщенные точки разной пористости; также линия R_o.",
+          "en": "water-bearing line",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Сопротивление самого пласта, обозначение R_t.",
+          "en": "true resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водонасыщенного пласта",
+          "definition": "Сопротивление, которое имел бы пласт при полном водонасыщении; обозначение R_o.",
+          "en": "wet resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "definition": "Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение привязано к пористости оцениваемой точки.",
+      "alt": "Последовательность идёт от считывания двух сопротивлений к расчёту.",
+      "file": "illustrations/geo.test_asquith.x2.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.05.c01",
+        "geo.test_asquith.x2.05.c02",
+        "geo.test_asquith.x2.05.c03"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.05.c01",
+      "kind": "observation",
+      "text": "Для точки вне водной линии автор приводит формулу водонасыщенности.",
+      "quote": "The water saturation of a point plotting away from the water-bearing line can be determined by the equation:",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.05.c02",
+      "kind": "observation",
+      "text": "Сопротивление точки и сопротивление на водной линии считывают при той же пористости, что у точки.",
+      "quote": "In practice, this means reading the resistivity of the point $$(R_t)$$ and the resistivity of the water-bearing line $$(R_o)$$ at the same porosity value as the point,",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.05.c03",
+      "kind": "assumption",
+      "text": "Для расчёта требуется оценить показатель насыщения.",
+      "quote": "estimating a value for saturation exponent (n) and making the calculation.",
+      "page": 133,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.05.t01",
+    "geo.test_asquith.x2.05.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.05.k01",
+    "geo.test_asquith.x2.05.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)"
+    ],
+    "dropped_tasks": []
+  }
+}

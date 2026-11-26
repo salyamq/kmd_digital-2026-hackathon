@@ -1,0 +1,19 @@
+id: test_dake
+split: test
+domain: geology
+title: "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution"
+book:
+  author: "L. P. Dake"
+  title: "Fundamentals of Reservoir Engineering"
+  year: 1978
+  md: md/test_dake.md
+language: en
+course_language: ru
+notes: "Test twin 2. Pages by md markers (one md page = two book pages). Ch. 5 + beginning of §7.3."
+segments:
+  - pages: [75, 79]
+    start: "CHAPTER 5"
+    end: "# REFERENCES"
+  - pages: [87, 89]
+    start: "7.3 THE CONSTANT TERMINAL RATE SOLUTION"
+    end: null

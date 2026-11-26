@@ -1,0 +1,609 @@
+{
+  "node_id": "geo.test_asquith.x2.04",
+  "chapter": "test_asquith",
+  "index": 36,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как подобрать параметры матрицы",
+  "title_book": "Pickett Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132,
+    133
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Н",
+    "threshold": "Если водные точки хорошего качества охватывают разные пористости, кривизна линии помогает проверить выбранный параметр матрицы."
+  },
+  "threshold": "Если водные точки хорошего качества охватывают разные пористости, кривизна линии помогает проверить выбранный параметр матрицы.",
+  "format": "data_practice",
+  "format_rationale": "По типу пористостного измерения сопоставьте предполагаемую матрицу и положение линии.",
+  "order_rationale": "Учит выбирать параметры матрицы, когда вместо готовой пористости измерена физическая характеристика.",
+  "essence": [
+    "Форма водной линии помогает подобрать свойства **матрицы**, твёрдой части породы.",
+    "При подходящем значении линия водоносных точек становится прямой."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что откладывал Пикетт",
+          "text": "Обычно на диаграмме используют **пористость**, долю объёма пор. Изначально Пикетт использовал другие величины. В плотностном способе откладывали разность **объёмной плотности**, измеренной каротажем, и плотности матрицы.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c01",
+            "geo.test_asquith.x2.04.c02",
+            "geo.test_asquith.x2.04.c03",
+            "geo.test_asquith.x2.04.c04"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.04.c01",
+              "quote": "Although porosity is now normally plotted on the Pickett plot, Pickett originally used two other quantities:",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c02",
+              "quote": "($\\rho_b - \\rho_{ma}$) instead of the density porosity where:",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c03",
+              "quote": "$\\rho_b$ = formation bulk density (from the log)",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c04",
+              "quote": "$\\rho_{ma}$ = formation matrix density",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Акустический вариант",
+          "text": "Также можно откладывать разность **времени пробега**, времени прохождения акустического сигнала, в пласте и в матрице. Время пробега в пласте получают из каротажа. Обе разности стоят в числителях формул пористости: плотностной и акустической формулы среднего времени Уайли. Поэтому точки можно нанести без отдельного расчёта пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c05",
+            "geo.test_asquith.x2.04.c06",
+            "geo.test_asquith.x2.04.c07",
+            "geo.test_asquith.x2.04.c08",
+            "geo.test_asquith.x2.04.c09"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.04.c05",
+              "quote": "$$(\\Delta t - \\Delta t_{ma})$$ instead of the sonic porosity where:",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c06",
+              "quote": "$$\\Delta t =$$ formation sonic travel time (from the log)",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c07",
+              "quote": "$$\\Delta t_{ma} =$$ formation matrix travel time",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c08",
+              "quote": "Both quantities are the numerators in porosity equations $$(\\rho_b - \\rho_{ma})$$ from the density porosity equation (Chapter 4, Equation 4.7), and $$(\\Delta t - \\Delta t_{ma})$$ from the Wyllie time-average sonic equation (Chapter 4, Equation 4.1).",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c09",
+              "quote": "The quantities are plotting shortcuts to avoid the calculation of porosity, but they serve another purpose as well.",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Что говорит форма линии",
+          "text": "Нужен достаточный разброс качественных водоносных точек. При удачном выборе матричного значения водная линия прямая. И завышенное, и заниженное значение искривляют водную линию. Подбирайте значение пробами, пока линия не станет прямой.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c10",
+            "geo.test_asquith.x2.04.c11",
+            "geo.test_asquith.x2.04.c12",
+            "geo.test_asquith.x2.04.c13"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.04.c10",
+              "quote": "If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight.",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c11",
+              "quote": "If the chosen matrix value is either too high or too low, the line is curved.",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c12",
+              "quote": "Thus, with a spread of good data in the water-bearing zone, the proper matrix value can be chosen by trial and error",
+              "page": 133,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.04.c13",
+              "quote": "the proper matrix value can be chosen by trial and error by modifying the matrix value until the water-bearing line is straight and not curved.",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "text": "Выберите качественные водоносные точки с разной пористостью.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c12"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Постройте диаграмму для пробной плотности или пробного времени пробега матрицы.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c02",
+            "geo.test_asquith.x2.04.c05",
+            "geo.test_asquith.x2.04.c13"
+          ],
+          "pages": [
+            132,
+            133
+          ]
+        },
+        {
+          "text": "Меняйте значение и проверяйте, выпрямляется ли линия.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c10",
+            "geo.test_asquith.x2.04.c11",
+            "geo.test_asquith.x2.04.c13"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "data": {
+        "title": "Как оценить пробное значение",
+        "signs": [
+          "Качественные водоносные точки",
+          "Достаточный разброс пористости",
+          "Форма водной линии"
+        ],
+        "rule": "Ищите такое значение матричного параметра, при котором опорные точки образуют прямую.",
+        "conclusion": "Искривление ставит пробный параметр под сомнение.",
+        "claim_ids": [
+          "geo.test_asquith.x2.04.c10",
+          "geo.test_asquith.x2.04.c11",
+          "geo.test_asquith.x2.04.c12",
+          "geo.test_asquith.x2.04.c13"
+        ],
+        "cases": [
+          {
+            "given": "Водная линия искривлена при достаточном разбросе качественных точек.",
+            "options": [
+              "Сразу принять пробное значение",
+              "Проверить другое значение"
+            ],
+            "answer": 1,
+            "why": "Кривизну дают как завышенный, так и заниженный выбор.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Для подбора нужен достаточный разброс качественных водоносных точек.",
+          "claim_ids": [
+            "geo.test_asquith.x2.04.c12"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.04.f01",
+          "latex": "\\rho_b - \\rho_{ma}",
+          "meaning": "Разность плотностей, которую Пикетт откладывал вместо плотностной пористости.",
+          "vars": [
+            {
+              "symbol": "\\rho_b",
+              "meaning": "объёмная плотность пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho_{ma}",
+              "meaning": "плотность матрицы пласта",
+              "unit": null
+            }
+          ],
+          "page": 132,
+          "unit_id": "u132_23"
+        },
+        {
+          "id": "geo.test_asquith.x2.04.f02",
+          "latex": "(\\Delta t - \\Delta t_{ma})",
+          "meaning": "Акустическая разность, которую Пикетт откладывал вместо акустической пористости.",
+          "vars": [
+            {
+              "symbol": "\\Delta t",
+              "meaning": "время пробега звука в пласте",
+              "unit": null
+            },
+            {
+              "symbol": "\\Delta t_{ma}",
+              "meaning": "матричное время пробега звука",
+              "unit": null
+            }
+          ],
+          "page": 133,
+          "unit_id": "u133_02"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Форма опорной линии позволяет калибровать неизвестное свойство твёрдой части породы.",
+        "inputs": "Качественные водоносные точки разной пористости, каротаж плотности или акустического времени и пробное матричное значение.",
+        "outputs": "Подобранное матричное значение, при котором водная линия прямая.",
+        "breaks_where": "При узком диапазоне пористостей или плохих данных проверка по кривизне ненадёжна.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Данные по плотности или акустическому времени и отобранные водоносные точки.",
+          "manual_steps": "Попробовать несколько матричных значений, перестроить график, сравнить форму водной линии.",
+          "judgment_points": "Решить, достаточно ли охвачен диапазон пористости и насколько линия прямая.",
+          "time": "Подбор итеративен, длительность не указана.",
+          "typical_errors": "Принять видимую прямизну на узком диапазоне за проверку матричного значения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Настраивать параметр преобразования признака до выпрямления эталонной группы.",
+        "breaks_where": "Выпрямление информативно только в качественных водоносных данных с разбросом пористости.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Водная линия",
+          "definition": "Прямая, на которой лежат водонасыщенные точки разной пористости; также линия R_o.",
+          "en": "water-bearing line",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Акустический каротаж",
+          "definition": "Скважинное измерение времени распространения звука, используемое для оценки пористости.",
+          "en": "sonic log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Плотностный каротаж",
+          "definition": "Скважинное измерение объёмной плотности, используемое для оценки пористости.",
+          "en": "density log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж",
+          "definition": "Скважинные измерения, которые записывают как кривые по глубине.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матрица породы",
+          "definition": "Твёрдая часть породы без пор.",
+          "en": "formation matrix",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матричные параметры",
+          "definition": "Плотность твёрдой части породы и время прохождения звука в ней.",
+          "en": "matrix parameters",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Плотностная пористость",
+          "definition": "Пористость, которую рассчитывают по плотностному каротажу.",
+          "en": "density porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Акустическая пористость",
+          "definition": "Пористость, которую рассчитывают по измерению времени пробега звука.",
+          "en": "sonic porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Формула Уайли",
+          "definition": "Упомянутая в тексте формула акустической пористости по среднему времени пробега звука.",
+          "en": "Wyllie time-average sonic equation",
+          "page": 133,
+          "by": "author"
+        },
+        {
+          "term": "Объёмная плотность",
+          "definition": "Плотность породы как целого, измеряемая плотностным каротажем.",
+          "en": "bulk density",
+          "page": 132,
+          "by": "author"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Форма линии помогает проверить выбор при достаточном разбросе точек.",
+      "alt": "Слева прямая линия при удачном выборе, справа кривая при ошибочном.",
+      "file": "illustrations/geo.test_asquith.x2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.04.c10",
+        "geo.test_asquith.x2.04.c11",
+        "geo.test_asquith.x2.04.c12"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.04.c01",
+      "kind": "observation",
+      "text": "Сейчас обычно откладывают пористость; первоначально Пикетт использовал две другие величины.",
+      "quote": "Although porosity is now normally plotted on the Pickett plot, Pickett originally used two other quantities:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c02",
+      "kind": "observation",
+      "text": "Вместо плотностной пористости автор описывает разность объёмной и матричной плотностей.",
+      "quote": "($\\rho_b - \\rho_{ma}$) instead of the density porosity where:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c03",
+      "kind": "observation",
+      "text": "Объёмную плотность пласта получают из каротажа.",
+      "quote": "$\\rho_b$ = formation bulk density (from the log)",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c04",
+      "kind": "observation",
+      "text": "В описании плотностной разности второй параметр — плотность матрицы пласта.",
+      "quote": "$\\rho_{ma}$ = formation matrix density",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c05",
+      "kind": "observation",
+      "text": "Вместо акустической пористости автор описывает разность времени пробега в пласте и в матрице.",
+      "quote": "$$(\\Delta t - \\Delta t_{ma})$$ instead of the sonic porosity where:",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c06",
+      "kind": "observation",
+      "text": "Время акустического пробега пласта получают из каротажа.",
+      "quote": "$$\\Delta t =$$ formation sonic travel time (from the log)",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c07",
+      "kind": "observation",
+      "text": "В акустической разности второй параметр — время пробега в матрице.",
+      "quote": "$$\\Delta t_{ma} =$$ formation matrix travel time",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c08",
+      "kind": "observation",
+      "text": "Обе разности — числители формул пористости: плотностной и акустической формулы среднего времени Уайли.",
+      "quote": "Both quantities are the numerators in porosity equations $$(\\rho_b - \\rho_{ma})$$ from the density porosity equation (Chapter 4, Equation 4.7), and $$(\\Delta t - \\Delta t_{ma})$$ from the Wyllie time-average sonic equation (Chapter 4, Equation 4.1).",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c09",
+      "kind": "observation",
+      "text": "Использование числителей позволяет отложить точки без отдельного расчёта пористости.",
+      "quote": "The quantities are plotting shortcuts to avoid the calculation of porosity, but they serve another purpose as well.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c10",
+      "kind": "inference",
+      "text": "Если водоносные зоны охватывают набор пористостей, при верном матричном значении линия прямая.",
+      "quote": "If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c11",
+      "kind": "inference",
+      "text": "И завышенный, и заниженный выбор матричного значения делают водную линию кривой.",
+      "quote": "If the chosen matrix value is either too high or too low, the line is curved.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c12",
+      "kind": "assumption",
+      "text": "Для подбора по форме водной линии нужен достаточный разброс качественных точек водоносной зоны.",
+      "quote": "Thus, with a spread of good data in the water-bearing zone, the proper matrix value can be chosen by trial and error",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.04.c13",
+      "kind": "observation",
+      "text": "Матричное значение подбирают методом проб, пока водная линия не станет прямой.",
+      "quote": "the proper matrix value can be chosen by trial and error by modifying the matrix value until the water-bearing line is straight and not curved.",
+      "page": 133,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.04.t01",
+    "geo.test_asquith.x2.04.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.04.k01",
+    "geo.test_asquith.x2.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

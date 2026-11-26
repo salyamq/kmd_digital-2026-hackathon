@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 17. Когда метод отношений даёт больше — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.13" data-index="17">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 17 из 66</p>
+    <h1>Когда метод отношений даёт больше</h1>
+    <p class="booktitle">В книге: «Ratio Method» <span class="pg">стр. 126–128</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-15.html">шаг 15 «Что значит совпадение двух оценок»</a> <span class="muted">(предпосылка)</span>, <a href="step-16.html">шаг 16 «Когда метод отношений даёт меньше»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Как выбрать первую кривую»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Если оценка методом отношений выше Арчи, автор подозревает завышенное отношение сопротивлений.</p><p>По одному знаку нельзя выбрать единственную причину расхождения.</p><p class="threshold"><b>Пороговая идея.</b> Один знак расхождения допускает поправку и несколько физических объяснений. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>При меньшей оценке Арчи отношение мелкого сопротивления к истинному может быть слишком высоким. Соседние пласты с высоким сопротивлением могут завысить мелкое сопротивление. Глубинная оценка может занизить истинное сопротивление, когда сопротивление промытой зоны ниже истинного. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c01"><p>«3. If $S_{wa} &lt; S_{wr}$, then the value for $R_{xo}/R_t$ is too high.»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c02"><p>«$R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds,»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c03"><p>«or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$.»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x1_13__1_m.svg"><img src="img/geo_test_asquith_x1_13__1.svg" alt="Метод отношений даёт больше → Отношение сопротивлений завышено → Проверить приборы и профиль → Решить, нужна ли поправка." loading="lazy"></picture>  </div>
+  <figcaption>
+    Схема связывает исходный признак с проверкой и выводом.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 128</span>
+  </figcaption>
+</figure>
+<h3>Ограничение</h3>          <div class="para" id="how-2">
+            <p><strong class="term">Кольцевой профиль</strong> — отдельная кольцевая зона вокруг скважины. Возможен такой профиль, нарушение условия для промытой зоны или оба фактора. Другое объяснение — карбонат с <strong class="term">формовой пористостью</strong> и низкой проницаемостью. Такие поры повторяют форму исчезнувших зёрен или остатков ископаемых. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c04"><p>«Also, an annulus-type invasion profile might be indicated and/or $S_{xo} &lt; S_w^{1/5}$ (from Equation 7.5).»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c06"><p>«4. If $S_{wa} &lt; S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-3">
+            <p>Для случая с поправкой автор умножает оценку Арчи на степень 0,25 отношения оценок Арчи и метода отношений. Сначала сравните оценки. Затем проверьте сопротивления и возможные причины. Решите, подходит ли поправка. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.13.c05"><p>«In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):»</p><footer>— автор, стр. 128 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Оговорка о записи</h3>          <div class="para para-model" id="how-4">
+            <p>Ссылка на степень в условии промытой зоны расходится с напечатанной формулой. Не заменяйте одну запись другой по догадке. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Различите причины завышения</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Метод отношений даёт больше Арчи</li><li>Сведения о соседних пластах, измерениях и профиле</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сначала проверьте, какой механизм мог завысить отношение. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Поправка не заменяет проверку качества данных и профиля.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Метод отношений даёт больше, а соседний пласт имеет высокое сопротивление. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Проверить влияние на мелкое измерение</button><button type="button" class="btn ghost case-opt" data-i="1">Автоматически объявить кольцевой профиль</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Соседний пласт даёт собственную правдоподобную причину.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Сценарий относится к случаю, когда Арчи даёт меньшую оценку. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li><li>В формуле поправки степень отношения двух оценок равна 0,25. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_asquith.x1.13.f01">
+          <div class="tex-display" data-tex="(S_w)_{COR} = S_{wa} \times \left( \frac{S_{wa}}{S_{wr}} \right)^{0.25} \tag{7.8}">$$(S_w)_{COR} = S_{wa} \times \left( \frac{S_{wa}}{S_{wr}} \right)^{0.25} \tag{7.8}$$</div>
+          <p>Скорректированная оценка водонасыщенности <span class="pg">стр. 128</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$(S_w)_{COR}$</td><td>скорректированная насыщенность</td><td>—</td></tr><tr><td>$S_{wa}$</td><td>оценка водонасыщенности по Арчи</td><td>—</td></tr><tr><td>$S_{wr}$</td><td>оценка водонасыщенности незатронутой зоны методом отношений</td><td>—</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Две оценки насыщенности, сопротивления, соседние пласты и литология → Диагностические версии и скорректированная оценка.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Две оценки насыщенности, сопротивления, соседние пласты и литология</dd>
+          <dt>Выход</dt><dd>Диагностические версии и скорректированная оценка</dd>
+          <dt>Где ломается</dt><dd>Разные причины дают одинаковый знак различия</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Две оценки насыщенности, сопротивления, соседние пласты и литология</dd>
+            <dt>Ручные шаги</dt><dd>Проверьте влияние соседних высокоомных слоёв и занижение глубинной оценки; рассмотрите кольцевой профиль и условия дополнительной поправки.</dd>
+            <dt>Точки суждения</dt><dd>Как отделить влияние соседних пластов от профиля проникновения или литологии</dd>
+            <dt>Время</dt><dd>Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.</dd>
+            <dt>Типичные ошибки</dt><dd>Механически приписать любое расхождение кольцевому профилю</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Одна ошибка на выходе может иметь несколько источников смещения.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Геологические причины приходится различать по разным наблюдениям, а не по трассировке программы.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Проверяйте номер формулы <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Степень в условии про кольцевой профиль не совпадает со степенью, напечатанной в указанной формуле для промытой зоны. Не устраняйте расхождение догадкой.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля порового пространства, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Мелкое сопротивление <span class="en" lang="en">(shallow resistivity)</span></dt><dd>Сопротивление, измеренное прибором, исследующим область непосредственно у ствола. <span class="pg">стр. 127</span></dd><dt>Истинное сопротивление пласта <span class="en" lang="en">(true formation resistivity)</span></dt><dd>Значение по глубинному индукционному или глубинному боковому каротажу после поправки на проникновение. <span class="pg">стр. 126</span></dd><dt>Промытая зона <span class="en" lang="en">(flushed zone)</span></dt><dd>Прилегающая к стволу часть пласта, изменённая фильтратом раствора.  <span class="chip chip-model">модель</span></dd><dt>Проникновение <span class="en" lang="en">(invasion)</span></dt><dd>Вторжение фильтрата бурового раствора в пласт.  <span class="chip chip-model">модель</span></dd><dt>Кольцевой профиль <span class="en" lang="en">(annulus-type invasion profile)</span></dt><dd>Профиль с отдельной кольцевой зоной вокруг скважины.  <span class="chip chip-model">модель</span></dd><dt>Формовая пористость <span class="en" lang="en">(moldic porosity)</span></dt><dd>Пустоты, повторяющие форму исчезнувших компонентов породы.  <span class="chip chip-model">модель</span></dd><dt>Проницаемость <span class="en" lang="en">(permeability)</span></dt><dd>Способность породы пропускать флюиды.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-13-t01" data-task="geo.test_asquith.x1.13.t01" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-test_asquith-x1-13-t01">Расположите действия до применения поправки.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-test_asquith-x1-13-t01">
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Сравнить водонасыщенности</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Решить, подходит ли поправка</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Проверить сопротивления и причины расхождения</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Сравнить водонасыщенности → Проверить сопротивления и причины расхождения → Решить, подходит ли поправка</p>
+    <p class="fb-expl">Применение формулы следует за проверкой причин. <a href="#how-3">Где это в тексте (стр. 128) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-13-t02" data-task="geo.test_asquith.x1.13.t02" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Какой вход может завысить соседний пласт?</p>
+  <p class="cloze">Соседние высокоомные пласты могут завысить <select aria-label="Пропуск 1"><option value="">—</option><option>мелкое сопротивление</option><option>пластовую температуру</option><option>долю пористости</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Соседние высокоомные пласты могут завысить [мелкое сопротивление].</p>
+    <p class="fb-expl">Влияние соседних пластов затрагивает мелкую оценку сопротивления. <a href="#how-1">Где это в тексте (стр. 128) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.13.c01"><p>Если оценка Арчи ниже, отношение мелкого сопротивления к истинному слишком высоко. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«3. If $S_{wa} &lt; S_{wr}$, then the value for $R_{xo}/R_t$ is too high.»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.13.c02"><p>Высокоомные соседние пласты могут завысить мелкое сопротивление. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds,»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.13.c03"><p>Глубинное измерение может занизить истинное сопротивление, когда мелкое сопротивление меньше истинного. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$.»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.13.c04"><p>Возможен кольцевой профиль и/или нарушение приведённого условия для промытой зоны. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Also, an annulus-type invasion profile might be indicated and/or $S_{xo} &lt; S_w^{1/5}$ (from Equation 7.5).»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.13.c05"><p>Автор предлагает уравнение для более точной оценки насыщенности в этом случае. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.13.c06"><p>Возможен карбонат с формовой пористостью, например по ооидам или ископаемым остаткам, и низкой проницаемостью. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«4. If $S_{wa} &lt; S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.»</p><footer>— стр. 128</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u128_20-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>3. If $S_{wa} &lt; S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds, or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$. Also, an annulus-type invasion profile might be indicated and/or $S_{xo} &lt; S_w^{1/5}$ (from Equation 7.5). In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_21-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>$$(S_w)_{COR} = S_{wa} \times \left( \frac{S_{wa}}{S_{wr}} \right)^{0.25} \tag{7.8}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_22-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>where:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_23-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>$(S_w)_{COR}$ = corrected water saturation of the uninvaded zone</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_24-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>$S_{wa}$ = water saturation of the uninvaded zone (Archie method)</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_25-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>$S_{wr}$ = water saturation of the uninvaded zone (ratio method)</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_26-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>4. If $S_{wa} &lt; S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.</blockquote>
+        </article>
+      </details>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-16.html" rel="prev"><span>← Назад</span><b>Когда метод отношений даёт меньше</b></a><a class="next" href="step-18.html" rel="next"><span>Дальше →</span><b>Что даёт быстрая оценка</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Когда метод отношений даёт больше</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.13">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.13.t01", "type": "order", "question": "Расположите действия до применения поправки.", "explanation": "Применение формулы следует за проверкой причин.", "page": 128, "link": "#how-3", "step_title": "Когда метод отношений даёт больше", "step_index": 17, "node_id": "geo.test_asquith.x1.13", "items": [{"text": "Сравнить водонасыщенности", "pos": 0}, {"text": "Решить, подходит ли поправка", "pos": 2}, {"text": "Проверить сопротивления и причины расхождения", "pos": 1}], "key": [0, 1, 2], "answer_text": "Сравнить водонасыщенности → Проверить сопротивления и причины расхождения → Решить, подходит ли поправка"}, {"id": "geo.test_asquith.x1.13.t02", "type": "cloze", "question": "Какой вход может завысить соседний пласт?", "explanation": "Влияние соседних пластов затрагивает мелкую оценку сопротивления.", "page": 128, "link": "#how-1", "step_title": "Когда метод отношений даёт больше", "step_index": 17, "node_id": "geo.test_asquith.x1.13", "parts": ["Соседние высокоомные пласты могут завысить ", "."], "blanks": [{"options": ["мелкое сопротивление", "пластовую температуру", "долю пористости"], "answers": ["мелкое сопротивление"]}], "key": [["мелкое сопротивление"]], "answer_text": "Соседние высокоомные пласты могут завысить [мелкое сопротивление]."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

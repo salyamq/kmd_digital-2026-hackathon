@@ -1,0 +1,487 @@
+{
+  "node_id": "geo.test_asquith.x2.15",
+  "chapter": "test_asquith",
+  "index": 56,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Как выбрать коэффициент для флюида",
+  "title_book": "Wyllie and Rose (1950)",
+  "section": "x2",
+  "pages": [
+    135
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "В этой модели тип флюида выбирает вариант формулы до того, как подставляют пористость и насыщенность."
+  },
+  "threshold": "В этой модели тип флюида выбирает вариант формулы до того, как подставляют пористость и насыщенность.",
+  "format": "data_practice",
+  "format_rationale": "Сначала выберите уравнение по флюиду, затем проследите влияние пористости и насыщенности на оценку.",
+  "order_rationale": "Рассматривает первый вариант эмпирической оценки и выбор коэффициента по типу флюида.",
+  "essence": [
+    "В методе Уайли и Роуза коэффициент зависит от типа **флюида**, жидкости или газа в порах.",
+    "Операции в формулах одинаковы, но исходные коэффициенты для нефти и газа различны."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        135
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Два способа",
+          "text": "Авторы оценивают **проницаемость**, способность породы пропускать флюид, по диаграмме или формуле. Результат выражают в **миллидарси**, единицах проницаемости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c01",
+            "geo.test_asquith.x2.15.c04"
+          ],
+          "pages": [
+            135
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.15.c01",
+              "quote": "This method for determining permeability utilizes a chart (Figure 7.8) or the two forms of the following formula:",
+              "page": 135,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.15.c04",
+              "quote": "$K =$ permeability in millidarcys",
+              "page": 135,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что входит в формулу",
+          "text": "Символ φ обозначает пористость, долю пор. Для нефти средней плотности коэффициент равен 250. Для сухого газа коэффициент равен 79. Куб пористости делят на неснижаемую водонасыщенность. **Неснижаемая водонасыщенность** здесь означает состояние, когда удерживаемая породой вода не вытесняется. Полученное отношение умножают на коэффициент. Затем возводят всё произведение в квадрат.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c02",
+            "geo.test_asquith.x2.15.c03",
+            "geo.test_asquith.x2.15.c05",
+            "geo.test_asquith.x2.15.c06"
+          ],
+          "pages": [
+            135
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.15.c02",
+              "quote": "$$\nK = \\left( 250 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ (medium-gravity oils)} \\tag{7.30}\n$$",
+              "page": 135,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.15.c03",
+              "quote": "$$\nK = \\left( 79 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ dry gas)} \\tag{7.31}\n$$",
+              "page": 135,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.15.c05",
+              "quote": "$\\phi =$ porosity",
+              "page": 135,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.15.c06",
+              "quote": "$S_{\\text{wirr}} =$ water saturation ($S_w$) of a zone at irreducible water saturation",
+              "page": 135,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Выбрать и применить запись",
+      "pages": [
+        135
+      ],
+      "items": [
+        {
+          "text": "Определите, идёт речь о нефти средней плотности или сухом газе.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c02",
+            "geo.test_asquith.x2.15.c03"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "Выберите диаграмму или формулу.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c01"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "Для формулы возьмите пористость и неснижаемую водонасыщенность.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c02",
+            "geo.test_asquith.x2.15.c03",
+            "geo.test_asquith.x2.15.c06"
+          ],
+          "pages": [
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        135
+      ],
+      "data": {
+        "title": "Выбрать коэффициент",
+        "claim_ids": [
+          "geo.test_asquith.x2.15.c02",
+          "geo.test_asquith.x2.15.c03",
+          "geo.test_asquith.x2.15.c06"
+        ],
+        "signs": [
+          "Тип флюида",
+          "Пористость",
+          "Состояние водонасыщенности"
+        ],
+        "rule": "Используйте коэффициент для данного флюида и требуемое состояние водонасыщенности.",
+        "conclusion": "Для двух типов флюида меняется коэффициент, а не порядок операций.",
+        "cases": [
+          {
+            "given": "Интервал содержит нефть средней плотности.",
+            "options": [
+              "Взять 79",
+              "Взять 250"
+            ],
+            "answer": 1,
+            "why": "Коэффициент 250 приведён для нефти средней плотности.",
+            "source": "модель"
+          },
+          {
+            "given": "Интервал содержит сухой газ и находится при неснижаемой водонасыщенности.",
+            "options": [
+              "Взять 79",
+              "Взять 250"
+            ],
+            "answer": 0,
+            "why": "Для сухого газа в формуле стоит 79.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        135
+      ],
+      "items": [
+        {
+          "text": "Для нефти средней плотности коэффициент равен 250.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c02"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "Для сухого газа коэффициент равен 79.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c03"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "В знаменатель подставляют водонасыщенность зоны в неснижаемом состоянии.",
+          "claim_ids": [
+            "geo.test_asquith.x2.15.c06"
+          ],
+          "pages": [
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        135
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.15.f01",
+          "latex": "K=\\left(250\\times\\frac{\\phi^{3}}{S_{\\mathrm{wirr}}}\\right)^2",
+          "meaning": "Проницаемость для нефти средней плотности по Уайли и Роузу.",
+          "vars": [
+            {
+              "symbol": "K",
+              "meaning": "проницаемость",
+              "unit": "md"
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "S_{\\mathrm{wirr}}",
+              "meaning": "водонасыщенность зоны при неснижаемой водонасыщенности",
+              "unit": null
+            }
+          ],
+          "page": 135,
+          "unit_id": "u135_05"
+        },
+        {
+          "id": "geo.test_asquith.x2.15.f02",
+          "latex": "K=\\left(79\\times\\frac{\\phi^{3}}{S_{\\mathrm{wirr}}}\\right)^2",
+          "meaning": "Проницаемость для сухого газа по Уайли и Роузу.",
+          "vars": [
+            {
+              "symbol": "K",
+              "meaning": "проницаемость",
+              "unit": "md"
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            },
+            {
+              "symbol": "S_{\\mathrm{wirr}}",
+              "meaning": "водонасыщенность зоны при неснижаемой водонасыщенности",
+              "unit": null
+            }
+          ],
+          "page": 135,
+          "unit_id": "u135_06"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Формула даёт оценку проницаемости через свойства пор и выбранную категорию флюида.",
+        "inputs": "Тип флюида, пористость, неснижаемая водонасыщенность.",
+        "outputs": "Проницаемость в миллидарси.",
+        "breaks_where": "Не подставляйте обычную водонасыщенность для зоны, если она не находится в указанном состоянии.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Тип флюида, пористость, водонасыщенность соответствующей зоны.",
+          "manual_steps": "Выбрать вариант формулы или прочитать диаграмму.",
+          "judgment_points": "Установить тип флюида и проверить состояние насыщения.",
+          "time": "Арифметика короче, чем подготовка входов.",
+          "typical_errors": "Перепутать коэффициенты или подставить не ту водонасыщенность.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как выбрать конфигурацию модели по категории объекта перед запуском одного и того же вычисления.",
+        "breaks_where": "Набор категорий здесь физически задан; произвольно переключать коэффициент ради лучшего результата нельзя.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "now",
+      "kind": "now",
+      "title": "Как это делается сейчас",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Если входы уже подготовлены, формулу можно считать автоматически, явно сохраняя выбранную категорию флюида.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "миллидарси",
+          "definition": "Единица измерения проницаемости.",
+          "en": "millidarcy",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "неснижаемая водонасыщенность",
+          "definition": "Доля пор, которую занимает вода в состоянии, когда подвижная вода уже вытеснена.",
+          "en": "irreducible water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "плотность углеводородов",
+          "definition": "Масса нефти или газа на единицу объёма.",
+          "en": "hydrocarbon density",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Тип флюида определяет коэффициент. Формулы используют общую последовательность действий.",
+      "alt": "Слева показана нефть с коэффициентом 250, справа сухой газ с коэффициентом 79.",
+      "file": "illustrations/geo.test_asquith.x2.15__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.15.c02",
+        "geo.test_asquith.x2.15.c03"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.15.c01",
+      "kind": "observation",
+      "text": "Проницаемость по методу Уайли и Роуза можно оценить по диаграмме или по одному из двух видов формулы.",
+      "quote": "This method for determining permeability utilizes a chart (Figure 7.8) or the two forms of the following formula:",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.15.c02",
+      "kind": "assumption",
+      "text": "Для нефти средней плотности коэффициент равен 250; куб пористости делят на неснижаемую водонасыщенность, умножают на коэффициент и возводят в квадрат.",
+      "quote": "$$\nK = \\left( 250 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ (medium-gravity oils)} \\tag{7.30}\n$$",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.15.c03",
+      "kind": "assumption",
+      "text": "Для сухого газа используют коэффициент 79; куб пористости делят на неснижаемую водонасыщенность, умножают на коэффициент и возводят в квадрат.",
+      "quote": "$$\nK = \\left( 79 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ dry gas)} \\tag{7.31}\n$$",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.15.c04",
+      "kind": "observation",
+      "text": "Проницаемость выражена в миллидарси.",
+      "quote": "$K =$ permeability in millidarcys",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.15.c05",
+      "kind": "observation",
+      "text": "Символ $\\phi$ обозначает пористость.",
+      "quote": "$\\phi =$ porosity",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.15.c06",
+      "kind": "assumption",
+      "text": "В знаменатель подставляют водонасыщенность зоны, в которой водонасыщенность уже неснижаемая.",
+      "quote": "$S_{\\text{wirr}} =$ water saturation ($S_w$) of a zone at irreducible water saturation",
+      "page": 135,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.15.t01",
+    "geo.test_asquith.x2.15.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.15.k01",
+    "geo.test_asquith.x2.15.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.13",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

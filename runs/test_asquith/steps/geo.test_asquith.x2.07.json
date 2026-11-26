@@ -1,0 +1,336 @@
+{
+  "node_id": "geo.test_asquith.x2.07",
+  "chapter": "test_asquith",
+  "index": 44,
+  "part": {
+    "id": "part5",
+    "title": "Диаграмма Хингла: другой масштаб, те же данные"
+  },
+  "title_beginner": "Когда полезна диаграмма Хингла",
+  "title_book": "Hingle Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132,
+    133
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "И",
+    "secondary": "Н",
+    "threshold": "Неизвестный параметр матрицы или сопротивление пластовой воды не обязательно делает оценку водонасыщенности невозможной."
+  },
+  "threshold": "Неизвестный параметр матрицы или сопротивление пластовой воды не обязательно делает оценку водонасыщенности невозможной.",
+  "format": "data_practice",
+  "format_rationale": "По задаче и имеющимся данным определите, чем поможет представление Хингла.",
+  "order_rationale": "После освоения Пикетта вводит задачу, где полезна другая шкала диаграммы.",
+  "essence": [
+    "Диаграмма Хингла помогает оценить долю воды в порах, даже когда некоторые свойства пласта неизвестны.",
+    "Не нужно заранее знать сопротивление пластовой воды и свойства матрицы."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Откуда взялся метод",
+          "text": "**Диаграмма Хингла** сопоставляет удельное сопротивление и пористость, долю объёма пор. Это старейшая из таких диаграмм для оценки **водонасыщенности**, доли воды в порах.",
+          "claim_ids": [
+            "geo.test_asquith.x2.07.c01"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.07.c01",
+              "quote": "The oldest of the resistivity-porosity crossplot methods that can be used to determine water saturation ($$S_w$$) is the Hingle (1959) plot.",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что может оставаться неизвестным",
+          "text": "Свойства матрицы и сопротивление пластовой воды могут быть неизвестны заранее. **Матрица** — твёрдая часть породы. Даже в таком случае метод позволяет оценивать водонасыщенность.",
+          "claim_ids": [
+            "geo.test_asquith.x2.07.c02",
+            "geo.test_asquith.x2.07.c03"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.07.c02",
+              "quote": "As in other crossplot techniques, a significant benefit of Hingle's technique is that a value for water saturation ($$S_w$$) can be determined even if matrix properties ($$\\rho_{ma}$$ or $$\\Delta t_{ma}$$) of a reservoir are unknown.",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.07.c03",
+              "quote": "This is also true if a reservoir's water resistivity ($$R_w$$) is unknown.",
+              "page": 133,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "data": {
+        "title": "Отказываться ли от диаграммы",
+        "signs": [
+          "Есть сопротивление породы и пористость",
+          "Свойства матрицы неизвестны",
+          "Сопротивление пластовой воды неизвестно"
+        ],
+        "rule": "Не исключайте Хингла только из-за отсутствия этих предварительных параметров.",
+        "conclusion": "Диаграмма позволяет оценивать водонасыщенность без заранее известных свойств матрицы и сопротивления пластовой воды.",
+        "claim_ids": [
+          "geo.test_asquith.x2.07.c01",
+          "geo.test_asquith.x2.07.c02",
+          "geo.test_asquith.x2.07.c03"
+        ],
+        "cases": [
+          {
+            "given": "Известны сопротивление породы и пористость, но сопротивление пластовой воды ещё не определили.",
+            "options": [
+              "Рассмотреть диаграмму Хингла",
+              "Отказаться от Хингла только по этой причине"
+            ],
+            "answer": 0,
+            "why": "Неизвестное сопротивление воды само по себе не исключает эту оценку.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Заранее знать свойства матрицы не обязательно.",
+          "claim_ids": [
+            "geo.test_asquith.x2.07.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Заранее знать сопротивление пластовой воды не обязательно.",
+          "claim_ids": [
+            "geo.test_asquith.x2.07.c03"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Отсутствие прямых сведений о матрице или воде не требует сразу отказываться от графического метода.",
+        "inputs": "Данные диаграммы сопротивления и пористости.",
+        "outputs": "Оценка водонасыщенности.",
+        "breaks_where": "Здесь указано преимущество метода, но не описаны условия и шаги его построения.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротажные данные; свойства матрицы и сопротивление пластовой воды могут быть неизвестны.",
+          "manual_steps": "Рассмотреть диаграмму Хингла как вариант интерпретации при неполных исходных сведениях.",
+          "judgment_points": "Отличить отсутствие справочного значения от отсутствия пригодных наблюдений.",
+          "time": "Длительность в единице не приведена.",
+          "typical_errors": "Отказаться от оценки только из-за отсутствия параметра матрицы или сопротивления воды.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Восстановить целевое свойство по структуре точек, не начиная с готового справочного значения каждого параметра.",
+        "breaks_where": "Способность работать без отдельного справочного входа не гарантирует результат на любом наборе данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Хингла",
+          "definition": "Давний метод оценки водонасыщенности по диаграмме сопротивления и пористости.",
+          "en": "Hingle plot",
+          "page": 133,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма сопротивления и пористости",
+          "definition": "Диаграмма, по которой графически определяют водонасыщенность из каротажных данных.",
+          "en": "resistivity–porosity crossplot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матрица породы",
+          "definition": "Твёрдая часть породы без пор.",
+          "en": "formation matrix",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матричные параметры",
+          "definition": "Плотность твёрдой части породы и время прохождения звука в ней.",
+          "en": "matrix parameters",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коллектор",
+          "definition": "Порода, способная содержать и пропускать флюиды.",
+          "en": "reservoir",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Хингл использует две координаты, даже если свойства матрицы или сопротивление воды ещё неизвестны.",
+      "alt": "Три блока связывают координаты диаграммы с оценкой насыщенности.",
+      "file": "illustrations/geo.test_asquith.x2.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.07.c01",
+        "geo.test_asquith.x2.07.c02",
+        "geo.test_asquith.x2.07.c03"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.07.c01",
+      "kind": "observation",
+      "text": "Диаграмма Хингла — старейшая среди диаграмм сопротивления и пористости для оценки водонасыщенности.",
+      "quote": "The oldest of the resistivity-porosity crossplot methods that can be used to determine water saturation ($$S_w$$) is the Hingle (1959) plot.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.07.c02",
+      "kind": "inference",
+      "text": "Метод позволяет определить водонасыщенность даже при неизвестных свойствах матрицы коллектора.",
+      "quote": "As in other crossplot techniques, a significant benefit of Hingle's technique is that a value for water saturation ($$S_w$$) can be determined even if matrix properties ($$\\rho_{ma}$$ or $$\\Delta t_{ma}$$) of a reservoir are unknown.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.07.c03",
+      "kind": "inference",
+      "text": "Оценка также возможна, если сопротивление пластовой воды неизвестно.",
+      "quote": "This is also true if a reservoir's water resistivity ($$R_w$$) is unknown.",
+      "page": 133,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.07.t01",
+    "geo.test_asquith.x2.07.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.07.k01",
+    "geo.test_asquith.x2.07.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)"
+    ],
+    "dropped_tasks": []
+  }
+}

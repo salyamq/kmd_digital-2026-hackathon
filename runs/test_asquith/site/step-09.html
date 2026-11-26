@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 9. Вода не равна продуктивности — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.05" data-index="9">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 9 из 66</p>
+    <h1>Вода не равна продуктивности</h1>
+    <p class="booktitle">В книге: «ARCHIE WATER SATURATIONS: S_W AND S_XO» <span class="pg">стр. 127</span></p>
+    <p class="meta">
+      <span class="chip">≈ 4 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + процесс/прибор</span>    </p>
+<p class="relies">Опирается на: <a href="step-08.html">шаг 8 «Как оценить воду вдали от ствола»</a> <span class="muted">(предпосылка)</span>, <a href="step-01.html">шаг 1 «От кривых к решению»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Низкая водонасыщенность сама по себе не обещает добычу.</p><p>Автор требует проверить, могут ли углеводороды двигаться и хватит ли извлекаемых запасов.</p><p class="threshold"><b>Пороговая идея.</b> Низкая водонасыщенность сама по себе не обещает добычу. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>Водонасыщенность незатронутой зоны по Арчи — основная величина оценки по каротажу. Но она не даёт полной оценки продуктивности. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.05.c01"><p>«The uninvaded zone&#39;s water saturation ($S_w$), determined by the Archie equation, is the most fundamental quantity used in log evaluation.»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.05.c02"><p>«But merely knowing a zone&#39;s water saturation ($S_w$) does not provide enough information to completely evaluate a zone&#39;s potential productivity.»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-2">
+            <p>Проверьте, допускает ли насыщенность <strong class="term">безводное заканчивание</strong> — подготовку скважины к добыче без воды. Затем проверьте <strong class="term">подвижность углеводородов</strong>, то есть способность нефти или газа перемещаться. Уточните <strong class="term">проницаемость</strong>, способность пропускать флюиды. Оцените, достаточен ли коммерческий объём <strong class="term">извлекаемых запасов</strong>, которые можно добыть. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.05.c03"><p>«- the water saturation is low enough for a water-free completion»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.05.c04"><p>«the hydrocarbons are moveable
+the zone is permeable»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.05.c05"><p>«- there is an commercial volume of recoverable hydrocarbon reserves»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x1_05__1_m.svg"><img src="img/geo_test_asquith_x1_05__1.svg" alt="Низкая водонасыщенность → Проверка подвижности и проницаемости → Проверка извлекаемых запасов → Условная оценка продуктивности." loading="lazy"></picture>  </div>
+  <figcaption>
+    Схема связывает исходный признак с проверкой и выводом.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 127</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Оцените достаточность сведений</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Низкая водонасыщенность</li><li>Сведения о подвижности, проницаемости и запасах</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Если известна только насыщенность, завершать оценку рано. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Нужны все дополнительные признаки.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Водонасыщенность известна, остальных сведений нет. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Запросить остальные данные</button><button type="button" class="btn ghost case-opt" data-i="1">Подтвердить продуктивность</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Единственная величина не даёт полной оценки.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Зная водонасыщенность, можно определить продуктивность.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Помимо насыщенности нужны подвижность, проницаемость и коммерческий объём извлекаемых запасов. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Водонасыщенность и сведения о подвижности, проницаемости и запасах → Оценка потенциальной продуктивности.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Водонасыщенность и сведения о подвижности, проницаемости и запасах</dd>
+          <dt>Выход</dt><dd>Оценка потенциальной продуктивности</dd>
+          <dt>Где ломается</dt><dd>Если одна проверка подменяет все остальные</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Водонасыщенность и сведения о подвижности, проницаемости и запасах</dd>
+            <dt>Ручные шаги</dt><dd>Проверьте возможность безводного заканчивания, подвижность углеводородов, проницаемость и коммерческий объём извлекаемых запасов.</dd>
+            <dt>Точки суждения</dt><dd>Какое из условий действительно подтверждено</dd>
+            <dt>Время</dt><dd>Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.</dd>
+            <dt>Типичные ошибки</dt><dd>Приравнять низкую водонасыщенность к коммерческой добыче</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Низкая доля ошибок не заменяет проверок готовности релиза.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Геологические характеристики могут быть физически связаны; критерии не обязаны быть независимыми.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля порового пространства, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Незатронутая зона <span class="en" lang="en">(uninvaded zone)</span></dt><dd>Часть пласта, куда не проник фильтрат бурового раствора.  <span class="chip chip-model">модель</span></dd><dt>Подвижность углеводородов <span class="en" lang="en">(hydrocarbon moveability)</span></dt><dd>Способность нефти или газа перемещаться из порового пространства под действием вытеснения.  <span class="chip chip-model">модель</span></dd><dt>Проницаемость <span class="en" lang="en">(permeability)</span></dt><dd>Способность породы пропускать флюиды.  <span class="chip chip-model">модель</span></dd><dt>Извлекаемые запасы <span class="en" lang="en">(recoverable reserves)</span></dt><dd>Количество углеводородов, которое может быть добыто.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-05-t01" data-task="geo.test_asquith.x1.05.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что нужно проверить отдельно от водонасыщенности?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.05.t01" value="0"> <span>Извлекаемый объём запасов</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.05.t01" value="1"> <span>Проницаемость</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.05.t01" value="2"> <span>Подвижность углеводородов</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.05.t01" value="3"> <span>Наличие рассчитанной водонасыщенности как замену проверки</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Подвижность углеводородов; Проницаемость; Извлекаемый объём запасов</p>
+    <p class="fb-expl">Низкая насыщенность водой не заменяет независимых критериев. <a href="#how-2">Где это в тексте (стр. 127) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-05-t02" data-task="geo.test_asquith.x1.05.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Известна только водонасыщенность. Что можно заключить?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.05.t02" value="0"> <span>Полная оценка продуктивности ещё невозможна</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.05.t02" value="1"> <span>Доказана безводная добыча</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.05.t02" value="2"> <span>Доказан коммерческий объём запасов</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Полная оценка продуктивности ещё невозможна</p>
+    <p class="fb-expl">Автор просит дополнительно проверять независимые условия. <a href="#how-1">Где это в тексте (стр. 127) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.05.c01"><p>Водонасыщенность незатронутой зоны по Арчи — основная величина оценки по каротажу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The uninvaded zone&#39;s water saturation ($S_w$), determined by the Archie equation, is the most fundamental quantity used in log evaluation.»</p><footer>— стр. 127</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.05.c02"><p>Одной водонасыщенности недостаточно для оценки потенциальной продуктивности. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«But merely knowing a zone&#39;s water saturation ($S_w$) does not provide enough information to completely evaluate a zone&#39;s potential productivity.»</p><footer>— стр. 127</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.05.c03"><p>Проверяют, достаточно ли низка водонасыщенность для безводного заканчивания. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«- the water saturation is low enough for a water-free completion»</p><footer>— стр. 127</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.05.c04"><p>Отдельно проверяют подвижность углеводородов и проницаемость. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«the hydrocarbons are moveable
+the zone is permeable»</p><footer>— стр. 127</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.05.c05"><p>Необходим коммерческий объём извлекаемых запасов углеводородов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«- there is an commercial volume of recoverable hydrocarbon reserves»</p><footer>— стр. 127</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u127_03-1" tabindex="-1">
+          <p class="pg">Стр. 127 · ARCHIE WATER SATURATIONS: $S_W$ AND $S_{XO}$</p>
+          <blockquote>The uninvaded zone&#39;s water saturation ($S_w$), determined by the Archie equation, is the most fundamental quantity used in log evaluation. But merely knowing a zone&#39;s water saturation ($S_w$) does not provide enough information to completely evaluate a zone&#39;s potential productivity. A geologist must also determine if:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u127_04-1" tabindex="-1">
+          <p class="pg">Стр. 127 · ARCHIE WATER SATURATIONS: $S_W$ AND $S_{XO}$</p>
+          <blockquote>- the water saturation is low enough for a water-free completion the hydrocarbons are moveable the zone is permeable</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u127_05-1" tabindex="-1">
+          <p class="pg">Стр. 127 · ARCHIE WATER SATURATIONS: $S_W$ AND $S_{XO}$</p>
+          <blockquote>- there is an commercial volume of recoverable hydrocarbon reserves</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-11.html">шаг 11 «Как заметить вытеснение углеводородов»</a>, <a href="step-18.html">шаг 18 «Что даёт быстрая оценка»</a>, <a href="step-29.html">шаг 29 «Почему вода может не двигаться»</a>, <a href="step-55.html">шаг 55 «Когда каротаж оценивает проницаемость»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-08.html" rel="prev"><span>← Назад</span><b>Как оценить воду вдали от ствола</b></a><a class="next" href="step-10.html" rel="next"><span>Дальше →</span><b>Как оценить воду у ствола</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Вода не равна продуктивности</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.05">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.05.t01", "type": "multiple", "question": "Что нужно проверить отдельно от водонасыщенности?", "explanation": "Низкая насыщенность водой не заменяет независимых критериев.", "page": 127, "link": "#how-2", "step_title": "Вода не равна продуктивности", "step_index": 9, "node_id": "geo.test_asquith.x1.05", "options": ["Извлекаемый объём запасов", "Проницаемость", "Подвижность углеводородов", "Наличие рассчитанной водонасыщенности как замену проверки"], "key": [0, 1, 2], "answer_text": "Подвижность углеводородов; Проницаемость; Извлекаемый объём запасов"}, {"id": "geo.test_asquith.x1.05.t02", "type": "single", "question": "Известна только водонасыщенность. Что можно заключить?", "explanation": "Автор просит дополнительно проверять независимые условия.", "page": 127, "link": "#how-1", "step_title": "Вода не равна продуктивности", "step_index": 9, "node_id": "geo.test_asquith.x1.05", "options": ["Полная оценка продуктивности ещё невозможна", "Доказана безводная добыча", "Доказан коммерческий объём запасов"], "key": [0], "answer_text": "Полная оценка продуктивности ещё невозможна"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

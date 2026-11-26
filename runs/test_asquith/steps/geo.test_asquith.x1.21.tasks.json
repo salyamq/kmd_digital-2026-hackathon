@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "type": "cloze",
+      "claim_id": "geo.test_asquith.x1.21.c03",
+      "question": "Заполните пропуск по правилу этого шага.",
+      "evidence": "На дорожке ПС большие значения откладывают слева, малые — справа.",
+      "explanation": "Шкала этой дорожки идёт от больших значений к малым.",
+      "text": "На дорожке ПС большие значения откладывают ___.",
+      "blanks": [
+        {
+          "answers": [
+            "слева"
+          ],
+          "options": [
+            "справа",
+            "слева",
+            "в центре"
+          ]
+        }
+      ],
+      "page": 130,
+      "anchor": "how-2",
+      "id": "geo.test_asquith.x1.21.t01",
+      "node_id": "geo.test_asquith.x1.21"
+    },
+    {
+      "type": "numeric",
+      "claim_id": "geo.test_asquith.x1.21.c04",
+      "question": "Какую долю водонасыщенности подставляют для расчёта условной пористости?",
+      "evidence": "В расчёт подставляют водонасыщенность 1,0: поры считают полностью заполненными водой.",
+      "explanation": "Полное водонасыщение соответствует указанной доле.",
+      "answer": 1.0,
+      "tolerance": 0,
+      "unit": "доля",
+      "page": 130,
+      "anchor": "how-1",
+      "id": "geo.test_asquith.x1.21.t02",
+      "node_id": "geo.test_asquith.x1.21"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Что считают заполнителем пор в расчёте?",
+      "back": "Поры считают полностью заполненными водой.",
+      "claim_ids": [
+        "geo.test_asquith.x1.21.c02",
+        "geo.test_asquith.x1.21.c04"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.21.k01",
+      "node_id": "geo.test_asquith.x1.21"
+    },
+    {
+      "front": "С чем сравнить расчёт для оценки насыщения?",
+      "back": "С акустической, плотностной или нейтронной пористостью.",
+      "claim_ids": [
+        "geo.test_asquith.x1.21.c06"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.21.k02",
+      "node_id": "geo.test_asquith.x1.21"
+    }
+  ]
+}

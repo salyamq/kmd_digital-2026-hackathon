@@ -1,0 +1,313 @@
+{
+  "node_id": "geo.test_asquith.x1.22",
+  "chapter": "test_asquith",
+  "index": 27,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Когда расчётная пористость слишком низкая",
+  "title_book": "Conductivity-derived porosity",
+  "section": "x1",
+  "pages": [
+    130
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "И",
+    "threshold": "Ошибочное сопротивление воды меняет сравнение с истинной пористостью, но не картину сравнения зон."
+  },
+  "threshold": "Ошибочное сопротивление воды меняет сравнение с истинной пористостью, но не картину сравнения зон.",
+  "format": "interactive",
+  "format_rationale": "Изменяя сопротивление воды, можно отдельно увидеть смещение абсолютных значений и сохранение картины сравнения.",
+  "order_rationale": "Завершает приём чтением отклонений и проверкой чувствительности к сопротивлению воды.",
+  "essence": [
+    "Различайте сравнение между зонами и сравнение с истинной пористостью.",
+    "Неверное сопротивление воды влияет на них по-разному."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что видно",
+          "text": "В водоносной зоне расчётная пористость высока и близка к истинной. В углеводородной зоне она ниже истинной.",
+          "claim_ids": [
+            "geo.test_asquith.x1.22.c01",
+            "geo.test_asquith.x1.22.c02"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.22.c01",
+              "quote": "1. In water-bearing zones, the conductivity-derived porosity is high and approximately equal to the true formation porosity.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.22.c02",
+              "quote": "2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Нюансы",
+          "text": "Неверное сопротивление воды меняет расчётную пористость и может исказить её сравнение с истинной. Ошибка не меняет результат сравнения значений расчётной кривой между разными зонами.",
+          "claim_ids": [
+            "geo.test_asquith.x1.22.c03",
+            "geo.test_asquith.x1.22.c04"
+          ],
+          "pages": [
+            130
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.22.c03",
+              "quote": "The choice of an incorrect value for $R_w$ would change the value of conductivity-derived porosity, and might make its comparison to true formation porosity inaccurate.",
+              "page": 130,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.22.c04",
+              "quote": "It would not, however, change the results of comparison of the curve values in different zones.",
+              "page": 130,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Расчётная кривая пористости",
+          "Отдельная оценка истинной пористости",
+          "Выбранное сопротивление воды"
+        ],
+        "rule": "Разделите относительное сравнение зон и сравнение с истинной пористостью.",
+        "conclusion": "При ошибочном сопротивлении воды межзональное сравнение сохраняется, но сравнение с истинной пористостью может исказиться.",
+        "claim_ids": [
+          "geo.test_asquith.x1.22.c01",
+          "geo.test_asquith.x1.22.c02",
+          "geo.test_asquith.x1.22.c03",
+          "geo.test_asquith.x1.22.c04"
+        ],
+        "cases": [
+          {
+            "given": "Оценка сопротивления воды оказалась неверной. Проверяют две зоны на одной расчётной кривой.",
+            "options": [
+              "Сравнение зон автоматически меняется",
+              "Сравнение зон остаётся таким же"
+            ],
+            "answer": 1,
+            "why": "Ошибка не меняет результат сравнения вдоль расчётной кривой.",
+            "source": "модель"
+          },
+          {
+            "given": "При неверном сопротивлении воды расчёт сравнивают с независимой истинной пористостью.",
+            "options": [
+              "Сравнение может исказиться",
+              "Сравнение гарантированно не меняется"
+            ],
+            "answer": 0,
+            "why": "Ошибка меняет сами расчётные значения.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "text": "Неверное сопротивление воды меняет расчётную пористость и может исказить её сравнение с истинной.",
+          "claim_ids": [
+            "geo.test_asquith.x1.22.c03"
+          ],
+          "pages": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды → Признаки водоносности или углеводородов и оценка надёжности признака.",
+        "inputs": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды",
+        "outputs": "Признаки водоносности или углеводородов и оценка надёжности признака",
+        "breaks_where": "При сравнении абсолютных значений с неверным сопротивлением воды",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды",
+          "manual_steps": "Сравните интервалы между собой и сопоставьте расчёт с отдельной оценкой пористости, если сопротивление воды надёжно.",
+          "judgment_points": "Насколько надёжна оценка сопротивления пластовой воды",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Приписать всё расхождение только насыщению",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Ошибка общей калибровки смещает шкалу, даже если сравнение значений одного ряда сохраняется.",
+        "breaks_where": "Перенос на другую скважину требует собственной проверки условий.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        130
+      ],
+      "items": [
+        {
+          "term": "Пористость по сопротивлению",
+          "definition": "Расчётная пористость из уравнения Арчи при допущении полного насыщения водой.",
+          "en": "conductivity-derived porosity",
+          "page": 130,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Электрическое сопротивление самой воды в пласте.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Ошибка во входном сопротивлении воды по-разному влияет на два сравнения.",
+      "alt": "Слева Сравнение между зонами: Сохраняется. Справа Сравнение с истинной: Может исказиться.",
+      "file": "illustrations/geo.test_asquith.x1.22__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.22.c03",
+        "geo.test_asquith.x1.22.c04"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.22.c01",
+      "kind": "observation",
+      "text": "В водоносной зоне расчётная пористость высока и близка к истинной.",
+      "quote": "1. In water-bearing zones, the conductivity-derived porosity is high and approximately equal to the true formation porosity.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.22.c02",
+      "kind": "observation",
+      "text": "В углеводородной зоне расчётная пористость низка и ниже истинной.",
+      "quote": "2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.22.c03",
+      "kind": "observation",
+      "text": "Ошибочное сопротивление воды меняет расчётную пористость и может исказить сравнение с истинной.",
+      "quote": "The choice of an incorrect value for $R_w$ would change the value of conductivity-derived porosity, and might make its comparison to true formation porosity inaccurate.",
+      "page": 130,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.22.c04",
+      "kind": "observation",
+      "text": "Такая ошибка не меняет результат сравнения значений кривой между разными зонами.",
+      "quote": "It would not, however, change the results of comparison of the curve values in different zones.",
+      "page": 130,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.22.t01",
+    "geo.test_asquith.x1.22.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.22.k01",
+    "geo.test_asquith.x1.22.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.21",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.23",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

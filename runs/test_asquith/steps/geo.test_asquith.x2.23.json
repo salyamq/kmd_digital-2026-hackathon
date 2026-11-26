@@ -1,0 +1,472 @@
+{
+  "node_id": "geo.test_asquith.x2.23",
+  "chapter": "test_asquith",
+  "index": 66,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Как глина искажает оценку насыщения",
+  "title_book": "SHALY SAND ANALYSIS",
+  "section": "x2",
+  "pages": [
+    136
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "И",
+    "threshold": "Глина ослабляет различие между водоносными и продуктивными интервалами; завышенная поправка может создать ложный признак углеводородов."
+  },
+  "threshold": "Глина ослабляет различие между водоносными и продуктивными интервалами; завышенная поправка может создать ложный признак углеводородов.",
+  "format": "data_practice",
+  "format_rationale": "Сопоставьте признаки глины, расчётный результат и ограничения, прежде чем выбрать интервал для проверки.",
+  "order_rationale": "Показывает, как глина смещает оценку насыщения и почему согласие формул не заменяет проверку состава породы.",
+  "essence": [
+    "Сланец может уменьшать контраст сопротивления между зонами с углеводородами и водой.",
+    "Поправка помогает учесть эффект, но завышенная доля сланца может привести к ложной интерпретации."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Влияние на измерения",
+          "text": "**Глинистые минералы** — компоненты породы. Их присутствие и присутствие сланца влияют практически на все измерения. Они могут искажать расчётные **водонасыщенность**, долю воды в порах, и пористость. Это касается песчаников, а также известняков и доломитов.",
+          "claim_ids": [
+            "geo.test_asquith.x2.23.c01",
+            "geo.test_asquith.x2.23.c02",
+            "geo.test_asquith.x2.23.c03"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.23.c01",
+              "quote": "The presence of shale or clay minerals in a reservoir can cause erroneous values for water saturation and porosity derived from logs.",
+              "page": 136,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.23.c02",
+              "quote": "These erroneous values are not limited to sandstones but also occur in limestones and dolomites.",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.23.c03",
+              "quote": "Essentially all measurements, then, are affected in some way by the presence of clays and/or shales.",
+              "page": 136,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как меняется контраст",
+          "text": "По Хилчи, главное — уменьшение контраста удельного сопротивления между водоносными и углеводородоносными интервалами. Сланец ослабляет контраст. При большом его содержании продуктивность по каротажу иногда трудно или невозможно определить. По Хилчи, содержание выше 10–15% существенно влияет на оценку водонасыщенности. Это ориентир влияния, не критерий продуктивности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.23.c04",
+            "geo.test_asquith.x2.23.c05",
+            "geo.test_asquith.x2.23.c06"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.23.c04",
+              "quote": "Hilchie (1978) notes that the most significant effect of shale in a formation is to reduce the resistivity contrast between oil or gas, and water.",
+              "page": 136,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.23.c05",
+              "quote": "The net result is that if enough shale is present in a reservoir, it may be very difficult, or perhaps impossible, to determine if a zone is productive.",
+              "page": 136,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.23.c06",
+              "quote": "Hilchie (1978) suggests that for shale to significantly affect log-derived water saturations, shale content must be greater than 10 to \\(15\\%\\).",
+              "page": 136,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Риск поправки",
+          "text": "Поправки в рассматриваемых формулах снижают оценку водонасыщенности. Завышенная доля сланца может сделать водоносную зону похожей на углеводородоносную. Снижение оценивают относительно расчёта без поправки на сланец.",
+          "claim_ids": [
+            "geo.test_asquith.x2.23.c07",
+            "geo.test_asquith.x2.23.c08"
+          ],
+          "pages": [
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.23.c07",
+              "quote": "Remember that all shaly sandstone formulas reduce the water saturation value from the value that would be calculated if shale effect were ignored.",
+              "page": 136,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.23.c08",
+              "quote": "However, this lowering of water saturation can be a problem in log evaluation, because, if a geologist overestimates shale content, a water-bearing zone might appear to be a hydrocarbon-bearing zone.",
+              "page": 136,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "data": {
+        "title": "Не спутать поправку с открытием",
+        "claim_ids": [
+          "geo.test_asquith.x2.23.c04",
+          "geo.test_asquith.x2.23.c05",
+          "geo.test_asquith.x2.23.c06",
+          "geo.test_asquith.x2.23.c07",
+          "geo.test_asquith.x2.23.c08"
+        ],
+        "signs": [
+          "В зоне есть сланец",
+          "Оценка изменяется после поправки",
+          "Известна надёжность доли сланца"
+        ],
+        "rule": "Проверьте оценку доли сланца и помните, что поправка снижает водонасыщенность.",
+        "conclusion": "Низкая оценка сама по себе не доказывает присутствие углеводородов.",
+        "cases": [
+          {
+            "given": "После подстановки завышенной доли сланца расчётная водонасыщенность снизилась.",
+            "options": [
+              "Это может быть эффектом поправки",
+              "Это доказывает продуктивность"
+            ],
+            "answer": 0,
+            "why": "Завышение входа способно создать ложный признак углеводородов.",
+            "source": "модель"
+          },
+          {
+            "given": "В интервале много сланца и контраст сопротивления слаб.",
+            "options": [
+              "Продуктивность установлена",
+              "Определить продуктивность по каротажу может быть трудно или невозможно"
+            ],
+            "answer": 1,
+            "why": "Сланец уменьшает контраст между зонами.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "text": "Содержание сланца выше 10–15%, по Хилчи, существенно влияет на каротажную оценку водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.23.c06"
+          ],
+          "pages": [
+            136
+          ]
+        },
+        {
+          "text": "При большом содержании сланца каротаж может не определить продуктивность зоны.",
+          "claim_ids": [
+            "geo.test_asquith.x2.23.c05"
+          ],
+          "pages": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        136
+      ],
+      "data": {
+        "text": "Чем больше поправка на глинистость, тем надёжнее найден продуктивный интервал.",
+        "correction": "Завышенное содержание сланца искусственно снижает оценку водонасыщенности, так что водоносная зона может выглядеть углеводородной.",
+        "claim_ids": [
+          "geo.test_asquith.x2.23.c07",
+          "geo.test_asquith.x2.23.c08"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Оценка насыщения меняется при учёте сланца, но сама поправка создаёт риск ложного отнесения к зоне с углеводородами.",
+        "inputs": "Каротажные измерения и оценка содержания сланца.",
+        "outputs": "Оценки водонасыщенности и пористости; данные для суждения о продуктивности.",
+        "breaks_where": "Слабый контраст сопротивлений и завышенное содержание сланца.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротаж, сведения о породе и оценка содержания сланца.",
+          "manual_steps": "Проверить исходную долю сланца и сравнить оценки насыщенности до и после поправки.",
+          "judgment_points": "Оценить, остаётся ли различимым отклик воды и углеводородов.",
+          "time": "Проверка пограничных интервалов требует больше внимания, чем расчёт.",
+          "typical_errors": "Интерпретировать результат завышенной поправки как свидетельство углеводородов.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как классификатор с поправкой на мешающий фактор: завышенный вход поправки ведёт к ложному срабатыванию.",
+        "breaks_where": "Здесь фактор влияет на физические измерения и не устраняется простой настройкой порога классификатора.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        136
+      ],
+      "items": [
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый сланец",
+          "definition": "Тонкозернистая осадочная порода, в которой могут присутствовать глинистые минералы.",
+          "en": "shale",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистые минералы",
+          "definition": "Группа тонкодисперсных минералов; это компоненты породы, а не обозначение отдельного слоя сланца.",
+          "en": "clay minerals",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глинистый песчаник",
+          "definition": "В описании автора это обычно песчаная порода, содержащая глинистые минералы, а не просто песок с примесью сланца.",
+          "en": "shaly sand",
+          "page": 136,
+          "by": "author"
+        },
+        {
+          "term": "песчаник",
+          "definition": "Порода, сложенная преимущественно зёрнами песчаного размера.",
+          "en": "sandstone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "карбонатная порода",
+          "definition": "Порода, состоящая преимущественно из карбонатных минералов.",
+          "en": "carbonate rock",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "углеводороды",
+          "definition": "Вещества, основу которых составляют углерод и водород; в данном контексте нефть или газ.",
+          "en": "hydrocarbons",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "продуктивный интервал",
+          "definition": "Интервал, который может давать нефть или газ при добыче.",
+          "en": "pay zone",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Различайте физическое влияние сланца и ошибку при вводе поправки.",
+      "alt": "Цепочка показывает уменьшение контраста, поправку и риск ложного вывода.",
+      "file": "illustrations/geo.test_asquith.x2.23__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.23.c04",
+        "geo.test_asquith.x2.23.c05",
+        "geo.test_asquith.x2.23.c07",
+        "geo.test_asquith.x2.23.c08"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.23.c01",
+      "kind": "inference",
+      "text": "Сланец и глинистые минералы могут искажать рассчитанные по каротажу водонасыщенность и пористость.",
+      "quote": "The presence of shale or clay minerals in a reservoir can cause erroneous values for water saturation and porosity derived from logs.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c02",
+      "kind": "observation",
+      "text": "Ошибки возникают не только в песчаниках, но и в известняках и доломитах.",
+      "quote": "These erroneous values are not limited to sandstones but also occur in limestones and dolomites.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c03",
+      "kind": "observation",
+      "text": "Присутствие глины и/или сланца в той или иной степени влияет практически на все измерения.",
+      "quote": "Essentially all measurements, then, are affected in some way by the presence of clays and/or shales.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c04",
+      "kind": "inference",
+      "text": "Хилчи выделяет главный эффект сланца: уменьшение контраста удельного сопротивления между интервалами с нефтью или газом и интервалами с водой.",
+      "quote": "Hilchie (1978) notes that the most significant effect of shale in a formation is to reduce the resistivity contrast between oil or gas, and water.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c05",
+      "kind": "inference",
+      "text": "Когда сланца достаточно много, по каротажу бывает очень трудно или невозможно определить, продуктивна ли зона.",
+      "quote": "The net result is that if enough shale is present in a reservoir, it may be very difficult, or perhaps impossible, to determine if a zone is productive.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c06",
+      "kind": "assumption",
+      "text": "По оценке Хилчи, сланец существенно влияет на каротажную водонасыщенность при содержании выше 10–15%.",
+      "quote": "Hilchie (1978) suggests that for shale to significantly affect log-derived water saturations, shale content must be greater than 10 to \\(15\\%\\).",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c07",
+      "kind": "inference",
+      "text": "Все рассматриваемые формулы для глинистых песчаников уменьшают водонасыщенность по сравнению с расчётом без поправки на сланец.",
+      "quote": "Remember that all shaly sandstone formulas reduce the water saturation value from the value that would be calculated if shale effect were ignored.",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.23.c08",
+      "kind": "inference",
+      "text": "Завышенная оценка содержания сланца может сделать водоносную зону похожей на зону с углеводородами.",
+      "quote": "However, this lowering of water saturation can be a problem in log evaluation, because, if a geologist overestimates shale content, a water-bearing zone might appear to be a hydrocarbon-bearing zone.",
+      "page": 136,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.23.t01",
+    "geo.test_asquith.x2.23.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.23.k01",
+    "geo.test_asquith.x2.23.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.22",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.11",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

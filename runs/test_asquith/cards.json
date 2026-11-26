@@ -1,0 +1,1502 @@
+{
+  "chapter": "test_asquith",
+  "cards": [
+    {
+      "front": "Что такое пористость?",
+      "back": "Доля объёма породы, занятая порами.",
+      "claim_ids": [
+        "geo.test_asquith.x1.01.c01"
+      ],
+      "kind": "term",
+      "page": 126,
+      "id": "geo.test_asquith.x1.01.k01",
+      "node_id": "geo.test_asquith.x1.01"
+    },
+    {
+      "front": "Достаточно ли оценить зону по кривым?",
+      "back": "Нет, перед обсадкой нужны независимые сведения.",
+      "claim_ids": [
+        "geo.test_asquith.x1.01.c05",
+        "geo.test_asquith.x1.01.c06"
+      ],
+      "kind": "mistake",
+      "page": 126,
+      "id": "geo.test_asquith.x1.01.k02",
+      "node_id": "geo.test_asquith.x1.01"
+    },
+    {
+      "front": "Зачем просмотр при компьютерной обработке?",
+      "back": "Он помогает быстро выбрать интервалы для детальной работы.",
+      "claim_ids": [
+        "geo.test_asquith.x1.02.c02"
+      ],
+      "kind": "idea",
+      "page": 126,
+      "id": "geo.test_asquith.x1.02.k01",
+      "node_id": "geo.test_asquith.x1.02"
+    },
+    {
+      "front": "Водяные интервалы можно отбросить?",
+      "back": "Нет. Сравнение с ними помогает распознать углеводороды и оценить их количество.",
+      "claim_ids": [
+        "geo.test_asquith.x1.02.c04"
+      ],
+      "kind": "mistake",
+      "page": 126,
+      "id": "geo.test_asquith.x1.02.k02",
+      "node_id": "geo.test_asquith.x1.02"
+    },
+    {
+      "front": "Почему смотрят сопротивление в обломочном разрезе?",
+      "back": "Изменение от флюида может выделиться на относительно постоянном фоне глин.",
+      "claim_ids": [
+        "geo.test_asquith.x1.03.c02",
+        "geo.test_asquith.x1.03.c03"
+      ],
+      "kind": "idea",
+      "page": 126,
+      "id": "geo.test_asquith.x1.03.k01",
+      "node_id": "geo.test_asquith.x1.03"
+    },
+    {
+      "front": "Почему в карбонате начинают с пористости?",
+      "back": "Сопротивление меняется при смене породы, а пористость выделяет способные вместить флюид зоны.",
+      "claim_ids": [
+        "geo.test_asquith.x1.03.c04",
+        "geo.test_asquith.x1.03.c05"
+      ],
+      "kind": "idea",
+      "page": 126,
+      "id": "geo.test_asquith.x1.03.k02",
+      "node_id": "geo.test_asquith.x1.03"
+    },
+    {
+      "front": "Зачем сохранять водоносные зоны?",
+      "back": "Они служат опорой для сравнения.",
+      "claim_ids": [
+        "geo.test_asquith.x3.01.c02"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x3.01.k01",
+      "node_id": "geo.test_asquith.x3.01"
+    },
+    {
+      "front": "Первичный отбор заменяет детальный анализ?",
+      "back": "Нет, он намечает зоны, которые затем разбирают подробнее.",
+      "claim_ids": [
+        "geo.test_asquith.x3.01.c01"
+      ],
+      "kind": "mistake",
+      "page": 140,
+      "id": "geo.test_asquith.x3.01.k02",
+      "node_id": "geo.test_asquith.x3.01"
+    },
+    {
+      "front": "Как обычно меняется сопротивление соседних сланцев?",
+      "back": "Плавно с глубиной.",
+      "claim_ids": [
+        "geo.test_asquith.x4.01.c02"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x4.01.k01",
+      "node_id": "geo.test_asquith.x4.01"
+    },
+    {
+      "front": "Отклонение от фона всегда однозначно определяет флюид?",
+      "back": "Нет. Различия флюидов могут дать заметный отклик, но это не безусловный признак.",
+      "claim_ids": [
+        "geo.test_asquith.x4.01.c03"
+      ],
+      "kind": "mistake",
+      "page": 140,
+      "id": "geo.test_asquith.x4.01.k02",
+      "node_id": "geo.test_asquith.x4.01"
+    },
+    {
+      "front": "Что показывает наличие пор?",
+      "back": "Где могут находиться флюиды любого типа.",
+      "claim_ids": [
+        "geo.test_asquith.x5.01.c04"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x5.01.k01",
+      "node_id": "geo.test_asquith.x5.01"
+    },
+    {
+      "front": "Зачем смотреть нейтронную и плотностную кривые вместе?",
+      "back": "Чтобы быстрее оценить литологию и иногда тип флюида.",
+      "claim_ids": [
+        "geo.test_asquith.x5.01.c05"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x5.01.k02",
+      "node_id": "geo.test_asquith.x5.01"
+    },
+    {
+      "front": "Что находится в левой колонке?",
+      "back": "Источники: каротаж и другие скважинные данные.",
+      "claim_ids": [
+        "geo.test_asquith.x5.02.c01"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x5.02.k01",
+      "node_id": "geo.test_asquith.x5.02"
+    },
+    {
+      "front": "Где посмотреть детали расчёта?",
+      "back": "В главе, на которую указывает схема.",
+      "claim_ids": [
+        "geo.test_asquith.x5.02.c04"
+      ],
+      "kind": "idea",
+      "page": 140,
+      "id": "geo.test_asquith.x5.02.k02",
+      "node_id": "geo.test_asquith.x5.02"
+    },
+    {
+      "front": "Что такое незатронутая зона?",
+      "back": "Часть пласта, куда не проник фильтрат бурового раствора.",
+      "claim_ids": [
+        "geo.test_asquith.x1.04.c01"
+      ],
+      "kind": "term",
+      "page": 126,
+      "id": "geo.test_asquith.x1.04.k01",
+      "node_id": "geo.test_asquith.x1.04"
+    },
+    {
+      "front": "Какие два сопротивления нужны Арчи?",
+      "back": "Сопротивление пластовой воды при температуре пласта и исправленное глубинное сопротивление пласта.",
+      "claim_ids": [
+        "geo.test_asquith.x1.04.c02",
+        "geo.test_asquith.x1.04.c03"
+      ],
+      "kind": "idea",
+      "page": 126,
+      "id": "geo.test_asquith.x1.04.k02",
+      "node_id": "geo.test_asquith.x1.04"
+    },
+    {
+      "front": "Гарантирует ли низкая водонасыщенность добычу?",
+      "back": "Нет: она не заменяет проверку подвижности, проницаемости и запасов.",
+      "claim_ids": [
+        "geo.test_asquith.x1.05.c02"
+      ],
+      "kind": "mistake",
+      "page": 127,
+      "id": "geo.test_asquith.x1.05.k01",
+      "node_id": "geo.test_asquith.x1.05"
+    },
+    {
+      "front": "Что означает проницаемость?",
+      "back": "Способность породы пропускать флюиды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.05.c04"
+      ],
+      "kind": "term",
+      "page": 127,
+      "id": "geo.test_asquith.x1.05.k02",
+      "node_id": "geo.test_asquith.x1.05"
+    },
+    {
+      "front": "Что означает мелкое измерение?",
+      "back": "Измерение, чувствительное к породе непосредственно возле ствола.",
+      "claim_ids": [
+        "geo.test_asquith.x1.06.c04"
+      ],
+      "kind": "term",
+      "page": 127,
+      "id": "geo.test_asquith.x1.06.k01",
+      "node_id": "geo.test_asquith.x1.06"
+    },
+    {
+      "front": "Что меняют в Арчи у ствола?",
+      "back": "Сопротивление воды меняют на сопротивление фильтрата, а сопротивление незатронутой зоны — на промытое.",
+      "claim_ids": [
+        "geo.test_asquith.x1.06.c01",
+        "geo.test_asquith.x1.06.c02"
+      ],
+      "kind": "idea",
+      "page": 127,
+      "id": "geo.test_asquith.x1.06.k02",
+      "node_id": "geo.test_asquith.x1.06"
+    },
+    {
+      "front": "Что значит подвижность углеводородов?",
+      "back": "Способность нефти или газа перемещаться при вытеснении.",
+      "claim_ids": [
+        "geo.test_asquith.x1.07.c01"
+      ],
+      "kind": "term",
+      "page": 127,
+      "id": "geo.test_asquith.x1.07.k01",
+      "node_id": "geo.test_asquith.x1.07"
+    },
+    {
+      "front": "Две насыщенности измеряют движение?",
+      "back": "Нет. Выраженное различие даёт косвенный признак вероятного вытеснения.",
+      "claim_ids": [
+        "geo.test_asquith.x1.07.c02"
+      ],
+      "kind": "mistake",
+      "page": 127,
+      "id": "geo.test_asquith.x1.07.k02",
+      "node_id": "geo.test_asquith.x1.07"
+    },
+    {
+      "front": "Что такое форм-фактор здесь?",
+      "back": "Коэффициент a, делённый на пористость в степени m.",
+      "claim_ids": [
+        "geo.test_asquith.x1.08.c03"
+      ],
+      "kind": "term",
+      "page": 127,
+      "id": "geo.test_asquith.x1.08.k01",
+      "node_id": "geo.test_asquith.x1.08"
+    },
+    {
+      "front": "Почему индекс можно оценить без кривой пористости?",
+      "back": "Общий форм-фактор сокращается; остаётся нормированное отношение сопротивлений.",
+      "claim_ids": [
+        "geo.test_asquith.x1.08.c04",
+        "geo.test_asquith.x1.08.c05"
+      ],
+      "kind": "idea",
+      "page": 127,
+      "id": "geo.test_asquith.x1.08.k02",
+      "node_id": "geo.test_asquith.x1.08"
+    },
+    {
+      "front": "Каковы пороги подвижности?",
+      "back": "Ниже 0,7 у песчаников и ниже 0,6 у карбонатов.",
+      "claim_ids": [
+        "geo.test_asquith.x1.09.c03",
+        "geo.test_asquith.x1.09.c04"
+      ],
+      "kind": "number",
+      "page": 127,
+      "id": "geo.test_asquith.x1.09.k01",
+      "node_id": "geo.test_asquith.x1.09"
+    },
+    {
+      "front": "Чего не доказывает индекс не меньше 1,0?",
+      "back": "Он не доказывает отсутствия углеводородов.",
+      "claim_ids": [
+        "geo.test_asquith.x1.09.c01",
+        "geo.test_asquith.x1.09.c02"
+      ],
+      "kind": "mistake",
+      "page": 127,
+      "id": "geo.test_asquith.x1.09.k02",
+      "node_id": "geo.test_asquith.x1.09"
+    },
+    {
+      "front": "Что значит остаточная насыщенность?",
+      "back": "Доля пор, занятая углеводородами после вытеснения.",
+      "claim_ids": [
+        "geo.test_asquith.x1.10.c02"
+      ],
+      "kind": "term",
+      "page": 128,
+      "id": "geo.test_asquith.x1.10.k01",
+      "node_id": "geo.test_asquith.x1.10"
+    },
+    {
+      "front": "Метод применим при любом проникновении?",
+      "back": "Нет. Автор оговаривает умеренное проникновение и среднюю остаточную насыщенность.",
+      "claim_ids": [
+        "geo.test_asquith.x1.10.c02"
+      ],
+      "kind": "mistake",
+      "page": 128,
+      "id": "geo.test_asquith.x1.10.k02",
+      "node_id": "geo.test_asquith.x1.10"
+    },
+    {
+      "front": "Что означает ступенчатый профиль?",
+      "back": "Модель резкой границы между изменённой и незатронутой породой.",
+      "claim_ids": [
+        "geo.test_asquith.x1.11.c02"
+      ],
+      "kind": "term",
+      "page": 128,
+      "id": "geo.test_asquith.x1.11.k01",
+      "node_id": "geo.test_asquith.x1.11"
+    },
+    {
+      "front": "Какие две оценки сравнивают?",
+      "back": "Водонасыщенность незатронутой зоны по Арчи и методом отношений.",
+      "claim_ids": [
+        "geo.test_asquith.x1.11.c01"
+      ],
+      "kind": "idea",
+      "page": 128,
+      "id": "geo.test_asquith.x1.11.k02",
+      "node_id": "geo.test_asquith.x1.11"
+    },
+    {
+      "front": "Что означает переходный профиль?",
+      "back": "Плавный переход от промытой к незатронутой породе.",
+      "claim_ids": [
+        "geo.test_asquith.x1.12.c03"
+      ],
+      "kind": "term",
+      "page": 128,
+      "id": "geo.test_asquith.x1.12.k01",
+      "node_id": "geo.test_asquith.x1.12"
+    },
+    {
+      "front": "Как глубина проникновения объясняет знак?",
+      "back": "При мелком проникновении может быть занижено мелкое сопротивление; при глубоком — завышено истинное.",
+      "claim_ids": [
+        "geo.test_asquith.x1.12.c02"
+      ],
+      "kind": "idea",
+      "page": 128,
+      "id": "geo.test_asquith.x1.12.k02",
+      "node_id": "geo.test_asquith.x1.12"
+    },
+    {
+      "front": "Что такое кольцевой профиль?",
+      "back": "Профиль с отдельной кольцевой областью вокруг скважины.",
+      "claim_ids": [
+        "geo.test_asquith.x1.13.c04"
+      ],
+      "kind": "term",
+      "page": 128,
+      "id": "geo.test_asquith.x1.13.k01",
+      "node_id": "geo.test_asquith.x1.13"
+    },
+    {
+      "front": "Почему знак расхождения — не доказательство одного профиля?",
+      "back": "Его могут дать измерения, профиль проникновения или карбонат с формовой пористостью.",
+      "claim_ids": [
+        "geo.test_asquith.x1.13.c01",
+        "geo.test_asquith.x1.13.c06"
+      ],
+      "kind": "idea",
+      "page": 128,
+      "id": "geo.test_asquith.x1.13.k02",
+      "node_id": "geo.test_asquith.x1.13"
+    },
+    {
+      "front": "Для чего нужен быстрый метод?",
+      "back": "Отобрать возможные углеводородные интервалы для проверки.",
+      "claim_ids": [
+        "geo.test_asquith.x1.14.c01"
+      ],
+      "kind": "idea",
+      "page": 128,
+      "id": "geo.test_asquith.x1.14.k01",
+      "node_id": "geo.test_asquith.x1.14"
+    },
+    {
+      "front": "Достаточно ли быстрого признака для окончательного вывода?",
+      "back": "Нет, он только указывает, где нужно дальнейшее исследование.",
+      "claim_ids": [
+        "geo.test_asquith.x1.14.c01"
+      ],
+      "kind": "mistake",
+      "page": 128,
+      "id": "geo.test_asquith.x1.14.k02",
+      "node_id": "geo.test_asquith.x1.14"
+    },
+    {
+      "front": "На что откликается ПС в обоих случаях?",
+      "back": "На различие сопротивлений пластовой воды и фильтрата.",
+      "claim_ids": [
+        "geo.test_asquith.x1.16.c01",
+        "geo.test_asquith.x1.16.c05"
+      ],
+      "kind": "idea",
+      "page": 129,
+      "id": "geo.test_asquith.x1.16.k01",
+      "node_id": "geo.test_asquith.x1.16"
+    },
+    {
+      "front": "Почему отношение падает?",
+      "back": "Растёт истинное сопротивление в знаменателе.",
+      "claim_ids": [
+        "geo.test_asquith.x1.16.c06"
+      ],
+      "kind": "idea",
+      "page": 129,
+      "id": "geo.test_asquith.x1.16.k02",
+      "node_id": "geo.test_asquith.x1.16"
+    },
+    {
+      "front": "Обязательно ли поправляли оперативные измерения?",
+      "back": "Нет. Автор отмечает, что при расчёте в ходе каротажа их обычно использовали без таких поправок.",
+      "claim_ids": [
+        "geo.test_asquith.x1.16.c09"
+      ],
+      "kind": "mistake",
+      "page": 129,
+      "id": "geo.test_asquith.x1.16.k03",
+      "node_id": "geo.test_asquith.x1.16"
+    },
+    {
+      "front": "Что такое дорожка?",
+      "back": "Полоса каротажной диаграммы для одной или нескольких кривых.",
+      "claim_ids": [
+        "geo.test_asquith.x1.15.c03"
+      ],
+      "kind": "term",
+      "page": 128,
+      "id": "geo.test_asquith.x1.15.k01",
+      "node_id": "geo.test_asquith.x1.15"
+    },
+    {
+      "front": "Чем отличается водяной случай?",
+      "back": "Отношение повторяет ПС; в углеводородной зоне кривые расходятся.",
+      "claim_ids": [
+        "geo.test_asquith.x1.15.c05",
+        "geo.test_asquith.x1.15.c06"
+      ],
+      "kind": "idea",
+      "page": 128,
+      "id": "geo.test_asquith.x1.15.k02",
+      "node_id": "geo.test_asquith.x1.15"
+    },
+    {
+      "front": "Что связывает форм-фактор?",
+      "back": "Сопротивление полностью водонасыщенной породы и сопротивление воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.18.c01"
+      ],
+      "kind": "term",
+      "page": 129,
+      "id": "geo.test_asquith.x1.18.k01",
+      "node_id": "geo.test_asquith.x1.18"
+    },
+    {
+      "front": "Можно считать любой минимум водяной опорой?",
+      "back": "Нет. Если в опоре есть углеводороды, их содержание в остальных зонах недооценено.",
+      "claim_ids": [
+        "geo.test_asquith.x1.18.c05",
+        "geo.test_asquith.x1.18.c06"
+      ],
+      "kind": "mistake",
+      "page": 129,
+      "id": "geo.test_asquith.x1.18.k02",
+      "node_id": "geo.test_asquith.x1.18"
+    },
+    {
+      "front": "Что означает пригодный минимум?",
+      "back": "Он вероятнее всего соответствует водоносной зоне и ближе к истинному сопротивлению воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.17.c05"
+      ],
+      "kind": "idea",
+      "page": 129,
+      "id": "geo.test_asquith.x1.17.k01",
+      "node_id": "geo.test_asquith.x1.17"
+    },
+    {
+      "front": "Почему не брать любой минимум?",
+      "back": "Низкая пористость занижает расчёт; сравнение также предполагает одинаковое сопротивление пластовой воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.17.c07",
+        "geo.test_asquith.x1.17.c08"
+      ],
+      "kind": "mistake",
+      "page": 129,
+      "id": "geo.test_asquith.x1.17.k02",
+      "node_id": "geo.test_asquith.x1.17"
+    },
+    {
+      "front": "От чего зависят параметры породы и жидкости?",
+      "back": "Их выбирают для ожидаемого разреза.",
+      "claim_ids": [
+        "geo.test_asquith.x1.19.c03"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.19.k01",
+      "node_id": "geo.test_asquith.x1.19"
+    },
+    {
+      "front": "Какие a и m принимают для простоты?",
+      "back": "В ходе каротажа принимают a = 1,0 и m = 2,0.",
+      "claim_ids": [
+        "geo.test_asquith.x1.19.c01"
+      ],
+      "kind": "number",
+      "page": 130,
+      "id": "geo.test_asquith.x1.19.k02",
+      "node_id": "geo.test_asquith.x1.19"
+    },
+    {
+      "front": "Что стоит в числителе под корнем?",
+      "back": "Опорный минимум кажущегося сопротивления воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.20.c01",
+        "geo.test_asquith.x1.20.c02"
+      ],
+      "kind": "mistake",
+      "page": 130,
+      "id": "geo.test_asquith.x1.20.k01",
+      "node_id": "geo.test_asquith.x1.20"
+    },
+    {
+      "front": "При каком n используют квадратный корень?",
+      "back": "При показателе насыщения n = 2.",
+      "claim_ids": [
+        "geo.test_asquith.x1.20.c02"
+      ],
+      "kind": "number",
+      "page": 130,
+      "id": "geo.test_asquith.x1.20.k02",
+      "node_id": "geo.test_asquith.x1.20"
+    },
+    {
+      "front": "Что считают заполнителем пор в расчёте?",
+      "back": "Поры считают полностью заполненными водой.",
+      "claim_ids": [
+        "geo.test_asquith.x1.21.c02",
+        "geo.test_asquith.x1.21.c04"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.21.k01",
+      "node_id": "geo.test_asquith.x1.21"
+    },
+    {
+      "front": "С чем сравнить расчёт для оценки насыщения?",
+      "back": "С акустической, плотностной или нейтронной пористостью.",
+      "claim_ids": [
+        "geo.test_asquith.x1.21.c06"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.21.k02",
+      "node_id": "geo.test_asquith.x1.21"
+    },
+    {
+      "front": "Какое допущение лежит в основе расчёта?",
+      "back": "Водонасыщенность принимают равной единице.",
+      "claim_ids": [
+        "geo.test_asquith.x1.23.c02",
+        "geo.test_asquith.x1.23.c03"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.23.k01",
+      "node_id": "geo.test_asquith.x1.23"
+    },
+    {
+      "front": "Как авторы предлагают оценить водонасыщенность?",
+      "back": "Разделить пористость по проводимости на фактическую пористость.",
+      "claim_ids": [
+        "geo.test_asquith.x1.23.c10"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.23.k02",
+      "node_id": "geo.test_asquith.x1.23"
+    },
+    {
+      "front": "Где расчётная пористость ниже истинной?",
+      "back": "В углеводородной зоне.",
+      "claim_ids": [
+        "geo.test_asquith.x1.22.c01",
+        "geo.test_asquith.x1.22.c02"
+      ],
+      "kind": "idea",
+      "page": 130,
+      "id": "geo.test_asquith.x1.22.k01",
+      "node_id": "geo.test_asquith.x1.22"
+    },
+    {
+      "front": "В какой проверке особенно важен верный вход по воде?",
+      "back": "При сравнении расчётной пористости с истинной.",
+      "claim_ids": [
+        "geo.test_asquith.x1.22.c03",
+        "geo.test_asquith.x1.22.c04"
+      ],
+      "kind": "mistake",
+      "page": 130,
+      "id": "geo.test_asquith.x1.22.k02",
+      "node_id": "geo.test_asquith.x1.22"
+    },
+    {
+      "front": "Что нужно для расчёта водного эталона?",
+      "back": "Пористость, сопротивление пластовой воды и оценки параметров Арчи.",
+      "claim_ids": [
+        "geo.test_asquith.x1.24.c03",
+        "geo.test_asquith.x1.24.c10"
+      ],
+      "kind": "idea",
+      "page": 131,
+      "id": "geo.test_asquith.x1.24.k01",
+      "node_id": "geo.test_asquith.x1.24"
+    },
+    {
+      "front": "Расхождение всегда означает углеводороды?",
+      "back": "Нет. Оно бывает и в водоносной зоне при неверном сопротивлении воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.24.c07",
+        "geo.test_asquith.x1.24.c09"
+      ],
+      "kind": "mistake",
+      "page": 131,
+      "id": "geo.test_asquith.x1.24.k02",
+      "node_id": "geo.test_asquith.x1.24"
+    },
+    {
+      "front": "Как рассчитывают объёмную долю воды?",
+      "back": "Умножают пористость на водонасыщенность неизменённой зоны.",
+      "claim_ids": [
+        "geo.test_asquith.x1.25.c01"
+      ],
+      "kind": "term",
+      "page": 131,
+      "id": "geo.test_asquith.x1.25.k01",
+      "node_id": "geo.test_asquith.x1.25"
+    },
+    {
+      "front": "Вода в порах всегда поступает в скважину?",
+      "back": "Нет. При неснижаемой водонасыщенности вода удерживается на зёрнах.",
+      "claim_ids": [
+        "geo.test_asquith.x1.25.c04",
+        "geo.test_asquith.x1.25.c05"
+      ],
+      "kind": "mistake",
+      "page": 131,
+      "id": "geo.test_asquith.x1.25.k02",
+      "node_id": "geo.test_asquith.x1.25"
+    },
+    {
+      "front": "Что означает гипербола Баклса?",
+      "back": "На ней объёмная доля воды одинакова.",
+      "claim_ids": [
+        "geo.test_asquith.x1.26.c03"
+      ],
+      "kind": "term",
+      "page": 131,
+      "id": "geo.test_asquith.x1.26.k01",
+      "node_id": "geo.test_asquith.x1.26"
+    },
+    {
+      "front": "Табличная доля воды точно определяет тип карбонатной пористости?",
+      "back": "Нет, таблица даёт лишь очень общий ориентир.",
+      "claim_ids": [
+        "geo.test_asquith.x1.26.c15"
+      ],
+      "kind": "mistake",
+      "page": 131,
+      "id": "geo.test_asquith.x1.26.k02",
+      "node_id": "geo.test_asquith.x1.26"
+    },
+    {
+      "front": "Что объединяет точки на одной гиперболе?",
+      "back": "Они имеют одинаковое объёмное содержание воды.",
+      "claim_ids": [
+        "geo.test_asquith.x5.03.c02"
+      ],
+      "kind": "term",
+      "page": 141,
+      "id": "geo.test_asquith.x5.03.k01",
+      "node_id": "geo.test_asquith.x5.03"
+    },
+    {
+      "front": "Зачем оценивать близость к неснижаемой водонасыщенности?",
+      "back": "Добываемая вода влияет на экономику, поэтому важно оценить возможность её появления.",
+      "claim_ids": [
+        "geo.test_asquith.x5.03.c01"
+      ],
+      "kind": "idea",
+      "page": 141,
+      "id": "geo.test_asquith.x5.03.k02",
+      "node_id": "geo.test_asquith.x5.03"
+    },
+    {
+      "front": "Что означает узкое скопление в первом примере?",
+      "back": "Пласт достиг неснижаемой водонасыщенности или близок к ней.",
+      "claim_ids": [
+        "geo.test_asquith.x5.04.c05"
+      ],
+      "kind": "idea",
+      "page": 141,
+      "id": "geo.test_asquith.x5.04.k01",
+      "node_id": "geo.test_asquith.x5.04"
+    },
+    {
+      "front": "Что добывается в третьем примере?",
+      "back": "Только вода; точки рассеяны относительно гипербол.",
+      "claim_ids": [
+        "geo.test_asquith.x5.04.c08"
+      ],
+      "kind": "idea",
+      "page": 141,
+      "id": "geo.test_asquith.x5.04.k02",
+      "node_id": "geo.test_asquith.x5.04"
+    },
+    {
+      "front": "Что делают диаграммы Пикетта и Хингла?",
+      "back": "Графически решают уравнение Арчи.",
+      "claim_ids": [
+        "geo.test_asquith.x2.01.c03"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.01.k01",
+      "node_id": "geo.test_asquith.x2.01"
+    },
+    {
+      "front": "Зачем сравнивать точки на графике?",
+      "back": "Чтобы быстрее сопоставить потенциально продуктивные зоны.",
+      "claim_ids": [
+        "geo.test_asquith.x2.01.c05"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.01.k02",
+      "node_id": "geo.test_asquith.x2.01"
+    },
+    {
+      "front": "Почему исчезает член с насыщенностью?",
+      "back": "Для водоносной зоны насыщенность равна единице, а логарифм единицы равен нулю.",
+      "claim_ids": [
+        "geo.test_asquith.x2.02.c08"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.02.k01",
+      "node_id": "geo.test_asquith.x2.02"
+    },
+    {
+      "front": "Чем график полезен кроме оценки насыщенности?",
+      "back": "По нему можно оценить сопротивление пластовой воды и матричные параметры.",
+      "claim_ids": [
+        "geo.test_asquith.x2.02.c02",
+        "geo.test_asquith.x2.02.c03",
+        "geo.test_asquith.x2.02.c04"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.02.k02",
+      "node_id": "geo.test_asquith.x2.02"
+    },
+    {
+      "front": "Что даёт наклон водной линии?",
+      "back": "На принятых осях наклон равен $-1/m$ и позволяет оценить показатель цементации.",
+      "claim_ids": [
+        "geo.test_asquith.x2.03.c08"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.03.k01",
+      "node_id": "geo.test_asquith.x2.03"
+    },
+    {
+      "front": "Почему точка с углеводородами правее водной линии?",
+      "back": "Из-за большего сопротивления при той же пористости.",
+      "claim_ids": [
+        "geo.test_asquith.x2.03.c11"
+      ],
+      "kind": "idea",
+      "page": 132,
+      "id": "geo.test_asquith.x2.03.k02",
+      "node_id": "geo.test_asquith.x2.03"
+    },
+    {
+      "front": "Зачем использовать разности вместо пористости?",
+      "back": "Они стоят в числителях формул, поэтому отдельный расчёт пористости не нужен.",
+      "claim_ids": [
+        "geo.test_asquith.x2.04.c08"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.04.k01",
+      "node_id": "geo.test_asquith.x2.04"
+    },
+    {
+      "front": "Можно ли подбирать значение по тесному облаку точек?",
+      "back": "Для проверки формы линии нужен достаточный разброс качественных водоносных точек.",
+      "claim_ids": [
+        "geo.test_asquith.x2.04.c12"
+      ],
+      "kind": "mistake",
+      "page": 133,
+      "id": "geo.test_asquith.x2.04.k02",
+      "node_id": "geo.test_asquith.x2.04"
+    },
+    {
+      "front": "Почему нельзя взять произвольную точку водной линии?",
+      "back": "Опорное сопротивление считывают при той же пористости, что и у выбранной точки.",
+      "claim_ids": [
+        "geo.test_asquith.x2.05.c02"
+      ],
+      "kind": "mistake",
+      "page": 133,
+      "id": "geo.test_asquith.x2.05.k01",
+      "node_id": "geo.test_asquith.x2.05"
+    },
+    {
+      "front": "Что нужно кроме двух сопротивлений?",
+      "back": "Оценка показателя насыщения.",
+      "claim_ids": [
+        "geo.test_asquith.x2.05.c03"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.05.k02",
+      "node_id": "geo.test_asquith.x2.05"
+    },
+    {
+      "front": "Какое значение показателя насыщения заложено в множителях?",
+      "back": "Показатель насыщения 2,0.",
+      "claim_ids": [
+        "geo.test_asquith.x2.06.c06"
+      ],
+      "kind": "number",
+      "page": 133,
+      "id": "geo.test_asquith.x2.06.k01",
+      "node_id": "geo.test_asquith.x2.06"
+    },
+    {
+      "front": "Меняется ли пористость при нанесении точек по множителям?",
+      "back": "Нет, множители меняют сопротивление при прежней пористости.",
+      "claim_ids": [
+        "geo.test_asquith.x2.06.c03"
+      ],
+      "kind": "mistake",
+      "page": 133,
+      "id": "geo.test_asquith.x2.06.k02",
+      "node_id": "geo.test_asquith.x2.06"
+    },
+    {
+      "front": "Что общего у двух диаграмм?",
+      "back": "Обе используют данные одних и тех же зон из таблицы.",
+      "claim_ids": [
+        "geo.test_asquith.x2.14.c01"
+      ],
+      "kind": "idea",
+      "page": 135,
+      "id": "geo.test_asquith.x2.14.k01",
+      "node_id": "geo.test_asquith.x2.14"
+    },
+    {
+      "front": "Равная пористость означает равное сопротивление?",
+      "back": "Нет. Зоны 7 и 8 имеют равную пористость, но разные сопротивления.",
+      "claim_ids": [
+        "geo.test_asquith.x2.14.c03"
+      ],
+      "kind": "mistake",
+      "page": 135,
+      "id": "geo.test_asquith.x2.14.k02",
+      "node_id": "geo.test_asquith.x2.14"
+    },
+    {
+      "front": "Какие плотности приняты в примере?",
+      "back": "Плотность матрицы 2,65 г/см³, плотность флюида 1,0 г/см³.",
+      "claim_ids": [
+        "geo.test_asquith.x5.05.c03"
+      ],
+      "kind": "number",
+      "page": 142,
+      "id": "geo.test_asquith.x5.05.k01",
+      "node_id": "geo.test_asquith.x5.05"
+    },
+    {
+      "front": "Означает ли нанесённая линия, что другие наклоны невозможны?",
+      "back": "Нет, в примере можно обосновать значения m от 1,8 до 2,15.",
+      "claim_ids": [
+        "geo.test_asquith.x5.05.c05"
+      ],
+      "kind": "mistake",
+      "page": 142,
+      "id": "geo.test_asquith.x5.05.k02",
+      "node_id": "geo.test_asquith.x5.05"
+    },
+    {
+      "front": "Как вычислить сопротивление воды по точке линии?",
+      "back": "Умножить сопротивление водоносной линии на пористость в степени m и разделить на a.",
+      "claim_ids": [
+        "geo.test_asquith.x5.06.c10"
+      ],
+      "kind": "idea",
+      "page": 142,
+      "id": "geo.test_asquith.x5.06.k01",
+      "node_id": "geo.test_asquith.x5.06"
+    },
+    {
+      "front": "Какое расхождение есть в печатной подстановке?",
+      "back": "Для примера задан показатель 2,0, но в строке подстановки напечатана степень 3,0.",
+      "claim_ids": [
+        "geo.test_asquith.x5.06.c08",
+        "geo.test_asquith.x5.06.c11"
+      ],
+      "kind": "mistake",
+      "page": 142,
+      "id": "geo.test_asquith.x5.06.k02",
+      "node_id": "geo.test_asquith.x5.06"
+    },
+    {
+      "front": "При каком показателе насыщения применима таблица?",
+      "back": "При показателе насыщения 2,0.",
+      "claim_ids": [
+        "geo.test_asquith.x5.07.c02"
+      ],
+      "kind": "number",
+      "page": 142,
+      "id": "geo.test_asquith.x5.07.k01",
+      "node_id": "geo.test_asquith.x5.07"
+    },
+    {
+      "front": "Как провести прямую после расчёта точки?",
+      "back": "Провести через неё прямую параллельно водоносной линии.",
+      "claim_ids": [
+        "geo.test_asquith.x5.07.c03"
+      ],
+      "kind": "idea",
+      "page": 142,
+      "id": "geo.test_asquith.x5.07.k02",
+      "node_id": "geo.test_asquith.x5.07"
+    },
+    {
+      "front": "Как подобрать опорное сопротивление?",
+      "back": "По водоносной линии при пористости анализируемой точки.",
+      "claim_ids": [
+        "geo.test_asquith.x5.08.c02"
+      ],
+      "kind": "idea",
+      "page": 142,
+      "id": "geo.test_asquith.x5.08.k01",
+      "node_id": "geo.test_asquith.x5.08"
+    },
+    {
+      "front": "Как не перепутать числитель и знаменатель?",
+      "back": "Сопротивление линии делят на сопротивление анализируемой точки.",
+      "claim_ids": [
+        "geo.test_asquith.x5.08.c06"
+      ],
+      "kind": "mistake",
+      "page": 142,
+      "id": "geo.test_asquith.x5.08.k02",
+      "node_id": "geo.test_asquith.x5.08"
+    },
+    {
+      "front": "Нужны ли заранее свойства матрицы?",
+      "back": "Нет, диаграмма позволяет оценивать водонасыщенность и без них.",
+      "claim_ids": [
+        "geo.test_asquith.x2.07.c02"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.07.k01",
+      "node_id": "geo.test_asquith.x2.07"
+    },
+    {
+      "front": "Какой параметр воды может быть неизвестен?",
+      "back": "Удельное сопротивление пластовой воды.",
+      "claim_ids": [
+        "geo.test_asquith.x2.07.c03"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.07.k02",
+      "node_id": "geo.test_asquith.x2.07"
+    },
+    {
+      "front": "При каком условии зависимость становится прямой?",
+      "back": "Для каждой отдельной прямой водонасыщенность фиксирована.",
+      "claim_ids": [
+        "geo.test_asquith.x2.08.c04"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.08.k01",
+      "node_id": "geo.test_asquith.x2.08"
+    },
+    {
+      "front": "Что экономит готовая сетка?",
+      "back": "Позволяет наносить сопротивление напрямую, без пересчёта координаты.",
+      "claim_ids": [
+        "geo.test_asquith.x2.08.c09"
+      ],
+      "kind": "idea",
+      "page": 133,
+      "id": "geo.test_asquith.x2.08.k02",
+      "node_id": "geo.test_asquith.x2.08"
+    },
+    {
+      "front": "Откуда расходятся линии на Хингле?",
+      "back": "Из общей точки пересечения водной линии с горизонтальной осью.",
+      "claim_ids": [
+        "geo.test_asquith.x2.09.c10"
+      ],
+      "kind": "idea",
+      "page": 134,
+      "id": "geo.test_asquith.x2.09.k01",
+      "node_id": "geo.test_asquith.x2.09"
+    },
+    {
+      "front": "Достаточно ли отступа для численной оценки?",
+      "back": "Нет, нужен известный или оценённый показатель насыщения.",
+      "claim_ids": [
+        "geo.test_asquith.x2.09.c09"
+      ],
+      "kind": "mistake",
+      "page": 134,
+      "id": "geo.test_asquith.x2.09.k02",
+      "node_id": "geo.test_asquith.x2.09"
+    },
+    {
+      "front": "Всегда ли значение матрицы находится в нижнем левом углу?",
+      "back": "Нет, пересечение может сместиться, если фактический параметр матрицы отличается от ожидаемого.",
+      "claim_ids": [
+        "geo.test_asquith.x2.10.c11"
+      ],
+      "kind": "mistake",
+      "page": 134,
+      "id": "geo.test_asquith.x2.10.k01",
+      "node_id": "geo.test_asquith.x2.10"
+    },
+    {
+      "front": "Как сопоставить сопротивление точки и линии?",
+      "back": "Считать оба значения при одной пористости и оценить показатель насыщения.",
+      "claim_ids": [
+        "geo.test_asquith.x2.10.c14"
+      ],
+      "kind": "idea",
+      "page": 134,
+      "id": "geo.test_asquith.x2.10.k02",
+      "node_id": "geo.test_asquith.x2.10"
+    },
+    {
+      "front": "Меняет ли множитель пористость опорной точки?",
+      "back": "Нет, он меняет сопротивление, а пористость остаётся той же.",
+      "claim_ids": [
+        "geo.test_asquith.x2.11.c03"
+      ],
+      "kind": "mistake",
+      "page": 134,
+      "id": "geo.test_asquith.x2.11.k01",
+      "node_id": "geo.test_asquith.x2.11"
+    },
+    {
+      "front": "Какой показатель насыщения соответствует таблице?",
+      "back": "2,0.",
+      "claim_ids": [
+        "geo.test_asquith.x2.11.c06"
+      ],
+      "kind": "number",
+      "page": 134,
+      "id": "geo.test_asquith.x2.11.k02",
+      "node_id": "geo.test_asquith.x2.11"
+    },
+    {
+      "front": "Какие параметры различают две сетки?",
+      "back": "Для песчаника a = 1,0 и m = 2,0. Для карбонатных пород a = 0,62 и m = 2,15.",
+      "claim_ids": [
+        "geo.test_asquith.x5.09.c02",
+        "geo.test_asquith.x5.09.c04"
+      ],
+      "kind": "number",
+      "page": 143,
+      "id": "geo.test_asquith.x5.09.k01",
+      "node_id": "geo.test_asquith.x5.09"
+    },
+    {
+      "front": "Можно оставить одну сетку для любой породы?",
+      "back": "У авторов разные обычные настройки для песчаников и карбонатных пород.",
+      "claim_ids": [
+        "geo.test_asquith.x5.09.c01",
+        "geo.test_asquith.x5.09.c03"
+      ],
+      "kind": "mistake",
+      "page": 143,
+      "id": "geo.test_asquith.x5.09.k02",
+      "node_id": "geo.test_asquith.x5.09"
+    },
+    {
+      "front": "Что показывает пересечение?",
+      "back": "Оценку плотности матрицы.",
+      "claim_ids": [
+        "geo.test_asquith.x5.10.c04"
+      ],
+      "kind": "term",
+      "page": 145,
+      "id": "geo.test_asquith.x5.10.k01",
+      "node_id": "geo.test_asquith.x5.10"
+    },
+    {
+      "front": "Всегда ли пересечение однозначно?",
+      "back": "Нет. Узкий диапазон пористости и разброс точек допускают разные оценки.",
+      "claim_ids": [
+        "geo.test_asquith.x5.10.c05"
+      ],
+      "kind": "mistake",
+      "page": 145,
+      "id": "geo.test_asquith.x5.10.k02",
+      "node_id": "geo.test_asquith.x5.10"
+    },
+    {
+      "front": "Число с линии уже равно сопротивлению воды?",
+      "back": "Нет. Его подставляют в формулу, которая даёт сопротивление самой воды.",
+      "claim_ids": [
+        "geo.test_asquith.x5.11.c02",
+        "geo.test_asquith.x5.11.c05"
+      ],
+      "kind": "mistake",
+      "page": 145,
+      "id": "geo.test_asquith.x5.11.k01",
+      "node_id": "geo.test_asquith.x5.11"
+    },
+    {
+      "front": "Откуда берут a и m?",
+      "back": "Их предполагают, выбирая определённую сетку Хингла.",
+      "claim_ids": [
+        "geo.test_asquith.x5.11.c04"
+      ],
+      "kind": "idea",
+      "page": 145,
+      "id": "geo.test_asquith.x5.11.k02",
+      "node_id": "geo.test_asquith.x5.11"
+    },
+    {
+      "front": "Для какого показателя даны множители?",
+      "back": "Для n = 2,0.",
+      "claim_ids": [
+        "geo.test_asquith.x5.12.c02"
+      ],
+      "kind": "number",
+      "page": 145,
+      "id": "geo.test_asquith.x5.12.k01",
+      "node_id": "geo.test_asquith.x5.12"
+    },
+    {
+      "front": "Меняется ли плотность при умножении?",
+      "back": "Нет. Значение откладывают при той же плотности.",
+      "claim_ids": [
+        "geo.test_asquith.x5.12.c03"
+      ],
+      "kind": "mistake",
+      "page": 145,
+      "id": "geo.test_asquith.x5.12.k02",
+      "node_id": "geo.test_asquith.x5.12"
+    },
+    {
+      "front": "Можно взять опору при другой пористости?",
+      "back": "Нет. Опору читают на водоносной линии при той же пористости.",
+      "claim_ids": [
+        "geo.test_asquith.x5.13.c02"
+      ],
+      "kind": "mistake",
+      "page": 145,
+      "id": "geo.test_asquith.x5.13.k01",
+      "node_id": "geo.test_asquith.x5.13"
+    },
+    {
+      "front": "Зачем переходить от графика к формуле?",
+      "back": "Формула даёт более точную оценку насыщенности аномальной точки.",
+      "claim_ids": [
+        "geo.test_asquith.x5.13.c01"
+      ],
+      "kind": "idea",
+      "page": 145,
+      "id": "geo.test_asquith.x5.13.k02",
+      "node_id": "geo.test_asquith.x5.13"
+    },
+    {
+      "front": "Что читают по пересечению на Хингле?",
+      "back": "При нулевой проводимости оценивают плотность или время пробега матрицы.",
+      "claim_ids": [
+        "geo.test_asquith.x2.12.c08"
+      ],
+      "kind": "idea",
+      "page": 135,
+      "id": "geo.test_asquith.x2.12.k01",
+      "node_id": "geo.test_asquith.x2.12"
+    },
+    {
+      "front": "Достаточно ли тесной группы точек для обеих диаграмм?",
+      "back": "Нет, для уверенного выбора водной линии нужен широкий диапазон пористости.",
+      "claim_ids": [
+        "geo.test_asquith.x2.12.c13"
+      ],
+      "kind": "mistake",
+      "page": 135,
+      "id": "geo.test_asquith.x2.12.k02",
+      "node_id": "geo.test_asquith.x2.12"
+    },
+    {
+      "front": "Как вычислить объёмную долю воды?",
+      "back": "Умножить водонасыщенность на пористость.",
+      "claim_ids": [
+        "geo.test_asquith.x2.13.c07"
+      ],
+      "kind": "idea",
+      "page": 134,
+      "id": "geo.test_asquith.x2.13.k01",
+      "node_id": "geo.test_asquith.x2.13"
+    },
+    {
+      "front": "С какими скважинами сравнивают оценки?",
+      "back": "С соседними добывающими скважинами того же пласта, учитывая успешную и плохую историю добычи.",
+      "claim_ids": [
+        "geo.test_asquith.x2.13.c02",
+        "geo.test_asquith.x2.13.c03",
+        "geo.test_asquith.x2.13.c04"
+      ],
+      "kind": "mistake",
+      "page": 134,
+      "id": "geo.test_asquith.x2.13.k02",
+      "node_id": "geo.test_asquith.x2.13"
+    },
+    {
+      "front": "Как коэффициенты зависят от флюида?",
+      "back": "Для нефти средней плотности берут 250, для сухого газа — 79.",
+      "claim_ids": [
+        "geo.test_asquith.x2.15.c02",
+        "geo.test_asquith.x2.15.c03"
+      ],
+      "kind": "number",
+      "page": 135,
+      "id": "geo.test_asquith.x2.15.k01",
+      "node_id": "geo.test_asquith.x2.15"
+    },
+    {
+      "front": "Подойдёт любая водонасыщенность?",
+      "back": "Нет. Нужна водонасыщенность зоны в неснижаемом состоянии.",
+      "claim_ids": [
+        "geo.test_asquith.x2.15.c06"
+      ],
+      "kind": "mistake",
+      "page": 135,
+      "id": "geo.test_asquith.x2.15.k02",
+      "node_id": "geo.test_asquith.x2.15"
+    },
+    {
+      "front": "Что возводят в квадрат в конце?",
+      "back": "Всю дробь.",
+      "claim_ids": [
+        "geo.test_asquith.x2.16.c01"
+      ],
+      "kind": "idea",
+      "page": 135,
+      "id": "geo.test_asquith.x2.16.k01",
+      "node_id": "geo.test_asquith.x2.16"
+    },
+    {
+      "front": "Какую степень применяют к пористости?",
+      "back": "2,2.",
+      "claim_ids": [
+        "geo.test_asquith.x2.16.c01"
+      ],
+      "kind": "number",
+      "page": 135,
+      "id": "geo.test_asquith.x2.16.k02",
+      "node_id": "geo.test_asquith.x2.16"
+    },
+    {
+      "front": "Какая величина входит явно?",
+      "back": "Плотность углеводородов.",
+      "claim_ids": [
+        "geo.test_asquith.x2.17.c02"
+      ],
+      "kind": "idea",
+      "page": 135,
+      "id": "geo.test_asquith.x2.17.k01",
+      "node_id": "geo.test_asquith.x2.17"
+    },
+    {
+      "front": "Достаточно знать оба сопротивления?",
+      "back": "Нет. Для воды уточняют температуру, для породы — состояние водонасыщенности.",
+      "claim_ids": [
+        "geo.test_asquith.x2.17.c03",
+        "geo.test_asquith.x2.17.c04"
+      ],
+      "kind": "mistake",
+      "page": 135,
+      "id": "geo.test_asquith.x2.17.k02",
+      "node_id": "geo.test_asquith.x2.17"
+    },
+    {
+      "front": "Какой знак перед квадратным членом?",
+      "back": "Минус: из суммы вычитают 188, умноженное на квадрат плотности.",
+      "claim_ids": [
+        "geo.test_asquith.x2.18.c02"
+      ],
+      "kind": "mistake",
+      "page": 136,
+      "id": "geo.test_asquith.x2.18.k01",
+      "node_id": "geo.test_asquith.x2.18"
+    },
+    {
+      "front": "Чем заканчивается этот промежуточный расчёт?",
+      "back": "Получают постоянную C. Для итоговой формулы ещё нужна W.",
+      "claim_ids": [
+        "geo.test_asquith.x2.18.c01",
+        "geo.test_asquith.x2.18.c03"
+      ],
+      "kind": "idea",
+      "page": 136,
+      "id": "geo.test_asquith.x2.18.k02",
+      "node_id": "geo.test_asquith.x2.18"
+    },
+    {
+      "front": "Что стоит под квадратным корнем?",
+      "back": "Сумма члена с пористостью и логарифмического члена.",
+      "claim_ids": [
+        "geo.test_asquith.x2.19.c01"
+      ],
+      "kind": "idea",
+      "page": 136,
+      "id": "geo.test_asquith.x2.19.k01",
+      "node_id": "geo.test_asquith.x2.19"
+    },
+    {
+      "front": "Как выбрать глубинное сопротивление породы?",
+      "back": "Берут значение при неснижаемой водонасыщенности.",
+      "claim_ids": [
+        "geo.test_asquith.x2.19.c03"
+      ],
+      "kind": "mistake",
+      "page": 136,
+      "id": "geo.test_asquith.x2.19.k02",
+      "node_id": "geo.test_asquith.x2.19"
+    },
+    {
+      "front": "В знаменателе только отношение сопротивлений?",
+      "back": "Нет. Оно умножается на W в четвёртой степени.",
+      "claim_ids": [
+        "geo.test_asquith.x2.20.c02"
+      ],
+      "kind": "mistake",
+      "page": 136,
+      "id": "geo.test_asquith.x2.20.k01",
+      "node_id": "geo.test_asquith.x2.20"
+    },
+    {
+      "front": "В какой единице записать результат?",
+      "back": "В миллидарси.",
+      "claim_ids": [
+        "geo.test_asquith.x2.20.c03"
+      ],
+      "kind": "term",
+      "page": 136,
+      "id": "geo.test_asquith.x2.20.k02",
+      "node_id": "geo.test_asquith.x2.20"
+    },
+    {
+      "front": "Чем различаются два семейства кривых?",
+      "back": "Толстые кривые дают проницаемость. Тонкие гиперболы дают объёмное содержание воды.",
+      "claim_ids": [
+        "geo.test_asquith.x5.14.c07",
+        "geo.test_asquith.x5.14.c09"
+      ],
+      "kind": "idea",
+      "page": 146,
+      "id": "geo.test_asquith.x5.14.k01",
+      "node_id": "geo.test_asquith.x5.14"
+    },
+    {
+      "front": "Где искать неснижаемую водонасыщенность?",
+      "back": "На левой вертикальной шкале, не на нижней оси пористости.",
+      "claim_ids": [
+        "geo.test_asquith.x5.14.c04"
+      ],
+      "kind": "mistake",
+      "page": 146,
+      "id": "geo.test_asquith.x5.14.k02",
+      "node_id": "geo.test_asquith.x5.14"
+    },
+    {
+      "front": "Можно оценить проницаемость при любом состоянии зоны?",
+      "back": "Нет. Для этой палетки нужна неснижаемая водонасыщенность.",
+      "claim_ids": [
+        "geo.test_asquith.x5.15.c01"
+      ],
+      "kind": "mistake",
+      "page": 146,
+      "id": "geo.test_asquith.x5.15.k01",
+      "node_id": "geo.test_asquith.x5.15"
+    },
+    {
+      "front": "Зачем брать данные нескольких интервалов?",
+      "back": "По рисунку группы проверяют, согласуются ли точки с гиперболой или рассеиваются.",
+      "claim_ids": [
+        "geo.test_asquith.x5.15.c03",
+        "geo.test_asquith.x5.15.c04"
+      ],
+      "kind": "idea",
+      "page": 146,
+      "id": "geo.test_asquith.x5.15.k02",
+      "node_id": "geo.test_asquith.x5.15"
+    },
+    {
+      "front": "Чем сланец отличается от глины?",
+      "back": "Сланец — порода, глина — её возможный компонент.",
+      "claim_ids": [
+        "geo.test_asquith.x2.21.c03"
+      ],
+      "kind": "term",
+      "page": 136,
+      "id": "geo.test_asquith.x2.21.k01",
+      "node_id": "geo.test_asquith.x2.21"
+    },
+    {
+      "front": "Подойдут ли свойства соседнего сланца без проверки?",
+      "back": "Не обязательно. Состав глинистых минералов может существенно отличаться.",
+      "claim_ids": [
+        "geo.test_asquith.x2.21.c04"
+      ],
+      "kind": "mistake",
+      "page": 136,
+      "id": "geo.test_asquith.x2.21.k02",
+      "node_id": "geo.test_asquith.x2.21"
+    },
+    {
+      "front": "Что такое связанная вода?",
+      "back": "Неподвижная вода у поверхности глинистых минералов.",
+      "claim_ids": [
+        "geo.test_asquith.x2.22.c03"
+      ],
+      "kind": "term",
+      "page": 136,
+      "id": "geo.test_asquith.x2.22.k01",
+      "node_id": "geo.test_asquith.x2.22"
+    },
+    {
+      "front": "Как ведёт себя свободная вода?",
+      "back": "Она подвижна и может быть вытеснена углеводородами.",
+      "claim_ids": [
+        "geo.test_asquith.x2.22.c04"
+      ],
+      "kind": "idea",
+      "page": 136,
+      "id": "geo.test_asquith.x2.22.k02",
+      "node_id": "geo.test_asquith.x2.22"
+    },
+    {
+      "front": "Что означает ориентир выше 10–15%?",
+      "back": "По Хилчи, это существенное влияние сланца на каротажную оценку водонасыщенности.",
+      "claim_ids": [
+        "geo.test_asquith.x2.23.c06"
+      ],
+      "kind": "number",
+      "page": 136,
+      "id": "geo.test_asquith.x2.23.k01",
+      "node_id": "geo.test_asquith.x2.23"
+    },
+    {
+      "front": "Что проверить при неожиданно низкой оценке?",
+      "back": "Не завышена ли доля сланца, подставленная в поправку.",
+      "claim_ids": [
+        "geo.test_asquith.x2.23.c08"
+      ],
+      "kind": "mistake",
+      "page": 136,
+      "id": "geo.test_asquith.x2.23.k02",
+      "node_id": "geo.test_asquith.x2.23"
+    }
+  ]
+}

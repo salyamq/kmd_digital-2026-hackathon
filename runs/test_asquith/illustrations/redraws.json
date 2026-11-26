@@ -1,0 +1,121 @@
+[
+  {
+    "figure": "7.3a",
+    "page": 141,
+    "node_ids": [
+      "geo.test_asquith.x5.04"
+    ],
+    "redrawn_from": {
+      "figure": "7.3a",
+      "page": 141
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Подпись задаёт интервал объёмной доли воды, но не координаты наблюдений или пределы осей."
+  },
+  {
+    "figure": "7.3b",
+    "page": 141,
+    "node_ids": [
+      "geo.test_asquith.x5.04"
+    ],
+    "redrawn_from": {
+      "figure": "7.3b",
+      "page": 141
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Подпись описывает кластер и разброс, но не задаёт координаты точек или пределы осей."
+  },
+  {
+    "figure": "7.3c",
+    "page": 141,
+    "node_ids": [
+      "geo.test_asquith.x5.04"
+    ],
+    "redrawn_from": {
+      "figure": "7.3c",
+      "page": 141
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Подпись характеризует разброс, но не задаёт координаты точек или пределы осей."
+  },
+  {
+    "figure": "7.4",
+    "page": 142,
+    "node_ids": [
+      "geo.test_asquith.x5.05"
+    ],
+    "redrawn_from": {
+      "figure": "7.4",
+      "page": 142
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Пример даёт параметры и наклон, но не позволяет восстановить показанные точки, пределы осей и положение водоносной линии."
+  },
+  {
+    "figure": "7.7",
+    "page": 145,
+    "node_ids": [
+      "geo.test_asquith.x5.10"
+    ],
+    "redrawn_from": {
+      "figure": "7.7",
+      "page": 145
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Подпись отсылает к таблице, но её значения и геометрия шкал отсутствуют в запросе; одной оценки плотности матрицы недостаточно."
+  },
+  {
+    "figure": "",
+    "page": 145,
+    "node_ids": [
+      "geo.test_asquith.x5.12"
+    ],
+    "redrawn_from": {
+      "figure": "",
+      "page": 145
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Не указаны номер или подпись рисунка; из одного значения объёмной плотности и обозначения линии нельзя восстановить исходный график."
+  },
+  {
+    "figure": "7.8",
+    "page": 146,
+    "node_ids": [
+      "geo.test_asquith.x5.14"
+    ],
+    "redrawn_from": {
+      "figure": "7.8",
+      "page": 146
+    },
+    "template": "",
+    "approximations": [],
+    "checks": [],
+    "errors": [],
+    "status": "infeasible",
+    "reason": "В запросе отсутствуют вырезка рисунка и скан страницы. Одна контрольная пара с результатом не задаёт сетку палетки, границы осей и значения остальных кривых. Без восстановленных областей проверка рисунка невозможна."
+  }
+]

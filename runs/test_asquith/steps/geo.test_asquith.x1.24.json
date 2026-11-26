@@ -1,0 +1,631 @@
+{
+  "node_id": "geo.test_asquith.x1.24",
+  "chapter": "test_asquith",
+  "index": 28,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Сопротивление пласта с водой",
+  "title_book": "Wet resistivity ($R_o$)",
+  "section": "x1",
+  "pages": [
+    131
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "И",
+    "threshold": "Сравнивают измерение не с универсальным порогом, а с расчётным сопротивлением того же пласта, если он заполнен водой."
+  },
+  "threshold": "Сравнивают измерение не с универсальным порогом, а с расчётным сопротивлением того же пласта, если он заполнен водой.",
+  "format": "data_practice",
+  "format_rationale": "По измеренному сопротивлению и водяному эталону выберите, оправдан ли признак углеводородов.",
+  "order_rationale": "Предлагает ещё один водяной эталон для сопоставления с измеренным сопротивлением.",
+  "essence": [
+    "Сравните измерение с сопротивлением этого же пласта при полном заполнении пор водой.",
+    "Так виднее, где возможны углеводороды и где стоит перепроверить водяную опору."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Это один из давних методов быстрой интерпретации. Водный эталон $R_o$ вычисляют по пористости, сопротивлению воды и параметрам Арчи: $R_o=aR_w/\\phi^m$. Пористость обычно берут по акустическому или плотностному каротажу. Нужны оценки коэффициента извилистости и показателя цементации.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c01",
+            "geo.test_asquith.x1.24.c03",
+            "geo.test_asquith.x1.24.c10"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.24.c01",
+              "quote": "The wet-resistivity curve ($R_o$) is one of the oldest quick-look techniques.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c03",
+              "quote": "1. Calculate $R_o$ from the porosity and an estimate of formation water resistivity ($R_w$).",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c10",
+              "quote": "$R_o$ is then calculated from a porosity measurement, usually the sonic or density, with an estimate of $R_w$, $a$, and $m$.",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "Эталон строят на общей шкале с **глубинным сопротивлением** — измерением с глубокой зоной исследования. Его накладывают на сопротивление, а не сравнивают с ПС, как другие быстрые кривые. Кривую могут вычислить и показать при каротаже. При необходимости по обеим кривым рассчитывают водонасыщенность по Арчи в любой зоне.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c02",
+            "geo.test_asquith.x1.24.c04",
+            "geo.test_asquith.x1.24.c05",
+            "geo.test_asquith.x1.24.c11"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.24.c02",
+              "quote": "Unlike the other curves, which tend to be compared to the SP curve, it is plotted as an overlay on the resistivity curve.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c04",
+              "quote": "2. Plot $R_o$ as a curve at the same scale as the resistivity curves and compare the values to the value of the deep-resistivity measurement.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c05",
+              "quote": "3. If desired, an Archie water saturation can be calculated in any zone from the values of $R_o$ and the deep resistivity measurement.",
+              "page": 131,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c11",
+              "quote": "The curve can be generated and displayed during the logging job.",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Что видно",
+          "text": "В водоносной зоне, по ожиданию авторов, расчётная и глубинная кривые совпадают. В углеводородной зоне глубинное сопротивление выше эталона. По мере роста углеводородного насыщения расхождение увеличивается.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c06",
+            "geo.test_asquith.x1.24.c07",
+            "geo.test_asquith.x1.24.c08"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.24.c06",
+              "quote": "1. In water-bearing zones, $R_o$ and the deep resistivity should overlay.",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c07",
+              "quote": "In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$,",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.24.c08",
+              "quote": "the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation.",
+              "page": 131,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Нюансы",
+          "text": "Если сопротивление пластовой воды выбрано неверно, кривые расходятся даже в водоносной зоне. Это не позволяет автоматически трактовать любое расхождение как признак углеводородов.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c09"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.24.c09",
+              "quote": "If the value of $R_w$ chosen to calculate $R_o$ is incorrect, the curves would not align in water-bearing zones.",
+              "page": 131,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "text": "Вычислите водный эталон по пористости, сопротивлению воды и параметрам Арчи.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c03",
+            "geo.test_asquith.x1.24.c10"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "Наложите кривые на общей шкале и сравните глубинное сопротивление с эталоном.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c04"
+          ],
+          "pages": [
+            131
+          ]
+        },
+        {
+          "text": "При необходимости рассчитайте водонасыщенность по Арчи.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c05"
+          ],
+          "pages": [
+            131
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Измеренное глубинное сопротивление",
+          "Расчётный водный эталон на той же шкале",
+          "Пригодность оценки сопротивления воды"
+        ],
+        "rule": "Сопоставляйте кривые при надёжной оценке сопротивления пластовой воды.",
+        "conclusion": "Превышение над эталоном указывает на углеводороды в рамках метода.",
+        "claim_ids": [
+          "geo.test_asquith.x1.24.c06",
+          "geo.test_asquith.x1.24.c07",
+          "geo.test_asquith.x1.24.c08",
+          "geo.test_asquith.x1.24.c09"
+        ],
+        "cases": [
+          {
+            "given": "Кривые расходятся в известной водоносной зоне. Сопротивление пластовой воды оценено ненадёжно.",
+            "options": [
+              "Проверить оценку сопротивления воды",
+              "Считать расхождение доказательством углеводородов"
+            ],
+            "answer": 0,
+            "why": "Ошибочный параметр нарушает совпадение даже в водоносной зоне.",
+            "source": "модель"
+          },
+          {
+            "given": "Параметры пригодны, кривые имеют общую шкалу, глубинное сопротивление выше водного эталона.",
+            "options": [
+              "Кривые подтверждают водяной случай",
+              "Превышение — признак углеводородов"
+            ],
+            "answer": 1,
+            "why": "Авторы указывают такое превышение для углеводородной зоны.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "text": "Если сопротивление пластовой воды выбрано неверно, кривые расходятся даже в водоносной зоне.",
+          "claim_ids": [
+            "geo.test_asquith.x1.24.c09"
+          ],
+          "pages": [
+            131
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.24.f01",
+          "latex": "R_o = F \\times R_w = \\frac{a \\times R_w}{\\phi^m}",
+          "meaning": "Сопротивление породы при полном водонасыщении.",
+          "vars": [
+            {
+              "symbol": "R_o",
+              "meaning": "сопротивление пласта при полном водонасыщении",
+              "unit": null
+            },
+            {
+              "symbol": "F",
+              "meaning": "фактор сопротивления породы",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            }
+          ],
+          "page": 131,
+          "unit_id": "u131_14"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        131
+      ],
+      "data": {
+        "text": "Высокое сопротивление всегда означает нефть.",
+        "correction": "Сравнение требует водного эталона для того же пласта; неверное сопротивление воды также раздвигает кривые.",
+        "claim_ids": [
+          "geo.test_asquith.x1.24.c05",
+          "geo.test_asquith.x1.24.c06",
+          "geo.test_asquith.x1.24.c09"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Измеренную кривую проверяют относительно собственного водного эталона пласта.",
+        "inputs": "Каротажная пористость, сопротивление воды, параметры Арчи и измерение глубинного сопротивления.",
+        "outputs": "Расчётная кривая, её расхождение с измерением и условная оценка насыщения.",
+        "breaks_where": "Неверная оценка сопротивления воды нарушает совпадение даже в водоносной зоне.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротаж пористости и сопротивления, параметры формулы.",
+          "manual_steps": "Подготовить параметры, вычислить кривую и наложить её на измерение.",
+          "judgment_points": "Проверить совпадение в водоносных зонах и выбрать оценку сопротивления воды.",
+          "time": "Кривая доступна уже при каротаже; время проверки в главе не указано.",
+          "typical_errors": "Сравнить кривые в разных шкалах или принять ошибочное сопротивление воды за сигнал насыщения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Наложить фактический ряд на рассчитанный базовый ряд при эталонном состоянии.",
+        "breaks_where": "Расхождение появляется не только при углеводородах, но и при ошибочной калибровке входа по воде.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водонасыщенного пласта",
+          "definition": "Сопротивление, которое имел бы пласт при полном водонасыщении; обозначение R_o.",
+          "en": "wet resistivity",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель цементации",
+          "definition": "Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "ПС",
+          "definition": "Кривая самопроизвольного потенциала.",
+          "en": "spontaneous potential",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж",
+          "definition": "Скважинные измерения, которые записывают как кривые по глубине.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Глубинное сопротивление",
+          "definition": "Сопротивление по измерению с глубокой радиальной зоной исследования.",
+          "en": "deep resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Уравнение Арчи",
+          "definition": "Связь сопротивления пласта с его пористостью, водонасыщенностью и электрическими параметрами.",
+          "en": "Archie equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Акустический каротаж",
+          "definition": "Скважинное измерение времени распространения звука, используемое для оценки пористости.",
+          "en": "sonic log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Плотностный каротаж",
+          "definition": "Скважинное измерение объёмной плотности, используемое для оценки пористости.",
+          "en": "density log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Фактор сопротивления породы",
+          "definition": "Множитель F, который переводит сопротивление воды в сопротивление породы при полном водонасыщении.",
+          "en": "formation factor",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Углеводородное насыщение",
+          "definition": "Доля пор, заполненная углеводородами.",
+          "en": "hydrocarbon saturation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение имеет смысл, когда водяной эталон надёжен.",
+      "alt": "Слева Водоносная зона: Кривые совпадают при верной оценке. Справа Углеводородная зона: Глубинная кривая выше эталона.",
+      "file": "illustrations/geo.test_asquith.x1.24__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.24.c06",
+        "geo.test_asquith.x1.24.c07",
+        "geo.test_asquith.x1.24.c09"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.24.c01",
+      "kind": "observation",
+      "text": "Кривая сопротивления при полном водонасыщении — один из самых давних быстрых методов интерпретации.",
+      "quote": "The wet-resistivity curve ($R_o$) is one of the oldest quick-look techniques.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c02",
+      "kind": "observation",
+      "text": "Эту кривую накладывают на сопротивление, в отличие от других быстрых кривых, которые обычно сравнивают с ПС.",
+      "quote": "Unlike the other curves, which tend to be compared to the SP curve, it is plotted as an overlay on the resistivity curve.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c03",
+      "kind": "observation",
+      "text": "Из пористости и оценки сопротивления воды вычисляют сопротивление полностью водонасыщенной породы.",
+      "quote": "1. Calculate $R_o$ from the porosity and an estimate of formation water resistivity ($R_w$).",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c04",
+      "kind": "observation",
+      "text": "Строят кривую на общей шкале сопротивлений и сравнивают с измерением глубинного сопротивления.",
+      "quote": "2. Plot $R_o$ as a curve at the same scale as the resistivity curves and compare the values to the value of the deep-resistivity measurement.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c05",
+      "kind": "observation",
+      "text": "По расчётному и глубинному сопротивлениям можно при желании вычислить водонасыщенность по Арчи в любой зоне.",
+      "quote": "3. If desired, an Archie water saturation can be calculated in any zone from the values of $R_o$ and the deep resistivity measurement.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c06",
+      "kind": "inference",
+      "text": "В водоносных зонах расчётная и глубинная кривые должны совпасть.",
+      "quote": "1. In water-bearing zones, $R_o$ and the deep resistivity should overlay.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c07",
+      "kind": "inference",
+      "text": "В углеводородной зоне глубинное сопротивление превышает расчётное.",
+      "quote": "In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$,",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c08",
+      "kind": "inference",
+      "text": "Разность между кривыми растёт с углеводородным насыщением.",
+      "quote": "the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c09",
+      "kind": "assumption",
+      "text": "При неверном выбранном сопротивлении пластовой воды кривые не совпадут в водоносных зонах.",
+      "quote": "If the value of $R_w$ chosen to calculate $R_o$ is incorrect, the curves would not align in water-bearing zones.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c10",
+      "kind": "observation",
+      "text": "Пористость для расчёта обычно получают акустическим или плотностным методом; нужны оценки сопротивления воды и двух параметров Арчи.",
+      "quote": "$R_o$ is then calculated from a porosity measurement, usually the sonic or density, with an estimate of $R_w$, $a$, and $m$.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.24.c11",
+      "kind": "observation",
+      "text": "Расчётную кривую можно получить и отобразить прямо при каротаже.",
+      "quote": "The curve can be generated and displayed during the logging job.",
+      "page": 131,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.24.t01",
+    "geo.test_asquith.x1.24.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.24.k01",
+    "geo.test_asquith.x1.24.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.18",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.22",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

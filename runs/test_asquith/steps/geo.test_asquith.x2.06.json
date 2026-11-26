@@ -1,0 +1,642 @@
+{
+  "node_id": "geo.test_asquith.x2.06",
+  "chapter": "test_asquith",
+  "index": 38,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как нанести линии на Пикетта",
+  "title_book": "Pickett Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132,
+    133
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Н",
+    "threshold": "Параллельные линии — справочник только для того показателя насыщения и набора параметров, по которым их построили."
+  },
+  "threshold": "Параллельные линии — справочник только для того показателя насыщения и набора параметров, по которым их построили.",
+  "format": "data_practice",
+  "format_rationale": "Проведите уровни насыщенности от исходной водяной линии и проверьте направление смещения.",
+  "order_rationale": "Обобщает работу с отдельной точкой до сети линий равной водонасыщенности.",
+  "essence": [
+    "На диаграмме Пикетта линии одинаковой водонасыщенности параллельны водной линии.",
+    "Табличный **множитель**, коэффициент для умножения, даёт точку, через которую проводят каждую параллель."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Построение по опоре",
+          "text": "Таблица связывает множитель сопротивления со значением водонасыщенности для Пикетта и Хингла. На Пикетте считайте сопротивление водной линии при одной пористости, например 0,10. Умножьте его на табличные множители и нанесите точки на прежней пористости. Через точки проведите параллели к водной линии. Подпишите параллели соответствующими значениями водонасыщенности, доли воды в порах.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c01",
+            "geo.test_asquith.x2.06.c02",
+            "geo.test_asquith.x2.06.c03",
+            "geo.test_asquith.x2.06.c04",
+            "geo.test_asquith.x2.06.c05",
+            "geo.test_asquith.x2.06.c09"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.06.c01",
+              "quote": "The table below can be used to draw saturation lines on a Pickett plot, as a reference. The technique is:",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c02",
+              "quote": "- At some value of porosity (0.10 is often convenient), note the resistivity value of the $$R_o$$ line.",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c03",
+              "quote": "- Multiply that resistivity value by the factors below, and plot those values on the Pickett plot at the same porosity.",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c04",
+              "quote": "- Draw the saturation lines parallel to the water-bearing line, with each line going through the calculated points.",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c05",
+              "quote": "Those parallel lines can be labeled with the value of water saturation shown.",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c09",
+              "quote": "Table 7.2. Factors for positioning water-saturation lines on Pickett and Hingle plots.",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что относится к таблице",
+          "text": "Табличные множители действуют для показателя насыщения 2,0. Множителям 1,56 и 2,04 соответствуют водонасыщенности 0,80 и 0,70. Множителям 2,78 и 4 соответствуют водонасыщенности 0,60 и 0,50. Множителям 6,25 и 11,11 соответствуют водонасыщенности 0,40 и 0,30. Для водонасыщенности 0,20 множитель равен 25.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c06",
+            "geo.test_asquith.x2.06.c10",
+            "geo.test_asquith.x2.06.c11",
+            "geo.test_asquith.x2.06.c12"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.06.c06",
+              "quote": "Note that the lines are for a saturation exponent (n) of 2.0.",
+              "page": 133,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c10",
+              "quote": "|  1.56 | 0.80  |\n|  2.04 | 0.70  |",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c11",
+              "quote": "|  2.78 | 0.60  |\n|  4 | 0.50  |",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c12",
+              "quote": "|  6.25 | 0.40  |\n|  11.11 | 0.30  |\n|  25 | 0.20  |",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Когда сравнение допустимо",
+          "text": "В полном применении метод даёт оценку сопротивления воды, показателя цементации и параметров матрицы, твёрдой части породы. Сравнивайте зоны с одинаковыми параметром матрицы, коэффициентом извилистости, показателями цементации и насыщения. Сопротивление воды также должно быть одинаковым.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c07",
+            "geo.test_asquith.x2.06.c08"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.06.c07",
+              "quote": "In its fullest use, then, the Pickett plot can be used to determine formation water resistivity ($$R_w$$), cementation exponent (m), and formation matrix values ($$\\rho_{ma}$$ or $$\\Delta t_{ma}$$).",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.06.c08",
+              "quote": "The prime assumption is that in the zones being compared, all the parameters (matrix value, a, m, n, and $$R_w$$) do not change.",
+              "page": 133,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Считайте сопротивление водной линии на выбранной пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Умножьте его на табличные множители и нанесите точки при прежней пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c03"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Проведите параллели и подпишите их значениями водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c04",
+            "geo.test_asquith.x2.06.c05"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "data": {
+        "title": "Как выбрать точку для параллели",
+        "signs": [
+          "Водная линия",
+          "Фиксированная пористость",
+          "Табличный множитель",
+          "Показатель насыщения"
+        ],
+        "rule": "При показателе насыщения 2,0 умножьте опорное сопротивление на табличный множитель.",
+        "conclusion": "Через полученную точку при прежней пористости проведите параллель к водной линии.",
+        "claim_ids": [
+          "geo.test_asquith.x2.06.c02",
+          "geo.test_asquith.x2.06.c03",
+          "geo.test_asquith.x2.06.c04",
+          "geo.test_asquith.x2.06.c06",
+          "geo.test_asquith.x2.06.c11"
+        ],
+        "cases": [
+          {
+            "given": "Нужна линия водонасыщенности 0,50. Показатель насыщения равен 2,0.",
+            "options": [
+              "Умножить опорное сопротивление на 4",
+              "Умножить опорное сопротивление на 2,78"
+            ],
+            "answer": 0,
+            "why": "Таблица связывает водонасыщенность 0,50 с множителем 4.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Для опорной пористости часто удобно взять 0,10.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c02"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Табличные множители действуют для показателя насыщения 2,0.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c06"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Множители 1,56 и 2,04 соответствуют насыщенностям 0,80 и 0,70.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c10"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Множители 2,78 и 4 соответствуют насыщенностям 0,60 и 0,50.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c11"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Множители 6,25, 11,11 и 25 соответствуют насыщенностям 0,40, 0,30 и 0,20.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c12"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Матричный параметр, коэффициент извилистости, показатели цементации и насыщения и сопротивление воды должны быть одинаковы.",
+          "claim_ids": [
+            "geo.test_asquith.x2.06.c08"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "kind": "tables",
+      "title": "Таблицы книги",
+      "by": "author",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.06.t01",
+          "number": "7.2",
+          "caption": "Table 7.2. Factors for positioning water-saturation lines on Pickett and Hingle plots.",
+          "page": 133,
+          "page_end": 133,
+          "columns": [
+            "Multiplier",
+            "$$S_w$$ (for n = 2.0)"
+          ],
+          "rows": [
+            [
+              "1.56",
+              "0.80"
+            ],
+            [
+              "2.04",
+              "0.70"
+            ],
+            [
+              "2.78",
+              "0.60"
+            ],
+            [
+              "4",
+              "0.50"
+            ],
+            [
+              "6.25",
+              "0.40"
+            ],
+            [
+              "11.11",
+              "0.30"
+            ],
+            [
+              "25",
+              "0.20"
+            ]
+          ],
+          "ocr_fixes": [],
+          "unit_id": "u133_15"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Справочная сетка заменяет расчёт по каждой точке только при допущениях построения.",
+        "inputs": "Водная линия, опорная пористость, табличные множители, общие параметры сравниваемых зон.",
+        "outputs": "Размеченная сетка линий водонасыщенности.",
+        "breaks_where": "Табличные множители относятся к показателю 2.0; изменение матричного параметра, коэффициентов или сопротивления воды нарушает допущение сравнимости.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Опорная водная линия и таблица множителей.",
+          "manual_steps": "На выбранной пористости считать сопротивление, отметить расчётные точки, провести и подписать линии.",
+          "judgment_points": "Выбрать опорную пористость и проверить, что сравниваемые зоны удовлетворяют допущению общих параметров.",
+          "time": "После разметки сетка служит справочником; длительность её построения не приведена.",
+          "typical_errors": "Взять табличные множители для другого показателя насыщения или сравнить зоны с разными параметрами.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Построить предвычисленные линии равных выходных значений для фиксированного набора параметров.",
+        "breaks_where": "Нельзя применять одну и ту же сетку как неизменный классификатор при смене параметров породы или воды.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132,
+        133
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Водная линия",
+          "definition": "Прямая, на которой лежат водонасыщенные точки разной пористости; также линия R_o.",
+          "en": "water-bearing line",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "definition": "Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель цементации",
+          "definition": "Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матрица породы",
+          "definition": "Твёрдая часть породы без пор.",
+          "en": "formation matrix",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матричные параметры",
+          "definition": "Плотность твёрдой части породы и время прохождения звука в ней.",
+          "en": "matrix parameters",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Множитель сопротивления",
+          "definition": "Табличный коэффициент, на который умножают сопротивление водной линии для размещения линии насыщения.",
+          "en": "multiplier",
+          "page": 133,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Хингла",
+          "definition": "Давний метод оценки водонасыщенности по диаграмме сопротивления и пористости.",
+          "en": "Hingle plot",
+          "page": 133,
+          "by": "author"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Множители дают точки при одной пористости. Через каждую проводят параллель.",
+      "alt": "Четыре блока от выбора точки на водной линии до подписанных параллелей.",
+      "file": "illustrations/geo.test_asquith.x2.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.06.c02",
+        "geo.test_asquith.x2.06.c03",
+        "geo.test_asquith.x2.06.c04",
+        "geo.test_asquith.x2.06.c05"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.06.c01",
+      "kind": "observation",
+      "text": "Таблицу можно использовать для построения справочных линий водонасыщенности на диаграмме Пикетта.",
+      "quote": "The table below can be used to draw saturation lines on a Pickett plot, as a reference. The technique is:",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c02",
+      "kind": "observation",
+      "text": "На выбранной пористости, часто удобно взять 0.10, считывают сопротивление водной линии.",
+      "quote": "- At some value of porosity (0.10 is often convenient), note the resistivity value of the $$R_o$$ line.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c03",
+      "kind": "observation",
+      "text": "Умножают это сопротивление на табличные множители и наносят значения при прежней пористости.",
+      "quote": "- Multiply that resistivity value by the factors below, and plot those values on the Pickett plot at the same porosity.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c04",
+      "kind": "observation",
+      "text": "Проводят линии параллельно водной линии через рассчитанные точки.",
+      "quote": "- Draw the saturation lines parallel to the water-bearing line, with each line going through the calculated points.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c05",
+      "kind": "observation",
+      "text": "Параллельные линии можно подписать табличными значениями водонасыщенности.",
+      "quote": "Those parallel lines can be labeled with the value of water saturation shown.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c06",
+      "kind": "assumption",
+      "text": "Приведённые линии относятся к показателю насыщения 2.0.",
+      "quote": "Note that the lines are for a saturation exponent (n) of 2.0.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c07",
+      "kind": "observation",
+      "text": "В полном применении метод позволяет определить сопротивление воды, показатель цементации и параметры матрицы.",
+      "quote": "In its fullest use, then, the Pickett plot can be used to determine formation water resistivity ($$R_w$$), cementation exponent (m), and formation matrix values ($$\\rho_{ma}$$ or $$\\Delta t_{ma}$$).",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c08",
+      "kind": "assumption",
+      "text": "Матричное значение, коэффициент извилистости, показатели цементации и насыщения и сопротивление воды должны быть неизменны между сравниваемыми зонами.",
+      "quote": "The prime assumption is that in the zones being compared, all the parameters (matrix value, a, m, n, and $$R_w$$) do not change.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c09",
+      "kind": "observation",
+      "text": "Для диаграмм Пикетта и Хингла таблица связывает множитель сопротивления с линией водонасыщенности.",
+      "quote": "Table 7.2. Factors for positioning water-saturation lines on Pickett and Hingle plots.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c10",
+      "kind": "observation",
+      "text": "Множителю 1.56 соответствует водонасыщенность 0.80, множителю 2.04 — 0.70.",
+      "quote": "|  1.56 | 0.80  |\n|  2.04 | 0.70  |",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c11",
+      "kind": "observation",
+      "text": "Множителю 2.78 соответствует водонасыщенность 0.60, множителю 4 — 0.50.",
+      "quote": "|  2.78 | 0.60  |\n|  4 | 0.50  |",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.06.c12",
+      "kind": "observation",
+      "text": "Множителю 6.25 соответствует водонасыщенность 0.40, множителю 11.11 — 0.30, множителю 25 — 0.20.",
+      "quote": "|  6.25 | 0.40  |\n|  11.11 | 0.30  |\n|  25 | 0.20  |",
+      "page": 133,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.06.t01",
+    "geo.test_asquith.x2.06.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.06.k01",
+    "geo.test_asquith.x2.06.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.05",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "decision: для этого шага нужен блок «решение на данных» (признаки → правило → вывод)"
+    ],
+    "dropped_tasks": []
+  }
+}

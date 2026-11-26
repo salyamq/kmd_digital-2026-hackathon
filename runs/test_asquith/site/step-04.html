@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 4. Два пути первичного просмотра — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x3.01" data-index="4">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 4 из 66</p>
+    <h1>Два пути первичного просмотра</h1>
+    <p class="booktitle">В книге: «Первичный просмотр каротажа» <span class="pg">стр. 140</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: процесс/прибор + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-03.html">шаг 3 «Как выбрать первую кривую»</a> <span class="muted">(предпосылка)</span>, <a href="step-02.html">шаг 2 «Зачем предварительно просматривать каротаж»</a> <span class="muted">(пример)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Первый признак выбирают по типу породы.</p><p>Начальный просмотр выделяет зоны интереса, но не заменяет детальный анализ.</p><p class="threshold"><b>Пороговая идея.</b> Первичный просмотр находит как кандидатов в продуктивные зоны, так и водоносные зоны сравнения. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>На схеме две ветви — для терригенных и карбонатных пород. Начинают с чистых интервалов. В терригенных породах сначала оценивают сопротивление. В карбонатных породах сначала оценивают пористость. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x3.01.c01"><p>«KEYWORDS: flowchart, reservoir evaluation, pay zone identification, clean zones, resistivity, porosity, baseline comparison, tight zones, detailed analysis»</p><footer>— автор, стр. 140 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x3.01.c03"><p>«The scanning flowchart has two paths, one for clastics and one for carbonates.»</p><footer>— автор, стр. 140 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" role="img" aria-label="Терригенные породы / Карбонатные породы" class="ill-svg"><title>Терригенные породы / Карбонатные породы</title><rect class="ill-bg" x="0" y="0" width="360" height="210" rx="8"/><rect class="ill-box ill-good" x="12" y="30" width="336" height="76" rx="10"/><text class="ill-title" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Терригенные породы</tspan></text><text class="ill-text" x="26" y="79" text-anchor="start"><tspan x="26" dy="0">• Сначала сопротивление</tspan></text><rect class="ill-box ill-bad" x="12" y="116" width="336" height="76" rx="10"/><text class="ill-title" x="180.0" y="140" text-anchor="middle"><tspan x="180.0" dy="0">Карбонатные породы</tspan></text><text class="ill-text" x="26" y="165" text-anchor="start"><tspan x="26" dy="0">• Сначала пористость</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Тип породы определяет, в каком порядке смотрят кривые.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 140</span>
+  </figcaption>
+</figure>
+<h3>Практика</h3>          <div class="para" id="how-2">
+            <p>Найдите чистый интервал и определите тип породы. Проверьте основной признак для этого типа. Передайте отобранный интервал на детальный анализ. В терригенной ветви при высоком сопротивлении проверяют пористость. В карбонатной ветви при высокой пористости проверяют сопротивление. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x3.01.c02"><p>«Flowchart for scanning logs to identify zones of interest (both pay and wet).»</p><footer>— автор, стр. 140 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюансы</h3>          <div class="para" id="how-3">
+            <p>Первичный отбор выделяет продуктивные и водоносные зоны интереса. Водоносный интервал сохраняют как опору для сравнения. Низкая пористость на схеме указывает на плотный интервал, который вряд ли окажется продуктивным. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></p>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">По шагам</p>        <ol class="proc"><li>Найдите чистый интервал и определите тип породы. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></li><li>Идите по нужной ветви: начинайте с сопротивления в терригенных породах, с пористости в карбонатных. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></li><li>При высоком значении первого признака проверьте второй. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></li><li>Сохраните водоносную опору, а зоны интереса передайте на детальный анализ. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></li></ol>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Решение на данных</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Чистота интервала</li><li>Тип породы</li><li>Сопротивление и пористость</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Для терригенной породы начните с сопротивления; для карбонатной — с пористости. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Водоносные зоны оставьте как опоры, а зоны интереса разберите детально.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> В чистом терригенном интервале найдено высокое сопротивление. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Проверить пористость</button><button type="button" class="btn ghost case-opt" data-i="1">Считать интервал продуктивным без проверки</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> При высоком сопротивлении терригенная ветвь требует проверки пористости.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> В чистом карбонатном интервале пористость высокая. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Остановить анализ</button><button type="button" class="btn ghost case-opt" data-i="1">Проверить сопротивление</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> При высокой пористости карбонатная ветвь требует проверки сопротивления.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Низкая пористость указывает на плотный интервал. <span class="pg" title="Страница книги (по PDF)">стр. 140</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Отбор не является бинарной отметкой «нефть или ничего»: водоносные интервалы тоже нужны.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Каротаж, тип породы, пористость и удельное сопротивление.</dd>
+          <dt>Выход</dt><dd>Зоны интереса, в том числе водоносные для сравнения.</dd>
+          <dt>Где ломается</dt><dd>Заданный тип породы определяет порядок просмотра параметров; предварительный отбор не заменяет детального анализа.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Кривые каротажа и тип породы.</dd>
+            <dt>Ручные шаги</dt><dd>Просмотреть кривые в порядке, соответствующем ветке, и выделить зоны интереса.</dd>
+            <dt>Точки суждения</dt><dd>Решить, какой интервал годится для водоносного сравнения.</dd>
+            <dt>Время</dt><dd>Это предварительный проход перед более подробным разбором.</dd>
+            <dt>Типичные ошибки</dt><dd>Выбросить водоносные зоны из дальнейшего сравнения или применить одну ветку ко всем породам.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как дерево маршрутизации для предварительного отбора с отдельными ветками для разных типов объектов.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Пороговые решения здесь геологические, а в данном фрагменте нет численных порогов для автоматического дерева.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 7.1. Figure 7.1. Flowchart for scanning logs to identify zones of interest (both pay and wet). The scanning flowchart has two paths, one for clastics and one for carbonates. <span class="pg">стр. 140</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>каротаж <span class="en" lang="en">(well logging)</span></dt><dd>Измерение физических характеристик вдоль ствола скважины.  <span class="chip chip-model">модель</span></dd><dt>терригенные породы <span class="en" lang="en">(clastics)</span></dt><dd>Осадочные породы, составленные из обломков более ранних пород или минералов.  <span class="chip chip-model">модель</span></dd><dt>карбонатная порода <span class="en" lang="en">(carbonate rock)</span></dt><dd>Порода, состоящая преимущественно из карбонатных минералов.  <span class="chip chip-model">модель</span></dd><dt>чистый интервал <span class="en" lang="en">(clean zone)</span></dt><dd>Интервал без существенной примеси глинистого вещества.  <span class="chip chip-model">модель</span></dd><dt>продуктивный интервал <span class="en" lang="en">(pay zone)</span></dt><dd>Интервал, который может давать нефть или газ при добыче.  <span class="chip chip-model">модель</span></dd><dt>опорный водоносный интервал <span class="en" lang="en">(wet baseline)</span></dt><dd>Водоносный интервал, с которым сравнивают отклики других интервалов.  <span class="chip chip-model">модель</span></dd><dt>плотный интервал <span class="en" lang="en">(tight zone)</span></dt><dd>Интервал породы, свойства которого неблагоприятны для притока флюида; на схеме это низкая пористость.  <span class="chip chip-model">модель</span></dd><dt>пористость <span class="en" lang="en">(porosity)</span></dt><dd>Доля объёма породы, приходящаяся на поры.  <span class="chip chip-model">модель</span></dd><dt>удельное сопротивление <span class="en" lang="en">(resistivity)</span></dt><dd>Мера того, насколько материал препятствует протеканию электрического тока.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x3-01-t01" data-task="geo.test_asquith.x3.01.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие соответствия первых признаков верны?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x3.01.t01" value="0"> <span>Терригенные породы → сопротивление</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x3.01.t01" value="1"> <span>Карбонатные породы → пористость</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x3.01.t01" value="2"> <span>Карбонатные породы → сопротивление</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Терригенные породы → сопротивление; Карбонатные породы → пористость</p>
+    <p class="fb-expl">В схеме порядок зависит от типа породы. <a href="#how-1">Где это в тексте (стр. 140) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x3-01-t02" data-task="geo.test_asquith.x3.01.t02" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-test_asquith-x3-01-t02">Расставьте действия для первичного отбора.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-test_asquith-x3-01-t02">
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Передать выбранный интервал на анализ</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Определить тип чистого интервала</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Проверить основной признак</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Определить тип чистого интервала → Проверить основной признак → Передать выбранный интервал на анализ</p>
+    <p class="fb-expl">Сначала определяют ветвь, затем смотрят признак и передают интервал на детальный анализ. <a href="#how-2">Где это в тексте (стр. 140) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x3.01.c01"><p>Ключевые понятия схемы включают чистые интервалы, сравнение с опорным интервалом, плотные зоны и переход к детальному анализу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«KEYWORDS: flowchart, reservoir evaluation, pay zone identification, clean zones, resistivity, porosity, baseline comparison, tight zones, detailed analysis»</p><footer>— стр. 140</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x3.01.c02"><p>Схема первичного просмотра каротажа предназначена для отбора как продуктивных, так и водоносных зон интереса. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Flowchart for scanning logs to identify zones of interest (both pay and wet).»</p><footer>— стр. 140</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x3.01.c03"><p>На схеме два пути: для терригенных и карбонатных пород. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The scanning flowchart has two paths, one for clastics and one for carbonates.»</p><footer>— стр. 140</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u140_01-1" tabindex="-1">
+          <p class="pg">Стр. 140 · (начало фрагмента)</p>
+          <blockquote>KEYWORDS: flowchart, reservoir evaluation, pay zone identification, clean zones, resistivity, porosity, baseline comparison, tight zones, detailed analysis</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u140_02-1" tabindex="-1">
+          <p class="pg">Стр. 140 · (начало фрагмента)</p>
+          <blockquote>Figure 7.1. Flowchart for scanning logs to identify zones of interest (both pay and wet). The scanning flowchart has two paths, one for clastics and one for carbonates.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-05.html">шаг 5 «Сначала сопротивление в терригенных породах»</a>, <a href="step-06.html">шаг 6 «С чего начать поиск пор»</a>, <a href="step-07.html">шаг 7 «От скважинных данных к расчётам»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-03.html" rel="prev"><span>← Назад</span><b>Как выбрать первую кривую</b></a><a class="next" href="step-05.html" rel="next"><span>Дальше →</span><b>Сначала сопротивление в терригенных породах</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Два пути первичного просмотра</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x3.01">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x3.01.t01", "type": "multiple", "question": "Какие соответствия первых признаков верны?", "explanation": "В схеме порядок зависит от типа породы.", "page": 140, "link": "#how-1", "step_title": "Два пути первичного просмотра", "step_index": 4, "node_id": "geo.test_asquith.x3.01", "options": ["Терригенные породы → сопротивление", "Карбонатные породы → пористость", "Карбонатные породы → сопротивление"], "key": [0, 1], "answer_text": "Терригенные породы → сопротивление; Карбонатные породы → пористость"}, {"id": "geo.test_asquith.x3.01.t02", "type": "order", "question": "Расставьте действия для первичного отбора.", "explanation": "Сначала определяют ветвь, затем смотрят признак и передают интервал на детальный анализ.", "page": 140, "link": "#how-2", "step_title": "Два пути первичного просмотра", "step_index": 4, "node_id": "geo.test_asquith.x3.01", "items": [{"text": "Передать выбранный интервал на анализ", "pos": 2}, {"text": "Определить тип чистого интервала", "pos": 0}, {"text": "Проверить основной признак", "pos": 1}], "key": [0, 1, 2], "answer_text": "Определить тип чистого интервала → Проверить основной признак → Передать выбранный интервал на анализ"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "question": "Каков порог индекса для песчаника? Введите число, ниже которого отмечают подвижность.",
+      "answer": 0.7,
+      "unit": null,
+      "tolerance": 0,
+      "explanation": "Автор отмечает подвижность при значении строго ниже 0,7.",
+      "claim_id": "geo.test_asquith.x1.09.c03",
+      "evidence": "У песчаника индекс ниже 0,7 указывает на подвижные углеводороды.",
+      "page": 127,
+      "anchor": "how-2",
+      "id": "geo.test_asquith.x1.09.t01",
+      "node_id": "geo.test_asquith.x1.09"
+    },
+    {
+      "type": "single",
+      "question": "Индекс не меньше 1,0. Что не устанавливает этот результат?",
+      "options": [
+        "Отсутствие признака смещения",
+        "Применимость правила при наличии углеводородов",
+        "Отсутствие углеводородов"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Даже если углеводороды в породе есть, они могли не сместиться.",
+      "claim_id": "geo.test_asquith.x1.09.c02",
+      "evidence": "Отсутствие смещения не доказывает, что углеводородов нет.",
+      "page": 127,
+      "anchor": "how-1",
+      "id": "geo.test_asquith.x1.09.t02",
+      "node_id": "geo.test_asquith.x1.09"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Каковы пороги подвижности?",
+      "back": "Ниже 0,7 у песчаников и ниже 0,6 у карбонатов.",
+      "claim_ids": [
+        "geo.test_asquith.x1.09.c03",
+        "geo.test_asquith.x1.09.c04"
+      ],
+      "kind": "number",
+      "page": 127,
+      "id": "geo.test_asquith.x1.09.k01",
+      "node_id": "geo.test_asquith.x1.09"
+    },
+    {
+      "front": "Чего не доказывает индекс не меньше 1,0?",
+      "back": "Он не доказывает отсутствия углеводородов.",
+      "claim_ids": [
+        "geo.test_asquith.x1.09.c01",
+        "geo.test_asquith.x1.09.c02"
+      ],
+      "kind": "mistake",
+      "page": 127,
+      "id": "geo.test_asquith.x1.09.k02",
+      "node_id": "geo.test_asquith.x1.09"
+    }
+  ]
+}

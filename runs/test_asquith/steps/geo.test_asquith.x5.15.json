@@ -1,0 +1,387 @@
+{
+  "node_id": "geo.test_asquith.x5.15",
+  "chapter": "test_asquith",
+  "index": 63,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Когда палетке проницаемости можно доверять",
+  "title_book": "Палетка для оценки проницаемости и объёмного содержания воды",
+  "section": "x5",
+  "pages": [
+    146
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "Р",
+    "threshold": "Сначала проверьте состояние зоны по рисунку точек, затем оценивайте проницаемость."
+  },
+  "threshold": "Сначала проверьте состояние зоны по рисунку точек, затем оценивайте проницаемость.",
+  "format": "data_practice",
+  "format_rationale": "По состоянию интервала решите, применима ли палетка; ошибочный выбор важнее чтения шкалы.",
+  "order_rationale": "Завершает практику явной проверкой условий применимости палетки.",
+  "essence": [
+    "**Палетка** — график для чтения величин по координатам.",
+    "Сначала проверьте рисунок точек зоны. От него зависит применимость палетки для оценки проницаемости."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Условие применимости",
+          "text": "**Неснижаемая водонасыщенность** означает, что вода не вытесняется при добыче. Палетка годится для оценки проницаемости только при неснижаемой водонасыщенности. В этом состоянии **объёмное содержание воды**, доля объёма породы с водой, довольно постоянно.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c01",
+            "geo.test_asquith.x5.15.c02"
+          ],
+          "pages": [
+            146
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.15.c01",
+              "quote": "Note: It is important to remember that this chart is only valid for estimating permeability (K) in zones at irreducible water saturation ($S_{wi}$ in).",
+              "page": 146,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.15.c02",
+              "quote": "Zones at irreducible water saturation have bulk volume water values that are fairly constant.",
+              "page": 146,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как выглядит признак",
+          "text": "При неснижаемой водонасыщенности точки нескольких интервалов идут вдоль одной гиперболы или параллельно ей. **Гипербола** здесь соединяет точки равного объёмного содержания воды. Вне этого состояния точки рассеиваются относительно согласованного рисунка. Если точки рассеиваются, применимость оценки проницаемости не подтверждена.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c03",
+            "geo.test_asquith.x5.15.c04"
+          ],
+          "pages": [
+            146
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.15.c03",
+              "quote": "On the chart, data points from different intervals in a zone at irreducible saturation plot in a coherent pattern, on or parallel to one of the hyperbolic curves.",
+              "page": 146,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.15.c04",
+              "quote": "Data points from zones not at $S_{wi}$ in scatter from this pattern.",
+              "page": 146,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Проверить рисунок точек",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "text": "Нанесите данные нескольких интервалов одной зоны.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c03"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Сравните распределение точек с гиперболами.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c03",
+            "geo.test_asquith.x5.15.c04"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Оценивайте проницаемость только при неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c01"
+          ],
+          "pages": [
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "data": {
+        "title": "Решить, применима ли палетка",
+        "claim_ids": [
+          "geo.test_asquith.x5.15.c01",
+          "geo.test_asquith.x5.15.c02",
+          "geo.test_asquith.x5.15.c03",
+          "geo.test_asquith.x5.15.c04"
+        ],
+        "signs": [
+          "Рисунок точек нескольких интервалов",
+          "Положение точек относительно гипербол"
+        ],
+        "rule": "Проверяйте состояние зоны по согласованности точек, а не по одному значению.",
+        "conclusion": "Оценку проницаемости применяют только при неснижаемой водонасыщенности.",
+        "cases": [
+          {
+            "given": "Точки лежат вдоль одной гиперболы или параллельно ей.",
+            "options": [
+              "Рисунок согласуется с неснижаемой водонасыщенностью",
+              "Рисунок показывает рассеяние вне гипербол"
+            ],
+            "answer": 0,
+            "why": "Такой согласованный рисунок описан для неснижаемого состояния.",
+            "source": "модель"
+          },
+          {
+            "given": "Точки рассеиваются относительно согласованного рисунка.",
+            "options": [
+              "Палетка даёт действительную оценку независимо от состояния",
+              "Применимость оценки не подтверждена"
+            ],
+            "answer": 1,
+            "why": "Рассеяние характерно для зоны вне требуемого состояния.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "text": "Оценка проницаемости по палетке действительна только при неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c01"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Почти постоянное содержание воды проявляется согласованным рисунком нескольких точек.",
+          "claim_ids": [
+            "geo.test_asquith.x5.15.c02",
+            "geo.test_asquith.x5.15.c03"
+          ],
+          "pages": [
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        146
+      ],
+      "data": {
+        "text": "Палетка даёт действительную оценку проницаемости для любой водонасыщенности.",
+        "correction": "Для оценки проницаемости палетка действительна только при неснижаемой водонасыщенности.",
+        "claim_ids": [
+          "geo.test_asquith.x5.15.c01"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Важна согласованность группы интервалов, а не просто возможность поставить отдельную точку на график.",
+        "inputs": "Данные интервалов одной зоны.",
+        "outputs": "Признак применимости оценки проницаемости.",
+        "breaks_where": "Оценка действительна только при неснижаемой водонасыщенности.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Точки интервалов на палетке.",
+          "manual_steps": "Сопоставить их с кривыми постоянного содержания воды.",
+          "judgment_points": "Решить, достаточно ли согласован рисунок.",
+          "time": "Требует просмотра группы точек.",
+          "typical_errors": "Объявить оценку применимой только потому, что для одной точки можно прочесть число.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как контроль применимости модели по рисунку ошибок на группе точек.",
+        "breaks_where": "Форма контрольной линии здесь определяется произведением физических величин.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "en": "irreducible water saturation",
+          "definition": "Водонасыщенность, при которой в рассматриваемом пласте вода не вытесняется при добыче.",
+          "page": 146,
+          "by": "model"
+        },
+        {
+          "term": "Объёмное содержание воды",
+          "en": "bulk volume water",
+          "definition": "Доля объёма породы, занятая водой; на палетке равно произведению неснижаемой водонасыщенности на пористость.",
+          "page": 146,
+          "by": "author"
+        },
+        {
+          "term": "Проницаемость",
+          "en": "permeability",
+          "definition": "Способность породы пропускать флюид через поры.",
+          "page": 146,
+          "by": "model"
+        },
+        {
+          "term": "Палетка",
+          "en": "chart",
+          "definition": "График для определения величин по пересечению известных координат.",
+          "page": 146,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение распределений помогает решить, применима ли оценка проницаемости.",
+      "alt": "Слева описан согласованный рисунок точек, справа — рассеяние относительно него.",
+      "file": "illustrations/geo.test_asquith.x5.15__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.15.c01",
+        "geo.test_asquith.x5.15.c03",
+        "geo.test_asquith.x5.15.c04"
+      ],
+      "pages": [
+        146
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.15.c01",
+      "kind": "assumption",
+      "text": "Оценивать проницаемость по этой палетке можно только при неснижаемой водонасыщенности.",
+      "quote": "Note: It is important to remember that this chart is only valid for estimating permeability (K) in zones at irreducible water saturation ($S_{wi}$ in).",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.15.c02",
+      "kind": "observation",
+      "text": "При неснижаемой водонасыщенности объёмное содержание воды довольно постоянно.",
+      "quote": "Zones at irreducible water saturation have bulk volume water values that are fairly constant.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.15.c03",
+      "kind": "observation",
+      "text": "Точки разных интервалов при неснижаемой водонасыщенности лежат вдоль одной гиперболы или параллельно ей.",
+      "quote": "On the chart, data points from different intervals in a zone at irreducible saturation plot in a coherent pattern, on or parallel to one of the hyperbolic curves.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.15.c04",
+      "kind": "observation",
+      "text": "Вне неснижаемой водонасыщенности точки рассеиваются относительно этого рисунка.",
+      "quote": "Data points from zones not at $S_{wi}$ in scatter from this pattern.",
+      "page": 146,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.15.t01",
+    "geo.test_asquith.x5.15.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.15.k01",
+    "geo.test_asquith.x5.15.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x5.14",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.13",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

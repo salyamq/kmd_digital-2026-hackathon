@@ -1,0 +1,447 @@
+{
+  "node_id": "geo.test_asquith.x5.03",
+  "chapter": "test_asquith",
+  "index": 31,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Что говорит разброс точек",
+  "title_book": "Диаграммы Баклза",
+  "section": "x5",
+  "pages": [
+    141
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Р",
+    "secondary": "И",
+    "threshold": "Судят не по одной высокой водонасыщенности, а по рисунку точек с постоянным объёмным содержанием воды."
+  },
+  "threshold": "Судят не по одной высокой водонасыщенности, а по рисунку точек с постоянным объёмным содержанием воды.",
+  "format": "data_practice",
+  "format_rationale": "По виду облака точек найдите согласованный тренд и сделайте условный вывод.",
+  "order_rationale": "Даёт практический пример чтения тренда неснижаемой водонасыщенности.",
+  "essence": [
+    "Сравните облако точек с линиями равного содержания воды.",
+    "По характеру разброса авторы судят, есть ли сверх удерживаемой воды подвижная вода."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Зачем сравнивают",
+          "text": "Добыча воды влияет на экономику. **Объёмное содержание воды** — доля всего объёма породы, занятая водой. При линейных шкалах пористости и водонасыщенности точки равного содержания воды образуют гиперболы.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c01",
+            "geo.test_asquith.x5.03.c02"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.03.c01",
+              "quote": "Because production of water in a well can affect a prospect's economics, it is important to know the bulk volume water and whether the formation is at irreducible water saturation ($S_{W\\text{irr}}$).",
+              "page": 141,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.03.c02",
+              "quote": "With $S_{W}$ and porosity plotted on linear scales, points of equal bulk volume water (BVW) plot as hyperbolic curves.",
+              "page": 141,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Признак удерживаемой воды",
+          "text": "Точки вдоль одной гиперболы указывают на постоянное содержание воды и близость к неснижаемой водонасыщенности. **Неснижаемая водонасыщенность** означает, что удерживаемая породой вода не вытесняется при добыче. При таком состоянии, по описанию авторов, пласт не даёт воду.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c03",
+            "geo.test_asquith.x5.03.c04"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.03.c03",
+              "quote": "A series of points plotting along a particular hyperbolic curve indicates that the bulk volume water is constant and that the formation is close to irreducible water saturation.",
+              "page": 141,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.03.c04",
+              "quote": "A reservoir in that condition would not produce water.",
+              "page": 141,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Признак избытка воды",
+          "text": "Порода удерживает часть воды за счёт капиллярного давления. Разброс точек указывает, что воды больше, чем порода удерживает. За пределами неснижаемого состояния доля воды в добыче выше относительно нефти.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c05",
+            "geo.test_asquith.x5.03.c06"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.03.c05",
+              "quote": "As the amount of formation water increases, the bulk volume water values become scattered from the hyperbolic curves and the formation has more water than it can hold by capillary pressure.",
+              "page": 141,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.03.c06",
+              "quote": "The water saturation is no longer at, or near, irreducible, so more water is produced relative to oil.",
+              "page": 141,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "text": "Нанесите пористость и водонасыщенность на линейные шкалы.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c02"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "Сопоставьте точки с гиперболами равного содержания воды.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c02",
+            "geo.test_asquith.x5.03.c03"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "Проверьте, согласуется ли рисунок с неснижаемой водонасыщенностью или избытком воды.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c03",
+            "geo.test_asquith.x5.03.c05"
+          ],
+          "pages": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Точки на линейных шкалах пористости и водонасыщенности",
+          "Положение относительно гипербол равного содержания воды"
+        ],
+        "rule": "Проверьте, лежат ли точки вдоль одной гиперболы или рассеиваются относительно кривых.",
+        "conclusion": "Согласованные точки указывают на близость к неснижаемой водонасыщенности; разброс — на избыток воды.",
+        "claim_ids": [
+          "geo.test_asquith.x5.03.c02",
+          "geo.test_asquith.x5.03.c03",
+          "geo.test_asquith.x5.03.c04",
+          "geo.test_asquith.x5.03.c05",
+          "geo.test_asquith.x5.03.c06"
+        ],
+        "cases": [
+          {
+            "given": "Точки расположены вдоль одной гиперболы.",
+            "options": [
+              "Содержание воды меняется в широких пределах",
+              "Данные согласуются с близостью к неснижаемой водонасыщенности"
+            ],
+            "answer": 1,
+            "why": "Вдоль одной гиперболы содержание воды постоянно.",
+            "source": "модель"
+          },
+          {
+            "given": "Точки заметно рассеиваются относительно гипербол.",
+            "options": [
+              "Воды больше, чем удерживает порода",
+              "Содержание воды точно одинаково"
+            ],
+            "answer": 0,
+            "why": "Авторы связывают разброс с водой сверх удерживаемой породой.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "text": "Гиперболы равного содержания воды описаны для линейных шкал.",
+          "claim_ids": [
+            "geo.test_asquith.x5.03.c02"
+          ],
+          "pages": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Рисунок точек помогает отличить капиллярно удерживаемую воду от избытка воды.",
+        "inputs": "Пористость и водонасыщенность по интервалам.",
+        "outputs": "Признак неснижаемой водонасыщенности и риска добычи воды.",
+        "breaks_where": "Одна точка не позволяет установить постоянство объёмного содержания воды.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Пары пористости и водонасыщенности.",
+          "manual_steps": "Построить диаграмму и сравнить точки с кривыми.",
+          "judgment_points": "Различить согласованность и значимый разброс.",
+          "time": "Нужна серия точек.",
+          "typical_errors": "Считать любую высокую водонасыщенность признаком подвижной воды.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как диагностика набора точек по согласованности с эталонной кривой.",
+        "breaks_where": "Разброс здесь может отражать реальное состояние воды в пласте, не только шум данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "number": "7.3",
+          "page": 141,
+          "caption": "Figure 7.3. Buckles plots (porosity vs. water saturation).",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u141_01",
+          "scan": "pages/p141.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "en": "porosity",
+          "definition": "Доля объёма пор в породе.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "en": "water saturation",
+          "definition": "Доля объёма пор, занятая водой.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Объёмное содержание воды",
+          "en": "bulk volume water",
+          "definition": "Доля общего объёма породы, занятая водой.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "en": "irreducible water saturation",
+          "definition": "Состояние, при котором удерживаемая породой вода не вытесняется при добыче.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Гипербола",
+          "en": "hyperbola",
+          "definition": "На данных о пористости и водонасыщенности — кривая постоянного объёмного содержания воды.",
+          "page": 141,
+          "by": "author"
+        },
+        {
+          "term": "Капиллярное давление",
+          "en": "capillary pressure",
+          "definition": "Давление, связанное с границей флюидов в порах и удержанием воды породой.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Подвижная вода",
+          "en": "moveable water",
+          "definition": "Вода, которая может перемещаться в породе и поступать в скважину.",
+          "page": 141,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнивают рисунок всего облака точек, а не одну точку.",
+      "alt": "Слева Вдоль одной гиперболы: Постоянное содержание воды, Близость к неснижаемому состоянию. Справа Разброс относительно кривых: Вода сверх удерживаемой, Выше доля добываемой воды.",
+      "file": "illustrations/geo.test_asquith.x5.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.03.c03",
+        "geo.test_asquith.x5.03.c04",
+        "geo.test_asquith.x5.03.c05",
+        "geo.test_asquith.x5.03.c06"
+      ],
+      "pages": [
+        141
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.03.c01",
+      "kind": "inference",
+      "text": "Из-за влияния добычи воды на экономику важно знать объёмное содержание воды и близость к неснижаемой водонасыщенности.",
+      "quote": "Because production of water in a well can affect a prospect's economics, it is important to know the bulk volume water and whether the formation is at irreducible water saturation ($S_{W\\text{irr}}$).",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.03.c02",
+      "kind": "observation",
+      "text": "При линейных шкалах пористости и водонасыщенности одинаковое объёмное содержание воды даёт гиперболы.",
+      "quote": "With $S_{W}$ and porosity plotted on linear scales, points of equal bulk volume water (BVW) plot as hyperbolic curves.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.03.c03",
+      "kind": "inference",
+      "text": "Точки вдоль одной гиперболы указывают на постоянное объёмное содержание воды и близость к неснижаемой водонасыщенности.",
+      "quote": "A series of points plotting along a particular hyperbolic curve indicates that the bulk volume water is constant and that the formation is close to irreducible water saturation.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.03.c04",
+      "kind": "inference",
+      "text": "При таком состоянии, согласно описанию автора, пласт не даёт воду.",
+      "quote": "A reservoir in that condition would not produce water.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.03.c05",
+      "kind": "inference",
+      "text": "При увеличении количества пластовой воды точки рассеиваются; воды больше, чем порода удерживает капиллярным давлением.",
+      "quote": "As the amount of formation water increases, the bulk volume water values become scattered from the hyperbolic curves and the formation has more water than it can hold by capillary pressure.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.03.c06",
+      "kind": "inference",
+      "text": "Вне неснижаемой водонасыщенности добывается больше воды относительно нефти.",
+      "quote": "The water saturation is no longer at, or near, irreducible, so more water is produced relative to oil.",
+      "page": 141,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.03.t01",
+    "geo.test_asquith.x5.03.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.03.k01",
+    "geo.test_asquith.x5.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.26",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.25",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

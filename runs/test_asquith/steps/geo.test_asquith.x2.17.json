@@ -1,0 +1,431 @@
+{
+  "node_id": "geo.test_asquith.x2.17",
+  "chapter": "test_asquith",
+  "index": 58,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Какие входы нужны Коутсу",
+  "title_book": "Coates and Dumanoir (1973)",
+  "section": "x2",
+  "pages": [
+    135,
+    136
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": "Вместо выбора коэффициента по типу флюида этот метод принимает плотность углеводородов непосредственно."
+  },
+  "threshold": "Вместо выбора коэффициента по типу флюида этот метод принимает плотность углеводородов непосредственно.",
+  "format": "text",
+  "format_rationale": "Текст связывает обозначения и порядок вычислений перед разбором двух путей к коэффициенту.",
+  "order_rationale": "Объясняет, зачем в методе Коутса вводятся дополнительные величины.",
+  "essence": [
+    "Коутс и Дюмануар явно вводят **плотность углеводородов**, массу на единицу объёма.",
+    "Перед расчётом проверяют условия, при которых получены оба сопротивления."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        135,
+        136
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Почему нужны другие входы",
+          "text": "Авторы называют формулу Коутса и Дюмануара более сложной. Уайли и Роуз учитывают углеводороды сменой коэффициента. В формулу Коутса и Дюмануара плотность углеводородов входит явно.",
+          "claim_ids": [
+            "geo.test_asquith.x2.17.c01",
+            "geo.test_asquith.x2.17.c02"
+          ],
+          "pages": [
+            135
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.17.c01",
+              "quote": "A more complex method for calculating permeability is the Coates and Dumanoir (1973) formula.",
+              "page": 135,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.17.c02",
+              "quote": "Unlike the Wyllie and Rose (1950) formulas, hydrocarbon density is explicitly part of the equation, instead of being indirectly accounted for by changing a constant.",
+              "page": 135,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Проверка входных данных",
+          "text": "**Неснижаемая водонасыщенность** означает, что вода удерживается породой. Сопротивление пластовой воды берут при температуре пласта. Сопротивление породы берут при неснижаемой водонасыщенности. Плотность углеводородов выражают в г/см³. Ещё один вход — **пористость**, доля пор в породе.",
+          "claim_ids": [
+            "geo.test_asquith.x2.17.c03",
+            "geo.test_asquith.x2.17.c04",
+            "geo.test_asquith.x2.17.c05",
+            "geo.test_asquith.x2.17.c06"
+          ],
+          "pages": [
+            135,
+            136
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.17.c03",
+              "quote": "$R_w =$ formation water resistivity at formation temperature",
+              "page": 135,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.17.c04",
+              "quote": "$R_{t\\,irr} =$ true formation resistivity from a formation at irreducible water saturation",
+              "page": 135,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.17.c05",
+              "quote": "$\\rho_{h} =$ hydrocarbon density in $\\mathrm{g / cm^3}$",
+              "page": 136,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.17.c06",
+              "quote": "$\\phi =$ porosity",
+              "page": 136,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        135
+      ],
+      "data": {
+        "title": "Проверить сопротивления",
+        "claim_ids": [
+          "geo.test_asquith.x2.17.c03",
+          "geo.test_asquith.x2.17.c04"
+        ],
+        "signs": [
+          "Температура для сопротивления воды",
+          "Состояние насыщения для сопротивления породы"
+        ],
+        "rule": "Сверяйте каждое сопротивление со своим условием.",
+        "conclusion": "Нельзя принять пару входов только по наличию обоих значений.",
+        "cases": [
+          {
+            "given": "Сопротивление воды дано при пластовой температуре.",
+            "options": [
+              "Условие для воды соблюдено",
+              "Понадобится непластовая температура"
+            ],
+            "answer": 0,
+            "why": "Пластовая температура указана автором.",
+            "source": "модель"
+          },
+          {
+            "given": "Сопротивление породы дано для зоны, где водонасыщенность не неснижаемая.",
+            "options": [
+              "Вход подходит",
+              "Вход не отвечает условию"
+            ],
+            "answer": 1,
+            "why": "Автор требует неснижаемой водонасыщенности.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        135,
+        136
+      ],
+      "items": [
+        {
+          "text": "Сопротивление воды должно соответствовать температуре пласта.",
+          "claim_ids": [
+            "geo.test_asquith.x2.17.c03"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "Сопротивление породы должно соответствовать неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.17.c04"
+          ],
+          "pages": [
+            135
+          ]
+        },
+        {
+          "text": "Плотность углеводородов нужна в г/см³.",
+          "claim_ids": [
+            "geo.test_asquith.x2.17.c05"
+          ],
+          "pages": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Источники чисел в модели различаются: вода, порода, углеводороды и поровое пространство.",
+        "inputs": "Сопротивления воды и породы при заданных условиях, плотность углеводородов, пористость.",
+        "outputs": "Подготовленный набор входов для расчёта проницаемости.",
+        "breaks_where": "Сопротивления не отвечают требованиям формулы, если взяты не при той температуре или из интервала с неподходящим насыщением.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Измерения и сведения о пластовой температуре и состоянии насыщенности.",
+          "manual_steps": "Собрать значения в согласованном наборе для одного интервала.",
+          "judgment_points": "Проверить происхождение сопротивлений и доступность плотности.",
+          "time": "Сведение источников может занять больше времени, чем вычисление.",
+          "typical_errors": "Перепутать истинное сопротивление породы с сопротивлением воды.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как заменить категориальный признак численным полем, которое модель использует напрямую.",
+        "breaks_where": "Плотность имеет физическое значение и единицу измерения, а не произвольный масштаб признака.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "миллидарси",
+          "definition": "Единица измерения проницаемости.",
+          "en": "millidarcy",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "неснижаемая водонасыщенность",
+          "definition": "Доля пор, которую занимает вода в состоянии, когда подвижная вода уже вытеснена.",
+          "en": "irreducible water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "плотность углеводородов",
+          "definition": "Масса нефти или газа на единицу объёма.",
+          "en": "hydrocarbon density",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "углеводороды",
+          "definition": "Вещества, основу которых составляют углерод и водород; в данном контексте нефть или газ.",
+          "en": "hydrocarbons",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "истинное сопротивление пласта",
+          "definition": "Удельное сопротивление породы пласта в его ненарушенной части.",
+          "en": "true formation resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "глубинное сопротивление",
+          "definition": "Сопротивление, определяемое по измерению с большей глубиной исследования от ствола скважины.",
+          "en": "deep resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пластовая вода",
+          "definition": "Вода, находящаяся в порах пласта.",
+          "en": "formation water",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пластовая температура",
+          "definition": "Температура в породе и флюидах пласта, а не на поверхности.",
+          "en": "formation temperature",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пласт",
+          "definition": "Слой горной породы, отличаемый от соседних слоёв.",
+          "en": "formation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверьте температуру и состояние насыщения, прежде чем использовать значения в расчёте.",
+      "alt": "Две колонки отделяют условие для воды от условия для породы.",
+      "file": "illustrations/geo.test_asquith.x2.17__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.17.c02",
+        "geo.test_asquith.x2.17.c03",
+        "geo.test_asquith.x2.17.c04"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.17.c01",
+      "kind": "observation",
+      "text": "Формула Коутса и Дюмануара сложнее других описанных способов расчёта.",
+      "quote": "A more complex method for calculating permeability is the Coates and Dumanoir (1973) formula.",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.17.c02",
+      "kind": "inference",
+      "text": "В отличие от Уайли и Роуза, плотность углеводородов входит в уравнение явно, а не учитывается сменой коэффициента.",
+      "quote": "Unlike the Wyllie and Rose (1950) formulas, hydrocarbon density is explicitly part of the equation, instead of being indirectly accounted for by changing a constant.",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.17.c03",
+      "kind": "assumption",
+      "text": "Берут удельное сопротивление пластовой воды при температуре пласта.",
+      "quote": "$R_w =$ formation water resistivity at formation temperature",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.17.c04",
+      "kind": "assumption",
+      "text": "Истинное сопротивление пласта должно относиться к породе при неснижаемой водонасыщенности.",
+      "quote": "$R_{t\\,irr} =$ true formation resistivity from a formation at irreducible water saturation",
+      "page": 135,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.17.c05",
+      "kind": "observation",
+      "text": "Плотность углеводородов нужна в г/см³.",
+      "quote": "$\\rho_{h} =$ hydrocarbon density in $\\mathrm{g / cm^3}$",
+      "page": 136,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.17.c06",
+      "kind": "observation",
+      "text": "В перечень входов входит пористость.",
+      "quote": "$\\phi =$ porosity",
+      "page": 136,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.17.t01",
+    "geo.test_asquith.x2.17.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.17.k01",
+    "geo.test_asquith.x2.17.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.13",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.16",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

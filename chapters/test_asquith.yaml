@@ -1,0 +1,19 @@
+id: test_asquith
+split: test
+domain: geology
+title: "Log Interpretation"
+book:
+  author: "G. Asquith, D. Krygowski"
+  title: "Basic Well Log Analysis"
+  year: 2004
+  md: md/test_asquith.md
+language: en
+course_language: ru
+notes: "Test twin 1. Ch. 7, md pages 126-136 and figures 140-146 (PDF is shifted by one page; md markers are used)."
+segments:
+  - pages: [126, 136]
+    start: "# Log Interpretation"
+    end: null
+  - pages: [140, 146]
+    start: null
+    end: null

@@ -1,0 +1,467 @@
+{
+  "node_id": "geo.test_asquith.x5.01",
+  "chapter": "test_asquith",
+  "index": 6,
+  "part": {
+    "id": "part1",
+    "title": "От приборов к интервалам интереса"
+  },
+  "title_beginner": "С чего начать поиск пор",
+  "title_book": "Карбонатные породы",
+  "section": "x5",
+  "pages": [
+    140
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "И",
+    "threshold": "В карбонатах первым ориентиром служит пористость; сама по себе она не определяет, что заполняет поры."
+  },
+  "threshold": "В карбонатах первым ориентиром служит пористость; сама по себе она не определяет, что заполняет поры.",
+  "format": "data_practice",
+  "format_rationale": "Отберите пористый интервал до вывода о флюиде; выбор требует проверки контрпримера с низким сопротивлением.",
+  "order_rationale": "Второй маршрут показывает, почему в карбонатах сначала ищут пористые зоны.",
+  "essence": [
+    "В карбонатном разрезе сначала найдите пористые интервалы.",
+    "Не принимайте ранний сигнал за готовый вывод о типе флюида."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Сопротивление заметно меняется вместе с типом породы. В карбонатном разрезе обычно мало глинистых пород для сравнения. Поэтому авторы начинают с каротажа пористости. Пористые интервалы могут вмещать флюид любого типа.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c01",
+            "geo.test_asquith.x5.01.c02",
+            "geo.test_asquith.x5.01.c03",
+            "geo.test_asquith.x5.01.c04"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.01.c01",
+              "quote": "Formation resistivities tend to vary widely with changing rock types,",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.01.c02",
+              "quote": "and commonly there are few shales against which to measure changes.",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.01.c03",
+              "quote": "In this case, the porosity log is the primary reconnaissance measurement.",
+              "page": 140,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.01.c04",
+              "quote": "By first finding the porous zones, the zones with the capacity to hold fluids (of any type) can be identified.",
+              "page": 140,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "Если есть нейтронная и плотностная кривые, просмотрите их вместе. По описанию авторов, это помогает определить литологию, то есть тип породы. Иногда совместный просмотр также подсказывает тип флюида.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c05"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.01.c05",
+              "quote": "Using this scanning technique in combination with the neutron-density quick-look technique discussed in Chapter 4 (if those logs are available) allows one to identify lithology (and sometimes fluid type) in the course of identifying the zones of interest.",
+              "page": 140,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Нюансы",
+          "text": "Иногда похожий на глинистый интервал оказывается радиоактивной продуктивной зоной. Глинистая зона может давать нефть или газ даже при низком сопротивлении.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c06",
+            "geo.test_asquith.x5.01.c07"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.01.c06",
+              "quote": "Zones that appear to be shales might be radioactive productive zones.",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.01.c07",
+              "quote": "Shaly zones might produce oil or gas even if they have low resistivity.",
+              "page": 140,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Начните с каротажа пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c03"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Наметьте интервалы, которые могут вмещать флюид.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c04"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Если доступны обе кривые, совместно просмотрите нейтронную и плотностную.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c05"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Карбонатный разрез с небольшим числом глинистых пород",
+          "Каротаж пористости",
+          "Нейтронная и плотностная кривые, если доступны"
+        ],
+        "rule": "Начните с поиска пористых интервалов; затем при наличии обеих кривых просмотрите их вместе.",
+        "conclusion": "Не отвергайте интервал только по низкому сопротивлению или глинистому облику.",
+        "claim_ids": [
+          "geo.test_asquith.x5.01.c02",
+          "geo.test_asquith.x5.01.c03",
+          "geo.test_asquith.x5.01.c04",
+          "geo.test_asquith.x5.01.c05",
+          "geo.test_asquith.x5.01.c06",
+          "geo.test_asquith.x5.01.c07"
+        ],
+        "cases": [
+          {
+            "given": "Карбонатный разрез, глинистого фона мало, а каротаж пористости доступен.",
+            "options": [
+              "Начать с поиска пористых интервалов",
+              "Начать с высокого сопротивления как доказательства нефти"
+            ],
+            "answer": 0,
+            "why": "При слабом глинистом фоне авторы начинают с пористости.",
+            "source": "модель"
+          },
+          {
+            "given": "Глинистый на вид интервал имеет низкое сопротивление.",
+            "options": [
+              "Нефть и газ точно отсутствуют",
+              "Не исключать продуктивность только по этому признаку"
+            ],
+            "answer": 1,
+            "why": "Низкое сопротивление не исключает добычи нефти или газа.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Совместный просмотр используют при наличии обеих кривых.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c05"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Низкое сопротивление не исключает добычи нефти или газа в глинистой зоне.",
+          "claim_ids": [
+            "geo.test_asquith.x5.01.c07"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        140
+      ],
+      "data": {
+        "text": "Низкое сопротивление глинистой зоны исключает нефть и газ.",
+        "correction": "Такая зона всё равно может давать нефть или газ.",
+        "claim_ids": [
+          "geo.test_asquith.x5.01.c07"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Первичный признак выделяет возможную ёмкость, не гарантируя наличие нефти или газа.",
+        "inputs": "Каротаж пористости; при наличии нейтронная и плотностная кривые.",
+        "outputs": "Зоны для дальнейшего анализа; предполагаемая литология, иногда тип флюида.",
+        "breaks_where": "Одно сопротивление неоднозначно; нейтронная и плотностная кривые могут отсутствовать.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Каротажные кривые.",
+          "manual_steps": "Просмотреть кривые и отметить интервалы.",
+          "judgment_points": "Решить, что остаётся возможным при неоднозначных признаках.",
+          "time": "Увеличивается при наличии неоднозначных интервалов.",
+          "typical_errors": "Отбросить глинистый на вид интервал только по сопротивлению.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как сначала находить потенциальные объекты по доступному признаку, а затем уточнять класс по дополнительным признакам.",
+        "breaks_where": "Признаки зависят от одних и тех же свойств породы; нельзя считать их независимыми.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "en": "porosity",
+          "definition": "Доля объёма пор в породе.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Литология",
+          "en": "lithology",
+          "definition": "Состав и тип горной породы.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Удельное сопротивление",
+          "en": "resistivity",
+          "definition": "Величина, характеризующая сопротивление вещества электрическому току.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Флюид",
+          "en": "fluid",
+          "definition": "Жидкость или газ, способные находиться в порах.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Карбонатные породы",
+          "en": "carbonates",
+          "definition": "Породы, главным образом сложенные карбонатными минералами.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж пористости",
+          "en": "porosity log",
+          "definition": "Скважинная кривая, по которой оценивают пористость.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Нейтронно-плотностной просмотр",
+          "en": "neutron-density quick-look technique",
+          "definition": "Быстрая совместная интерпретация нейтронной и плотностной каротажных кривых.",
+          "page": 140,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Пористость помогает искать места для флюида; совместный просмотр уточняет тип породы.",
+      "alt": "Последовательность: Начать с пористости → Выделить интервалы с порами → Совместно просмотреть доступные кривые.",
+      "file": "illustrations/geo.test_asquith.x5.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.01.c03",
+        "geo.test_asquith.x5.01.c04",
+        "geo.test_asquith.x5.01.c05"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.01.c01",
+      "kind": "observation",
+      "text": "Сопротивление заметно меняется с типом породы.",
+      "quote": "Formation resistivities tend to vary widely with changing rock types,",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c02",
+      "kind": "observation",
+      "text": "В карбонатном разрезе обычно мало глинистых пород, на фоне которых можно оценить изменения.",
+      "quote": "and commonly there are few shales against which to measure changes.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c03",
+      "kind": "inference",
+      "text": "В этой ситуации начальный поиск ведут по каротажу пористости.",
+      "quote": "In this case, the porosity log is the primary reconnaissance measurement.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c04",
+      "kind": "inference",
+      "text": "Нахождение пористых зон показывает, где могут находиться флюиды любого типа.",
+      "quote": "By first finding the porous zones, the zones with the capacity to hold fluids (of any type) can be identified.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c05",
+      "kind": "inference",
+      "text": "При наличии нейтронной и плотностной кривых их быстрый совместный просмотр помогает определить литологию, а иногда и тип флюида.",
+      "quote": "Using this scanning technique in combination with the neutron-density quick-look technique discussed in Chapter 4 (if those logs are available) allows one to identify lithology (and sometimes fluid type) in the course of identifying the zones of interest.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c06",
+      "kind": "observation",
+      "text": "Некоторые интервалы, похожие на глинистую породу, могут быть радиоактивными продуктивными зонами.",
+      "quote": "Zones that appear to be shales might be radioactive productive zones.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.01.c07",
+      "kind": "observation",
+      "text": "Глинистая зона может давать нефть или газ даже при низком сопротивлении.",
+      "quote": "Shaly zones might produce oil or gas even if they have low resistivity.",
+      "page": 140,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.01.t01",
+    "geo.test_asquith.x5.01.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.01.k01",
+    "geo.test_asquith.x5.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x3.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.03",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

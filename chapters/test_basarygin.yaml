@@ -1,0 +1,19 @@
+id: test_basarygin
+split: test
+domain: drilling
+title: "Признаки проявлений; ликвидация нефтегазопроявлений при бурении скважин"
+book:
+  author: "Ю. М. Басарыгин, А. И. Булатов, Ю. М. Проселков"
+  title: "Осложнения и аварии при бурении нефтяных и газовых скважин"
+  year: 2000
+  md: md/test_basarygin.md
+language: ru
+course_language: ru
+notes: "Domain shift (drilling). §4.1.1 pp. 231-239 and part of §4.2.14 pp. 312-318 (md markers)."
+segments:
+  - pages: [231, 239]
+    start: "4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ"
+    end: "4.1.2. ПРИЧИНЫ ПОСТУПЛЕНИЯ"
+  - pages: [312, 318]
+    start: "4.2.14. ЛИКВИДАЦИЯ"
+    end: null

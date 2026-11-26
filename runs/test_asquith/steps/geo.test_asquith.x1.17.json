@@ -1,0 +1,463 @@
+{
+  "node_id": "geo.test_asquith.x1.17",
+  "chapter": "test_asquith",
+  "index": 22,
+  "part": {
+    "id": "part2",
+    "title": "Сравниваем две зоны и две оценки воды"
+  },
+  "title_beginner": "Как найти водяную опору",
+  "title_book": "Apparent water resistivity (Rwa)",
+  "section": "x1",
+  "pages": [
+    129
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Н",
+    "threshold": "Опорное значение ищут в пористой и проницаемой зоне, а не среди всех минимумов."
+  },
+  "threshold": "Опорное значение ищут в пористой и проницаемой зоне, а не среди всех минимумов.",
+  "format": "data_practice",
+  "format_rationale": "Выберите минимум среди подходящих зон, отвергая низкопористую ложную опору.",
+  "order_rationale": "Применяет модель к выбору сопоставимых пористых интервалов и проверке допущений.",
+  "essence": [
+    "Ищите опорный минимум только там, где порода пористая и проницаемая.",
+    "Иначе слишком низкая оценка может исказить сравнение зон."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "**Кажущееся сопротивление воды** — расчётная оценка, не прямое измерение. Входы — пористость и сопротивление незатронутой зоны. Сопоставляют разные зоны или части одной зоны, подозревая границу воды и углеводородов.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c01",
+            "geo.test_asquith.x1.17.c02"
+          ],
+          "pages": [
+            129
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.17.c01",
+              "quote": "The $R_{wa}$ technique relies on the comparison of calculated values of water resistivity between intervals in a well. This comparison can be made between different zones or within the same zone if a water-hydrocarbon contact is suspected in that zone.",
+              "page": 129,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.17.c02",
+              "quote": "1. Calculate an apparent water resistivity ($R_{wa}$) from the porosity and uninvaded zone resistivity measurements.",
+              "page": 129,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "Вычислите кажущееся сопротивление воды, выберите минимум в пористой проницаемой зоне и сравните остальные интервалы с этой опорой. При необходимости затем оценивают водонасыщенность по Арчи.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c03",
+            "geo.test_asquith.x1.17.c04"
+          ],
+          "pages": [
+            129
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.17.c03",
+              "quote": "2. Look for the lowest value of $R_{wa}$ in a porous and permeable zone and compare it to the values of $R_{wa}$ calculated in the other zones.",
+              "page": 129,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.17.c04",
+              "quote": "3. If desired, an Archie water saturation can be calculated from the $R_{wa}$ values in the compared zones.",
+              "page": 129,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Нюансы",
+          "text": "По мнению авторов, опорный минимум ближе всего к истинному значению. Сама зона вероятнее всего водоносная. Превышение минимума указывает на вероятное присутствие углеводородов. Предполагают, что сопротивление пластовой воды во всех сравниваемых зонах одинаковое. При пористости меньше примерно 10% расчётное сопротивление воды ниже истинного.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c05",
+            "geo.test_asquith.x1.17.c06",
+            "geo.test_asquith.x1.17.c07",
+            "geo.test_asquith.x1.17.c08"
+          ],
+          "pages": [
+            129
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.17.c05",
+              "quote": "1. The zone with the lowest value of $R_{wa}$ is the most likely to be water-bearing, and the value of $R_{wa}$ is closest to the actual value of $R_w$ in the formation.",
+              "page": 129,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.17.c06",
+              "quote": "2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.",
+              "page": 129,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.17.c07",
+              "quote": "The $R_w$ values in the zones that are compared are assumed to be the same.",
+              "page": 129,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.17.c08",
+              "quote": "In low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.",
+              "page": 129,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "text": "Вычислите кажущееся сопротивление воды.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c02"
+          ],
+          "pages": [
+            129
+          ]
+        },
+        {
+          "text": "Выберите минимум в пористой проницаемой зоне.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c03"
+          ],
+          "pages": [
+            129
+          ]
+        },
+        {
+          "text": "Сравните остальные зоны с выбранной опорой.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c03"
+          ],
+          "pages": [
+            129
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Признаки пористости и проницаемости",
+          "Ряд расчётных сопротивлений воды"
+        ],
+        "rule": "Выбирайте минимум в пористой проницаемой зоне при одинаковом сопротивлении пластовой воды.",
+        "conclusion": "Превышение подходящей опоры даёт признак углеводородов, но не доказательство.",
+        "claim_ids": [
+          "geo.test_asquith.x1.17.c03",
+          "geo.test_asquith.x1.17.c05",
+          "geo.test_asquith.x1.17.c06",
+          "geo.test_asquith.x1.17.c07",
+          "geo.test_asquith.x1.17.c08"
+        ],
+        "cases": [
+          {
+            "given": "Самая низкая оценка получена при пористости меньше примерно 10%. Есть соседняя пористая проницаемая зона.",
+            "options": [
+              "Сразу взять самый низкий результат",
+              "Искать минимум только среди пригодных зон"
+            ],
+            "answer": 1,
+            "why": "Низкая пористость может занизить расчёт.",
+            "source": "модель"
+          },
+          {
+            "given": "В сопоставимой пористой зоне оценка выше пригодного минимума.",
+            "options": [
+              "Есть признак углеводородов",
+              "Зона обязательно полностью водоносная"
+            ],
+            "answer": 0,
+            "why": "Превышение опоры указывает на вероятные углеводороды.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "text": "Сопротивление пластовой воды предполагают одинаковым.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c07"
+          ],
+          "pages": [
+            129
+          ]
+        },
+        {
+          "text": "При пористости меньше примерно 10% расчётное сопротивление воды ниже истинного.",
+          "claim_ids": [
+            "geo.test_asquith.x1.17.c08"
+          ],
+          "pages": [
+            129
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сопротивление незатронутой зоны и оценка пористости → Водяной ориентир и интервалы с возможными углеводородами.",
+        "inputs": "Сопротивление незатронутой зоны и оценка пористости",
+        "outputs": "Водяной ориентир и интервалы с возможными углеводородами",
+        "breaks_where": "При смене сопротивления воды или малой пористости",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Сопротивление незатронутой зоны и оценка пористости",
+          "manual_steps": "Рассчитайте кажущееся сопротивление по пористости и сопротивлению незатронутой зоны. Найдите минимум в пористой проницаемой зоне и сравните с остальными.",
+          "judgment_points": "Не объясняется ли минимум малой пористостью или другой пластовой водой",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Подставить минимум по всей скважине без отбора",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Выбирать контрольные записи с учётом качества, а не только по минимальному значению.",
+        "breaks_where": "Геологический минимум — предположение о зоне, не подтверждённая метка.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        129
+      ],
+      "items": [
+        {
+          "term": "Кажущееся сопротивление воды",
+          "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+          "en": "apparent water resistivity",
+          "page": 129,
+          "by": "author"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Электрическое сопротивление самой воды в пласте.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление",
+          "definition": "Сопротивление незатронутой зоны пласта.",
+          "en": "true formation resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Проницаемость",
+          "definition": "Способность породы пропускать флюид.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля порового объёма, занятая водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водоуглеводородный контакт",
+          "definition": "Граница между водяным и углеводородным интервалами.",
+          "en": "water-hydrocarbon contact",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Опорный минимум выбирают после проверки пригодности зоны.",
+      "alt": "Последовательность: Рассчитать оценки → Найти подходящий минимум → Сравнить остальные зоны.",
+      "file": "illustrations/geo.test_asquith.x1.17__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.17.c02",
+        "geo.test_asquith.x1.17.c03",
+        "geo.test_asquith.x1.17.c06"
+      ],
+      "pages": [
+        129
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.17.c01",
+      "kind": "observation",
+      "text": "Сопоставляют разные интервалы скважины или части одной зоны при подозрении на контакт воды и углеводородов.",
+      "quote": "The $R_{wa}$ technique relies on the comparison of calculated values of water resistivity between intervals in a well. This comparison can be made between different zones or within the same zone if a water-hydrocarbon contact is suspected in that zone.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c02",
+      "kind": "observation",
+      "text": "Кажущееся сопротивление воды вычисляют по пористости и сопротивлению незатронутой зоны.",
+      "quote": "1. Calculate an apparent water resistivity ($R_{wa}$) from the porosity and uninvaded zone resistivity measurements.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c03",
+      "kind": "observation",
+      "text": "Минимум выбирают в пористой и проницаемой зоне, затем сравнивают с остальными зонами.",
+      "quote": "2. Look for the lowest value of $R_{wa}$ in a porous and permeable zone and compare it to the values of $R_{wa}$ calculated in the other zones.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c04",
+      "kind": "observation",
+      "text": "По результатам можно дополнительно рассчитать насыщенность по Арчи.",
+      "quote": "3. If desired, an Archie water saturation can be calculated from the $R_{wa}$ values in the compared zones.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c05",
+      "kind": "inference",
+      "text": "Зона с минимумом вероятнее всего водоносная, а её расчётное сопротивление воды ближе всего к истинному.",
+      "quote": "1. The zone with the lowest value of $R_{wa}$ is the most likely to be water-bearing, and the value of $R_{wa}$ is closest to the actual value of $R_w$ in the formation.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c06",
+      "kind": "inference",
+      "text": "Значения выше минимума указывают на вероятное присутствие углеводородов.",
+      "quote": "2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c07",
+      "kind": "assumption",
+      "text": "В сравниваемых зонах предполагают одно и то же сопротивление пластовой воды.",
+      "quote": "The $R_w$ values in the zones that are compared are assumed to be the same.",
+      "page": 129,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.17.c08",
+      "kind": "observation",
+      "text": "При пористости меньше примерно 10% кажущееся сопротивление воды ниже истинного.",
+      "quote": "In low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.",
+      "page": 129,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.17.t01",
+    "geo.test_asquith.x1.17.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.17.k01",
+    "geo.test_asquith.x1.17.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.18",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

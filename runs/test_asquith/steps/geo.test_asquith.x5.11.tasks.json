@@ -1,0 +1,62 @@
+{
+  "tasks": [
+    {
+      "type": "single",
+      "claim_id": "geo.test_asquith.x5.11.c03",
+      "question": "Что означает 4,1 Ом·м в примере?",
+      "evidence": "При пористости 10% и объёмной плотности 2,485 г/см³ на линии считывают 4,1 Ом·м.",
+      "explanation": "Это считанное сопротивление водоносной породы, которое используют в подстановке.",
+      "options": [
+        "Сопротивление водоносной линии",
+        "Результат расчёта для пластовой воды",
+        "Показатель цементации"
+      ],
+      "correct": [
+        0
+      ],
+      "page": 145,
+      "anchor": "how-1",
+      "id": "geo.test_asquith.x5.11.t01",
+      "node_id": "geo.test_asquith.x5.11"
+    },
+    {
+      "type": "numeric",
+      "claim_id": "geo.test_asquith.x5.11.c05",
+      "question": "Какое сопротивление пластовой воды получилось в примере?",
+      "evidence": "Сопротивление пластовой воды при пластовой температуре равно 0,041 Ом·м.",
+      "explanation": "При заданных входах автор получил 0,041 Ом·м при пластовой температуре.",
+      "answer": 0.041,
+      "tolerance": 0,
+      "unit": "Ом·м",
+      "page": 145,
+      "anchor": "how-2",
+      "id": "geo.test_asquith.x5.11.t02",
+      "node_id": "geo.test_asquith.x5.11"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Число с линии уже равно сопротивлению воды?",
+      "back": "Нет. Его подставляют в формулу, которая даёт сопротивление самой воды.",
+      "claim_ids": [
+        "geo.test_asquith.x5.11.c02",
+        "geo.test_asquith.x5.11.c05"
+      ],
+      "kind": "mistake",
+      "page": 145,
+      "id": "geo.test_asquith.x5.11.k01",
+      "node_id": "geo.test_asquith.x5.11"
+    },
+    {
+      "front": "Откуда берут a и m?",
+      "back": "Их предполагают, выбирая определённую сетку Хингла.",
+      "claim_ids": [
+        "geo.test_asquith.x5.11.c04"
+      ],
+      "kind": "idea",
+      "page": 145,
+      "id": "geo.test_asquith.x5.11.k02",
+      "node_id": "geo.test_asquith.x5.11"
+    }
+  ]
+}

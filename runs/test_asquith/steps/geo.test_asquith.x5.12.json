@@ -1,0 +1,452 @@
+{
+  "node_id": "geo.test_asquith.x5.12",
+  "chapter": "test_asquith",
+  "index": 52,
+  "part": {
+    "id": "part5",
+    "title": "Диаграмма Хингла: другой масштаб, те же данные"
+  },
+  "title_beginner": "Как провести линию водонасыщенности",
+  "title_book": "Диаграмма Хингла",
+  "section": "x5",
+  "pages": [
+    145
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Ф",
+    "threshold": "На диаграмме Хингла линии насыщенности сходятся к водоносной линии при бесконечном сопротивлении."
+  },
+  "threshold": "На диаграмме Хингла линии насыщенности сходятся к водоносной линии при бесконечном сопротивлении.",
+  "format": "data_practice",
+  "format_rationale": "Возьмите опору и множитель из примера на данных, затем постройте нужную линию.",
+  "order_rationale": "Продолжает пример построением веера линий насыщенности с табличными множителями.",
+  "essence": [
+    "На диаграмме Хингла линия заданной водонасыщенности проходит через две опоры.",
+    "Одну точку получают по множителю, другая лежит на водоносной линии при бесконечном сопротивлении."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что задаёт построение",
+          "text": "**Диаграмма Хингла** сопоставляет сопротивление и пористость или её показатель. **Водонасыщенность** — доля пор, занятая водой. Авторы берут сопротивление водоносной линии и множители из таблицы 7.2. Множители рассчитаны для **показателя насыщения** n = 2,0, степенного параметра уравнения.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c01",
+            "geo.test_asquith.x5.12.c02"
+          ],
+          "pages": [
+            145
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.12.c01",
+              "quote": "The water saturation lines are constructed on the plot from the value for R_a and the multipliers from Table 7.2.",
+              "page": 145,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.12.c02",
+              "quote": "The multipliers are for a saturation exponent (n) of 2.0.",
+              "page": 145,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Построение по двум опорам",
+          "text": "Считайте опору при выбранной плотности. Умножьте её на табличный множитель. Соедините найденную точку с водоносной линией при бесконечном сопротивлении. На этапе умножения сохраняйте ту же объёмную плотность, учитывающую породу и содержимое пор.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c01",
+            "geo.test_asquith.x5.12.c03",
+            "geo.test_asquith.x5.12.c04"
+          ],
+          "pages": [
+            145
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.12.c03",
+              "quote": "For each line to be plotted, multiply R_a by the multiplier and plot that line so that it intersects the water-bearing line at infinite resistivity.",
+              "page": 145,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.12.c04",
+              "quote": "In this example, R_a (at bulk density = 2.485 g/cm³) is 4.1. The intercept for the 50% water-saturation line (at bulk density = 2.485 g/cm³) is 16.4.",
+              "page": 145,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Линия из примера",
+          "text": "При плотности 2,485 г/см³ сопротивление опоры равно 4,1. Точка линии 50% при той же плотности соответствует сопротивлению 16,4.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c04"
+          ],
+          "pages": [
+            145
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Провести линию",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "text": "Считайте сопротивление водоносной линии при фиксированной плотности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c01",
+            "geo.test_asquith.x5.12.c04"
+          ],
+          "pages": [
+            145
+          ]
+        },
+        {
+          "text": "Умножьте на множитель и нанесите полученную точку при той же плотности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c01",
+            "geo.test_asquith.x5.12.c03"
+          ],
+          "pages": [
+            145
+          ]
+        },
+        {
+          "text": "Проведите линию через эту точку и пересечение с водоносной линией при бесконечном сопротивлении.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c03"
+          ],
+          "pages": [
+            145
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_asquith_x5_12_e01",
+          "title": "Линия насыщенности 50%",
+          "page": 145,
+          "condition": "Объёмная плотность 2.485 г/см³; у множителей n = 2.0.",
+          "steps": [
+            "Взять опорное сопротивление 4.1.",
+            "По множителю получить значение 16.4 при той же плотности.",
+            "Провести линию через отмеченную точку и пересечение с водоносной линией при бесконечном сопротивлении."
+          ],
+          "result": "Получена линия водонасыщенности 50%.",
+          "numbers": [
+            "2.0",
+            "2.485",
+            "4.1",
+            "16.4",
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        145
+      ],
+      "data": {
+        "title": "Проверить две опоры",
+        "claim_ids": [
+          "geo.test_asquith.x5.12.c01",
+          "geo.test_asquith.x5.12.c02",
+          "geo.test_asquith.x5.12.c03",
+          "geo.test_asquith.x5.12.c04"
+        ],
+        "signs": [
+          "Объёмная плотность",
+          "Сопротивление водоносной линии",
+          "Множитель для выбранной водонасыщенности"
+        ],
+        "rule": "Умножение выполняют при той же плотности, а вторую опору берут при бесконечном сопротивлении.",
+        "conclusion": "Две опоры задают линию выбранной водонасыщенности.",
+        "cases": [
+          {
+            "given": "При плотности 2,485 г/см³ опорное сопротивление 4,1. Нужна линия 50%.",
+            "options": [
+              "Поставить точку 16,4 на той же плотности",
+              "Поставить точку 16,4 на другой плотности"
+            ],
+            "answer": 0,
+            "why": "Умножение меняет сопротивление, а не плотность.",
+            "source": "Пример 1, стр. 145"
+          },
+          {
+            "given": "Точку линии уже нанесли, нужно выбрать вторую опору.",
+            "options": [
+              "Пересечение с водоносной линией при бесконечном сопротивлении",
+              "Любая точка водоносной линии"
+            ],
+            "answer": 0,
+            "why": "Автор задаёт место пересечения при бесконечном сопротивлении.",
+            "source": "Пример 1, стр. 145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "text": "Множители таблицы относятся к n = 2,0.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c02"
+          ],
+          "pages": [
+            145
+          ]
+        },
+        {
+          "text": "При плотности 2,485 г/см³ опоре 4,1 соответствует точка 16,4 для линии 50%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c04"
+          ],
+          "pages": [
+            145
+          ]
+        },
+        {
+          "text": "Общее пересечение линий находится при бесконечном сопротивлении.",
+          "claim_ids": [
+            "geo.test_asquith.x5.12.c03"
+          ],
+          "pages": [
+            145
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Линия — результат построения, а не отдельное измерение.",
+        "inputs": "Водоносная линия, плотность и множители таблицы 7.2.",
+        "outputs": "Линии заданной водонасыщенности.",
+        "breaks_where": "Табличные множители относятся к указанному показателю насыщения.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Сетка Хингла и множители.",
+          "manual_steps": "Рассчитать точки и провести линии.",
+          "judgment_points": "Проверить показатель насыщения, использованный для таблицы.",
+          "time": "Повторяющиеся действия для каждой линии.",
+          "typical_errors": "Соединить линию с водоносной в точке конечного сопротивления.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Похоже на построение изолиний по опорным точкам.",
+        "breaks_where": "Опоры задаёт физическая модель и специальная шкала, а не произвольный графический шаблон.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "number": "",
+          "page": 145,
+          "caption": "",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u145_12",
+          "scan": "pages/p145.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        145
+      ],
+      "items": [
+        {
+          "term": "Сопротивление водоносной линии",
+          "en": "water-bearing line resistivity",
+          "definition": "Сопротивление, считанное с линии водоносных точек при заданной пористости.",
+          "page": 145,
+          "by": "author"
+        },
+        {
+          "term": "Объёмная плотность",
+          "en": "bulk density",
+          "definition": "Масса породы и содержимого её пор на единицу общего объёма.",
+          "page": 145,
+          "by": "model"
+        },
+        {
+          "term": "Диаграмма Хингла",
+          "en": "Hingle plot",
+          "definition": "Диаграмма для совместной интерпретации сопротивления и пористости или её показателя.",
+          "page": 145,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "en": "water saturation",
+          "definition": "Доля объёма пор, занятая водой.",
+          "page": 145,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "en": "saturation exponent",
+          "definition": "Степенной параметр n в формуле водонасыщенности.",
+          "page": 145,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Множитель даёт первую опору, а пересечение с водоносной линией — вторую.",
+      "alt": "Четыре блока описывают получение точки и построение линии от общего пересечения.",
+      "file": "illustrations/geo.test_asquith.x5.12__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.12.c01",
+        "geo.test_asquith.x5.12.c02",
+        "geo.test_asquith.x5.12.c03",
+        "geo.test_asquith.x5.12.c04"
+      ],
+      "pages": [
+        145
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.12.c01",
+      "kind": "inference",
+      "text": "Линии водонасыщенности строят по сопротивлению водоносной линии и множителям таблицы 7.2.",
+      "quote": "The water saturation lines are constructed on the plot from the value for R_a and the multipliers from Table 7.2.",
+      "page": 145,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.12.c02",
+      "kind": "assumption",
+      "text": "Табличные множители относятся к показателю насыщения n = 2.0.",
+      "quote": "The multipliers are for a saturation exponent (n) of 2.0.",
+      "page": 145,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.12.c03",
+      "kind": "inference",
+      "text": "Для каждой линии умножают сопротивление водоносной линии на множитель и проводят пересечение при бесконечном сопротивлении.",
+      "quote": "For each line to be plotted, multiply R_a by the multiplier and plot that line so that it intersects the water-bearing line at infinite resistivity.",
+      "page": 145,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.12.c04",
+      "kind": "observation",
+      "text": "При плотности 2.485 г/см³ опорное сопротивление равно 4.1, а точка линии 50% соответствует 16.4.",
+      "quote": "In this example, R_a (at bulk density = 2.485 g/cm³) is 4.1. The intercept for the 50% water-saturation line (at bulk density = 2.485 g/cm³) is 16.4.",
+      "page": 145,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.12.t01",
+    "geo.test_asquith.x5.12.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.12.k01",
+    "geo.test_asquith.x5.12.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x5.11",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.11",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

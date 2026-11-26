@@ -1,0 +1,524 @@
+{
+  "node_id": "geo.test_asquith.x2.13",
+  "chapter": "test_asquith",
+  "index": 55,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Когда каротаж оценивает проницаемость",
+  "title_book": "PERMEABILITY FROM LOGS",
+  "section": "x2",
+  "pages": [
+    134
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "Пр",
+    "threshold": "Формула по каротажу не даёт универсальной абсолютной проницаемости: сначала проверяют состояние воды, затем сравнивают с соседними скважинами."
+  },
+  "threshold": "Формула по каротажу не даёт универсальной абсолютной проницаемости: сначала проверяют состояние воды, затем сравнивают с соседними скважинами.",
+  "format": "data_practice",
+  "format_rationale": "Сначала выберите применимый интервал по состоянию воды, лишь потом оценивайте проницаемость.",
+  "order_rationale": "Возвращается к продуктивности и устанавливает условия, без которых оценка проницаемости не оправдана.",
+  "essence": [
+    "Сначала проверьте постоянство объёмной доли воды.",
+    "Без него расчёт **проницаемости**, способности породы пропускать жидкость или газ, ненадёжен."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Условие перед формулой",
+          "text": "Автор описывает четыре способа оценки проницаемости по каротажу, измерениям вдоль скважины. Перед расчётом проверьте **неснижаемую водонасыщенность**, долю воды после вытеснения подвижной воды. Каротажные формулы применимы только при неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c01",
+            "geo.test_asquith.x2.13.c05",
+            "geo.test_asquith.x2.13.c06"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.13.c01",
+              "quote": "Log-derived permeability formulas are only valid for estimating permeability in formations at irreducible water saturation (Schlumberger, 1977).",
+              "page": 134,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c05",
+              "quote": "Four methods for calculating log-derived permeability are discussed here.",
+              "page": 134,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c06",
+              "quote": "Before these formulas can be applied, a geologist must first determine whether or not a formation is at irreducible water saturation.",
+              "page": 134,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как проверить состояние",
+          "text": "**Объёмная доля воды** — часть всего объёма породы, занятая водой. Её получают умножением водонасыщенности на пористость: $BVW=S_w\times\\phi$. Постоянная объёмная доля воды указывает на неснижаемую водонасыщенность. При непостоянной доле воды условие не выполнено, и оценка проницаемости сомнительна.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c07",
+            "geo.test_asquith.x2.13.c08",
+            "geo.test_asquith.x2.13.c09"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.13.c07",
+              "quote": "Whether or not a formation is at irreducible water saturation depends upon bulk volume water values ($BVW = S_w \\times \\phi$).",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c08",
+              "quote": "When the bulk volume water values of a formation are constant (Figure 7.3a), the zone is at irreducible water saturation.",
+              "page": 134,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c09",
+              "quote": "If the values are not constant, a zone is not at irreducible water saturation (Figures 7.3b and 7.3c), and the estimates of permeability are suspect.",
+              "page": 134,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Как использовать расчёт",
+          "text": "По возможности сравните результаты с соседними добывающими скважинами того же пласта. Для прогноза продуктивности учитывайте и успешную, и плохую историю добычи этих скважин. Такое сравнение даёт относительную, а не абсолютную оценку проницаемости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c02",
+            "geo.test_asquith.x2.13.c03",
+            "geo.test_asquith.x2.13.c04"
+          ],
+          "pages": [
+            134
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.13.c02",
+              "quote": "When a geologist evaluates a formation by using log-derived permeability formulas, the permeability values, if possible, should be compared with values of nearby producing wells from the same formation.",
+              "page": 134,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c03",
+              "quote": "Productivity estimates can be based on log-derived permeabilities if the formation evaluated is compared with both good and poor production histories in these nearby wells.",
+              "page": 134,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.13.c04",
+              "quote": "By using comparisons of log-derived permeabilities from several wells, a geologist is not using an absolute value for log-derived permeability.",
+              "page": 134,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "text": "Вычислите объёмную долю воды из пористости и водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c07"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "Проверьте постоянство доли воды до применения формул.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c06",
+            "geo.test_asquith.x2.13.c08",
+            "geo.test_asquith.x2.13.c09"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "По возможности сопоставьте оценку с соседними скважинами того же пласта с хорошей и плохой добычей.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c02",
+            "geo.test_asquith.x2.13.c03",
+            "geo.test_asquith.x2.13.c04"
+          ],
+          "pages": [
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "data": {
+        "title": "Можно ли применить формулу",
+        "signs": [
+          "Пористость",
+          "Водонасыщенность",
+          "Постоянство их произведения"
+        ],
+        "rule": "Проверьте постоянство объёмной доли воды до оценки проницаемости.",
+        "conclusion": "Постоянство поддерживает вывод о неснижаемой водонасыщенности; непостоянство делает оценку сомнительной.",
+        "claim_ids": [
+          "geo.test_asquith.x2.13.c01",
+          "geo.test_asquith.x2.13.c07",
+          "geo.test_asquith.x2.13.c08",
+          "geo.test_asquith.x2.13.c09"
+        ],
+        "cases": [
+          {
+            "given": "Произведение пористости на водонасыщенность меняется по интервалу.",
+            "options": [
+              "Считать оценку проницаемости надёжной",
+              "Считать оценку проницаемости сомнительной"
+            ],
+            "answer": 1,
+            "why": "Условие неснижаемой водонасыщенности не выполнено.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "text": "Каротажные формулы применимы только при неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c01"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "При непостоянной доле воды условие не выполнено, и оценка проницаемости сомнительна.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c09"
+          ],
+          "pages": [
+            134
+          ]
+        },
+        {
+          "text": "Для сравнения берут соседние добывающие скважины того же пласта.",
+          "claim_ids": [
+            "geo.test_asquith.x2.13.c02"
+          ],
+          "pages": [
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.13.f01",
+          "latex": "BVW=S_w\\times\\phi",
+          "meaning": "Объёмная доля воды во всей породе.",
+          "vars": [
+            {
+              "symbol": "BVW",
+              "meaning": "объёмная доля воды",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "водонасыщенность",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            }
+          ],
+          "page": 134,
+          "unit_id": "u134_14"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Одни данные используются для проверки допустимости формулы, другие — для сравнения оценок.",
+        "inputs": "Водонасыщенность, пористость, соседние скважины того же пласта с историей добычи.",
+        "outputs": "Признак применимости расчёта и относительная оценка продуктивности.",
+        "breaks_where": "Если объёмная доля воды непостоянна, оценки сомнительны.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Пористость и насыщенность по интервалу, оценки и история добычи соседних скважин.",
+          "manual_steps": "Свести данные, проверить постоянство, отобрать сопоставимые скважины.",
+          "judgment_points": "Решить, считать ли долю воды постоянной и относится ли соседняя скважина к тому же пласту.",
+          "time": "Подбор и проверка аналогов требуют больше работы, чем сама формула.",
+          "typical_errors": "Вычислить проницаемость без проверки насыщенности; сравнить с другими пластами.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как проверка предусловия перед запуском модели и сравнение её выхода с наблюдавшимися исходами.",
+        "breaks_where": "Постоянство в реальном измерении нужно оценить; автор здесь не задаёт машинный порог допустимого разброса.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        134
+      ],
+      "items": [
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "en": "permeability",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерение физических характеристик вдоль ствола скважины.",
+          "en": "well logging",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "неснижаемая водонасыщенность",
+          "definition": "Доля пор, которую занимает вода в состоянии, когда подвижная вода уже вытеснена.",
+          "en": "irreducible water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "объёмная доля воды",
+          "definition": "Доля всего объёма породы, занятая водой: произведение водонасыщенности на пористость.",
+          "en": "bulk volume water",
+          "page": 134,
+          "by": "author"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "продуктивность",
+          "definition": "Способность пласта обеспечивать приток флюида при эксплуатации скважины.",
+          "en": "productivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пласт",
+          "definition": "Слой горной породы, отличаемый от соседних слоёв.",
+          "en": "formation",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Постоянство произведения пористости и насыщенности проверяют до расчёта проницаемости.",
+      "alt": "Слева показан случай постоянной доли воды, справа — меняющейся.",
+      "file": "illustrations/geo.test_asquith.x2.13__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.13.c01",
+        "geo.test_asquith.x2.13.c07",
+        "geo.test_asquith.x2.13.c08",
+        "geo.test_asquith.x2.13.c09"
+      ],
+      "pages": [
+        134
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.13.c01",
+      "kind": "assumption",
+      "text": "Каротажные формулы оценки проницаемости применимы только при неснижаемой водонасыщенности.",
+      "quote": "Log-derived permeability formulas are only valid for estimating permeability in formations at irreducible water saturation (Schlumberger, 1977).",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c02",
+      "kind": "observation",
+      "text": "По возможности оценки сопоставляют со значениями в соседних добывающих скважинах именно того же пласта.",
+      "quote": "When a geologist evaluates a formation by using log-derived permeability formulas, the permeability values, if possible, should be compared with values of nearby producing wells from the same formation.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c03",
+      "kind": "assumption",
+      "text": "Оценки проницаемости используют для прогноза продуктивности, сравнивая пласт как с успешной, так и с плохой историей добычи соседних скважин.",
+      "quote": "Productivity estimates can be based on log-derived permeabilities if the formation evaluated is compared with both good and poor production histories in these nearby wells.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c04",
+      "kind": "inference",
+      "text": "Сравнение каротажной проницаемости нескольких скважин даёт относительную, а не абсолютную оценку.",
+      "quote": "By using comparisons of log-derived permeabilities from several wells, a geologist is not using an absolute value for log-derived permeability.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c05",
+      "kind": "observation",
+      "text": "Автор описывает четыре способа расчёта проницаемости по каротажу.",
+      "quote": "Four methods for calculating log-derived permeability are discussed here.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c06",
+      "kind": "observation",
+      "text": "Перед подстановкой в формулы проверяют, достигнута ли неснижаемая водонасыщенность.",
+      "quote": "Before these formulas can be applied, a geologist must first determine whether or not a formation is at irreducible water saturation.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c07",
+      "kind": "inference",
+      "text": "Показатель для проверки — объёмная доля воды: произведение водонасыщенности на пористость.",
+      "quote": "Whether or not a formation is at irreducible water saturation depends upon bulk volume water values ($BVW = S_w \\times \\phi$).",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c08",
+      "kind": "inference",
+      "text": "Постоянная объёмная доля воды указывает на неснижаемую водонасыщенность интервала.",
+      "quote": "When the bulk volume water values of a formation are constant (Figure 7.3a), the zone is at irreducible water saturation.",
+      "page": 134,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.13.c09",
+      "kind": "inference",
+      "text": "Если объёмная доля воды непостоянна, водонасыщенность не является неснижаемой, а оценки проницаемости сомнительны.",
+      "quote": "If the values are not constant, a zone is not at irreducible water saturation (Figures 7.3b and 7.3c), and the estimates of permeability are suspect.",
+      "page": 134,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.13.t01",
+    "geo.test_asquith.x2.13.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.13.k01",
+    "geo.test_asquith.x2.13.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.25",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.05",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,1818 @@
+{
+  "chapter": "test_asquith",
+  "illustrations": [
+    {
+      "id": "geo.test_asquith.x1.01.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Пористость и сопротивление → Оценка нефти, газа и воды → Сверка с независимыми данными → Решение об обсадке.",
+      "file": "illustrations/geo_test_asquith_x1_01__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_01__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.01#c01",
+        "geo.test_asquith.x1.01#c02",
+        "geo.test_asquith.x1.01#c05"
+      ],
+      "pages": [
+        126
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.01",
+      "node_id": "geo.test_asquith.x1.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.02.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Первичный просмотр разреза → Отбор коллекторов → Сравнение с водяной зоной.",
+      "file": "illustrations/geo_test_asquith_x1_02__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_02__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.02#c02",
+        "geo.test_asquith.x1.02#c03",
+        "geo.test_asquith.x1.02#c04"
+      ],
+      "pages": [
+        126
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.02",
+      "node_id": "geo.test_asquith.x1.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.03.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Определить тип разреза → Обломочные: фон сопротивления → Карбонаты: искать пористость → Отметить целевые зоны.",
+      "file": "illustrations/geo_test_asquith_x1_03__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_03__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.03#c01",
+        "geo.test_asquith.x1.03#c02",
+        "geo.test_asquith.x1.03#c04",
+        "geo.test_asquith.x1.03#c05"
+      ],
+      "pages": [
+        126
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.03",
+      "node_id": "geo.test_asquith.x1.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.04.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Вода при температуре пласта → Поправка глубинного сопротивления → Подстановка пористости и коэффициентов → Водонасыщенность по Арчи.",
+      "file": "illustrations/geo_test_asquith_x1_04__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_04__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.04#c01",
+        "geo.test_asquith.x1.04#c02",
+        "geo.test_asquith.x1.04#c03",
+        "geo.test_asquith.x1.04#c04",
+        "geo.test_asquith.x1.04#c05"
+      ],
+      "pages": [
+        126,
+        127
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.04",
+      "node_id": "geo.test_asquith.x1.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.05.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Низкая водонасыщенность → Проверка подвижности и проницаемости → Проверка извлекаемых запасов → Условная оценка продуктивности.",
+      "file": "illustrations/geo_test_asquith_x1_05__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_05__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.05#c02",
+        "geo.test_asquith.x1.05#c03",
+        "geo.test_asquith.x1.05#c04",
+        "geo.test_asquith.x1.05#c05"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.05",
+      "node_id": "geo.test_asquith.x1.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.06.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Промытая зона у ствола → Взять сопротивление фильтрата → Взять мелкое сопротивление → Рассчитать водонасыщенность.",
+      "file": "illustrations/geo_test_asquith_x1_06__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_06__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.06#c01",
+        "geo.test_asquith.x1.06#c02",
+        "geo.test_asquith.x1.06#c03",
+        "geo.test_asquith.x1.06#c04"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.06",
+      "node_id": "geo.test_asquith.x1.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.07.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Фильтрат проникает в породу → Доля воды у ствола выше → Вероятное вытеснение углеводородов.",
+      "file": "illustrations/geo_test_asquith_x1_07__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_07__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.07#c01",
+        "geo.test_asquith.x1.07#c02"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.07",
+      "node_id": "geo.test_asquith.x1.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.08.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Две формы уравнения Арчи → Разделить одну на другую → Общий форм-фактор сокращается → Индекс из сопротивлений.",
+      "file": "illustrations/geo_test_asquith_x1_08__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_08__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.08#c02",
+        "geo.test_asquith.x1.08#c03",
+        "geo.test_asquith.x1.08#c04"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.08",
+      "node_id": "geo.test_asquith.x1.08",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.09.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Вход: индекс и порода → Проверить порог своей породы → Подвижность не равна наличию.",
+      "file": "illustrations/geo_test_asquith_x1_09__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_09__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.09#c01",
+        "geo.test_asquith.x1.09#c02",
+        "geo.test_asquith.x1.09#c03",
+        "geo.test_asquith.x1.09#c04"
+      ],
+      "pages": [
+        127
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.09",
+      "node_id": "geo.test_asquith.x1.09",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.10.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Проверить характер проникновения → Связать насыщенности двух зон → Взять сопротивления при пластовой температуре → Применить запись метода отношений.",
+      "file": "illustrations/geo_test_asquith_x1_10__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_10__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.10#c01",
+        "geo.test_asquith.x1.10#c02",
+        "geo.test_asquith.x1.10#c03",
+        "geo.test_asquith.x1.10#c04",
+        "geo.test_asquith.x1.10#c05",
+        "geo.test_asquith.x1.10#c06"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.10",
+      "node_id": "geo.test_asquith.x1.10",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.11.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Две оценки одной зоны → Результаты близки → Ступенчатая модель согласуется с оценками.",
+      "file": "illustrations/geo_test_asquith_x1_11__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_11__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.11#c01",
+        "geo.test_asquith.x1.11#c02"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.11",
+      "node_id": "geo.test_asquith.x1.11",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.12.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Оценка Арчи выше → Отношение сопротивлений занижено → Проверить глубину проникновения.",
+      "file": "illustrations/geo_test_asquith_x1_12__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_12__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.12#c01",
+        "geo.test_asquith.x1.12#c02",
+        "geo.test_asquith.x1.12#c03"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.12",
+      "node_id": "geo.test_asquith.x1.12",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.13.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Метод отношений даёт больше → Отношение сопротивлений завышено → Проверить приборы и профиль → Решить, нужна ли поправка.",
+      "file": "illustrations/geo_test_asquith_x1_13__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_13__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.13#c01",
+        "geo.test_asquith.x1.13#c02",
+        "geo.test_asquith.x1.13#c03",
+        "geo.test_asquith.x1.13#c04",
+        "geo.test_asquith.x1.13#c05",
+        "geo.test_asquith.x1.13#c06"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.13",
+      "node_id": "geo.test_asquith.x1.13",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.14.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Предварительный признак → Выбрать интервал для проверки → Не объявлять нефть или газ.",
+      "file": "illustrations/geo_test_asquith_x1_14__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_14__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.14#c01"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.14",
+      "node_id": "geo.test_asquith.x1.14",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.15.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Наложить кривые отношения и ПС → Глина: обе кривые устойчивы → Вода: кривые меняются согласованно → Углеводороды: кривые расходятся.",
+      "file": "illustrations/geo_test_asquith_x1_15__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_15__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.15#c03",
+        "geo.test_asquith.x1.15#c04",
+        "geo.test_asquith.x1.15#c05",
+        "geo.test_asquith.x1.15#c06"
+      ],
+      "pages": [
+        128
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.15",
+      "node_id": "geo.test_asquith.x1.15",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.16.ill-1",
+      "template": "process_chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема связывает исходный признак с проверкой и выводом.",
+      "alt": "Вода: кривые согласуются → Углеводороды повышают истинное сопротивление → Отношение сопротивлений падает → Отношение расходится с ПС.",
+      "file": "illustrations/geo_test_asquith_x1_16__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_16__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.16#c01",
+        "geo.test_asquith.x1.16#c02",
+        "geo.test_asquith.x1.16#c03",
+        "geo.test_asquith.x1.16#c04",
+        "geo.test_asquith.x1.16#c05",
+        "geo.test_asquith.x1.16#c06"
+      ],
+      "pages": [
+        129
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.16",
+      "node_id": "geo.test_asquith.x1.16",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.17.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Опорный минимум выбирают после проверки пригодности зоны.",
+      "alt": "Последовательность: Рассчитать оценки → Найти подходящий минимум → Сравнить остальные зоны.",
+      "file": "illustrations/geo.test_asquith.x1.17__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.17#c02",
+        "geo.test_asquith.x1.17#c03",
+        "geo.test_asquith.x1.17#c06"
+      ],
+      "pages": [
+        129
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.17",
+      "node_id": "geo.test_asquith.x1.17",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.18.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Подмена водной опоры смесью меняет смысл минимума.",
+      "alt": "Слева Водоносная зона: Оценки воды совпадают. Справа Углеводородная зона: Кажущаяся оценка повышается.",
+      "file": "illustrations/geo.test_asquith.x1.18__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.18#c03",
+        "geo.test_asquith.x1.18#c04"
+      ],
+      "pages": [
+        129
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.18",
+      "node_id": "geo.test_asquith.x1.18",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.19.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверка доступных данных определяет выбор источника пористости.",
+      "alt": "Последовательность: Взять глубинное сопротивление → Проверить доступность графика → Выбрать оценку пористости.",
+      "file": "illustrations/geo.test_asquith.x1.19__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.19#c02",
+        "geo.test_asquith.x1.19#c03",
+        "geo.test_asquith.x1.19#c04"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.19",
+      "node_id": "geo.test_asquith.x1.19",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.20.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Не меняйте местами минимум и значение зоны.",
+      "alt": "Последовательность: Взять опорный минимум → Разделить на значение зоны → Извлечь квадратный корень.",
+      "file": "illustrations/geo.test_asquith.x1.20__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.20#c01",
+        "geo.test_asquith.x1.20#c02"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.20",
+      "node_id": "geo.test_asquith.x1.20",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.21.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Первая кривая — расчёт при водяном допущении, а не независимое измерение.",
+      "alt": "Последовательность: Рассчитать при полном водонасыщении → Сравнить пригодные интервалы → Сопоставить с независимой пористостью.",
+      "file": "illustrations/geo.test_asquith.x1.21__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.21#c04",
+        "geo.test_asquith.x1.21#c05",
+        "geo.test_asquith.x1.21#c06"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.21",
+      "node_id": "geo.test_asquith.x1.21",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.22.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Ошибка во входном сопротивлении воды по-разному влияет на два сравнения.",
+      "alt": "Слева Сравнение между зонами: Сохраняется. Справа Сравнение с истинной: Может исказиться.",
+      "file": "illustrations/geo.test_asquith.x1.22__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.22#c03",
+        "geo.test_asquith.x1.22#c04"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.22",
+      "node_id": "geo.test_asquith.x1.22",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.23.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Один расчёт по водному допущению даёт разные признаки в двух случаях.",
+      "alt": "Слева Водоносный пласт: Близкие оценки при верных параметрах. Справа Присутствуют углеводороды: Расчёт ниже фактической пористости.",
+      "file": "illustrations/geo.test_asquith.x1.23__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.23#c04",
+        "geo.test_asquith.x1.23#c05",
+        "geo.test_asquith.x1.23#c06",
+        "geo.test_asquith.x1.23#c07"
+      ],
+      "pages": [
+        130
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.23",
+      "node_id": "geo.test_asquith.x1.23",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.24.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение имеет смысл, когда водяной эталон надёжен.",
+      "alt": "Слева Водоносная зона: Кривые совпадают при верной оценке. Справа Углеводородная зона: Глубинная кривая выше эталона.",
+      "file": "illustrations/geo.test_asquith.x1.24__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.24#c06",
+        "geo.test_asquith.x1.24#c07",
+        "geo.test_asquith.x1.24#c09"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.24",
+      "node_id": "geo.test_asquith.x1.24",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.25.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Наличие воды в порах само по себе не означает её добычу.",
+      "alt": "Последовательность: Удержание воды на зёрнах → Вода не перемещается → Добыча углеводородов без воды.",
+      "file": "illustrations/geo.test_asquith.x1.25__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.25#c04",
+        "geo.test_asquith.x1.25#c05"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.25",
+      "node_id": "geo.test_asquith.x1.25",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x1.26.ill-1",
+      "template": "comparison_bar",
+      "class": "A",
+      "provenance": "реальные данные",
+      "caption": "Табличные диапазоны для обломочных пород. Чем мельче зёрна, тем выше доля удерживаемой воды.",
+      "alt": "На горизонтальной шкале пять диапазонов; от крупных обломков к алевриту полосы смещаются вправо.",
+      "file": "illustrations/geo_test_asquith_x1_26__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x1_26__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x1.26#c07",
+        "geo.test_asquith.x1.26#c08",
+        "geo.test_asquith.x1.26#c09",
+        "geo.test_asquith.x1.26#c10",
+        "geo.test_asquith.x1.26#c11",
+        "geo.test_asquith.x1.26#c12"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x1.26",
+      "node_id": "geo.test_asquith.x1.26",
+      "origin": "code_from_data",
+      "frame_class": "A",
+      "label": "реальные данные"
+    },
+    {
+      "id": "geo.test_asquith.x2.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Две координаты позволяют оценить водонасыщенность. Схема не показывает конкретных измерений.",
+      "alt": "Четыре блока сверху вниз ведут от двух измерений к сравнению зон.",
+      "file": "illustrations/geo.test_asquith.x2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.01#c02",
+        "geo.test_asquith.x2.01#c03",
+        "geo.test_asquith.x2.01#c05"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.01",
+      "node_id": "geo.test_asquith.x2.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Логарифм водонасыщенности исчезает для полностью водоносной зоны.",
+      "alt": "Блоки показывают переход от уравнения сопротивления к прямой.",
+      "file": "illustrations/geo.test_asquith.x2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.02#c06",
+        "geo.test_asquith.x2.02#c07",
+        "geo.test_asquith.x2.02#c08"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.02",
+      "node_id": "geo.test_asquith.x2.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Водная линия служит опорой для чтения горизонтального отклонения.",
+      "alt": "Блоки ведут от водной линии к интерпретации сдвига вправо.",
+      "file": "illustrations/geo.test_asquith.x2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.03#c08",
+        "geo.test_asquith.x2.03#c11",
+        "geo.test_asquith.x2.03#c12",
+        "geo.test_asquith.x2.03#c14"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.03",
+      "node_id": "geo.test_asquith.x2.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.04.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Форма линии помогает проверить выбор при достаточном разбросе точек.",
+      "alt": "Слева прямая линия при удачном выборе, справа кривая при ошибочном.",
+      "file": "illustrations/geo.test_asquith.x2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.04#c10",
+        "geo.test_asquith.x2.04#c11",
+        "geo.test_asquith.x2.04#c12"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.04",
+      "node_id": "geo.test_asquith.x2.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение привязано к пористости оцениваемой точки.",
+      "alt": "Последовательность идёт от считывания двух сопротивлений к расчёту.",
+      "file": "illustrations/geo.test_asquith.x2.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.05#c01",
+        "geo.test_asquith.x2.05#c02",
+        "geo.test_asquith.x2.05#c03"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.05",
+      "node_id": "geo.test_asquith.x2.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Множители дают точки при одной пористости. Через каждую проводят параллель.",
+      "alt": "Четыре блока от выбора точки на водной линии до подписанных параллелей.",
+      "file": "illustrations/geo.test_asquith.x2.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.06#c02",
+        "geo.test_asquith.x2.06#c03",
+        "geo.test_asquith.x2.06#c04",
+        "geo.test_asquith.x2.06#c05"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.06",
+      "node_id": "geo.test_asquith.x2.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.07.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Хингл использует две координаты, даже если свойства матрицы или сопротивление воды ещё неизвестны.",
+      "alt": "Три блока связывают координаты диаграммы с оценкой насыщенности.",
+      "file": "illustrations/geo.test_asquith.x2.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.07#c01",
+        "geo.test_asquith.x2.07#c02",
+        "geo.test_asquith.x2.07#c03"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.07",
+      "node_id": "geo.test_asquith.x2.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.08.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Преобразование координаты сопротивления выпрямляет тренды при фиксированной водонасыщенности.",
+      "alt": "Слева описаны исходные кривые, справа — результат преобразования шкалы.",
+      "file": "illustrations/geo.test_asquith.x2.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.08#c02",
+        "geo.test_asquith.x2.08#c03",
+        "geo.test_asquith.x2.08#c04",
+        "geo.test_asquith.x2.08#c05"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.08",
+      "node_id": "geo.test_asquith.x2.08",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.09.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Водная линия служит ориентиром; линии меньшей насыщенности расходятся от её пересечения с осью.",
+      "alt": "Слева свойства водной линии, справа свойства веера ниже неё.",
+      "file": "illustrations/geo.test_asquith.x2.09__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.09#c02",
+        "geo.test_asquith.x2.09#c06",
+        "geo.test_asquith.x2.09#c07",
+        "geo.test_asquith.x2.09#c10"
+      ],
+      "pages": [
+        133,
+        134
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.09",
+      "node_id": "geo.test_asquith.x2.09",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.10.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Даже одна точка водной линии даёт оценку сопротивления воды, если параметры сетки приняты.",
+      "alt": "Четыре блока от выбора водоносной точки до расчётного сопротивления воды.",
+      "file": "illustrations/geo.test_asquith.x2.10__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.10#c02",
+        "geo.test_asquith.x2.10#c03",
+        "geo.test_asquith.x2.10#c04",
+        "geo.test_asquith.x2.10#c05"
+      ],
+      "pages": [
+        134
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.10",
+      "node_id": "geo.test_asquith.x2.10",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.11.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Множители задают расчётные точки, а участки прямых сходятся при нулевой пористости.",
+      "alt": "Операции сверху вниз от водной линии до подписанного веера.",
+      "file": "illustrations/geo.test_asquith.x2.11__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.11#c02",
+        "geo.test_asquith.x2.11#c03",
+        "geo.test_asquith.x2.11#c04",
+        "geo.test_asquith.x2.11#c05"
+      ],
+      "pages": [
+        134
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.11",
+      "node_id": "geo.test_asquith.x2.11",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.12.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Диаграммы меняют местами часть известных и вычисляемых параметров.",
+      "alt": "Две колонки сопоставляют результаты и допущения Пикетта и Хингла.",
+      "file": "illustrations/geo.test_asquith.x2.12__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.12#c05",
+        "geo.test_asquith.x2.12#c08",
+        "geo.test_asquith.x2.12#c09",
+        "geo.test_asquith.x2.12#c11",
+        "geo.test_asquith.x2.12#c13",
+        "geo.test_asquith.x2.12#c14"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.12",
+      "node_id": "geo.test_asquith.x2.12",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.13.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Постоянство произведения пористости и насыщенности проверяют до расчёта проницаемости.",
+      "alt": "Слева показан случай постоянной доли воды, справа — меняющейся.",
+      "file": "illustrations/geo.test_asquith.x2.13__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.13#c01",
+        "geo.test_asquith.x2.13#c07",
+        "geo.test_asquith.x2.13#c08",
+        "geo.test_asquith.x2.13#c09"
+      ],
+      "pages": [
+        134
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.13",
+      "node_id": "geo.test_asquith.x2.13",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.14.ill-1",
+      "template": "crossplot",
+      "class": "A",
+      "provenance": "реальные данные",
+      "caption": "Пары из таблицы 7.4. При одинаковой пористости точки могут различаться по сопротивлению.",
+      "alt": "Горизонтальная ось — пористость. На пористости 0,212 точки занимают разные высоты; одинаковые пары накладываются.",
+      "file": "illustrations/geo_test_asquith_x2_14__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/geo_test_asquith_x2_14__1_m.svg",
+      "claim_ids": [
+        "geo.test_asquith.x2.14#c01",
+        "geo.test_asquith.x2.14#c02",
+        "geo.test_asquith.x2.14#c03",
+        "geo.test_asquith.x2.14#c04"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.14",
+      "node_id": "geo.test_asquith.x2.14",
+      "origin": "code_from_data",
+      "frame_class": "A",
+      "label": "реальные данные"
+    },
+    {
+      "id": "geo.test_asquith.x2.15.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Тип флюида определяет коэффициент. Формулы используют общую последовательность действий.",
+      "alt": "Слева показана нефть с коэффициентом 250, справа сухой газ с коэффициентом 79.",
+      "file": "illustrations/geo.test_asquith.x2.15__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.15#c02",
+        "geo.test_asquith.x2.15#c03"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.15",
+      "node_id": "geo.test_asquith.x2.15",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.16.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Квадрат применяют ко всей дроби, а не только к пористости.",
+      "alt": "Стрелки показывают возведение пористости в степень, умножение, деление и итоговый квадрат.",
+      "file": "illustrations/geo.test_asquith.x2.16__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.16#c01"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.16",
+      "node_id": "geo.test_asquith.x2.16",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.17.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверьте температуру и состояние насыщения, прежде чем использовать значения в расчёте.",
+      "alt": "Две колонки отделяют условие для воды от условия для породы.",
+      "file": "illustrations/geo.test_asquith.x2.17__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.17#c02",
+        "geo.test_asquith.x2.17#c03",
+        "geo.test_asquith.x2.17#c04"
+      ],
+      "pages": [
+        135
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.17",
+      "node_id": "geo.test_asquith.x2.17",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.18.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Следите за знаком перед членом с квадратом плотности.",
+      "alt": "Четыре блока показывают вход, знаки слагаемых и результат подстановки.",
+      "file": "illustrations/geo.test_asquith.x2.18__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.18#c02"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.18",
+      "node_id": "geo.test_asquith.x2.18",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.19.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сначала соберите оба члена. Только потом извлеките корень.",
+      "alt": "Стрелки ведут от отношения сопротивлений к квадратному корню всей суммы.",
+      "file": "illustrations/geo.test_asquith.x2.19__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.19#c01",
+        "geo.test_asquith.x2.19#c03"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.19",
+      "node_id": "geo.test_asquith.x2.19",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.20.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Итоговый квадрат относится к числителю вместе со знаменателем.",
+      "alt": "Четыре блока: константы, дробь, общий квадрат и запись результата.",
+      "file": "illustrations/geo.test_asquith.x2.20__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.20#c01",
+        "geo.test_asquith.x2.20#c02",
+        "geo.test_asquith.x2.20#c03"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.20",
+      "node_id": "geo.test_asquith.x2.20",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.21.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Два семейства моделей используют физически разные входы.",
+      "alt": "Слева доля сланца, справа электрические свойства глинистых минералов пласта.",
+      "file": "illustrations/geo.test_asquith.x2.21__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.21#c03",
+        "geo.test_asquith.x2.21#c04",
+        "geo.test_asquith.x2.21#c06",
+        "geo.test_asquith.x2.21#c07"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.21",
+      "node_id": "geo.test_asquith.x2.21",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.22.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Слой у глинистых минералов и подвижная вода представлены раздельно.",
+      "alt": "Две колонки показывают неподвижный слой и воду, которую могут вытеснить углеводороды.",
+      "file": "illustrations/geo.test_asquith.x2.22__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.22#c03",
+        "geo.test_asquith.x2.22#c04"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.22",
+      "node_id": "geo.test_asquith.x2.22",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x2.23.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Различайте физическое влияние сланца и ошибку при вводе поправки.",
+      "alt": "Цепочка показывает уменьшение контраста, поправку и риск ложного вывода.",
+      "file": "illustrations/geo.test_asquith.x2.23__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.23#c04",
+        "geo.test_asquith.x2.23#c05",
+        "geo.test_asquith.x2.23#c07",
+        "geo.test_asquith.x2.23#c08"
+      ],
+      "pages": [
+        136
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x2.23",
+      "node_id": "geo.test_asquith.x2.23",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x3.01.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Тип породы определяет, в каком порядке смотрят кривые.",
+      "alt": "Слева Терригенные породы: Сначала сопротивление. Справа Карбонатные породы: Сначала пористость.",
+      "file": "illustrations/geo.test_asquith.x3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x3.01#c01",
+        "geo.test_asquith.x3.01#c03"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x3.01",
+      "node_id": "geo.test_asquith.x3.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x4.01.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "На плавном фоне локальное отличие легче заметить.",
+      "alt": "Слева Соседние сланцы: Плавный фон с глубиной. Справа Коллектор: Отклик может отличаться.",
+      "file": "illustrations/geo.test_asquith.x4.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x4.01#c02",
+        "geo.test_asquith.x4.01#c03"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x4.01",
+      "node_id": "geo.test_asquith.x4.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Пористость помогает искать места для флюида; совместный просмотр уточняет тип породы.",
+      "alt": "Последовательность: Начать с пористости → Выделить интервалы с порами → Совместно просмотреть доступные кривые.",
+      "file": "illustrations/geo.test_asquith.x5.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.01#c03",
+        "geo.test_asquith.x5.01#c04",
+        "geo.test_asquith.x5.01#c05"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.01",
+      "node_id": "geo.test_asquith.x5.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Положение в схеме подсказывает, вход это, промежуточная величина или результат.",
+      "alt": "Последовательность: Исходные скважинные данные → Промежуточные показатели → Расчётные результаты.",
+      "file": "illustrations/geo.test_asquith.x5.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.02#c01",
+        "geo.test_asquith.x5.02#c02"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.02",
+      "node_id": "geo.test_asquith.x5.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.03.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнивают рисунок всего облака точек, а не одну точку.",
+      "alt": "Слева Вдоль одной гиперболы: Постоянное содержание воды, Близость к неснижаемому состоянию. Справа Разброс относительно кривых: Вода сверх удерживаемой, Выше доля добываемой воды.",
+      "file": "illustrations/geo.test_asquith.x5.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.03#c03",
+        "geo.test_asquith.x5.03#c04",
+        "geo.test_asquith.x5.03#c05",
+        "geo.test_asquith.x5.03#c06"
+      ],
+      "pages": [
+        141
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.03",
+      "node_id": "geo.test_asquith.x5.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сводка трёх книжных примеров. Это не воспроизведение координат точек.",
+      "alt": "Три блока сопоставляют вид облака точек с добычей в каждом примере.",
+      "file": "illustrations/geo.test_asquith.x5.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.04#c02",
+        "geo.test_asquith.x5.04#c03",
+        "geo.test_asquith.x5.04#c04",
+        "geo.test_asquith.x5.04#c06",
+        "geo.test_asquith.x5.04#c07",
+        "geo.test_asquith.x5.04#c08",
+        "geo.test_asquith.x5.04#c09"
+      ],
+      "pages": [
+        141
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.04",
+      "node_id": "geo.test_asquith.x5.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "В примере линию провели через скопление. Неопределённость сохранилась из-за диапазона пористости и разброса.",
+      "alt": "Блоки от исходных плотностей до проверки альтернативных наклонов.",
+      "file": "illustrations/geo.test_asquith.x5.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.05#c03",
+        "geo.test_asquith.x5.05#c04",
+        "geo.test_asquith.x5.05#c05"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.05",
+      "node_id": "geo.test_asquith.x5.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Для вычисления нужна видимая точка водоносной линии. В напечатанной подстановке примера есть расхождение.",
+      "alt": "Сверху вниз показан переход от недоступного пересечения к расчёту по выбранной точке.",
+      "file": "illustrations/geo.test_asquith.x5.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.06#c03",
+        "geo.test_asquith.x5.06#c05",
+        "geo.test_asquith.x5.06#c07",
+        "geo.test_asquith.x5.06#c08",
+        "geo.test_asquith.x5.06#c09",
+        "geo.test_asquith.x5.06#c10"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.06",
+      "node_id": "geo.test_asquith.x5.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.07.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема передаёт расчёт для книжного примера. Пористость остаётся равной 0,10.",
+      "alt": "Последовательность блоков показывает исходное сопротивление, множитель, результат и построение параллели.",
+      "file": "illustrations/geo.test_asquith.x5.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.07#c01",
+        "geo.test_asquith.x5.07#c02",
+        "geo.test_asquith.x5.07#c03",
+        "geo.test_asquith.x5.07#c04"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.07",
+      "node_id": "geo.test_asquith.x5.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.08.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Пористость нужна, чтобы подобрать сопоставимую опору.",
+      "alt": "Стрелки: общая пористость, отношение сопротивлений, степень и ответ.",
+      "file": "illustrations/geo.test_asquith.x5.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.08#c02",
+        "geo.test_asquith.x5.08#c06",
+        "geo.test_asquith.x5.08#c07"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.08",
+      "node_id": "geo.test_asquith.x5.08",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.09.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение параметров из подписей. Это не перерисовка двух сеток.",
+      "alt": "Две колонки сопоставляют пары a и m для песчаника и карбонатной породы.",
+      "file": "illustrations/geo.test_asquith.x5.09__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.09#c01",
+        "geo.test_asquith.x5.09#c02",
+        "geo.test_asquith.x5.09#c03",
+        "geo.test_asquith.x5.09#c04"
+      ],
+      "pages": [
+        143,
+        144
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.09",
+      "node_id": "geo.test_asquith.x5.09",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.10.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Плотность матрицы находят по продолжению линии. Это схема чтения, а не копия графика.",
+      "alt": "Четыре блока показывают переход от шкалы плотности и точек к оценке матрицы.",
+      "file": "illustrations/geo.test_asquith.x5.10__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.10#c03",
+        "geo.test_asquith.x5.10#c04",
+        "geo.test_asquith.x5.10#c05"
+      ],
+      "pages": [
+        145
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.10",
+      "node_id": "geo.test_asquith.x5.10",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.11.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Вход и результат описывают разные объекты.",
+      "alt": "Стрелки ведут от сопротивления водоносной линии к вычисленному сопротивлению воды.",
+      "file": "illustrations/geo.test_asquith.x5.11__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.11#c02",
+        "geo.test_asquith.x5.11#c03",
+        "geo.test_asquith.x5.11#c04",
+        "geo.test_asquith.x5.11#c05"
+      ],
+      "pages": [
+        145
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.11",
+      "node_id": "geo.test_asquith.x5.11",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.12.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Множитель даёт первую опору, а пересечение с водоносной линией — вторую.",
+      "alt": "Четыре блока описывают получение точки и построение линии от общего пересечения.",
+      "file": "illustrations/geo.test_asquith.x5.12__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.12#c01",
+        "geo.test_asquith.x5.12#c02",
+        "geo.test_asquith.x5.12#c03",
+        "geo.test_asquith.x5.12#c04"
+      ],
+      "pages": [
+        145
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.12",
+      "node_id": "geo.test_asquith.x5.12",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.13.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Пористость определяет опору. Отношение сопротивлений входит в формулу.",
+      "alt": "Стрелки связывают пористость точки, проводимую опору, отношение и результат.",
+      "file": "illustrations/geo.test_asquith.x5.13__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.13#c02",
+        "geo.test_asquith.x5.13#c03",
+        "geo.test_asquith.x5.13#c04"
+      ],
+      "pages": [
+        145
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.13",
+      "node_id": "geo.test_asquith.x5.13",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.14.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Кривые дают разные величины. Здесь схема чтения, а не перерисовка палетки.",
+      "alt": "Слева показано чтение проницаемости, справа — чтение содержания воды у той же точки.",
+      "file": "illustrations/geo.test_asquith.x5.14__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.14#c07",
+        "geo.test_asquith.x5.14#c08",
+        "geo.test_asquith.x5.14#c09",
+        "geo.test_asquith.x5.14#c10"
+      ],
+      "pages": [
+        146
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.14",
+      "node_id": "geo.test_asquith.x5.14",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_asquith.x5.15.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнение распределений помогает решить, применима ли оценка проницаемости.",
+      "alt": "Слева описан согласованный рисунок точек, справа — рассеяние относительно него.",
+      "file": "illustrations/geo.test_asquith.x5.15__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.15#c01",
+        "geo.test_asquith.x5.15#c03",
+        "geo.test_asquith.x5.15#c04"
+      ],
+      "pages": [
+        146
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_asquith.x5.15",
+      "node_id": "geo.test_asquith.x5.15",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    }
+  ]
+}

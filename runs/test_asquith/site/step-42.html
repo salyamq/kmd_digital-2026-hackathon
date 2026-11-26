@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 42. Как провести линию равной насыщенности — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x5.07" data-index="42">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 42 из 66</p>
+    <h1>Как провести линию равной насыщенности</h1>
+    <p class="booktitle">В книге: «Диаграмма Пикетта» <span class="pg">стр. 142</span></p>
+    <p class="meta">
+      <span class="chip">≈ 5 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: процесс/прибор + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-40.html">шаг 40 «Как выбрать водоносную линию Пикетта»</a> <span class="muted">(предпосылка)</span>, <a href="step-41.html">шаг 41 «Как найти сопротивление пластовой воды»</a> <span class="muted">(предпосылка)</span>, <a href="step-38.html">шаг 38 «Как нанести линии на Пикетта»</a> <span class="muted">(пример)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">На Пикетте линию водонасыщенности проводят параллельно водоносной.</p><p>Табличный множитель даёт сопротивление опорной точки при той же пористости.</p><p class="threshold"><b>Пороговая идея.</b> На диаграмме Пикетта линии заданной насыщенности параллельны водоносной линии. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как получить опорную точку</h3>          <div class="para" id="how-1">
+            <p>Возьмите сопротивление <strong class="term">водоносной линии</strong>, линии полного водонасыщения, при фиксированной пористости. Умножьте его на <strong class="term">табличный множитель</strong>, коэффициент для выбранной водонасыщенности. Табличные множители применяют при показателе насыщения $n=2{,}0$. Через найденную точку проведите линию параллельно водоносной. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.07.c01"><p>«The water saturation lines are constructed on the plot from the value for $R_{a}$ and the multipliers from Table 7.2.»</p><footer>— автор, стр. 142 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.07.c02"><p>«The multipliers are for a saturation exponent ($n$) of 2.0.»</p><footer>— автор, стр. 142 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.07.c03"><p>«For each line to be plotted, multiply $R_{a}$ by the multiplier to get the $y$-intercept and draw a line from the $y$-intercept parallel to the water-bearing line.»</p><footer>— автор, стр. 142 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 284" role="img" aria-label="Водоносная линия: 4,6 → Множитель для 50%: 4 → Опорное сопротивление: 18,4 → Параллель через опорную точку" class="ill-svg"><title>Водоносная линия: 4,6 → Множитель для 50%: 4 → Опорное сопротивление: 18,4 → Параллель через опорную точку</title><rect class="ill-bg" x="0" y="0" width="360" height="284" rx="8"/><rect class="ill-box" x="12.0" y="30" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Водоносная линия: 4,6</tspan></text><line class="ill-line" x1="180.0" y1="69.0" x2="180.0" y2="93.0"/><polygon class="ill-arrow" points="180.0,93.0 176.1,84.9 183.9,84.9"/><rect class="ill-box" x="12.0" y="97" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="121" text-anchor="middle"><tspan x="180.0" dy="0">Множитель для 50%: 4</tspan></text><line class="ill-line" x1="180.0" y1="136.0" x2="180.0" y2="160.0"/><polygon class="ill-arrow" points="180.0,160.0 176.1,151.9 183.9,151.9"/><rect class="ill-box" x="12.0" y="164" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="188" text-anchor="middle"><tspan x="180.0" dy="0">Опорное сопротивление: 18,4</tspan></text><line class="ill-line" x1="180.0" y1="203.0" x2="180.0" y2="227.0"/><polygon class="ill-arrow" points="180.0,227.0 176.1,218.9 183.9,218.9"/><rect class="ill-box" x="12.0" y="231" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="255" text-anchor="middle"><tspan x="180.0" dy="0">Параллель через опорную точку</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Схема передаёт расчёт для книжного примера. Пористость остаётся равной 0,10.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 142</span>
+  </figcaption>
+</figure>
+<h3>Линия для половины объёма пор</h3>          <div class="para" id="how-2">
+            <p>В примере строят линию водонасыщенности 50%. При плотностной пористости DPHI = 0,10 сопротивление водоносной линии равно 4,6, а табличный множитель равен 4. Умножение даёт 18,4 при той же пористости. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x5.07.c04"><p>«To plot the line for $50\%$ water saturation, for example, if $R_{a}$ (at $\mathrm{DPHI} = 0.10$) is 4.6 and the multiplier (from Table 7.2) is 4, the $y$-intercept for the $50\%$ water saturation line (at $\mathrm{DPHI} = 0.10$) is 18.4.»</p><footer>— автор, стр. 142 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">По шагам</p>        <ol class="proc"><li>Считайте сопротивление водоносной линии при выбранной пористости. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></li><li>Умножьте сопротивление на множитель для выбранной водонасыщенности. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></li><li>Проведите линию через найденную точку параллельно водоносной. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></li></ol>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-geo_test_asquith_x5_07_e01">
+          <h3>Линия водонасыщенности 50% <span class="pg">стр. 142</span></h3>
+          <p><b>Условие.</b> При DPHI = 0.10 R_a = 4.6; множитель из таблицы 7.2 равен 4.</p>
+<ol class="ex-steps"><li>Умножить 4.6 на 4.</li><li>Найти точку при DPHI = 0.10 и сопротивлении 18.4.</li><li>Провести линию параллельно водоносной.</li></ol>          <p class="ex-result"><b>Итог.</b> Опорное значение для линии 50% равно 18.4.</p>
+        </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Как построить линию для 50%</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Плотностная пористость 0,10</li><li>Опорное сопротивление 4,6</li><li>Табличный множитель 4</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Умножьте сопротивление на множитель и сохраните прежнюю пористость. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Через точку с сопротивлением 18,4 проведите параллель к водоносной линии.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Искомая линия соответствует 50% воды. При пористости 0,10 опора равна 4,6, показатель насыщения равен 2,0. <span class="muted small">(модель: условие из узла)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Отметить 18,4 при той же пористости</button><button type="button" class="btn ghost case-opt" data-i="1">Отметить 4,6 при изменённой пористости</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Множитель 4 относится к сопротивлению, а пористость не меняется.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Табличные множители применяют при показателе насыщения $n=2{,}0$. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></li><li>При DPHI = 0,10 для линии 50% исходное сопротивление 4,6 умножают на 4 и получают 18,4. <span class="pg" title="Страница книги (по PDF)">стр. 142</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Параллельные линии вычислены по опорной, а не подгоняются по отдельным группам точек.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Водоносная линия и множители.</dd>
+          <dt>Выход</dt><dd>Линии заданной водонасыщенности.</dd>
+          <dt>Где ломается</dt><dd>Приведённые множители рассчитаны для n = 2.0.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Водоносная линия и таблица множителей.</dd>
+            <dt>Ручные шаги</dt><dd>Рассчитать опоры и построить параллели.</dd>
+            <dt>Точки суждения</dt><dd>Проверить, что показатель насыщения соответствует таблице.</dd>
+            <dt>Время</dt><dd>Действия повторяются для каждой линии.</dd>
+            <dt>Типичные ошибки</dt><dd>Заменить умножение на произвольный сдвиг по числовой шкале.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Как семейство параллельных порогов с общей опорной линией.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Положение линий и масштаб зависят от модели и способа построения диаграммы.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля объёма пор, занятая водой. <span class="pg">стр. 142</span> <span class="chip chip-model">модель</span></dd><dt>Плотностная пористость <span class="en" lang="en">(density porosity)</span></dt><dd>Пористость, которую вычисляют по объёмной плотности с учётом плотности матрицы и флюида. <span class="pg">стр. 142</span> <span class="chip chip-model">модель</span></dd><dt>Сопротивление водоносной породы <span class="en" lang="en">(resistivity in the undisturbed, water-bearing zone)</span></dt><dd>R_a: удельное сопротивление в неизменённой водоносной зоне. <span class="pg">стр. 142</span></dd><dt>Водоносная линия <span class="en" lang="en">(water-bearing line)</span></dt><dd>Линия, проведённая через группу точек пласта, насыщенного водой. <span class="pg">стр. 142</span></dd><dt>Показатель насыщения <span class="en" lang="en">(saturation exponent)</span></dt><dd>Степенной параметр n в уравнении насыщенности. <span class="pg">стр. 142</span> <span class="chip chip-model">модель</span></dd><dt>Диаграмма Пикетта <span class="en" lang="en">(Pickett plot)</span></dt><dd>График сопоставления сопротивления и пористости для различения водоносных и углеводородоносных зон. <span class="pg">стр. 142</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x5-07-t01" data-task="geo.test_asquith.x5.07.t01" data-type="order">
+  <div class="task-head">
+    <span class="task-type">Порядок</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q" id="q-geo-test_asquith-x5-07-t01">Расставьте операции построения линии.</p>
+  <p class="hint">Перетащите пункты (мышью или пальцем за ⠿) или двигайте кнопками ↑ ↓.</p>
+  <ol class="order" aria-labelledby="q-geo-test_asquith-x5-07-t01">
+    <li class="order-item" data-pos="1"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Умножьте его на табличный множитель.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="0"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Считайте сопротивление водоносной линии при фиксированной пористости.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+    <li class="order-item" data-pos="2"><span class="grip" aria-hidden="true">⠿</span><span class="order-text">Проведите параллель через найденную точку.</span><span class="order-btns"><button type="button" class="mv up" aria-label="Выше">↑</button><button type="button" class="mv down" aria-label="Ниже">↓</button></span></li>
+  </ol>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Считайте сопротивление водоносной линии при фиксированной пористости. → Умножьте его на табличный множитель. → Проведите параллель через найденную точку.</p>
+    <p class="fb-expl">Сначала получают координату на прежней пористости, затем проводят по ней параллель. <a href="#how-1">Где это в тексте (стр. 142) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x5-07-t02" data-task="geo.test_asquith.x5.07.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-geo-test_asquith-x5-07-t02">Какое опорное сопротивление получается для линии 50% в примере?</label>
+  <p class="numeric"><input id="in-geo-test_asquith-x5-07-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> </p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 18,4</p>
+    <p class="fb-expl">В примере автор умножает 4,6 на множитель 4 при неизменной пористости. <a href="#how-2">Где это в тексте (стр. 142) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x5.07.c01"><p>Для линий водонасыщенности используют значение сопротивления водоносной линии и множители таблицы 7.2. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«The water saturation lines are constructed on the plot from the value for $R_{a}$ and the multipliers from Table 7.2.»</p><footer>— стр. 142</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.07.c02"><p>Табличные множители применяются для показателя насыщения n = 2.0. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The multipliers are for a saturation exponent ($n$) of 2.0.»</p><footer>— стр. 142</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.07.c03"><p>Умножением получают координату опорной точки и проводят через неё линию параллельно водоносной. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«For each line to be plotted, multiply $R_{a}$ by the multiplier to get the $y$-intercept and draw a line from the $y$-intercept parallel to the water-bearing line.»</p><footer>— стр. 142</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x5.07.c04"><p>Для линии водонасыщенности 50% при DPHI = 0.10 сопротивление 4.6 и множитель 4 дают опорное значение 18.4. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«To plot the line for $50\%$ water saturation, for example, if $R_{a}$ (at $\mathrm{DPHI} = 0.10$) is 4.6 and the multiplier (from Table 7.2) is 4, the $y$-intercept for the $50\%$ water saturation line (at $\mathrm{DPHI} = 0.10$) is 18.4.»</p><footer>— стр. 142</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u142_14-1" tabindex="-1">
+          <p class="pg">Стр. 142 · **Carbonates:**</p>
+          <blockquote>The water saturation lines are constructed on the plot from the value for $R_{a}$ and the multipliers from Table 7.2. The multipliers are for a saturation exponent ($n$) of 2.0. For each line to be plotted, multiply $R_{a}$ by the multiplier to get the $y$-intercept and draw a line from the $y$-intercept parallel to the water-bearing line. To plot the line for $50\%$ water saturation, for example, if $R_{a}$ (at $\mathrm{DPHI} = 0.10$) is 4.6 and the multiplier (from Table 7.2) is 4, the $y$-intercept for the $50\%$ water saturation line (at $\mathrm{DPHI} = 0.10$) is 18.4.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-43.html">шаг 43 «Как посчитать насыщенность по Пикетту»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-41.html" rel="prev"><span>← Назад</span><b>Как найти сопротивление пластовой воды</b></a><a class="next" href="step-43.html" rel="next"><span>Дальше →</span><b>Как посчитать насыщенность по Пикетту</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Как провести линию равной насыщенности</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x5.07">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x5.07.t01", "type": "order", "question": "Расставьте операции построения линии.", "explanation": "Сначала получают координату на прежней пористости, затем проводят по ней параллель.", "page": 142, "link": "#how-1", "step_title": "Как провести линию равной насыщенности", "step_index": 42, "node_id": "geo.test_asquith.x5.07", "items": [{"text": "Умножьте его на табличный множитель.", "pos": 1}, {"text": "Считайте сопротивление водоносной линии при фиксированной пористости.", "pos": 0}, {"text": "Проведите параллель через найденную точку.", "pos": 2}], "key": [0, 1, 2], "answer_text": "Считайте сопротивление водоносной линии при фиксированной пористости. → Умножьте его на табличный множитель. → Проведите параллель через найденную точку."}, {"id": "geo.test_asquith.x5.07.t02", "type": "numeric", "question": "Какое опорное сопротивление получается для линии 50% в примере?", "explanation": "В примере автор умножает 4,6 на множитель 4 при неизменной пористости.", "page": 142, "link": "#how-2", "step_title": "Как провести линию равной насыщенности", "step_index": 42, "node_id": "geo.test_asquith.x5.07", "key": {"answer": 18.4, "tolerance": 0}, "unit": "", "answer_text": "18,4"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

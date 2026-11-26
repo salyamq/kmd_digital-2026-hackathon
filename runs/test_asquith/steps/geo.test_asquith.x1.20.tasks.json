@@ -1,0 +1,63 @@
+{
+  "tasks": [
+    {
+      "type": "numeric",
+      "claim_id": "geo.test_asquith.x1.20.c04",
+      "question": "Какую водонасыщенность получают, если оценка зоны относится к минимуму как 4?",
+      "evidence": "Если значение зоны в 4 раза выше минимума, водонасыщенность равна 0,50.",
+      "explanation": "Авторы берут корень из обратного отношения.",
+      "answer": 0.5,
+      "tolerance": 0,
+      "unit": null,
+      "page": 130,
+      "anchor": "how-2",
+      "id": "geo.test_asquith.x1.20.t01",
+      "node_id": "geo.test_asquith.x1.20"
+    },
+    {
+      "type": "multiple",
+      "claim_id": "geo.test_asquith.x1.20.c01",
+      "question": "Какие действия входят в расчёт по формуле авторов?",
+      "evidence": "По уравнению Арчи делят опорный минимум на кажущееся сопротивление воды в зоне. Из этого отношения извлекают квадратный корень.",
+      "explanation": "Корень берут из отношения минимума к значению зоны.",
+      "options": [
+        "Разделить значение зоны на минимум",
+        "Разделить минимум на значение зоны",
+        "Извлечь квадратный корень из полученного отношения"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "page": 130,
+      "anchor": "how-1",
+      "id": "geo.test_asquith.x1.20.t02",
+      "node_id": "geo.test_asquith.x1.20"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Что стоит в числителе под корнем?",
+      "back": "Опорный минимум кажущегося сопротивления воды.",
+      "claim_ids": [
+        "geo.test_asquith.x1.20.c01",
+        "geo.test_asquith.x1.20.c02"
+      ],
+      "kind": "mistake",
+      "page": 130,
+      "id": "geo.test_asquith.x1.20.k01",
+      "node_id": "geo.test_asquith.x1.20"
+    },
+    {
+      "front": "При каком n используют квадратный корень?",
+      "back": "При показателе насыщения n = 2.",
+      "claim_ids": [
+        "geo.test_asquith.x1.20.c02"
+      ],
+      "kind": "number",
+      "page": 130,
+      "id": "geo.test_asquith.x1.20.k02",
+      "node_id": "geo.test_asquith.x1.20"
+    }
+  ]
+}

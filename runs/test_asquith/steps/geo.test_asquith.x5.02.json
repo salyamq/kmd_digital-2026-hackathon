@@ -1,0 +1,356 @@
+{
+  "node_id": "geo.test_asquith.x5.02",
+  "chapter": "test_asquith",
+  "index": 7,
+  "part": {
+    "id": "part1",
+    "title": "От приборов к интервалам интереса"
+  },
+  "title_beginner": "От скважинных данных к расчётам",
+  "title_book": "Схема интерпретации",
+  "section": "x5",
+  "pages": [
+    140
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "И",
+    "threshold": "Каротажная кривая, оценённый промежуточный параметр и итоговый показатель — разные ступени."
+  },
+  "threshold": "Каротажная кривая, оценённый промежуточный параметр и итоговый показатель — разные ступени.",
+  "format": "data_practice",
+  "format_rationale": "По доступным входам выберите следующий шаг схемы и обоснуйте итоговый выход.",
+  "order_rationale": "После поиска интервалов показывает общую карту перехода от входных данных к результатам; конкретные расчёты будут дальше.",
+  "essence": [
+    "Читайте схему по ходу расчёта, слева направо.",
+    "Один итоговый показатель может иметь несколько путей получения."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как читать схему",
+          "text": "Проследите исходные данные слева, промежуточные показатели в центре и расчётные результаты справа. Слева находятся каротаж и другие скважинные данные. Во многих случаях средняя колонка даёт показатели для расчёта величин справа.",
+          "claim_ids": [
+            "geo.test_asquith.x5.02.c01",
+            "geo.test_asquith.x5.02.c02"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.02.c01",
+              "quote": "The sources of raw data, both well logs and other well-bore information, are shown in the left column.",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.02.c02",
+              "quote": "In many cases, the information generated from that raw data (shown in the center column) is used in computations to produce the quantities of interest (shown in the right column).",
+              "page": 140,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что делать дальше",
+          "text": "Пористость и объём глинистой составляющей можно получить несколькими способами. Чтобы разобраться в конкретном расчёте, обратитесь к главе, обозначенной в схеме.",
+          "claim_ids": [
+            "geo.test_asquith.x5.02.c03",
+            "geo.test_asquith.x5.02.c04"
+          ],
+          "pages": [
+            140
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.02.c03",
+              "quote": "The chart shows that there are several ways to calculate porosity ($\\phi$) and shale volume ($V_{shale}$) from the raw data.",
+              "page": 140,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.02.c04",
+              "quote": "The chapters that explain the calculations are listed in the flowchart.",
+              "page": 140,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "text": "Найдите исходные данные в левой колонке.",
+          "claim_ids": [
+            "geo.test_asquith.x5.02.c01"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Найдите промежуточные показатели в средней колонке.",
+          "claim_ids": [
+            "geo.test_asquith.x5.02.c02"
+          ],
+          "pages": [
+            140
+          ]
+        },
+        {
+          "text": "Проследите их использование для показателей в правой колонке.",
+          "claim_ids": [
+            "geo.test_asquith.x5.02.c02"
+          ],
+          "pages": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Доступные скважинные записи",
+          "Положение величин в схеме",
+          "Ссылки на главы"
+        ],
+        "rule": "Идите от исходных данных через промежуточные показатели к расчётным результатам.",
+        "conclusion": "Проверьте, каким из доступных путей можно получить нужную величину.",
+        "claim_ids": [
+          "geo.test_asquith.x5.02.c01",
+          "geo.test_asquith.x5.02.c02",
+          "geo.test_asquith.x5.02.c03",
+          "geo.test_asquith.x5.02.c04"
+        ],
+        "cases": [
+          {
+            "given": "Доступны исходные каротажные данные; нужно найти, что можно получить из них.",
+            "options": [
+              "Начать с соответствующих входов слева",
+              "Считать правый столбец списком сырья"
+            ],
+            "answer": 0,
+            "why": "Слева схема перечисляет источники исходных данных.",
+            "source": "модель"
+          },
+          {
+            "given": "На схеме видны разные пути к пористости.",
+            "options": [
+              "Искать только единственный допустимый способ",
+              "Проследить путь от имеющихся данных и свериться с указанной главой"
+            ],
+            "answer": 1,
+            "why": "Несколько способов получения пористости предусмотрены схемой.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Не следует смешивать источник сигнала с вычисленной из него величиной.",
+        "inputs": "Каротажные и другие скважинные данные.",
+        "outputs": "Промежуточные параметры и рассчитываемые показатели.",
+        "breaks_where": "Некоторые параметры имеют несколько способов расчёта.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Скважинные данные и схема.",
+          "manual_steps": "Проследить происхождение каждой нужной величины.",
+          "judgment_points": "Выбрать путь расчёта при наличии альтернатив.",
+          "time": "Зависит от доступности входов.",
+          "typical_errors": "Хранить производную величину как исходное измерение.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как граф происхождения данных: исходные поля, преобразования и итоговая витрина.",
+        "breaks_where": "Связи опираются на модели породы, а не на гарантированно точные преобразования.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "number": "7.2",
+          "page": 140,
+          "caption": "Figure 7.2. Flowchart for interpretation.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u140_10",
+          "scan": "pages/p140.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        140
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "en": "porosity",
+          "definition": "Доля объёма пор в породе.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Каротаж",
+          "en": "well logging",
+          "definition": "Получение скважинных записей о свойствах пород и среды.",
+          "page": 140,
+          "by": "model"
+        },
+        {
+          "term": "Объём глинистой составляющей",
+          "en": "shale volume",
+          "definition": "Доля объёма породы, относимая к глинистой составляющей.",
+          "page": 140,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Положение в схеме подсказывает, вход это, промежуточная величина или результат.",
+      "alt": "Последовательность: Исходные скважинные данные → Промежуточные показатели → Расчётные результаты.",
+      "file": "illustrations/geo.test_asquith.x5.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.02.c01",
+        "geo.test_asquith.x5.02.c02"
+      ],
+      "pages": [
+        140
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.02.c01",
+      "kind": "observation",
+      "text": "Левая колонка показывает источники исходной информации: каротаж и другие скважинные данные.",
+      "quote": "The sources of raw data, both well logs and other well-bore information, are shown in the left column.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.02.c02",
+      "kind": "inference",
+      "text": "Во многих случаях показатели средней колонки используют для расчёта величин из правой.",
+      "quote": "In many cases, the information generated from that raw data (shown in the center column) is used in computations to produce the quantities of interest (shown in the right column).",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.02.c03",
+      "kind": "observation",
+      "text": "Пористость и объём глинистой составляющей можно вычислять из исходных данных несколькими способами.",
+      "quote": "The chart shows that there are several ways to calculate porosity ($\\phi$) and shale volume ($V_{shale}$) from the raw data.",
+      "page": 140,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.02.c04",
+      "kind": "observation",
+      "text": "В схеме указаны главы, объясняющие расчёты.",
+      "quote": "The chapters that explain the calculations are listed in the flowchart.",
+      "page": 140,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.02.t01",
+    "geo.test_asquith.x5.02.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.02.k01",
+    "geo.test_asquith.x5.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x3.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x4.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x5.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

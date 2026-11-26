@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 26. Что выдаёт пористость по сопротивлению — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.23" data-index="26">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Интерактив</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 26 из 66</p>
+    <h1>Что выдаёт пористость по сопротивлению</h1>
+    <p class="booktitle">В книге: «Basis for the technique» <span class="pg">стр. 130</span></p>
+    <p class="meta">
+      <span class="chip">≈ 9 мин</span>
+      <span class="chip">⟳ Интерактив</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-25.html">шаг 25 «Как получить пористость по сопротивлению»</a> <span class="muted">(предпосылка)</span>, <a href="step-08.html">шаг 8 «Как оценить воду вдали от ствола»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Пористость по сопротивлению не всегда равна фактической.</p><p>При углеводородах расчёт по водяной модели даёт меньшую пористость.</p><p class="threshold"><b>Пороговая идея.</b> Пористость, вычисленная при допущении полного водонасыщения, не равна фактической во всех пластах. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Интерактив: как это происходит</h2>
+      <div class="anim" data-frames="3">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-23/m00.svg"><img src="media/geo-test-asquith-x1-23/f00.svg" alt="Кадр 1 из 3: На экране два входа: что могло вызвать разницу между двумя оценками?" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-23/m01.svg"><img src="media/geo-test-asquith-x1-23/f01.svg" alt="Кадр 2 из 3: Принимается допущение о полном водонасыщении. При фактическом полном водонасыщении расчёт близок к ориентиру, если параметры реалистичны." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-23/m02.svg"><img src="media/geo-test-asquith-x1-23/f02.svg" alt="Кадр 3 из 3: Если вместо только воды есть углеводороды, сопротивление выше водоносного; одинаковое правило расчёта даёт меньшую пористость. Сравните с независимой оценкой." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="2" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 3</span>
+        </div>
+        <p class="anim-cap">На экране два входа: что могло вызвать разницу между двумя оценками?</p>
+        <script type="application/json" class="anim-caps">["\u041d\u0430 \u044d\u043a\u0440\u0430\u043d\u0435 \u0434\u0432\u0430 \u0432\u0445\u043e\u0434\u0430: \u0447\u0442\u043e \u043c\u043e\u0433\u043b\u043e \u0432\u044b\u0437\u0432\u0430\u0442\u044c \u0440\u0430\u0437\u043d\u0438\u0446\u0443 \u043c\u0435\u0436\u0434\u0443 \u0434\u0432\u0443\u043c\u044f \u043e\u0446\u0435\u043d\u043a\u0430\u043c\u0438?", "\u041f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f \u0434\u043e\u043f\u0443\u0449\u0435\u043d\u0438\u0435 \u043e \u043f\u043e\u043b\u043d\u043e\u043c \u0432\u043e\u0434\u043e\u043d\u0430\u0441\u044b\u0449\u0435\u043d\u0438\u0438. \u041f\u0440\u0438 \u0444\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u043c \u043f\u043e\u043b\u043d\u043e\u043c \u0432\u043e\u0434\u043e\u043d\u0430\u0441\u044b\u0449\u0435\u043d\u0438\u0438 \u0440\u0430\u0441\u0447\u0451\u0442 \u0431\u043b\u0438\u0437\u043e\u043a \u043a \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u0443, \u0435\u0441\u043b\u0438 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0440\u0435\u0430\u043b\u0438\u0441\u0442\u0438\u0447\u043d\u044b.", "\u0415\u0441\u043b\u0438 \u0432\u043c\u0435\u0441\u0442\u043e \u0442\u043e\u043b\u044c\u043a\u043e \u0432\u043e\u0434\u044b \u0435\u0441\u0442\u044c \u0443\u0433\u043b\u0435\u0432\u043e\u0434\u043e\u0440\u043e\u0434\u044b, \u0441\u043e\u043f\u0440\u043e\u0442\u0438\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u044b\u0448\u0435 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u043e\u0433\u043e; \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u043e\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u043e \u0440\u0430\u0441\u0447\u0451\u0442\u0430 \u0434\u0430\u0451\u0442 \u043c\u0435\u043d\u044c\u0448\u0443\u044e \u043f\u043e\u0440\u0438\u0441\u0442\u043e\u0441\u0442\u044c. \u0421\u0440\u0430\u0432\u043d\u0438\u0442\u0435 \u0441 \u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0439 \u043e\u0446\u0435\u043d\u043a\u043e\u0439."]</script>
+<p class="muted small">Допущения: Без числового примера: показано направление отличий, а не величина эффекта..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>Уравнение Арчи можно решить для пористости. Для водяного варианта принимают водонасыщенность равной единице. Если поры действительно заполнены водой, истинное сопротивление совпадает с сопротивлением полностью водонасыщенного пласта. Если параметры близки к фактическим, расчёт в водоносном пласте близок к фактической пористости. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c01"><p>«From Chapter 1, Archie&#39;s equation can be solved for porosity:»</p><footer>— автор, стр. 130 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c02"><p>«If the water-bearing case is considered, where $S_w = 1$, the equation reduces to:»</p><footer>— автор, стр. 130 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c03"><p>«By using the form of the equation above (7.19), the water-filled porosity is determined.»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c04"><p>«Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$).»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c05"><p>«The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters.»</p><footer>— автор, стр. 130 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" role="img" aria-label="Водоносный пласт / Присутствуют углеводороды" class="ill-svg"><title>Водоносный пласт / Присутствуют углеводороды</title><rect class="ill-bg" x="0" y="0" width="360" height="210" rx="8"/><rect class="ill-box ill-good" x="12" y="30" width="336" height="76" rx="10"/><text class="ill-title" x="180.0" y="54" text-anchor="middle"><tspan x="180.0" dy="0">Водоносный пласт</tspan></text><text class="ill-text" x="26" y="79" text-anchor="start"><tspan x="26" dy="0">• Близкие оценки при верных параметрах</tspan></text><rect class="ill-box ill-bad" x="12" y="116" width="336" height="76" rx="10"/><text class="ill-title" x="180.0" y="140" text-anchor="middle"><tspan x="180.0" dy="0">Присутствуют углеводороды</tspan></text><text class="ill-text" x="26" y="165" text-anchor="start"><tspan x="26" dy="0">• Расчёт ниже фактической пористости</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Один расчёт по водному допущению даёт разные признаки в двух случаях.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 130</span>
+  </figcaption>
+</figure>
+<h3>Что видно</h3>          <div class="para" id="how-2">
+            <p>При углеводородах истинное сопротивление выше водного эталона, а расчётная пористость ниже фактической. Традиционно кривую строят на дорожке ПС и сравнивают её ход с кривой ПС. Можно наложить её на приборную пористость. Снижение расчётной кривой относительно приборной авторы считают признаком углеводородов. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c06"><p>«When the formation contains hydrocarbons, $R_t$ is greater than $R_o$,»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c07"><p>«When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c08"><p>«Traditionally this curve has been plotted in the same log track as the SP curve, and its movement compared to the SP.»</p><footer>— автор, стр. 130 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c09"><p>«It can also be plotted in the same track as a porosity curve from one of the porosity tools, where decreases in conductivity-derived porosity with respect to the porosity curve indicate the presence of hydrocarbons.»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Оценка насыщения</h3>          <div class="para" id="how-3">
+            <p>Авторы предлагают оценивать водонасыщенность отношением пористости по проводимости к фактической. Это отдельная оценка, приведённая авторами. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.23.c10"><p>«Water saturation can be estimated by the following equation:»</p><footer>— автор, стр. 130 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+<h3>Пояснение модели</h3>          <div class="para para-model" id="how-4">
+            <p>Не следует считать отношение пористостей общей алгебраической перестановкой формул для произвольных показателей. <span class="chip chip-model" title="Пояснение модели: в книге этого нет">пояснение модели</span></p>
+          </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Решение на данных</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Расчёт при полном водонасыщении</li><li>Приборная пористость</li><li>Оценки параметров Арчи</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сопоставьте кривые, учитывая пригодность параметров расчёта. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Уменьшение расчётной пористости относительно приборной указывает на возможные углеводороды.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Поры заполнены водой, а параметры расчёта близки к фактическим. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Расчёт близок к фактической пористости</button><button type="button" class="btn ghost case-opt" data-i="1">Расчёт обязан быть ниже фактической пористости</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> В водоносном случае сопротивление совпадает с водным эталоном.</p>
+          </div>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Расчёт по водному допущению ниже приборной пористости. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Совпадение подтверждает водную модель</button><button type="button" class="btn ghost case-opt" data-i="1">Расхождение даёт признак углеводородов</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> При углеводородах авторы ожидают снижение расчётной пористости.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Для полностью водонасыщенного случая водонасыщенность равна единице. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></li><li>Если параметры близки к фактическим, расчёт в водоносном пласте близок к фактической пористости. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_asquith.x1.23.f01">
+          <div class="tex-display" data-tex="\phi = \left(\frac{a \times R_w}{R_t \times S_w^n}\right)^{\frac{1}{m}}">$$\phi = \left(\frac{a \times R_w}{R_t \times S_w^n}\right)^{\frac{1}{m}}$$</div>
+          <p>Пористость из общего уравнения Арчи. <span class="pg">стр. 130</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\phi$</td><td>пористость, доля объёма породы, занятая порами</td><td>доля</td></tr><tr><td>$a$</td><td>коэффициент извилистости</td><td>—</td></tr><tr><td>$R_w$</td><td>сопротивление пластовой воды</td><td>—</td></tr><tr><td>$R_t$</td><td>истинное сопротивление пласта</td><td>—</td></tr><tr><td>$S_w$</td><td>доля пор, заполненная водой</td><td>доля</td></tr><tr><td>$m$</td><td>показатель цементации</td><td>—</td></tr><tr><td>$n$</td><td>показатель насыщения</td><td>—</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.test_asquith.x1.23.f02">
+          <div class="tex-display" data-tex="\phi = \left(\frac{a \times R_w}{R_t}\right)^{\frac{1}{m}}">$$\phi = \left(\frac{a \times R_w}{R_t}\right)^{\frac{1}{m}}$$</div>
+          <p>Пористость при допущении полного водонасыщения. <span class="pg">стр. 130</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\phi$</td><td>пористость, доля объёма породы, занятая порами</td><td>доля</td></tr><tr><td>$a$</td><td>коэффициент извилистости</td><td>—</td></tr><tr><td>$R_w$</td><td>сопротивление пластовой воды</td><td>—</td></tr><tr><td>$R_t$</td><td>истинное сопротивление пласта</td><td>—</td></tr><tr><td>$m$</td><td>показатель цементации</td><td>—</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.test_asquith.x1.23.f03">
+          <div class="tex-display" data-tex="S_w = \frac{\phi_{conductivity}}{\phi_{actual}}">$$S_w = \frac{\phi_{conductivity}}{\phi_{actual}}$$</div>
+          <p>Приведённая авторами оценка водонасыщенности по отношению пористостей. <span class="pg">стр. 130</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$S_w$</td><td>доля пор, заполненная водой</td><td>доля</td></tr><tr><td>$\phi_{conductivity}$</td><td>пористость по проводимости</td><td>доля</td></tr><tr><td>$\phi_{actual}$</td><td>фактическая пористость</td><td>доля</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Пористость по сопротивлению всегда равна фактической.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> При углеводородах полное водонасыщение — неверное допущение, и расчётная пористость ниже фактической. <span class="pg" title="Страница книги (по PDF)">стр. 130</span></p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Расхождение расчёта и приборной пористости — интерпретируемый признак.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Истинное сопротивление, сопротивление пластовой воды, коэффициенты Арчи, приборная пористость или кривая ПС.</dd>
+          <dt>Выход</dt><dd>Пористость по проводимости, расхождение кривых и оценка водонасыщенности.</dd>
+          <dt>Где ломается</dt><dd>При неточных параметрах даже в воде расчёт не обязан совпадать с фактической пористостью.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Согласованные по глубине кривые, оценённые коэффициенты и выбранная пористость.</dd>
+            <dt>Ручные шаги</dt><dd>Совместить дорожки, сопоставить кривые и выделить расхождения.</dd>
+            <dt>Точки суждения</dt><dd>Проверить, что параметры описывают изучаемый пласт.</dd>
+            <dt>Время</dt><dd>Подготовка и сопоставление кривых занимают часть интерпретации; длительность не указана.</dd>
+            <dt>Типичные ошибки</dt><dd>Выдать расчёт в предположении воды за фактическую пористость.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сравнить расчётную метрику при эталонном состоянии с отдельно измеренной метрикой.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Здесь эталон зависит от свойств породы и пластовой воды, а не от заведомо исправного сервиса.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Отдельная формула оценки <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>Отношение пористостей воспроизведено как оценка авторов. Не следует считать его общей алгебраической перестановкой предыдущих формул для произвольных показателей.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Пористость <span class="en" lang="en">(porosity)</span></dt><dd>Доля общего объёма породы, занятая порами.  <span class="chip chip-model">модель</span></dd><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля объёма пор, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Сопротивление водонасыщенного пласта <span class="en" lang="en">(wet resistivity)</span></dt><dd>Сопротивление, которое имел бы пласт при полном водонасыщении; обозначение R_o. <span class="pg">стр. 130</span></dd><dt>Истинное сопротивление пласта <span class="en" lang="en">(true resistivity)</span></dt><dd>Сопротивление самого пласта, обозначение R_t.  <span class="chip chip-model">модель</span></dd><dt>Сопротивление пластовой воды <span class="en" lang="en">(formation water resistivity)</span></dt><dd>Сопротивление воды в порах пласта, обозначение R_w.  <span class="chip chip-model">модель</span></dd><dt>Коэффициент извилистости <span class="en" lang="en">(tortuosity factor)</span></dt><dd>Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.  <span class="chip chip-model">модель</span></dd><dt>Показатель цементации <span class="en" lang="en">(cementation exponent)</span></dt><dd>Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.  <span class="chip chip-model">модель</span></dd><dt>Показатель насыщения <span class="en" lang="en">(saturation exponent)</span></dt><dd>Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.  <span class="chip chip-model">модель</span></dd><dt>Уравнение Арчи <span class="en" lang="en">(Archie equation)</span></dt><dd>Связь сопротивления пласта с его пористостью, водонасыщенностью и электрическими параметрами.  <span class="chip chip-model">модель</span></dd><dt>ПС <span class="en" lang="en">(spontaneous potential)</span></dt><dd>Кривая самопроизвольного потенциала.  <span class="chip chip-model">модель</span></dd><dt>Каротаж <span class="en" lang="en">(well logging)</span></dt><dd>Скважинные измерения, которые записывают как кривые по глубине.  <span class="chip chip-model">модель</span></dd><dt>Пористость по проводимости <span class="en" lang="en">(conductivity-derived porosity)</span></dt><dd>Расчёт пористости по электрическим данным при допущении о полном водонасыщении. <span class="pg">стр. 130</span></dd><dt>Дорожка <span class="en" lang="en">(log track)</span></dt><dd>Область графика каротажа, в которой строят одну или несколько кривых.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-23-t01" data-task="geo.test_asquith.x1.23.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Когда расчётная пористость близка к фактической?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.23.t01" value="0"> <span>Только при наличии углеводородов</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.23.t01" value="1"> <span>При любом наборе параметров</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.23.t01" value="2"> <span>При полном водонасыщении и близких к фактическим параметрах</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> При полном водонасыщении и близких к фактическим параметрах</p>
+    <p class="fb-expl">Одного допущения о воде недостаточно: параметры расчёта должны описывать пласт. <a href="#how-1">Где это в тексте (стр. 130) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-23-t02" data-task="geo.test_asquith.x1.23.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие два признака ожидают при углеводородах?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.23.t02" value="0"> <span>Истинное сопротивление ниже водного эталона</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.23.t02" value="1"> <span>Расчётная пористость ниже фактической</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.23.t02" value="2"> <span>Истинное сопротивление выше водного эталона</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Расчётная пористость ниже фактической; Истинное сопротивление выше водного эталона</p>
+    <p class="fb-expl">Углеводороды меняют сопротивление и тем самым результат обратного расчёта. <a href="#how-2">Где это в тексте (стр. 130) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.23.c01"><p>Уравнение Арчи можно решить относительно пористости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«From Chapter 1, Archie&#39;s equation can be solved for porosity:»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c02"><p>В полностью водонасыщенном случае водонасыщенность равна единице. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«If the water-bearing case is considered, where $S_w = 1$, the equation reduces to:»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c03"><p>Подстановка допущения о полном заполнении водой даёт пористость в предположении водонасыщения. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«By using the form of the equation above (7.19), the water-filled porosity is determined.»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c04"><p>Там, где поры действительно заполнены водой, истинное сопротивление становится сопротивлением водонасыщенного пласта. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$).»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c05"><p>Расчёт близок к фактической пористости, если значения параметров в формуле близки к фактическим. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters.»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c06"><p>При углеводородах истинное сопротивление выше сопротивления водонасыщенного пласта. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«When the formation contains hydrocarbons, $R_t$ is greater than $R_o$,»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c07"><p>При углеводородах расчётная пористость меньше фактической. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c08"><p>Традиционно эту кривую строят на дорожке ПС и сопоставляют изменения кривых. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Traditionally this curve has been plotted in the same log track as the SP curve, and its movement compared to the SP.»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c09"><p>При совмещении с приборной кривой понижение расчётной пористости относительно приборной указывает на присутствие углеводородов. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«It can also be plotted in the same track as a porosity curve from one of the porosity tools, where decreases in conductivity-derived porosity with respect to the porosity curve indicate the presence of hydrocarbons.»</p><footer>— стр. 130</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.23.c10"><p>Для оценки водонасыщенности авторы предлагают делить пористость по проводимости на фактическую пористость. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Water saturation can be estimated by the following equation:»</p><footer>— стр. 130</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u130_23-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>From Chapter 1, Archie&#39;s equation can be solved for porosity:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_24-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>$$\phi = \left(\frac{a \times R_w}{R_t \times S_w^n}\right)^{\frac{1}{m}} \tag{7.18}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_25-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>If the water-bearing case is considered, where $S_w = 1$, the equation reduces to:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_26-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>$$\phi = \left(\frac{a \times R_w}{R_t}\right)^{\frac{1}{m}} \tag{7.19}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_27-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>By using the form of the equation above (7.19), the water-filled porosity is determined. Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$). The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters. When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_28-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>Traditionally this curve has been plotted in the same log track as the SP curve, and its movement compared to the SP. It can also be plotted in the same track as a porosity curve from one of the porosity tools, where decreases in conductivity-derived porosity with respect to the porosity curve indicate the presence of hydrocarbons.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_29-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>Water saturation can be estimated by the following equation:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u130_30-1" tabindex="-1">
+          <p class="pg">Стр. 130 · Basis for the technique</p>
+          <blockquote>$$S_w = \frac{\phi_{conductivity}}{\phi_{actual}} \tag{7.20}$$</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-27.html">шаг 27 «Когда расчётная пористость слишком низкая»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-25.html" rel="prev"><span>← Назад</span><b>Как получить пористость по сопротивлению</b></a><a class="next" href="step-27.html" rel="next"><span>Дальше →</span><b>Когда расчётная пористость слишком низкая</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Что выдаёт пористость по сопротивлению</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.23">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.23.t01", "type": "single", "question": "Когда расчётная пористость близка к фактической?", "explanation": "Одного допущения о воде недостаточно: параметры расчёта должны описывать пласт.", "page": 130, "link": "#how-1", "step_title": "Что выдаёт пористость по сопротивлению", "step_index": 26, "node_id": "geo.test_asquith.x1.23", "options": ["Только при наличии углеводородов", "При любом наборе параметров", "При полном водонасыщении и близких к фактическим параметрах"], "key": [2], "answer_text": "При полном водонасыщении и близких к фактическим параметрах"}, {"id": "geo.test_asquith.x1.23.t02", "type": "multiple", "question": "Какие два признака ожидают при углеводородах?", "explanation": "Углеводороды меняют сопротивление и тем самым результат обратного расчёта.", "page": 130, "link": "#how-2", "step_title": "Что выдаёт пористость по сопротивлению", "step_index": 26, "node_id": "geo.test_asquith.x1.23", "options": ["Истинное сопротивление ниже водного эталона", "Расчётная пористость ниже фактической", "Истинное сопротивление выше водного эталона"], "key": [1, 2], "answer_text": "Расчётная пористость ниже фактической; Истинное сопротивление выше водного эталона"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

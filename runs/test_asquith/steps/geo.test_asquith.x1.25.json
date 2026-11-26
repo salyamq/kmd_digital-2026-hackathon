@@ -1,0 +1,427 @@
+{
+  "node_id": "geo.test_asquith.x1.25",
+  "chapter": "test_asquith",
+  "index": 29,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Почему вода может не двигаться",
+  "title_book": "BULK VOLUME WATER",
+  "section": "x1",
+  "pages": [
+    131
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "М",
+    "secondary": "Н",
+    "threshold": "Вода в порах не обязательно движется при добыче: при неснижаемой водонасыщенности она удерживается на зёрнах."
+  },
+  "threshold": "Вода в порах не обязательно движется при добыче: при неснижаемой водонасыщенности она удерживается на зёрнах.",
+  "format": "short",
+  "format_rationale": "Удержание воды на масштабе пор можно наглядно связать с её неподвижностью без выкладок и новых чисел.",
+  "order_rationale": "Переходит от доли воды в порах к доле воды в породе и объясняет её удержание.",
+  "essence": [
+    "Вода может присутствовать в порах, но не поступать в скважину.",
+    "По доле воды на разных глубинах авторы судят, удерживается ли она породой."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что измеряет показатель",
+          "text": "**Объёмная доля воды** — доля общего объёма породы, занятая водой. Она равна пористости, умноженной на водонасыщенность неизменённой зоны: $BVW=S_w\\phi$.",
+          "claim_ids": [
+            "geo.test_asquith.x1.25.c01"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.25.c01",
+              "quote": "The product of a formation's water saturation ($S_w$) and its porosity ($\\phi$) is the bulk volume of water ($BVW$).",
+              "page": 131,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Практика",
+          "text": "Почти постоянная объёмная доля воды на нескольких глубинах указывает на единый тип породы и неснижаемую водонасыщенность. Этот признак ищут по нескольким глубинам, а не по одной точке.",
+          "claim_ids": [
+            "geo.test_asquith.x1.25.c02",
+            "geo.test_asquith.x1.25.c03"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.25.c02",
+              "quote": "If values for bulk volume water, calculated at several depths in a formation, are constant or very close to constant, they indicate that the zone is of a single rock type and",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.25.c03",
+              "quote": "If values for bulk volume water, calculated at several depths in a formation, are constant or very close to constant, they indicate that the zone is of a single rock type and at irreducible water saturation ($S_{w\\ irr}$).",
+              "page": 131,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Механизм",
+          "text": "**Неснижаемая водонасыщенность** — состояние, когда вода остаётся на зёрнах в неизменённой части пласта. **Капиллярное давление** удерживает её там. По описанию авторов, следствие такое: Капиллярное давление удерживает воду на зёрнах. Вода не перемещается. Добыча углеводородов должна идти без воды.",
+          "claim_ids": [
+            "geo.test_asquith.x1.25.c04",
+            "geo.test_asquith.x1.25.c05"
+          ],
+          "pages": [
+            131
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x1.25.c04",
+              "quote": "When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure.",
+              "page": 131,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x1.25.c05",
+              "quote": "Therefore, hydrocarbon production from a zone at irreducible water saturation should be water free (Morris and Biggs, 1967).",
+              "page": 131,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "data": {
+        "title": "Решение на данных",
+        "signs": [
+          "Пористость по глубине",
+          "Водонасыщенность неизменённой зоны",
+          "Устойчивость их произведения"
+        ],
+        "rule": "Сравните объёмную долю воды на нескольких глубинах.",
+        "conclusion": "Почти постоянные значения указывают на удержание воды и единый тип породы.",
+        "claim_ids": [
+          "geo.test_asquith.x1.25.c02",
+          "geo.test_asquith.x1.25.c03",
+          "geo.test_asquith.x1.25.c04",
+          "geo.test_asquith.x1.25.c05"
+        ],
+        "cases": [
+          {
+            "given": "Объёмная доля воды почти не меняется по нескольким глубинам.",
+            "options": [
+              "Искать признаки меняющегося типа породы",
+              "Рассматривать единый тип породы и неснижаемое насыщение"
+            ],
+            "answer": 1,
+            "why": "Постоянство произведения указывает на оба состояния.",
+            "source": "модель"
+          },
+          {
+            "given": "Вода удерживается на зёрнах при неснижаемой водонасыщенности.",
+            "options": [
+              "Ожидается добыча углеводородов без воды",
+              "Присутствие воды гарантирует её добычу"
+            ],
+            "answer": 0,
+            "why": "Удерживаемая вода не перемещается.",
+            "source": "модель"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "text": "Признак устойчивости ищут на нескольких глубинах.",
+          "claim_ids": [
+            "geo.test_asquith.x1.25.c02",
+            "geo.test_asquith.x1.25.c03"
+          ],
+          "pages": [
+            131
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x1.25.f01",
+          "latex": "BVW = S_w \\times \\phi",
+          "meaning": "Объёмная доля воды в породе.",
+          "vars": [
+            {
+              "symbol": "BVW",
+              "meaning": "объёмная доля воды в породе",
+              "unit": "доля"
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "водонасыщенность неизменённой зоны",
+              "unit": "доля"
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            }
+          ],
+          "page": 131,
+          "unit_id": "u131_18"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "author",
+      "pages": [
+        131
+      ],
+      "data": {
+        "text": "Если в порах есть вода, скважина обязательно будет добывать воду.",
+        "correction": "При неснижаемой водонасыщенности вода удерживается на зёрнах, и углеводороды должны добываться без воды.",
+        "claim_ids": [
+          "geo.test_asquith.x1.25.c04",
+          "geo.test_asquith.x1.25.c05"
+        ],
+        "by": "author"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Из данных о заполнении пор переходят к признаку подвижности воды.",
+        "inputs": "Пористость, водонасыщенность неизменённой зоны и глубины.",
+        "outputs": "Профиль объёмной доли воды и признак неснижаемой водонасыщенности.",
+        "breaks_where": "Одна точка не даёт проверить постоянство произведения по глубине.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Пары пористости и водонасыщенности по глубине.",
+          "manual_steps": "Совместить значения, вычислить произведения и оценить их разброс.",
+          "judgment_points": "Решить, можно ли считать значения почти постоянными.",
+          "time": "Время не указано; ключевая работа — анализ профиля.",
+          "typical_errors": "Перепутать долю воды в порах с долей воды во всём объёме породы.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Проверить инвариант по строкам, а не судить по одной колонке.",
+        "breaks_where": "Здесь устойчивость объясняется удержанием воды в породе, а не ограничением схемы данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        131
+      ],
+      "items": [
+        {
+          "term": "Объёмная доля воды",
+          "definition": "Произведение водонасыщенности на пористость, обозначение BVW.",
+          "en": "bulk volume water",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "definition": "Состояние, при котором вода в неизменённой зоне удерживается на зёрнах и не перемещается.",
+          "en": "irreducible water saturation",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Капиллярное давление",
+          "definition": "В данном контексте давление, удерживающее воду на зёрнах породы.",
+          "en": "capillary pressure",
+          "page": 131,
+          "by": "author"
+        },
+        {
+          "term": "Неизменённая зона",
+          "definition": "Часть пласта, куда не проник фильтрат бурового раствора.",
+          "en": "uninvaded zone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Тип породы",
+          "definition": "Группа пород, выделенная по признакам состава и строения.",
+          "en": "rock type",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Наличие воды в порах само по себе не означает её добычу.",
+      "alt": "Последовательность: Удержание воды на зёрнах → Вода не перемещается → Добыча углеводородов без воды.",
+      "file": "illustrations/geo.test_asquith.x1.25__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x1.25.c04",
+        "geo.test_asquith.x1.25.c05"
+      ],
+      "pages": [
+        131
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x1.25.c01",
+      "kind": "observation",
+      "text": "Объёмная доля воды — произведение пористости пласта и его водонасыщенности.",
+      "quote": "The product of a formation's water saturation ($S_w$) and its porosity ($\\phi$) is the bulk volume of water ($BVW$).",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.25.c02",
+      "kind": "inference",
+      "text": "Постоянные или почти постоянные значения доли воды на нескольких глубинах указывают на единый тип породы.",
+      "quote": "If values for bulk volume water, calculated at several depths in a formation, are constant or very close to constant, they indicate that the zone is of a single rock type and",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.25.c03",
+      "kind": "inference",
+      "text": "Та же устойчивость доли воды указывает на неснижаемую водонасыщенность.",
+      "quote": "If values for bulk volume water, calculated at several depths in a formation, are constant or very close to constant, they indicate that the zone is of a single rock type and at irreducible water saturation ($S_{w\\ irr}$).",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.25.c04",
+      "kind": "inference",
+      "text": "При неснижаемой водонасыщенности вода в неизменённой части пласта неподвижна, поскольку капиллярное давление удерживает её на зёрнах.",
+      "quote": "When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure.",
+      "page": 131,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x1.25.c05",
+      "kind": "inference",
+      "text": "При неснижаемой водонасыщенности добыча углеводородов должна идти без добычи воды.",
+      "quote": "Therefore, hydrocarbon production from a zone at irreducible water saturation should be water free (Morris and Biggs, 1967).",
+      "page": 131,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x1.25.t01",
+    "geo.test_asquith.x1.25.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x1.25.k01",
+    "geo.test_asquith.x1.25.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.05",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.24",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

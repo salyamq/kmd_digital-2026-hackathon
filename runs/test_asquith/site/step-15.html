@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 15. Что значит совпадение двух оценок — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.11" data-index="15">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#procedure">По шагам</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 15 из 66</p>
+    <h1>Что значит совпадение двух оценок</h1>
+    <p class="booktitle">В книге: «Ratio Method» <span class="pg">стр. 128</span></p>
+    <p class="meta">
+      <span class="chip">≈ 4 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: неочевидное + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-08.html">шаг 8 «Как оценить воду вдали от ствола»</a> <span class="muted">(предпосылка)</span>, <a href="step-14.html">шаг 14 «Как оценить воду по отношениям»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Два метода оценивают водонасыщенность одной и той же зоны вдали от ствола.</p><p>Если результаты близки, автор считает это признаком ступенчатого проникновения.</p><p class="threshold"><b>Пороговая идея.</b> Согласие двух оценок проверяет предпосылку о форме проникновения. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Практика</h3>          <div class="para" id="how-1">
+            <p>Рассчитайте водонасыщенность незатронутой зоны по Арчи и методом отношений. Сравните две оценки одной и той же зоны. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.11.c01"><p>«To use the ratio method in an interpretation process, the water saturation of the uninvaded zone should be calculated by both the Archie equation ($S_{wa}$) and the ratio method ($S_{wr}$).»</p><footer>— автор, стр. 128 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x1_11__1_m.svg"><img src="img/geo_test_asquith_x1_11__1.svg" alt="Две оценки одной зоны → Результаты близки → Ступенчатая модель согласуется с оценками." loading="lazy"></picture>  </div>
+  <figcaption>
+    Схема связывает исходный признак с проверкой и выводом.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 128</span>
+  </figcaption>
+</figure>
+<h3>Ограничение</h3>          <div class="para" id="how-2">
+            <p><strong class="term">Ступенчатый профиль</strong> предполагает резкую границу между изменённой и незатронутой породой. По автору, близость оценок поддерживает такое допущение. В рамках этой модели автор считает рассчитанные параметры корректными. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.11.c02"><p>«1. If $S_{wa} \sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.»</p><footer>— автор, стр. 128 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="procedure" class="block block-procedure" aria-labelledby="h-procedure">
+      <h2 id="h-procedure">По шагам </h2>
+
+<p class="subtitle">Что сделать</p>        <ol class="proc"><li>Рассчитайте насыщенность по Арчи. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li><li>Оцените ту же зону методом отношений. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li><li>Сравните результаты и проверьте согласие со ступенчатой моделью. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li></ol>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Сравните оценки для одной зоны</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Оценка по Арчи</li><li>Оценка методом отношений</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Если оценки близки, проверьте совместимость со ступенчатым профилем. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>По автору, согласие поддерживает допущение о резкой границе.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Две оценки воды в незатронутой зоне почти совпадают. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Допущение о ступенчатой границе согласуется с оценками</button><button type="button" class="btn ghost case-opt" data-i="1">Согласие ничего не говорит о модели проникновения</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Именно близость результатов служит рабочей проверкой модели автора.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Вывод о ступенчатом профиле относится к близким оценкам одной зоны. <span class="pg" title="Страница книги (по PDF)">стр. 128</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Оценки по Арчи и методу отношений → Признак согласия со ступенчатой моделью.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Оценки по Арчи и методу отношений</dd>
+          <dt>Выход</dt><dd>Признак согласия со ступенчатой моделью</dd>
+          <dt>Где ломается</dt><dd>Близость не следует путать с доказательством любых предпосылок вне модели</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Оценки по Арчи и методу отношений</dd>
+            <dt>Ручные шаги</dt><dd>Вычислите оценку Арчи и оценку методом отношений, а затем сравните их.</dd>
+            <dt>Точки суждения</dt><dd>Насколько близки оценки в контексте качества измерений</dd>
+            <dt>Время</dt><dd>Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.</dd>
+            <dt>Типичные ошибки</dt><dd>Сравнивать разные зоны вместо двух оценок одной зоны</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Взаимная сверка результатов разных процедур.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Оценки разделяют часть исходных измерений, поэтому это не полностью независимая проверка.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля порового пространства, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Незатронутая зона <span class="en" lang="en">(uninvaded zone)</span></dt><dd>Часть пласта, куда не проник фильтрат бурового раствора.  <span class="chip chip-model">модель</span></dd><dt>Проникновение <span class="en" lang="en">(invasion)</span></dt><dd>Вторжение фильтрата бурового раствора в пласт.  <span class="chip chip-model">модель</span></dd><dt>Ступенчатый профиль <span class="en" lang="en">(step-contact invasion profile)</span></dt><dd>Представление о резкой границе между изменённой и незатронутой частью пласта.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-11-t01" data-task="geo.test_asquith.x1.11.t01" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Для какой области сравнивают методы?</p>
+  <p class="cloze">Оба способа дают оценку водонасыщенности <select aria-label="Пропуск 1"><option value="">—</option><option>разных зон</option><option>незатронутой зоны</option><option>промытой зоны</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Оба способа дают оценку водонасыщенности [незатронутой зоны].</p>
+    <p class="fb-expl">Сравнение имеет смысл для двух оценок одинакового свойства в одинаковой зоне. <a href="#how-1">Где это в тексте (стр. 128) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-11-t02" data-task="geo.test_asquith.x1.11.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Две оценки близки. Что это поддерживает по автору?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.11.t02" value="0"> <span>Отсутствие пористости</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.11.t02" value="1"> <span>Ступенчатый профиль проникновения</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.11.t02" value="2"> <span>Кольцевой профиль по одному знаку ошибки</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Ступенчатый профиль проникновения</p>
+    <p class="fb-expl">Согласие поддерживает ступенчатое допущение в модели автора. <a href="#how-2">Где это в тексте (стр. 128) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.11.c01"><p>Для интерпретации рассчитывают водонасыщенность незатронутой зоны обоими методами. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«To use the ratio method in an interpretation process, the water saturation of the uninvaded zone should be calculated by both the Archie equation ($S_{wa}$) and the ratio method ($S_{wr}$).»</p><footer>— стр. 128</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.11.c02"><p>Близость оценок указывает, по автору, на допустимость ступенчатого профиля и корректность рассчитанных параметров. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«1. If $S_{wa} \sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.»</p><footer>— стр. 128</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u128_17-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>To use the ratio method in an interpretation process, the water saturation of the uninvaded zone should be calculated by both the Archie equation ($S_{wa}$) and the ratio method ($S_{wr}$). The following observations can be made:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u128_18-1" tabindex="-1">
+          <p class="pg">Стр. 128 · Ratio Method</p>
+          <blockquote>1. If $S_{wa} \sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-16.html">шаг 16 «Когда метод отношений даёт меньше»</a>, <a href="step-17.html">шаг 17 «Когда метод отношений даёт больше»</a>, <a href="step-66.html">шаг 66 «Как глина искажает оценку насыщения»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-14.html" rel="prev"><span>← Назад</span><b>Как оценить воду по отношениям</b></a><a class="next" href="step-16.html" rel="next"><span>Дальше →</span><b>Когда метод отношений даёт меньше</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Что значит совпадение двух оценок</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.11">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.11.t01", "type": "cloze", "question": "Для какой области сравнивают методы?", "explanation": "Сравнение имеет смысл для двух оценок одинакового свойства в одинаковой зоне.", "page": 128, "link": "#how-1", "step_title": "Что значит совпадение двух оценок", "step_index": 15, "node_id": "geo.test_asquith.x1.11", "parts": ["Оба способа дают оценку водонасыщенности ", "."], "blanks": [{"options": ["разных зон", "незатронутой зоны", "промытой зоны"], "answers": ["незатронутой зоны"]}], "key": [["незатронутой зоны"]], "answer_text": "Оба способа дают оценку водонасыщенности [незатронутой зоны]."}, {"id": "geo.test_asquith.x1.11.t02", "type": "single", "question": "Две оценки близки. Что это поддерживает по автору?", "explanation": "Согласие поддерживает ступенчатое допущение в модели автора.", "page": 128, "link": "#how-2", "step_title": "Что значит совпадение двух оценок", "step_index": 15, "node_id": "geo.test_asquith.x1.11", "options": ["Отсутствие пористости", "Ступенчатый профиль проникновения", "Кольцевой профиль по одному знаку ошибки"], "key": [1], "answer_text": "Ступенчатый профиль проникновения"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

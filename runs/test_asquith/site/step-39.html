@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 39. Одни данные для двух диаграмм — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x2.14" data-index="39">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#tables">Таблицы книги</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 39 из 66</p>
+    <h1>Одни данные для двух диаграмм</h1>
+    <p class="booktitle">В книге: «SATURATION CROSSPLOTS» <span class="pg">стр. 133, 135</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: интерпретация + распознавание</span>    </p>
+<p class="relies">Опирается на: <a href="step-33.html">шаг 33 «Зачем нужны диаграммы насыщения»</a> <span class="muted">(предпосылка)</span>, <a href="step-35.html">шаг 35 «Как читать оси Пикетта»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Одинаковая <strong class="term">пористость</strong> — доля объёма пор — не означает одинакового сопротивления.</p><p>Две диаграммы помогают сопоставлять эти величины по одним и тем же зонам.</p><p class="threshold"><b>Пороговая идея.</b> При равной пористости сопротивление может существенно различаться; это разные поля наблюдений, а не взаимозаменяемые величины. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Источник данных</h3>          <div class="para" id="how-1">
+            <p>Авторы используют данные песчаника Морроу из округа Симаррон, Оклахома. <strong class="term">Диаграммы Пикетта и Хингла</strong> сопоставляют сопротивление и пористость. Таблица 7.4 даёт номер зоны, глубину, объёмную плотность, пористость и сопротивление. <strong class="term">Объёмная плотность</strong> учитывает породу и содержимое её пор. <span class="pg" title="Страница книги (по PDF)">стр. 135</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x2.14.c01"><p>«Table 7.4. Data for use with Pickett plot (Figure 7.4) and Hingle plot (Figure 7.7). Morrow Sandstone, Cimarron County, Oklahoma.»</p><footer>— автор, стр. 135 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x2.14.c02"><p>«|  Zone number | Depth (ft) | $\rho_b$ (g/cm³) | $\phi_D$ (decimal) | $R_t$ (ohm-m)  |»</p><footer>— автор, стр. 135 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x2_14__1_m.svg"><img src="img/geo_test_asquith_x2_14__1.svg" alt="Горизонтальная ось — пористость. На пористости 0,212 точки занимают разные высоты; одинаковые пары накладываются." loading="lazy"></picture>  </div>
+  <figcaption>
+    Пары из таблицы 7.4. При одинаковой пористости точки могут различаться по сопротивлению.
+    <span class="ill-meta">Класс A · реальные данные · нарисовано кодом · стр. 135</span>
+  </figcaption>
+</figure>
+<h3>Чтение таблицы</h3>          <div class="para" id="how-2">
+            <p>У зон 7 и 8 пористость одна и та же: 0,212. Сопротивления различаются: 0,9 и 40 Ом·м соответственно. У зон 8, 9 и 10 пористость тоже 0,212. Их сопротивления — 40, 45 и 40 Ом·м соответственно. <span class="pg" title="Страница книги (по PDF)">стр. 135</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x2.14.c03"><p>«|  7 | 4438 | 2.30 | 0.212 | 0.9  |
+|  8 | 4536 | 2.30 | 0.212 | 40  |»</p><footer>— автор, стр. 135 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x2.14.c04"><p>«|  8 | 4536 | 2.30 | 0.212 | 40  |
+|  9 | 4540 | 2.30 | 0.212 | 45  |
+|  10 | 4546 | 2.30 | 0.212 | 40  |»</p><footer>— автор, стр. 135 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Сравнить зоны при равной пористости</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Номер зоны</li><li>Пористость</li><li>Сопротивление</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Сопоставьте отдельные поля таблицы по одному номеру зоны. <span class="pg" title="Страница книги (по PDF)">стр. 135</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>При равной пористости сопротивления могут различаться.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="1">
+            <p><b>Дано:</b> Зоны 7 и 8 имеют пористость 0,212. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Сопротивления совпадают</button><button type="button" class="btn ghost case-opt" data-i="1">Сопротивления различаются</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> В таблице стоят 0,9 и 40 Ом·м.</p>
+          </div>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Зоны 8, 9 и 10 имеют пористость 0,212. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">У зоны 9 сопротивление выше</button><button type="button" class="btn ghost case-opt" data-i="1">У зоны 9 сопротивление ниже</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> У зоны 9 стоит 45 Ом·м, а у остальных двух — 40 Ом·м.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Зоны 7 и 8 при пористости 0,212: 0,9 и 40 Ом·м. <span class="pg" title="Страница книги (по PDF)">стр. 135</span></li><li>При пористости 0,212 у зон 8, 9 и 10 сопротивления 40, 45 и 40 Ом·м. <span class="pg" title="Страница книги (по PDF)">стр. 135</span></li></ul>
+
+    </section>
+    <section id="tables" class="block block-tables" aria-labelledby="h-tables">
+      <h2 id="h-tables">Таблицы книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="booktable">
+          <p class="tcap"><b>Table 7.4. Data for use with Pickett plot (Figure 7.4) and Hingle plot (Figure 7.7). Morrow Sandstone, Cimarron County, Oklahoma.</b> <span class="pg">стр. 135</span></p>
+          <div class="tscroll" tabindex="0" role="region" aria-label="Таблица: Table 7.4. Data for use with Pickett plot (Figure 7.4) and Hingle plot (Figure 7.7). Morrow Sandstone, Cimarron County, Oklahoma."><table>
+            <thead><tr><th scope="col">Zone number</th><th scope="col">Depth (ft)</th><th scope="col">$\rho_b$ (g/cm³)</th><th scope="col">$\phi_D$ (decimal)</th><th scope="col">$R_t$ (ohm-m)</th></tr></thead>
+            <tbody><tr><td>1</td><td>4400</td><td>2.38</td><td>0.163</td><td>1.7</td></tr><tr><td>2</td><td>4402</td><td>2.44</td><td>0.127</td><td>2.1</td></tr><tr><td>3</td><td>4410</td><td>2.35</td><td>0.181</td><td>1.3</td></tr><tr><td>4</td><td>4414</td><td>2.42</td><td>0.139</td><td>1.6</td></tr><tr><td>5</td><td>4426</td><td>2.42</td><td>0.139</td><td>1.8</td></tr><tr><td>6</td><td>4430</td><td>2.33</td><td>0.194</td><td>1.0</td></tr><tr><td>7</td><td>4438</td><td>2.30</td><td>0.212</td><td>0.9</td></tr><tr><td>8</td><td>4536</td><td>2.30</td><td>0.212</td><td>40</td></tr><tr><td>9</td><td>4540</td><td>2.30</td><td>0.212</td><td>45</td></tr><tr><td>10</td><td>4546</td><td>2.30</td><td>0.212</td><td>40</td></tr></tbody>
+          </table></div>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Обе диаграммы используют один и тот же набор строк.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Номер зоны, глубина, объёмная плотность, пористость, удельное сопротивление.</dd>
+          <dt>Выход</dt><dd>Согласованные координаты для двух диаграмм.</dd>
+          <dt>Где ломается</dt><dd>Если перемешать строки или перепутать поля, точки уже не представляют одни и те же интервалы.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Таблица зон и её заголовки с единицами.</dd>
+            <dt>Ручные шаги</dt><dd>Считать нужные столбцы и сохранить связь координат с зоной.</dd>
+            <dt>Точки суждения</dt><dd>Удостовериться, что в обеих диаграммах используется одна и та же строка.</dd>
+            <dt>Время</dt><dd>Перенос готовой таблицы — короткая повторяемая операция.</dd>
+            <dt>Типичные ошибки</dt><dd>Принять разные удельные сопротивления при одинаковой пористости за ошибку ввода.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Представьте две визуализации одной таблицы с одинаковой идентичностью объектов.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Особенности шкал не меняют исходные измерения и сами по себе не подтверждают состав флюида.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>пористость <span class="en" lang="en">(porosity)</span></dt><dd>Доля объёма породы, приходящаяся на поры.  <span class="chip chip-model">модель</span></dd><dt>удельное сопротивление <span class="en" lang="en">(resistivity)</span></dt><dd>Мера того, насколько материал препятствует протеканию электрического тока.  <span class="chip chip-model">модель</span></dd><dt>объёмная плотность <span class="en" lang="en">(bulk density)</span></dt><dd>Плотность породы в целом, вместе с содержащимися в порах флюидами.  <span class="chip chip-model">модель</span></dd><dt>диаграмма Пикетта <span class="en" lang="en">(Pickett plot)</span></dt><dd>Кроссплот сопротивления и пористости на логарифмических шкалах. <span class="pg">стр. 135</span></dd><dt>диаграмма Хингла <span class="en" lang="en">(Hingle plot)</span></dt><dd>Кроссплот с линейной шкалой пористости и нелинейной шкалой сопротивления, задаваемой коэффициентом извилистости и показателем цементации. <span class="pg">стр. 133</span></dd><dt>кроссплот <span class="en" lang="en">(crossplot)</span></dt><dd>График, на котором точка представляет пару значений, относящихся к одному интервалу.  <span class="chip chip-model">модель</span></dd><dt>песчаник <span class="en" lang="en">(sandstone)</span></dt><dd>Порода, сложенная преимущественно зёрнами песчаного размера.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x2-14-t01" data-task="geo.test_asquith.x2.14.t01" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие выводы верны для зон 7 и 8?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x2.14.t01" value="0"> <span>Сопротивление одинаково</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x2.14.t01" value="1"> <span>Пористость одинакова</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x2.14.t01" value="2"> <span>Зона 7 имеет большую пористость</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x2.14.t01" value="3"> <span>Сопротивление различается</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Пористость одинакова; Сопротивление различается</p>
+    <p class="fb-expl">Пористость совпадает, но сопротивление — отдельная характеристика. <a href="#how-2">Где это в тексте (стр. 135) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x2-14-t02" data-task="geo.test_asquith.x2.14.t02" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какая зона имеет наибольшее сопротивление среди 8, 9 и 10?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x2.14.t02" value="0"> <span>Зона 10</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x2.14.t02" value="1"> <span>Зона 8</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x2.14.t02" value="2"> <span>Зона 9</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Зона 9</p>
+    <p class="fb-expl">У зоны 9 сопротивление 45 Ом·м. <a href="#how-2">Где это в тексте (стр. 135) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x2.14.c01"><p>Таблица 7.4 содержит данные песчаника Морроу в округе Симаррон, Оклахома, для построения диаграмм Пикетта и Хингла. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Table 7.4. Data for use with Pickett plot (Figure 7.4) and Hingle plot (Figure 7.7). Morrow Sandstone, Cimarron County, Oklahoma.»</p><footer>— стр. 135</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x2.14.c02"><p>Для каждой зоны приведены номер, глубина, объёмная плотность, пористость и сопротивление. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  Zone number | Depth (ft) | $\rho_b$ (g/cm³) | $\phi_D$ (decimal) | $R_t$ (ohm-m)  |»</p><footer>— стр. 135</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x2.14.c03"><p>Зоны 7 и 8 имеют одинаковую пористость 0.212, но удельные сопротивления 0.9 и 40 Ом·м. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  7 | 4438 | 2.30 | 0.212 | 0.9  |
+|  8 | 4536 | 2.30 | 0.212 | 40  |»</p><footer>— стр. 135</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x2.14.c04"><p>В зонах 8, 9 и 10 при одинаковой пористости 0.212 удельные сопротивления составляют 40, 45 и 40 Ом·м. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«|  8 | 4536 | 2.30 | 0.212 | 40  |
+|  9 | 4540 | 2.30 | 0.212 | 45  |
+|  10 | 4546 | 2.30 | 0.212 | 40  |»</p><footer>— стр. 135</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u135_02-1" tabindex="-1">
+          <p class="pg">Стр. 135 · PERMEABILITY FROM LOGS</p>
+          <blockquote>Table 7.4. Data for use with Pickett plot (Figure 7.4) and Hingle plot (Figure 7.7). Morrow Sandstone, Cimarron County, Oklahoma. | Zone number | Depth (ft) | $\rho_b$ (g/cm³) | $\phi_D$ (decimal) | $R_t$ (ohm-m) | | --- | --- | --- | --- | --- | | 1 | 4400 | 2.38 | 0.163 | 1.7 | | 2 | 4402 | 2.44 | 0.127 | 2.1 | | 3 | 4410 | 2.35 | 0.181 | 1.3 | | 4 | 4414 | 2.42 | 0.139 | 1.6 | | 5 | 4426 | 2.42 | 0.139 | 1.8 | | 6 | 4430 | 2.33 | 0.194 | 1.0 | | 7 | 4438 | 2.30 | 0.212 | 0.9 | | 8 | 4536 | 2.30 | 0.212 | 40 | | 9 | 4540 | 2.30 | 0.212 | 45 | | 10 | 4546 | 2.30 | 0.212 | 40 |</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-40.html">шаг 40 «Как выбрать водоносную линию Пикетта»</a>, <a href="step-50.html">шаг 50 «Как оценить плотность твёрдой породы»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-38.html" rel="prev"><span>← Назад</span><b>Как нанести линии на Пикетта</b></a><a class="next" href="step-40.html" rel="next"><span>Дальше →</span><b>Как выбрать водоносную линию Пикетта</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Одни данные для двух диаграмм</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x2.14">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x2.14.t01", "type": "multiple", "question": "Какие выводы верны для зон 7 и 8?", "explanation": "Пористость совпадает, но сопротивление — отдельная характеристика.", "page": 135, "link": "#how-2", "step_title": "Одни данные для двух диаграмм", "step_index": 39, "node_id": "geo.test_asquith.x2.14", "options": ["Сопротивление одинаково", "Пористость одинакова", "Зона 7 имеет большую пористость", "Сопротивление различается"], "key": [1, 3], "answer_text": "Пористость одинакова; Сопротивление различается"}, {"id": "geo.test_asquith.x2.14.t02", "type": "single", "question": "Какая зона имеет наибольшее сопротивление среди 8, 9 и 10?", "explanation": "У зоны 9 сопротивление 45 Ом·м.", "page": 135, "link": "#how-2", "step_title": "Одни данные для двух диаграмм", "step_index": 39, "node_id": "geo.test_asquith.x2.14", "options": ["Зона 10", "Зона 8", "Зона 9"], "key": [2], "answer_text": "Зона 9"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

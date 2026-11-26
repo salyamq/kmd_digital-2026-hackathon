@@ -1,0 +1,241 @@
+{
+  "chapter": "test_asquith",
+  "nodes": [
+    {
+      "node_id": "geo.test_asquith.x1.03",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x4.01",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.04",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.06",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.07",
+      "format": "long",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "radial_invasion",
+          "model": "kmd.visuals.templates.radial_invasion.RadialInvasion.state"
+        },
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.08",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.16",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.18",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.23",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.22",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.25",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x1.26",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        },
+        {
+          "template": "comparison_bar",
+          "model": "kmd.visuals.templates.comparison_bar.ComparisonBar.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.01",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.02",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.03",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.08",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.09",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.21",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_asquith.x2.22",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "node_id": "geo.test_asquith.x5.14",
+  "chapter": "test_asquith",
+  "index": 62,
+  "part": {
+    "id": "part6",
+    "title": "Оценка проницаемости и поправка на глину"
+  },
+  "title_beginner": "Как читать палетку проницаемости",
+  "title_book": "Палетка для оценки проницаемости и объёмного содержания воды",
+  "section": "x5",
+  "pages": [
+    146
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Ф",
+    "threshold": "Одна и та же точка даёт разные величины на двух разных семействах кривых."
+  },
+  "threshold": "Одна и та же точка даёт разные величины на двух разных семействах кривых.",
+  "format": "data_practice",
+  "format_rationale": "На авторской палетке проведите отсчёт от пористости и насыщенности до искомых величин.",
+  "order_rationale": "Переходит от последовательности расчётов к чтению графической палетки.",
+  "essence": [
+    "**Палетка** — график, на котором величины читают по пересечению известных координат.",
+    "На этой палетке одна точка даёт два результата, но по разным кривым."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Входные величины",
+          "text": "**Проницаемость** показывает, как порода пропускает флюид. Палетка использует пористость и **неснижаемую водонасыщенность**, при которой вода не вытесняется при добыче. Авторы предполагают нефть средней плотности. В примере нефтеносный песчаник имеет пористость 0,25, или 25 единиц пористости. Неснижаемая водонасыщенность равна 40%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c01",
+            "geo.test_asquith.x5.14.c02",
+            "geo.test_asquith.x5.14.c03"
+          ],
+          "pages": [
+            146
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.14.c01",
+              "quote": "Chart of porosity ($\\phi$) versus irreducible water saturation ($S_{wi}$ in) for estimating permeability and determining bulk volume water.",
+              "page": 146,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c02",
+              "quote": "Given: Porosity ($\\phi$) = 0.25 (= 25 porosity units, p.u.) and irreducible water saturation ($S_{wi}$ in) = 40% for an oil-bearing sandstone.",
+              "page": 146,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c03",
+              "quote": "The chart is constructed with the assumption of a medium-gravity oil.",
+              "page": 146,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как читать кривые",
+          "text": "На палетке неснижаемую водонасыщенность обозначают S_wi. Найдите пористость снизу и насыщенность слева. Доведите отметки до пересечения. Прочтите проницаемость по толстой кривой, а содержание воды — по тонкой. **Объёмное содержание воды** — доля объёма породы, занятая водой. Тонкая гипербола соединяет точки с одинаковым произведением пористости и неснижаемой водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c04",
+            "geo.test_asquith.x5.14.c05",
+            "geo.test_asquith.x5.14.c06",
+            "geo.test_asquith.x5.14.c07",
+            "geo.test_asquith.x5.14.c09"
+          ],
+          "pages": [
+            146
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.14.c04",
+              "quote": "1. Find porosity ($\\phi$ = 25 p.u.) on the bottom horizontal scale, and find irreducible water saturation ($S_{wi}$ in = 40%) on the left vertical scale.",
+              "page": 146,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c05",
+              "quote": "Note that irreducible water saturation is labeled $S_{wi}$ on this chart.",
+              "page": 146,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c06",
+              "quote": "Follow the two values into the chart to the point where they intersect.",
+              "page": 146,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c07",
+              "quote": "The heavy curve on which this point falls represents permeability.",
+              "page": 146,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c09",
+              "quote": "The light hyperbolic curves ($C = S_{wi} \\times \\phi$) represent lines of equal value for bulk volume water.",
+              "page": 146,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Результат примера",
+          "text": "В примере проницаемость равна 130 мД, объёмное содержание воды — 0,10. **Миллидарси** — единица проницаемости, обозначенная мД.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c07",
+            "geo.test_asquith.x5.14.c08",
+            "geo.test_asquith.x5.14.c09",
+            "geo.test_asquith.x5.14.c10"
+          ],
+          "pages": [
+            146
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.14.c08",
+              "quote": "In this case, permeability, K = 130 md.",
+              "page": 146,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.14.c10",
+              "quote": "In this example, the bulk volume water equals 0.10 (BVW = 0.10).",
+              "page": 146,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Прочитать обе величины",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "text": "Найдите пористость на нижней оси.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c04"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Найдите неснижаемую водонасыщенность на левой оси.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c04",
+            "geo.test_asquith.x5.14.c05"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Доведите обе отметки до пересечения.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c06"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Считайте проницаемость по толстой кривой.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c07",
+            "geo.test_asquith.x5.14.c08"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Считайте объёмное содержание воды по тонкой гиперболе.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c09",
+            "geo.test_asquith.x5.14.c10"
+          ],
+          "pages": [
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_asquith_x5_14_e01",
+          "title": "Проницаемость нефтеносного песчаника",
+          "page": 146,
+          "condition": "Пористость 0.25 (25 единиц пористости); неснижаемая водонасыщенность 40%; допущение о нефти средней плотности.",
+          "steps": [
+            "Найти 25 единиц пористости на нижней шкале и 40% на левой.",
+            "Найти пересечение.",
+            "Прочитать значение толстой кривой и тонкой гиперболы."
+          ],
+          "result": "Проницаемость 130 мД, объёмное содержание воды 0.10.",
+          "numbers": [
+            "0.10",
+            "0.25",
+            "25",
+            "40",
+            "130"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "data": {
+        "title": "Не перепутать две кривые",
+        "claim_ids": [
+          "geo.test_asquith.x5.14.c02",
+          "geo.test_asquith.x5.14.c04",
+          "geo.test_asquith.x5.14.c06",
+          "geo.test_asquith.x5.14.c07",
+          "geo.test_asquith.x5.14.c08",
+          "geo.test_asquith.x5.14.c09",
+          "geo.test_asquith.x5.14.c10"
+        ],
+        "signs": [
+          "Пористость по нижней шкале",
+          "Неснижаемая водонасыщенность по левой шкале",
+          "Вид кривой в точке пересечения"
+        ],
+        "rule": "Толстая кривая даёт проницаемость. Тонкая гипербола даёт объёмное содержание воды.",
+        "conclusion": "Одна точка определяет две разные величины.",
+        "cases": [
+          {
+            "given": "Пористость 25 единиц, неснижаемая водонасыщенность 40%. Читаем толстую кривую.",
+            "options": [
+              "130 мД, проницаемость",
+              "0,10, объёмное содержание воды"
+            ],
+            "answer": 0,
+            "why": "Толстой кривой соответствует проницаемость.",
+            "source": "Пример 1, стр. 146"
+          },
+          {
+            "given": "Для той же точки читаем тонкую гиперболу.",
+            "options": [
+              "130 мД, проницаемость",
+              "0,10, объёмное содержание воды"
+            ],
+            "answer": 1,
+            "why": "Тонкая гипербола объединяет одинаковое содержание воды.",
+            "source": "Пример 1, стр. 146"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "text": "При построении предполагается нефть средней плотности.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c03"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Пористость 0,25, или 25 единиц, и неснижаемая водонасыщенность 40% заданы для нефтеносного песчаника.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c02"
+          ],
+          "pages": [
+            146
+          ]
+        },
+        {
+          "text": "Для этих входов получают проницаемость 130 мД и объёмное содержание воды 0,10.",
+          "claim_ids": [
+            "geo.test_asquith.x5.14.c08",
+            "geo.test_asquith.x5.14.c10"
+          ],
+          "pages": [
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x5.14.f01",
+          "latex": "C=S_{wi}\\times\\phi",
+          "meaning": "Произведение, постоянное вдоль тонкой гиперболы.",
+          "vars": [
+            {
+              "symbol": "C",
+              "meaning": "Объёмное содержание воды",
+              "unit": "доля единицы"
+            },
+            {
+              "symbol": "S_{wi}",
+              "meaning": "Неснижаемая водонасыщенность",
+              "unit": "доля единицы"
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "Пористость",
+              "unit": "доля единицы"
+            }
+          ],
+          "page": 146,
+          "unit_id": "u146_08"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Из пары входных величин читаются два разных показателя.",
+        "inputs": "Пористость и неснижаемая водонасыщенность.",
+        "outputs": "Проницаемость и объёмное содержание воды.",
+        "breaks_where": "Палетка построена для нефти средней плотности.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Пористость, неснижаемая водонасыщенность и палетка.",
+          "manual_steps": "Найти пересечение и прочитать обе шкалы кривых.",
+          "judgment_points": "Различить семейства кривых и учесть условия палетки.",
+          "time": "Зависит от числа анализируемых интервалов.",
+          "typical_errors": "Считать проницаемость по тонкой кривой.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как две функции одной пары координат на одной карте.",
+        "breaks_where": "Кривые проницаемости отражают допущения этой палетки, а не являются универсальным справочником.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "now",
+      "kind": "now",
+      "title": "Как это делается сейчас",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "При цифровом применении шаг поиска координат и расчёт объёмного содержания воды можно автоматизировать, но допущения палетки от этого не исчезают.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "number": "7.8",
+          "page": 146,
+          "caption": "Figure 7.8. Chart of porosity ($\\phi$) versus irreducible water saturation ($S_{wi}$ in) for estimating permeability and determining bulk volume water. (Schlumberger, 1998, Chart K-3)",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u146_01",
+          "scan": "pages/p146.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        146
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "en": "porosity",
+          "definition": "Доля объёма пор в породе.",
+          "page": 146,
+          "by": "model"
+        },
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "en": "irreducible water saturation",
+          "definition": "Водонасыщенность, при которой в рассматриваемом пласте вода не вытесняется при добыче.",
+          "page": 146,
+          "by": "model"
+        },
+        {
+          "term": "Проницаемость",
+          "en": "permeability",
+          "definition": "Способность породы пропускать флюид через поры.",
+          "page": 146,
+          "by": "model"
+        },
+        {
+          "term": "Объёмное содержание воды",
+          "en": "bulk volume water",
+          "definition": "Доля объёма породы, занятая водой; на палетке равно произведению неснижаемой водонасыщенности на пористость.",
+          "page": 146,
+          "by": "author"
+        },
+        {
+          "term": "Палетка",
+          "en": "chart",
+          "definition": "График для определения величин по пересечению известных координат.",
+          "page": 146,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Кривые дают разные величины. Здесь схема чтения, а не перерисовка палетки.",
+      "alt": "Слева показано чтение проницаемости, справа — чтение содержания воды у той же точки.",
+      "file": "illustrations/geo.test_asquith.x5.14__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.14.c07",
+        "geo.test_asquith.x5.14.c08",
+        "geo.test_asquith.x5.14.c09",
+        "geo.test_asquith.x5.14.c10"
+      ],
+      "pages": [
+        146
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.14.c01",
+      "kind": "observation",
+      "text": "Палетка связывает пористость и неснижаемую водонасыщенность для оценки проницаемости и объёмного содержания воды.",
+      "quote": "Chart of porosity ($\\phi$) versus irreducible water saturation ($S_{wi}$ in) for estimating permeability and determining bulk volume water.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c02",
+      "kind": "observation",
+      "text": "В примере нефтеносный песчаник с пористостью 0.25 (25 единиц пористости) и неснижаемой водонасыщенностью 40%.",
+      "quote": "Given: Porosity ($\\phi$) = 0.25 (= 25 porosity units, p.u.) and irreducible water saturation ($S_{wi}$ in) = 40% for an oil-bearing sandstone.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c03",
+      "kind": "assumption",
+      "text": "При построении палетки предполагается нефть средней плотности.",
+      "quote": "The chart is constructed with the assumption of a medium-gravity oil.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c04",
+      "kind": "inference",
+      "text": "Пористость ищут на нижней горизонтальной шкале, неснижаемую водонасыщенность — на левой вертикальной.",
+      "quote": "1. Find porosity ($\\phi$ = 25 p.u.) on the bottom horizontal scale, and find irreducible water saturation ($S_{wi}$ in = 40%) on the left vertical scale.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c05",
+      "kind": "observation",
+      "text": "На палетке неснижаемая водонасыщенность обозначена S_wi.",
+      "quote": "Note that irreducible water saturation is labeled $S_{wi}$ on this chart.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c06",
+      "kind": "inference",
+      "text": "От найденных на шкалах значений идут внутрь палетки до пересечения.",
+      "quote": "Follow the two values into the chart to the point where they intersect.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c07",
+      "kind": "inference",
+      "text": "Толстая кривая в месте пересечения соответствует проницаемости.",
+      "quote": "The heavy curve on which this point falls represents permeability.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c08",
+      "kind": "observation",
+      "text": "В примере проницаемость равна 130 мД.",
+      "quote": "In this case, permeability, K = 130 md.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c09",
+      "kind": "inference",
+      "text": "Тонкие гиперболы объединяют точки одинакового объёмного содержания воды.",
+      "quote": "The light hyperbolic curves ($C = S_{wi} \\times \\phi$) represent lines of equal value for bulk volume water.",
+      "page": 146,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.14.c10",
+      "kind": "observation",
+      "text": "В данном примере объёмное содержание воды равно 0.10.",
+      "quote": "In this example, the bulk volume water equals 0.10 (BVW = 0.10).",
+      "page": 146,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.14.t01",
+    "geo.test_asquith.x5.14.t02",
+    "geo.test_asquith.x5.14.t03"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.14.k01",
+    "geo.test_asquith.x5.14.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.20",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.25",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

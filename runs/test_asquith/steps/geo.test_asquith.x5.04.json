@@ -1,0 +1,541 @@
+{
+  "node_id": "geo.test_asquith.x5.04",
+  "chapter": "test_asquith",
+  "index": 32,
+  "part": {
+    "id": "part3",
+    "title": "Быстрые проверки: сопротивление, пористость и удержание воды"
+  },
+  "title_beginner": "Как точки связаны с добычей",
+  "title_book": "Диаграммы Баклза",
+  "section": "x5",
+  "pages": [
+    141
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Р",
+    "secondary": "Н",
+    "threshold": "От почти постоянного объёмного содержания воды до выраженного разброса меняется картина добычи."
+  },
+  "threshold": "От почти постоянного объёмного содержания воды до выраженного разброса меняется картина добычи.",
+  "format": "cards",
+  "format_rationale": "Карточки закрепят, чем отличаются картины добычи нефти и воды на графике.",
+  "order_rationale": "Развивает пример: различает картины совместной и раздельной добычи по положению на диаграмме.",
+  "essence": [
+    "Три примера показывают, что разброс точек может помочь отличить зоны с подвижной водой.",
+    "Доли нефти здесь относятся к конкретным скважинам, а не служат универсальными порогами."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Где взяты примеры",
+          "text": "Диаграммы относятся к ордовикской зоне Red River B месторождения Бивер-Крик, округ Голден-Валли, Северная Дакота. **Объёмная доля воды** показывает часть объёма породы, занятую водой. В первом примере все точки между 0,04 и 0,05, и значение почти постоянно. Автор заключает, что пласт достиг **неснижаемой водонасыщенности**, состояния без подвижной воды, или близок к ней. В продукции первого примера нефть составляет 96%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c01",
+            "geo.test_asquith.x5.04.c02",
+            "geo.test_asquith.x5.04.c03",
+            "geo.test_asquith.x5.04.c04",
+            "geo.test_asquith.x5.04.c05"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.04.c01",
+              "quote": "These Buckles plots are taken from the Ordovician Red River B-zone, Beaver Creek Field, Golden Valley County, North Dakota (after Jaafar, 1980).",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c02",
+              "quote": "Figure 7.3a is an example of nearly constant BVW.",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c03",
+              "quote": "The formation shown produces 96% oil.",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c04",
+              "quote": "Note that all the points plot between 0.04 and 0.05 BVW.",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c05",
+              "quote": "The formation is very close to, or at, irreducible water saturation.",
+              "page": 141,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Часть точек отклоняется",
+          "text": "Во втором примере примерно половина точек около 0,04, остальные выше. По автору, такой рисунок указывает на подвижную воду. В продукции второго примера нефть составляет 68%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c06",
+            "geo.test_asquith.x5.04.c07"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.04.c06",
+              "quote": "Figure 7.3b shows a well producing 68% oil.",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c07",
+              "quote": "About half the points cluster around a BVW value of 0.04, but the other half have higher values of BVW, indicating moveable water.",
+              "page": 141,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Большой разброс",
+          "text": "В третьем примере точки рассеиваются относительно **гипербол**, кривых равной объёмной доли воды. Автор трактует разброс как признак водонасыщенности выше неснижаемой. В третьем примере скважина даёт только воду.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c08",
+            "geo.test_asquith.x5.04.c09"
+          ],
+          "pages": [
+            141
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.04.c08",
+              "quote": "Figure 7.3c shows a well producing no oil (all water).",
+              "page": 141,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.04.c09",
+              "quote": "Note the scatter of BVW values from the hyperbolic curves, indicating that the formation is not at irreducible water saturation.",
+              "page": 141,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "text": "Посмотрите, насколько точки сгруппированы вокруг кривых равной объёмной доли воды.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c02",
+            "geo.test_asquith.x5.04.c04",
+            "geo.test_asquith.x5.04.c09"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "Различите почти постоянную долю воды, частичное скопление и общий разброс.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c02",
+            "geo.test_asquith.x5.04.c07",
+            "geo.test_asquith.x5.04.c09"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "Сопоставьте рисунок каждого примера с добычей.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c03",
+            "geo.test_asquith.x5.04.c06",
+            "geo.test_asquith.x5.04.c08"
+          ],
+          "pages": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_asquith_x5_04_e01",
+          "title": "Как рисунок точек связан с добычей",
+          "page": 141,
+          "condition": "Диаграммы для зоны Red River B, месторождение Бивер-Крик.",
+          "steps": [
+            "На рис. 7.3a все точки между 0.04 и 0.05: пласт близок к неснижаемой водонасыщенности или достиг её.",
+            "На рис. 7.3b около половины точек у 0.04, остальные выше, что указывает на подвижную воду.",
+            "На рис. 7.3c точки рассеиваются относительно гипербол."
+          ],
+          "result": "В первых двух примерах продукция содержит 96% и 68% нефти соответственно; в третьем добывается только вода.",
+          "numbers": [
+            "0.04",
+            "0.05",
+            "7.3",
+            "68",
+            "96"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "data": {
+        "title": "Что подсказывает форма облака",
+        "signs": [
+          "Положение точек относительно гипербол",
+          "Скопление или рассеяние"
+        ],
+        "rule": "Сравните плотность и форму скопления с разобранными примерами.",
+        "conclusion": "Частичное скопление с точками выше опоры указывает на подвижную воду в этом примере.",
+        "claim_ids": [
+          "geo.test_asquith.x5.04.c05",
+          "geo.test_asquith.x5.04.c07",
+          "geo.test_asquith.x5.04.c09"
+        ],
+        "cases": [
+          {
+            "given": "Примерно половина точек около 0,04, остальные выше.",
+            "options": [
+              "Признак подвижной воды",
+              "Признак полного отсутствия подвижной воды"
+            ],
+            "answer": 0,
+            "why": "Так выглядит второй пример автора.",
+            "source": "модель: условие из узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "text": "В первом примере все точки между 0,04 и 0,05.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c04"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "В продукции первого примера нефть составляет 96%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c03"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "Во втором примере примерно половина точек около 0,04, остальные выше.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c07"
+          ],
+          "pages": [
+            141
+          ]
+        },
+        {
+          "text": "В продукции второго примера нефть составляет 68%.",
+          "claim_ids": [
+            "geo.test_asquith.x5.04.c06"
+          ],
+          "pages": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Распределение по интервалам информативнее одного значения.",
+        "inputs": "Пористость, водонасыщенность и описание результатов добычи в примерах.",
+        "outputs": "Качественное различение картины точек.",
+        "breaks_where": "Числа авторских примеров не являются порогами классификации.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Диаграммы и сведения о добыче.",
+          "manual_steps": "Сравнить рисунки групп точек.",
+          "judgment_points": "Не принять частичное скопление за поведение всего интервала.",
+          "time": "Требуется сравнение нескольких кривых и точек.",
+          "typical_errors": "Переносить значения примера как универсальные границы.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как три размеченных примера с разным распределением признака.",
+        "breaks_where": "Это примеры с конкретного месторождения, не обучающее правило для любой скважины.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "number": "7.3a",
+          "page": 141,
+          "caption": "Figure 7.3a is an example of nearly constant BVW. The formation shown produces 96% oil. Note that all the points plot between 0.04 and 0.05 BVW. The formation is very close to, or at, irreducible water saturation.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u141_05",
+          "scan": "pages/p141.png"
+        },
+        {
+          "number": "7.3b",
+          "page": 141,
+          "caption": "Figure 7.3b shows a well producing 68% oil. About half the points cluster around a BVW value of 0.04, but the other half have higher values of BVW, indicating moveable water.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u141_06",
+          "scan": "pages/p141.png"
+        },
+        {
+          "number": "7.3c",
+          "page": 141,
+          "caption": "Figure 7.3c shows a well producing no oil (all water). Note the scatter of BVW values from the hyperbolic curves, indicating that the formation is not at irreducible water saturation.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u141_07",
+          "scan": "pages/p141.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        141
+      ],
+      "items": [
+        {
+          "term": "Объёмное содержание воды",
+          "en": "bulk volume water",
+          "definition": "Доля общего объёма породы, занятая водой.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Неснижаемая водонасыщенность",
+          "en": "irreducible water saturation",
+          "definition": "Состояние, при котором удерживаемая породой вода не вытесняется при добыче.",
+          "page": 141,
+          "by": "model"
+        },
+        {
+          "term": "Гипербола",
+          "en": "hyperbola",
+          "definition": "На данных о пористости и водонасыщенности — кривая постоянного объёмного содержания воды.",
+          "page": 141,
+          "by": "author"
+        },
+        {
+          "term": "Подвижная вода",
+          "en": "moveable water",
+          "definition": "Вода, которая может перемещаться в породе и поступать в скважину.",
+          "page": 141,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сводка трёх книжных примеров. Это не воспроизведение координат точек.",
+      "alt": "Три блока сопоставляют вид облака точек с добычей в каждом примере.",
+      "file": "illustrations/geo.test_asquith.x5.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.04.c02",
+        "geo.test_asquith.x5.04.c03",
+        "geo.test_asquith.x5.04.c04",
+        "geo.test_asquith.x5.04.c06",
+        "geo.test_asquith.x5.04.c07",
+        "geo.test_asquith.x5.04.c08",
+        "geo.test_asquith.x5.04.c09"
+      ],
+      "pages": [
+        141
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.04.c01",
+      "kind": "observation",
+      "text": "Авторские диаграммы относятся к ордовикской зоне Red River B месторождения Бивер-Крик, округ Голден-Валли, Северная Дакота.",
+      "quote": "These Buckles plots are taken from the Ordovician Red River B-zone, Beaver Creek Field, Golden Valley County, North Dakota (after Jaafar, 1980).",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c02",
+      "kind": "observation",
+      "text": "Первый рисунок показывает почти постоянное объёмное содержание воды.",
+      "quote": "Figure 7.3a is an example of nearly constant BVW.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c03",
+      "kind": "observation",
+      "text": "Доля нефти в продукции первого примера — 96%.",
+      "quote": "The formation shown produces 96% oil.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c04",
+      "kind": "observation",
+      "text": "Все точки первого примера лежат между значениями объёмного содержания воды 0.04 и 0.05.",
+      "quote": "Note that all the points plot between 0.04 and 0.05 BVW.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c05",
+      "kind": "inference",
+      "text": "Пласт первого примера при неснижаемой водонасыщенности или очень близок к ней.",
+      "quote": "The formation is very close to, or at, irreducible water saturation.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c06",
+      "kind": "observation",
+      "text": "Доля нефти в продукции второго примера — 68%.",
+      "quote": "Figure 7.3b shows a well producing 68% oil.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c07",
+      "kind": "inference",
+      "text": "Примерно половина точек второго примера около 0.04, остальные выше: это признак подвижной воды.",
+      "quote": "About half the points cluster around a BVW value of 0.04, but the other half have higher values of BVW, indicating moveable water.",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c08",
+      "kind": "observation",
+      "text": "Третий пример — скважина даёт только воду, без нефти.",
+      "quote": "Figure 7.3c shows a well producing no oil (all water).",
+      "page": 141,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.04.c09",
+      "kind": "inference",
+      "text": "В третьем примере точки рассеиваются относительно гипербол, что указывает на водонасыщенность выше неснижаемой.",
+      "quote": "Note the scatter of BVW values from the hyperbolic curves, indicating that the formation is not at irreducible water saturation.",
+      "page": 141,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.04.t01",
+    "geo.test_asquith.x5.04.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.04.k01",
+    "geo.test_asquith.x5.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x5.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.26",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

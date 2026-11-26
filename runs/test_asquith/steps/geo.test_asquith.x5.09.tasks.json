@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "type": "multiple",
+      "claim_id": "geo.test_asquith.x5.09.c02",
+      "question": "Что верно о настройках вертикальных шкал?",
+      "evidence": "Для песчаника приняты a = 1,0 и m = 2,0. Для карбонатных пород приняты a = 0,62 и m = 2,15.",
+      "explanation": "Автор приводит различные пары a и m для этих пород.",
+      "options": [
+        "Для песчаника: a = 1,0 и m = 2,0",
+        "Для карбонатных пород: a = 0,62 и m = 2,15",
+        "Обе шкалы используют a = 1,0",
+        "Показатель m одинаков для обеих шкал"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "page": 143,
+      "anchor": "how-1",
+      "id": "geo.test_asquith.x5.09.t01",
+      "node_id": "geo.test_asquith.x5.09"
+    },
+    {
+      "type": "order",
+      "claim_id": "geo.test_asquith.x5.09.c01",
+      "question": "Как выбрать и проверить сетку?",
+      "evidence": "Определите породу, подберите сетку и проверьте a и m.",
+      "explanation": "Сначала определяют породу, затем проверяют параметры выбранной сетки.",
+      "items": [
+        "Установить тип породы",
+        "Выбрать соответствующую сетку",
+        "Проверить параметры a и m"
+      ],
+      "page": 143,
+      "anchor": "how-2",
+      "id": "geo.test_asquith.x5.09.t02",
+      "node_id": "geo.test_asquith.x5.09"
+    }
+  ],
+  "cards": [
+    {
+      "front": "Какие параметры различают две сетки?",
+      "back": "Для песчаника a = 1,0 и m = 2,0. Для карбонатных пород a = 0,62 и m = 2,15.",
+      "claim_ids": [
+        "geo.test_asquith.x5.09.c02",
+        "geo.test_asquith.x5.09.c04"
+      ],
+      "kind": "number",
+      "page": 143,
+      "id": "geo.test_asquith.x5.09.k01",
+      "node_id": "geo.test_asquith.x5.09"
+    },
+    {
+      "front": "Можно оставить одну сетку для любой породы?",
+      "back": "У авторов разные обычные настройки для песчаников и карбонатных пород.",
+      "claim_ids": [
+        "geo.test_asquith.x5.09.c01",
+        "geo.test_asquith.x5.09.c03"
+      ],
+      "kind": "mistake",
+      "page": 143,
+      "id": "geo.test_asquith.x5.09.k02",
+      "node_id": "geo.test_asquith.x5.09"
+    }
+  ]
+}

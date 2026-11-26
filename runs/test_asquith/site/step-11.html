@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 11. Как заметить вытеснение углеводородов — Log Interpretation</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_asquith.x1.07" data-index="11">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Анимация</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Log Interpretation</a><span aria-hidden="true"> / </span>Шаг 11 из 66</p>
+    <h1>Как заметить вытеснение углеводородов</h1>
+    <p class="booktitle">В книге: «ARCHIE WATER SATURATIONS: S_W AND S_XO» <span class="pg">стр. 127</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">⟳ Анимация</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + неочевидное</span>    </p>
+<p class="relies">Опирается на: <a href="step-10.html">шаг 10 «Как оценить воду у ствола»</a> <span class="muted">(предпосылка)</span>, <a href="step-09.html">шаг 9 «Вода не равна продуктивности»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Сравните, сколько воды в порах у ствола и вдали от него.</p><p>Заметно большая доля воды у ствола служит косвенным признаком вытеснения.</p><p class="threshold"><b>Пороговая идея.</b> Резкий контраст двух зон даёт косвенный признак подвижности. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Анимация: как это происходит</h2>
+      <div class="anim" data-frames="6">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m00.svg"><img src="media/geo-test-asquith-x1-07/f00.svg" alt="Кадр 1 из 6: Показать ствол и пустить вопрос; у зрителя ещё нет объяснения различия." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m01.svg"><img src="media/geo-test-asquith-x1-07/f01.svg" alt="Кадр 2 из 6: Горизонтальный срез одинакового масштаба: ближний край условной изменённой зоны начинает двигаться от стенки." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m02.svg"><img src="media/geo-test-asquith-x1-07/f02.svg" alt="Кадр 3 из 6: У той же скважины последовательно выделяются изменённые области. Заливки обозначают поровую среду." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m03.svg"><img src="media/geo-test-asquith-x1-07/f03.svg" alt="Кадр 4 из 6: Сопоставить ближнюю промытую и дальнюю незатронутую области на одном срезе. Нижний профиль не подписывать как долю воды." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m04.svg"><img src="media/geo-test-asquith-x1-07/f04.svg" alt="Кадр 5 из 6: Перейти от того же среза к знаку различия двух оценок водонасыщенности. Численного порога не вводить." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-asquith-x1-07/m05.svg"><img src="media/geo-test-asquith-x1-07/f05.svg" alt="Кадр 6 из 6: Показать условие «значительно выше» и только затем вывод «вероятно вытеснены»; отдельно назвать, чего мы не измерили." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="5" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 6</span>
+        </div>
+        <p class="anim-cap">Показать ствол и пустить вопрос; у зрителя ещё нет объяснения различия.</p>
+        <script type="application/json" class="anim-caps">["\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u0442\u0432\u043e\u043b \u0438 \u043f\u0443\u0441\u0442\u0438\u0442\u044c \u0432\u043e\u043f\u0440\u043e\u0441; \u0443 \u0437\u0440\u0438\u0442\u0435\u043b\u044f \u0435\u0449\u0451 \u043d\u0435\u0442 \u043e\u0431\u044a\u044f\u0441\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0437\u043b\u0438\u0447\u0438\u044f.", "\u0413\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u0440\u0435\u0437 \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u043e\u0433\u043e \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0430: \u0431\u043b\u0438\u0436\u043d\u0438\u0439 \u043a\u0440\u0430\u0439 \u0443\u0441\u043b\u043e\u0432\u043d\u043e\u0439 \u0438\u0437\u043c\u0435\u043d\u0451\u043d\u043d\u043e\u0439 \u0437\u043e\u043d\u044b \u043d\u0430\u0447\u0438\u043d\u0430\u0435\u0442 \u0434\u0432\u0438\u0433\u0430\u0442\u044c\u0441\u044f \u043e\u0442 \u0441\u0442\u0435\u043d\u043a\u0438.", "\u0423 \u0442\u043e\u0439 \u0436\u0435 \u0441\u043a\u0432\u0430\u0436\u0438\u043d\u044b \u043f\u043e\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u0432\u044b\u0434\u0435\u043b\u044f\u044e\u0442\u0441\u044f \u0438\u0437\u043c\u0435\u043d\u0451\u043d\u043d\u044b\u0435 \u043e\u0431\u043b\u0430\u0441\u0442\u0438. \u0417\u0430\u043b\u0438\u0432\u043a\u0438 \u043e\u0431\u043e\u0437\u043d\u0430\u0447\u0430\u044e\u0442 \u043f\u043e\u0440\u043e\u0432\u0443\u044e \u0441\u0440\u0435\u0434\u0443.", "\u0421\u043e\u043f\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0431\u043b\u0438\u0436\u043d\u044e\u044e \u043f\u0440\u043e\u043c\u044b\u0442\u0443\u044e \u0438 \u0434\u0430\u043b\u044c\u043d\u044e\u044e \u043d\u0435\u0437\u0430\u0442\u0440\u043e\u043d\u0443\u0442\u0443\u044e \u043e\u0431\u043b\u0430\u0441\u0442\u0438 \u043d\u0430 \u043e\u0434\u043d\u043e\u043c \u0441\u0440\u0435\u0437\u0435. \u041d\u0438\u0436\u043d\u0438\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043d\u0435 \u043f\u043e\u0434\u043f\u0438\u0441\u044b\u0432\u0430\u0442\u044c \u043a\u0430\u043a \u0434\u043e\u043b\u044e \u0432\u043e\u0434\u044b.", "\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u043e\u0442 \u0442\u043e\u0433\u043e \u0436\u0435 \u0441\u0440\u0435\u0437\u0430 \u043a \u0437\u043d\u0430\u043a\u0443 \u0440\u0430\u0437\u043b\u0438\u0447\u0438\u044f \u0434\u0432\u0443\u0445 \u043e\u0446\u0435\u043d\u043e\u043a \u0432\u043e\u0434\u043e\u043d\u0430\u0441\u044b\u0449\u0435\u043d\u043d\u043e\u0441\u0442\u0438. \u0427\u0438\u0441\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u0440\u043e\u0433\u0430 \u043d\u0435 \u0432\u0432\u043e\u0434\u0438\u0442\u044c.", "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0443\u0441\u043b\u043e\u0432\u0438\u0435 \u00ab\u0437\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0432\u044b\u0448\u0435\u00bb \u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u0442\u0435\u043c \u0432\u044b\u0432\u043e\u0434 \u00ab\u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e \u0432\u044b\u0442\u0435\u0441\u043d\u0435\u043d\u044b\u00bb; \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e \u043d\u0430\u0437\u0432\u0430\u0442\u044c, \u0447\u0435\u0433\u043e \u043c\u044b \u043d\u0435 \u0438\u0437\u043c\u0435\u0440\u0438\u043b\u0438."]</script>
+<p class="muted small">Допущения: Радиусы, толщина условной корки, сопротивления и выбор песчаника — условные значения и выбор для шаблона, в книге для этого признака не заданы.; Параметр анимации — условный ход процесса, не шкала времени; синхронный профиль сопротивления показывает только зоны, не величину водонасыщенности.; Не предполагаем, что детерминированная схема доказывает подвижность реального флюида..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>В <strong class="term">промытой зоне</strong>, изменённой фильтратом у ствола, оценивают долю воды. Эта доля помогает судить о <strong class="term">подвижности углеводородов</strong> — способности нефти или газа вытесняться. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.07.c01"><p>«Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*.»</p><footer>— автор, стр. 127 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/geo_test_asquith_x1_07__1_m.svg"><img src="img/geo_test_asquith_x1_07__1.svg" alt="Фильтрат проникает в породу → Доля воды у ствола выше → Вероятное вытеснение углеводородов." loading="lazy"></picture>  </div>
+  <figcaption>
+    Схема связывает исходный признак с проверкой и выводом.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 127</span>
+  </figcaption>
+</figure>
+<h3>Ограничение</h3>          <div class="para" id="how-2">
+            <p>Сравните промытую зону с <strong class="term">незатронутой зоной</strong>, куда фильтрат не дошёл. Если у ствола воды намного больше, автор считает вытеснение вероятным. О движении судят по различию насыщенностей, а не по прямому наблюдению. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p>
+            <blockquote class="quote" cite="#src-geo.test_asquith.x1.07.c02"><p>«For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).»</p><footer>— автор, стр. 127 <span class="kind kind-inference">вывод</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">От контраста к гипотезе</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Промытая зона</li><li>Незатронутая зона</li><li>Сильный контраст долей воды</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Если промытая зона намного более водонасыщена, вытеснение вероятно. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Оставьте вывод вероятностным.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> В ближней зоне воды значительно больше, чем вдали. <span class="muted small">(модель)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Признак вероятного вытеснения</button><button type="button" class="btn ghost case-opt" data-i="1">Прямо доказанное течение</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> Насыщенности сравнивают, но движение не наблюдают.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Признак возникает, если доля воды в промытой зоне намного больше, чем вдали от ствола. <span class="pg" title="Страница книги (по PDF)">стр. 127</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Две оценки водонасыщенности → Предварительный признак подвижности.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Две оценки водонасыщенности</dd>
+          <dt>Выход</dt><dd>Предварительный признак подвижности</dd>
+          <dt>Где ломается</dt><dd>Когда сравнение интерпретируют как прямое измерение</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Две оценки водонасыщенности</dd>
+            <dt>Ручные шаги</dt><dd>Сравните водонасыщенность промытой и незатронутой зон: если первая намного больше, вероятно вытеснение.</dd>
+            <dt>Точки суждения</dt><dd>Является ли различие достаточно выраженным</dd>
+            <dt>Время</dt><dd>Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.</dd>
+            <dt>Типичные ошибки</dt><dd>Считать вероятное вытеснение доказанным</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Сравнение изменённого участка с контрольным помогает предположить, что изменилось.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Контроль — соседняя часть пласта, а не лабораторно заданная копия.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Промытая зона <span class="en" lang="en">(flushed zone)</span></dt><dd>Прилегающая к стволу часть пласта, изменённая фильтратом раствора.  <span class="chip chip-model">модель</span></dd><dt>Незатронутая зона <span class="en" lang="en">(uninvaded zone)</span></dt><dd>Часть пласта, куда не проник фильтрат бурового раствора.  <span class="chip chip-model">модель</span></dd><dt>Водонасыщенность <span class="en" lang="en">(water saturation)</span></dt><dd>Доля порового пространства, заполненная водой.  <span class="chip chip-model">модель</span></dd><dt>Фильтрат раствора <span class="en" lang="en">(mud filtrate)</span></dt><dd>Жидкая часть бурового раствора, проникающая в пласт.  <span class="chip chip-model">модель</span></dd><dt>Подвижность углеводородов <span class="en" lang="en">(hydrocarbon moveability)</span></dt><dd>Способность нефти или газа перемещаться из порового пространства под действием вытеснения.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_asquith-x1-07-t01" data-task="geo.test_asquith.x1.07.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">У ствола доля воды намного выше. Как истолковать разницу?</legend>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.07.t01" value="0"> <span>Движение прямо измерено</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.07.t01" value="1"> <span>Воды в промытой зоне нет</span></label>
+    <label class="opt"><input type="radio" name="geo.test_asquith.x1.07.t01" value="2"> <span>Вытеснение вероятно</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Вытеснение вероятно</p>
+    <p class="fb-expl">Сравнение указывает на вероятное, а не доказанное вытеснение. <a href="#how-2">Где это в тексте (стр. 127) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_asquith-x1-07-t02" data-task="geo.test_asquith.x1.07.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие две величины сравнивают?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.07.t02" value="0"> <span>Долю воды в незатронутой зоне</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.07.t02" value="1"> <span>Глубину ствола</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.07.t02" value="2"> <span>Коммерческие запасы</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_asquith.x1.07.t02" value="3"> <span>Долю воды в промытой зоне</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Долю воды в промытой зоне; Долю воды в незатронутой зоне</p>
+    <p class="fb-expl">Смысл имеет различие насыщенностей близкой и дальней зон. <a href="#how-2">Где это в тексте (стр. 127) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_asquith.x1.07.c01"><p>Водонасыщенность промытой зоны служит признаком подвижности углеводородов. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*.»</p><footer>— стр. 127</footer></blockquote></li>
+        <li id="src-geo.test_asquith.x1.07.c02"><p>Если насыщенность промытой зоны намного выше, проникшая жидкость, вероятно, вытеснила углеводороды из ближней зоны. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).»</p><footer>— стр. 127</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u127_16-1" tabindex="-1">
+          <p class="pg">Стр. 127 · ARCHIE WATER SATURATIONS: $S_W$ AND $S_{XO}$</p>
+          <blockquote>Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*. For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-12.html">шаг 12 «Как обойтись без кривой пористости»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-10.html" rel="prev"><span>← Назад</span><b>Как оценить воду у ствола</b></a><a class="next" href="step-12.html" rel="next"><span>Дальше →</span><b>Как обойтись без кривой пористости</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>G. Asquith, D. Krygowski · «Basic Well Log Analysis» · 2004. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Как заметить вытеснение углеводородов</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_asquith" data-node="geo.test_asquith.x1.07">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_asquith", "title": "Log Interpretation", "book": {"author": "G. Asquith, D. Krygowski", "title": "Basic Well Log Analysis", "year": 2004, "md": "md/test_asquith.md"}, "steps": [{"node_id": "geo.test_asquith.x1.01", "index": 1, "title": "От кривых к решению", "url": "step-01.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.02", "index": 2, "title": "Зачем предварительно просматривать каротаж", "url": "step-02.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.03", "index": 3, "title": "Как выбрать первую кривую", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.test_asquith.x3.01", "index": 4, "title": "Два пути первичного просмотра", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_asquith.x4.01", "index": 5, "title": "Сначала сопротивление в терригенных породах", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.01", "index": 6, "title": "С чего начать поиск пор", "url": "step-06.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.02", "index": 7, "title": "От скважинных данных к расчётам", "url": "step-07.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.04", "index": 8, "title": "Как оценить воду вдали от ствола", "url": "step-08.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.05", "index": 9, "title": "Вода не равна продуктивности", "url": "step-09.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.06", "index": 10, "title": "Как оценить воду у ствола", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.07", "index": 11, "title": "Как заметить вытеснение углеводородов", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.08", "index": 12, "title": "Как обойтись без кривой пористости", "url": "step-12.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.09", "index": 13, "title": "Пороги подвижности для разных пород", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.10", "index": 14, "title": "Как оценить воду по отношениям", "url": "step-14.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.11", "index": 15, "title": "Что значит совпадение двух оценок", "url": "step-15.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.12", "index": 16, "title": "Когда метод отношений даёт меньше", "url": "step-16.html", "minutes": 4}, {"node_id": "geo.test_asquith.x1.13", "index": 17, "title": "Когда метод отношений даёт больше", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.14", "index": 18, "title": "Что даёт быстрая оценка", "url": "step-18.html", "minutes": 3}, {"node_id": "geo.test_asquith.x1.16", "index": 19, "title": "Почему сопротивление расходится с ПС", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.15", "index": 20, "title": "Две кривые на одной дорожке", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.18", "index": 21, "title": "Почему минимум служит ориентиром", "url": "step-21.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.17", "index": 22, "title": "Как найти водяную опору", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.19", "index": 23, "title": "Какие параметры нужны для расчёта", "url": "step-23.html", "minutes": 5}, {"node_id": "geo.test_asquith.x1.20", "index": 24, "title": "Как оценить долю воды", "url": "step-24.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.21", "index": 25, "title": "Как получить пористость по сопротивлению", "url": "step-25.html", "minutes": 6}, {"node_id": "geo.test_asquith.x1.23", "index": 26, "title": "Что выдаёт пористость по сопротивлению", "url": "step-26.html", "minutes": 9}, {"node_id": "geo.test_asquith.x1.22", "index": 27, "title": "Когда расчётная пористость слишком низкая", "url": "step-27.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.24", "index": 28, "title": "Сопротивление пласта с водой", "url": "step-28.html", "minutes": 7}, {"node_id": "geo.test_asquith.x1.25", "index": 29, "title": "Почему вода может не двигаться", "url": "step-29.html", "minutes": 8}, {"node_id": "geo.test_asquith.x1.26", "index": 30, "title": "Диаграмма Баклса и размер зёрен", "url": "step-30.html", "minutes": 10}, {"node_id": "geo.test_asquith.x5.03", "index": 31, "title": "Что говорит разброс точек", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.04", "index": 32, "title": "Как точки связаны с добычей", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.01", "index": 33, "title": "Зачем нужны диаграммы насыщения", "url": "step-33.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.02", "index": 34, "title": "Как уравнение превращается в прямую", "url": "step-34.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.03", "index": 35, "title": "Как читать оси Пикетта", "url": "step-35.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.04", "index": 36, "title": "Как подобрать параметры матрицы", "url": "step-36.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.05", "index": 37, "title": "Как оценить насыщенность отдельной точки", "url": "step-37.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.06", "index": 38, "title": "Как нанести линии на Пикетта", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.14", "index": 39, "title": "Одни данные для двух диаграмм", "url": "step-39.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.05", "index": 40, "title": "Как выбрать водоносную линию Пикетта", "url": "step-40.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.06", "index": 41, "title": "Как найти сопротивление пластовой воды", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.07", "index": 42, "title": "Как провести линию равной насыщенности", "url": "step-42.html", "minutes": 5}, {"node_id": "geo.test_asquith.x5.08", "index": 43, "title": "Как посчитать насыщенность по Пикетту", "url": "step-43.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.07", "index": 44, "title": "Когда полезна диаграмма Хингла", "url": "step-44.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.08", "index": 45, "title": "Почему Хингл меняет шкалу", "url": "step-45.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.09", "index": 46, "title": "Как читать веер Хингла", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.10", "index": 47, "title": "Что извлечь из водной линии", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.11", "index": 48, "title": "Как провести веер насыщения", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.09", "index": 49, "title": "Как выбрать сетку Хингла", "url": "step-49.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.10", "index": 50, "title": "Как оценить плотность твёрдой породы", "url": "step-50.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.11", "index": 51, "title": "Как найти сопротивление пластовой воды", "url": "step-51.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.12", "index": 52, "title": "Как провести линию водонасыщенности", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.test_asquith.x5.13", "index": 53, "title": "Как уточнить насыщенность на Хингле", "url": "step-53.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.12", "index": 54, "title": "Когда выбрать Пикетта или Хингла", "url": "step-54.html", "minutes": 9}, {"node_id": "geo.test_asquith.x2.13", "index": 55, "title": "Когда каротаж оценивает проницаемость", "url": "step-55.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.15", "index": 56, "title": "Как выбрать коэффициент для флюида", "url": "step-56.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.16", "index": 57, "title": "Как устроена формула Тимура", "url": "step-57.html", "minutes": 3}, {"node_id": "geo.test_asquith.x2.17", "index": 58, "title": "Какие входы нужны Коутсу", "url": "step-58.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.18", "index": 59, "title": "Как найти коэффициент по плотности", "url": "step-59.html", "minutes": 5}, {"node_id": "geo.test_asquith.x2.19", "index": 60, "title": "Как сопротивления определяют коэффициент W", "url": "step-60.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.20", "index": 61, "title": "Как собрать формулу проницаемости", "url": "step-61.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.14", "index": 62, "title": "Как читать палетку проницаемости", "url": "step-62.html", "minutes": 7}, {"node_id": "geo.test_asquith.x5.15", "index": 63, "title": "Когда палетке проницаемости можно доверять", "url": "step-63.html", "minutes": 6}, {"node_id": "geo.test_asquith.x2.21", "index": 64, "title": "Почему сланец и глина различаются", "url": "step-64.html", "minutes": 8}, {"node_id": "geo.test_asquith.x2.22", "index": 65, "title": "Где вода остаётся неподвижной", "url": "step-65.html", "minutes": 7}, {"node_id": "geo.test_asquith.x2.23", "index": 66, "title": "Как глина искажает оценку насыщения", "url": "step-66.html", "minutes": 7}], "minutes": 410, "n_tasks": 134, "n_cards": 133, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_asquith.x1.07.t01", "type": "single", "question": "У ствола доля воды намного выше. Как истолковать разницу?", "explanation": "Сравнение указывает на вероятное, а не доказанное вытеснение.", "page": 127, "link": "#how-2", "step_title": "Как заметить вытеснение углеводородов", "step_index": 11, "node_id": "geo.test_asquith.x1.07", "options": ["Движение прямо измерено", "Воды в промытой зоне нет", "Вытеснение вероятно"], "key": [2], "answer_text": "Вытеснение вероятно"}, {"id": "geo.test_asquith.x1.07.t02", "type": "multiple", "question": "Какие две величины сравнивают?", "explanation": "Смысл имеет различие насыщенностей близкой и дальней зон.", "page": 127, "link": "#how-2", "step_title": "Как заметить вытеснение углеводородов", "step_index": 11, "node_id": "geo.test_asquith.x1.07", "options": ["Долю воды в незатронутой зоне", "Глубину ствола", "Коммерческие запасы", "Долю воды в промытой зоне"], "key": [0, 3], "answer_text": "Долю воды в промытой зоне; Долю воды в незатронутой зоне"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

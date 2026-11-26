@@ -1,0 +1,618 @@
+{
+  "node_id": "geo.test_asquith.x2.02",
+  "chapter": "test_asquith",
+  "index": 34,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как уравнение превращается в прямую",
+  "title_book": "Pickett Crossplot Method",
+  "section": "x2",
+  "pages": [
+    132
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "Если поры целиком заполнены водой, в логарифмических координатах член, связанный с насыщением, исчезает."
+  },
+  "threshold": "Если поры целиком заполнены водой, в логарифмических координатах член, связанный с насыщением, исчезает.",
+  "format": "interactive",
+  "format_rationale": "Переключение шкалы делает видимой смену формы зависимости Арчи.",
+  "order_rationale": "Объясняет математическую причину прямых линий до измерения наклона и пересечения.",
+  "essence": [
+    "Диаграмма Пикетта превращает связь сопротивления и пористости в прямую для полностью водоносного интервала.",
+    "Так один график помогает оценить насыщенность и другие параметры."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Что связывает уравнение",
+          "text": "Авторы считают диаграмму Пикетта простым и эффективным способом оценивать **водонасыщенность**, долю воды в порах. По ней также оценивают сопротивление пластовой воды и параметры **матрицы**, твёрдой части породы. Эти параметры нужны для акустического и плотностного каротажа. **Истинное сопротивление пласта** зависит от пористости, водонасыщенности и показателя цементации, степени при пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c01",
+            "geo.test_asquith.x2.02.c02",
+            "geo.test_asquith.x2.02.c03",
+            "geo.test_asquith.x2.02.c04",
+            "geo.test_asquith.x2.02.c05"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.02.c01",
+              "quote": "The Pickett plot (Pickett, 1966, 1973) is one of the simplest and most effective crossplot methods in use.",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c02",
+              "quote": "This technique estimates water saturation and can also help determine:",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c03",
+              "quote": "- formation water resistivity ($R_w$)",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c04",
+              "quote": "- matrix parameters for sonic and density logs ($\\Delta t_{ma}$ and $\\rho_{ma}$)",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c05",
+              "quote": "The Pickett method is based on the observation that true resistivity ($R_t$) is a function of porosity ($\\phi$), water saturation ($S_w$), and cementation exponent ($m$).",
+              "page": 132,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Почему получается прямая",
+          "text": "Сначала запишите уравнение для сопротивления, затем возьмите логарифм и подставьте условие полного водонасыщения. При полном водонасыщении $S_w$ равна единице, и её логарифм равен нулю. Остаётся прямая: $\\log R_t=\\log(aR_w)-m\\log\\phi$. Здесь $a$ — коэффициент извилистости, а $R_w$ — сопротивление пластовой воды.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c06",
+            "geo.test_asquith.x2.02.c07",
+            "geo.test_asquith.x2.02.c08"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.02.c06",
+              "quote": "It is actually a graphical solution of Archie's equation in terms of resistivity. Archie's equation (Equation 7.1) is solved for resistivity:",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c07",
+              "quote": "Taking the logarithm of the equation produces:",
+              "page": 132,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.02.c08",
+              "quote": "If the zone is water-bearing, $S_w = 1$, $\\log(S_w) = 0$, and the equation reduces to:",
+              "page": 132,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Как читать запись автора",
+          "text": "В исходной записи сопротивления в числителе стоит $R_o$, а в следующей логарифмической записи — $R_w$. Для водоносной прямой здесь показана логарифмическая форма автора.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c06",
+            "geo.test_asquith.x2.02.c07"
+          ],
+          "pages": [
+            132
+          ],
+          "by": "author",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "text": "Запишите уравнение Арчи для сопротивления.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c06"
+          ],
+          "pages": [
+            132
+          ]
+        },
+        {
+          "text": "Перейдите к логарифму уравнения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c07"
+          ],
+          "pages": [
+            132
+          ]
+        },
+        {
+          "text": "Подставьте условие полного водонасыщения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c08"
+          ],
+          "pages": [
+            132
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "text": "При полном водонасыщении $S_w$ равна единице, и её логарифм равен нулю.",
+          "claim_ids": [
+            "geo.test_asquith.x2.02.c08"
+          ],
+          "pages": [
+            132
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.02.f01",
+          "latex": "R_t = \\frac{a \\times R_o}{\\phi^m \\times S_w^n}",
+          "meaning": "Формула сопротивления в том виде, в каком она дана в единице; обозначение в числителе отличается от следующей записи.",
+          "vars": [
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_o",
+              "meaning": "сопротивление пласта при полном водонасыщении",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            }
+          ],
+          "page": 132,
+          "unit_id": "u132_10"
+        },
+        {
+          "id": "geo.test_asquith.x2.02.f02",
+          "latex": "\\log(R_t) = \\log(a \\times R_w) - m \\log(\\phi) - n \\log(S_w)",
+          "meaning": "Логарифмическая запись уравнения, приведённая авторами.",
+          "vars": [
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "доля пор, заполненная водой",
+              "unit": "доля"
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            }
+          ],
+          "page": 132,
+          "unit_id": "u132_12"
+        },
+        {
+          "id": "geo.test_asquith.x2.02.f03",
+          "latex": "\\log(R_t) = \\log(a \\times R_w) - m \\log(\\phi)",
+          "meaning": "Логарифмическая запись для полного водонасыщения.",
+          "vars": [
+            {
+              "symbol": "R_t",
+              "meaning": "истинное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля объёма породы, занятая порами",
+              "unit": "доля"
+            }
+          ],
+          "page": 132,
+          "unit_id": "u132_14"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Полное водонасыщение задаёт опорное поведение, с которым затем сравнивают другие точки.",
+        "inputs": "Истинное сопротивление и пористость, сведения о заполнении пор и параметры уравнения.",
+        "outputs": "Логарифмическая связь и её упрощение для водоносных зон.",
+        "breaks_where": "Упрощённое водное выражение не описывает произвольное водонасыщение.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротажные пары и параметры уравнения.",
+          "manual_steps": "Подготовить значения для логарифмических координат и выбрать водоносные точки.",
+          "judgment_points": "Различить общее выражение и выражение для водоносной зоны.",
+          "time": "Время построения в главе не измерено.",
+          "typical_errors": "Перенести упрощение на точки с углеводородами.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Преобразовать данные, чтобы степенная связь стала линейным ориентиром.",
+        "breaks_where": "За линейностью здесь стоит модель породы и строгое условие полного водонасыщения.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Проверка обозначений",
+          "text": "В первой формуле числитель содержит R_o, а в следующей логарифмической записи указан R_w. Эти два обозначения не взаимозаменяемы. Формулы здесь переданы как в предоставленном фрагменте.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        132
+      ],
+      "items": [
+        {
+          "term": "Диаграмма Пикетта",
+          "definition": "Диаграмма сопротивления и пористости, графически решающая уравнение Арчи.",
+          "en": "Pickett plot",
+          "page": 132,
+          "by": "author"
+        },
+        {
+          "term": "Пористость",
+          "definition": "Доля общего объёма породы, занятая порами.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "definition": "Доля объёма пор, заполненная водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление пластовой воды",
+          "definition": "Сопротивление воды в порах пласта, обозначение R_w.",
+          "en": "formation water resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Истинное сопротивление пласта",
+          "definition": "Сопротивление самого пласта, обозначение R_t.",
+          "en": "true resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водонасыщенного пласта",
+          "definition": "Сопротивление, которое имел бы пласт при полном водонасыщении; обозначение R_o.",
+          "en": "wet resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи; входит в произведение с сопротивлением воды.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель цементации",
+          "definition": "Степень m, задающая зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Показатель насыщения",
+          "definition": "Степень n, задающая зависимость сопротивления от водонасыщенности в уравнении Арчи.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Уравнение Арчи",
+          "definition": "Связь сопротивления пласта с его пористостью, водонасыщенностью и электрическими параметрами.",
+          "en": "Archie equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Акустический каротаж",
+          "definition": "Скважинное измерение времени распространения звука, используемое для оценки пористости.",
+          "en": "sonic log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Плотностный каротаж",
+          "definition": "Скважинное измерение объёмной плотности, используемое для оценки пористости.",
+          "en": "density log",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матрица породы",
+          "definition": "Твёрдая часть породы без пор.",
+          "en": "formation matrix",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Матричные параметры",
+          "definition": "Плотность твёрдой части породы и время прохождения звука в ней.",
+          "en": "matrix parameters",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Логарифмическая шкала",
+          "definition": "Шкала, где одинаковый шаг соответствует одинаковому изменению во столько же раз.",
+          "en": "logarithmic scale",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "Логарифм",
+          "definition": "Показатель степени, в которую нужно возвести основание, чтобы получить указанное число.",
+          "en": "logarithm",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Логарифм водонасыщенности исчезает для полностью водоносной зоны.",
+      "alt": "Блоки показывают переход от уравнения сопротивления к прямой.",
+      "file": "illustrations/geo.test_asquith.x2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.02.c06",
+        "geo.test_asquith.x2.02.c07",
+        "geo.test_asquith.x2.02.c08"
+      ],
+      "pages": [
+        132
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.02.c01",
+      "kind": "observation",
+      "text": "Авторы характеризуют диаграмму Пикетта как один из самых простых и эффективных методов построения диаграмм.",
+      "quote": "The Pickett plot (Pickett, 1966, 1973) is one of the simplest and most effective crossplot methods in use.",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c02",
+      "kind": "observation",
+      "text": "Метод оценивает водонасыщенность и помогает определить дополнительные параметры.",
+      "quote": "This technique estimates water saturation and can also help determine:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c03",
+      "kind": "observation",
+      "text": "Один из дополнительных параметров — сопротивление пластовой воды.",
+      "quote": "- formation water resistivity ($R_w$)",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c04",
+      "kind": "observation",
+      "text": "Диаграмма помогает определить матричные параметры для акустического и плотностного каротажа.",
+      "quote": "- matrix parameters for sonic and density logs ($\\Delta t_{ma}$ and $\\rho_{ma}$)",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c05",
+      "kind": "observation",
+      "text": "Истинное сопротивление зависит от пористости, водонасыщенности и показателя цементации.",
+      "quote": "The Pickett method is based on the observation that true resistivity ($R_t$) is a function of porosity ($\\phi$), water saturation ($S_w$), and cementation exponent ($m$).",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c06",
+      "kind": "observation",
+      "text": "Метод является графическим решением уравнения Арчи в записи для сопротивления.",
+      "quote": "It is actually a graphical solution of Archie's equation in terms of resistivity. Archie's equation (Equation 7.1) is solved for resistivity:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c07",
+      "kind": "observation",
+      "text": "Следующий шаг автора — переход к логарифму уравнения.",
+      "quote": "Taking the logarithm of the equation produces:",
+      "page": 132,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.02.c08",
+      "kind": "assumption",
+      "text": "В водоносной зоне водонасыщенность равна единице, её логарифм равен нулю.",
+      "quote": "If the zone is water-bearing, $S_w = 1$, $\\log(S_w) = 0$, and the equation reduces to:",
+      "page": 132,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.02.t01",
+    "geo.test_asquith.x2.02.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.02.k01",
+    "geo.test_asquith.x2.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

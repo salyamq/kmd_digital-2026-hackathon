@@ -1,0 +1,437 @@
+{
+  "chapter": "test_asquith",
+  "ok": true,
+  "stats": {
+    "nodes": 66,
+    "claims": 416,
+    "quotes_exact": 416,
+    "quotes_fuzzy": 0,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 84
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.01",
+      "message": "uses «песчаник» defined later in geo.test_asquith.x1.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.01",
+      "message": "uses «истинное сопротивление» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.01",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.01",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.02",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.02",
+      "message": "uses «продуктивность» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.03",
+      "message": "uses «карбонатная порода» defined later in geo.test_asquith.x3.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.03",
+      "message": "uses «флюид» defined later in geo.test_asquith.x4.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.03",
+      "message": "uses «карбонат» defined later in geo.test_asquith.x1.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x3.01",
+      "message": "uses «карбонат» defined later in geo.test_asquith.x1.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x3.01",
+      "message": "uses «тип породы» defined later in geo.test_asquith.x1.25"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x4.01",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.01",
+      "message": "uses «карбонат» defined later in geo.test_asquith.x1.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.04",
+      "message": "uses «истинное сопротивление» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.04",
+      "message": "uses «сопротивление пластовой воды» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.04",
+      "message": "uses «глубинное сопротивление» defined later in geo.test_asquith.x1.24"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.04",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.04",
+      "message": "uses «пластовая температура» defined later in geo.test_asquith.x2.17"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.05",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.05",
+      "message": "uses «продуктивность» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.06",
+      "message": "uses «сопротивление пластовой воды» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.06",
+      "message": "uses «сопротивление фильтрата» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.06",
+      "message": "uses «глубинное сопротивление» defined later in geo.test_asquith.x1.24"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.06",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.06",
+      "message": "uses «пластовая температура» defined later in geo.test_asquith.x2.17"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.07",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.08",
+      "message": "uses «сопротивление фильтрата» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.08",
+      "message": "uses «уравнение арчи» defined later in geo.test_asquith.x1.23"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.08",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.08",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.09",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.10",
+      "message": "uses «сопротивление пластовой воды» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.10",
+      "message": "uses «сопротивление фильтрата» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.10",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.10",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.10",
+      "message": "uses «пластовая температура» defined later in geo.test_asquith.x2.17"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.12",
+      "message": "uses «истинное сопротивление» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.13",
+      "message": "uses «истинное сопротивление» defined later in geo.test_asquith.x1.14"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.13",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.14",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.14",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.16",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.16",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.15",
+      "message": "uses «глубинное сопротивление» defined later in geo.test_asquith.x1.24"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.15",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.18",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.18",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.17",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.17",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.19",
+      "message": "uses «глубинное сопротивление» defined later in geo.test_asquith.x1.24"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.19",
+      "message": "uses «плотностный каротаж» defined later in geo.test_asquith.x1.24"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.21",
+      "message": "uses «проводимость» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.23",
+      "message": "uses «проводимость» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.23",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.23",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.22",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.24",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.24",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.25",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x1.25",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.03",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.04",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.02",
+      "message": "uses «матрица» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.02",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.03",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.03",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.04",
+      "message": "uses «плотность матрицы» defined later in geo.test_asquith.x5.05"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.04",
+      "message": "uses «матрица» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.04",
+      "message": "uses «время пробега» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.04",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.06",
+      "message": "uses «матрица» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.05",
+      "message": "uses «углеводороды» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.05",
+      "message": "uses «матрица» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.06",
+      "message": "uses «сопротивление водоносной линии» defined later in geo.test_asquith.x5.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.06",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.06",
+      "message": "uses «пластовая температура» defined later in geo.test_asquith.x2.17"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.07",
+      "message": "uses «сопротивление водоносной линии» defined later in geo.test_asquith.x5.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.08",
+      "message": "uses «сопротивление водоносной линии» defined later in geo.test_asquith.x5.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.07",
+      "message": "uses «матрица» defined later in geo.test_asquith.x2.09"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.07",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.10",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.11",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x5.11",
+      "message": "uses «пластовая температура» defined later in geo.test_asquith.x2.17"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_asquith.x2.12",
+      "message": "uses «пласт» defined later in geo.test_asquith.x2.13"
+    }
+  ]
+}

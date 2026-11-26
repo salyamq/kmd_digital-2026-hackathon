@@ -1,0 +1,566 @@
+{
+  "node_id": "geo.test_asquith.x5.08",
+  "chapter": "test_asquith",
+  "index": 43,
+  "part": {
+    "id": "part4",
+    "title": "Диаграмма Пикетта: от водяной линии к насыщенности"
+  },
+  "title_beginner": "Как посчитать насыщенность по Пикетту",
+  "title_book": "Диаграмма Пикетта",
+  "section": "x5",
+  "pages": [
+    142
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": "Сопротивление аномальной точки сравнивают с линией воды на той же пористости."
+  },
+  "threshold": "Сопротивление аномальной точки сравнивают с линией воды на той же пористости.",
+  "format": "data_practice",
+  "format_rationale": "Считайте сопротивление при заданной пористости и оцените насыщенность аномальной точки.",
+  "order_rationale": "Завершает пример расчётом для отдельной аномальной точки при той же пористости, что у водоносной опоры.",
+  "essence": [
+    "Чтобы получить насыщенность точки, сравните два сопротивления при одинаковой пористости.",
+    "Уравнение точнее чтения диаграммы на глаз."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Почему нужны два сопротивления",
+          "text": "**Водонасыщенность** — доля объёма пор, занятая водой. **Водоносная линия** проходит через точки породы, насыщенной водой. Опорное сопротивление читают на этой линии при пористости анализируемой точки.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c01",
+            "geo.test_asquith.x5.08.c02",
+            "geo.test_asquith.x5.08.c06"
+          ],
+          "pages": [
+            142
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.08.c01",
+              "quote": "To determine the water saturation of the anomalous points (with more accuracy than estimating the values from the crossplot), the following equation can be used:",
+              "page": 142,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.08.c02",
+              "quote": "In this case, the value for $R_{a}$ is the value at the water-bearing line at the same porosity as the point of interest.",
+              "page": 142,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.08.c06",
+              "quote": "$$\nS _ {w} = \\left(\\frac {R _ {a}}{R _ {r}}\\right) ^ {\\frac {1}{n}}\n$$",
+              "page": 142,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Что делает формула",
+          "text": "Затем опорное сопротивление делят на сопротивление точки. Отношение возводят в степень 1/n. **Показатель насыщения** n — степенной параметр уравнения.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c06"
+          ],
+          "pages": [
+            142
+          ],
+          "by": "author",
+          "quotes": []
+        },
+        {
+          "id": "how-3",
+          "section": "Разобранный пример",
+          "text": "У двух аномальных точек одна пористость. На водоносной линии при ней указано 0,80 Ом·м. Для подстановки берут показатель насыщения 2,0. При сопротивлении точки 40 Ом·м расчётная водонасыщенность равна 0,14. Для сравнения те же данные показаны на **диаграмме Хингла**, графике сопротивления и пористости на другой сетке.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c03",
+            "geo.test_asquith.x5.08.c04",
+            "geo.test_asquith.x5.08.c05",
+            "geo.test_asquith.x5.08.c07"
+          ],
+          "pages": [
+            142
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x5.08.c03",
+              "quote": "For the two points of interest (both having the same porosity), $R_{a} = 0.80$ ohm-m.",
+              "page": 142,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.08.c04",
+              "quote": "For the point who's resistivity is 40 ohm-m, the saturation is found by:",
+              "page": 142,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.08.c05",
+              "quote": "For comparison interpretation, Figure 7.7 is a Hingle plot with the same data shown.",
+              "page": 142,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x5.08.c07",
+              "quote": "$$\nS _ {w} = 0. 1 4\n$$",
+              "page": 142,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Посчитать водонасыщенность",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "text": "Определите пористость анализируемой точки.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c02"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "На этой же пористости найдите опору по водоносной линии.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c02",
+            "geo.test_asquith.x5.08.c03"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "Разделите опорное сопротивление на сопротивление точки. Примените степень 1/n.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c06"
+          ],
+          "pages": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_asquith_x5_08_e01",
+          "title": "Насыщенность аномальной точки",
+          "page": 142,
+          "condition": "Сопротивление точки 40 Ом·м; показатель насыщения 2.0.",
+          "steps": [
+            "Найти сопротивление водоносной линии 0.80 Ом·м при той же пористости.",
+            "Подставить отношение сопротивлений и показатель насыщения."
+          ],
+          "result": "Расчётная водонасыщенность — четырнадцать сотых.",
+          "numbers": [
+            "0.80",
+            "2.0",
+            "40"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "data": {
+        "title": "Проверить, какую опору брать",
+        "claim_ids": [
+          "geo.test_asquith.x5.08.c02",
+          "geo.test_asquith.x5.08.c03",
+          "geo.test_asquith.x5.08.c04",
+          "geo.test_asquith.x5.08.c06",
+          "geo.test_asquith.x5.08.c07"
+        ],
+        "signs": [
+          "Пористость точки",
+          "Сопротивление точки",
+          "Положение водоносной линии"
+        ],
+        "rule": "Берите сопротивление линии при той же пористости и ставьте его в числитель.",
+        "conclusion": "По отношению сопротивлений получите расчётную водонасыщенность.",
+        "cases": [
+          {
+            "given": "Две точки имеют одинаковую пористость.",
+            "options": [
+              "Для расчёта можно брать одну опору",
+              "Обязательно нужны две разные опоры"
+            ],
+            "answer": 0,
+            "why": "Опора определяется по пористости.",
+            "source": "Пример 1, стр. 142"
+          },
+          {
+            "given": "Опора 0,80 Ом·м, сопротивление точки 40 Ом·м, показатель 2,0.",
+            "options": [
+              "Подставить опору в числитель",
+              "Подставить 40 Ом·м в числитель"
+            ],
+            "answer": 0,
+            "why": "Водонасыщенность считают по отношению опоры к сопротивлению точки.",
+            "source": "Пример 1, стр. 142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "text": "Опорное сопротивление для обеих точек равной пористости — 0,80 Ом·м.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c03"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "Для точки 40 Ом·м при n = 2,0 автор получает 0,14.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c04",
+            "geo.test_asquith.x5.08.c07"
+          ],
+          "pages": [
+            142
+          ]
+        },
+        {
+          "text": "Опору читают при той же пористости.",
+          "claim_ids": [
+            "geo.test_asquith.x5.08.c02"
+          ],
+          "pages": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x5.08.f01",
+          "latex": "S_w=\\left(\\frac{R_a}{R_r}\\right)^{1/n}",
+          "meaning": "Расчёт водонасыщенности по отношению сопротивлений.",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "Водонасыщенность",
+              "unit": "доля единицы"
+            },
+            {
+              "symbol": "R_a",
+              "meaning": "Сопротивление водоносной линии при пористости точки",
+              "unit": "Ом·м"
+            },
+            {
+              "symbol": "R_r",
+              "meaning": "Сопротивление анализируемой точки (символ в данном фрагменте)",
+              "unit": "Ом·м"
+            },
+            {
+              "symbol": "n",
+              "meaning": "Показатель насыщения",
+              "unit": null
+            }
+          ],
+          "page": 142,
+          "unit_id": "u142_16"
+        },
+        {
+          "id": "geo.test_asquith.x5.08.f02",
+          "latex": "S_w=\\left(\\frac{0.8}{40}\\right)^{1/2.0}",
+          "meaning": "Подстановка для точки с сопротивлением 40 Ом·м.",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "Водонасыщенность",
+              "unit": "доля единицы"
+            }
+          ],
+          "page": 142,
+          "unit_id": "u142_18"
+        },
+        {
+          "id": "geo.test_asquith.x5.08.f03",
+          "latex": "S_w=0.14",
+          "meaning": "Результат авторского расчёта.",
+          "vars": [
+            {
+              "symbol": "S_w",
+              "meaning": "Водонасыщенность",
+              "unit": "доля единицы"
+            }
+          ],
+          "page": 142,
+          "unit_id": "u142_19"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Две точки с одинаковой пористостью используют одну и ту же опорную величину на водоносной линии.",
+        "inputs": "Пористость точки, её сопротивление, водоносная линия, показатель насыщения.",
+        "outputs": "Расчётная водонасыщенность.",
+        "breaks_where": "Сравнение с опорой другой пористости не следует из метода.",
+        "by": "author",
+        "hypotheses": [],
+        "lens": {
+          "inputs": "Координаты точки и построенная водоносная линия.",
+          "manual_steps": "Найти опорное сопротивление по пористости и выполнить расчёт.",
+          "judgment_points": "Выбрать подходящий показатель насыщения.",
+          "time": "Требует дополнительной операции по сравнению с чтением с графика.",
+          "typical_errors": "Перепутать измеренное и опорное сопротивления.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как вычисление отклонения от базовой линии для того же значения признака.",
+        "breaks_where": "Связь с водонасыщенностью задаётся уравнением породы, а не произвольной мерой отклонения.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        142
+      ],
+      "items": [
+        {
+          "term": "Пористость",
+          "en": "porosity",
+          "definition": "Доля объёма пор в породе.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Водонасыщенность",
+          "en": "water saturation",
+          "definition": "Доля объёма пор, занятая водой.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Удельное сопротивление",
+          "en": "resistivity",
+          "definition": "Величина, характеризующая сопротивление вещества электрическому току.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Сопротивление водоносной породы",
+          "en": "resistivity in the undisturbed, water-bearing zone",
+          "definition": "R_a: удельное сопротивление в неизменённой водоносной зоне.",
+          "page": 142,
+          "by": "author"
+        },
+        {
+          "term": "Показатель насыщения",
+          "en": "saturation exponent",
+          "definition": "Степенной параметр n в уравнении насыщенности.",
+          "page": 142,
+          "by": "model"
+        },
+        {
+          "term": "Водоносная линия",
+          "en": "water-bearing line",
+          "definition": "Линия, проведённая через группу точек пласта, насыщенного водой.",
+          "page": 142,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Пикетта",
+          "en": "Pickett plot",
+          "definition": "График сопоставления сопротивления и пористости для различения водоносных и углеводородоносных зон.",
+          "page": 142,
+          "by": "author"
+        },
+        {
+          "term": "Диаграмма Хингла",
+          "en": "Hingle plot",
+          "definition": "График сопротивления и пористости или её показателя на выбранной сетке.",
+          "page": 142,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Пористость нужна, чтобы подобрать сопоставимую опору.",
+      "alt": "Стрелки: общая пористость, отношение сопротивлений, степень и ответ.",
+      "file": "illustrations/geo.test_asquith.x5.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x5.08.c02",
+        "geo.test_asquith.x5.08.c06",
+        "geo.test_asquith.x5.08.c07"
+      ],
+      "pages": [
+        142
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x5.08.c01",
+      "kind": "inference",
+      "text": "Водонасыщенность аномальных точек можно рассчитать точнее, чем при оценке прямо по диаграмме.",
+      "quote": "To determine the water saturation of the anomalous points (with more accuracy than estimating the values from the crossplot), the following equation can be used:",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c02",
+      "kind": "inference",
+      "text": "Опорное сопротивление берут с линии при той же пористости, что у точки интереса.",
+      "quote": "In this case, the value for $R_{a}$ is the value at the water-bearing line at the same porosity as the point of interest.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c03",
+      "kind": "observation",
+      "text": "Две точки имеют одинаковую пористость, при ней сопротивление водоносной линии равно 0.80 Ом·м.",
+      "quote": "For the two points of interest (both having the same porosity), $R_{a} = 0.80$ ohm-m.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c04",
+      "kind": "observation",
+      "text": "Вычисление автора показано для точки с сопротивлением 40 Ом·м.",
+      "quote": "For the point who's resistivity is 40 ohm-m, the saturation is found by:",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c05",
+      "kind": "observation",
+      "text": "Для сравнения те же данные показаны на диаграмме Хингла.",
+      "quote": "For comparison interpretation, Figure 7.7 is a Hingle plot with the same data shown.",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c06",
+      "kind": "inference",
+      "text": "Водонасыщенность равна отношению сопротивления водоносной линии к сопротивлению точки, возведённому в степень, обратную n.",
+      "quote": "$$\nS _ {w} = \\left(\\frac {R _ {a}}{R _ {r}}\\right) ^ {\\frac {1}{n}}\n$$",
+      "page": 142,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x5.08.c07",
+      "kind": "inference",
+      "text": "Расчётная водонасыщенность в примере равна четырнадцати сотым.",
+      "quote": "$$\nS _ {w} = 0. 1 4\n$$",
+      "page": 142,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x5.08.t01",
+    "geo.test_asquith.x5.08.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x5.08.k01",
+    "geo.test_asquith.x5.08.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x5.05",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x5.07",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.05",
+      "type": "example"
+    }
+  ],
+  "overridden": true,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

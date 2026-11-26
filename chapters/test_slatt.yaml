@@ -1,0 +1,16 @@
+id: test_slatt
+split: test
+domain: geology
+title: "Clinoforms; river-dominated delta deposits and reservoirs"
+book:
+  author: "R. M. Slatt"
+  title: "Stratigraphic Reservoir Characterization for Petroleum Geologists, Geophysicists, and Engineers"
+  year: 2013
+  md: md/test_slatt.md
+language: en
+course_language: ru
+notes: "Test twin 3. End of §9.3 (clinoforms) and §9.4, md pages 410-423."
+segments:
+  - pages: [410, 423]
+    start: null
+    end: "## 9.5 WAVE-DOMINATED DELTAS"

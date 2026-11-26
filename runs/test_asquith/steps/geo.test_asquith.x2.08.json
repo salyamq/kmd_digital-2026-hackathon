@@ -1,0 +1,534 @@
+{
+  "node_id": "geo.test_asquith.x2.08",
+  "chapter": "test_asquith",
+  "index": 45,
+  "part": {
+    "id": "part5",
+    "title": "Диаграмма Хингла: другой масштаб, те же данные"
+  },
+  "title_beginner": "Почему Хингл меняет шкалу",
+  "title_book": "SATURATION CROSSPLOTS",
+  "section": "x2",
+  "pages": [
+    133,
+    135
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "По Хинглу линейность появляется не в измерении, а после преобразования шкалы сопротивления."
+  },
+  "threshold": "По Хинглу линейность появляется не в измерении, а после преобразования шкалы сопротивления.",
+  "format": "interactive",
+  "format_rationale": "Переключение вертикальной шкалы делает видимым эффект преобразования на форме зависимости.",
+  "order_rationale": "Объясняет математический смысл преобразования шкалы до чтения осей.",
+  "essence": [
+    "Чтобы линии насыщенности стали прямыми, Хингл меняет не измерения, а шкалу сопротивления.",
+    "Готовую сетку выбирают по параметрам породы."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Зачем менять ось",
+          "text": "На **диаграмме Хингла**, графике сопротивления и пористости, сопоставляют те же величины, что у Пикетта. Две линейные шкалы дали бы кривые, а преобразованная форма уравнения Арчи делает их прямыми. При неизменной водонасыщенности преобразованная координата сопротивления прямо пропорциональна пористости. Шкала пористости линейная; шкала сопротивления сильно нелинейная.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c01",
+            "geo.test_asquith.x2.08.c02",
+            "geo.test_asquith.x2.08.c03",
+            "geo.test_asquith.x2.08.c04",
+            "geo.test_asquith.x2.08.c05"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.08.c01",
+              "quote": "As with the Pickett plot, the Hingle plot seeks to plot resistivity against porosity.",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c02",
+              "quote": "Plotting resistivity against porosity on linear scales produces a family of nonlinear trends.",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c03",
+              "quote": "By solving Archie's equation (Equation 7.1) in the following form, the nonlinear trends become straight lines (Bassiouni, 1994):",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c04",
+              "quote": "$$\\left(\\frac{a}{R_t}\\right)^{\\frac{1}{m}} = \\left(\\frac{S_w^n}{R_w}\\right)^{\\frac{1}{m}} \\times \\phi \\tag{7.28}$$",
+              "page": 133,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c05",
+              "quote": "While porosity is plotted on a linear scale, the resistivity is plotted on a very nonlinear scale.",
+              "page": 133,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Какую сетку взять",
+          "text": "Подберите сетку под **коэффициент извилистости** $a$ и **показатель цементации** $m$ из модели Арчи. Для песчаников обычно используют $a=1{,}0$ и $m=2{,}0$. Для карбонатных пород используют a = 0,62 и m = 2,15. Готовая сетка позволяет нанести сопротивление без отдельного расчёта преобразованного значения.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c06",
+            "geo.test_asquith.x2.08.c07",
+            "geo.test_asquith.x2.08.c08",
+            "geo.test_asquith.x2.08.c09"
+          ],
+          "pages": [
+            133
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_asquith.x2.08.c06",
+              "quote": "In practice, the resistivity is plotted on a grid that has been constructed for specific values of tortuosity factor (a) and cementation exponent (m).",
+              "page": 133,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c07",
+              "quote": "The grid constructed using a = 1.0 and m = 2.0 is usually used for sandstones (Figure 7.5)",
+              "page": 133,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c08",
+              "quote": "the grid constructed using a = 0.62 and m = 2.15 is used for carbonates (Figure 7.6).",
+              "page": 133,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_asquith.x2.08.c09",
+              "quote": "Using the constructed grids, resistivity values can be plotted directly on the graph without the need for any calculations.",
+              "page": 133,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "По шагам",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Подберите сетку по принятым коэффициенту извилистости и показателю цементации.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c06"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Нанесите пористость по линейной оси, а сопротивление — по сетке.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c05",
+            "geo.test_asquith.x2.08.c09"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "text": "Для песчаников обычно используют $a=1{,}0$ и $m=2{,}0$.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c07"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Для карбонатных пород используют a = 0,62 и m = 2,15.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c08"
+          ],
+          "pages": [
+            133
+          ]
+        },
+        {
+          "text": "Прямая пропорциональность действует при неизменной водонасыщенности.",
+          "claim_ids": [
+            "geo.test_asquith.x2.08.c04"
+          ],
+          "pages": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        133
+      ],
+      "items": [
+        {
+          "id": "geo.test_asquith.x2.08.f01",
+          "latex": "\\left(\\frac{a}{R_t}\\right)^{1/m}=\\left(\\frac{S_w^n}{R_w}\\right)^{1/m}\\phi",
+          "meaning": "Преобразование уравнения Арчи для построения прямых на диаграмме Хингла.",
+          "vars": [
+            {
+              "symbol": "a",
+              "meaning": "коэффициент извилистости",
+              "unit": null
+            },
+            {
+              "symbol": "R_t",
+              "meaning": "истинное удельное сопротивление пласта",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "показатель цементации",
+              "unit": null
+            },
+            {
+              "symbol": "S_w",
+              "meaning": "водонасыщенность",
+              "unit": null
+            },
+            {
+              "symbol": "n",
+              "meaning": "показатель насыщения",
+              "unit": null
+            },
+            {
+              "symbol": "R_w",
+              "meaning": "удельное сопротивление пластовой воды",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость",
+              "unit": null
+            }
+          ],
+          "page": 133,
+          "unit_id": "u133_19"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Преобразованная координата и исходное сопротивление — разные представления одной величины.",
+        "inputs": "Пары пористости и сопротивления; параметры сетки.",
+        "outputs": "Точки на диаграмме Хингла.",
+        "breaks_where": "При обычной линейной шкале сопротивления ожидаемые тренды не являются прямыми.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Пористость, сопротивление, тип породы, параметры сетки.",
+          "manual_steps": "Выбрать сетку и перенести пары значений.",
+          "judgment_points": "Определить, какая сетка соответствует породе.",
+          "time": "Сетка сокращает пересчёт каждой точки.",
+          "typical_errors": "Нанести сопротивление по обычной линейной шкале.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Это похоже на преобразование признака перед линейной аппроксимацией.",
+        "breaks_where": "Здесь преобразование задаёт физическая модель с заданными параметрами, а не алгоритм, выбирающий его по качеству подгонки.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "now",
+      "kind": "now",
+      "title": "Как это делается сейчас",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Преобразование и нанесение точек можно автоматизировать; выбор параметров сетки остаётся явным входом расчёта.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        133,
+        135
+      ],
+      "items": [
+        {
+          "term": "удельное сопротивление",
+          "definition": "Мера того, насколько материал препятствует протеканию электрического тока.",
+          "en": "resistivity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "definition": "Доля объёма породы, приходящаяся на поры.",
+          "en": "porosity",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "водонасыщенность",
+          "definition": "Доля объёма пор, занятого водой.",
+          "en": "water saturation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "уравнение Арчи",
+          "definition": "Связь водонасыщенности, пористости и сопротивлений породы и пластовой воды.",
+          "en": "Archie's equation",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "коэффициент извилистости",
+          "definition": "Параметр a в уравнении Арчи, учитывающий извилистость путей электрического тока.",
+          "en": "tortuosity factor",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "показатель цементации",
+          "definition": "Показатель m, определяющий зависимость сопротивления от пористости в уравнении Арчи.",
+          "en": "cementation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "показатель насыщения",
+          "definition": "Показатель n, задающий в уравнении Арчи зависимость сопротивления от доли воды в порах.",
+          "en": "saturation exponent",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "диаграмма Хингла",
+          "definition": "Кроссплот с линейной шкалой пористости и нелинейной шкалой сопротивления, задаваемой коэффициентом извилистости и показателем цементации.",
+          "en": "Hingle plot",
+          "page": 133,
+          "by": "author"
+        },
+        {
+          "term": "диаграмма Пикетта",
+          "definition": "Кроссплот сопротивления и пористости на логарифмических шкалах.",
+          "en": "Pickett plot",
+          "page": 135,
+          "by": "author"
+        },
+        {
+          "term": "кроссплот",
+          "definition": "График, на котором точка представляет пару значений, относящихся к одному интервалу.",
+          "en": "crossplot",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "песчаник",
+          "definition": "Порода, сложенная преимущественно зёрнами песчаного размера.",
+          "en": "sandstone",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "карбонатная порода",
+          "definition": "Порода, состоящая преимущественно из карбонатных минералов.",
+          "en": "carbonate rock",
+          "page": null,
+          "by": "model"
+        },
+        {
+          "term": "пластовая вода",
+          "definition": "Вода, находящаяся в порах пласта.",
+          "en": "formation water",
+          "page": null,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Преобразование координаты сопротивления выпрямляет тренды при фиксированной водонасыщенности.",
+      "alt": "Слева описаны исходные кривые, справа — результат преобразования шкалы.",
+      "file": "illustrations/geo.test_asquith.x2.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_asquith.x2.08.c02",
+        "geo.test_asquith.x2.08.c03",
+        "geo.test_asquith.x2.08.c04",
+        "geo.test_asquith.x2.08.c05"
+      ],
+      "pages": [
+        133
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_asquith.x2.08.c01",
+      "kind": "observation",
+      "text": "Как и у Пикетта, у Хингла сопоставляют сопротивление с пористостью.",
+      "quote": "As with the Pickett plot, the Hingle plot seeks to plot resistivity against porosity.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c02",
+      "kind": "inference",
+      "text": "Если обе шкалы линейные, зависимость образует семейство нелинейных кривых.",
+      "quote": "Plotting resistivity against porosity on linear scales produces a family of nonlinear trends.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c03",
+      "kind": "inference",
+      "text": "Запись уравнения Арчи в преобразованном виде превращает кривые в прямые.",
+      "quote": "By solving Archie's equation (Equation 7.1) in the following form, the nonlinear trends become straight lines (Bassiouni, 1994):",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c04",
+      "kind": "inference",
+      "text": "При фиксированной водонасыщенности преобразованное сопротивление прямо пропорционально пористости.",
+      "quote": "$$\\left(\\frac{a}{R_t}\\right)^{\\frac{1}{m}} = \\left(\\frac{S_w^n}{R_w}\\right)^{\\frac{1}{m}} \\times \\phi \\tag{7.28}$$",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c05",
+      "kind": "observation",
+      "text": "Шкала пористости линейная, а шкала сопротивления сильно нелинейная.",
+      "quote": "While porosity is plotted on a linear scale, the resistivity is plotted on a very nonlinear scale.",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c06",
+      "kind": "observation",
+      "text": "Сетку для сопротивления строят под заданные коэффициент извилистости и показатель цементации.",
+      "quote": "In practice, the resistivity is plotted on a grid that has been constructed for specific values of tortuosity factor (a) and cementation exponent (m).",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c07",
+      "kind": "assumption",
+      "text": "Для песчаников обычно используют сетку с $a=1.0$ и $m=2.0$.",
+      "quote": "The grid constructed using a = 1.0 and m = 2.0 is usually used for sandstones (Figure 7.5)",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c08",
+      "kind": "assumption",
+      "text": "Для карбонатных пород используют сетку с $a=0.62$ и $m=2.15$.",
+      "quote": "the grid constructed using a = 0.62 and m = 2.15 is used for carbonates (Figure 7.6).",
+      "page": 133,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_asquith.x2.08.c09",
+      "kind": "inference",
+      "text": "При наличии готовой сетки сопротивление наносят напрямую без расчёта преобразованного значения.",
+      "quote": "Using the constructed grids, resistivity values can be plotted directly on the graph without the need for any calculations.",
+      "page": 133,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_asquith.x2.08.t01",
+    "geo.test_asquith.x2.08.t02"
+  ],
+  "card_ids": [
+    "geo.test_asquith.x2.08.k01",
+    "geo.test_asquith.x2.08.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_asquith.x2.07",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_asquith.x2.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "how_it_works[1]: числа не найдены в источнике: 62",
+      "numbers[1]: числа не найдены в источнике: 62",
+      "tasks[1] (numeric): numeric: ответ 2.15 не встречается в evidence"
+    ],
+    "dropped_tasks": []
+  }
+}

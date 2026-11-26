@@ -1,0 +1,2351 @@
+{
+  "request": {
+    "task": "layer_extract_02",
+    "key": "21bd39290abdd61f0b1c",
+    "prompt": "layer_extract",
+    "system": "Ты — методист и предметный редактор. Ты превращаешь фрагмент главы учебника (домен: Геология и геофизика нефтегазовых коллекторов) в узлы учебного слоя для курса.\nАудитория курса: сотрудники цифровой трансформации без геологического образования («цифровики»). Им нужно всё и глубоко: механизм, практика специалиста, нюансы и условия применимости — а не общая картина.\n\nЖёсткие правила:\n1. Опора только на текст фрагмента. Каждое утверждение (claim) опирается на ДОСЛОВНУЮ цитату автора из единицы фрагмента и указывает страницу, на которой стоит цитата. Цитату копируй символ в символ из текста единицы (включая LaTeX, индексы, опечатки распознавания), без многоточий внутри, длиной от 5 слов до ~2 предложений. Маркеры «⟦стр. N⟧» в цитату не включай: если цитата после маркера — её страница N.\n2. Полнота: все мысли автора попадают в узлы. Плотные места не сжимай до общих слов: каждое условие применимости, порог, диапазон, исключение, «но», «если», «как правило» — отдельным утверждением. Число утверждений в узле не ограничено; если мыслей много — сделай больше узлов.\n3. Числа: в текстах узла используй только числа, которые есть в главе (с единицами автора). Не вычисляй новых чисел и не придумывай примеры с числами. Диапазон автора не превращай в одно число.\n4. Пометка авторства: by=\"author\" — содержание взято из главы (пересказ без добавлений); by=\"model\" — твоё добавление (знание вне главы, аналогия, современная практика, гипотеза). Не выдавай додуманное за книгу. В layers.mechanism/practice/nuances пиши только по главе (by=\"author\"); собственные пояснения — в layers.deeper с by=\"model\".\n5. Язык всех твоих текстов — русский (даже если глава на английском); цитаты — на языке оригинала.\n6. Термин, который ты используешь в тексте узла, должен быть либо объяснён в этом узле (terms), либо быть общеизвестным словом.\n7. Описания рисунков с пометкой «(машинное описание, не текст автора)» помогают понять рисунок, но их нельзя цитировать и брать из них числа.\n\nУзел = одна идея или один шаг, который новичок осваивает за 5–10 минут: обычно 1–6 соседних единиц. Разобранный пример автора кладётся в узел, который он иллюстрирует (или в собственный узел, если пример большой). Задачи из книги — в узел, чьё содержание они тренируют.\n\nТипы трудности (выбери основной и, если есть, второй):\n- М — механизм, процесс: Узел объясняет, как что-то происходит физически: причина, движущая сила, цепочка событий (проникновение фильтрата, распространение волны давления, вытеснение, упругое расширение). Трудность — процесс невидим и идёт во времени или внутри породы.\n- В — геологическое время: Узел о развитии во времени на геологических масштабах: рост рифа, проградация дельты, смена фаций, диагенез, вторичная пористость. Трудность — миллионы лет и порядок событий.\n- И — косвенное измерение: Узел о том, как прибор/метод измеряет отклик, а свойство породы получают интерпретацией (сопротивление → насыщение, ПС → глинистость, ЯМР → эффективная пористость). Трудность — сигнал ≠ свойство; признаки неоднозначны и зависят от условий.\n- Ф — формализм, модель: Узел держится на уравнении, модели или выводе (уравнение пьезопроводности, упругий запас, решение для галереи/скважины, метод ПССС). Трудность — абстракция и допущения модели.\n- П — пространство: Узел о геометрии тел и их распределении в пространстве (форма рифа, зональность коллекторов, геометрия дельты, ловушка, контакт). Трудность — представить 3D по разрезам и картам.\n- Пр — процедура: Узел описывает порядок действий специалиста: алгоритм, методика, последовательность операций (определение критических значений, построение разреза, выделение ВНК). Трудность — много шагов и точек выбора.\n- Н — неопределённость, решение: Узел о принятии решения при неполных данных: пороги, критические значения, неоднозначные заключения, вероятностные оценки, выбор комплекса методов. Трудность — нет однозначного ответа, нужен критерий и оговорка.\n- Р — распознавание: Узел учит узнавать объект по признакам (тип рифа, фация, литология по комплексу кривых, тип коллектора). Трудность — набор признаков и похожие случаи.\n\n\n\nТипичные заблуждения новичков (поле misconception — заполняй, только если узел действительно его исправляет; можно сформулировать своё, если глава прямо опровергает его):\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nИТ-мосты (для it_analogy; можно предложить свою аналогию, но всегда с названной границей, где она ломается):\n- косвенное измерение / интерпретация: Прибор — это сенсор, кривая — сырой сигнал, а свойство породы — скрытая переменная, которую восстанавливают обратной задачей (как вывод состояния системы по метрикам мониторинга). | ломается: У метрик сервера есть документированная модель; у породы связь «отклик → свойство» эмпирическая, зависит от района и условий бурения.\n- комплекс методов: Ансамбль признаков: один признак даёт ложные срабатывания, комбинация нескольких независимых — надёжный классификатор. | ломается: Признаки ГИС связаны физикой (пористость влияет почти на все методы), поэтому они не независимы, как предполагают простые ансамбли.\n- критическое (граничное) значение: Порог классификатора: выше порога — «коллектор», ниже — «неколлектор»; порог подбирают по размеченным данным (испытания). | ломается: Порог зависит от экономики (рентабельный дебит) и района, а не только от точности классификации; переносить порог на другой объект нельзя.\n- калибровка по керну: Разметка обучающей выборки: керн — ground truth, по нему калибруют связи «показание → свойство». | ломается: Керн — точечная и иногда нерепрезентативная выборка, его свойства в лаборатории отличаются от пластовых условий.\n- зона проникновения: Кэш поверх источника данных: близкие к стволу измерения «видят» изменённую зону, как запрос, попавший в устаревший кэш вместо базы. | ломается: Граница зоны размыта, её размер меняется со временем и зависит от свойств раствора и пласта; «сбросить кэш» нельзя.\n- распространение давления (пьезопроводность): Диффузия, как распространение тепла по радиатору или «прогрев» кэша: возмущение быстро растёт вблизи и всё медленнее вдали. | ломается: Это не сетевой пакет с фиксированной скоростью: фронт не имеет постоянной скорости, а «радиус влияния» — условная величина.\n- метод последовательной смены стационарных состояний: Квазистатическое приближение: систему считают серией снапшотов равновесных состояний, обновляемых по мере продвижения границы. | ломается: Ошибка метода велика на ранних временах; это приближение, а не точное решение уравнения.\n- нормализация / наложение диаграмм: Нормализация признаков к общей шкале, чтобы сравнить два сигнала и найти расхождение (diff двух рядов). | ломается: Совмещение кривых делается по опорным пластам и зависит от литологии; при смене минерального состава «diff» перестаёт значить насыщение.\n- кроссплот / палетка: Диаграмма рассеяния с областями решений (decision regions): точка (ρп, kп) попадает в класс «нефть / нефть с водой / вода». | ломается: Границы областей построены статистически для конкретного объекта и класса коллекторов; вне этих условий области смещаются.\n- фациальный анализ / распознавание: Классификация по набору признаков с учётом контекста соседей (последовательности), как разметка последовательностей в NLP. | ломается: Похожие наборы признаков дают разные обстановки; без геологического контекста модель уверенно ошибается.\n- геологическое время / последовательность: Журнал событий (лог) с append-only записью: молодые слои дописываются сверху. | ломается: Эрозия и несогласия «стирают» записи журнала; диагенез переписывает уже записанное.\n- пространственная интерполяция между скважинами: Восстановление поля по разреженным точкам (интерполяция/кригинг), как заполнение пропусков в данных. | ломается: Геологические тела имеют резкие границы и анизотропию (риф, русло), гладкая интерполяция их стирает.\n- условия бурения влияют на данные: Качество данных зависит от среды сбора: шумный канал (плохой раствор) портит сигнал, и это нельзя полностью исправить постобработкой. | ломается: Часть потерь необратима: не снятые в нужных условиях данные (до обсадки) потом не получить.\n\nПерсоны читателей (для data_meaning и inefficiency_lens):\n# Персоны «цифровиков» (придуманы командой; не данные организаторов)\n\nИспользуются в промптах слоя (поля data_meaning, it_analogy, inefficiency_lens) и курса, чтобы примеры\nбыли про реальные рабочие ситуации. Все персоны — вымышленные, сводные.\n\n## 1. Айгерим, data scientist (ML на каротаже)\n- Бэкграунд: Python, pandas, scikit-learn, градиентный бустинг; геологии не училась.\n- Задача: модель, которая по LAS-файлам размечает коллекторы и насыщение в новых скважинах.\n- Рабочая ситуация: «Модель предсказала коллектор, а скважина при испытании дала воду» — почему?\n- Что ей нужно от курса: какие признаки физически значимы, где кончается применимость правила, какие\n  условия бурения портят данные, откуда брать «разметку» (испытания, керн).\n\n## 2. Ержан, инженер данных / платформы\n- Бэкграунд: ETL, базы данных, хранилища, качество данных.\n- Задача: собрать витрину скважинных данных (каротаж, керн, испытания, параметры раствора) для всех\n  месторождений и автоматизировать проверки качества.\n- Рабочая ситуация: «В одной скважине сопротивление в 10 раз выше соседней — ошибка загрузки или геология?»\n- Что ему нужно: какие метаданные критичны (тип и параметры раствора, обсадка, дата замера, глубины),\n  какие значения физически правдоподобны, что нельзя «чистить» как выброс.\n\n## 3. Дана, продакт-менеджер цифровых решений\n- Бэкграунд: аналитика, интервью с пользователями, бизнес-кейсы.\n- Задача: найти, где в работе геолога/петрофизика ручной труд и что автоматизировать в первую очередь.\n- Рабочая ситуация: «Интерпретатор неделю выделяет коллекторы по 30 скважинам вручную — что из этого можно ускорить?»\n- Что ей нужно: линза неэффективности — входы, ручные шаги, точки суждения, время, типичные ошибки;\n  где решение требует эксперта, а где — рутина.",
+    "user": "Книга: G. Asquith, D. Krygowski, «Basic Well Log Analysis» (2004).\nГлава/фрагмент курса: «Log Interpretation», стр. PDF 126–136, 140–146.\nОглавление фрагмента (коды разделов):\n- x1: Log Interpretation (с. 126)\n- x2: SATURATION CROSSPLOTS (с. 132)\n- x3: (начало фрагмента) (с. 140)\n- x4: **Clastics:** (с. 140)\n- x5: **Carbonates:** (с. 140)\n\nСейчас обрабатывается часть 2 из 8: раздел x1 «Log Interpretation» (продолжение раздела, часть 2).\n\nЕдиницы фрагмента. Формат: [id | стр. | вид | доп.] текст. Каждая единица из списка «покрыть» должна попасть ровно в один узел (unit_ids) или в skipped с причиной (например, «ссылка на другую главу без содержания», «повтор»). Пропуск как «непоказуемое» не допускается.\n\n[u128_27 | стр. 128 | heading]\n### QUICK-LOOK METHODS\n\n[u128_28 | стр. 128 | heading]\n#### General\n\n[u128_29 | стр. 128 | paragraph]\nQuick-look methods are helpful to the geologist because they provide flags, or indicators, that point to possible hydrocarbon zones requiring further investigation. The four quick-look methods discussed here are:\n\n[u128_30 | стр. 128 | list]\n- $R_{xo}/R_t$\n\n[u128_31 | стр. 128 | list]\n- apparent water resistivity ($R_{wa}$)\n\n[u128_32 | стр. 128 | list]\n- conductivity-derived porosity\n\n[u128_33 | стр. 128 | list]\n- Wet resistivity ($R_o$)\n\n[u128_34 | стр. 128 | heading]\n#### $R_{xo}/R_t$\n\n[u128_35 | стр. 128 | paragraph]\nThe $R_{xo}/R_t$ technique relies on the comparison of the resistivity ratio, plotted as a curve on the log display, to the SP curve.\n\n[u128_36 | стр. 128 | heading]\n#### Procedure\n\n[u128_37 | стр. 128 | list]\n1. Calculate the $R_{xo}/R_t$ ratio from the deep and shallow reading resistivity measurements;\n\n[u128_38 | стр. 128 | list]\n2. Plot the ratio in the same track as the SP, and look for the following patterns.\n\n[u128_39 | стр. 128 | heading]\n#### Patterns to observe\n\n[u128_40 | стр. 128 | list]\n1. In a shale, the ratio is relatively constant, like the SP, and usually close to 1.\n\n[u128_41 | стр. 128 | list]\n2. In a water-bearing zone, the $R_{xo}/R_t$ ratio tracks the SP.\n\n[u128_42 | стр. 128 | list]\n3. In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].\n\n[u129_01 | стр. 129 | fragment]\nBasis for the technique\n\n[u129_02 | стр. 129 | paragraph]\nFrom Chapter 2, the equation relating the SP to fluid resistivities is:\n\n[u129_03 | стр. 129 | formula]\n$$SP = -K \\times \\log\\left(\\frac{R_{mf}}{R_w}\\right) \\tag{7.9}$$\n\n[u129_04 | стр. 129 | paragraph]\nIn water-bearing zones:\n\n[u129_05 | стр. 129 | formula]\n$$R_{xo} = F \\times R_{mf} \\quad (\\text{flushed zone}) \\tag{7.10}$$\n\n[u129_06 | стр. 129 | formula]\n$$R_o = F \\times R_w \\quad (\\text{uninvaded zone}) \\tag{7.11}$$\n\n[u129_07 | стр. 129 | paragraph]\nSolving Equations 7.2 and 7.3 for $R_{mf}$ and $R_w$ respectively, and substituting the results in Equation 7.1 yields:\n\n[u129_08 | стр. 129 | formula]\n$$SP = -K \\times \\log\\left(\\frac{R_{xo}}{R_o}\\right) \\tag{7.12}$$\n\n[u129_09 | стр. 129 | paragraph]\nThe $R_{xo}/R_o$ ratio is then related to the SP through a constant. Since $R_o$ is just a special case of $R_t$ ($R_o$ is the resistivity in the undisturbed, water-bearing zone), $R_t$ can be substituted for $R_o$ for the more general case. In water-bearing intervals, the $R_{xo}/R_t$ ratio parallels the response of the SP, and both curves move in the same direction from their respective baseline values. In a hydrocarbon-bearing interval, while the SP still responds to the differences in connate water and mud filtrate resistivities and moves accordingly, the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.\n\n[u129_10 | стр. 129 | paragraph]\nThe $R_{xo}$ curve usually used for the ratio is derived from a shallow-reading measurement, such as a microspherically focused log or a microlaterolog. The $R_t$ curve is derived from a deep-reading measurement such as the deep induction log or deep laterolog. In practice, especially when the ratio is calculated and displayed as part of the logging job, the measurements are normally used without any environmental corrections being applied.\n\n[u129_11 | стр. 129 | heading]\n### Apparent water resistivity ($R_{wa}$)\n\n[u129_12 | стр. 129 | paragraph]\nThe $R_{wa}$ technique relies on the comparison of calculated values of water resistivity between intervals in a well. This comparison can be made between different zones or within the same zone if a water-hydrocarbon contact is suspected in that zone. The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons. A water saturation can also be calculated from the values of $R_{wa}$.\n\n[u129_13 | стр. 129 | fragment]\nProcedure\n\n[u129_14 | стр. 129 | list]\n1. Calculate an apparent water resistivity ($R_{wa}$) from the porosity and uninvaded zone resistivity measurements.\n\n[u129_15 | стр. 129 | list]\n2. Look for the lowest value of $R_{wa}$ in a porous and permeable zone and compare it to the values of $R_{wa}$ calculated in the other zones.\n\n[u129_16 | стр. 129 | list]\n3. If desired, an Archie water saturation can be calculated from the $R_{wa}$ values in the compared zones.\n\n[u129_17 | стр. 129 | fragment]\nPatterns to observe\n\n[u129_18 | стр. 129 | list]\n1. The zone with the lowest value of $R_{wa}$ is the most likely to be water-bearing, and the value of $R_{wa}$ is closest to the actual value of $R_w$ in the formation.\n\n[u129_19 | стр. 129 | list]\n2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.\n\n[u129_20 | стр. 129 | fragment]\nInterpretation pitfalls\n\n[u129_21 | стр. 129 | paragraph]\nThe $R_w$ values in the zones that are compared are assumed to be the same.\n\n[u129_22 | стр. 129 | paragraph]\nIn low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.\n\n[u129_23 | стр. 129 | fragment]\nBasis for the technique\n\n[u129_24 | стр. 129 | paragraph]\nRecall from Chapter 1 that\n\n[u129_25 | стр. 129 | formula]\n$$R_o = F \\times R_w \\tag{7.13}$$\n\n[u129_26 | стр. 129 | paragraph]\nand\n\n[u129_27 | стр. 129 | formula]\n$$F = \\frac{a}{\\phi^m} \\tag{7.14}$$\n\n[u129_28 | стр. 129 | paragraph]\nCombining Equations 7.5 and 7.6, and solving for $R_w$ yields:\n\n[u129_29 | стр. 129 | formula]\n$$R_w = \\frac{R_o \\times \\phi^m}{a} \\tag{7.15}$$\n\n[u129_30 | стр. 129 | paragraph]\nFrom Equation 7.7 above, define apparent water resistivity ($R_{wa}$) as:\n\n[u129_31 | стр. 129 | formula]\n$$R_{wa} = \\frac{R_t \\times \\phi^m}{a} \\tag{7.16}$$\n\n[u129_32 | стр. 129–130 | paragraph]\nWhen a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$. If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$. By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered. If the zone with the minimum $R_{wa}$ value actually contains ⟦стр. 130⟧ some hydrocarbons, then the other zones contain even more hydrocarbons than anticipated.\n\n[u130_01 | стр. 130 | paragraph]\nIn practice, especially when calculated and displayed as a curve during a logging job, the following values are used for simplicity: $a = 1.0$, $m = 2.0$. The deep induction log or deep laterolog is used as $R_t$, usually without any environmental corrections. Porosity is usually derived from the sonic or density log using the proper matrix and fluid parameters for the formations to be encountered. If available in real time during logging, the neutron-density crossplot porosity should be used for the best estimate of porosity.\n\n[u130_02 | стр. 130 | paragraph]\nAn Archie water saturation can also be calculated from the ratio of the $R_{wa}$ values.\n\n[u130_03 | стр. 130 | formula]\n$$S_w = \\sqrt{\\frac{R_{wa\\ minimum}}{R_{wa\\ zone}}} \\tag{7.17}$$\n\n[u130_04 | стр. 130 | paragraph]\nwhere the cementation exponent ($n$) in the equation above is assumed to be 2.\n\n[u130_05 | стр. 130 | paragraph]\nA shortcut to the saturation calculation, used as a scanning aid, is:\n\n[u130_06 | стр. 130 | list]\n- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 3 yields $S_w = 0.58$;\n\n[u130_07 | стр. 130 | list]\n- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 4 yields $S_w = 0.50$;\n\n[u130_08 | стр. 130 | list]\n- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 5 yields $S_w = 0.45$.\n\n[u130_09 | стр. 130 | formula]\nWhere $a = 1.0$ and $m = 2.0$.\n\n[u130_10 | стр. 130 | heading]\n### Conductivity-derived porosity (also referred to as resistivity-porosity)\n\n[u130_11 | стр. 130 | paragraph]\nAlthough this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.\n\n[u130_12 | стр. 130 | paragraph]\nThis technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$). The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.\n\n[u130_13 | стр. 130 | heading]\n### Procedure\n\n[u130_14 | стр. 130 | list]\n1. Calculate the porosity from Archie's equation (assuming $S_w = 1.0$), using the uninvaded zone resistivity measurement.\n\n[u130_15 | стр. 130 | list]\n2. Compare the curve values and the relative position of the curve in porous and permeable zones.\n\n[u130_16 | стр. 130 | list]\n3. If desired, an Archie water saturation can be calculated by comparing the conductivity-derived porosity ty to porosity from one of the porosity measurements (sonic, density, or neutron).\n\n[u130_17 | стр. 130 | heading]\n### Patterns to observe\n\n[u130_18 | стр. 130 | list]\n1. In water-bearing zones, the conductivity-derived porosity is high and approximately equal to the true formation porosity.\n\n[u130_19 | стр. 130 | list]\n2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.\n\n[u130_20 | стр. 130 | heading]\n### Interpretation pitfalls\n\n[u130_21 | стр. 130 | paragraph]\nThe choice of an incorrect value for $R_w$ would change the value of conductivity-derived porosity, and might make its comparison to true formation porosity inaccurate. It would not, however, change the results of comparison of the curve values in different zones.\n\n\nПокрыть: u128_29, u128_30, u128_31, u128_32, u128_33, u128_35, u128_37, u128_38, u128_40, u128_41, u128_42, u129_02, u129_03, u129_04, u129_05, u129_06, u129_07, u129_08, u129_09, u129_10, u129_12, u129_14, u129_15, u129_16, u129_18, u129_19, u129_21, u129_22, u129_24, u129_25, u129_26, u129_27, u129_28, u129_29, u129_30, u129_31, u129_32, u130_01, u130_02, u130_03, u130_04, u130_05, u130_06, u130_07, u130_08, u130_09, u130_11, u130_12, u130_14, u130_15, u130_16, u130_18, u130_19, u130_21.\n\nЗаполни для каждого узла:\n- key: короткий локальный ключ (a, b, c…), section_code: код раздела из оглавления;\n- title_book: название по книге (как у автора или ближайший заголовок), title_beginner: 3–7 слов для новичка;\n- difficulty: primary, secondary (или null), threshold: формулировка пороговой идеи узла, если узел её содержит (после неё взгляд новичка меняется), иначе \"\";\n- unit_ids: единицы, которые покрывает узел;\n- layers: mechanism (почему/как это работает), practice (что делает специалист), nuances (условия применимости, исключения, ограничения), deeper: [{title, text, by}] — ветки «глубже» (выкладки, связь с другими темами; твои пояснения — by=\"model\");\n- procedure: шаги, если автор описывает порядок действий (иначе []);\n- claims: [{kind: observation|inference|assumption, text: пересказ простыми словами (до 30 слов), quote, page, unit_ids}] — все мысли автора узла;\n- worked_examples: разобранные примеры автора [{unit_ids, title, condition, steps:[...], result}] — с числами автора, без новых чисел;\n- book_problems: [{unit_id, figure: номер нужного рисунка или null}] — задачи книги;\n- terms: [{term, definition, en: английский эквивалент или null, page, by}] — термины узла (определение по главе — by=\"author\", если автор его даёт; иначе by=\"model\");\n- formulas: [{unit_id или null, latex: аккуратный LaTeX формулы, meaning: что выражает, vars: [{symbol, meaning, unit}], page}] — только формулы из главы;\n- tables: [{unit_id, ocr_fixes: [исправления явных ошибок распознавания в таблице, формат «было → стало (почему)»]}];\n- figures: [{unit_id, role: example|problem|illustration, redraw: true если на рисунке держится пример/задача и его надо перерисовать кодом}];\n- misconception: {text, correction, claim_ids: [номера утверждений этого узла, начиная с 1, как строки \"1\",\"2\"], by} или null;\n- data_meaning: {text, inputs, outputs, breaks_where, hypotheses: [...], by} — что это значит для данных: вход/выход, где ломается; только выводы, прямо следующие из главы, остальное — в hypotheses;\n- it_analogy: {text, breaks_where, by: \"model\"};\n- current_practice: {text, by: \"model\"} — как это делается сейчас, если глава описывает устаревшую технику/приборы (иначе пустой text); без чисел и без названий конкретного ПО;\n- inefficiency_lens: {inputs, manual_steps, judgment_points, time, typical_errors, by} — входные данные, ручные шаги, точки суждения, время и типичные ошибки специалиста (время — качественно, без чисел, если их нет в главе).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"nodes\", \"skipped\"], \"properties\": {\"nodes\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"key\", \"section_code\", \"title_book\", \"title_beginner\", \"difficulty\", \"unit_ids\", \"layers\", \"procedure\", \"claims\", \"worked_examples\", \"book_problems\", \"terms\", \"formulas\", \"tables\", \"figures\", \"misconception\", \"data_meaning\", \"it_analogy\", \"current_practice\", \"inefficiency_lens\"], \"properties\": {\"key\": {\"type\": \"string\"}, \"section_code\": {\"type\": \"string\"}, \"title_book\": {\"type\": \"string\"}, \"title_beginner\": {\"type\": \"string\"}, \"difficulty\": {\"type\": \"object\", \"required\": [\"primary\", \"secondary\", \"threshold\"], \"properties\": {\"primary\": {\"enum\": [\"М\", \"В\", \"И\", \"Ф\", \"П\", \"Пр\", \"Н\", \"Р\"]}, \"secondary\": {\"anyOf\": [{\"enum\": [\"М\", \"В\", \"И\", \"Ф\", \"П\", \"Пр\", \"Н\", \"Р\"]}, {\"type\": \"null\"}]}, \"threshold\": {\"type\": \"string\"}}}, \"unit_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"minItems\": 1}, \"layers\": {\"type\": \"object\", \"required\": [\"mechanism\", \"practice\", \"nuances\", \"deeper\"], \"properties\": {\"mechanism\": {\"type\": \"object\", \"required\": [\"text\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"practice\": {\"type\": \"object\", \"required\": [\"text\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"nuances\": {\"type\": \"object\", \"required\": [\"text\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"deeper\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"title\", \"text\", \"by\"], \"properties\": {\"title\": {\"type\": \"string\"}, \"text\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}}}}, \"procedure\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"claims\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"object\", \"required\": [\"kind\", \"text\", \"quote\", \"page\", \"unit_ids\"], \"properties\": {\"kind\": {\"enum\": [\"observation\", \"inference\", \"assumption\"]}, \"text\": {\"type\": \"string\"}, \"quote\": {\"type\": \"string\", \"minLength\": 8}, \"page\": {\"type\": \"integer\"}, \"unit_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"worked_examples\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_ids\", \"title\", \"condition\", \"steps\", \"result\"], \"properties\": {\"unit_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"title\": {\"type\": \"string\"}, \"condition\": {\"type\": \"string\"}, \"steps\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"result\": {\"type\": \"string\"}}}}, \"book_problems\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_id\", \"figure\"], \"properties\": {\"unit_id\": {\"type\": \"string\"}, \"figure\": {\"type\": [\"string\", \"null\"]}}}}, \"terms\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"term\", \"definition\", \"en\", \"page\", \"by\"], \"properties\": {\"term\": {\"type\": \"string\"}, \"definition\": {\"type\": \"string\"}, \"en\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"by\": {\"enum\": [\"author\", \"model\"]}}}}, \"formulas\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_id\", \"latex\", \"meaning\", \"vars\", \"page\"], \"properties\": {\"unit_id\": {\"type\": [\"string\", \"null\"]}, \"latex\": {\"type\": \"string\"}, \"meaning\": {\"type\": \"string\"}, \"page\": {\"type\": \"integer\"}, \"vars\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"symbol\", \"meaning\", \"unit\"], \"properties\": {\"symbol\": {\"type\": \"string\"}, \"meaning\": {\"type\": \"string\"}, \"unit\": {\"type\": [\"string\", \"null\"]}}}}}}}, \"tables\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_id\", \"ocr_fixes\"], \"properties\": {\"unit_id\": {\"type\": \"string\"}, \"ocr_fixes\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}}}, \"figures\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_id\", \"role\", \"redraw\"], \"properties\": {\"unit_id\": {\"type\": \"string\"}, \"role\": {\"enum\": [\"example\", \"problem\", \"illustration\"]}, \"redraw\": {\"type\": \"boolean\"}}}}, \"misconception\": {\"anyOf\": [{\"type\": \"null\"}, {\"type\": \"object\", \"required\": [\"text\", \"correction\", \"claim_ids\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"correction\": {\"type\": \"string\"}, \"claim_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"by\": {\"enum\": [\"author\", \"model\"]}}}]}, \"data_meaning\": {\"type\": \"object\", \"required\": [\"text\", \"inputs\", \"outputs\", \"breaks_where\", \"hypotheses\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"inputs\": {\"type\": \"string\"}, \"outputs\": {\"type\": \"string\"}, \"breaks_where\": {\"type\": \"string\"}, \"hypotheses\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"it_analogy\": {\"type\": \"object\", \"required\": [\"text\", \"breaks_where\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"breaks_where\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"current_practice\": {\"type\": \"object\", \"required\": [\"text\", \"by\"], \"properties\": {\"text\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}, \"inefficiency_lens\": {\"type\": \"object\", \"required\": [\"inputs\", \"manual_steps\", \"judgment_points\", \"time\", \"typical_errors\", \"by\"], \"properties\": {\"inputs\": {\"type\": \"string\"}, \"manual_steps\": {\"type\": \"string\"}, \"judgment_points\": {\"type\": \"string\"}, \"time\": {\"type\": \"string\"}, \"typical_errors\": {\"type\": \"string\"}, \"by\": {\"enum\": [\"author\", \"model\"]}}}}}}, \"skipped\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"unit_id\", \"reason\"], \"properties\": {\"unit_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}}}}, \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"title\": \"LLM output of layer_extract (one chunk of a chapter)\"}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "nodes",
+        "skipped"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "section_code",
+              "title_book",
+              "title_beginner",
+              "difficulty",
+              "unit_ids",
+              "layers",
+              "procedure",
+              "claims",
+              "worked_examples",
+              "book_problems",
+              "terms",
+              "formulas",
+              "tables",
+              "figures",
+              "misconception",
+              "data_meaning",
+              "it_analogy",
+              "current_practice",
+              "inefficiency_lens"
+            ],
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "section_code": {
+                "type": "string"
+              },
+              "title_book": {
+                "type": "string"
+              },
+              "title_beginner": {
+                "type": "string"
+              },
+              "difficulty": {
+                "type": "object",
+                "required": [
+                  "primary",
+                  "secondary",
+                  "threshold"
+                ],
+                "properties": {
+                  "primary": {
+                    "enum": [
+                      "М",
+                      "В",
+                      "И",
+                      "Ф",
+                      "П",
+                      "Пр",
+                      "Н",
+                      "Р"
+                    ]
+                  },
+                  "secondary": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "М",
+                          "В",
+                          "И",
+                          "Ф",
+                          "П",
+                          "Пр",
+                          "Н",
+                          "Р"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "threshold": {
+                    "type": "string"
+                  }
+                }
+              },
+              "unit_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "layers": {
+                "type": "object",
+                "required": [
+                  "mechanism",
+                  "practice",
+                  "nuances",
+                  "deeper"
+                ],
+                "properties": {
+                  "mechanism": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "by"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "by": {
+                        "enum": [
+                          "author",
+                          "model"
+                        ]
+                      }
+                    }
+                  },
+                  "practice": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "by"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "by": {
+                        "enum": [
+                          "author",
+                          "model"
+                        ]
+                      }
+                    }
+                  },
+                  "nuances": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "by"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "by": {
+                        "enum": [
+                          "author",
+                          "model"
+                        ]
+                      }
+                    }
+                  },
+                  "deeper": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "title",
+                        "text",
+                        "by"
+                      ],
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "by": {
+                          "enum": [
+                            "author",
+                            "model"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "procedure": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "claims": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "text",
+                    "quote",
+                    "page",
+                    "unit_ids"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "observation",
+                        "inference",
+                        "assumption"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 8
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "unit_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "worked_examples": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "unit_ids",
+                    "title",
+                    "condition",
+                    "steps",
+                    "result"
+                  ],
+                  "properties": {
+                    "unit_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "condition": {
+                      "type": "string"
+                    },
+                    "steps": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "book_problems": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "unit_id",
+                    "figure"
+                  ],
+                  "properties": {
+                    "unit_id": {
+                      "type": "string"
+                    },
+                    "figure": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              },
+              "terms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "term",
+                    "definition",
+                    "en",
+                    "page",
+                    "by"
+                  ],
+                  "properties": {
+                    "term": {
+                      "type": "string"
+                    },
+                    "definition": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "page": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "by": {
+                      "enum": [
+                        "author",
+                        "model"
+                      ]
+                    }
+                  }
+                }
+              },
+              "formulas": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "unit_id",
+                    "latex",
+                    "meaning",
+                    "vars",
+                    "page"
+                  ],
+                  "properties": {
+                    "unit_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "latex": {
+                      "type": "string"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "vars": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "symbol",
+                          "meaning",
+                          "unit"
+                        ],
+                        "properties": {
+                          "symbol": {
+                            "type": "string"
+                          },
+                          "meaning": {
+                            "type": "string"
+                          },
+                          "unit": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "tables": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "unit_id",
+                    "ocr_fixes"
+                  ],
+                  "properties": {
+                    "unit_id": {
+                      "type": "string"
+                    },
+                    "ocr_fixes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "figures": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "unit_id",
+                    "role",
+                    "redraw"
+                  ],
+                  "properties": {
+                    "unit_id": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "enum": [
+                        "example",
+                        "problem",
+                        "illustration"
+                      ]
+                    },
+                    "redraw": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "misconception": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "correction",
+                      "claim_ids",
+                      "by"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "correction": {
+                        "type": "string"
+                      },
+                      "claim_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "by": {
+                        "enum": [
+                          "author",
+                          "model"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "data_meaning": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "inputs",
+                  "outputs",
+                  "breaks_where",
+                  "hypotheses",
+                  "by"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "inputs": {
+                    "type": "string"
+                  },
+                  "outputs": {
+                    "type": "string"
+                  },
+                  "breaks_where": {
+                    "type": "string"
+                  },
+                  "hypotheses": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "by": {
+                    "enum": [
+                      "author",
+                      "model"
+                    ]
+                  }
+                }
+              },
+              "it_analogy": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "breaks_where",
+                  "by"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "breaks_where": {
+                    "type": "string"
+                  },
+                  "by": {
+                    "enum": [
+                      "author",
+                      "model"
+                    ]
+                  }
+                }
+              },
+              "current_practice": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "by"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "by": {
+                    "enum": [
+                      "author",
+                      "model"
+                    ]
+                  }
+                }
+              },
+              "inefficiency_lens": {
+                "type": "object",
+                "required": [
+                  "inputs",
+                  "manual_steps",
+                  "judgment_points",
+                  "time",
+                  "typical_errors",
+                  "by"
+                ],
+                "properties": {
+                  "inputs": {
+                    "type": "string"
+                  },
+                  "manual_steps": {
+                    "type": "string"
+                  },
+                  "judgment_points": {
+                    "type": "string"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "typical_errors": {
+                    "type": "string"
+                  },
+                  "by": {
+                    "enum": [
+                      "author",
+                      "model"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "unit_id",
+              "reason"
+            ],
+            "properties": {
+              "unit_id": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "LLM output of layer_extract (one chunk of a chapter)"
+    },
+    "images": [],
+    "cache_path": "runs/test_asquith/llm/layer_extract_02/21bd39290abdd61f0b1c.json",
+    "created": "2026-11-26T05:52:56"
+  },
+  "response": {
+    "nodes": [
+      {
+        "key": "a",
+        "section_code": "x1",
+        "title_book": "QUICK-LOOK METHODS",
+        "title_beginner": "Что даёт быстрая оценка",
+        "difficulty": {
+          "primary": "Н",
+          "secondary": "Р",
+          "threshold": "Флаг требует проверки: он не подтверждает наличие нефти или газа."
+        },
+        "unit_ids": [
+          "u128_29",
+          "u128_30",
+          "u128_31",
+          "u128_32",
+          "u128_33"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Быстрые методы ставят флаги возможных зон с углеводородами.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Используйте отношение сопротивлений, кажущееся сопротивление воды, пористость по сопротивлению или сопротивление водонасыщенного пласта для предварительного отбора.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Кандидаты требуют дальнейшего исследования.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Быстрые методы дают предварительные признаки возможных углеводородных зон, которые нужно проверять.",
+            "quote": "Quick-look methods are helpful to the geologist because they provide flags, or indicators, that point to possible hydrocarbon zones requiring further investigation.",
+            "page": 128,
+            "unit_ids": [
+              "u128_29"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Мелкое сопротивление",
+            "definition": "Сопротивление промытой зоны, оцениваемое по измерению близко к стволу.",
+            "en": "shallow resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление водонасыщенного пласта",
+            "definition": "Сопротивление незатронутой зоны пласта, заполненной водой.",
+            "en": "wet resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Сопротивление пластовой воды",
+            "definition": "Электрическое сопротивление самой воды в пласте.",
+            "en": "formation water resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление фильтрата",
+            "definition": "Сопротивление жидкой части бурового раствора, проникшей в породу.",
+            "en": "mud filtrate resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Кажущееся сопротивление воды",
+            "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+            "en": "apparent water resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Пористость по сопротивлению",
+            "definition": "Расчётная пористость из уравнения Арчи при допущении полного насыщения водой.",
+            "en": "conductivity-derived porosity",
+            "page": 130,
+            "by": "author"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Каротажные измерения → Признаки интервалов для дальнейшей проверки.",
+          "inputs": "Каротажные измерения",
+          "outputs": "Признаки интервалов для дальнейшей проверки",
+          "breaks_where": "Если флаг принимают за окончательный диагноз",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Поставить сигнал предупреждения до ручного разбирательства.",
+          "breaks_where": "Кривые чувствительны к породе и жидкости; флаг не равен диагнозу.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Каротажные измерения",
+          "manual_steps": "Используйте отношение сопротивлений, кажущееся сопротивление воды, пористость по сопротивлению или сопротивление водонасыщенного пласта для предварительного отбора.",
+          "judgment_points": "Какие флаги подтверждаются независимыми наблюдениями",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Отбросить все зоны, не отмеченные одним методом",
+          "by": "model"
+        }
+      },
+      {
+        "key": "b",
+        "section_code": "x1",
+        "title_book": "Rₓₒ/Rₜ",
+        "title_beginner": "Две кривые на одной дорожке",
+        "difficulty": {
+          "primary": "Пр",
+          "secondary": "Р",
+          "threshold": "Вода даёт согласованное движение кривых, а не отдельный порог сопротивления."
+        },
+        "unit_ids": [
+          "u128_35",
+          "u128_37",
+          "u128_38",
+          "u128_40",
+          "u128_41",
+          "u128_42"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Сравнивают форму кривой отношения мелкого и глубинного сопротивлений с формой ПС.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Рассчитайте отношение и нанесите его на дорожку ПС. Отмечайте устойчивость, согласованность или расхождение кривых.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Правое отклонение в углеводородной зоне относится к случаю нормальной отрицательной ПС.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [
+          "Рассчитайте отношение мелкого сопротивления к глубинному.",
+          "Постройте отношение на дорожке ПС.",
+          "Проверьте тип движения кривых и знак ПС."
+        ],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Метод сравнивает кривую отношения сопротивлений с кривой ПС.",
+            "quote": "The $R_{xo}/R_t$ technique relies on the comparison of the resistivity ratio, plotted as a curve on the log display, to the SP curve.",
+            "page": 128,
+            "unit_ids": [
+              "u128_35"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Отношение рассчитывают по глубинному и мелкому измерениям сопротивления.",
+            "quote": "1. Calculate the $R_{xo}/R_t$ ratio from the deep and shallow reading resistivity measurements;",
+            "page": 128,
+            "unit_ids": [
+              "u128_37"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Отношение наносят на ту же дорожку, что и ПС.",
+            "quote": "2. Plot the ratio in the same track as the SP, and look for the following patterns.",
+            "page": 128,
+            "unit_ids": [
+              "u128_38"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В глине отношение меняется мало, как и ПС, и обычно близко к 1.",
+            "quote": "1. In a shale, the ratio is relatively constant, like the SP, and usually close to 1.",
+            "page": 128,
+            "unit_ids": [
+              "u128_40"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В водоносном интервале отношение повторяет движение ПС.",
+            "quote": "2. In a water-bearing zone, the $R_{xo}/R_t$ ratio tracks the SP.",
+            "page": 128,
+            "unit_ids": [
+              "u128_41"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В углеводородной зоне отношение расходится с ПС; при нормальной отрицательной ПС отклоняется вправо.",
+            "quote": "3. In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].",
+            "page": 128,
+            "unit_ids": [
+              "u128_42"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "ПС",
+            "definition": "Кривая самопроизвольной поляризации, отклик на различие сопротивлений пластовой воды и фильтрата.",
+            "en": "spontaneous potential",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Мелкое сопротивление",
+            "definition": "Сопротивление промытой зоны, оцениваемое по измерению близко к стволу.",
+            "en": "shallow resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Дорожка",
+            "definition": "Полоса каротажной диаграммы, в которой размещают одну или несколько кривых.",
+            "en": "log track",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Глубинное и мелкое сопротивления плюс ПС → Диаграмма для распознавания глины, водоносных и возможных углеводородных интервалов.",
+          "inputs": "Глубинное и мелкое сопротивления плюс ПС",
+          "outputs": "Диаграмма для распознавания глины, водоносных и возможных углеводородных интервалов",
+          "breaks_where": "Если правило направления применяется к ПС с другим знаком",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Наложить два ряда и ловить участки расхождения форм.",
+          "breaks_where": "Сопоставление работает благодаря физической связи, а не потому, что обе кривые на одном графике.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Глубинное и мелкое сопротивления плюс ПС",
+          "manual_steps": "Рассчитайте отношение и нанесите его на дорожку ПС. Отмечайте устойчивость, согласованность или расхождение кривых.",
+          "judgment_points": "Различить согласованное движение и значимое расхождение",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Считать любое отклонение вправо признаком углеводородов",
+          "by": "model"
+        }
+      },
+      {
+        "key": "c",
+        "section_code": "x1",
+        "title_book": "Rₓₒ/Rₜ",
+        "title_beginner": "Почему сопротивление расходится с ПС",
+        "difficulty": {
+          "primary": "Ф",
+          "secondary": "И",
+          "threshold": "ПС и отношение сопротивлений чувствительны к разным вещам при наличии углеводородов."
+        },
+        "unit_ids": [
+          "u129_02",
+          "u129_03",
+          "u129_04",
+          "u129_05",
+          "u129_06",
+          "u129_07",
+          "u129_08",
+          "u129_09",
+          "u129_10"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "В полностью водонасыщенной породе в отношениях сопротивлений сокращается форм-фактор. ПС зависит от сопротивлений жидкостей и в углеводородном интервале; рост сопротивления пласта уменьшает отношение.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Берите мелкую кривую из микросферически фокусированного или микробокового каротажа, глубинную — из глубинного индукционного или бокового каротажа.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "При отображении в ходе каротажа обычно используют измерения без поправок за условия среды.",
+            "by": "author"
+          },
+          "deeper": [
+            {
+              "title": "Ссылка и видимые формулы",
+              "text": "Номера уравнений в предложении о подстановке не совпадают с номерами рядом стоящих формул; ориентируйтесь на символы при чтении.",
+              "by": "model"
+            }
+          ]
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "ПС связывают с сопротивлениями жидкостей.",
+            "quote": "From Chapter 2, the equation relating the SP to fluid resistivities is:",
+            "page": 129,
+            "unit_ids": [
+              "u129_02"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Отношение сопротивления промытой зоны к водонасыщенному сопротивлению связано с ПС через постоянный коэффициент.",
+            "quote": "The $R_{xo}/R_o$ ratio is then related to the SP through a constant.",
+            "page": 129,
+            "unit_ids": [
+              "u129_09"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Для общего случая сопротивление водонасыщенной незатронутой зоны заменяют истинным сопротивлением.",
+            "quote": "Since $R_o$ is just a special case of $R_t$ ($R_o$ is the resistivity in the undisturbed, water-bearing zone), $R_t$ can be substituted for $R_o$ for the more general case.",
+            "page": 129,
+            "unit_ids": [
+              "u129_09"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В водоносных интервалах кривые идут в одну сторону от своих базовых линий.",
+            "quote": "In water-bearing intervals, the $R_{xo}/R_t$ ratio parallels the response of the SP, and both curves move in the same direction from their respective baseline values.",
+            "page": 129,
+            "unit_ids": [
+              "u129_09"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В углеводородном интервале ПС откликается на различие сопротивлений пластовой воды и фильтрата.",
+            "quote": "In a hydrocarbon-bearing interval, while the SP still responds to the differences in connate water and mud filtrate resistivities and moves accordingly,",
+            "page": 129,
+            "unit_ids": [
+              "u129_09"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Рост истинного сопротивления уменьшает отношение, и его кривая расходится с ПС.",
+            "quote": "the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.",
+            "page": 129,
+            "unit_ids": [
+              "u129_09"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Мелкую кривую получают, например, микросферически фокусированным или микробоковым каротажем.",
+            "quote": "The $R_{xo}$ curve usually used for the ratio is derived from a shallow-reading measurement, such as a microspherically focused log or a microlaterolog.",
+            "page": 129,
+            "unit_ids": [
+              "u129_10"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Глубинную кривую получают, например, глубинным индукционным или боковым каротажем.",
+            "quote": "The $R_t$ curve is derived from a deep-reading measurement such as the deep induction log or deep laterolog.",
+            "page": 129,
+            "unit_ids": [
+              "u129_10"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "При расчёте в ходе каротажа измерения обычно используют без поправок за условия среды.",
+            "quote": "In practice, especially when the ratio is calculated and displayed as part of the logging job, the measurements are normally used without any environmental corrections being applied.",
+            "page": 129,
+            "unit_ids": [
+              "u129_10"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "ПС",
+            "definition": "Кривая самопроизвольной поляризации, отклик на различие сопротивлений пластовой воды и фильтрата.",
+            "en": "spontaneous potential",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Форм-фактор",
+            "definition": "Отношение сопротивления водонасыщенной породы к сопротивлению воды в порах.",
+            "en": "formation factor",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Базовая линия",
+            "definition": "Опорное положение кривой, от которого отслеживают отклонения.",
+            "en": "baseline",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Мелкое сопротивление",
+            "definition": "Сопротивление промытой зоны, оцениваемое по измерению близко к стволу.",
+            "en": "shallow resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление водонасыщенного пласта",
+            "definition": "Сопротивление незатронутой зоны пласта, заполненной водой.",
+            "en": "wet resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Сопротивление пластовой воды",
+            "definition": "Электрическое сопротивление самой воды в пласте.",
+            "en": "formation water resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление фильтрата",
+            "definition": "Сопротивление жидкой части бурового раствора, проникшей в породу.",
+            "en": "mud filtrate resistivity",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [
+          {
+            "unit_id": "u129_03",
+            "latex": "SP = -K \\times \\log\\left(\\frac{R_{mf}}{R_w}\\right) \\tag{7.9}",
+            "meaning": "Связь ПС и сопротивлений жидкостей",
+            "vars": [
+              {
+                "symbol": "SP",
+                "meaning": "самопроизвольная поляризация",
+                "unit": null
+              },
+              {
+                "symbol": "K",
+                "meaning": "коэффициент пропорциональности",
+                "unit": null
+              },
+              {
+                "symbol": "R_{mf}",
+                "meaning": "сопротивление фильтрата",
+                "unit": null
+              },
+              {
+                "symbol": "R_w",
+                "meaning": "сопротивление пластовой воды",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_05",
+            "latex": "R_{xo} = F \\times R_{mf} \\quad (\\text{flushed zone}) \\tag{7.10}",
+            "meaning": "Сопротивление промытой зоны в водоносном пласте",
+            "vars": [
+              {
+                "symbol": "R_{xo}",
+                "meaning": "сопротивление промытой зоны",
+                "unit": null
+              },
+              {
+                "symbol": "F",
+                "meaning": "форм-фактор",
+                "unit": null
+              },
+              {
+                "symbol": "R_{mf}",
+                "meaning": "сопротивление фильтрата",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_06",
+            "latex": "R_o = F \\times R_w \\quad (\\text{uninvaded zone}) \\tag{7.11}",
+            "meaning": "Сопротивление водоносной незатронутой зоны",
+            "vars": [
+              {
+                "symbol": "R_o",
+                "meaning": "сопротивление водонасыщенной незатронутой зоны",
+                "unit": null
+              },
+              {
+                "symbol": "F",
+                "meaning": "форм-фактор",
+                "unit": null
+              },
+              {
+                "symbol": "R_w",
+                "meaning": "сопротивление пластовой воды",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_08",
+            "latex": "SP = -K \\times \\log\\left(\\frac{R_{xo}}{R_o}\\right) \\tag{7.12}",
+            "meaning": "Связь ПС с отношением двух сопротивлений в водоносном пласте",
+            "vars": [
+              {
+                "symbol": "SP",
+                "meaning": "самопроизвольная поляризация",
+                "unit": null
+              },
+              {
+                "symbol": "K",
+                "meaning": "коэффициент пропорциональности",
+                "unit": null
+              },
+              {
+                "symbol": "R_{xo}",
+                "meaning": "сопротивление промытой зоны",
+                "unit": null
+              },
+              {
+                "symbol": "R_o",
+                "meaning": "сопротивление водонасыщенной незатронутой зоны",
+                "unit": null
+              }
+            ],
+            "page": 129
+          }
+        ],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Сопротивления воды, фильтрата и двух зон, ПС → Ожидаемое согласие для водоносного пласта и объяснение расхождения в углеводородном.",
+          "inputs": "Сопротивления воды, фильтрата и двух зон, ПС",
+          "outputs": "Ожидаемое согласие для водоносного пласта и объяснение расхождения в углеводородном",
+          "breaks_where": "Если исходные мелкая и глубинная кривые искажены условиями среды",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Два сенсора согласуются при базовом сценарии и расходятся, когда скрытое состояние меняет лишь один канал.",
+          "breaks_where": "Кривые связаны через физические сопротивления, а не через универсальную калибровку.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Сопротивления воды, фильтрата и двух зон, ПС",
+          "manual_steps": "Берите мелкую кривую из микросферически фокусированного или микробокового каротажа, глубинную — из глубинного индукционного или бокового каротажа.",
+          "judgment_points": "Отделить эффект углеводородов от качества измерений",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Считать ПС прямым измерением наличия нефти или газа",
+          "by": "model"
+        }
+      },
+      {
+        "key": "d",
+        "section_code": "x1",
+        "title_book": "Apparent water resistivity (Rwa)",
+        "title_beginner": "Как найти водяную опору",
+        "difficulty": {
+          "primary": "Пр",
+          "secondary": "Н",
+          "threshold": "Опорное значение ищут в пористой и проницаемой зоне, а не среди всех минимумов."
+        },
+        "unit_ids": [
+          "u129_12",
+          "u129_14",
+          "u129_15",
+          "u129_16",
+          "u129_18",
+          "u129_19",
+          "u129_21",
+          "u129_22"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Наименьшее кажущееся сопротивление воды считают наиболее близким к истинному; превышение даёт признак углеводородов.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Рассчитайте кажущееся сопротивление по пористости и сопротивлению незатронутой зоны. Найдите минимум в пористой проницаемой зоне и сравните с остальными.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Сопротивление пластовой воды должно быть одинаковым в сравниваемых зонах. При пористости меньше примерно 10% расчётная величина ниже истинной.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [
+          "Вычислите кажущееся сопротивление воды.",
+          "Найдите минимум в пористой проницаемой зоне.",
+          "Сравните остальные интервалы с выбранной опорой."
+        ],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Сопоставляют разные интервалы скважины или части одной зоны при подозрении на контакт воды и углеводородов.",
+            "quote": "The $R_{wa}$ technique relies on the comparison of calculated values of water resistivity between intervals in a well. This comparison can be made between different zones or within the same zone if a water-hydrocarbon contact is suspected in that zone.",
+            "page": 129,
+            "unit_ids": [
+              "u129_12"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Кажущееся сопротивление воды вычисляют по пористости и сопротивлению незатронутой зоны.",
+            "quote": "1. Calculate an apparent water resistivity ($R_{wa}$) from the porosity and uninvaded zone resistivity measurements.",
+            "page": 129,
+            "unit_ids": [
+              "u129_14"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Минимум выбирают в пористой и проницаемой зоне, затем сравнивают с остальными зонами.",
+            "quote": "2. Look for the lowest value of $R_{wa}$ in a porous and permeable zone and compare it to the values of $R_{wa}$ calculated in the other zones.",
+            "page": 129,
+            "unit_ids": [
+              "u129_15"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "По результатам можно дополнительно рассчитать насыщенность по Арчи.",
+            "quote": "3. If desired, an Archie water saturation can be calculated from the $R_{wa}$ values in the compared zones.",
+            "page": 129,
+            "unit_ids": [
+              "u129_16"
+            ]
+          },
+          {
+            "kind": "inference",
+            "text": "Зона с минимумом вероятнее всего водоносная, а её расчётное сопротивление воды ближе всего к истинному.",
+            "quote": "1. The zone with the lowest value of $R_{wa}$ is the most likely to be water-bearing, and the value of $R_{wa}$ is closest to the actual value of $R_w$ in the formation.",
+            "page": 129,
+            "unit_ids": [
+              "u129_18"
+            ]
+          },
+          {
+            "kind": "inference",
+            "text": "Значения выше минимума указывают на вероятное присутствие углеводородов.",
+            "quote": "2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.",
+            "page": 129,
+            "unit_ids": [
+              "u129_19"
+            ]
+          },
+          {
+            "kind": "assumption",
+            "text": "В сравниваемых зонах предполагают одно и то же сопротивление пластовой воды.",
+            "quote": "The $R_w$ values in the zones that are compared are assumed to be the same.",
+            "page": 129,
+            "unit_ids": [
+              "u129_21"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "При пористости меньше примерно 10% кажущееся сопротивление воды ниже истинного.",
+            "quote": "In low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.",
+            "page": 129,
+            "unit_ids": [
+              "u129_22"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Кажущееся сопротивление воды",
+            "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+            "en": "apparent water resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Сопротивление пластовой воды",
+            "definition": "Электрическое сопротивление самой воды в пласте.",
+            "en": "formation water resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Пористость",
+            "definition": "Доля объёма породы, занятая порами.",
+            "en": "porosity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Проницаемость",
+            "definition": "Способность породы пропускать флюид.",
+            "en": "permeability",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Водонасыщенность",
+            "definition": "Доля порового объёма, занятая водой.",
+            "en": "water saturation",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Водоуглеводородный контакт",
+            "definition": "Граница между водяным и углеводородным интервалами.",
+            "en": "water-hydrocarbon contact",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Сопротивление незатронутой зоны и оценка пористости → Водяной ориентир и интервалы с возможными углеводородами.",
+          "inputs": "Сопротивление незатронутой зоны и оценка пористости",
+          "outputs": "Водяной ориентир и интервалы с возможными углеводородами",
+          "breaks_where": "При смене сопротивления воды или малой пористости",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Выбирать контрольные записи с учётом качества, а не только по минимальному значению.",
+          "breaks_where": "Геологический минимум — предположение о зоне, не подтверждённая метка.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Сопротивление незатронутой зоны и оценка пористости",
+          "manual_steps": "Рассчитайте кажущееся сопротивление по пористости и сопротивлению незатронутой зоны. Найдите минимум в пористой проницаемой зоне и сравните с остальными.",
+          "judgment_points": "Не объясняется ли минимум малой пористостью или другой пластовой водой",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Подставить минимум по всей скважине без отбора",
+          "by": "model"
+        }
+      },
+      {
+        "key": "e",
+        "section_code": "x1",
+        "title_book": "Apparent water resistivity (Rwa)",
+        "title_beginner": "Почему минимум служит ориентиром",
+        "difficulty": {
+          "primary": "Ф",
+          "secondary": "И",
+          "threshold": "При полной водонасыщенности кажущееся сопротивление становится оценкой сопротивления самой воды."
+        },
+        "unit_ids": [
+          "u129_24",
+          "u129_25",
+          "u129_26",
+          "u129_27",
+          "u129_28",
+          "u129_29",
+          "u129_30",
+          "u129_31",
+          "u129_32"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Для водоносной зоны сопротивление пласта совпадает с водонасыщенным; присутствие углеводородов повышает истинное сопротивление и кажущееся сопротивление воды.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Примените форм-фактор и сравните минимальное значение с другими результатами.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Если опорная зона сама содержит углеводороды, в остальных их больше, чем следует из относительной оценки.",
+            "by": "author"
+          },
+          "deeper": [
+            {
+              "title": "Ссылки в тексте",
+              "text": "Ссылки на уравнения в абзацах о выводе расходятся с номерами у видимых формул; связь можно проследить по символам.",
+              "by": "model"
+            }
+          ]
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Сопротивление воды получают совместным использованием зависимости сопротивлений и форм-фактора.",
+            "quote": "Combining Equations 7.5 and 7.6, and solving for $R_w$ yields:",
+            "page": 129,
+            "unit_ids": [
+              "u129_28"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Кажущееся сопротивление воды определяют по формуле с истинным сопротивлением.",
+            "quote": "From Equation 7.7 above, define apparent water resistivity ($R_{wa}$) as:",
+            "page": 129,
+            "unit_ids": [
+              "u129_30"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Для водоносного интервала истинное сопротивление равно водонасыщенному, а кажущееся сопротивление воды — истинному сопротивлению воды.",
+            "quote": "When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$.",
+            "page": 129,
+            "unit_ids": [
+              "u129_32"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Присутствие углеводородов в интервале повышает оба расчётных показателя относительно водяного случая.",
+            "quote": "If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$.",
+            "page": 129,
+            "unit_ids": [
+              "u129_32"
+            ]
+          },
+          {
+            "kind": "assumption",
+            "text": "Минимум служит оценкой сопротивления воды для всех сопоставляемых интервалов при допущении, что опорная зона водоносна.",
+            "quote": "By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered.",
+            "page": 129,
+            "unit_ids": [
+              "u129_32"
+            ]
+          },
+          {
+            "kind": "inference",
+            "text": "Если опорный минимум соответствует смеси с углеводородами, остальные зоны содержат их больше, чем предполагалось.",
+            "quote": "some hydrocarbons, then the other zones contain even more hydrocarbons than anticipated.",
+            "page": 130,
+            "unit_ids": [
+              "u129_32"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Кажущееся сопротивление воды",
+            "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+            "en": "apparent water resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Сопротивление пластовой воды",
+            "definition": "Электрическое сопротивление самой воды в пласте.",
+            "en": "formation water resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление водонасыщенного пласта",
+            "definition": "Сопротивление незатронутой зоны пласта, заполненной водой.",
+            "en": "wet resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Форм-фактор",
+            "definition": "Отношение сопротивления водонасыщенной породы к сопротивлению воды в порах.",
+            "en": "formation factor",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Пористость",
+            "definition": "Доля объёма породы, занятая порами.",
+            "en": "porosity",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [
+          {
+            "unit_id": "u129_25",
+            "latex": "R_o = F \\times R_w \\tag{7.13}",
+            "meaning": "Сопротивление водонасыщенной породы",
+            "vars": [
+              {
+                "symbol": "R_o",
+                "meaning": "сопротивление водонасыщенной незатронутой зоны",
+                "unit": null
+              },
+              {
+                "symbol": "F",
+                "meaning": "форм-фактор",
+                "unit": null
+              },
+              {
+                "symbol": "R_w",
+                "meaning": "сопротивление пластовой воды",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_27",
+            "latex": "F = \\frac{a}{\\phi^m} \\tag{7.14}",
+            "meaning": "Связь форм-фактора с пористостью",
+            "vars": [
+              {
+                "symbol": "F",
+                "meaning": "форм-фактор",
+                "unit": null
+              },
+              {
+                "symbol": "a",
+                "meaning": "коэффициент в форм-факторе",
+                "unit": null
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "пористость",
+                "unit": null
+              },
+              {
+                "symbol": "m",
+                "meaning": "показатель степени в форм-факторе",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_29",
+            "latex": "R_w = \\frac{R_o \\times \\phi^m}{a} \\tag{7.15}",
+            "meaning": "Сопротивление воды водонасыщенной зоны",
+            "vars": [
+              {
+                "symbol": "R_w",
+                "meaning": "сопротивление пластовой воды",
+                "unit": null
+              },
+              {
+                "symbol": "R_o",
+                "meaning": "сопротивление водонасыщенной незатронутой зоны",
+                "unit": null
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "пористость",
+                "unit": null
+              },
+              {
+                "symbol": "m",
+                "meaning": "показатель степени в форм-факторе",
+                "unit": null
+              },
+              {
+                "symbol": "a",
+                "meaning": "коэффициент в форм-факторе",
+                "unit": null
+              }
+            ],
+            "page": 129
+          },
+          {
+            "unit_id": "u129_31",
+            "latex": "R_{wa} = \\frac{R_t \\times \\phi^m}{a} \\tag{7.16}",
+            "meaning": "Кажущееся сопротивление воды",
+            "vars": [
+              {
+                "symbol": "R_{wa}",
+                "meaning": "кажущееся сопротивление воды",
+                "unit": null
+              },
+              {
+                "symbol": "R_t",
+                "meaning": "истинное сопротивление",
+                "unit": null
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "пористость",
+                "unit": null
+              },
+              {
+                "symbol": "m",
+                "meaning": "показатель степени в форм-факторе",
+                "unit": null
+              },
+              {
+                "symbol": "a",
+                "meaning": "коэффициент в форм-факторе",
+                "unit": null
+              }
+            ],
+            "page": 129
+          }
+        ],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Истинное сопротивление и пористость → Расчёт кажущегося сопротивления воды.",
+          "inputs": "Истинное сопротивление и пористость",
+          "outputs": "Расчёт кажущегося сопротивления воды",
+          "breaks_where": "Если опорный минимум не соответствует чисто водоносной зоне",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Оценить базовое состояние по опорному минимуму.",
+          "breaks_where": "Если опорная зона уже изменилась, смещение переносится на всю оценку.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Истинное сопротивление и пористость",
+          "manual_steps": "Примените форм-фактор и сравните минимальное значение с другими результатами.",
+          "judgment_points": "Может ли опорная зона сама содержать углеводороды",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Считать кажущееся сопротивление независимым измерением воды",
+          "by": "model"
+        }
+      },
+      {
+        "key": "f",
+        "section_code": "x1",
+        "title_book": "Apparent water resistivity (Rwa)",
+        "title_beginner": "Какие параметры подставить в расчёт",
+        "difficulty": {
+          "primary": "Пр",
+          "secondary": "И",
+          "threshold": "Возможности расчёта на скважине зависят от доступных пористостных кривых."
+        },
+        "unit_ids": [
+          "u130_01"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "При отображении на скважине расчёт упрощают принятыми параметрами Арчи и доступными кривыми.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Используйте глубинное сопротивление. Пористость получите по акустическому или плотностному каротажу с подходящими параметрами породы и жидкости; если доступно, предпочтите нейтронно-плотностную оценку.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Глубинные измерения при экспресс-расчёте обычно не исправляют за влияние среды.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "assumption",
+            "text": "Для простоты при расчёте в ходе каротажа принимают a = 1.0 и m = 2.0.",
+            "quote": "In practice, especially when calculated and displayed as a curve during a logging job, the following values are used for simplicity: $a = 1.0$, $m = 2.0$.",
+            "page": 130,
+            "unit_ids": [
+              "u130_01"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Берут глубинное индукционное или боковое сопротивление, обычно без поправок за условия среды.",
+            "quote": "The deep induction log or deep laterolog is used as $R_t$, usually without any environmental corrections.",
+            "page": 130,
+            "unit_ids": [
+              "u130_01"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Пористость обычно получают акустическим или плотностным методом с параметрами породы и жидкости для ожидаемого разреза.",
+            "quote": "Porosity is usually derived from the sonic or density log using the proper matrix and fluid parameters for the formations to be encountered.",
+            "page": 130,
+            "unit_ids": [
+              "u130_01"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "При доступности в реальном времени предпочтительна оценка пористости с нейтронно-плотностного графика.",
+            "quote": "If available in real time during logging, the neutron-density crossplot porosity should be used for the best estimate of porosity.",
+            "page": 130,
+            "unit_ids": [
+              "u130_01"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Пористость",
+            "definition": "Доля объёма породы, занятая порами.",
+            "en": "porosity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Кажущееся сопротивление воды",
+            "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+            "en": "apparent water resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Нейтронно-плотностной график",
+            "definition": "Совместная оценка пористости по нейтронным и плотностным измерениям.",
+            "en": "neutron-density crossplot",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида → Входы для оперативной оценки кажущегося сопротивления воды.",
+          "inputs": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида",
+          "outputs": "Входы для оперативной оценки кажущегося сопротивления воды",
+          "breaks_where": "Если параметры породы и флюида не соответствуют разрезу",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Задать приоритет источников и отдельно предусмотреть запасные варианты.",
+          "breaks_where": "Качество пористости зависит от способа измерения и подобранных физических параметров.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Глубинное сопротивление, акустическая, плотностная или нейтронная кривая, параметры породы и флюида",
+          "manual_steps": "Используйте глубинное сопротивление. Пористость получите по акустическому или плотностному каротажу с подходящими параметрами породы и жидкости; если доступно, предпочтите нейтронно-плотностную оценку.",
+          "judgment_points": "Когда доступно совместное измерение и подходят ли параметры",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Перенести принятые для экспресс-оценки параметры на любой разрез",
+          "by": "model"
+        }
+      },
+      {
+        "key": "g",
+        "section_code": "x1",
+        "title_book": "Apparent water resistivity (Rwa)",
+        "title_beginner": "Как получить долю воды",
+        "difficulty": {
+          "primary": "Ф",
+          "secondary": "И",
+          "threshold": "Отношение кажущихся сопротивлений преобразуется в водонасыщенность по модели."
+        },
+        "unit_ids": [
+          "u130_02",
+          "u130_03",
+          "u130_04",
+          "u130_05",
+          "u130_06",
+          "u130_07",
+          "u130_08",
+          "u130_09"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Метод сравнивает кажущееся сопротивление воды выбранной зоны с опорным минимумом и получает насыщенность по Арчи.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Разделите опорное сопротивление на значение для зоны и извлеките квадратный корень.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "В формуле принят показатель n = 2; в ориентировочных примерах a = 1.0 и m = 2.0.",
+            "by": "author"
+          },
+          "deeper": [
+            {
+              "title": "Показатель n",
+              "text": "В абзаце главы n назван показателем цементации. В определениях Арчи этот же символ — показатель насыщения; запись уравнения сохранена.",
+              "by": "model"
+            }
+          ]
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Водонасыщенность по Арчи можно рассчитать из отношения кажущихся сопротивлений воды.",
+            "quote": "An Archie water saturation can also be calculated from the ratio of the $R_{wa}$ values.",
+            "page": 130,
+            "unit_ids": [
+              "u130_02"
+            ]
+          },
+          {
+            "kind": "assumption",
+            "text": "В этой формуле показатель n принят равным 2.",
+            "quote": "where the cementation exponent ($n$) in the equation above is assumed to be 2.",
+            "page": 130,
+            "unit_ids": [
+              "u130_04"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Если отношение значения зоны к минимуму равно 3, автор приводит насыщенность 0.58.",
+            "quote": "- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 3 yields $S_w = 0.58$;",
+            "page": 130,
+            "unit_ids": [
+              "u130_06"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Если отношение значения зоны к минимуму равно 4, автор приводит насыщенность 0.50.",
+            "quote": "- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 4 yields $S_w = 0.50$;",
+            "page": 130,
+            "unit_ids": [
+              "u130_07"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Если отношение значения зоны к минимуму равно 5, автор приводит насыщенность 0.45.",
+            "quote": "- ($R_{wa\\ zone}/R_{wa\\ minimum}$) = 5 yields $S_w = 0.45$.",
+            "page": 130,
+            "unit_ids": [
+              "u130_08"
+            ]
+          },
+          {
+            "kind": "assumption",
+            "text": "Для сокращённых расчётов заданы значения a = 1.0 и m = 2.0.",
+            "quote": "Where $a = 1.0$ and $m = 2.0$.",
+            "page": 130,
+            "unit_ids": [
+              "u130_09"
+            ]
+          }
+        ],
+        "worked_examples": [
+          {
+            "unit_ids": [
+              "u130_06"
+            ],
+            "title": "Быстрая оценка по отношению",
+            "condition": "Кажущееся сопротивление воды в зоне относится к опорному как 3.",
+            "steps": [
+              "Подставьте в формулу квадратного корня обратное отношение — минимум, разделённый на значение зоны."
+            ],
+            "result": "Водонасыщенность по автору — 0.58."
+          },
+          {
+            "unit_ids": [
+              "u130_07"
+            ],
+            "title": "Быстрая оценка по отношению",
+            "condition": "Кажущееся сопротивление воды в зоне относится к опорному как 4.",
+            "steps": [
+              "Подставьте в формулу квадратного корня обратное отношение — минимум, разделённый на значение зоны."
+            ],
+            "result": "Водонасыщенность по автору — 0.50."
+          },
+          {
+            "unit_ids": [
+              "u130_08"
+            ],
+            "title": "Быстрая оценка по отношению",
+            "condition": "Кажущееся сопротивление воды в зоне относится к опорному как 5.",
+            "steps": [
+              "Подставьте в формулу квадратного корня обратное отношение — минимум, разделённый на значение зоны."
+            ],
+            "result": "Водонасыщенность по автору — 0.45."
+          }
+        ],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Кажущееся сопротивление воды",
+            "definition": "Оценка сопротивления пластовой воды по пористости и сопротивлению незатронутой зоны.",
+            "en": "apparent water resistivity",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Водонасыщенность",
+            "definition": "Доля порового объёма, занятая водой.",
+            "en": "water saturation",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [
+          {
+            "unit_id": "u130_03",
+            "latex": "S_w = \\sqrt{\\frac{R_{wa\\ minimum}}{R_{wa\\ zone}}} \\tag{7.17}",
+            "meaning": "Водонасыщенность Арчи через кажущиеся сопротивления воды",
+            "vars": [
+              {
+                "symbol": "S_w",
+                "meaning": "водонасыщенность",
+                "unit": null
+              },
+              {
+                "symbol": "R_{wa\\ minimum}",
+                "meaning": "опорное минимальное значение",
+                "unit": null
+              },
+              {
+                "symbol": "R_{wa\\ zone}",
+                "meaning": "значение исследуемой зоны",
+                "unit": null
+              }
+            ],
+            "page": 130
+          }
+        ],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Минимум кажущегося сопротивления воды и значение для зоны → Оценка водонасыщенности зоны.",
+          "inputs": "Минимум кажущегося сопротивления воды и значение для зоны",
+          "outputs": "Оценка водонасыщенности зоны",
+          "breaks_where": "Если минимум не представляет общую пластовую воду",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Нормировать измерение на опору и применить преобразование модели.",
+          "breaks_where": "Смена опорного интервала меняет результат по всему разрезу.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Минимум кажущегося сопротивления воды и значение для зоны",
+          "manual_steps": "Разделите опорное сопротивление на значение для зоны и извлеките квадратный корень.",
+          "judgment_points": "Достоверность опоры и применимость указанного показателя",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Перепутать числитель и знаменатель",
+          "by": "model"
+        }
+      },
+      {
+        "key": "h",
+        "section_code": "x1",
+        "title_book": "Conductivity-derived porosity",
+        "title_beginner": "Как вывести пористость из сопротивления",
+        "difficulty": {
+          "primary": "И",
+          "secondary": "Пр",
+          "threshold": "Расчётная пористость под водяной гипотезой — диагностический признак, а не независимое измерение."
+        },
+        "unit_ids": [
+          "u130_11",
+          "u130_12",
+          "u130_14",
+          "u130_15",
+          "u130_16"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "Пористость вычисляют из формулы Арчи для водоносной зоны. Исторически использовалась проводимость, здесь используется сопротивление.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Возьмите сопротивление незатронутой зоны, примите полную водонасыщенность и сравните расчётные значения и форму кривой в проницаемых пористых зонах.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Расчётную кривую обычно размещают на дорожке ПС: большая пористость слева, малая справа.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [
+          "Рассчитайте пористость при водонасыщенности 1.0.",
+          "Сопоставьте её кривую между пористыми проницаемыми интервалами.",
+          "При необходимости сравните с отдельной пористостной кривой для оценки насыщенности."
+        ],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "Метод возник с кривой проводимости, которую теперь редко показывают на диаграммах; здесь используют сопротивление.",
+            "quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.",
+            "page": 130,
+            "unit_ids": [
+              "u130_11"
+            ]
+          },
+          {
+            "kind": "assumption",
+            "text": "Пористость вычисляют по форме Арчи для полностью водоносной зоны.",
+            "quote": "This technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$).",
+            "page": 130,
+            "unit_ids": [
+              "u130_12"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Кривую показывают на дорожке ПС, с большими значениями слева и малыми справа.",
+            "quote": "The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.",
+            "page": 130,
+            "unit_ids": [
+              "u130_12"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В расчёт Арчи подставляют сопротивление незатронутой зоны и насыщенность 1.0.",
+            "quote": "1. Calculate the porosity from Archie's equation (assuming $S_w = 1.0$), using the uninvaded zone resistivity measurement.",
+            "page": 130,
+            "unit_ids": [
+              "u130_14"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Значения и положение кривой сравнивают в пористых и проницаемых зонах.",
+            "quote": "2. Compare the curve values and the relative position of the curve in porous and permeable zones.",
+            "page": 130,
+            "unit_ids": [
+              "u130_15"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "При необходимости можно оценить водонасыщенность по сравнению с акустической, плотностной или нейтронной пористостью.",
+            "quote": "3. If desired, an Archie water saturation can be calculated by comparing the conductivity-derived porosity ty to porosity from one of the porosity measurements (sonic, density, or neutron).",
+            "page": 130,
+            "unit_ids": [
+              "u130_16"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Пористость по сопротивлению",
+            "definition": "Расчётная пористость из уравнения Арчи при допущении полного насыщения водой.",
+            "en": "conductivity-derived porosity",
+            "page": 130,
+            "by": "author"
+          },
+          {
+            "term": "Истинное сопротивление",
+            "definition": "Сопротивление незатронутой зоны пласта.",
+            "en": "true formation resistivity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Водонасыщенность",
+            "definition": "Доля порового объёма, занятая водой.",
+            "en": "water saturation",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Пористость",
+            "definition": "Доля объёма породы, занятая порами.",
+            "en": "porosity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Проницаемость",
+            "definition": "Способность породы пропускать флюид.",
+            "en": "permeability",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "ПС",
+            "definition": "Кривая самопроизвольной поляризации, отклик на различие сопротивлений пластовой воды и фильтрата.",
+            "en": "spontaneous potential",
+            "page": 129,
+            "by": "author"
+          },
+          {
+            "term": "Электропроводность",
+            "definition": "Величина, обратная удельному электрическому сопротивлению.",
+            "en": "conductivity",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Сопротивление незатронутой зоны и водяное допущение Арчи → Кривая пористости для сравнения зон.",
+          "inputs": "Сопротивление незатронутой зоны и водяное допущение Арчи",
+          "outputs": "Кривая пористости для сравнения зон",
+          "breaks_where": "Если расчёт принимают за независимое измерение порового пространства",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Рассчитать скрытый признак при заведомо заданном состоянии и проверить расхождение с независимым каналом.",
+          "breaks_where": "Смена состояния флюида влияет на одно из измерений физически, а не через логику сравнения.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Сопротивление незатронутой зоны и водяное допущение Арчи",
+          "manual_steps": "Возьмите сопротивление незатронутой зоны, примите полную водонасыщенность и сравните расчётные значения и форму кривой в проницаемых пористых зонах.",
+          "judgment_points": "Какие пористые проницаемые зоны сравнимы",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Перепутать направление шкалы пористости",
+          "by": "model"
+        }
+      },
+      {
+        "key": "i",
+        "section_code": "x1",
+        "title_book": "Conductivity-derived porosity",
+        "title_beginner": "Когда пористость выглядит слишком низкой",
+        "difficulty": {
+          "primary": "Н",
+          "secondary": "И",
+          "threshold": "Ошибочное сопротивление воды меняет сравнение с истинной пористостью, но не картину сравнения зон."
+        },
+        "unit_ids": [
+          "u130_18",
+          "u130_19",
+          "u130_21"
+        ],
+        "layers": {
+          "mechanism": {
+            "text": "В водоносной зоне пористость по сопротивлению близка к истинной; при наличии углеводородов она ниже истинной.",
+            "by": "author"
+          },
+          "practice": {
+            "text": "Сравните интервалы между собой и сопоставьте расчёт с отдельной оценкой пористости, если сопротивление воды надёжно.",
+            "by": "author"
+          },
+          "nuances": {
+            "text": "Неверное сопротивление воды искажает абсолютные значения, но, по автору, не результат сравнения кривой между зонами.",
+            "by": "author"
+          },
+          "deeper": []
+        },
+        "procedure": [],
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "В водоносной зоне расчётная пористость высока и близка к истинной.",
+            "quote": "1. In water-bearing zones, the conductivity-derived porosity is high and approximately equal to the true formation porosity.",
+            "page": 130,
+            "unit_ids": [
+              "u130_18"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "В углеводородной зоне расчётная пористость низка и ниже истинной.",
+            "quote": "2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.",
+            "page": 130,
+            "unit_ids": [
+              "u130_19"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Ошибочное сопротивление воды меняет расчётную пористость и может исказить сравнение с истинной.",
+            "quote": "The choice of an incorrect value for $R_w$ would change the value of conductivity-derived porosity, and might make its comparison to true formation porosity inaccurate.",
+            "page": 130,
+            "unit_ids": [
+              "u130_21"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "Такая ошибка не меняет результат сравнения значений кривой между разными зонами.",
+            "quote": "It would not, however, change the results of comparison of the curve values in different zones.",
+            "page": 130,
+            "unit_ids": [
+              "u130_21"
+            ]
+          }
+        ],
+        "worked_examples": [],
+        "book_problems": [],
+        "terms": [
+          {
+            "term": "Пористость по сопротивлению",
+            "definition": "Расчётная пористость из уравнения Арчи при допущении полного насыщения водой.",
+            "en": "conductivity-derived porosity",
+            "page": 130,
+            "by": "author"
+          },
+          {
+            "term": "Пористость",
+            "definition": "Доля объёма породы, занятая порами.",
+            "en": "porosity",
+            "page": null,
+            "by": "model"
+          },
+          {
+            "term": "Сопротивление пластовой воды",
+            "definition": "Электрическое сопротивление самой воды в пласте.",
+            "en": "formation water resistivity",
+            "page": null,
+            "by": "model"
+          }
+        ],
+        "formulas": [],
+        "tables": [],
+        "figures": [],
+        "misconception": null,
+        "data_meaning": {
+          "text": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды → Признаки водоносности или углеводородов и оценка надёжности признака.",
+          "inputs": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды",
+          "outputs": "Признаки водоносности или углеводородов и оценка надёжности признака",
+          "breaks_where": "При сравнении абсолютных значений с неверным сопротивлением воды",
+          "hypotheses": [],
+          "by": "author"
+        },
+        "it_analogy": {
+          "text": "Ошибка общей калибровки смещает шкалу, даже если сравнение значений одного ряда сохраняется.",
+          "breaks_where": "Перенос на другую скважину требует собственной проверки условий.",
+          "by": "model"
+        },
+        "current_practice": {
+          "text": "",
+          "by": "model"
+        },
+        "inefficiency_lens": {
+          "inputs": "Пористость по сопротивлению, истинная пористость и сопротивление пластовой воды",
+          "manual_steps": "Сравните интервалы между собой и сопоставьте расчёт с отдельной оценкой пористости, если сопротивление воды надёжно.",
+          "judgment_points": "Насколько надёжна оценка сопротивления пластовой воды",
+          "time": "Зависит от полноты входных данных и числа проверок; глава не даёт оценки времени.",
+          "typical_errors": "Приписать всё расхождение только насыщению",
+          "by": "model"
+        }
+      }
+    ],
+    "skipped": []
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 30844,
+    "output_chars": 64745
+  }
+}
