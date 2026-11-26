@@ -1,0 +1,102 @@
+{
+  "chapter": "basniev",
+  "nodes": [
+    {
+      "node_id": "geo.basniev.s1.01",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s1.03",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s2.01",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s4.04",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s5_1.07",
+      "format": "long",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s5_1.09",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s5_1.16",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s5_2.08",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.s5_2.13",
+      "format": "long",
+      "media": "video",
+      "templates": [
+        {
+          "template": "pressure_diffusion",
+          "model": "kmd.visuals.templates.pressure_diffusion.PressureDiffusion.state"
+        },
+        {
+          "template": "cross_section",
+          "model": "kmd.visuals.templates.cross_section.CrossSection.state"
+        },
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.01",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.02",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.basniev.ch24s1.09",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    }
+  ]
+}

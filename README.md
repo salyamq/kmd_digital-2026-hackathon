@@ -133,6 +133,21 @@ make rebuild CH=latyshova       # слой → проверка → маршру
 make rebuild CH=latyshova VIDEO=1  # также пересобрать имеющиеся ролики
 ```
 
+Защита: «измените одно число в слое и пересоберите». Патч утверждения (`claims_patch`) и пересборка;
+из кэша берётся всё, кроме шага с изменённым узлом (один запрос к модели, на DeepSeek ~40 с на главу):
+
+```bash
+cat > overrides/<глава>/<node_id>.json <<'JSON'
+{"claims_patch": {"<claim_id>": {"text": "… новое число …"}}}
+JSON
+KMD_LLM_PROVIDER=openai OPENAI_BASE_URL=https://openrouter.ai/api/v1 \
+  KMD_LLM_MODEL=deepseek/deepseek-v4.1-flash-1017 make rebuild CH=<глава>
+```
+
+Число из правки человека, которого нет в книге, проверка помечает предупреждением `number_by_editor`
+(а не ошибкой). Цитаты автора на странице остаются дословными — новое число видно в блоке утверждения
+(`#src-<claim_id>`) и в тексте шага.
+
 Журнал ручных правок: `edits/journal.jsonl` (минуты, коммит). Метрики стоимости:
 `python -m kmd.metrics` сохраняет `runs/metrics.json`. Суммы, сообщённые API, записаны отдельно
 от оценок по токенам. Оценки можно настроить через `KMD_PRICE_IN` и `KMD_PRICE_OUT` в USD за миллион.

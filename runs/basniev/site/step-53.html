@@ -36,14 +36,16 @@
     </details>
   </aside>
   <main id="main" class="content" tabindex="-1">
-    <p class="crumbs"><a href="index.html">Путь</a> › Как применять ПССС и понимать погрешность › Шаг 53 из 60</p>
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</a><span aria-hidden="true"> / </span>Шаг 53 из 60</p>
     <h1>Профиль, дебит и точность при постоянной депрессии</h1>
     <p class="booktitle">В книге: «Метод последовательной смены стационарных состояний» <span class="pg">стр. 497</span></p>
     <p class="meta">
       <span class="chip">≈ 8 мин</span>
       <span class="chip">⟳ Разбор источника</span>
 <span class="chip" title="Тип трудности узла">трудность: формализм + неочевидное</span>    </p>
-<p class="relies">Опирается на: <a href="step-52.html">шаг 52 «Длина зоны при постоянной депрессии»</a> <span class="muted">(предпосылка)</span>, <a href="step-22.html">шаг 22 «Как градиент превращается в дебит»</a> <span class="muted">(предпосылка)</span>, <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a> <span class="muted">(переход к данным)</span></p>
+<p class="relies">Опирается на: <a href="step-52.html">шаг 52 «Длина зоны при постоянной депрессии»</a> <span class="muted">(предпосылка)</span>, <a href="step-22.html">шаг 22 «Как градиент превращается в дебит»</a> <span class="muted">(предпосылка)</span>, <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a> <span class="muted">(переход к данным)</span></p>    </header>
+
     <section id="essence" class="essence" aria-labelledby="h-essence">
       <h2 id="h-essence">Суть</h2>
 <p class="lead">При постоянной депрессии давление внутри зоны длиной 2√(κt) линейно, а за ней равно pк.</p><p>Дебит галереи убывает обратно пропорционально корню из времени.</p><p>Погрешность дебита по ПССС — 11%, поэтому автор советует ПССС именно для этого режима.</p><p class="threshold"><b>Пороговая идея.</b> Уметь вычислить давление по ветвям и не переносить погрешность дебита на всё поле. <span class="chip chip-model">модель</span></p>    </section>
@@ -246,6 +248,33 @@
         <li id="src-geo.basniev.ch24s1.09.c04"><p>В тексте для дебита указан результат сравнения с точной формулой (23.27): погрешность 11%. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Погрешность расчета дебита галереи по приближенной формуле (24.8) по сравнению с расчетами по точной формуле (23.27) составляет 11%.»</p><footer>— стр. 497</footer></blockquote></li>
         <li id="src-geo.basniev.ch24s1.09.c05"><p>Автор рекомендует применять ПССС к неустановившемуся прямолинейно-параллельному потоку прежде всего при заданной постоянной депрессии. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«Следовательно, методом последовательной смены стационарных состояний лучше пользоваться в случае неустановившихся прямолинейно-параллельных потоков при заданной постоянной депрессии.»</p><footer>— стр. 497</footer></blockquote></li>
       </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u497_09-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>Следовательно, распределение давления в возмущенной зоне пласта определяется соотношением</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u497_10-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$p(x, t) = p_\kappa - (p_\kappa - p_\tau) \left( 1 - \frac{x}{2\sqrt{\kappa t}} \right), \quad 0 &lt; x \leq 2\sqrt{\kappa t}, \quad (24.8)$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u497_11-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$p(x, t) = p_\kappa, \quad x &gt; 2\sqrt{\kappa t},$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u497_12-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>а дебит галереи – соотношением</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u497_13-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$Q(t) = \frac{k(p_\kappa - p_\tau)}{\mu 2\sqrt{\kappa t}} Bh. \quad (24.9)$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u497_14-1" tabindex="-1">
+          <p class="pg">Стр. 497 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>Погрешность расчета дебита галереи по приближенной формуле (24.8) по сравнению с расчетами по точной формуле (23.27) составляет 11%. Следовательно, методом последовательной смены стационарных состояний лучше пользоваться в случае неустановившихся прямолинейно-параллельных потоков при заданной постоянной депрессии.</blockquote>
+        </article>
+      </details>
 <p>На этот шаг опираются: <a href="step-60.html">шаг 60 «Где ПССС точен, а где груб»</a>.</p>    </section>
 
     <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
@@ -254,9 +283,39 @@
   </main>
 </div>
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p>К. С. Басниев и др. · «Нефтегазовая гидромеханика» · 2005. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Профиль, дебит и точность при постоянной депрессии</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="basniev" data-node="geo.basniev.ch24s1.09">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
 <script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
 <script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.09.t01", "type": "numeric", "question": "Какова погрешность расчёта дебита галереи по ПССС при постоянной депрессии (в процентах)?", "explanation": "Автор сравнил ПССС с точной формулой (23.27) и получил 11%.", "page": 497, "link": "#how-4", "step_title": "Профиль, дебит и точность при постоянной депрессии", "step_index": 53, "node_id": "geo.basniev.ch24s1.09", "key": {"answer": 11, "tolerance": 0}, "unit": "%", "answer_text": "11 %"}, {"id": "geo.basniev.ch24s1.09.t02", "type": "single", "question": "Как меняется дебит галереи при постоянной депрессии?", "explanation": "В (24.9) в знаменателе стоит 2√(κt).", "page": 497, "link": "#how-3", "step_title": "Профиль, дебит и точность при постоянной депрессии", "step_index": 53, "node_id": "geo.basniev.ch24s1.09", "options": ["Растёт пропорционально времени", "Обратно пропорционально корню из времени", "Остаётся постоянным"], "key": [1], "answer_text": "Обратно пропорционально корню из времени"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
 <script src="assets/vendor/katex/auto-render.min.js"></script>

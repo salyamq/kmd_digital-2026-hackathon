@@ -48,10 +48,10 @@
   </section>
 
 
-  <section aria-labelledby="h-path">
+  <section class="chapter-outline" aria-labelledby="h-path">
     <h2 id="h-path">Путь по главе</h2>
     <div class="part">
-      <h3 class="part-title"><span class="part-no">Часть 1</span> Поры, трещины и каверны</h3>
+      <h3 class="part-title">Поры, трещины и каверны</h3>
       <ol class="path" start="1">
         <li class="path-step" data-node="geo.rehearsal_lat21.s21.01">
           <a href="step-01.html">
@@ -88,7 +88,7 @@
       </ol>
     </div>
     <div class="part">
-      <h3 class="part-title"><span class="part-no">Часть 2</span> Как распознать коллектор</h3>
+      <h3 class="part-title">Как распознать коллектор</h3>
       <ol class="path" start="5">
         <li class="path-step" data-node="geo.rehearsal_lat21.s21.03">
           <a href="step-05.html">
@@ -125,7 +125,7 @@
       </ol>
     </div>
     <div class="part">
-      <h3 class="part-title"><span class="part-no">Часть 3</span> От повторных измерений к насыщению</h3>
+      <h3 class="part-title">От повторных измерений к насыщению</h3>
       <ol class="path" start="9">
         <li class="path-step" data-node="geo.rehearsal_lat21.s21.09">
           <a href="step-09.html">
@@ -171,9 +171,39 @@
   </section>
 </main>
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: М. Г. Латышова, «Практическое руководство по интерпретации диаграмм геофизических исследований скважин», 1991. Страницы указаны по PDF книги.</p>
+  <p>М. Г. Латышова · «Практическое руководство по интерпретации диаграмм геофизических исследований скважин» · 1991. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Выделение и оценка характера насыщения сложных коллекторов</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в главе?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="rehearsal_lat21" data-node="">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этой главе"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
 <script>window.KMD_COURSE = {"chapter": "rehearsal_lat21", "title": "Выделение и оценка характера насыщения сложных коллекторов", "book": {"author": "М. Г. Латышова", "title": "Практическое руководство по интерпретации диаграмм геофизических исследований скважин", "year": 1991, "pdf": "pdf/latyshova.pdf"}, "steps": [{"node_id": "geo.rehearsal_lat21.s21.01", "index": 1, "title": "Что такое сложный коллектор", "url": "step-01.html", "minutes": 5}, {"node_id": "geo.rehearsal_lat21.s21.02", "index": 2, "title": "Как трещины обеспечивают приток", "url": "step-02.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.06", "index": 3, "title": "Трещины и каверны в породе", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.07", "index": 4, "title": "Как каверны меняют бурение", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.rehearsal_lat21.s21.03", "index": 5, "title": "Как каротаж пропускает трещины", "url": "step-05.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.04", "index": 6, "title": "Как солёный раствор выдаёт трещины", "url": "step-06.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.05", "index": 7, "title": "Какие сигналы выдают трещины", "url": "step-07.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.08", "index": 8, "title": "Почему методы пористости расходятся", "url": "step-08.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.09", "index": 9, "title": "Что показывает повторный замер", "url": "step-09.html", "minutes": 8}, {"node_id": "geo.rehearsal_lat21.s21.10", "index": 10, "title": "Как давление меняет диаграмму", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.rehearsal_lat21.s21.11", "index": 11, "title": "Чем отличается смешанный коллектор", "url": "step-11.html", "minutes": 3}, {"node_id": "geo.rehearsal_lat21.s21.12", "index": 12, "title": "Как определить насыщение коллектора", "url": "step-12.html", "minutes": 7}], "minutes": 79, "n_tasks": 28, "n_cards": 24, "has_media": true, "library": true, "has_before": false};</script>
 <script src="assets/vendor/katex/katex.min.js"></script>
 <script src="assets/vendor/katex/auto-render.min.js"></script>

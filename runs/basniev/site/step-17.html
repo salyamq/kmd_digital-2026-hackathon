@@ -36,14 +36,16 @@
     </details>
   </aside>
   <main id="main" class="content" tabindex="-1">
-    <p class="crumbs"><a href="index.html">Путь</a> › От баланса массы к форме профиля давления › Шаг 17 из 60</p>
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</a><span aria-hidden="true"> / </span>Шаг 17 из 60</p>
     <h1>Один аргумент вместо трёх</h1>
     <p class="booktitle">В книге: «Прямолинейно-параллельный фильтрационный поток упругой жидкости» <span class="pg">стр. 482</span></p>
     <p class="meta">
       <span class="chip">≈ 6 мин</span>
       <span class="chip">¶ Текст</span>
 <span class="chip" title="Тип трудности узла">трудность: формализм</span>    </p>
-<p class="relies">Опирается на: <a href="step-16.html">шаг 16 «Три условия для давления»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(предпосылка)</span></p>
+<p class="relies">Опирается на: <a href="step-16.html">шаг 16 «Три условия для давления»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
     <section id="essence" class="essence" aria-labelledby="h-essence">
       <h2 id="h-essence">Суть</h2>
 <p class="lead">Из соображений размерности расстояние, время и пьезопроводность сводят к одной безразмерной координате.</p><p>Тогда все профили давления в разные моменты описывает одна функция.</p><p>Уравнение пьезопроводности сохраняет свой вид.</p><p class="threshold"><b>Пороговая идея.</b> Разные профили давления становятся одной кривой, если изменить шкалу расстояния. <span class="chip chip-model">модель</span></p>    </section>
@@ -254,6 +256,41 @@
         <li id="src-geo.basniev.s5_1.03.c09"><p>Нормировка сохраняет форму уравнения благодаря его линейности. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«В силу линейности дифференциального уравнения (23.19) для безразмерного давления $P$ имеем такое же уравнение, как и для размерного $p$,»</p><footer>— стр. 482</footer></blockquote></li>
         <li id="src-geo.basniev.s5_1.03.c10"><p>Для безразмерного давления производная по времени снова равна пьезопроводности, умноженной на вторую производную по координате. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$\frac{\partial P}{\partial t} = \kappa \frac{\partial^2 P}{\partial x^2}. \tag{23.22}$$»</p><footer>— стр. 482</footer></blockquote></li>
       </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u482_06-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>Используя анализ размерностей, покажем, что поставленная задача автомодельна, т. е. из аргументов, от которых зависит давление, можно составить один безразмерный комплекс, от которого будет зависеть искомая функция $p(x, t)$.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_07-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>Обозначим через $P = (p - p_\tau)/(p_\kappa - p_\tau)$ безразмерное давление, которое, как следует из соотношений (23.19) и (23.20), зависит от времени $t$, координаты $x$ и коэффициента пьезопроводности $\kappa$, т.е.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_08-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>$$P = f(x, t, \kappa).$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_09-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>Размерности этих аргументов следующие: $[x] = L$, $[t] = T$, $[\kappa] = L^2 T^{-1}$, и из них можно составить безразмерный комплекс $x/\sqrt{\kappa t}$. Приняв за новую переменную безразмерную величину $u = x/(2\sqrt{\kappa t})$, сведем задачу к нахождению безразмерного давления $P$, зависящего только от $u$ (автомодельной переменной), $P = f(u)$. В результате подобного перехода граничные условия (23.20) запишутся в виде</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_10-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>$$P = 0 \quad \text{при} \quad u = 0,$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_11-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>$$P = 1 \quad \text{при} \quad u = \infty. \tag{23.21}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_12-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>В силу линейности дифференциального уравнения (23.19) для безразмерного давления $P$ имеем такое же уравнение, как и для размерного $p$,</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u482_13-1" tabindex="-1">
+          <p class="pg">Стр. 482 · 5.1. Прямолинейно-параллельный фильтрационный поток упругой жидкости</p>
+          <blockquote>$$\frac{\partial P}{\partial t} = \kappa \frac{\partial^2 P}{\partial x^2}. \tag{23.22}$$</blockquote>
+        </article>
+      </details>
 <p>На этот шаг опираются: <a href="step-18.html">шаг 18 «Как меняются частные производные»</a>, <a href="step-20.html">шаг 20 «Границы задают масштаб профиля»</a>, <a href="step-32.html">шаг 32 «Свернуть расстояние и время в одну координату»</a>.</p>    </section>
 
     <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
@@ -262,9 +299,39 @@
   </main>
 </div>
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p>К. С. Басниев и др. · «Нефтегазовая гидромеханика» · 2005. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Один аргумент вместо трёх</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="basniev" data-node="geo.basniev.s5_1.03">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
 <script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
 <script>window.KMD_TASKS = [{"id": "geo.basniev.s5_1.03.t01", "type": "order", "question": "Расставьте шаги перехода к одному аргументу.", "explanation": "Сначала нормировка, потом размерности, потом новая переменная.", "page": 482, "link": "#procedure", "step_title": "Один аргумент вместо трёх", "step_index": 17, "node_id": "geo.basniev.s5_1.03", "items": [{"text": "Перейдите к автомодельной переменной.", "pos": 2}, {"text": "Проверьте размерности аргументов.", "pos": 1}, {"text": "Нормируйте давление на заданный перепад.", "pos": 0}], "key": [0, 1, 2], "answer_text": "Нормируйте давление на заданный перепад. → Проверьте размерности аргументов. → Перейдите к автомодельной переменной."}, {"id": "geo.basniev.s5_1.03.t02", "type": "cloze", "question": "Заполните пропуски.", "explanation": "Нормировка: на галерее 0, вдали 1.", "page": 482, "link": "#how-7", "step_title": "Один аргумент вместо трёх", "step_index": 17, "node_id": "geo.basniev.s5_1.03", "parts": ["На галерее безразмерное давление равно ", ", а вдали от неё стремится к ", "."], "blanks": [{"options": ["нулю", "бесконечности", "единице"], "answers": ["нулю"]}, {"options": ["единице", "нулю", "двум"], "answers": ["единице"]}], "key": [["нулю"], ["единице"]], "answer_text": "На галерее безразмерное давление равно [нулю], а вдали от неё стремится к [единице]."}, {"id": "geo.basniev.s5_1.03.t03", "type": "single", "question": "Почему нормировка не меняет вид уравнения пьезопроводности?", "explanation": "Автор объясняет это линейностью уравнения.", "page": 482, "link": "#how-8", "step_title": "Один аргумент вместо трёх", "step_index": 17, "node_id": "geo.basniev.s5_1.03", "options": ["Потому что давление постоянно", "Потому что уравнение линейно", "Потому что время исключено", "Потому что пьезопроводность равна нулю"], "key": [1], "answer_text": "Потому что уравнение линейно"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
 <script src="assets/vendor/katex/auto-render.min.js"></script>

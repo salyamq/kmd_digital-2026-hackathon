@@ -11,6 +11,16 @@ models:
   - role: vision (описания рисунков при разборе главы, оцифровка рисунков книги для перерисовки кодом)
     used_in_dev_runs: "Claude Opus 5.5 (тот же механизм, параметр images= в kmd/llm.py)"
     data_leaves: "да — изображения страниц уходят провайдеру LLM; локальная VLM через OPENAI_BASE_URL — наружу ничего"
+    text_only_main_model: "если основная модель без зрения, KMD_LLM_VISION_MODEL задаёт модель для запросов с изображениями; без неё перерисовка рисунков пропускается, рисунки книги остаются как есть"
+  - role: "LLM, проверенные API-прогоны (2026-11-25/26)"
+    models:
+      - "deepseek/deepseek-v4.1-flash-1017 через OpenRouter (рассуждения выключены по умолчанию) — сквозные прогоны Баренблатта; пересборка после правки слоя (~40 с на главу)"
+      - "baidu/ernie-5.5-flash-preview:free через OpenRouter (только текст) — сквозные прогоны Латышовой §21, Баренблатта §3, Вендельштейна; слой мельче и с порядком терминов хуже, чем у Claude/DeepSeek"
+    settings: "KMD_LLM_PROVIDER=openai, OPENAI_BASE_URL=https://openrouter.ai/api/v1, KMD_LLM_MODEL; KMD_LLM_PARALLEL (по умолчанию 4) — одновременные запросы; KMD_LLM_RETRIES (6) — повторы при сбоях шлюза"
+    data_leaves: "да — текст главы уходит в OpenRouter и провайдеру модели"
+  - role: "чат по книге (kmd serve, RAG)"
+    tool: "поиск по фрагментам главы (BM25, локально) + модель через OpenRouter: baidu/ernie-5.5-flash-preview:free по умолчанию, замена — KMD_CHAT_MODEL; ключ OPENROUTER_API_KEY в .env"
+    data_leaves: "да — вопрос и найденные фрагменты главы уходят в OpenRouter; офлайн-курс (file://) чат не показывает и работает без сети"
   - role: синтез речи (основной)
     tool: "edge-tts (онлайн-голоса Microsoft, ru-RU-DmitryNeural)"
     data_leaves: "да — только текст сценария (по ТЗ)"

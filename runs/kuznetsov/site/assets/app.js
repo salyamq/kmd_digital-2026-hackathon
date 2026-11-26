@@ -1,5 +1,5 @@
 /* Course site behaviour: theme, progress/resume, tasks with instant check, drag-to-order (mouse,
-   finger, keyboard), decision cases, flashcards, animation player, math. No network, no frameworks. */
+   finger, keyboard), decision cases, flashcards, animation player, math and lesson questions. */
 (function () {
   "use strict";
   var C = window.KMD_COURSE || { chapter: "course", steps: [] };
@@ -321,6 +321,225 @@
       });
     });
     rebuild();
+  }
+
+  /* ---------- questions about the lesson */
+  var ragForm = $(".rag-form");
+  if (ragForm) {
+    var ragPanel = ragForm.closest(".rag-panel");
+    var ragWidget = ragPanel.closest(".rag");
+    var ragLauncher = $(".rag-launcher");
+    var ragLauncherLabel = $(".rag-launcher-label", ragLauncher);
+    var ragClose = $(".rag-close", ragPanel);
+    var ragContent = $(".rag-content", ragPanel);
+    var ragIntro = $(".rag-intro", ragPanel);
+    var ragMessages = $(".rag-messages", ragPanel);
+    var ragStatus = $(".rag-status", ragPanel);
+    var ragButton = $("button[type=submit]", ragForm);
+    var ragQuestion = $("textarea", ragForm);
+    var ragStorageKey = NS + "chat:" + ragForm.dataset.node;
+    var ragTurns = [];
+    var highlightedExcerpt;
+    var highlightTimer;
+    try { ragTurns = JSON.parse(sessionStorage.getItem(ragStorageKey)) || []; } catch (error) {}
+
+    function scrollChat() {
+      ragContent.scrollTop = ragContent.scrollHeight;
+    }
+
+    function openRag(open) {
+      ragWidget.classList.remove("rag-reading");
+      ragPanel.hidden = !open;
+      ragLauncher.setAttribute("aria-expanded", String(open));
+      ragLauncherLabel.textContent = open ? "Свернуть чат" : "Чат по книге";
+      (open ? ragClose : ragLauncher).focus({ preventScroll: true });
+      if (open) scrollChat();
+    }
+    ragLauncher.addEventListener("click", function () { openRag(ragPanel.hidden); });
+    ragClose.addEventListener("click", function () { openRag(false); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !ragPanel.hidden) openRag(false);
+    });
+
+    function revealExcerpt(hash, smooth) {
+      if (!/^#excerpt-[a-z0-9_.-]+$/i.test(hash)) return;
+      var excerpt = document.getElementById(hash.slice(1));
+      if (!excerpt) return;
+      var group = excerpt.closest(".lesson-excerpts");
+      if (group) group.open = true;
+      excerpt.focus({ preventScroll: true });
+      excerpt.scrollIntoView({
+        behavior: smooth && !reduceMotion ? "smooth" : "instant",
+        block: ragWidget.classList.contains("rag-reading") && matchMedia("(max-width: 1400px)").matches ? "start" : "center"
+      });
+      clearTimeout(highlightTimer);
+      if (highlightedExcerpt) highlightedExcerpt.classList.remove("source-excerpt-highlight");
+      highlightedExcerpt = excerpt;
+      highlightTimer = setTimeout(function () {
+        excerpt.classList.add("source-excerpt-highlight");
+        highlightTimer = setTimeout(function () {
+          excerpt.classList.remove("source-excerpt-highlight");
+          highlightedExcerpt = null;
+        }, 2000);
+      }, smooth && !reduceMotion ? 220 : 0);
+    }
+    revealExcerpt(location.hash, false);
+    window.addEventListener("hashchange", function () { revealExcerpt(location.hash, false); });
+    ragMessages.addEventListener("click", function (event) {
+      var link = event.target.closest("a[href^='#excerpt-']");
+      if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (!document.getElementById(link.hash.slice(1))) return;
+      event.preventDefault();
+      ragWidget.classList.add("rag-reading");
+      if (location.hash !== link.hash) history.replaceState(history.state, "", link.hash);
+      revealExcerpt(link.hash, true);
+    });
+
+    function setSourceLink(anchor, source) {
+      anchor.href = source.href;
+      if (!source.href.startsWith("#")) {
+        anchor.target = "_blank";
+        anchor.rel = "noopener";
+      }
+    }
+
+    function renderQuestion(question) {
+      var bubble = document.createElement("p");
+      bubble.className = "rag-user-question";
+      bubble.textContent = question;
+      ragMessages.append(bubble);
+      return bubble;
+    }
+
+    function showRagAnswer(data) {
+      var result = document.createElement("div");
+      var ragAnswer = document.createElement("div");
+      var ragSources = document.createElement("div");
+      result.className = "rag-result";
+      ragAnswer.className = "rag-answer";
+      ragAnswer.setAttribute("aria-label", "Ответ помощника");
+      ragSources.className = "rag-sources";
+      var sources = new Map(data.sources.map(function (source) { return [source.id, source]; }));
+      data.answer.split(/\n\s*\n/).forEach(function (part) {
+        var paragraph = document.createElement("p");
+        part.split(/(\[S\d+\])/).forEach(function (token) {
+          var id = token.slice(1, -1);
+          var source = sources.get(id);
+          if (source && token === "[" + id + "]" && isSourceLink(source.href)) {
+            var sourceLink = document.createElement("a");
+            setSourceLink(sourceLink, source);
+            sourceLink.className = "rag-citation";
+            sourceLink.textContent = "Стр. " + source.page + " ↗";
+            sourceLink.title = "Перейти к фрагменту " + id;
+            paragraph.append(sourceLink);
+          } else {
+            paragraph.append(document.createTextNode(token));
+          }
+        });
+        ragAnswer.append(paragraph);
+      });
+      data.sources.forEach(function (source) {
+        var details = document.createElement("details");
+        var summary = document.createElement("summary");
+        var excerpt = document.createElement("blockquote");
+        summary.textContent = "[" + source.id + "] Стр. " + source.page + " · " + source.section;
+        excerpt.textContent = source.text;
+        details.append(summary, excerpt);
+        if (isSourceLink(source.href)) {
+          var anchor = document.createElement("a");
+          setSourceLink(anchor, source);
+          anchor.textContent = "Перейти к отрывку";
+          details.append(anchor);
+        }
+        ragSources.append(details);
+      });
+      result.append(ragAnswer);
+      if (data.sources.length) result.append(ragSources);
+      ragMessages.append(result);
+    }
+
+    function isSourceLink(href) {
+      return /^(?:source\.html)?#excerpt-[a-z0-9_.-]+$/i.test(href);
+    }
+
+    ragTurns.forEach(function (turn) {
+      renderQuestion(turn.question);
+      showRagAnswer(turn.result);
+    });
+    ragIntro.hidden = ragTurns.length > 0;
+    if (location.hash === "#ask") openRag(true);
+
+    if (location.protocol === "file:") {
+      ragButton.disabled = true;
+      ragWidget.classList.remove("rag-reading");
+      ragStatus.textContent = "Для вопросов откройте урок через локальный сервер курса.";
+    }
+    ragQuestion.addEventListener("keydown", function (event) {
+      if (event.key !== "Enter" || event.isComposing) return;
+      event.preventDefault();
+      if (event.ctrlKey) {
+        var start = ragQuestion.selectionStart;
+        var end = ragQuestion.selectionEnd;
+        if (ragQuestion.value.length - (end - start) < ragQuestion.maxLength) {
+          ragQuestion.setRangeText("\n", start, end, "end");
+        }
+      } else if (!ragButton.disabled && !event.repeat) {
+        ragForm.requestSubmit(ragButton);
+      }
+    });
+    ragForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (ragButton.disabled) return;
+      var question = ragQuestion.value.trim();
+      if (question.length < 5) {
+        ragStatus.textContent = "Введите вопрос длиной от 5 символов.";
+        ragQuestion.focus();
+        return;
+      }
+      ragButton.disabled = true;
+      ragIntro.hidden = true;
+      var pendingBubble = renderQuestion(question);
+      ragQuestion.value = "";
+      ragQuestion.focus({ preventScroll: true });
+      ragStatus.textContent = "Ищем в книге и готовим объяснение…";
+      scrollChat();
+      var recent = ragTurns.filter(function (turn) { return turn.result.sources.length > 0; });
+      try {
+        var response = await fetch("/api/rag/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chapter: ragForm.dataset.chapter, node: ragForm.dataset.node, question: question,
+            history: recent.slice(-2).map(function (turn) {
+              return { question: turn.question.slice(0, 250), answer: turn.result.answer.slice(0, 450) };
+            })
+          })
+        });
+        var result = await response.json();
+        if (!response.ok) {
+          pendingBubble.remove();
+          if (!ragQuestion.value) ragQuestion.value = question;
+          ragStatus.textContent = result.error || "Сервис вопросов временно недоступен.";
+          return;
+        }
+        showRagAnswer(result);
+        ragTurns = ragTurns.concat({ question: question, result: result }).slice(-12);
+        try { sessionStorage.setItem(ragStorageKey, JSON.stringify(ragTurns)); } catch (error) {}
+        while (ragMessages.children.length > 24) {
+          ragMessages.firstElementChild.remove();
+          ragMessages.firstElementChild.remove();
+        }
+        ragStatus.textContent = "";
+        ragContent.scrollTop += pendingBubble.getBoundingClientRect().top
+          - ragContent.getBoundingClientRect().top - 12;
+      } catch (error) {
+        pendingBubble.remove();
+        if (!ragQuestion.value) ragQuestion.value = question;
+        ragStatus.textContent = "Сервис вопросов недоступен. Обновите страницу или попробуйте позже.";
+      } finally {
+        ragButton.disabled = false;
+      }
+    });
   }
 
   /* ---------- print */

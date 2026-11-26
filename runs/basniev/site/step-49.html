@@ -36,14 +36,16 @@
     </details>
   </aside>
   <main id="main" class="content" tabindex="-1">
-    <p class="crumbs"><a href="index.html">Путь</a> › Когда точное решение применимо и как ввести движущуюся границу › Шаг 49 из 60</p>
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС</a><span aria-hidden="true"> / </span>Шаг 49 из 60</p>
     <h1>Фронт давления растёт как корень</h1>
     <p class="booktitle">В книге: «Метод последовательной смены стационарных состояний» <span class="pg">стр. 496</span></p>
     <p class="meta">
       <span class="chip">≈ 8 мин</span>
       <span class="chip">¶ Текст</span>
 <span class="chip" title="Тип трудности узла">трудность: формализм + процесс/прибор</span>    </p>
-<p class="relies">Опирается на: <a href="step-48.html">шаг 48 «Отбор равен убыли упругого запаса»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(предпосылка)</span>, <a href="step-46.html">шаг 46 «Где проходит условный фронт давления»</a> <span class="muted">(пример)</span></p>
+<p class="relies">Опирается на: <a href="step-48.html">шаг 48 «Отбор равен убыли упругого запаса»</a> <span class="muted">(предпосылка)</span>, <a href="step-13.html">шаг 13 «Как работает уравнение пьезопроводности»</a> <span class="muted">(предпосылка)</span>, <a href="step-46.html">шаг 46 «Где проходит условный фронт давления»</a> <span class="muted">(пример)</span></p>    </header>
+
     <section id="essence" class="essence" aria-labelledby="h-essence">
       <h2 id="h-essence">Суть</h2>
 <p class="lead">При постоянном дебите галереи длина возмущённой зоны растёт как корень из времени: l(t) = √(2κt).</p><p>Это следует из баланса: квадрат длины растёт с постоянной скоростью 2κ.</p><p>Поэтому фронт со временем замедляется, а не идёт с постоянной скоростью.</p><p class="threshold"><b>Пороговая идея.</b> Объяснить, откуда в балансе появляется квадрат длины. <span class="chip chip-model">модель</span></p>    </section>
@@ -268,6 +270,57 @@
         <li id="src-geo.basniev.ch24s1.05.c08"><p>Пьезопроводность равна проницаемости, делённой на произведение вязкости и упругоёмкости. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$2\kappa dt = dl^2 \quad (\kappa = k/(\mu \beta^*)).$$»</p><footer>— стр. 496</footer></blockquote></li>
         <li id="src-geo.basniev.ch24s1.05.c09"><p>Интегрирование даёт длину зоны, равную квадратному корню из удвоенного произведения пьезопроводности и времени. <span class="kind kind-inference">вывод</span></p><blockquote class="quote"><p>«$$l(t) = \sqrt{2\kappa t}. \quad (24.6)$$»</p><footer>— стр. 496</footer></blockquote></li>
       </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u496_01-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>Приняв во внимание, что $p(x, t) = p_{\mathrm{r}}(t)$ при $x = 0$, из (24.1) найдем</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_02-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$Q = \frac{k}{\mu} \frac{p_{\mathrm{k}} - p_{\mathrm{r}}}{l(t)} Bh,$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_03-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>откуда</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_04-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$\frac{Q \mu l(t)}{2kBh} = \frac{p_{\mathrm{k}} - p_{\mathrm{r}}}{2}. \quad (24.5.)$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_05-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>Подставив равенства (24.3)–(24.5) в соотношение (24.2), получим</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_06-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$Q = \beta^* \frac{d}{dt} \left( Bhl \frac{Q \mu l}{2kBh} \right),$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_07-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>или, так как $Q = \text{const}$,</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_08-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$2Q = \frac{\beta^* \mu}{k} Q \frac{d}{dt} (l^2),$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_09-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>откуда следует</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_10-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$2\kappa dt = dl^2 \quad (\kappa = k/(\mu \beta^*)).$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_11-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>Проинтегрируем полученное соотношение и найдем</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u496_12-1" tabindex="-1">
+          <p class="pg">Стр. 496 · §1. Метод последовательной смены стационарных состояний</p>
+          <blockquote>$$l(t) = \sqrt{2\kappa t}. \quad (24.6)$$</blockquote>
+        </article>
+      </details>
 <p>На этот шаг опираются: <a href="step-50.html">шаг 50 «Давление у галереи и ошибка ПССС»</a>.</p>    </section>
 
     <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
@@ -276,9 +329,39 @@
   </main>
 </div>
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: К. С. Басниев и др., «Нефтегазовая гидромеханика», 2005. Страницы указаны по PDF книги.</p>
+  <p>К. С. Басниев и др. · «Нефтегазовая гидромеханика» · 2005. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Фронт давления растёт как корень</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="basniev" data-node="geo.basniev.ch24s1.05">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
 <script>window.KMD_COURSE = {"chapter": "basniev", "title": "Неустановившееся движение упругой жидкости в упругом пласте. Метод ПССС", "book": {"author": "К. С. Басниев и др.", "title": "Нефтегазовая гидромеханика", "year": 2005, "md": "md/train_basniev.md", "pdf": "pdf/basniev.pdf"}, "steps": [{"node_id": "geo.basniev.s1.01", "index": 1, "title": "Почему пласт отвечает скважине", "url": "step-01.html", "minutes": 7}, {"node_id": "geo.basniev.s1.02", "index": 2, "title": "Есть ли у пласта подпитка водой", "url": "step-02.html", "minutes": 4}, {"node_id": "geo.basniev.s1.03", "index": 3, "title": "Что замедляет перераспределение давления", "url": "step-03.html", "minutes": 6}, {"node_id": "geo.basniev.s2.01", "index": 4, "title": "Что такое упругий запас", "url": "step-04.html", "minutes": 8}, {"node_id": "geo.basniev.s2.02", "index": 5, "title": "Один коэффициент для жидкости и пласта", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.basniev.s2.03", "index": 6, "title": "Как отбор меняет упругий запас", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.basniev.s3.01", "index": 7, "title": "Зачем изучать упругую фильтрацию", "url": "step-07.html", "minutes": 4}, {"node_id": "geo.basniev.s3.03", "index": 8, "title": "Какие свойства зависят от давления", "url": "step-08.html", "minutes": 4}, {"node_id": "geo.basniev.s3.02", "index": 9, "title": "Из чего складывается модель течения", "url": "step-09.html", "minutes": 6}, {"node_id": "geo.basniev.s4.01", "index": 10, "title": "Одно уравнение для давления", "url": "step-10.html", "minutes": 5}, {"node_id": "geo.basniev.s4.02", "index": 11, "title": "Как упростить накопление массы", "url": "step-11.html", "minutes": 5}, {"node_id": "geo.basniev.s4.03", "index": 12, "title": "Как упрощают перенос жидкости", "url": "step-12.html", "minutes": 4}, {"node_id": "geo.basniev.s4.04", "index": 13, "title": "Как работает уравнение пьезопроводности", "url": "step-13.html", "minutes": 8}, {"node_id": "geo.basniev.s5.01", "index": 14, "title": "Переход к одномерным потокам", "url": "step-14.html", "minutes": 3}, {"node_id": "geo.basniev.s5_1.01", "index": 15, "title": "Что задано у галереи", "url": "step-15.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.02", "index": 16, "title": "Три условия для давления", "url": "step-16.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.03", "index": 17, "title": "Один аргумент вместо трёх", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.04", "index": 18, "title": "Как меняются частные производные", "url": "step-18.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.05", "index": 19, "title": "От уравнения к наклону профиля", "url": "step-19.html", "minutes": 4}, {"node_id": "geo.basniev.s5_1.06", "index": 20, "title": "Границы задают масштаб профиля", "url": "step-20.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.07", "index": 21, "title": "От интеграла к давлению в пласте", "url": "step-21.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.08", "index": 22, "title": "Как градиент превращается в дебит", "url": "step-22.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.09", "index": 23, "title": "От дебита к добытому объёму", "url": "step-23.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.10", "index": 24, "title": "Пуск галереи с постоянным дебитом", "url": "step-24.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.11", "index": 25, "title": "Уравнение для скорости фильтрации", "url": "step-25.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.12", "index": 26, "title": "Шаблон решения для скорости", "url": "step-26.html", "minutes": 7}, {"node_id": "geo.basniev.s5_1.13", "index": 27, "title": "Скорость от галереи вглубь пласта", "url": "step-27.html", "minutes": 5}, {"node_id": "geo.basniev.s5_1.14", "index": 28, "title": "Давление из профиля скорости", "url": "step-28.html", "minutes": 8}, {"node_id": "geo.basniev.s5_1.15", "index": 29, "title": "Дальняя граница даёт давление галереи", "url": "step-29.html", "minutes": 6}, {"node_id": "geo.basniev.s5_1.16", "index": 30, "title": "Когда постоянный дебит невозможен", "url": "step-30.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.01", "index": 31, "title": "Как задать пуск скважины", "url": "step-31.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.02", "index": 32, "title": "Свернуть расстояние и время в одну координату", "url": "step-32.html", "minutes": 6}, {"node_id": "geo.basniev.s5_2.03", "index": 33, "title": "Уравнение с одной переменной вместо двух", "url": "step-33.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.04", "index": 34, "title": "Сначала найти производную давления", "url": "step-34.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.05", "index": 35, "title": "Восстановить давление по двум условиям", "url": "step-35.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.06", "index": 36, "title": "Основная формула упругого режима", "url": "step-36.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.07", "index": 37, "title": "Как вычислить функцию Ei рядом", "url": "step-37.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.08", "index": 38, "title": "Когда достаточно логарифма", "url": "step-38.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.09", "index": 39, "title": "Расход и скорость вокруг скважины", "url": "step-39.html", "minutes": 5}, {"node_id": "geo.basniev.s5_2.10", "index": 40, "title": "Два масштаба безразмерного времени", "url": "step-40.html", "minutes": 4}, {"node_id": "geo.basniev.s5_2.12", "index": 41, "title": "Проверить влияние внешней границы", "url": "step-41.html", "minutes": 7}, {"node_id": "geo.basniev.s5_2.11", "index": 42, "title": "Насколько важен радиус скважины", "url": "step-42.html", "minutes": 10}, {"node_id": "geo.basniev.s5_2.13", "index": 43, "title": "Как падает давление около скважины", "url": "step-43.html", "minutes": 8}, {"node_id": "geo.basniev.ch24.01", "index": 44, "title": "Зачем нужны приближённые методы", "url": "step-44.html", "minutes": 4}, {"node_id": "geo.basniev.ch24s1.01", "index": 45, "title": "Нестационарный процесс как серия стационарных", "url": "step-45.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.02", "index": 46, "title": "Где проходит условный фронт давления", "url": "step-46.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.03", "index": 47, "title": "Галерея и линейный профиль давления", "url": "step-47.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.04", "index": 48, "title": "Отбор равен убыли упругого запаса", "url": "step-48.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.05", "index": 49, "title": "Фронт давления растёт как корень", "url": "step-49.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.06", "index": 50, "title": "Давление у галереи и ошибка ПССС", "url": "step-50.html", "minutes": 9}, {"node_id": "geo.basniev.ch24s1.07", "index": 51, "title": "Постоянное давление на галерее", "url": "step-51.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.08", "index": 52, "title": "Длина зоны при постоянной депрессии", "url": "step-52.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.09", "index": 53, "title": "Профиль, дебит и точность при постоянной депрессии", "url": "step-53.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.10", "index": 54, "title": "Скважина с постоянным дебитом: логарифмический профиль", "url": "step-54.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.11", "index": 55, "title": "Средняя депрессия в кольце вокруг скважины", "url": "step-55.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.12", "index": 56, "title": "Как растёт радиус возмущения", "url": "step-56.html", "minutes": 5}, {"node_id": "geo.basniev.ch24s1.13", "index": 57, "title": "Давление в пласте и на забое", "url": "step-57.html", "minutes": 6}, {"node_id": "geo.basniev.ch24s1.14", "index": 58, "title": "Ошибка ПССС убывает со временем", "url": "step-58.html", "minutes": 8}, {"node_id": "geo.basniev.ch24s1.15", "index": 59, "title": "Радиус по графику и дебит скважины", "url": "step-59.html", "minutes": 7}, {"node_id": "geo.basniev.ch24s1.16", "index": 60, "title": "Где ПССС точен, а где груб", "url": "step-60.html", "minutes": 6}], "minutes": 359, "n_tasks": 141, "n_cards": 163, "has_media": true, "library": true, "has_before": true};</script>
 <script>window.KMD_TASKS = [{"id": "geo.basniev.ch24s1.05.t01", "type": "multiple", "question": "Что верно о законе движения границы при постоянном дебите галереи?", "explanation": "Постоянна скорость роста l², поэтому l = √(2κt), и фронт замедляется.", "page": 496, "link": "#how-5", "step_title": "Фронт давления растёт как корень", "step_index": 49, "node_id": "geo.basniev.ch24s1.05", "options": ["κ = k/(μβ*)", "Граница движется с постоянной скоростью", "Длина зоны растёт как корень из времени", "Квадрат длины зоны растёт с постоянной скоростью 2κ"], "key": [0, 2, 3], "answer_text": "Квадрат длины зоны растёт с постоянной скоростью 2κ; Длина зоны растёт как корень из времени; κ = k/(μβ*)"}, {"id": "geo.basniev.ch24s1.05.t02", "type": "order", "question": "Расставьте шаги вывода закона движения фронта.", "explanation": "Вывод идёт от профиля к балансу, затем к дифференциальному закону и интегралу.", "page": 496, "link": "#how-3", "step_title": "Фронт давления растёт как корень", "step_index": 49, "node_id": "geo.basniev.ch24s1.05", "items": [{"text": "Подставьте x = 0 в профиль и выразите депрессию на галерее.", "pos": 0}, {"text": "Подставьте объём зоны и среднюю депрессию в баланс (24.2).", "pos": 2}, {"text": "Вынесите постоянный дебит и получите 2κ·dt = dl².", "pos": 3}, {"text": "Проинтегрируйте: l(t) = √(2κt).", "pos": 4}, {"text": "Запишите половину депрессии через длину зоны по (24.5).", "pos": 1}], "key": [0, 1, 2, 3, 4], "answer_text": "Подставьте x = 0 в профиль и выразите депрессию на галерее. → Запишите половину депрессии через длину зоны по (24.5). → Подставьте объём зоны и среднюю депрессию в баланс (24.2). → Вынесите постоянный дебит и получите 2κ·dt = dl². → Проинтегрируйте: l(t) = √(2κt)."}, {"id": "geo.basniev.ch24s1.05.t03", "type": "single", "question": "Почему в балансе появляется квадрат длины?", "explanation": "Произведение двух величин, пропорциональных l, пропорционально l².", "page": 496, "link": "#how-3", "step_title": "Фронт давления растёт как корень", "step_index": 49, "node_id": "geo.basniev.ch24s1.05", "options": ["Объём зоны и средняя депрессия оба пропорциональны l", "Дебит растёт пропорционально l", "Упругоёмкость пропорциональна l"], "key": [0], "answer_text": "Объём зоны и средняя депрессия оба пропорциональны l"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
 <script src="assets/vendor/katex/auto-render.min.js"></script>

@@ -1,0 +1,169 @@
+{
+  "chapter": "latyshova",
+  "nodes": [
+    {
+      "node_id": "geo.latyshova.s17.02",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s17.03",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s17.04",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s18.03",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s19.02",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.01",
+      "format": "short",
+      "media": "video",
+      "templates": [
+        {
+          "template": "log_track",
+          "model": "kmd.visuals.templates.log_track.LogTrack.state"
+        },
+        {
+          "template": "radial_invasion",
+          "model": "kmd.visuals.templates.radial_invasion.RadialInvasion.state"
+        },
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.latyshova.s20.02",
+      "format": "long",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.03",
+      "format": "interactive",
+      "media": "video",
+      "templates": [
+        {
+          "template": "overlay_card",
+          "model": null
+        },
+        {
+          "template": "overlay_card",
+          "model": {
+            "type": "csv",
+            "file": "volve_daily_production.csv",
+            "x": "DATEPRD",
+            "y": [
+              "BORE_OIL_VOL"
+            ],
+            "filter": {
+              "NPD_WELL_BORE_NAME": "15/9-F-12"
+            }
+          }
+        },
+        {
+          "template": "depth_track",
+          "model": {
+            "type": "las",
+            "file": "15-9-19_SR_COMP.las",
+            "curve": "GR",
+            "depth_from": 4285,
+            "depth_to": 4360
+          }
+        },
+        {
+          "template": "overlay_card",
+          "model": {
+            "type": "las",
+            "file": "15-9-19_SR_COMP.las",
+            "curve": "GR",
+            "depth_from": 4285,
+            "depth_to": 4360
+          }
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.latyshova.s20.05",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.09",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.12",
+      "format": "long",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.13",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.15",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.18",
+      "format": "short",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.19",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    },
+    {
+      "node_id": "geo.latyshova.s20.21",
+      "format": "interactive",
+      "media": "evidence",
+      "templates": [],
+      "needs_template": true
+    }
+  ]
+}
