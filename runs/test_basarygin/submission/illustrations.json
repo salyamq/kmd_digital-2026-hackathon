@@ -1,0 +1,805 @@
+{
+  "chapter": "test_basarygin",
+  "illustrations": [
+    {
+      "id": "dril.test_basarygin.s4_1_1.01.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сравнивайте объем с учетом направления движения колонны.",
+      "alt": "Два случая: Подъем труб и Спуск труб. Сравнивайте объем с учетом направления движения колонны.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.01#c01",
+        "dril.test_basarygin.s4_1_1.01#c02",
+        "dril.test_basarygin.s4_1_1.01#c03",
+        "dril.test_basarygin.s4_1_1.01#c04",
+        "dril.test_basarygin.s4_1_1.01#c05"
+      ],
+      "pages": [
+        231
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.01",
+      "node_id": "dril.test_basarygin.s4_1_1.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: почему одного сигнала мало.",
+      "alt": "Последовательность сверху вниз: Газосодержание растет; Свойства раствора меняются; Давление насосов меняется; Причину еще надо выяснить.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.02#c01",
+        "dril.test_basarygin.s4_1_1.02#c02",
+        "dril.test_basarygin.s4_1_1.02#c03",
+        "dril.test_basarygin.s4_1_1.02#c04"
+      ],
+      "pages": [
+        231,
+        232
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.02",
+      "node_id": "dril.test_basarygin.s4_1_1.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: что означает скачок проходки.",
+      "alt": "Последовательность сверху вниз: Ускорение углубления; Проверка участка разреза; Высокое давление или провал инструмента.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.03#c01",
+        "dril.test_basarygin.s4_1_1.03#c02",
+        "dril.test_basarygin.s4_1_1.03#c03",
+        "dril.test_basarygin.s4_1_1.03#c04",
+        "dril.test_basarygin.s4_1_1.03#c05",
+        "dril.test_basarygin.s4_1_1.03#c06",
+        "dril.test_basarygin.s4_1_1.03#c07",
+        "dril.test_basarygin.s4_1_1.03#c08",
+        "dril.test_basarygin.s4_1_1.03#c09",
+        "dril.test_basarygin.s4_1_1.03#c10"
+      ],
+      "pages": [
+        232
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.03",
+      "node_id": "dril.test_basarygin.s4_1_1.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: почему уровень раствора растет.",
+      "alt": "Последовательность сверху вниз: Приток из пласта; Больше раствора в емкости; Рост уровня по датчику; Проверка после отключения насосов; Перекрытие при переливе.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c01",
+        "dril.test_basarygin.s4_1_1.04#c02",
+        "dril.test_basarygin.s4_1_1.04#c03",
+        "dril.test_basarygin.s4_1_1.04#c04",
+        "dril.test_basarygin.s4_1_1.04#c05",
+        "dril.test_basarygin.s4_1_1.04#c06",
+        "dril.test_basarygin.s4_1_1.04#c07",
+        "dril.test_basarygin.s4_1_1.04#c08",
+        "dril.test_basarygin.s4_1_1.04#c09"
+      ],
+      "pages": [
+        232,
+        233,
+        314,
+        315
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.04",
+      "node_id": "dril.test_basarygin.s4_1_1.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.05.ill-1",
+      "template": "comparison_bar",
+      "class": "A",
+      "provenance": "реальные данные",
+      "caption": "В примере автора при меньшей площади реакция на одинаковый приток усиливается.",
+      "alt": "Сравнены площади 20 и 40 м² из примера.",
+      "file": "illustrations/dril_test_basarygin_s4_1_1_05__1.svg",
+      "renderer": "visuals",
+      "file_m": "illustrations/dril_test_basarygin_s4_1_1_05__1_m.svg",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.05#c05",
+        "dril.test_basarygin.s4_1_1.05#c06"
+      ],
+      "pages": [
+        233,
+        234
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.05",
+      "node_id": "dril.test_basarygin.s4_1_1.05",
+      "origin": "code_from_data",
+      "frame_class": "A",
+      "label": "реальные данные"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как проверить исходный уровень.",
+      "alt": "Последовательность сверху вниз: Рабочая емкость изолирована; Циркуляция восстановлена; Установлен исходный уровень; Поправки отражают изменения раствора.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.06#c01",
+        "dril.test_basarygin.s4_1_1.06#c02",
+        "dril.test_basarygin.s4_1_1.06#c03",
+        "dril.test_basarygin.s4_1_1.06#c04",
+        "dril.test_basarygin.s4_1_1.06#c05",
+        "dril.test_basarygin.s4_1_1.06#c06"
+      ],
+      "pages": [
+        234
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.06",
+      "node_id": "dril.test_basarygin.s4_1_1.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.07.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: зачем сверять расход с уровнем.",
+      "alt": "Последовательность сверху вниз: Приток в ствол; Рост расхода на выходе; Повышение уровня емкости; Сверка двух каналов.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.07#c01",
+        "dril.test_basarygin.s4_1_1.07#c02",
+        "dril.test_basarygin.s4_1_1.07#c03",
+        "dril.test_basarygin.s4_1_1.07#c04"
+      ],
+      "pages": [
+        234
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.07",
+      "node_id": "dril.test_basarygin.s4_1_1.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.08.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: что видит расходомер при притоке.",
+      "alt": "Последовательность сверху вниз: Погрешность и предел прибора; Порог различимого расхода; Подача насосов; Момент обнаружения.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.08#c01",
+        "dril.test_basarygin.s4_1_1.08#c02",
+        "dril.test_basarygin.s4_1_1.08#c03",
+        "dril.test_basarygin.s4_1_1.08#c04",
+        "dril.test_basarygin.s4_1_1.08#c05"
+      ],
+      "pages": [
+        234,
+        235
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.08",
+      "node_id": "dril.test_basarygin.s4_1_1.08",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.09.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: откуда берется газ в растворе.",
+      "alt": "Последовательность сверху вниз: Газ выше фона; Сверка режима промывки; Газ продолжается без бурения; Проверка причины.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.09__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.09#c01",
+        "dril.test_basarygin.s4_1_1.09#c02",
+        "dril.test_basarygin.s4_1_1.09#c03",
+        "dril.test_basarygin.s4_1_1.09#c04",
+        "dril.test_basarygin.s4_1_1.09#c05",
+        "dril.test_basarygin.s4_1_1.09#c06",
+        "dril.test_basarygin.s4_1_1.09#c07",
+        "dril.test_basarygin.s4_1_1.09#c08"
+      ],
+      "pages": [
+        235
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.09",
+      "node_id": "dril.test_basarygin.s4_1_1.09",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.10.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Общий сигнал имеет разные источники.",
+      "alt": "Два случая: Газ из породы и Переходная зона. Общий сигнал имеет разные источники.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.10__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.10#c01",
+        "dril.test_basarygin.s4_1_1.10#c02",
+        "dril.test_basarygin.s4_1_1.10#c03",
+        "dril.test_basarygin.s4_1_1.10#c04",
+        "dril.test_basarygin.s4_1_1.10#c05",
+        "dril.test_basarygin.s4_1_1.10#c06",
+        "dril.test_basarygin.s4_1_1.10#c07"
+      ],
+      "pages": [
+        236
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.10",
+      "node_id": "dril.test_basarygin.s4_1_1.10",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.11.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: газ после паузы в циркуляции.",
+      "alt": "Последовательность сверху вниз: Движение труб; Пауза циркуляции; Выход раствора с газом; Оценка давления и расплескивания.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.11__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.11#c01",
+        "dril.test_basarygin.s4_1_1.11#c02",
+        "dril.test_basarygin.s4_1_1.11#c03",
+        "dril.test_basarygin.s4_1_1.11#c04",
+        "dril.test_basarygin.s4_1_1.11#c05",
+        "dril.test_basarygin.s4_1_1.11#c06",
+        "dril.test_basarygin.s4_1_1.11#c07"
+      ],
+      "pages": [
+        236
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.11",
+      "node_id": "dril.test_basarygin.s4_1_1.11",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.12.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как оценить газ по плотности.",
+      "alt": "Последовательность сверху вниз: Подача насосов; Плотности двух растворов; Дебит при атмосферных условиях; Содержание газа на единицу объема.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.12__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.12#c01",
+        "dril.test_basarygin.s4_1_1.12#c02",
+        "dril.test_basarygin.s4_1_1.12#c03"
+      ],
+      "pages": [
+        236,
+        237
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.12",
+      "node_id": "dril.test_basarygin.s4_1_1.12",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.13.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Учитывайте совпадение наблюдений.",
+      "alt": "Два случая: Газ без роста уровня и Газ и рост уровня. Учитывайте совпадение наблюдений.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.13__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.13#c01",
+        "dril.test_basarygin.s4_1_1.13#c02",
+        "dril.test_basarygin.s4_1_1.13#c03"
+      ],
+      "pages": [
+        237
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.13",
+      "node_id": "dril.test_basarygin.s4_1_1.13",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.14.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Знак изменения сам по себе не определяет интенсивность.",
+      "alt": "Два случая: Падение давления и Рост давления. Знак изменения сам по себе не определяет интенсивность.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.14__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.14#c01",
+        "dril.test_basarygin.s4_1_1.14#c02",
+        "dril.test_basarygin.s4_1_1.14#c03",
+        "dril.test_basarygin.s4_1_1.14#c04",
+        "dril.test_basarygin.s4_1_1.14#c05",
+        "dril.test_basarygin.s4_1_1.14#c06",
+        "dril.test_basarygin.s4_1_1.14#c07",
+        "dril.test_basarygin.s4_1_1.14#c08",
+        "dril.test_basarygin.s4_1_1.14#c09",
+        "dril.test_basarygin.s4_1_1.14#c10",
+        "dril.test_basarygin.s4_1_1.14#c11"
+      ],
+      "pages": [
+        237,
+        238
+      ],
+      "after_block": "how-5",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.14",
+      "node_id": "dril.test_basarygin.s4_1_1.14",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.15.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: почему долива может не хватать.",
+      "alt": "Последовательность сверху вниз: Трубы извлекают; Считают металл и пленку; Замеряют объем долива; Сравнивают его с расчетом.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.15__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.15#c01",
+        "dril.test_basarygin.s4_1_1.15#c02",
+        "dril.test_basarygin.s4_1_1.15#c03",
+        "dril.test_basarygin.s4_1_1.15#c04",
+        "dril.test_basarygin.s4_1_1.15#c05",
+        "dril.test_basarygin.s4_1_1.15#c06",
+        "dril.test_basarygin.s4_1_1.15#c07",
+        "dril.test_basarygin.s4_1_1.15#c08",
+        "dril.test_basarygin.s4_1_1.15#c09"
+      ],
+      "pages": [
+        238
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.15",
+      "node_id": "dril.test_basarygin.s4_1_1.15",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.16.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как оценить вытеснение при спуске.",
+      "alt": "Последовательность сверху вниз: Трубы вытесняют раствор; Сравнение с расчетом; Перелив продолжается; Признак пластового притока.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.16__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.16#c01",
+        "dril.test_basarygin.s4_1_1.16#c02",
+        "dril.test_basarygin.s4_1_1.16#c03"
+      ],
+      "pages": [
+        239
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.16",
+      "node_id": "dril.test_basarygin.s4_1_1.16",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_1_1.17.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: почему изменения раствора видны позже.",
+      "alt": "Последовательность сверху вниз: Поступает флюид; Свойства раствора меняются; Порция движется к устью; Изменение видно на поверхности.",
+      "file": "illustrations/dril.test_basarygin.s4_1_1.17__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.17#c01",
+        "dril.test_basarygin.s4_1_1.17#c02",
+        "dril.test_basarygin.s4_1_1.17#c03",
+        "dril.test_basarygin.s4_1_1.17#c04"
+      ],
+      "pages": [
+        239
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_1_1.17",
+      "node_id": "dril.test_basarygin.s4_1_1.17",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как устроено устье скважины.",
+      "alt": "Последовательность сверху вниз: Риск проявления; Несколько превенторов; Линии глушения и отвода; Управление потоком на устье.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.01#c01",
+        "dril.test_basarygin.s4_2_14.01#c02",
+        "dril.test_basarygin.s4_2_14.01#c03",
+        "dril.test_basarygin.s4_2_14.01#c04",
+        "dril.test_basarygin.s4_2_14.01#c05"
+      ],
+      "pages": [
+        312,
+        313
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.01",
+      "node_id": "dril.test_basarygin.s4_2_14.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как перекрытие прекращает приток.",
+      "alt": "Последовательность сверху вниз: Скважина перекрыта; Давление в стволе растет; Приток затухает; Дальше требуется глушение.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.02#c01",
+        "dril.test_basarygin.s4_2_14.02#c02",
+        "dril.test_basarygin.s4_2_14.02#c03",
+        "dril.test_basarygin.s4_2_14.02#c04",
+        "dril.test_basarygin.s4_2_14.02#c05",
+        "dril.test_basarygin.s4_2_14.02#c06"
+      ],
+      "pages": [
+        314
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.02",
+      "node_id": "dril.test_basarygin.s4_2_14.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: когда нужна проверка на самоприток.",
+      "alt": "Последовательность сверху вниз: Сигнал о проявлении; Остановка текущей операции; Насосы отключены; Проверка перелива; Перекрытие при переливе.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.03#c01",
+        "dril.test_basarygin.s4_2_14.03#c02",
+        "dril.test_basarygin.s4_2_14.03#c03",
+        "dril.test_basarygin.s4_2_14.03#c04",
+        "dril.test_basarygin.s4_2_14.03#c05",
+        "dril.test_basarygin.s4_2_14.03#c06"
+      ],
+      "pages": [
+        314,
+        315
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.03",
+      "node_id": "dril.test_basarygin.s4_2_14.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.04.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Выбор зависит от условий и пределов оборудования.",
+      "alt": "Два случая: Быстрое перекрытие и Мягкое перекрытие. Выбор зависит от условий и пределов оборудования.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.04#c01",
+        "dril.test_basarygin.s4_2_14.04#c02",
+        "dril.test_basarygin.s4_2_14.04#c03",
+        "dril.test_basarygin.s4_2_14.04#c04",
+        "dril.test_basarygin.s4_2_14.04#c05",
+        "dril.test_basarygin.s4_2_14.04#c06",
+        "dril.test_basarygin.s4_2_14.04#c07",
+        "dril.test_basarygin.s4_2_14.04#c08",
+        "dril.test_basarygin.s4_2_14.04#c09",
+        "dril.test_basarygin.s4_2_14.04#c10"
+      ],
+      "pages": [
+        315
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.04",
+      "node_id": "dril.test_basarygin.s4_2_14.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: как перекрывают при движении труб.",
+      "alt": "Последовательность сверху вниз: Движение колонны остановлено; Колонна подвешена; Клапан установлен; Клапан и превентор закрыты; Регистрация давлений.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.05#c01",
+        "dril.test_basarygin.s4_2_14.05#c02",
+        "dril.test_basarygin.s4_2_14.05#c03",
+        "dril.test_basarygin.s4_2_14.05#c04",
+        "dril.test_basarygin.s4_2_14.05#c05",
+        "dril.test_basarygin.s4_2_14.05#c06"
+      ],
+      "pages": [
+        316
+      ],
+      "after_block": "how-4",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.05",
+      "node_id": "dril.test_basarygin.s4_2_14.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: что делают после перекрытия.",
+      "alt": "Последовательность сверху вниз: Скважина уже перекрыта; Параметры зарегистрированы; Приток и исходный раствор вытесняют; В стволе утяжеленный раствор.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.06#c01",
+        "dril.test_basarygin.s4_2_14.06#c02",
+        "dril.test_basarygin.s4_2_14.06#c03"
+      ],
+      "pages": [
+        316
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.06",
+      "node_id": "dril.test_basarygin.s4_2_14.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.07.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: зачем методу бурильщика два этапа.",
+      "alt": "Последовательность сверху вниз: Удаление притока; Промежуточная проверка давления; Нагнетание утяжеленного раствора; Проверка отсутствия избытка давления.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.07#c01",
+        "dril.test_basarygin.s4_2_14.07#c02",
+        "dril.test_basarygin.s4_2_14.07#c03",
+        "dril.test_basarygin.s4_2_14.07#c04",
+        "dril.test_basarygin.s4_2_14.07#c05",
+        "dril.test_basarygin.s4_2_14.07#c06",
+        "dril.test_basarygin.s4_2_14.07#c07",
+        "dril.test_basarygin.s4_2_14.07#c08",
+        "dril.test_basarygin.s4_2_14.07#c09",
+        "dril.test_basarygin.s4_2_14.07#c10",
+        "dril.test_basarygin.s4_2_14.07#c11",
+        "dril.test_basarygin.s4_2_14.07#c12"
+      ],
+      "pages": [
+        316,
+        317
+      ],
+      "after_block": "how-7",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.07",
+      "node_id": "dril.test_basarygin.s4_2_14.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.08.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Схема: в чем смысл ожидания и веса.",
+      "alt": "Последовательность сверху вниз: Перекрытие; Подготовка утяжеленного раствора; Циркуляция до долота; Проверка давления; Завершение вытеснения.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.08__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.08#c01",
+        "dril.test_basarygin.s4_2_14.08#c02",
+        "dril.test_basarygin.s4_2_14.08#c03",
+        "dril.test_basarygin.s4_2_14.08#c04",
+        "dril.test_basarygin.s4_2_14.08#c05",
+        "dril.test_basarygin.s4_2_14.08#c06",
+        "dril.test_basarygin.s4_2_14.08#c07",
+        "dril.test_basarygin.s4_2_14.08#c08",
+        "dril.test_basarygin.s4_2_14.08#c09",
+        "dril.test_basarygin.s4_2_14.08#c10",
+        "dril.test_basarygin.s4_2_14.08#c11"
+      ],
+      "pages": [
+        317,
+        318
+      ],
+      "after_block": "how-6",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.08",
+      "node_id": "dril.test_basarygin.s4_2_14.08",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "dril.test_basarygin.s4_2_14.09.ill-1",
+      "template": "contrast",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Путь циркуляции и исходные данные зависят от ситуации.",
+      "alt": "Два случая: Конец испытания и Сопутствующий метод. Путь циркуляции и исходные данные зависят от ситуации.",
+      "file": "illustrations/dril.test_basarygin.s4_2_14.09__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "dril.test_basarygin.s4_2_14.09#c01",
+        "dril.test_basarygin.s4_2_14.09#c02",
+        "dril.test_basarygin.s4_2_14.09#c03",
+        "dril.test_basarygin.s4_2_14.09#c04",
+        "dril.test_basarygin.s4_2_14.09#c05"
+      ],
+      "pages": [
+        318
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "dril.test_basarygin.s4_2_14.09",
+      "node_id": "dril.test_basarygin.s4_2_14.09",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    }
+  ]
+}

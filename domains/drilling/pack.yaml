@@ -1,0 +1,23 @@
+id: drilling
+name: Бурение скважин и контроль проявлений
+id_prefix: dril
+language: ru
+source_languages:
+- ru
+- en
+audience: Сотрудники цифровой трансформации без профильного образования
+voice:
+  tts: ru-RU-DmitryNeural
+  fallback_tts: espeak-ng ru
+data_context:
+  data_kinds:
+  - временные ряды уровня и объема раствора в емкостях
+  - расход на входе и выходе
+  - давление в насосной линии, трубах и затрубье
+  - газосодержание и плотность раствора
+  - механическая скорость и глубина забоя
+  - журнал операций и переводов раствора
+  - схемы обвязки устья
+  open_datasets: []
+drafted_by: kmd domain new (LLM draft; review marked items)
+drafted_from_chapter: test_basarygin

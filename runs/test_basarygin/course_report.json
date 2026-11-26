@@ -1,0 +1,289 @@
+{
+  "chapter": "test_basarygin",
+  "nodes": 26,
+  "steps_done": 26,
+  "pending": [],
+  "tasks": 59,
+  "task_types": {
+    "cloze": 12,
+    "multiple": 14,
+    "numeric": 3,
+    "order": 7,
+    "single": 23
+  },
+  "cards": 55,
+  "decision_steps": [
+    "dril.test_basarygin.s4_1_1.06",
+    "dril.test_basarygin.s4_1_1.03",
+    "dril.test_basarygin.s4_1_1.09",
+    "dril.test_basarygin.s4_1_1.10",
+    "dril.test_basarygin.s4_1_1.16",
+    "dril.test_basarygin.s4_2_14.05",
+    "dril.test_basarygin.s4_2_14.07",
+    "dril.test_basarygin.s4_2_14.08",
+    "dril.test_basarygin.s4_2_14.09"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.01",
+      "status": "ok",
+      "title": "Как заметить приток из пласта",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.04",
+      "status": "ok",
+      "title": "Почему уровень раствора растет",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.06",
+      "status": "ok",
+      "title": "Как проверить исходный уровень",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.05",
+      "status": "ok",
+      "title": "От чего зависит чувствительность уровнемера",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.07",
+      "status": "ok",
+      "title": "Зачем сверять расход с уровнем",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.08",
+      "status": "ok",
+      "title": "Что видит расходомер при притоке",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.02",
+      "status": "ok",
+      "title": "Почему одного сигнала мало",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.03",
+      "status": "ok",
+      "title": "Что означает скачок проходки",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.09",
+      "status": "ok",
+      "title": "Откуда берется газ в растворе",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.10",
+      "status": "ok",
+      "title": "Когда газирование требует особой оценки",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.11",
+      "status": "ok",
+      "title": "Газ после паузы в циркуляции",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.12",
+      "status": "ok",
+      "title": "Как оценить газ по плотности",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.13",
+      "status": "ok",
+      "title": "Что меняет рост уровня",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.14",
+      "status": "ok",
+      "title": "Почему давление может меняться по-разному",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.15",
+      "status": "ok",
+      "title": "Почему долива может не хватать",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.16",
+      "status": "ok",
+      "title": "Как оценить вытеснение при спуске",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.17",
+      "status": "ok",
+      "title": "Почему изменения раствора видны позже",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.01",
+      "status": "ok",
+      "title": "Как устроено устье скважины",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.02",
+      "status": "ok",
+      "title": "Как перекрытие прекращает приток",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.03",
+      "status": "ok",
+      "title": "Когда нужна проверка на самоприток",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.04",
+      "status": "ok",
+      "title": "Быстрое или мягкое перекрытие скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.05",
+      "status": "ok",
+      "title": "Как перекрывают при движении труб",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.06",
+      "status": "ok",
+      "title": "Что делают после перекрытия",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.07",
+      "status": "ok",
+      "title": "Зачем методу бурильщика два этапа",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.08",
+      "status": "ok",
+      "title": "В чем смысл ожидания и веса",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.09",
+      "status": "ok",
+      "title": "Когда схема глушения меняется",
+      "tasks": 2,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    }
+  ]
+}

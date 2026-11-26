@@ -1,0 +1,42 @@
+{
+  "chapter": "test_basarygin",
+  "ok": true,
+  "stats": {
+    "nodes": 26,
+    "claims": 168,
+    "quotes_exact": 168,
+    "quotes_fuzzy": 0,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 5
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "term_before_definition",
+      "target": "dril.test_basarygin.s4_1_1.04",
+      "message": "uses «штуцер» defined later in dril.test_basarygin.s4_1_1.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "dril.test_basarygin.s4_1_1.04",
+      "message": "uses «самоприток» defined later in dril.test_basarygin.s4_2_14.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "dril.test_basarygin.s4_1_1.03",
+      "message": "uses «пластовое давление» defined later in dril.test_basarygin.s4_1_1.10"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "dril.test_basarygin.s4_1_1.03",
+      "message": "uses «выброс» defined later in dril.test_basarygin.s4_1_1.11"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "dril.test_basarygin.s4_1_1.03",
+      "message": "uses «долото» defined later in dril.test_basarygin.s4_2_14.07"
+    }
+  ]
+}

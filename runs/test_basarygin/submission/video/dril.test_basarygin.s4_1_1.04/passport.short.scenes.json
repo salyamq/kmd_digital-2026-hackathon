@@ -1,0 +1,350 @@
+[
+  {
+    "shot_id": "S1",
+    "template": "overlay_card",
+    "class": "B",
+    "params": {
+      "base": {
+        "template": "cross_section",
+        "params": {
+          "units": [
+            {
+              "name": "Верхний интервал",
+              "lith": "generic",
+              "thickness": 0.68
+            },
+            {
+              "name": "Вскрытый пласт",
+              "lith": "generic",
+              "thickness": 0.32
+            }
+          ],
+          "well": {
+            "x": 0.54,
+            "to_unit": "Вскрытый пласт",
+            "label": "Скважина"
+          },
+          "surface": true,
+          "reveal": "all",
+          "labels": false
+        }
+      },
+      "card_share": 0.28,
+      "cards": [
+        {
+          "kind": "question",
+          "text": "Почему *растёт* уровень?",
+          "at": 0.12
+        },
+        {
+          "kind": "question",
+          "text": "Причина в ёмкости или в *скважине*?",
+          "at": "L2"
+        }
+      ]
+    },
+    "model": null,
+    "invariants": [
+      "Глубина увеличивается вниз.",
+      "Сигнал еще не выдан за установленную причину."
+    ],
+    "assumptions": [
+      "Скважина условная; оборудование емкости не показано."
+    ],
+    "provenance": "schematic",
+    "needs_new_template": null
+  },
+  {
+    "shot_id": "S2",
+    "template": "overlay_card",
+    "class": "B",
+    "params": {
+      "base": {
+        "template": "inset_callouts",
+        "params": {
+          "base": {
+            "template": "cross_section",
+            "params": {
+              "units": [
+                {
+                  "name": "Верхний интервал",
+                  "lith": "generic",
+                  "thickness": 0.68
+                },
+                {
+                  "name": "Вскрытый пласт",
+                  "lith": "generic",
+                  "thickness": 0.32
+                }
+              ],
+              "well": {
+                "x": 0.54,
+                "to_unit": "Вскрытый пласт",
+                "label": "Скважина"
+              },
+              "surface": true,
+              "reveal": "all",
+              "labels": false,
+              "highlight": [
+                {
+                  "unit": "Вскрытый пласт",
+                  "at": 0.22
+                }
+              ]
+            }
+          },
+          "inset": {
+            "template": "pore_scale",
+            "params": {
+              "grains": {
+                "n": 28,
+                "touching": true
+              },
+              "fluids": {
+                "wetting": "water",
+                "sw": 1
+              },
+              "flow": {
+                "direction_deg": 0,
+                "at": 0.7
+              },
+              "legend": false,
+              "seed": 7
+            },
+            "focus": [
+              0.44,
+              0.79
+            ],
+            "pos": [
+              0.33,
+              0.39
+            ],
+            "radius": 0.26
+          },
+          "inset_at": "L4",
+          "callouts": [
+            {
+              "text": "Приток из пласта в ствол",
+              "target": [
+                0.53,
+                0.77
+              ],
+              "at": "L4",
+              "source_ref": "dril.test_basarygin.s4_1_1.04.c01"
+            }
+          ]
+        }
+      },
+      "card_share": 0.26,
+      "cards": [
+        {
+          "kind": "fact",
+          "text": "Растёт объём раствора в *приёмной ёмкости*",
+          "at": "L3",
+          "source_ref": "dril.test_basarygin.s4_1_1.04.c01"
+        },
+        {
+          "kind": "fact",
+          "text": "Пластовый флюид поступает в *ствол*",
+          "at": "L4",
+          "source_ref": "dril.test_basarygin.s4_1_1.04.c01"
+        }
+      ]
+    },
+    "model": null,
+    "invariants": [
+      "Вода показана в промежутках между зернами.",
+      "Скважина та же, что в предыдущем кадре."
+    ],
+    "assumptions": [
+      "Выбран условный водный пример пластового флюида; рисунок показывает движение в порах, а не отдельную подземную полость."
+    ],
+    "provenance": "schematic",
+    "needs_new_template": "mud_tank_circulation: связанная схема скважины и возвратной линии с видимым ростом уровня в приёмной ёмкости"
+  },
+  {
+    "shot_id": "S3",
+    "template": "overlay_card",
+    "class": "B",
+    "params": {
+      "base": {
+        "template": "data_chart",
+        "params": {
+          "x": "axis_eps",
+          "y": [
+            "delta_volume"
+          ],
+          "x_label": "Погрешность уровня, м",
+          "y_label": "Различимый объём, м³",
+          "series_labels": {
+            "delta_volume": "Площадь 20 м²"
+          },
+          "draw": {
+            "start": 0.2,
+            "end": "L5.end"
+          }
+        }
+      },
+      "card_share": 0.22,
+      "cards": [
+        {
+          "kind": "fact",
+          "text": "Измерение: *высота* поверхности",
+          "at": "L5",
+          "source_ref": "dril.test_basarygin.s4_1_1.04.c02"
+        }
+      ]
+    },
+    "model": {
+      "type": "formula",
+      "expr": "eps*S",
+      "params": {
+        "S": {
+          "value": 20,
+          "unit": "m^2",
+          "source": {
+            "page": 233,
+            "quote": "График построен с учетом применения в циркуляционной системе стандартных блоков емкостей с площадью 20 м²."
+          }
+        }
+      },
+      "grid": {
+        "eps": {
+          "from": 0,
+          "to": 0.05,
+          "n": 48,
+          "unit": "m",
+          "scale": "lin"
+        }
+      },
+      "output": {
+        "name": "delta_volume"
+      },
+      "source": {
+        "page": 233,
+        "quote": "$$\\Delta V_{\\min} = \\varepsilon S,$$"
+      }
+    },
+    "invariants": [
+      "Площадь блока постоянна.",
+      "Различимый объем вычисляется по формуле автора."
+    ],
+    "assumptions": [
+      "Шкала ошибки уровнемера выбрана для учебного расчета и не является записью со скважины.",
+      "Показана чувствительность датчика, а не измеренный ряд."
+    ],
+    "provenance": "simulation",
+    "needs_new_template": null
+  },
+  {
+    "shot_id": "S4",
+    "template": "overlay_card",
+    "class": "B",
+    "params": {
+      "base": {
+        "template": "cross_section",
+        "params": {
+          "units": [
+            {
+              "name": "Верхний интервал",
+              "lith": "generic",
+              "thickness": 0.68
+            },
+            {
+              "name": "Вскрытый пласт",
+              "lith": "generic",
+              "thickness": 0.32
+            }
+          ],
+          "well": {
+            "x": 0.54,
+            "to_unit": "Вскрытый пласт",
+            "label": "Скважина"
+          },
+          "surface": true,
+          "reveal": "all",
+          "labels": false
+        }
+      },
+      "card_share": 0.27,
+      "cards": [
+        {
+          "kind": "fact",
+          "text": "Насосы выключены: проверка *самопритока*",
+          "at": "L6",
+          "source_ref": "dril.test_basarygin.s4_1_1.04.c07"
+        },
+        {
+          "kind": "fact",
+          "text": "Есть перелив → *перекрытие* по процедуре установки",
+          "at": "L7",
+          "source_ref": "dril.test_basarygin.s4_1_1.04.c08"
+        },
+        {
+          "kind": "text",
+          "text": "Сверьте уровень с *журналом* переключений",
+          "at": "L8"
+        }
+      ]
+    },
+    "model": null,
+    "invariants": [
+      "Проверка относится к отключенным насосам.",
+      "Порядок перекрытия зависит от установки и выполняемых работ."
+    ],
+    "assumptions": [
+      "Схема не воспроизводит историческую обвязку как единый современный порядок действий."
+    ],
+    "provenance": "schematic",
+    "needs_new_template": "wellhead_shutin: работа превентора и отдельные поверхностные пути потока без имитации универсальной процедуры"
+  },
+  {
+    "shot_id": "S5",
+    "template": "overlay_card",
+    "class": "B",
+    "params": {
+      "base": {
+        "template": "cross_section",
+        "params": {
+          "units": [
+            {
+              "name": "Верхний интервал",
+              "lith": "generic",
+              "thickness": 0.68
+            },
+            {
+              "name": "Вскрытый пласт",
+              "lith": "generic",
+              "thickness": 0.32
+            }
+          ],
+          "well": {
+            "x": 0.54,
+            "to_unit": "Вскрытый пласт",
+            "label": "Скважина"
+          },
+          "surface": true,
+          "reveal": "all",
+          "labels": false
+        }
+      },
+      "card_share": 0.28,
+      "cards": [
+        {
+          "kind": "question",
+          "text": "Уровень вырос сразу после перекачки. Что проверите в *журнале*?",
+          "at": 0.12
+        }
+      ]
+    },
+    "model": null,
+    "invariants": [
+      "Учебная ситуация, а не запись с реальной скважины."
+    ],
+    "assumptions": [
+      "Учебная ситуация, не показание реальной скважины."
+    ],
+    "provenance": "schematic",
+    "needs_new_template": null
+  }
+]

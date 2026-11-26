@@ -1,0 +1,362 @@
+[
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.01",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "М",
+      "threshold": "Различить изменения баланса раствора во время циркуляции, подъема и спуска."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Р: карточки позволяют сопоставить наблюдение и режим операции, при котором оно значимо."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.04",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "И",
+      "threshold": "Связать приток в ствол с ростом объема раствора на поверхности."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/И: обратный поток, рост уровня и проверка после отключения насосов связывают невидимый приток с сигналом на поверхности и перекрытием в условиях примера."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.06",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "И",
+      "threshold": "Трактовать уровень только после проверки исходного отсчета и режима емкостей."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Пр/И: распознать смену емкости, ввод добавок или потери по журналу и заново установить точку сравнения."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.05",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "И",
+      "threshold": "Привязать порог по объему к площади поверхности и погрешности уровнемера."
+    },
+    "video_criteria": [],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Ф/И: использовать площади из примера автора и сравнить, как одна и та же погрешность по уровню меняет порог по объему."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.07",
+    "format": "short",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "М",
+      "threshold": "Сопоставить расход из скважины, подачу насосов и уровень емкости."
+    },
+    "video_criteria": [
+      "cause_effect",
+      "invisible_visible"
+    ],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "И/М: синхронно показать постоянную подачу, рост возврата и накопление раствора в емкости."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.08",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "И",
+      "threshold": "Отличить предел прибора от зависимости сигнала от режима циркуляции."
+    },
+    "video_criteria": [],
+    "scene_template": "parameter_sweep",
+    "hook_only": false,
+    "rationale": "Ф/И: отделить влияние шкалы прибора от изменения сигнала при смене подачи насоса."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.02",
+    "format": "cards",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "Н",
+      "threshold": "Не выдать одиночное отклонение за установленную причину."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "Р/Н: сопоставить отдельное наблюдение с несколькими возможными причинами и запомнить ограничения."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.03",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "И",
+      "threshold": "Увидеть смену режима проходки и различить альтернативные причины."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Р/И: разобрать авторский график по глубине и отделить наблюдение скачка проходки от вывода о причине."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.09",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "Н",
+      "threshold": "Различить газ из выбуренной породы и поступление из пласта при недостаточном противодавлении."
+    },
+    "video_criteria": [],
+    "scene_template": "feature_compare",
+    "hook_only": false,
+    "rationale": "Р/Н: сравнить газ выше фона при бурении и при промывке после остановки, не подменяя признак диагнозом."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.10",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Описать, почему устойчивый рост газа в переходной зоне и газ из выбуренной породы требуют разной интерпретации."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "Н/Р: условия исторического примера сравнить с ситуацией без изученной геологии и специальной технологии."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.11",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Н",
+      "threshold": "Отличить отдельную забойную пачку от ухудшения картины по нескольким признакам."
+    },
+    "video_criteria": [
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/Н: движение забойной пачки можно показать после возобновления циркуляции, не принимая ее за новый приток."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.12",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Ф",
+      "secondary": "И",
+      "threshold": "Раздельно объяснить оценку дебита газа и приведение газосодержания к нормальным условиям."
+    },
+    "video_criteria": [],
+    "scene_template": "function_plot",
+    "hook_only": false,
+    "rationale": "Ф/И: рассмотреть зависимость оценки дебита от подаваемого расхода и плотности двух состояниий раствора."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.13",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "Р",
+      "secondary": "М",
+      "threshold": "Различить газирование само по себе и газирование с ростом объема раствора."
+    },
+    "video_criteria": [],
+    "scene_template": "feature_compare",
+    "hook_only": false,
+    "rationale": "Р/М: сопоставить газирование без изменения уровня и два синхронных признака в одном режиме."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.14",
+    "format": "long",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Объяснить типичное снижение и исключения, не определяя интенсивность по одному показанию."
+    },
+    "video_criteria": [
+      "counterintuitive",
+      "cause_effect"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "М/Ф: сопоставить состояние газа в затрубье, перепад плотности и меняющийся со временем отклик давления насосов; разобрать исключение."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.15",
+    "format": "short",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Пр",
+      "threshold": "Сравнить фактический долив с рассчитанным объемом по извлеченным трубам."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/Пр: показ освобождаемого объема при подъеме и долива позволяет объяснить, почему меньше ожидаемого — тревожный признак."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.16",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "И",
+      "threshold": "Отличить нормальный рост объема от превышения расчетного объема вытеснения."
+    },
+    "video_criteria": [],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/И: сравнить ожидаемое геометрическое вытеснение и показание емкости с учетом продолжения перелива."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_1_1.17",
+    "format": "cards",
+    "difficulty": {
+      "primary": "И",
+      "secondary": "Р",
+      "threshold": "Распознать задержанный сигнал и его границу применимости."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "И/Р: запомнить перечень показателей, причины задержки и пределы диагностики по одному измерению."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.01",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": "На схеме отличить уплотняющие элементы от линий управляемого потока."
+    },
+    "video_criteria": [],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "П/М: изучить рисунок обвязки по слоям и сопоставить каждый превентор со своим каналом потока."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.02",
+    "format": "long",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Ф",
+      "threshold": "Отличить прекращение притока при перекрытии от удаления притока при глушении."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "time_change",
+      "cause_effect"
+    ],
+    "scene_template": "pressure_diffusion",
+    "hook_only": false,
+    "rationale": "М/Ф: показать переход от текущего притока к равновесию после перекрытия и раздельную регистрацию двух поверхностных давлений."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.03",
+    "format": "short",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "М",
+      "threshold": "Понять, чем проверка самопритока и перекрытие отличаются от обычной циркуляции."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "cause_effect"
+    ],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "Пр/М: связать видимый признак притока с отключением подачи, наблюдением самопритока и перекрытием в описанном случае."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Н",
+      "threshold": "Сравнить время, риск колебаний давления и объем притока для двух способов."
+    },
+    "video_criteria": [],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/Н: сравнить быстрый и мягкий варианты по временной шкале, перепаду давления и продолжительности притока."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.05",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": "Увидеть, почему положение труб и резервные линии меняют действия по сравнению с бурением."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Пр/П: по состоянию труб и оборудования различить подвеску, изоляцию канала и резервную ветвь."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.06",
+    "format": "text",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Пр",
+      "threshold": "Различить остановку притока, его удаление и замещение раствора."
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "М/Пр: короткий связующий узел отделяет остановку притока от последующего вытеснения и вводит методы."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.07",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "М",
+      "threshold": "Различить профили давления на последовательных этапах обращения с притоком и утяжеленным раствором."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Пр/М: сопоставить порядок операций метода бурильщика с изменениями контролируемого давления."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.08",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Ф",
+      "threshold": "Объяснить основное отличие от метода бурильщика и назначение остановочной проверки."
+    },
+    "video_criteria": [],
+    "scene_template": "log_track",
+    "hook_only": false,
+    "rationale": "Пр/Ф: сопоставить прибытие утяжеленного раствора к долоту, проверку давления и возобновление циркуляции."
+  },
+  {
+    "node_id": "dril.test_basarygin.s4_2_14.09",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Пр",
+      "threshold": "Распознать, что испытание пласта и сопутствующий контроль меняют режим и входные данные."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "Н/Пр: определить различие исходных условий испытания пласта и схемы сопутствующего контроля."
+  }
+]

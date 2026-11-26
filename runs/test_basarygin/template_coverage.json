@@ -1,0 +1,214 @@
+{
+  "chapter": "test_basarygin",
+  "nodes": [
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.04",
+      "format": "short",
+      "media": "video",
+      "templates": [
+        {
+          "template": "overlay_card",
+          "model": null
+        },
+        {
+          "template": "overlay_card",
+          "model": {
+            "type": "formula",
+            "expr": "eps*S",
+            "params": {
+              "S": {
+                "value": 20,
+                "unit": "m^2",
+                "source": {
+                  "page": 233,
+                  "quote": "График построен с учетом применения в циркуляционной системе стандартных блоков емкостей с площадью 20 м²."
+                }
+              }
+            },
+            "grid": {
+              "eps": {
+                "from": 0,
+                "to": 0.05,
+                "n": 48,
+                "unit": "m",
+                "scale": "lin"
+              }
+            },
+            "output": {
+              "name": "delta_volume"
+            },
+            "source": {
+              "page": 233,
+              "quote": "$$\\Delta V_{\\min} = \\varepsilon S,$$"
+            }
+          }
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.05",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.07",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.08",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.11",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.12",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.13",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.14",
+      "format": "long",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "cross_section",
+          "model": "kmd.visuals.templates.cross_section.CrossSection.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_1_1.15",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.01",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "cross_section",
+          "model": "kmd.visuals.templates.cross_section.CrossSection.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.02",
+      "format": "long",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.03",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "dril.test_basarygin.s4_2_14.04",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    }
+  ]
+}

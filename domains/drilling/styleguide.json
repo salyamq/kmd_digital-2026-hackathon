@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "about": "Единая визуальная легенда домена «геология»: одно обозначение — одно значение во всей серии (курс, иллюстрации, ролики). Читается кодом kmd/visuals; цвета и знаки не задаются в шаблонах.",
+  "conventions": {
+    "log_display": {
+      "id": "intl_api",
+      "name_ru": "Конвенция планшета: международная (API) — глубина вниз, ГК 0–150 API, сопротивление в лог. шкале, нейтронная пористость справа налево",
+      "short_ru": "конвенция: международная (API)",
+      "depth_axis": "down",
+      "resistivity_scale": "log",
+      "neutron_porosity": "reversed (0.45 → −0.15)",
+      "logging_direction": "запись кабельного каротажа ведётся при подъёме прибора (снизу вверх)"
+    },
+    "section": {
+      "name_ru": "Разрез: глубина растёт вниз; молодые слои над старыми; вертикальное преувеличение подписывается числом",
+      "depth_axis": "down"
+    },
+    "seismic_polarity": {
+      "id": "seg_normal",
+      "name_ru": "Полярность SEG (нормальная): рост акустического импеданса вниз → положительная амплитуда → пик; пик залит чёрным; в цвете положительная амплитуда синяя, отрицательная красная",
+      "positive_color": "#1F4E9E",
+      "negative_color": "#C0392B"
+    },
+    "time_axis": "время идёт слева направо",
+    "flow_arrows": "стрелки потока направлены от высокого давления к низкому",
+    "plan_map": "север вверху, масштабная линейка обязательна"
+  },
+  "lithology": {
+    "sand":       {"ru": "песчаник",            "en": "sandstone",  "color": "#F3D77A", "hatch": "..",   "props": {"vsh": 0.05, "rho_ma": 2.65, "dt_ma": 182, "phi": 0.22, "reservoir": true}},
+    "shaly_sand": {"ru": "глинистый песчаник",  "en": "shaly sandstone", "color": "#E3C46A", "hatch": ".-", "props": {"vsh": 0.30, "rho_ma": 2.65, "dt_ma": 182, "phi": 0.15, "reservoir": true}},
+    "siltstone":  {"ru": "алевролит",           "en": "siltstone",  "color": "#D9C08C", "hatch": "-.",   "props": {"vsh": 0.45, "rho_ma": 2.67, "dt_ma": 190, "phi": 0.12, "reservoir": false}},
+    "shale":      {"ru": "глина",               "en": "shale/clay", "color": "#8FA37E", "hatch": "--",   "props": {"vsh": 1.00, "rho_ma": 2.60, "dt_ma": 300, "phi": 0.30, "reservoir": false, "rt": 3.0, "cave": true}},
+    "limestone":  {"ru": "известняк",           "en": "limestone",  "color": "#9EC6E6", "hatch": "+",    "props": {"vsh": 0.03, "rho_ma": 2.71, "dt_ma": 156, "phi": 0.04, "reservoir": false}},
+    "dolomite":   {"ru": "доломит",             "en": "dolomite",   "color": "#C3A9D6", "hatch": "x",    "props": {"vsh": 0.05, "rho_ma": 2.87, "dt_ma": 143, "phi": 0.05, "reservoir": false}},
+    "marl":       {"ru": "мергель",             "en": "marl",       "color": "#B8C9B0", "hatch": "-+",   "props": {"vsh": 0.55, "rho_ma": 2.68, "dt_ma": 220, "phi": 0.15, "reservoir": false}},
+    "anhydrite":  {"ru": "ангидрит",            "en": "anhydrite",  "color": "#E9B7C8", "hatch": "\\\\", "props": {"vsh": 0.02, "rho_ma": 2.98, "dt_ma": 164, "phi": 0.0, "reservoir": false}},
+    "salt":       {"ru": "каменная соль",       "en": "halite",     "color": "#F2F2F2", "hatch": "++",   "props": {"vsh": 0.0, "rho_ma": 2.04, "dt_ma": 220, "phi": 0.0, "reservoir": false, "rt": 1000.0, "cave": true}},
+    "coal":       {"ru": "уголь",               "en": "coal",       "color": "#2B2B2B", "hatch": "",     "props": {"vsh": 0.05, "rho_ma": 1.40, "dt_ma": 400, "phi": 0.05, "reservoir": false, "rt": 500.0}},
+    "conglomerate": {"ru": "конгломерат",       "en": "conglomerate", "color": "#E6C79C", "hatch": "o", "props": {"vsh": 0.08, "rho_ma": 2.65, "dt_ma": 182, "phi": 0.15, "reservoir": true}},
+    "basement":   {"ru": "фундамент (кристаллические породы)", "en": "basement", "color": "#D98C8C", "hatch": "xx", "props": {"vsh": 0.10, "rho_ma": 2.70, "dt_ma": 160, "phi": 0.01, "reservoir": false}},
+    "generic":    {"ru": "порода",              "en": "rock",       "color": "#CFCFCF", "hatch": "",     "props": {"vsh": 0.3, "rho_ma": 2.65, "dt_ma": 180, "phi": 0.1, "reservoir": false}}
+  },
+  "fluids": {
+    "gas":   {"ru": "газ",   "en": "gas",   "color": "#E53935", "density_g_cc": 0.2, "hydrogen_index": 0.3},
+    "oil":   {"ru": "нефть", "en": "oil",   "color": "#2E7D32", "density_g_cc": 0.8, "hydrogen_index": 1.0},
+    "water": {"ru": "вода",  "en": "water", "color": "#1E66C9", "density_g_cc": 1.05, "hydrogen_index": 1.0},
+    "mud":   {"ru": "буровой раствор", "en": "drilling mud", "color": "#8D6E63", "density_g_cc": 1.2},
+    "mud_filtrate": {"ru": "фильтрат раствора", "en": "mud filtrate", "color": "#64B5F6"},
+    "mud_cake": {"ru": "глинистая корка", "en": "mud cake", "color": "#6D4C41"},
+    "cement": {"ru": "цемент", "en": "cement", "color": "#9E9E9E"},
+    "steel":  {"ru": "сталь (колонна)", "en": "steel casing", "color": "#455A64"},
+    "density_order_note": "сверху вниз по плотности: газ → нефть → вода"
+  },
+  "curves": {
+    "GR":    {"ru": "ГК",   "name_ru": "гамма-каротаж (естественная радиоактивность)", "en": "gamma ray", "unit": "API", "range": [0, 150], "scale": "linear", "color": "#2E7D32", "style": "-",  "track": "lith"},
+    "SP":    {"ru": "ПС",   "name_ru": "потенциалы самопроизвольной поляризации", "en": "spontaneous potential", "unit": "мВ", "range": [-80, 20], "scale": "linear", "color": "#111111", "style": "-", "track": "lith"},
+    "CALI":  {"ru": "ДС",   "name_ru": "кавернометрия (диаметр скважины)", "en": "caliper", "unit": "мм", "range": [150, 350], "scale": "linear", "color": "#6D4C41", "style": "--", "track": "lith"},
+    "BIT":   {"ru": "dн",   "name_ru": "номинальный диаметр (долото)", "en": "bit size", "unit": "мм", "range": [150, 350], "scale": "linear", "color": "#9E9E9E", "style": ":", "track": "lith"},
+    "RD":    {"ru": "ρк большой зонд", "name_ru": "кажущееся сопротивление, большая глубинность", "en": "deep resistivity", "unit": "Ом·м", "range": [0.2, 2000], "scale": "log", "color": "#B71C1C", "style": "-", "track": "res"},
+    "RS":    {"ru": "ρк малый зонд", "name_ru": "кажущееся сопротивление, малая глубинность (зона проникновения)", "en": "shallow resistivity", "unit": "Ом·м", "range": [0.2, 2000], "scale": "log", "color": "#EF6C00", "style": "--", "track": "res"},
+    "MNOR":  {"ru": "МПЗ",  "name_ru": "микрокаротаж: микропотенциал-зонд", "en": "micronormal", "unit": "Ом·м", "range": [0, 10], "scale": "linear", "color": "#1565C0", "style": "-", "track": "micro"},
+    "MINV":  {"ru": "МГЗ",  "name_ru": "микрокаротаж: микроградиент-зонд", "en": "microinverse", "unit": "Ом·м", "range": [0, 10], "scale": "linear", "color": "#8E24AA", "style": "--", "track": "micro"},
+    "NPHI":  {"ru": "НК (пористость)", "name_ru": "нейтронный каротаж, водородный индекс в единицах пористости", "en": "neutron porosity", "unit": "д. ед.", "range": [0.45, -0.15], "scale": "linear", "color": "#0277BD", "style": "--", "track": "por"},
+    "NGK":   {"ru": "НГК",  "name_ru": "нейтронный гамма-каротаж (интенсивность)", "en": "neutron-gamma", "unit": "усл. ед.", "range": [0, 10], "scale": "linear", "color": "#00838F", "style": "-", "track": "por"},
+    "RHOB":  {"ru": "ГГК-П", "name_ru": "плотностной гамма-гамма-каротаж", "en": "bulk density", "unit": "г/см³", "range": [1.95, 2.95], "scale": "linear", "color": "#AD1457", "style": "-", "track": "por"},
+    "DT":    {"ru": "АК",   "name_ru": "акустический каротаж (интервальное время)", "en": "sonic", "unit": "мкс/м", "range": [500, 100], "scale": "linear", "color": "#6A1B9A", "style": "-", "track": "por"}
+  },
+  "tracks": {
+    "lith":  {"ru": "литология и проницаемость", "width": 1.0},
+    "res":   {"ru": "сопротивление", "width": 1.2},
+    "micro": {"ru": "микрозонды", "width": 0.8},
+    "por":   {"ru": "пористость", "width": 1.0}
+  },
+  "pressure": {"cmap": "cividis", "initial_color": "#37474F", "approx_color": "#E65100", "exact_color": "#1565C0", "well_color": "#212121"},
+  "provenance": {
+    "реальные данные": {"color": "#1B5E20", "bg": "#E8F5E9"},
+    "симуляция":       {"color": "#E65100", "bg": "#FFF3E0"},
+    "схема":           {"color": "#37474F", "bg": "#ECEFF1"},
+    "иллюстрация ИИ":  {"color": "#6A1B9A", "bg": "#F3E5F5"}
+  },
+  "process_chain": {
+    "observation": {"ru": "наблюдение", "color": "#1565C0", "bg": "#E3F2FD"},
+    "inference":   {"ru": "вывод",      "color": "#2E7D32", "bg": "#E8F5E9"},
+    "assumption":  {"ru": "допущение",  "color": "#6D4C41", "bg": "#EFEBE9"},
+    "action":      {"ru": "действие",   "color": "#AD1457", "bg": "#FCE4EC"},
+    "cause":       {"ru": "причина",    "color": "#37474F", "bg": "#ECEFF1"},
+    "effect":      {"ru": "следствие",  "color": "#E65100", "bg": "#FFF3E0"},
+    "warning":     {"ru": "иначе",      "color": "#C62828", "bg": "#FFEBEE"}
+  },
+  "palette": {"text": "#1A1A1A", "muted": "#616161", "grid": "#DDDDDD", "bg": "#FFFFFF", "accent": "#E65100", "accent2": "#1565C0",
+              "series": ["#1565C0", "#E65100", "#2E7D32", "#AD1457", "#6A1B9A", "#00838F", "#6D4C41", "#455A64"]},
+  "font": {"family": "DejaVu Sans", "min_px_illustration": 13, "min_px_video": 34}
+}

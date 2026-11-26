@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 4. От чего зависит чувствительность уровнемера — Признаки проявлений; ликвидация нефтегазопроявлений при бурении скважин</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="26" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="dril.test_basarygin.s4_1_1.05" data-index="4">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Интерактив</a></li><li><a href="#how">Как это работает</a></li><li><a href="#examples">Разбор примеров из книги</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#mistake">Частая ошибка</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#now">Как это делается сейчас</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">Признаки проявлений; ликвидация нефтегазопроявлений при бурении скважин</a><span aria-hidden="true"> / </span>Шаг 4 из 26</p>
+    <h1>От чего зависит чувствительность уровнемера</h1>
+    <p class="booktitle">В книге: «Что определяет чувствительность уровнемера» <span class="pg">стр. 233–234</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">⟳ Интерактив</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-02.html">шаг 2 «Почему уровень раствора растет»</a> <span class="muted">(предпосылка)</span>, <a href="step-03.html">шаг 3 «Как проверить исходный уровень»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead"><strong class="term">Уровнемер</strong> измеряет высоту поверхности жидкости.</p><p>Минимальный различимый объем зависит и от погрешности прибора, и от площади емкости.</p><p class="threshold"><b>Пороговая идея.</b> Привязать порог по объему к площади поверхности и погрешности уровнемера. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Интерактив: как это происходит</h2>
+      <div class="anim" data-frames="6">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m00.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f00.svg" alt="Кадр 1 из 6: Почему меньшая емкость замечает тот же приток раньше?" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m01.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f01.svg" alt="Кадр 2 из 6: Датчик имеет погрешность измерения уровня" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m02.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f02.svg" alt="Кадр 3 из 6: Площадь поверхности влияет на прирост высоты" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m03.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f03.svg" alt="Кадр 4 из 6: Для меньшей площади порог объема ниже" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m04.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f04.svg" alt="Кадр 5 из 6: Сравнить блоки 40 и 20 м²" loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/dril-test-basarygin-s4-1-1-05/m05.svg"><img src="media/dril-test-basarygin-s4-1-1-05/f05.svg" alt="Кадр 6 из 6: Изменение величины на той же модели, не запись реальной скважины." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="5" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 6</span>
+        </div>
+        <p class="anim-cap">Почему меньшая емкость замечает тот же приток раньше?</p>
+        <script type="application/json" class="anim-caps">["\u041f\u043e\u0447\u0435\u043c\u0443 \u043c\u0435\u043d\u044c\u0448\u0430\u044f \u0435\u043c\u043a\u043e\u0441\u0442\u044c \u0437\u0430\u043c\u0435\u0447\u0430\u0435\u0442 \u0442\u043e\u0442 \u0436\u0435 \u043f\u0440\u0438\u0442\u043e\u043a \u0440\u0430\u043d\u044c\u0448\u0435?", "\u0414\u0430\u0442\u0447\u0438\u043a \u0438\u043c\u0435\u0435\u0442 \u043f\u043e\u0433\u0440\u0435\u0448\u043d\u043e\u0441\u0442\u044c \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f \u0443\u0440\u043e\u0432\u043d\u044f", "\u041f\u043b\u043e\u0449\u0430\u0434\u044c \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0438 \u0432\u043b\u0438\u044f\u0435\u0442 \u043d\u0430 \u043f\u0440\u0438\u0440\u043e\u0441\u0442 \u0432\u044b\u0441\u043e\u0442\u044b", "\u0414\u043b\u044f \u043c\u0435\u043d\u044c\u0448\u0435\u0439 \u043f\u043b\u043e\u0449\u0430\u0434\u0438 \u043f\u043e\u0440\u043e\u0433 \u043e\u0431\u044a\u0435\u043c\u0430 \u043d\u0438\u0436\u0435", "\u0421\u0440\u0430\u0432\u043d\u0438\u0442\u044c \u0431\u043b\u043e\u043a\u0438 40 \u0438 20 \u043c\u00b2", "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u044b \u043d\u0430 \u0442\u043e\u0439 \u0436\u0435 \u043c\u043e\u0434\u0435\u043b\u0438, \u043d\u0435 \u0437\u0430\u043f\u0438\u0441\u044c \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u0439 \u0441\u043a\u0432\u0430\u0436\u0438\u043d\u044b."]</script>
+<p class="muted small">Допущения: Условная схема; блоки не задают временной масштаб или размеры оборудования.; Площади даны в учебнике; пределы шкалы погрешности условные..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Механизм</h3>          <div class="para" id="how-1">
+            <p>Порог зависит от площади свободной поверхности и чувствительности уровнемера. Это наименьший объем, различимый по датчику. Формула задает наименьший объем притока, различимый по уровню. <span class="pg" title="Страница книги (по PDF)">стр. 233</span></p>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c01"><p>«Влияние площади уровня жидкости и чувствительности уровня на регистрируемый минимальный объем проявления:»</p><footer>— автор, стр. 233 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c02"><p>«Минимальный объем флюида (м³), поступившего в скважину, который может быть зафиксирован устройствами измерения уровня, определяется равенством»</p><footer>— автор, стр. 233 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-2">
+            <p>В расчете используют абсолютную погрешность уровнемера и площадь поверхности приемных емкостей. Порог по объему зависит одновременно от площади и чувствительности уровня. <span class="pg" title="Страница книги (по PDF)">стр. 233</span></p>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c03"><p>«абсолютная погрешность датчика уровнемера; $S$ — площадь поверхности жидкости в приемных емкостях.»</p><footer>— автор, стр. 233 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c04"><p>«Точность реакции уровнемера, таким образом, зависит как от его чувствительности, так и от площади измеряемого уровня жидкости.»</p><footer>— автор, стр. 233 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Нюансы</h3>          <div class="para" id="how-3">
+            <p>График автора построен для блоков площадью 20 м². В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза. Отключение одной из трех емкостей повышает чувствительность в 1,5 раза. <span class="pg" title="Страница книги (по PDF)">стр. 233–234</span></p>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c05"><p>«График построен с учетом применения в циркуляционной системе стандартных блоков емкостей с площадью 20 м².»</p><footer>— автор, стр. 233 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-dril.test_basarygin.s4_1_1.05.c06"><p>«Переключение блоков площадью 40 м² на блок 20 м² (выключение одной из двух используемых емкостей) равнозначно увеличению реакции устройства в 2 раза, а отключение одной из трех используемых при циркуляции емкостей эквивалентно повышению чувствительности системы в 1,5 раза.»</p><footer>— автор, стр. 234 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame ill-raster">
+<picture><source media="(max-width: 600px)" srcset="img/dril_test_basarygin_s4_1_1_05__1_m.svg"><img src="img/dril_test_basarygin_s4_1_1_05__1.svg" alt="Сравнены площади 20 и 40 м² из примера." loading="lazy"></picture>  </div>
+  <figcaption>
+    В примере автора при меньшей площади реакция на одинаковый приток усиливается.
+    <span class="ill-meta">Класс A · реальные данные · нарисовано кодом · стр. 233–234</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="examples" class="block block-examples" aria-labelledby="h-examples">
+      <h2 id="h-examples">Разбор примеров из книги <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="example" id="ex-dril_test_basarygin_s4_1_1_05_e01">
+          <h3>Сравнение блоков емкостей <span class="pg">стр. 233</span></h3>
+          <p><b>Условие.</b> Погрешность уровнемера не меняется.</p>
+<ol class="ex-steps"><li>Сравнивают переход от 40 м² к 20 м².</li><li>Отдельно оценивают отключение одной из трех емкостей.</li></ol>          <p class="ex-result"><b>Итог.</b> Реакция увеличивается в 2 раза в первом случае, чувствительность — в 1,5 раза во втором.</p>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>График автора построен для блоков площадью 20 м². <span class="pg" title="Страница книги (по PDF)">стр. 233</span></li><li>В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза. <span class="pg" title="Страница книги (по PDF)">стр. 234</span></li><li>Отключение одной из трех емкостей повышает чувствительность в 1,5 раза. <span class="pg" title="Страница книги (по PDF)">стр. 234</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-dril.test_basarygin.s4_1_1.05.f01">
+          <div class="tex-display" data-tex="\Delta V_{\min} = \varepsilon S,">$$\Delta V_{\min} = \varepsilon S,$$</div>
+          <p>Минимальный различимый объем <span class="pg">стр. 233</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$\Delta V_{\min}$</td><td>минимальный различимый объем</td><td>м³</td></tr><tr><td>$\varepsilon$</td><td>абсолютная погрешность уровня</td><td>—</td></tr><tr><td>$S$</td><td>площадь поверхности</td><td>м²</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="mistake" class="block block-mistake" aria-labelledby="h-mistake">
+      <h2 id="h-mistake">Частая ошибка <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <div class="mistake">
+          <p class="wrong"><span class="mk" aria-hidden="true">✗</span> <b>Ошибка:</b> Уровнемер прямо измеряет объем притока.</p>
+          <p class="right"><span class="mk" aria-hidden="true">✓</span> <b>На самом деле:</b> Он измеряет уровень раствора, а чувствительность к изменению объема зависит от площади емкости и погрешности. </p>
+        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Привязать порог по объему к площади поверхности и погрешности уровнемера.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Текст главы и контекст текущей операции</dd>
+          <dt>Выход</dt><dd>Объяснение признака или этапа</dd>
+          <dt>Где ломается</dt><dd>Один сигнал не доказывает причину без контекста.</dd>
+        </dl>
+<ul class="hyp"><li><span class="chip chip-hyp">гипотеза</span> Показания сопоставимы только при известном режиме работ.</li></ul>        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Текст главы и контекст текущей операции</dd>
+            <dt>Ручные шаги</dt><dd>Сверить показания и журнал операции.</dd>
+            <dt>Точки суждения</dt><dd>Привязать порог по объему к площади поверхности и погрешности уровнемера.</dd>
+            <dt>Время</dt><dd>Данные о длительности ручной сверки в главе не приведены.</dd>
+            <dt>Типичные ошибки</dt><dd>Один сигнал не доказывает причину без контекста.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Проверка контекста события в журнале перед интерпретацией метрики.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> События в стволе физические, а показания могут запаздывать.</p>
+
+    </section>
+    <section id="now" class="block block-now" aria-labelledby="h-now">
+      <h2 id="h-now">Как это делается сейчас <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>За рабочими решениями обращаются к действующему регламенту и ответственному специалисту; этот узел объясняет учебный пример.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Граница ИТ-аналогии <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>События в стволе физические, а показания могут запаздывать.</p></details>
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 4.2. Рис. 4.2. Влияние площади уровня жидкости и чувствительности уровня на регистрируемый минимальный объем проявления: <span class="pg">стр. 233</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>Погрешность датчика <span class="en" lang="en">(sensor error)</span></dt><dd>Отклонение измеренного значения от истинного, ограничивающее обнаружение малого сигнала.  <span class="chip chip-model">модель</span></dd><dt>Уровнемер <span class="en" lang="en">(level gauge)</span></dt><dd>Прибор, измеряющий высоту поверхности жидкости в емкости.  <span class="chip chip-model">модель</span></dd><dt>Приемная емкость <span class="en" lang="en">(active mud tank)</span></dt><dd>Емкость циркуляционной системы, за объемом раствора в которой следят для обнаружения притока.  <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-dril-test_basarygin-s4_1_1-05-t01" data-task="dril.test_basarygin.s4_1_1.05.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Погрешность датчика та же. Как меняется способность заметить малый приток при уменьшении площади?</legend>
+    <label class="opt"><input type="radio" name="dril.test_basarygin.s4_1_1.05.t01" value="0"> <span>Становится заметен только больший объем</span></label>
+    <label class="opt"><input type="radio" name="dril.test_basarygin.s4_1_1.05.t01" value="1"> <span>Становится легче заметить меньший объем</span></label>
+    <label class="opt"><input type="radio" name="dril.test_basarygin.s4_1_1.05.t01" value="2"> <span>Площадь не меняет порог по объему</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Становится легче заметить меньший объем</p>
+    <p class="fb-expl">В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза. <a href="#how-2">Где это в тексте (стр. 233) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-dril-test_basarygin-s4_1_1-05-t02" data-task="dril.test_basarygin.s4_1_1.05.t02" data-type="numeric">
+  <div class="task-head">
+    <span class="task-type">Расчёт</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <label class="task-q" for="in-dril-test_basarygin-s4_1_1-05-t02">Во сколько раз усилилась реакция датчика при переходе с 40 м² на 20 м² в примере автора?</label>
+  <p class="numeric"><input id="in-dril-test_basarygin-s4_1_1-05-t02" type="text" inputmode="decimal" autocomplete="off" size="10"> <span class="unit">раза</span></p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> 2 раза</p>
+    <p class="fb-expl">В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза. <a href="#how-3">Где это в тексте (стр. 234) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-dril.test_basarygin.s4_1_1.05.c01"><p>График связывает площадь поверхности и чувствительность уровнемера с минимальным регистрируемым объемом. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Влияние площади уровня жидкости и чувствительности уровня на регистрируемый минимальный объем проявления:»</p><footer>— стр. 233</footer></blockquote></li>
+        <li id="src-dril.test_basarygin.s4_1_1.05.c02"><p>Формула задает наименьший объем притока, различимый по уровню. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Минимальный объем флюида (м³), поступившего в скважину, который может быть зафиксирован устройствами измерения уровня, определяется равенством»</p><footer>— стр. 233</footer></blockquote></li>
+        <li id="src-dril.test_basarygin.s4_1_1.05.c03"><p>В расчете используют абсолютную погрешность уровнемера и площадь поверхности приемных емкостей. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«абсолютная погрешность датчика уровнемера; $S$ — площадь поверхности жидкости в приемных емкостях.»</p><footer>— стр. 233</footer></blockquote></li>
+        <li id="src-dril.test_basarygin.s4_1_1.05.c04"><p>Порог по объему зависит одновременно от площади и чувствительности уровня. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Точность реакции уровнемера, таким образом, зависит как от его чувствительности, так и от площади измеряемого уровня жидкости.»</p><footer>— стр. 233</footer></blockquote></li>
+        <li id="src-dril.test_basarygin.s4_1_1.05.c05"><p>График автора построен для блоков площадью 20 м². <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«График построен с учетом применения в циркуляционной системе стандартных блоков емкостей с площадью 20 м².»</p><footer>— стр. 233</footer></blockquote></li>
+        <li id="src-dril.test_basarygin.s4_1_1.05.c06"><p>При переходе от 40 м² к 20 м² реакция увеличивается в 2 раза; при отключении одной из трех емкостей чувствительность вырастает в 1,5 раза. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Переключение блоков площадью 40 м² на блок 20 м² (выключение одной из двух используемых емкостей) равнозначно увеличению реакции устройства в 2 раза, а отключение одной из трех используемых при циркуляции емкостей эквивалентно повышению чувствительности системы в 1,5 раза.»</p><footer>— стр. 234</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u233_02-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>Рис. 4.2. Влияние площади уровня жидкости и чувствительности уровня на регистрируемый минимальный объем проявления:</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u233_03-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>$$1 - S = 20 \text{ м}^2; 2 - S = 40 \text{ м}^2; 3 - S = 60 \text{ м}^2$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u233_05-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>Минимальный объем флюида (м³), поступившего в скважину, который может быть зафиксирован устройствами измерения уровня, определяется равенством</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u233_06-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>$$\Delta V_{\min} = \varepsilon S,$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u233_07-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>где $\varepsilon$ — абсолютная погрешность датчика уровнемера; $S$ — площадь поверхности жидкости в приемных емкостях.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u233_08-1" tabindex="-1">
+          <p class="pg">Стр. 233 · 4.1.1. ПРИЗНАКИ ПРОЯВЛЕНИЙ</p>
+          <blockquote>Точность реакции уровнемера, таким образом, зависит как от его чувствительности, так и от площади измеряемого уровня жидкости. Посредством изменения площади поверхности раствора можно менять минимальное значение регистрируемого объема проявления, как это показано на рис. 4.2. График построен с учетом применения в циркуляционной системе стандартных блоков емкостей с площадью 20 м². Из графика можно видеть, что выключение из циркуляции отдельных приемных емкостей равнозначно повышению эффективности уровнемера. Переключение блоков площадью 40 м² на блок 20 м² (выключение одной из двух используемых емкостей) равнозначно увеличению реакции устройства в 2 раза, а отключение одной из трех используемых при циркуляции емкостей эквивалентно повышению чувствительности системы в 1,5 раза.</blockquote>
+        </article>
+      </details>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-03.html" rel="prev"><span>← Назад</span><b>Как проверить исходный уровень</b></a><a class="next" href="step-05.html" rel="next"><span>Дальше →</span><b>Зачем сверять расход с уровнем</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Ю. М. Басарыгин, А. И. Булатов, Ю. М. Проселков · «Осложнения и аварии при бурении нефтяных и газовых скважин» · 2000. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>От чего зависит чувствительность уровнемера</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_basarygin" data-node="dril.test_basarygin.s4_1_1.05">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_basarygin", "title": "Признаки проявлений; ликвидация нефтегазопроявлений при бурении скважин", "book": {"author": "Ю. М. Басарыгин, А. И. Булатов, Ю. М. Проселков", "title": "Осложнения и аварии при бурении нефтяных и газовых скважин", "year": 2000, "md": "md/test_basarygin.md"}, "steps": [{"node_id": "dril.test_basarygin.s4_1_1.01", "index": 1, "title": "Как заметить приток из пласта", "url": "step-01.html", "minutes": 4}, {"node_id": "dril.test_basarygin.s4_1_1.04", "index": 2, "title": "Почему уровень раствора растет", "url": "step-02.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_1_1.06", "index": 3, "title": "Как проверить исходный уровень", "url": "step-03.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_1_1.05", "index": 4, "title": "От чего зависит чувствительность уровнемера", "url": "step-04.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_1_1.07", "index": 5, "title": "Зачем сверять расход с уровнем", "url": "step-05.html", "minutes": 5}, {"node_id": "dril.test_basarygin.s4_1_1.08", "index": 6, "title": "Что видит расходомер при притоке", "url": "step-06.html", "minutes": 5}, {"node_id": "dril.test_basarygin.s4_1_1.02", "index": 7, "title": "Почему одного сигнала мало", "url": "step-07.html", "minutes": 3}, {"node_id": "dril.test_basarygin.s4_1_1.03", "index": 8, "title": "Что означает скачок проходки", "url": "step-08.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_1_1.09", "index": 9, "title": "Откуда берется газ в растворе", "url": "step-09.html", "minutes": 5}, {"node_id": "dril.test_basarygin.s4_1_1.10", "index": 10, "title": "Когда газирование требует особой оценки", "url": "step-10.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_1_1.11", "index": 11, "title": "Газ после паузы в циркуляции", "url": "step-11.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_1_1.12", "index": 12, "title": "Как оценить газ по плотности", "url": "step-12.html", "minutes": 5}, {"node_id": "dril.test_basarygin.s4_1_1.13", "index": 13, "title": "Что меняет рост уровня", "url": "step-13.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_1_1.14", "index": 14, "title": "Почему давление может меняться по-разному", "url": "step-14.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_1_1.15", "index": 15, "title": "Почему долива может не хватать", "url": "step-15.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_1_1.16", "index": 16, "title": "Как оценить вытеснение при спуске", "url": "step-16.html", "minutes": 5}, {"node_id": "dril.test_basarygin.s4_1_1.17", "index": 17, "title": "Почему изменения раствора видны позже", "url": "step-17.html", "minutes": 4}, {"node_id": "dril.test_basarygin.s4_2_14.01", "index": 18, "title": "Как устроено устье скважины", "url": "step-18.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_2_14.02", "index": 19, "title": "Как перекрытие прекращает приток", "url": "step-19.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_2_14.03", "index": 20, "title": "Когда нужна проверка на самоприток", "url": "step-20.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_2_14.04", "index": 21, "title": "Быстрое или мягкое перекрытие скважины", "url": "step-21.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_2_14.05", "index": 22, "title": "Как перекрывают при движении труб", "url": "step-22.html", "minutes": 6}, {"node_id": "dril.test_basarygin.s4_2_14.06", "index": 23, "title": "Что делают после перекрытия", "url": "step-23.html", "minutes": 4}, {"node_id": "dril.test_basarygin.s4_2_14.07", "index": 24, "title": "Зачем методу бурильщика два этапа", "url": "step-24.html", "minutes": 8}, {"node_id": "dril.test_basarygin.s4_2_14.08", "index": 25, "title": "В чем смысл ожидания и веса", "url": "step-25.html", "minutes": 7}, {"node_id": "dril.test_basarygin.s4_2_14.09", "index": 26, "title": "Когда схема глушения меняется", "url": "step-26.html", "minutes": 5}], "minutes": 149, "n_tasks": 59, "n_cards": 55, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "dril.test_basarygin.s4_1_1.05.t01", "type": "single", "question": "Погрешность датчика та же. Как меняется способность заметить малый приток при уменьшении площади?", "explanation": "В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза.", "page": 233, "link": "#how-2", "step_title": "От чего зависит чувствительность уровнемера", "step_index": 4, "node_id": "dril.test_basarygin.s4_1_1.05", "options": ["Становится заметен только больший объем", "Становится легче заметить меньший объем", "Площадь не меняет порог по объему"], "key": [1], "answer_text": "Становится легче заметить меньший объем"}, {"id": "dril.test_basarygin.s4_1_1.05.t02", "type": "numeric", "question": "Во сколько раз усилилась реакция датчика при переходе с 40 м² на 20 м² в примере автора?", "explanation": "В примере переход от 40 м² к 20 м² увеличивает реакцию датчика в 2 раза.", "page": 234, "link": "#how-3", "step_title": "От чего зависит чувствительность уровнемера", "step_index": 4, "node_id": "dril.test_basarygin.s4_1_1.05", "key": {"answer": 2.0, "tolerance": 0}, "unit": "раза", "answer_text": "2 раза"}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "domain": "drilling",
+  "from_chapter": "test_basarygin",
+  "base_pack": "geology",
+  "built_at": "2026-11-26T05:54:13",
+  "wall_seconds_last_run": 0.0,
+  "llm_requests": 1,
+  "llm_provider": "queue",
+  "note": "LLM answer time is not included when the queue provider is used; see the cache file timestamps.",
+  "first_built_at": "2026-11-26T05:54:13"
+}

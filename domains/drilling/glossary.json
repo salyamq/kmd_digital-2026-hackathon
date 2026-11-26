@@ -1,0 +1,440 @@
+{
+  "about": "Глоссарий RU/EN домена drilling (черновик LLM по главе test_basarygin).",
+  "items": [
+    {
+      "term": "Газонефтеводопроявление",
+      "en": "kick",
+      "definition": "Поступление газа, нефти или воды из пласта в ствол скважины.",
+      "aliases": [
+        "ГНВП",
+        "проявление"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Пластовый флюид",
+      "en": "formation fluid",
+      "definition": "Газ или жидкость, содержащиеся в порах пласта.",
+      "aliases": [
+        "флюид"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Буровой раствор",
+      "en": "drilling mud",
+      "definition": "Рабочая жидкость, циркулирующая при бурении скважины.",
+      "aliases": [
+        "раствор"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Приемная емкость",
+      "en": "active mud tank",
+      "definition": "Емкость циркуляционной системы, за объемом раствора в которой следят для обнаружения притока.",
+      "aliases": [
+        "приемная ёмкость",
+        "активная емкость"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Увеличение объема в приемной емкости",
+      "en": "pit gain",
+      "definition": "Рост запаса раствора в приемной емкости, который при проверенной конфигурации системы указывает на приток.",
+      "aliases": [
+        "прирост объема",
+        "pit gain"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Уровнемер",
+      "en": "level gauge",
+      "definition": "Прибор, измеряющий высоту поверхности жидкости в емкости.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Исходный уровень",
+      "en": "baseline pit level",
+      "definition": "Отсчетный уровень раствора для наблюдения при данной конфигурации циркуляции.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Погрешность датчика",
+      "en": "sensor error",
+      "definition": "Отклонение измеренного значения от истинного, ограничивающее обнаружение малого сигнала.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Циркуляционная система",
+      "en": "mud circulation system",
+      "definition": "Контур движения раствора между поверхностью и скважиной.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Буровой насос",
+      "en": "mud pump",
+      "definition": "Насос, подающий буровой раствор в скважину.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Подача насосов",
+      "en": "pump flow rate",
+      "definition": "Объем раствора, подаваемый насосами за единицу времени.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Выходящий поток",
+      "en": "return flow",
+      "definition": "Поток раствора, возвращающийся из скважины к поверхности.",
+      "aliases": [
+        "поток на выходе"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Дифференциальный расходомер",
+      "en": "differential flowmeter",
+      "definition": "Система измерения разности объемных расходов на входе и выходе.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Механическая скорость бурения",
+      "en": "rate of penetration",
+      "definition": "Увеличение глубины забоя за единицу времени при бурении.",
+      "aliases": [
+        "механическая скорость",
+        "ROP"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Скачок проходки",
+      "en": "drilling break",
+      "definition": "Резкое увеличение механической скорости, предупреждающее о возможном изменении условий бурения.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Механический каротаж",
+      "en": "rate-of-penetration logging",
+      "definition": "Регистрация изменения механической скорости бурения по глубине.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Переходная зона",
+      "en": "transition zone",
+      "definition": "Интервал, где условия меняются между зонами с различными характеристиками давления.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Аномально высокое пластовое давление",
+      "en": "abnormally high formation pressure",
+      "definition": "Пластовое давление выше нормального для данных условий.",
+      "aliases": [
+        "АВПД"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Пластовое давление",
+      "en": "formation pressure",
+      "definition": "Давление флюида в пласте.",
+      "aliases": [
+        "поровое давление"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Забойное давление",
+      "en": "bottomhole pressure",
+      "definition": "Давление жидкости или смеси в скважине у забоя.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Гидростатическое давление",
+      "en": "hydrostatic pressure",
+      "definition": "Давление, создаваемое весом столба жидкости.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Противодавление",
+      "en": "backpressure",
+      "definition": "Давление, создаваемое в системе для противодействия притоку или течению.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Газирование бурового раствора",
+      "en": "gas cutting of drilling mud",
+      "definition": "Насыщение раствора газом, возможное по нескольким причинам.",
+      "aliases": [
+        "газированный раствор"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Фоновое газосодержание",
+      "en": "background gas",
+      "definition": "Обычный уровень содержания газа в растворе для данного интервала и режима.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Забойная пачка",
+      "en": "bottoms-up mud slug",
+      "definition": "Порция раствора, возвращающаяся к поверхности из района забоя.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Плотность бурового раствора",
+      "en": "mud density",
+      "definition": "Масса единицы объема бурового раствора.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Дебит газа",
+      "en": "gas flow rate",
+      "definition": "Объем газа за единицу времени при оговоренных условиях.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Нагнетательная линия",
+      "en": "pump discharge line",
+      "definition": "Линия, по которой раствор под давлением выходит из насоса.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Спускоподъемные операции",
+      "en": "tripping operations",
+      "definition": "Работы по спуску или подъему колонны труб.",
+      "aliases": [
+        "СПО"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Долив скважины",
+      "en": "hole fill-up",
+      "definition": "Подача раствора для восполнения объема, освобождающегося при подъеме труб.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Вытесненный объем",
+      "en": "displacement volume",
+      "definition": "Объем раствора, который вытесняют трубы, входящие в заполненный жидкостью ствол.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Бурильная колонна",
+      "en": "drillstring",
+      "definition": "Соединенная колонна труб, через которую подают раствор и работают долотом.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Обсадная колонна",
+      "en": "casing string",
+      "definition": "Колонна труб, закрепляющая и изолирующая участки ствола.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Кольцевое пространство",
+      "en": "annulus",
+      "definition": "Зазор между колонной и стенкой ствола или наружной колонной.",
+      "aliases": [
+        "затрубное пространство",
+        "затрубье"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Муфта",
+      "en": "tool joint",
+      "definition": "Соединительная часть труб, геометрия которой отличается от тела трубы.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Забой",
+      "en": "bottomhole",
+      "definition": "Нижний конец углубляемой скважины.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Долото",
+      "en": "drill bit",
+      "definition": "Инструмент, разрушающий породу на забое.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Коллектор",
+      "en": "reservoir rock",
+      "definition": "Порода, способная вмещать и пропускать пластовые флюиды.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Устье скважины",
+      "en": "wellhead",
+      "definition": "Верхняя часть скважины, где размещают оборудование контроля потока.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Устьевая арматура",
+      "en": "wellhead valves and fittings",
+      "definition": "Клапаны и соединения устья для управления потоками.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Превентор",
+      "en": "blowout preventer",
+      "definition": "Устройство устьевого оборудования, предназначенное для герметизации скважины.",
+      "aliases": [
+        "ПВО",
+        "BOP"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Трубные плашки",
+      "en": "pipe rams",
+      "definition": "Уплотняющие элементы превентора для перекрытия кольцевого пространства вокруг трубы.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Безопасный клапан",
+      "en": "drillstring safety valve",
+      "definition": "Клапан для перекрытия канала в колонне труб.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Перекрытие скважины",
+      "en": "well shut-in",
+      "definition": "Герметизация скважины для контроля проявления и регистрации давления.",
+      "aliases": [
+        "закрытие скважины"
+      ],
+      "source": "chapter"
+    },
+    {
+      "term": "Мягкое перекрытие",
+      "en": "soft shut-in",
+      "definition": "Способ перекрытия с постепенным закрытием потока через штуцер.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Самоприток",
+      "en": "flow with pumps off",
+      "definition": "Поступление флюида в скважину без подачи буровых насосов.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Задвижка",
+      "en": "gate valve",
+      "definition": "Устройство, открывающее либо перекрывающее проход по линии.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Штуцер",
+      "en": "choke",
+      "definition": "Устройство для дросселирования потока и создания противодавления.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Штуцерный манифольд",
+      "en": "choke manifold",
+      "definition": "Система линий, арматуры и штуцеров для управления потоком из скважины.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Башмак колонны",
+      "en": "casing shoe",
+      "definition": "Нижний конец обсадной колонны, у которого учитывают прочность породы.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Глушение скважины",
+      "en": "well kill",
+      "definition": "Восстановление контроля над скважиной путем вытеснения притока и создания необходимого давления на забое.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Утяжеленный раствор",
+      "en": "weighted mud",
+      "definition": "Буровой раствор повышенной плотности для обеспечения необходимого гидростатического давления.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Метод ожидания и веса",
+      "en": "wait and weight method",
+      "definition": "Способ глушения с приготовлением утяжеленного раствора до циркуляции.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Прямая циркуляция",
+      "en": "direct circulation",
+      "definition": "Подача жидкости вниз по трубам с возвратом через кольцевое пространство.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Обратная циркуляция",
+      "en": "reverse circulation",
+      "definition": "Подача жидкости вниз по кольцевому пространству с возвратом через трубы.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Выброс",
+      "en": "blowout",
+      "definition": "Неконтролируемый выход пластового флюида из скважины.",
+      "aliases": [],
+      "source": "chapter"
+    },
+    {
+      "term": "Контроль скважины",
+      "en": "well control",
+      "definition": "Поддержание или восстановление управляемого состояния скважины.",
+      "aliases": [
+        "well control"
+      ],
+      "source": "model"
+    }
+  ]
+}

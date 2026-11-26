@@ -1,0 +1,804 @@
+{
+  "video_id": "short",
+  "node_id": "dril.test_basarygin.s4_1_1.04",
+  "node_card": {
+    "node_id": "dril.test_basarygin.s4_1_1.04",
+    "title": "Почему рост уровня в приемной емкости предупреждает о притоке",
+    "difficulty_types": [
+      "м",
+      "и"
+    ],
+    "misconception_fixed": {
+      "wrong": "Уровнемер прямо измеряет объем притока.",
+      "right": "Он измеряет уровень раствора, а чувствительность к изменению объема зависит от площади емкости и погрешности.",
+      "claim_id": null,
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "Признаки проявлений; ликвидация нефтегазопроявлений при бурении скважин",
+      "book": "Осложнения и аварии при бурении нефтяных и газовых скважин",
+      "chapter": "test_basarygin",
+      "pages": [
+        232,
+        233,
+        314,
+        315
+      ]
+    },
+    "node_file_sha1": "ce114bf98d4db3ae"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Уровень *растёт*. Почему?",
+      "t0": 0.25,
+      "t1": 2.871,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 0.25,
+      "t_end": 2.871,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Представьте: в приёмной ёмкости раствора стало больше. Где искать причину: в ёмкости или в *скважине*?",
+      "t0": 3.091,
+      "t1": 10.425,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 3.091,
+      "t_end": 10.425,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "Рост *объёма* бурового раствора в приёмной ёмкости — прямой признак притока из пласта.",
+      "t0": 11.05,
+      "t1": 16.032,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c01",
+          "page": 232,
+          "quote": "Увеличение объема бурового раствора в приемных емкостях, выражающееся повышением его уровня, является прямым признаком притока в скважину пластового флюида."
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 11.05,
+      "t_end": 16.032,
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c01",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c01"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Газ, нефть или вода поступают из пласта в ствол. На поверхности это видно по *росту* уровня раствора.",
+      "t0": 16.252,
+      "t1": 23.297,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c01",
+          "page": 232,
+          "quote": "Увеличение объема бурового раствора в приемных емкостях, выражающееся повышением его уровня, является прямым признаком притока в скважину пластового флюида."
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 16.252,
+      "t_end": 23.297,
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c01",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c01"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L5",
+      "role": "data",
+      "text": "*Уровнемер* измеряет высоту поверхности раствора. На записи видно, как меняется уровень в ёмкости.",
+      "t0": 23.917,
+      "t1": 31.09,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c02",
+          "page": 232,
+          "quote": "Уровень бурового раствора контролируют с помощью уровнемеров различных конструкций."
+        },
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c03",
+          "page": 232,
+          "quote": "Наиболее совершенные измерительные системы контролируют объем (уровень) в приемных емкостях насосов и об-"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 23.917,
+      "t_end": 31.09,
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c02",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c02",
+        "dril.test_basarygin.s4_1_1.04#c03"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L6",
+      "role": "mechanism",
+      "text": "В описанном случае бригада отключает насосы и проверяет *самоприток*: не поступает ли флюид без подачи насосов.",
+      "t0": 31.717,
+      "t1": 38.105,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c07",
+          "page": 314,
+          "quote": "Буровые насосы отключают и проверяют скважину на самоприток."
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 31.717,
+      "t_end": 38.105,
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c07",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c07"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L7",
+      "role": "mechanism",
+      "text": "Если начинается перелив, скважину срочно *перекрывают*. Порядок зависит от типа установки и текущих работ.",
+      "t0": 38.325,
+      "t1": 45.996,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c08",
+          "page": 314,
+          "quote": "Если из скважины начинается перелив, то ее необходимо срочно перекрыть."
+        },
+        {
+          "type": "claim",
+          "claim_id": "dril.test_basarygin.s4_1_1.04.c06",
+          "page": 314,
+          "quote": "Поэтапные работы, связанные с перекрытием скважины, зависят от типа скважины, места ее расположения (на суше или на море), буровой установки (стационарные, морские полупогружные или плавучие буровые установки), типа проводимых работ (в процессе добления, испытания или при СПО)."
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 38.325,
+      "t_end": 45.996,
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c08",
+      "claim_ids": [
+        "dril.test_basarygin.s4_1_1.04#c08",
+        "dril.test_basarygin.s4_1_1.04#c06"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L8",
+      "role": "bridge",
+      "text": "Для аналитика: попробуйте сверить *тренд* уровня с журналом переключений. Не подменяйте наблюдение диагнозом.",
+      "t0": 46.216,
+      "t1": 53.509,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 46.216,
+      "t_end": 53.509,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L9",
+      "role": "transfer",
+      "text": "А если уровень поднялся сразу после перекачки раствора из другой ёмкости? Какую *запись* в журнале вы проверите?",
+      "t0": 54.117,
+      "t1": 61.686,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 54.117,
+      "t_end": 61.686,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    }
+  ],
+  "sources": [
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c01",
+      "page_or_dataset": "232",
+      "quote": "Увеличение объема бурового раствора в приемных емкостях, выражающееся повышением его уровня, является прямым признаком притока в скважину пластового флюида."
+    },
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c02",
+      "page_or_dataset": "232",
+      "quote": "Уровень бурового раствора контролируют с помощью уровнемеров различных конструкций."
+    },
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c03",
+      "page_or_dataset": "232",
+      "quote": "Наиболее совершенные измерительные системы контролируют объем (уровень) в приемных емкостях насосов и об-"
+    },
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c07",
+      "page_or_dataset": "314",
+      "quote": "Буровые насосы отключают и проверяют скважину на самоприток."
+    },
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c08",
+      "page_or_dataset": "314",
+      "quote": "Если из скважины начинается перелив, то ее необходимо срочно перекрыть."
+    },
+    {
+      "claim_id": "dril.test_basarygin.s4_1_1.04#c06",
+      "page_or_dataset": "314",
+      "quote": "Поэтапные работы, связанные с перекрытием скважины, зависят от типа скважины, места ее расположения (на суше или на море), буровой установки (стационарные, морские полупогружные или плавучие буровые установки), типа проводимых работ (в процессе добления, испытания или при СПО)."
+    }
+  ],
+  "scene_spec": "passport.short.scenes.json",
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 10.8,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 0.0,
+      "label": "схема"
+    },
+    {
+      "shot": "S2",
+      "t0": 10.8,
+      "t1": 23.667,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 10.8,
+      "label": "схема"
+    },
+    {
+      "shot": "S3",
+      "t0": 23.667,
+      "t1": 31.467,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "симуляция",
+      "state_model": "formula",
+      "ai": null,
+      "t": 23.667,
+      "label": "симуляция"
+    },
+    {
+      "shot": "S4",
+      "t0": 31.467,
+      "t1": 53.867,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 31.467,
+      "label": "схема"
+    },
+    {
+      "shot": "S5",
+      "t0": 53.867,
+      "t1": 62.067,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 53.867,
+      "label": "схема"
+    }
+  ],
+  "physics_checklist": [
+    {
+      "item": "Глубина увеличивается вниз.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Сигнал еще не выдан за установленную причину.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Вода показана в промежутках между зернами.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Скважина та же, что в предыдущем кадре.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Площадь блока постоянна.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Различимый объем вычисляется по формуле автора.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Проверка относится к отключенным насосам.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Порядок перекрытия зависит от установки и выполняемых работ.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Учебная ситуация, а не запись с реальной скважины.",
+      "answer": "н/п"
+    }
+  ],
+  "audio_check": {
+    "person_minutes": 0.0,
+    "machine_minutes": 1.91,
+    "machine_seconds_by_stage": {
+      "script": 0.02,
+      "shotlist": 0.41,
+      "specs": 0.38,
+      "models": 0.19,
+      "audio": 0.71,
+      "layout": 0.2,
+      "render": 41.63,
+      "overlays": 0.01,
+      "compose": 70.81,
+      "qa": 0.13,
+      "passport": 0.0
+    },
+    "money_usd": 0,
+    "money_by_currency": {},
+    "tts_chars": 2505,
+    "tts_audio_s": 174.2,
+    "money_note": "some external calls have unknown cost",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:06:33"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.01,
+        "ts": "2026-11-26T06:07:34"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:07:35"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 2.6210416666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-26T06:07:42"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 100,
+        "audio_s": 7.33425,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-26T06:07:49"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 84,
+        "audio_s": 4.981791666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-26T06:07:54"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 99,
+        "audio_s": 7.045041666666667,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-26T06:07:59"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 97,
+        "audio_s": 7.172541666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-26T06:08:01"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 111,
+        "audio_s": 6.387666666666667,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-26T06:08:04"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 104,
+        "audio_s": 7.671,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-26T06:08:06"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 107,
+        "audio_s": 7.292541666666667,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-26T06:08:11"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 110,
+        "audio_s": 7.5695,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-26T06:08:16"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.01,
+        "ts": "2026-11-26T06:08:39"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.01,
+        "ts": "2026-11-26T06:08:42"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:08:43"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 2.6210416666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-26T06:08:44"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 100,
+        "audio_s": 7.33425,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 84,
+        "audio_s": 4.981791666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 99,
+        "audio_s": 7.045041666666667,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 97,
+        "audio_s": 7.172541666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 111,
+        "audio_s": 6.387666666666667,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 104,
+        "audio_s": 7.671,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 107,
+        "audio_s": 7.292541666666667,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 110,
+        "audio_s": 7.5695,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-26T06:08:45"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:14:50"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:14:52"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T06:14:53"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 23,
+        "audio_s": 2.6210416666666667,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-26T06:14:53"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 100,
+        "audio_s": 7.33425,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-26T06:14:53"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 84,
+        "audio_s": 4.981791666666667,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-26T06:14:53"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 99,
+        "audio_s": 7.045041666666667,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-26T06:14:53"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 97,
+        "audio_s": 7.172541666666667,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-26T06:14:54"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 111,
+        "audio_s": 6.387666666666667,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-26T06:14:54"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 104,
+        "audio_s": 7.671,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-26T06:14:54"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 107,
+        "audio_s": 7.292541666666667,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-26T06:14:54"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 110,
+        "audio_s": 7.5695,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-26T06:14:54"
+      }
+    ],
+    "asr_model": "faster-whisper medium (int8, CPU, local)",
+    "wer": 0.0,
+    "wer_stem": 0.0,
+    "ref_words": 120,
+    "heard_text": "уровень растет. Почему? Представьте, в приемной емкости раствора стало больше. Где искать причину? В емкости или в скважине? Рост объема бурового раствора в приемной емкости – прямой признак притока из пласта. Газ, нефть или вода поступают из пласта в ствол. На поверхности это видно по росту уровня раствора. Уровнемер измеряет высоту поверхности раствора. На записи видно, как меняется уровень в емкости. В описанном случае бригада отключает насосы и проверяет самоприток, не поступает ли флюид без подачи насосов. Если начинается перелив, скважину срочно перекрывают. Порядок зависит от типа установки и текущих работ. Для аналитика, попробуйте сверить тренд уровня с журналом переключений. Не подменяйте наблюдение диагнозом. А если уровень поднялся сразу после перекачки раствора из другой емкости. Какую запись в журнале вы проверите?",
+    "terms": [
+      {
+        "term": "Уровнемер",
+        "ok": true
+      }
+    ],
+    "terms_ok": true,
+    "sync_max_s": 0.25,
+    "sync_mean_s": 0.109,
+    "sync_per_phrase": [
+      {
+        "id": "L1",
+        "heard_start": 0.0,
+        "offset": -0.25
+      },
+      {
+        "id": "L2",
+        "heard_start": 3.14,
+        "offset": 0.05
+      },
+      {
+        "id": "L3",
+        "heard_start": 11.18,
+        "offset": 0.13
+      },
+      {
+        "id": "L4",
+        "heard_start": 16.38,
+        "offset": 0.13
+      },
+      {
+        "id": "L5",
+        "heard_start": 24.08,
+        "offset": 0.16
+      },
+      {
+        "id": "L6",
+        "heard_start": 31.78,
+        "offset": 0.06
+      },
+      {
+        "id": "L7",
+        "heard_start": 38.44,
+        "offset": 0.11
+      },
+      {
+        "id": "L8",
+        "heard_start": 46.28,
+        "offset": 0.06
+      },
+      {
+        "id": "L9",
+        "heard_start": 54.1,
+        "offset": -0.02
+      }
+    ],
+    "voice": {
+      "provider": "microsoft",
+      "voice": "ru-RU-DmitryNeural",
+      "role": null,
+      "speed": null,
+      "rate": null,
+      "numbers": "words"
+    }
+  },
+  "exaggerations": [
+    "Условный масштаб геометрии; не чертеж установки.",
+    "Условный масштаб геометрии; не чертеж установки.",
+    "Условный масштаб геометрии; не чертеж установки.",
+    "Условный масштаб геометрии; не чертеж установки."
+  ],
+  "prediction_question": "Где может быть причина роста уровня?",
+  "transfer_question": "Если рост уровня совпал с переводом раствора, какую запись проверите?",
+  "data_it_bridge": "Запись уровнемера приемной емкости и отметки работы насосов. Сверить тренд с журналом операций и показать дежурной бригаде наблюдение, отдельно от вывода. Скачок уровня мог совпасть с перекачкой раствора; это проверяют по журналу."
+}

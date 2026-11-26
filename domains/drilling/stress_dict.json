@@ -1,0 +1,405 @@
+{
+  "version": "1.0",
+  "about": "Черновик LLM (домен drilling). Словарь ударений и произношений для синтеза речи (домен «геология»). kind=abbr|symbol: точное совпадение токена, читается как say, при первом упоминании в ролике раскрывается (expansion). kind=stem: основа слова, во всех формах ударение ставится знаком U+0301 после ударной гласной. check_by_ear=true — слово попадает в список «проверить на слух» паспорта ролика.",
+  "entries": [
+    {
+      "term": "газонефтеводопроявление",
+      "kind": "stem",
+      "say": "газонефтеводопроявле́ние",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "флюид",
+      "kind": "stem",
+      "say": "флю́ид",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "раствор",
+      "kind": "stem",
+      "say": "раство́р",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "приёмная",
+      "kind": "stem",
+      "say": "приёмная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "уровнемер",
+      "kind": "stem",
+      "say": "уровнеме́р",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "исходный",
+      "kind": "stem",
+      "say": "исхо́дный",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "погрешность",
+      "kind": "stem",
+      "say": "погре́шность",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "циркуляционная",
+      "kind": "stem",
+      "say": "циркуляцио́нная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "насос",
+      "kind": "stem",
+      "say": "насо́с",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "подача",
+      "kind": "stem",
+      "say": "пода́ча",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "выходящий",
+      "kind": "stem",
+      "say": "выхо́дящий",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "расходомер",
+      "kind": "stem",
+      "say": "расходоме́р",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "проходка",
+      "kind": "stem",
+      "say": "прохо́дка",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "каротаж",
+      "kind": "stem",
+      "say": "карота́ж",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "переходная",
+      "kind": "stem",
+      "say": "перехо́дная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "пластовое",
+      "kind": "stem",
+      "say": "пласто́вое",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "забойное",
+      "kind": "stem",
+      "say": "забо́йное",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "гидростатическое",
+      "kind": "stem",
+      "say": "гидростати́ческое",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "противодавление",
+      "kind": "stem",
+      "say": "противодавле́ние",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "газирование",
+      "kind": "stem",
+      "say": "газирова́ние",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "газосодержание",
+      "kind": "stem",
+      "say": "газосодержа́ние",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "пачка",
+      "kind": "stem",
+      "say": "па́чка",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "плотность",
+      "kind": "stem",
+      "say": "пло́тность",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "дебит",
+      "kind": "stem",
+      "say": "деби́т",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "нагнетательная",
+      "kind": "stem",
+      "say": "нагнета́тельная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "долив",
+      "kind": "stem",
+      "say": "доли́в",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "вытесненный",
+      "kind": "stem",
+      "say": "вы́тесненный",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "бурильная",
+      "kind": "stem",
+      "say": "бури́льная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "обсадная",
+      "kind": "stem",
+      "say": "обса́дная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "затрубное",
+      "kind": "stem",
+      "say": "за́трубное",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "муфта",
+      "kind": "stem",
+      "say": "му́фта",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "забой",
+      "kind": "stem",
+      "say": "забо́й",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "долото",
+      "kind": "stem",
+      "say": "долото́",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "коллектор",
+      "kind": "stem",
+      "say": "колле́ктор",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "устье",
+      "kind": "stem",
+      "say": "у́стье",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "арматура",
+      "kind": "stem",
+      "say": "армату́ра",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "превентор",
+      "kind": "stem",
+      "say": "преве́нтор",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "плашки",
+      "kind": "stem",
+      "say": "пла́шки",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "клапан",
+      "kind": "stem",
+      "say": "кла́пан",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "перекрытие",
+      "kind": "stem",
+      "say": "перекры́тие",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "мягкое",
+      "kind": "stem",
+      "say": "мя́гкое",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "самоприток",
+      "kind": "stem",
+      "say": "самоприто́к",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "задвижка",
+      "kind": "stem",
+      "say": "задви́жка",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "штуцер",
+      "kind": "stem",
+      "say": "шту́цер",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "манифольд",
+      "kind": "stem",
+      "say": "манифо́льд",
+      "expansion": null,
+      "check_by_ear": true
+    },
+    {
+      "term": "башмак",
+      "kind": "stem",
+      "say": "башма́к",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "глушение",
+      "kind": "stem",
+      "say": "глуше́ние",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "утяжелённый",
+      "kind": "stem",
+      "say": "утяжелённый",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "ожидание",
+      "kind": "stem",
+      "say": "ожида́ние",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "циркуляция",
+      "kind": "stem",
+      "say": "циркуля́ция",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "обратная",
+      "kind": "stem",
+      "say": "обра́тная",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "выброс",
+      "kind": "stem",
+      "say": "вы́брос",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "контроль",
+      "kind": "stem",
+      "say": "контро́ль",
+      "expansion": null,
+      "check_by_ear": false
+    },
+    {
+      "term": "ГНВП",
+      "kind": "abbr",
+      "say": "гэ эн вэ пэ",
+      "expansion": "газонефтеводопроявление",
+      "check_by_ear": false
+    },
+    {
+      "term": "СПО",
+      "kind": "abbr",
+      "say": "эс пэ о",
+      "expansion": "спускоподъемные операции",
+      "check_by_ear": false
+    },
+    {
+      "term": "АВПД",
+      "kind": "abbr",
+      "say": "а вэ пэ дэ",
+      "expansion": "аномально высокое пластовое давление",
+      "check_by_ear": false
+    },
+    {
+      "term": "МПа",
+      "kind": "abbr",
+      "say": "мегапаскаль",
+      "expansion": "мегапаскаль",
+      "check_by_ear": false
+    }
+  ]
+}
