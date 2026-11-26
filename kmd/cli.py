@@ -263,6 +263,9 @@ def main(argv=None) -> int:
     p.add_argument("--who", default="team")
     p.add_argument("--kind", default="fix")
     p.set_defaults(func=cmd_edit)
+    from . import demo
+
+    demo.add_parser(sub)
     args = ap.parse_args(argv)
     return args.func(args)
 

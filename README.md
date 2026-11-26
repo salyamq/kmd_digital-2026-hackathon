@@ -133,20 +133,19 @@ make rebuild CH=latyshova       # слой → проверка → маршру
 make rebuild CH=latyshova VIDEO=1  # также пересобрать имеющиеся ролики
 ```
 
-Защита: «измените одно число в слое и пересоберите». Патч утверждения (`claims_patch`) и пересборка;
-из кэша берётся всё, кроме шага с изменённым узлом (один запрос к модели, на DeepSeek ~40 с на главу):
+Защита: «измените одно число в слое и пересоберите» — одна команда. Id утверждения виден в адресе
+блока на странице шага (`#src-<claim_id>`). Ключ OpenRouter — `OPENROUTER_API_KEY` в `.env`.
 
 ```bash
-cat > overrides/<глава>/<node_id>.json <<'JSON'
-{"claims_patch": {"<claim_id>": {"text": "… новое число …"}}}
-JSON
-KMD_LLM_PROVIDER=openai OPENAI_BASE_URL=https://openrouter.ai/api/v1 \
-  KMD_LLM_MODEL=deepseek/deepseek-v4.1-flash-1017 make rebuild CH=<глава>
+make demo-edit CH=latyshova CLAIM=geo.latyshova.s20.04.c02 OLD=1856 NEW=1857          # ~1 мин
+make demo-edit CH=latyshova CLAIM=geo.latyshova.s20.04.c02 OLD=1856 NEW=1857 VIDEO=1  # и ролики
 ```
 
-Число из правки человека, которого нет в книге, проверка помечает предупреждением `number_by_editor`
-(а не ошибкой). Цитаты автора на странице остаются дословными — новое число видно в блоке утверждения
-(`#src-<claim_id>`) и в тексте шага.
+Команда пишет патч в `overrides/<глава>/<узел>.json` (сливая с уже имеющимся), запись в
+`edits/journal.jsonl`, пересобирает главу (заново спрашивается только изменённый узел: модель
+`KMD_DEMO_MODEL`, по умолчанию deepseek/deepseek-v4.1-flash-1017) и печатает ссылку на страницу шага
+с проверкой, что новый текст на ней есть. Число из правки человека, которого нет в книге, проверка
+помечает предупреждением `number_by_editor`, а не ошибкой; цитаты автора остаются дословными.
 
 Журнал ручных правок: `edits/journal.jsonl` (минуты, коммит). Метрики стоимости:
 `python -m kmd.metrics` сохраняет `runs/metrics.json`. Суммы, сообщённые API, записаны отдельно
