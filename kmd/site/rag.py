@@ -136,7 +136,7 @@ def _complete(question: str, topic: str, passages: list[Passage], key: str, hist
         for i, p in enumerate(passages, 1)
     ]
     body = {
-        "model": MODEL,
+        "model": os.environ.get("KMD_CHAT_MODEL") or MODEL,
         "temperature": 0.2,
         "max_tokens": 6000,
         "messages": [
@@ -213,7 +213,12 @@ def ask(chapter: str, node_id: str, question: str, history=None) -> dict:
         scope = "В этом уроке" if node_id else "В этой главе"
         return {"answer": f"{scope} не нашлось подходящих фрагментов. Попробуйте уточнить вопрос.",
                 "sources": []}
+    from ..config import load_env
+
+    load_env()
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not key and "openrouter.ai" in os.environ.get("OPENAI_BASE_URL", ""):
+        key = os.environ.get("OPENAI_API_KEY", "").strip()  # the pipeline's OpenRouter key
     if not key:
         raise RagError(503, "Для ответов нужно настроить OPENROUTER_API_KEY на сервере.")
     answer = _complete(question, topic, passages, key, recent)
