@@ -27,11 +27,11 @@
   </a>
   {% endif %}
 
-  <section aria-labelledby="h-path">
+  <section class="chapter-outline" aria-labelledby="h-path">
     <h2 id="h-path">Путь по главе</h2>
     {% for p in parts %}
     <div class="part">
-      <h3 class="part-title"><span class="part-no">Часть {{ loop.index }}</span> {{ p.title }}</h3>
+      <h3 class="part-title">{{ p.title }}</h3>
       <ol class="path" start="{{ p.steps[0].index }}">
         {% for s in p.steps %}
         <li class="path-step" data-node="{{ s.node_id }}">

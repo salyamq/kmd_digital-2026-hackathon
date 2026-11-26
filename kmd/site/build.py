@@ -20,6 +20,7 @@ import jinja2
 from ..config import CHAPTERS, RUNS, chapter_config, read_json, run_dir, write_json
 from ..course.stage import redraw_ills
 from ..ingest import analysis_context
+from .rag import node_unit_ids, source_fragments
 
 HERE = Path(__file__).resolve().parent
 STATIC = HERE / "static"
@@ -510,6 +511,9 @@ def build(chapter: str) -> Path:
         html_s = env.get_template(name).render(**kw)
         (site / out).write_text(html_s, encoding="utf-8")
 
+    units_path = rd / "units.json"
+    excerpts = list(source_fragments(read_json(units_path)["units"])) if units_path.is_file() else []
+    excerpt_ids = {node["id"]: node_unit_ids(node) for node in layer.get("nodes", [])}
     all_views = []
     for i, s in enumerate(steps):
         views = [task_view(tasks[tid], s, "") for tid in s["task_ids"] if tid in tasks]
@@ -527,7 +531,8 @@ def build(chapter: str) -> Path:
         page("step.html", url_of[s["node_id"]], s=s, tasks=views, tasks_json=jdump(views),
              prev=prev_s and {"url": url_of[prev_s["node_id"]], "title": prev_s["title_beginner"]},
              next=next_s and {"url": url_of[next_s["node_id"]], "title": next_s["title_beginner"]},
-             ills_after=ills_after, page_id="step")
+             ills_after=ills_after, page_id="step",
+             excerpts=[item for item in excerpts if item[0]["id"] in excerpt_ids.get(s["node_id"], ())])
     page("index.html", "index.html", page_id="index", feature=feature, url_of=url_of)
     if course["has_media"]:
         page("media.html", "media.html", page_id="media", steps=media_steps, url_of=url_of)
@@ -538,6 +543,8 @@ def build(chapter: str) -> Path:
     page("cards.html", "cards.html", cards=card_views, cards_json=jdump(card_views), page_id="cards")
     page("summary.html", "summary.html", steps=steps, page_id="summary")
     page("map.html", "map.html", steps=steps, svg=link_map_svg(steps, url_of), page_id="map")
+    if units_path.is_file():
+        page("source.html", "source.html", page_id="source", excerpts=excerpts)
 
     size = sum(f.stat().st_size for f in site.rglob("*") if f.is_file())
     write_json(rd / "site_report.json", {"chapter": cfg["id"], "title": course["title"], "steps": len(steps), "tasks": len(all_views), "cards": len(card_views),

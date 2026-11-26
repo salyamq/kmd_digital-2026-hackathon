@@ -15,7 +15,8 @@
     </details>
   </aside>
   <main id="main" class="content" tabindex="-1">
-    <p class="crumbs"><a href="index.html">Путь</a> › {{ s.part.title }} › Шаг {{ s.index }} из {{ course.steps|length }}</p>
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">{{ course.title }}</a><span aria-hidden="true"> / </span>Шаг {{ s.index }} из {{ course.steps|length }}</p>
     <h1>{{ s.title_beginner }}</h1>
     <p class="booktitle">В книге: «{{ s.title_book }}» <span class="pg">{{ s.pages|pages }}</span></p>
     <p class="meta">
@@ -24,6 +25,7 @@
       {% if s.difficulty.primary %}<span class="chip" title="Тип трудности узла">трудность: {{ DIFF_RU.get(s.difficulty.primary, s.difficulty.primary) }}{% if s.difficulty.secondary %} + {{ DIFF_RU.get(s.difficulty.secondary, s.difficulty.secondary) }}{% endif %}</span>{% endif %}
     </p>
     {% if s.relies_on %}<p class="relies">Опирается на: {% for r in s.relies_on %}<a href="{{ r.url }}">шаг {{ r.index }} «{{ r.title }}»</a> <span class="muted">({{ r.type }})</span>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+    </header>
 
     <section id="essence" class="essence" aria-labelledby="h-essence">
       <h2 id="h-essence">Суть</h2>
@@ -242,6 +244,17 @@
         <li id="src-{{ c.claim_id }}"><p>{{ c.text|md }} <span class="kind kind-{{ c.kind }}">{{ KIND_RU.get(c.kind, c.kind) }}</span></p><blockquote class="quote"><p>«{{ c.quote }}»</p><footer>— стр. {{ c.page }}</footer></blockquote></li>
       {% endfor %}
       </ol>
+      {% if excerpts %}
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        {% for unit, anchor, text in excerpts %}
+        <article class="source-excerpt" id="{{ anchor }}" tabindex="-1">
+          <p class="pg">Стр. {{ unit.page }}{% if unit.subsection or unit.section %} · {{ unit.subsection or unit.section }}{% endif %}</p>
+          <blockquote>{{ text }}</blockquote>
+        </article>
+        {% endfor %}
+      </details>
+      {% endif %}
       {% if s.used_by %}<p>На этот шаг опираются: {% for r in s.used_by %}<a href="{{ r.url }}">шаг {{ r.index }} «{{ r.title }}»</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
     </section>
 

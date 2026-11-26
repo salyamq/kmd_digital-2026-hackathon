@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Текст главы — {{ course.title }}{% endblock %}
+{% block body %}
+<main id="main" class="content" tabindex="-1">
+  <p class="crumbs"><a href="index.html">Путь по главе</a></p>
+  <h1>Текст главы «{{ course.title }}»</h1>
+  {% for unit, anchor, text in excerpts %}
+  <article class="source-excerpt" id="{{ anchor }}">
+    <p class="pg">Стр. {{ unit.page }}{% if unit.subsection or unit.section %} · {{ unit.subsection or unit.section }}{% endif %}</p>
+    <blockquote>{{ text }}</blockquote>
+  </article>
+  {% endfor %}
+</main>
+{% endblock %}

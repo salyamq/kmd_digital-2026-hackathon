@@ -31,9 +31,39 @@
 </header>
 {% block body %}{% endblock %}
 <footer class="foot">
-  <p>Курс собран конвейером «Глава → курс» из учебного слоя по книге: {{ course.book.author }}, «{{ course.book.title }}»{% if course.book.year %}, {{ course.book.year }}{% endif %}. Страницы указаны по PDF книги.</p>
+  <p>{{ course.book.author }} · «{{ course.book.title }}»{% if course.book.year %} · {{ course.book.year }}{% endif %}. Нумерация страниц по PDF.</p>
   <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
 </footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>{{ s.title_beginner if page_id == "step" else course.title }}</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>{{ "Что пояснить в уроке?" if page_id == "step" else "Что пояснить в главе?" }}</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="{{ course.chapter }}" data-node="{{ s.node_id if page_id == "step" else '' }}">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="{{ 'Вопрос по этому уроку' if page_id == 'step' else 'Вопрос по этой главе' }}"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
 <script>window.KMD_COURSE = {{ course_json|safe }};</script>
 {% block data %}{% endblock %}
 <script src="assets/vendor/katex/katex.min.js"></script>
