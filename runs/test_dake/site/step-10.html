@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 10. Когда давление перестаёт меняться — The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_dake.s5_3.05" data-index="10">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Интерактив</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</a><span aria-hidden="true"> / </span>Шаг 10 из 21</p>
+    <h1>Когда давление перестаёт меняться</h1>
+    <p class="booktitle">В книге: «Условия решения» <span class="pg">стр. 78</span></p>
+    <p class="meta">
+      <span class="chip">≈ 7 мин</span>
+      <span class="chip">⟳ Интерактив</span>
+<span class="chip" title="Тип трудности узла">трудность: масштаб + формализм</span>    </p>
+<p class="relies">Опирается на: <a href="step-08.html">шаг 8 «Почему давление падает одинаково»</a> <span class="muted">(предпосылка)</span>, <a href="step-07.html">шаг 7 «Когда пласт кажется бесконечным»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">При открытой границе приток может уравновесить постоянную добычу.</p><p>Тогда давление больше не меняется со временем, пока режим остаётся прежним.</p><p class="threshold"><b>Пороговая идея.</b> Открытая подпитываемая граница может уравновесить отбор. Это не то же самое, что закрытый пласт с одинаковым снижением. <span class="chip chip-model">модель</span></p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Интерактив: как это происходит</h2>
+      <div class="anim" data-frames="6">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m00.svg"><img src="media/geo-test-dake-s5-3-05/f00.svg" alt="Кадр 1 из 6: Проверяем, что граница открыта." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m01.svg"><img src="media/geo-test-dake-s5-3-05/f01.svg" alt="Кадр 2 из 6: Постоянный отбор компенсирован притоком." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m02.svg"><img src="media/geo-test-dake-s5-3-05/f02.svg" alt="Кадр 3 из 6: На границе поддерживается давление." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m03.svg"><img src="media/geo-test-dake-s5-3-05/f03.svg" alt="Кадр 4 из 6: Проверяем отсутствие временного изменения и возможные причины подпитки." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m04.svg"><img src="media/geo-test-dake-s5-3-05/f04.svg" alt="Кадр 5 из 6: Остановку или смену дебита читаем как новое возмущение." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-3-05/m05.svg"><img src="media/geo-test-dake-s5-3-05/f05.svg" alt="Кадр 6 из 6: Переходный этап заканчивается стабилизацией для новых дебитов." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="5" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 6</span>
+        </div>
+        <p class="anim-cap">Проверяем, что граница открыта.</p>
+        <script type="application/json" class="anim-caps">["\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c, \u0447\u0442\u043e \u0433\u0440\u0430\u043d\u0438\u0446\u0430 \u043e\u0442\u043a\u0440\u044b\u0442\u0430.", "\u041f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u044b\u0439 \u043e\u0442\u0431\u043e\u0440 \u043a\u043e\u043c\u043f\u0435\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d \u043f\u0440\u0438\u0442\u043e\u043a\u043e\u043c.", "\u041d\u0430 \u0433\u0440\u0430\u043d\u0438\u0446\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0434\u0430\u0432\u043b\u0435\u043d\u0438\u0435.", "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0438 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u044b\u0435 \u043f\u0440\u0438\u0447\u0438\u043d\u044b \u043f\u043e\u0434\u043f\u0438\u0442\u043a\u0438.", "\u041e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0443 \u0438\u043b\u0438 \u0441\u043c\u0435\u043d\u0443 \u0434\u0435\u0431\u0438\u0442\u0430 \u0447\u0438\u0442\u0430\u0435\u043c \u043a\u0430\u043a \u043d\u043e\u0432\u043e\u0435 \u0432\u043e\u0437\u043c\u0443\u0449\u0435\u043d\u0438\u0435.", "\u041f\u0435\u0440\u0435\u0445\u043e\u0434\u043d\u044b\u0439 \u044d\u0442\u0430\u043f \u0437\u0430\u043a\u0430\u043d\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0441\u0442\u0430\u0431\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u0435\u0439 \u0434\u043b\u044f \u043d\u043e\u0432\u044b\u0445 \u0434\u0435\u0431\u0438\u0442\u043e\u0432."]</script>
+<p class="muted small">Допущения: Схемы и относительные оси условны; реальные замеры не использованы..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как работает модель</h3>          <div class="para" id="how-1">
+            <p>После переходного периода для установившегося режима рассматривают открытую внешнюю границу. Предполагают, что при постоянной добыче приток через открытую границу полностью компенсирует отбор. На внешней границе давление задано и постоянно. Давление перестаёт меняться по времени во всей области. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c01"><p>«The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c02"><p>«It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,»</p><footer>— автор, стр. 78 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c03"><p>«$$p = p_e = \text{constant, at } r = r_e \tag{5.14}$$»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c04"><p>«$$\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t \tag{5.15}$$»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="Логика шага" class="ill-svg"><title>Логика шага</title><rect class="ill-bg" x="0" y="0" width="360" height="250" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Логика шага</tspan></text><rect class="ill-box" x="12.0" y="63" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Открытая граница</tspan></text><line class="ill-line" x1="180.0" y1="102.0" x2="180.0" y2="126.0"/><polygon class="ill-arrow" points="180.0,126.0 176.1,117.9 183.9,117.9"/><rect class="ill-box" x="12.0" y="130" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="154" text-anchor="middle"><tspan x="180.0" dy="0">Компенсация отбора</tspan></text><line class="ill-line" x1="180.0" y1="169.0" x2="180.0" y2="193.0"/><polygon class="ill-arrow" points="180.0,193.0 176.1,184.9 183.9,184.9"/><rect class="ill-box" x="12.0" y="197" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="221" text-anchor="middle"><tspan x="180.0" dy="0">Давление постоянно по времени</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Открытая граница → Компенсация отбора → Давление постоянно по времени.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 78</span>
+  </figcaption>
+</figure>
+<h3>Математика и наблюдения</h3>          <div class="para" id="how-2">
+            <p>Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости. В пласте оба стабилизированных режима могут реализовываться лишь приближённо. На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c05"><p>«This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c06"><p>«It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c07"><p>«For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-3">
+            <p>Производственные и закачные установки рассчитаны на постоянные дебиты, поэтому приближение часто полезно. Смена дебита вызывает новый короткий переходный этап до стабилизации. Так бывает, например, при остановке скважины на ремонт. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c08"><p>«Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_3.05.c09"><p>«If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.»</p><footer>— автор, стр. 78 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>Предполагают, что при постоянной добыче приток через открытую границу полностью компенсирует отбор. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></li><li>На внешней границе давление задано и постоянно. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></li><li>Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></li><li>В пласте оба стабилизированных режима могут реализовываться лишь приближённо. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></li><li>На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы. <span class="pg" title="Страница книги (по PDF)">стр. 78</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_dake.s5_3.05.f01">
+          <div class="tex-display" data-tex="p = p_e = \text{constant, at } r = r_e">$$p = p_e = \text{constant, at } r = r_e$$</div>
+          <p>Постоянное давление на внешней границе. <span class="pg">стр. 78</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>давление</td><td>—</td></tr><tr><td>$p_e$</td><td>давление на внешней границе</td><td>—</td></tr><tr><td>$r$</td><td>радиус, расстояние от центра скважины</td><td>—</td></tr><tr><td>$r_e$</td><td>радиус внешней границы</td><td>—</td></tr>          </tbody></table>        </div>
+        <div class="formula" id="f-geo.test_dake.s5_3.05.f02">
+          <div class="tex-display" data-tex="\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t">$$\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t$$</div>
+          <p>Неизменность давления по времени в установившемся режиме. <span class="pg">стр. 78</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p$</td><td>давление</td><td>—</td></tr><tr><td>$t$</td><td>время после начала отбора</td><td>—</td></tr><tr><td>$r$</td><td>радиус, расстояние от центра скважины</td><td>—</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Условие применяют при поддержании давления естественным притоком воды либо закачкой вытесняющей жидкости.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>После переходного периода для установившегося режима рассматривают открытую внешнюю границу.</dd>
+          <dt>Выход</dt><dd>Смена дебита, например при остановке на ремонт, вызывает новый короткий переходный этап до стабилизации.</dd>
+          <dt>Где ломается</dt><dd>В поле оба стабилизированных режима приближённы. Смена дебита вновь вызывает короткий переходный период.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>После переходного периода для установившегося режима рассматривают открытую внешнюю границу.</dd>
+            <dt>Ручные шаги</dt><dd>Условие применяют при поддержании давления естественным притоком воды либо закачкой вытесняющей жидкости.</dd>
+            <dt>Точки суждения</dt><dd>В поле оба стабилизированных режима приближённы. Смена дебита вновь вызывает короткий переходный период.</dd>
+            <dt>Время</dt><dd>Трудозатраты в источнике не оценены.</dd>
+            <dt>Типичные ошибки</dt><dd>Применить формулу, не проверив её граничные условия и допущения.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>У равновесного буфера вход равен выходу, поэтому его заполнение не меняется.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Неизменность состояния во времени не означает равных давлений в разных точках.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 5.4. Fig. 5.4 Radial flow under steady state conditions. <span class="pg">стр. 78</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>граничное условие <span class="en" lang="en">(boundary condition)</span></dt><dd>Правило на краю области: например, запрет на переток или заданное давление. <span class="pg">стр. 78</span> <span class="chip chip-model">модель</span></dd><dt>дебит <span class="en" lang="en">(flow rate)</span></dt><dd>Объём жидкости, добываемой за единицу времени. <span class="pg">стр. 78</span> <span class="chip chip-model">модель</span></dd><dt>переходный режим <span class="en" lang="en">(transient flow)</span></dt><dd>Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы. <span class="pg">стр. 78</span> <span class="chip chip-model">модель</span></dd><dt>псевдоустановившийся режим <span class="en" lang="en">(semi steady state flow)</span></dt><dd>При закрытой границе давление в разных точках падает примерно с одной скоростью при постоянном дебите. <span class="pg">стр. 78</span> <span class="chip chip-model">модель</span></dd><dt>установившийся режим <span class="en" lang="en">(steady state flow)</span></dt><dd>При поддерживаемой открытой границе и постоянном дебите давление перестаёт меняться во времени. <span class="pg">стр. 78</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_dake-s5_3-05-t01" data-task="geo.test_dake.s5_3.05.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Почему при постоянном отборе давление может не падать?</legend>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_3.05.t01" value="0"> <span>Приток через открытую границу компенсирует отбор</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_3.05.t01" value="1"> <span>Закрытая граница поставляет жидкость</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_3.05.t01" value="2"> <span>Забойное давление всегда не зависит от режима</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Приток через открытую границу компенсирует отбор</p>
+    <p class="fb-expl">Поступление жидкости должно полностью возместить добычу. <a href="#how-1">Где это в тексте (стр. 78) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_3-05-t02" data-task="geo.test_dake.s5_3.05.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие источники поддержания давления рассматривает автор?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_3.05.t02" value="0"> <span>Изменение названия режима</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_3.05.t02" value="1"> <span>Естественная водная подпитка</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_3.05.t02" value="2"> <span>Закрытие всех границ при прежней добыче</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_3.05.t02" value="3"> <span>Закачка вытесняющей жидкости</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Естественная водная подпитка; Закачка вытесняющей жидкости</p>
+    <p class="fb-expl">Приток воды или закачка обеспечивают пополнение жидкости. <a href="#how-2">Где это в тексте (стр. 78) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_3-05-t03" data-task="geo.test_dake.s5_3.05.t03" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Что наступает сразу после смены дебита?</p>
+  <p class="cloze">После смены дебита возникает новый короткий <select aria-label="Пропуск 1"><option value="">—</option><option>переходный</option><option>всегда псевдоустановившийся</option><option>во всех случаях установившийся</option></select> этап.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> После смены дебита возникает новый короткий [переходный] этап.</p>
+    <p class="fb-expl">Давление проходит через переходный этап до новой стабилизации. <a href="#how-3">Где это в тексте (стр. 78) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_dake.s5_3.05.c01"><p>После переходного периода для установившегося режима рассматривают открытую внешнюю границу. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c02"><p>При постоянной добыче приток через открытую границу полностью компенсирует отбор. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c03"><p>На внешней границе давление задано и постоянно. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«$$p = p_e = \text{constant, at } r = r_e \tag{5.14}$$»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c04"><p>Давление перестаёт меняться по времени во всей области. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«$$\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t \tag{5.15}$$»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c05"><p>Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c06"><p>В пласте оба стабилизированных режима могут реализовываться лишь приближённо. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c07"><p>На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c08"><p>Производственные и закачные установки рассчитаны на постоянные дебиты, поэтому приближение часто полезно. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates»</p><footer>— стр. 78</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_3.05.c09"><p>Смена дебита, например при остановке на ремонт, вызывает новый короткий переходный этап до стабилизации. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.»</p><footer>— стр. 78</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u078_07-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>Fig. 5.4 Radial flow under steady state conditions.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u078_08-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary. It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u078_09-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>$$p = p_e = \text{constant, at } r = r_e \tag{5.14}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u078_10-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>$$\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t \tag{5.15}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u078_11-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u078_12-1" tabindex="-1">
+          <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+          <blockquote>It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir. For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time. Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates and it makes little sense to unnecessarily alter these. If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.</blockquote>
+        </article>
+      </details>
+    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-09.html" rel="prev"><span>← Назад</span><b>Как усреднить пластовое давление</b></a><a class="next" href="step-11.html" rel="next"><span>Дальше →</span><b>Какие члены уравнения отбросить</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Когда давление перестаёт меняться</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="geo.test_dake.s5_3.05">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_dake.s5_3.05.t01", "type": "single", "question": "Почему при постоянном отборе давление может не падать?", "explanation": "Поступление жидкости должно полностью возместить добычу.", "page": 78, "link": "#how-1", "step_title": "Когда давление перестаёт меняться", "step_index": 10, "node_id": "geo.test_dake.s5_3.05", "options": ["Приток через открытую границу компенсирует отбор", "Закрытая граница поставляет жидкость", "Забойное давление всегда не зависит от режима"], "key": [0], "answer_text": "Приток через открытую границу компенсирует отбор"}, {"id": "geo.test_dake.s5_3.05.t02", "type": "multiple", "question": "Какие источники поддержания давления рассматривает автор?", "explanation": "Приток воды или закачка обеспечивают пополнение жидкости.", "page": 78, "link": "#how-2", "step_title": "Когда давление перестаёт меняться", "step_index": 10, "node_id": "geo.test_dake.s5_3.05", "options": ["Изменение названия режима", "Естественная водная подпитка", "Закрытие всех границ при прежней добыче", "Закачка вытесняющей жидкости"], "key": [1, 3], "answer_text": "Естественная водная подпитка; Закачка вытесняющей жидкости"}, {"id": "geo.test_dake.s5_3.05.t03", "type": "cloze", "question": "Что наступает сразу после смены дебита?", "explanation": "Давление проходит через переходный этап до новой стабилизации.", "page": 78, "link": "#how-3", "step_title": "Когда давление перестаёт меняться", "step_index": 10, "node_id": "geo.test_dake.s5_3.05", "parts": ["После смены дебита возникает новый короткий ", " этап."], "blanks": [{"options": ["переходный", "всегда псевдоустановившийся", "во всех случаях установившийся"], "answers": ["переходный"]}], "key": [["переходный"]], "answer_text": "После смены дебита возникает новый короткий [переходный] этап."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

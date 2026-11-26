@@ -1,0 +1,3786 @@
+{
+  "chapter": "test_slatt",
+  "source": "R. M. Slatt, «Stratigraphic Reservoir Characterization for Petroleum Geologists, Geophysicists, and Engineers»",
+  "pdf_pages": [
+    "410",
+    "411",
+    "412",
+    "413",
+    "414",
+    "415",
+    "416",
+    "417",
+    "418",
+    "419",
+    "420",
+    "421",
+    "422",
+    "423"
+  ],
+  "nodes": [
+    {
+      "id": "geo.test_slatt.s9_4_1.01",
+      "section": "s9_4_1",
+      "title_book": "Процессы и отложения",
+      "title_beginner": "Как дельта растёт в море",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "М"
+      },
+      "order_rationale": {
+        "text": "Сначала разберём движение русла и устьевого бара; без этого трудно понять наклон и смещение песчаных тел.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Процессы и отложения",
+          "by_model": false
+        },
+        "main": {
+          "text": "Миссисипи — классический пример речной дельты.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "У защищённого берега река доставляет осадок по распределительным руслам; песок образует русловые тела и устьевые бары. При наличии места для осадка дельта и её зоны выдвигаются в море. С накоплением осадка дно мелеет, и река может направиться в более глубокую часть.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "В обнажении сравнивают положение соседних отложений, изменение размера зёрен вверх и осадочные структуры. Ту же последовательность проверяют по керну и каротажу, отличая вертикальное изменение от бокового утонения и измельчения вдали от оси русла.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Выдвижение требует места для нового осадка. Заливы, болота и лагуны могут отделять песчаные тела друг от друга. Признак укрупнения проверяют вместе с другими признаками, а не сам по себе.",
+          "by_model": false
+        },
+        "deeper": [
+          {
+            "text": "Представьте одну неподвижную точку у дна перед растущим баром. Пока бар далеко, в этой точке накапливается более тонкий осадок. С приближением и продвижением бара поверх него откладывается более крупный материал. При чтении разреза снизу вверх мы восстанавливаем движение обстановок по горизонтали — не увеличение всех зёрен в одном потоке.",
+            "by_model": true,
+            "title": "Почему крупнее именно вверх"
+          }
+        ]
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c01",
+          "kind": "observation",
+          "text": "Миссисипи — классический пример речной дельты.",
+          "quote": "The Mississippi River Delta (Fig. 9.13) has long been considered the “type” river-dominated delta (Fig. 9.5)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c02",
+          "kind": "observation",
+          "text": "У защищённого берега сильные волны и течения не перерабатывают и не рассеивают осадок вдоль берега.",
+          "quote": "Strong waves and currents do not impinge upon its protected shoreline, so sediment deposited at and near the shore zone is not reworked or dispersed laterally (Figs. 9.4 and 9.7)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c03",
+          "kind": "observation",
+          "text": "Если между дном и поверхностью моря достаточно места для осадка, дельта и её зоны со временем выдвигаются к морю.",
+          "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c04",
+          "kind": "observation",
+          "text": "При выдвижении дельты линии равного геологического времени пересекают границы разных отложений.",
+          "quote": "By that process, surfaces representing instants in geologic time crosscut boundaries between sedimentary facies (see the time lines or clinoforms in Fig. 9.9)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c05",
+          "kind": "observation",
+          "text": "Выдвижение и накопление вверх постепенно обмеляют дно; питающая река может сместить русло в сторону более глубокого участка.",
+          "quote": "However, over time, progradation and vertical aggradation lead to a progressive shallowing of the water depth, to the point at which the main river(s) feeding sediment to its delta will shift toward deeper water (toward lower points on the seafloor), thereby causing the distributary-channel switching discussed earlier (Fig. 9.11)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c06",
+          "kind": "observation",
+          "text": "За последние 4600 лет в дельте Миссисипи было не менее восьми периодов переключения русел и лопастей.",
+          "quote": "During the past 4600 years, there have been no fewer than eight periods of channel and lobe switching on the Mississippi River Delta (Fig. 9.12)",
+          "page": 411,
+          "unit_ids": [
+            "u411_03"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c07",
+          "kind": "observation",
+          "text": "Схема показывает, как разновидности осадков речной дельты расположены в пространстве.",
+          "quote": "The main facies of a river-dominated delta, and their distribution in space, are shown in Fig. 9.14",
+          "page": 411,
+          "unit_ids": [
+            "u411_04"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c08",
+          "kind": "observation",
+          "text": "Песчаные коллекторы связаны с отложениями распределительных русел и устьевых баров.",
+          "quote": "Sandy reservoir facies are deposits of distributary channels and distributary mouth-bars",
+          "page": 411,
+          "unit_ids": [
+            "u411_04"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c09",
+          "kind": "observation",
+          "text": "Межрусловые заливы, болота и лагуны разделяют песчаные тела, создавая глинистые барьеры; иногда это нефтегазоматеринские породы.",
+          "quote": "Interdistributary bays, marshes, and lagoons separate sandy facies and provide shale barriers in subsurface reservoirs, and sometimes, they provide hydrocarbon source rocks",
+          "page": 411,
+          "unit_ids": [
+            "u411_04"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c10",
+          "kind": "observation",
+          "text": "В обнажении отложения узнают по взаимному положению, укрупнению зёрен вверх и сочетанию осадочных структур.",
+          "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)",
+          "page": 413,
+          "unit_ids": [
+            "u411_04"
+          ],
+          "by": "author",
+          "page_pdf": 413,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c11",
+          "kind": "observation",
+          "text": "Под землёй те же признаки ищут в керне и каротаже; при удалении от оси русла отклик отражает уменьшение толщины и зернистости.",
+          "quote": "In the subsurface, these same features can be identified in cores and on well logs, including a lateral thinning and fining log response away from the channel axis (Fig. 9.15)",
+          "page": 413,
+          "unit_ids": [
+            "u411_04"
+          ],
+          "by": "author",
+          "page_pdf": 413,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c12",
+          "kind": "observation",
+          "text": "Модель показывает переориентацию распределительного русла от общей вершины к разным частям дельты.",
+          "quote": "Model of delta distributary channel switching from a common apex to different orientations and locations on the delta",
+          "page": 413,
+          "unit_ids": [
+            "u413_01"
+          ],
+          "by": "author",
+          "page_pdf": 413,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c13",
+          "kind": "observation",
+          "text": "Схема роста показывает смену лопастей Миссисипи за последние 4600 лет.",
+          "quote": "Growth patterns of the Mississippi River Delta's lobes during the past 4600 years",
+          "page": 413,
+          "unit_ids": [
+            "u413_02"
+          ],
+          "by": "author",
+          "page_pdf": 413,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c14",
+          "kind": "observation",
+          "text": "Схема современной дельты Миссисипи показывает распределение обстановок и отложений в дельте типа «птичья лапа».",
+          "quote": "Schematic illustration of the distribution of facies and environments in the modern Mississippi bird-foot delta",
+          "page": 414,
+          "unit_ids": [
+            "u414_01"
+          ],
+          "by": "author",
+          "page_pdf": 414,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c15",
+          "kind": "observation",
+          "text": "Разрезы различают выдвинувшийся устьевой бар и песчаное заполнение рукава вытянутой речной лопасти.",
+          "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe",
+          "page": 415,
+          "unit_ids": [
+            "u415_01"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c16",
+          "kind": "observation",
+          "text": "Каротажные профили собраны по скважинам системы Холли-Спрингс, север Мексиканского залива.",
+          "quote": "Well log profiles are from borehole data from the Wilcox (Eocene) Holly Springs delta system of the northern Gulf Coast Basin. . (C) Generalized vertical profile through a channel-mouth-bar sand body",
+          "page": 415,
+          "unit_ids": [
+            "u415_01"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.01#c17",
+          "kind": "observation",
+          "text": "Отдельный вертикальный профиль показывает строение песчаного устьевого бара.",
+          "quote": "Generalized vertical profile through a channel-mouth-bar sand body",
+          "page": 415,
+          "unit_ids": [
+            "u415_01"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "распределительное русло",
+          "definition": "Ветвь реки, по которой вода и осадок идут через дельту",
+          "en": "distributary channel",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Скопление осадка у выхода речного рукава в водоём",
+          "en": "mouth bar",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "проградация",
+          "definition": "Выдвижение дельты и её зон в сторону моря",
+          "en": "progradation",
+          "page": 411,
+          "by": "author"
+        },
+        {
+          "term": "агградация",
+          "definition": "Нарастание слоя за счёт накопления осадка вверх",
+          "en": "aggradation",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения с признаками определённой обстановки",
+          "en": "facies",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Извлечённый при бурении образец породы",
+          "en": "core",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерения свойств вдоль ствола скважины",
+          "en": "well logs",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "клиноформа",
+          "definition": "Наклонная линия равного геологического времени на разрезе",
+          "en": "clinoform",
+          "page": 411,
+          "by": "author"
+        },
+        {
+          "term": "коллектор",
+          "definition": "Порода, способная вмещать и пропускать флюиды",
+          "en": "reservoir",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "лопасть дельты",
+          "definition": "Выступ дельты, питаемый рукавом или группой рукавов",
+          "en": "delta lobe",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "нефтегазоматеринская порода",
+          "definition": "Порода, в которой могут образовываться нефть и газ",
+          "en": "source rock",
+          "page": 411,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.12",
+          "page": 413,
+          "caption": "FIGURE 9.12 Model of delta distributary channel switching from a common apex to different orientations and locations on the delta. After Overeem et al. (2005).",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u413_01",
+          "scan": "pages/p413.png"
+        },
+        {
+          "number": "9.13",
+          "page": 413,
+          "caption": "FIGURE 9.13 Growth patterns of the Mississippi River Delta's lobes during the past 4600 years. Modified from Kolb and Van Lopik, Fig. 9.2, in Shirley (1966). Reprinted with permission of Houston Geol. Soc.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u413_02",
+          "scan": "pages/p413.png"
+        },
+        {
+          "number": "9.14",
+          "page": 414,
+          "caption": "FIGURE 9.14 Schematic illustration of the distribution of facies and environments in the modern Mississippi bird-foot delta. Modified from Fisk (1961). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u414_01",
+          "scan": "pages/p414.png"
+        },
+        {
+          "number": "9.15",
+          "page": 415,
+          "caption": "FIGURE 9.15 (a) Pennsylvanian-age distributary-channel sandstone. (b) Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe. Well log profiles are from borehole data from the Wilcox (Eocene) Holly Springs delta system of the northern Gulf Coast Basin. . (C) Generalized vertical profile through a channel-mouth-bar sand body. Modified from Galloway (1968). Reprinted with permission of Gulf Coast Assoc. Geol. Societies.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u415_01",
+          "scan": "pages/p415.png"
+        }
+      ],
+      "misconception": {
+        "text": "Весь песок дельты образует сплошной пласт, а укрупнение вверх означает усиление течения во всех рукавах.",
+        "correction": "Песок концентрируется в руслах и на барах, разделённых другими отложениями. Вертикальную смену можно связать с продвижением зон, а не с усилением потока повсюду.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_1.01.c03",
+          "geo.test_slatt.s9_4_1.01.c08",
+          "geo.test_slatt.s9_4_1.01.c09",
+          "geo.test_slatt.s9_4_1.01.c10",
+          "geo.test_slatt.s9_4_1.01.c11"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "В обнажении сравнивают положение соседних отложений, изменение размера зёрен вверх и осадочные структуры. Ту же последовательность проверяют по керну и каротажу, отличая вертикальное изменение от бокового утонения и измельчения вдали от оси русла. Миссисипи — классический пример речной дельты. Отдельный вертикальный профиль показывает строение песчаного устьевого бара.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Выдвижение требует места для нового осадка. Заливы, болота и лагуны могут отделять песчаные тела друг от друга. Признак укрупнения проверяют вместе с другими признаками, а не сам по себе.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Фиксированная точка сохраняет последовательные состояния, как журнал наблюдений при движении зоны по карте.",
+        "by_model": true,
+        "breaks_where": "Осадочная летопись неполна: могут быть перерывы, размывы и смена русла."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Миссисипи — классический пример речной дельты.",
+        "manual_steps": "В обнажении сравнивают положение соседних отложений, изменение размера зёрен вверх и осадочные структуры. Ту же последовательность проверяют по керну и каротажу, отличая вертикальное изменение от бокового утонения и измельчения вдали от оси русла.",
+        "judgment_points": "Выдвижение требует места для нового осадка. Заливы, болота и лагуны могут отделять песчаные тела друг от друга. Признак укрупнения проверяют вместе с другими признаками, а не сам по себе.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Весь песок дельты образует сплошной пласт, а укрупнение вверх означает усиление течения во всех рукавах.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [],
+      "unit_ids": [
+        "u411_03",
+        "u411_04",
+        "u413_01",
+        "u413_02",
+        "u414_01",
+        "u415_01"
+      ],
+      "pages": [
+        411,
+        413,
+        414,
+        415
+      ],
+      "order": 1,
+      "title": "Как дельта растёт в море",
+      "threshold": true,
+      "why_here": {
+        "text": "Сначала разберём движение русла и устьевого бара; без этого трудно понять наклон и смещение песчаных тел.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "распределительное русло",
+        "устьевой бар",
+        "проградация",
+        "агградация",
+        "фация",
+        "керн",
+        "каротаж",
+        "клиноформа",
+        "коллектор",
+        "лопасть дельты",
+        "нефтегазоматеринская порода"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.x1.01",
+      "section": "x1",
+      "title_book": "Клиноформы и стратиграфическое сопоставление",
+      "title_beginner": "Почему похожие пески не связаны",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "Н"
+      },
+      "order_rationale": {
+        "text": "Теперь можно объяснить, почему похожие пески оказываются разобщены.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Клиноформы и стратиграфическое сопоставление",
+          "by_model": false
+        },
+        "main": {
+          "text": "Клиноформы представляют линии геологического времени и пересекают границы, проведённые по породам.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "В гипотетической проградирующей дельте наклонные линии равного времени пересекают границы пород, а между песками лежат глинистые и неоднородные отложения.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Сравнивают две корреляции разрезов скважин: по сходству отклика и по времени отложения; на второй проверяют расположение преград.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Наблюдаемое сходство каротажа не гарантирует сообщения между песками. В примере разобщение важно и для заводнения, и для отдельной скважины.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.x1.01#c01",
+          "kind": "observation",
+          "text": "Клиноформы представляют линии геологического времени и пересекают границы, проведённые по породам.",
+          "quote": "It is important for proper subsurface correlations to understand that clinoforms, which represent geological time lines, crosscut lithostratigraphic boundaries",
+          "page": 410,
+          "unit_ids": [
+            "u410_01"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.01#c02",
+          "kind": "observation",
+          "text": "В условном примере сопоставлены интервалы либо по сходству каротажа, либо по времени отложения.",
+          "quote": "The hypothetical example in Fig. 9.10 shows correlations based upon lithofacies (stratigraphic intervals with similarities in well log response) and upon geological time",
+          "page": 410,
+          "unit_ids": [
+            "u410_01"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.01#c03",
+          "kind": "observation",
+          "text": "Глинистые и неоднородные отложения разделяют пески, поэтому между скважинами 1 и 2 нет связи.",
+          "quote": "Note that shaley and heterolithic intervals separate sandy intervals, so that the sands between wells 1 and 2 are not in communication",
+          "page": 410,
+          "unit_ids": [
+            "u410_01"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.01#c04",
+          "kind": "inference",
+          "text": "Разобщение песков ухудшает эффективность заводнения и продуктивность отдельной скважины.",
+          "quote": "This feature will adversely affect waterflood performance as well as single-well productivity",
+          "page": 410,
+          "unit_ids": [
+            "u410_01"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.01#c05",
+          "kind": "observation",
+          "text": "На временном разрезе между песками видны неоднородные и глинистые слои, хотя на разрезе по породам пески кажутся непрерывными.",
+          "quote": "Note the heterolithics and shales that separate sands in the chronostratigraphic correlation compared with the continuity of the sands in the lithostratigraphic correlation",
+          "page": 410,
+          "unit_ids": [
+            "u410_05"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [
+        {
+          "id": "geo.test_slatt.x1.01.e01",
+          "page": 410,
+          "title": "Два варианта одного разреза",
+          "condition": "Каротаж и предполагаемые линии возраста в двух скважинах.",
+          "steps": [
+            "Сопоставить похожие песчаные интервалы по каротажу.",
+            "Пересопоставить с учётом наклонных линий времени.",
+            "Проверить, лежат ли между песками глинистые и неоднородные отложения."
+          ],
+          "result": "Сходные пески между скважинами 1 и 2 разобщены.",
+          "numbers": [
+            "1",
+            "2"
+          ],
+          "unit_ids": [
+            "u410_01",
+            "u410_05"
+          ],
+          "example_no": null,
+          "by": "author",
+          "page_pdf": 410
+        }
+      ],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "клиноформа",
+          "definition": "Наклонная поверхность, рассматриваемая здесь как линия равного геологического времени на разрезе",
+          "en": "clinoform",
+          "page": 410,
+          "by": "author"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерения вдоль ствола скважины",
+          "en": "well logging",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление интервалов в разных разрезах",
+          "en": "correlation",
+          "page": 410,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.10",
+          "page": 410,
+          "caption": "**FIGURE 9.10** Lithostratigraphic (upper) and chronostratigraphic (lower) correlation across two wells in a prograding delta system. Note the heterolithics and shales that separate sands in the chronostratigraphic correlation compared with the continuity of the sands in the lithostratigraphic correlation. After Gani and Bhattacharya (2005).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u410_05",
+          "scan": "pages/p410.png"
+        }
+      ],
+      "misconception": {
+        "text": "Если пески выглядят одинаково, вода свободно проходит от одной скважины к другой.",
+        "correction": "В примере между песками лежат барьеры, видимые при корреляции по времени.",
+        "claim_ids": [
+          "geo.test_slatt.x1.01.c01",
+          "geo.test_slatt.x1.01.c03",
+          "geo.test_slatt.x1.01.c05"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Сравнивают две корреляции разрезов скважин: по сходству отклика и по времени отложения; на второй проверяют расположение преград. Каротаж и предполагаемые линии возраста в двух скважинах. На временном разрезе между песками видны неоднородные и глинистые слои, хотя на разрезе по породам пески кажутся непрерывными.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Наблюдаемое сходство каротажа не гарантирует сообщения между песками. В примере разобщение важно и для заводнения, и для отдельной скважины.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Соединение записей по похожим атрибутам может дать пары, отличные от соединения по времени событий.",
+        "by_model": true,
+        "breaks_where": "В породах нет полного журнала времени; поверхности приходится интерпретировать."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Каротаж и предполагаемые линии возраста в двух скважинах.",
+        "manual_steps": "Сравнивают две корреляции разрезов скважин: по сходству отклика и по времени отложения; на второй проверяют расположение преград.",
+        "judgment_points": "Наблюдаемое сходство каротажа не гарантирует сообщения между песками. В примере разобщение важно и для заводнения, и для отдельной скважины.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Если пески выглядят одинаково, вода свободно проходит от одной скважины к другой.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.01",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.01"
+        }
+      ],
+      "unit_ids": [
+        "u410_01",
+        "u410_05"
+      ],
+      "pages": [
+        410
+      ],
+      "order": 2,
+      "title": "Почему похожие пески не связаны",
+      "threshold": true,
+      "why_here": {
+        "text": "Теперь можно объяснить, почему похожие пески оказываются разобщены.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "клиноформа",
+        "каротаж",
+        "заводнение",
+        "корреляция"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.x1.02",
+      "section": "x1",
+      "title_book": "Клиноформы и стратиграфическое сопоставление",
+      "title_beginner": "Меконг: время и границы пород",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П"
+      },
+      "order_rationale": {
+        "text": "Применяем различие между возрастом и породой к датированному примеру Меконга.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Клиноформы и стратиграфическое сопоставление",
+          "by_model": false
+        },
+        "main": {
+          "text": "Выдвижение современной дельты Меконга датировали за последние 6000 лет.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Дельта Меконга выдвигается в море; границы пород и линии равного возраста пересекаются.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Сравнивают результаты корреляции по породам и по возрасту, чтобы выявить возможные боковые разрывы однотипных пластов.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Датирование относится к приведённому примеру, а не к скорости роста всех дельт.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.x1.02#c01",
+          "kind": "observation",
+          "text": "Выдвижение современной дельты Меконга датировали за последние 6000 лет.",
+          "quote": "Progradation of the delta has been age-dated for the last 6000 years",
+          "page": 410,
+          "unit_ids": [
+            "u410_02"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.02#c02",
+          "kind": "observation",
+          "text": "Для Меконга сопоставили разрезы по породам и по геологическому времени: линии времени пересекают границы отложений разных типов.",
+          "quote": "Lithostratigraphic and sequence stratigraphic (chronostratigraphic) correlations are given to illustrate the crossing nature of time lines and lithofacies boundaries",
+          "page": 410,
+          "unit_ids": [
+            "u410_02"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.02#c03",
+          "kind": "inference",
+          "text": "Сопоставление по возрасту показывает, что интервалы однотипных пород могут прерываться вбок.",
+          "quote": "The true chronostratigraphic correlations demonstrate the potential for lateral discontinuities within the lithostratigraphic intervals",
+          "page": 410,
+          "unit_ids": [
+            "u410_02"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "проградация",
+          "definition": "Выдвижение границы отложения в сторону бассейна",
+          "en": "progradation",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "литостратиграфическая корреляция",
+          "definition": "Сопоставление по признакам пород",
+          "en": "lithostratigraphic correlation",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "хроностратиграфическая корреляция",
+          "definition": "Сопоставление по возрасту отложения",
+          "en": "chronostratigraphic correlation",
+          "page": 410,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Сравнивают результаты корреляции по породам и по возрасту, чтобы выявить возможные боковые разрывы однотипных пластов. Выдвижение современной дельты Меконга датировали за последние 6000 лет. Сопоставление по возрасту показывает, что интервалы однотипных пород могут прерываться вбок.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Датирование относится к приведённому примеру, а не к скорости роста всех дельт.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Группировка по типу события и группировка по времени дают разную структуру связей.",
+        "by_model": true,
+        "breaks_where": "Границы возраста в породе надо восстанавливать по наблюдениям."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Выдвижение современной дельты Меконга датировали за последние 6000 лет.",
+        "manual_steps": "Сравнивают результаты корреляции по породам и по возрасту, чтобы выявить возможные боковые разрывы однотипных пластов.",
+        "judgment_points": "Датирование относится к приведённому примеру, а не к скорости роста всех дельт.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.x1.01",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.x1.01"
+        }
+      ],
+      "unit_ids": [
+        "u410_02"
+      ],
+      "pages": [
+        410
+      ],
+      "order": 3,
+      "title": "Меконг: время и границы пород",
+      "threshold": false,
+      "why_here": {
+        "text": "Применяем различие между возрастом и породой к датированному примеру Меконга.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "проградация",
+        "литостратиграфическая корреляция",
+        "хроностратиграфическая корреляция"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.02",
+      "section": "s9_4_1",
+      "title_book": "Процессы и отложения",
+      "title_beginner": "Меконг: карта и время",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "В"
+      },
+      "order_rationale": {
+        "text": "После разбора Меконга читаем карту и сравниваем две корреляции.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Процессы и отложения",
+          "by_model": false
+        },
+        "main": {
+          "text": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "При выдвижении дельты границы типов отложений и линии равного возраста идут по разным траекториям.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Привязывают скважины к карте, после чего сравнивают две корреляции вдоль линии разреза.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Один вариант сопоставляет обстановки, другой возраст. Они не взаимозаменяемы.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c01",
+          "kind": "observation",
+          "text": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+          "quote": "Upper delta plain is green and lower delta plain is orange",
+          "page": 411,
+          "unit_ids": [
+            "u411_05"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c02",
+          "kind": "observation",
+          "text": "На карте показана линия разрезов со скважинами.",
+          "quote": "Cross-sections A–B with well locations are shown",
+          "page": 411,
+          "unit_ids": [
+            "u411_05"
+          ],
+          "by": "author",
+          "page_pdf": 411,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c03",
+          "kind": "observation",
+          "text": "Первый разрез коррелирует скважины на основе реконструкции древних обстановок.",
+          "quote": "Lithostratigraphic correlation of wells based upon paleoenvironmental interpretation",
+          "page": 412,
+          "unit_ids": [
+            "u412_01"
+          ],
+          "by": "author",
+          "page_pdf": 412,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c04",
+          "kind": "observation",
+          "text": "Датированные в тысячах лет линии пересекают границы пород и показывают выдвижение дельты.",
+          "quote": "Numbered lines that crosscut lithofacies boundaries are measured geologic time lines in 1000s of years; they demonstrate the progradational nature of the delta. (c) Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+          "page": 412,
+          "unit_ids": [
+            "u412_01"
+          ],
+          "by": "author",
+          "page_pdf": 412,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c05",
+          "kind": "observation",
+          "text": "Второй разрез сопоставляет скважины по линиям времени.",
+          "quote": "Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+          "page": 412,
+          "unit_ids": [
+            "u412_01"
+          ],
+          "by": "author",
+          "page_pdf": 412,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.02#c06",
+          "kind": "observation",
+          "text": "Выбор корреляции по породам или по времени меняет сопоставление осадочных единиц.",
+          "quote": "Note the difference in correlation of sedimentary units based upon the lithostratigraphic and chronostratigraphic correlation strategies",
+          "page": 412,
+          "unit_ids": [
+            "u412_01"
+          ],
+          "by": "author",
+          "page_pdf": 412,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "береговой вал",
+          "definition": "Вытянутый осадочный гребень вдоль прежней или современной береговой линии",
+          "en": "beach ridge",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения определённой обстановки",
+          "en": "facies",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление частей разреза между скважинами",
+          "en": "correlation",
+          "page": 411,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.11",
+          "page": 411,
+          "caption": "FIGURE 9.11 (a) Map view of Mekong River Delta. Upper delta plain is green and lower delta plain is orange. Black lines are beach ridges. Cross-sections A–B with well locations are shown.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u411_05",
+          "scan": "pages/p411.png"
+        },
+        {
+          "number": "9.11",
+          "page": 412,
+          "caption": "FIGURE 9.11—cont'd (b) Lithostratigraphic correlation of wells based upon paleoenvironmental interpretation. Numbered lines that crosscut lithofacies boundaries are measured geologic time lines in 1000s of years; they demonstrate the progradational nature of the delta. (c) Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines. Note the difference in correlation of sedimentary units based upon the lithostratigraphic and chronostratigraphic correlation strategies. After Gani and Bhattacharya (2005).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u412_01",
+          "scan": "pages/p412.png"
+        }
+      ],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Привязывают скважины к карте, после чего сравнивают две корреляции вдоль линии разреза. На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы. Выбор корреляции по породам или по времени меняет сопоставление осадочных единиц.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Один вариант сопоставляет обстановки, другой возраст. Они не взаимозаменяемы.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Карта — индекс расположения записей, разрез — содержимое записей, а возраст — отдельный ключ.",
+        "by_model": true,
+        "breaks_where": "Геологические временные линии выводятся из данных, а не назначаются автоматически."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+        "manual_steps": "Привязывают скважины к карте, после чего сравнивают две корреляции вдоль линии разреза.",
+        "judgment_points": "Один вариант сопоставляет обстановки, другой возраст. Они не взаимозаменяемы.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.x1.02",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.x1.02"
+        },
+        {
+          "to": "geo.test_slatt.x1.01",
+          "type": "example_of",
+          "target": "geo.test_slatt.x1.01"
+        }
+      ],
+      "unit_ids": [
+        "u411_05",
+        "u412_01"
+      ],
+      "pages": [
+        411,
+        412
+      ],
+      "order": 4,
+      "title": "Меконг: карта и время",
+      "threshold": false,
+      "why_here": {
+        "text": "После разбора Меконга читаем карту и сравниваем две корреляции.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "береговой вал",
+        "фация",
+        "корреляция"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.x1.03",
+      "section": "x1",
+      "title_book": "Клиноформы и стратиграфическое сопоставление",
+      "title_beginner": "Что направляет рост дельты",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "М"
+      },
+      "order_rationale": {
+        "text": "Уточняем, как смена рукавов и относительный уровень моря меняют дельту.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Клиноформы и стратиграфическое сопоставление",
+          "by_model": false
+        },
+        "main": {
+          "text": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "При раннем падении относительного уровня моря река углубляет долину, а берег отступает к морю и понижается. Меняется и положение активных русел.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "При восстановлении истории роста дельты учитывают и изменение положения берега, и переключение русел.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Сравнение влияния русел и уровня моря условное; различие размеров низких и высоких дельт сформулировано как тенденция.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.x1.03#c01",
+          "kind": "observation",
+          "text": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+          "quote": "In addition to sea-level fluctuations, deltas are subject to “delta distributary switching processes,” such as modeled in Fig. 9.12",
+          "page": 410,
+          "unit_ids": [
+            "u410_03"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.03#c02",
+          "kind": "inference",
+          "text": "По приведённой оценке переключение русел может сильнее влиять на эволюцию дельты, чем изменение уровня моря.",
+          "quote": "According to Overeem et al. (2005), channel switching may be an even more important control on the evolution of deltaic systems than is sea-level change",
+          "page": 410,
+          "unit_ids": [
+            "u410_03"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.03#c03",
+          "kind": "observation",
+          "text": "Дельты могут образовываться при относительном падении уровня моря; такие тела называют дельтами низкого стояния или края шельфа.",
+          "quote": "Deltas can also form during a relative fall in sea level; these are often referred to as “lowstand” or “shelf-margin” deltas or systems tracts (Figs. 5.18 and 5.19)",
+          "page": 410,
+          "unit_ids": [
+            "u410_04"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.03#c04",
+          "kind": "observation",
+          "text": "В начале падения уровня моря река врезается в долину, а береговая линия смещается к морю и понижается.",
+          "quote": "These deposits form in response to early fall in sea level, which causes valley incision, and a seaward retreat and lowering of the shoreline",
+          "page": 410,
+          "unit_ids": [
+            "u410_04"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.x1.03#c05",
+          "kind": "observation",
+          "text": "Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+          "quote": "Although important, these lowstand deltas are generally not as large, nor as prevalent as highstand deltas",
+          "page": 410,
+          "unit_ids": [
+            "u410_04"
+          ],
+          "by": "author",
+          "page_pdf": 410,
+          "source_kind": "text",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "распределительное русло",
+          "definition": "Ветвь реки, выносящая материал через дельту",
+          "en": "distributary channel",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "дельта низкого стояния",
+          "definition": "Дельта, образовавшаяся при относительном падении уровня моря",
+          "en": "lowstand delta",
+          "page": 410,
+          "by": "author"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная окраина материка",
+          "en": "shelf",
+          "page": 410,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [],
+      "misconception": {
+        "text": "Любое изменение положения дельты означает изменение уровня моря.",
+        "correction": "Активное русло также может сменить направление подачи осадка.",
+        "claim_ids": [
+          "geo.test_slatt.x1.03.c01",
+          "geo.test_slatt.x1.03.c02"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "При восстановлении истории роста дельты учитывают и изменение положения берега, и переключение русел. Помимо колебаний уровня моря на дельты действует переключение распределительных русел. Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Сравнение влияния русел и уровня моря условное; различие размеров низких и высоких дельт сформулировано как тенденция.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Форма маршрутов зависит и от внешней границы сети, и от переключения активных ветвей.",
+        "by_model": true,
+        "breaks_where": "Русло меняет положение за счёт переноса и накопления осадка, а не по команде маршрутизатора."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+        "manual_steps": "При восстановлении истории роста дельты учитывают и изменение положения берега, и переключение русел.",
+        "judgment_points": "Сравнение влияния русел и уровня моря условное; различие размеров низких и высоких дельт сформулировано как тенденция.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Любое изменение положения дельты означает изменение уровня моря.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.01",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.01"
+        }
+      ],
+      "unit_ids": [
+        "u410_03",
+        "u410_04"
+      ],
+      "pages": [
+        410
+      ],
+      "order": 5,
+      "title": "Что направляет рост дельты",
+      "threshold": true,
+      "why_here": {
+        "text": "Уточняем, как смена рукавов и относительный уровень моря меняют дельту.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "распределительное русло",
+        "дельта низкого стояния",
+        "шельф"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.04",
+      "section": "s9_4_1",
+      "title_book": "Процессы и отложения",
+      "title_beginner": "Как бары складываются в пояс",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П"
+      },
+      "order_rationale": {
+        "text": "Переходим от отдельных баров к песчаному поясу и различаем масштабы неоднородности.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Процессы и отложения",
+          "by_model": false
+        },
+        "main": {
+          "text": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Устьевые русла разветвляются, формируя многие бары, которые со временем образуют широкий пояс вдоль простирания.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Различают песчаный пояс из многих баров и неоднородности внутри отдельного бара.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Большой масштаб песчаного тела не гарантирует, что его свойства непрерывны на меньшем масштабе.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_1.04#c01",
+          "kind": "observation",
+          "text": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+          "quote": "Over a long period of time, repeated bifurcation of distributary mouth channels during progradation led to the development of a broad, strike-parallel sheet composed of numerous mouth bars",
+          "page": 416,
+          "unit_ids": [
+            "u416_02"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.04#c02",
+          "kind": "observation",
+          "text": "Даже внутри отдельного бара фации и проницаемость меняются и могут прерываться.",
+          "quote": "However, across a single bar, there are discontinuities in facies and permeability",
+          "page": 416,
+          "unit_ids": [
+            "u416_02"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "ветвление русла",
+          "definition": "Разделение потока по расходящимся рукавам",
+          "en": "channel bifurcation",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадка у выхода рукава",
+          "en": "mouth bar",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "простирание",
+          "definition": "Направление вдоль линии пересечения наклонной поверхности с горизонталью",
+          "en": "strike",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать флюид",
+          "en": "permeability",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения, выделенные по характерным признакам",
+          "en": "facies",
+          "page": 416,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Различают песчаный пояс из многих баров и неоднородности внутри отдельного бара. При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания. Даже внутри отдельного бара фации и проницаемость меняются и могут прерываться.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Большой масштаб песчаного тела не гарантирует, что его свойства непрерывны на меньшем масштабе.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Общий контур полигона не показывает разрывы между внутренними компонентами.",
+        "by_model": true,
+        "breaks_where": "Связь потоков зависит от реальных свойств породы и не читается как формальная связность полигона."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+        "manual_steps": "Различают песчаный пояс из многих баров и неоднородности внутри отдельного бара.",
+        "judgment_points": "Большой масштаб песчаного тела не гарантирует, что его свойства непрерывны на меньшем масштабе.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.01",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.01"
+        }
+      ],
+      "unit_ids": [
+        "u416_02"
+      ],
+      "pages": [
+        416
+      ],
+      "order": 6,
+      "title": "Как бары складываются в пояс",
+      "threshold": true,
+      "why_here": {
+        "text": "Переходим от отдельных баров к песчаному поясу и различаем масштабы неоднородности.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "ветвление русла",
+        "устьевой бар",
+        "простирание",
+        "проницаемость",
+        "фация"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.03",
+      "section": "s9_4_1",
+      "title_book": "Процессы и отложения",
+      "title_beginner": "Где бар лучше пропускает нефть",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "М"
+      },
+      "order_rationale": {
+        "text": "Проверяем неоднородность на кернах: сравним ближнюю и дальнюю части бара.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Процессы и отложения",
+          "by_model": false
+        },
+        "main": {
+          "text": "В песчанике устьевого бара пробурили горизонтальную скважину длиной 1000 ft. (300 m) и отобрали три керна.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Паводковые выносы из русла могли концентрировать лучше отсортированный песок у вершины и ближней к руслу кромки бара; дальше накапливались более мелкие пески и ил.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "По кернам горизонтальной скважины выделяют разновидности песка и сравнивают их проницаемость; затем сопоставляют с современными дельтами.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Паводковое происхождение лучших песков — интерпретация. Значения проницаемости относятся к этому примеру.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c01",
+          "kind": "observation",
+          "text": "В песчанике устьевого бара пробурили горизонтальную скважину длиной 1000 ft. (300 m) и отобрали три керна.",
+          "quote": "A 1000-ft. (300-m) horizontal well was drilled into a distributary mouth-bar reservoir sandstone, and three cores were obtained",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c02",
+          "kind": "observation",
+          "text": "Выделили семь песчаных разновидностей пород: от умеренно до очень хорошо отсортированных, мелко- и очень мелкозернистых.",
+          "quote": "Seven sandy lithofacies were identified in the core, all are moderately to very well sorted and fine to very fine-grained",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c03",
+          "kind": "observation",
+          "text": "Средняя горизонтальная проницаемость шести разновидностей — 12–40 md.",
+          "quote": "Six of the lithofacies exhibit average horizontal permeabilities of 12–40 md",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c04",
+          "kind": "observation",
+          "text": "Для седьмой, лучше всего отсортированной разновидности среднее равно 129 md.",
+          "quote": "The seventh, best-sorted lithofacies averages 129 md",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c05",
+          "kind": "observation",
+          "text": "Для объяснения происхождения отложений изучили современные речные дельты.",
+          "quote": "The origin of these lithofacies was determined by studying modern river-dominated delta processes and sediments",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c06",
+          "kind": "inference",
+          "text": "По интерпретации авторов, паводковые выносы из русел откладывали самый хорошо отсортированный и проницаемый песок у вершины и ближнего края бара.",
+          "quote": "Geoscientists believe that sediment plumes emanating from distributary channels during flood stage deposited the best-sorted and most-permeable sands (the seventh lithofacies) at the apex or most-proximal part of the distributary mouth bars, as well as along the proximal-bar margin (Fig. 9.16)",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c07",
+          "kind": "observation",
+          "text": "Дальше от русла при более слабом течении накапливались более мелкие, хуже отсортированные пески и ил.",
+          "quote": "Finer-grained, more poorly sorted sands and muds were deposited more distally, under lower flow-regime conditions",
+          "page": 415,
+          "unit_ids": [
+            "u415_02"
+          ],
+          "by": "author",
+          "page_pdf": 415,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_1.03#c08",
+          "kind": "observation",
+          "text": "Реконструкция показывает карты ассоциаций отложений трёх слоёв Romeo от ближней зоны к дальней.",
+          "quote": "Insets are facies association maps for three Romeo stratigraphic layers, from proximal (upper left) to distal (lower right)",
+          "page": 416,
+          "unit_ids": [
+            "u416_01"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [
+        {
+          "id": "geo.test_slatt.s9_4_1.03.e01",
+          "page": 415,
+          "title": "Керны вдоль устьевого бара",
+          "condition": "Скважина длиной 1000 ft. (300 m) и три керна.",
+          "steps": [
+            "Выделить семь песчаных литофаций.",
+            "Сравнить шесть средних значений 12–40 md с 129 md для самой хорошо отсортированной литофации.",
+            "По современному аналогу предположить, где могла отложиться лучшая разновидность."
+          ],
+          "result": "Вершина и ближний край перспективны в этой интерпретации, но весь бар не однороден.",
+          "numbers": [
+            "12",
+            "40",
+            "129",
+            "300",
+            "1000"
+          ],
+          "unit_ids": [
+            "u415_02",
+            "u416_01"
+          ],
+          "example_no": null,
+          "by": "author",
+          "page_pdf": 415
+        }
+      ],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадка у выхода рукава в водоём",
+          "en": "mouth bar",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "литофация",
+          "definition": "Разновидность отложений, выделяемая по свойствам породы",
+          "en": "lithofacies",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "сортировка",
+          "definition": "Однородность размера зёрен",
+          "en": "sorting",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "горизонтальная проницаемость",
+          "definition": "Способность породы пропускать флюид в горизонтальном направлении",
+          "en": "horizontal permeability",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "md",
+          "definition": "Миллидарси, единица проницаемости",
+          "en": "millidarcy",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Извлечённый при бурении образец породы",
+          "en": "core",
+          "page": 415,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.16",
+          "page": 416,
+          "caption": "**FIGURE 9.16** Schematic paleogeographic reconstruction of Romeo facies associations, as they existed during deposition. Insets are facies association maps for three Romeo stratigraphic layers, from proximal (upper left) to distal (lower right). After *Tye et al. (1999)*. Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u416_01",
+          "scan": "pages/p416.png"
+        }
+      ],
+      "misconception": {
+        "text": "Во всём устьевом баре песок одинаково проницаем.",
+        "correction": "Измерения в примере различаются для песков разных литофаций.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_1.03.c02",
+          "geo.test_slatt.s9_4_1.03.c03",
+          "geo.test_slatt.s9_4_1.03.c04",
+          "geo.test_slatt.s9_4_1.03.c06"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "По кернам горизонтальной скважины выделяют разновидности песка и сравнивают их проницаемость; затем сопоставляют с современными дельтами. Скважина длиной 1000 ft. (300 m) и три керна. Реконструкция показывает карты ассоциаций отложений трёх слоёв Romeo от ближней зоны к дальней.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Паводковое происхождение лучших песков — интерпретация. Значения проницаемости относятся к этому примеру.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Среднее по классу скрывает высокопроводящее подмножество; полезнее разбить выборку по признакам и пространству.",
+        "by_model": true,
+        "breaks_where": "Породу классифицируют не только по статистике: связь с течением проверяют геологически."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Скважина длиной 1000 ft. (300 m) и три керна.",
+        "manual_steps": "По кернам горизонтальной скважины выделяют разновидности песка и сравнивают их проницаемость; затем сопоставляют с современными дельтами.",
+        "judgment_points": "Паводковое происхождение лучших песков — интерпретация. Значения проницаемости относятся к этому примеру.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Во всём устьевом баре песок одинаково проницаем.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.04",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.04"
+        }
+      ],
+      "unit_ids": [
+        "u415_02",
+        "u416_01"
+      ],
+      "pages": [
+        415,
+        416
+      ],
+      "order": 7,
+      "title": "Где бар лучше пропускает нефть",
+      "threshold": true,
+      "why_here": {
+        "text": "Проверяем неоднородность на кернах: сравним ближнюю и дальнюю части бара.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "устьевой бар",
+        "литофация",
+        "сортировка",
+        "горизонтальная проницаемость",
+        "md",
+        "керн"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.01",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Где искать пески Прадхо-Бей",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "М"
+      },
+      "order_rationale": {
+        "text": "Связываем типы осадков с продуктивными зонами Прадхо-Бей.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Разветвление речных русел вниз по течению создаёт дельтовую равнину и устьевые бары, на вершинах и краях которых может накапливаться более крупный осадок.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "В зоне Romeo различают отложения фронта дельты и зоны перед ним, затем выделяют продуктивные русловые и баровые песчаники по разрезу.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "В масштабе месторождения наиболее продуктивны речные породы, а не нижняя дельтовая зона.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c01",
+          "kind": "observation",
+          "text": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+          "quote": "General geology of Prudhoe Bay field, Alaska, in the river-dominated deltaic deposits of the ancient Sagavanirktok River, was discussed in Chapter 7",
+          "page": 416,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c02",
+          "kind": "observation",
+          "text": "Наиболее продуктивные породы месторождения отложены разветвлённой рекой.",
+          "quote": "The most prolific reservoir rocks in the field are of fluvial, braided-river origin",
+          "page": 416,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c03",
+          "kind": "observation",
+          "text": "Нижняя зона Romeo состоит преимущественно из отложений фронта дельты и зоны перед ним; для добычи преимущественно используют горизонтальные скважины.",
+          "quote": "The lower stratigraphic interval, called the Romeo Zone (Figs. 9.16–9.18), is composed mainly of river-dominated delta-front and prodelta deposits (Fig. 7.22 and 7.23, and Fig. 9.17) that in recent years have been targeted for production, mainly from horizontal wells (Tye and Hickey, 2001; Tye et al., 1999)",
+          "page": 416,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c04",
+          "kind": "observation",
+          "text": "Продуктивные дельтовые отложения — песчаники распределительных русел и устьевых баров.",
+          "quote": "Productive deltaic facies are distributary-channel and distributary mouth-bar sandstones (Figs. 9.18 and 9.19)",
+          "page": 416,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c05",
+          "kind": "observation",
+          "text": "Пологие мелкозернистые речные системы выдвигались на юго-восток и протянулись примерно на 60 miles (100 km) от источника осадка.",
+          "quote": "The depositional history depicts southeastward progradation of low-gradient, fine-grained fluvial systems that extended about 60 miles (100 km) from their source area",
+          "page": 416,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 416,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c06",
+          "kind": "observation",
+          "text": "Соседние речные русла разделяли илистые поймы.",
+          "quote": "fluvial channels were separated laterally by muddy floodplains",
+          "page": 417,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c07",
+          "kind": "observation",
+          "text": "Вниз по течению русла разветвлялись, формируя дельтовую равнину и устьевые бары.",
+          "quote": "In the down-current direction, fluvial channels bifurcated and formed a delta plain and associated distributary mouth bars (Fig. 9.16)",
+          "page": 417,
+          "unit_ids": [
+            "u416_04"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c08",
+          "kind": "observation",
+          "text": "При типичном ветвлении русла более крупные частицы концентрируются на вершинах баров ниже точки разделения потока и по краям баров.",
+          "quote": "Distributary-mouth channels typically bifurcate as shown, and the bifurcations segregate lithofacies by concentrating the coarser-grained sediment on the bar apices downstream of the bifurcation point and along bar margins",
+          "page": 417,
+          "unit_ids": [
+            "u417_01"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.01#c09",
+          "kind": "observation",
+          "text": "Каротаж естественной радиоактивности в скважине 07-06 иллюстрирует последовательность пород зоны Romeo.",
+          "quote": "Typical stacking pattern and gamma-ray response of Romeo lithofacies and facies associations in well 07-06",
+          "page": 419,
+          "unit_ids": [
+            "u419_01"
+          ],
+          "by": "author",
+          "page_pdf": 419,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "фронт дельты",
+          "definition": "Наклонная подводная часть перед дельтовой равниной",
+          "en": "delta front",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Более дальняя подводная зона дельты",
+          "en": "prodelta",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Осадочное тело у выхода рукава",
+          "en": "mouth bar",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Измерение естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "пойма",
+          "definition": "Площадь рядом с рекой, затапливаемая при разливах",
+          "en": "floodplain",
+          "page": 416,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.17",
+          "page": 417,
+          "caption": "FIGURE 9.17 Typical sediment distribution pattern and distributary-mouth-bar cross-section. Distributary-mouth channels typically bifurcate as shown, and the bifurcations segregate lithofacies by concentrating the coarser-grained sediment on the bar apices downstream of the bifurcation point and along bar margins. Modified from Tye and Hickey (2001). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u417_01",
+          "scan": "pages/p417.png"
+        },
+        {
+          "number": "9.19",
+          "page": 419,
+          "caption": "FIGURE 9.19 Typical stacking pattern and gamma-ray response of Romeo lithofacies and facies associations in well 07-06. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u419_01",
+          "scan": "pages/p419.png"
+        }
+      ],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "В зоне Romeo различают отложения фронта дельты и зоны перед ним, затем выделяют продуктивные русловые и баровые песчаники по разрезу. Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске. Каротаж естественной радиоактивности в скважине 07-06 иллюстрирует последовательность пород зоны Romeo.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "В масштабе месторождения наиболее продуктивны речные породы, а не нижняя дельтовая зона.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Иерархия классов: внутри всего месторождения важен один тип, внутри нижней зоны — другие типы песков.",
+        "by_model": true,
+        "breaks_where": "Продуктивность не выводится непосредственно из метки класса."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+        "manual_steps": "В зоне Romeo различают отложения фронта дельты и зоны перед ним, затем выделяют продуктивные русловые и баровые песчаники по разрезу.",
+        "judgment_points": "В масштабе месторождения наиболее продуктивны речные породы, а не нижняя дельтовая зона.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.03",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.03"
+        }
+      ],
+      "unit_ids": [
+        "u416_04",
+        "u417_01",
+        "u419_01"
+      ],
+      "pages": [
+        416,
+        417,
+        419
+      ],
+      "order": 8,
+      "title": "Где искать пески Прадхо-Бей",
+      "threshold": false,
+      "why_here": {
+        "text": "Связываем типы осадков с продуктивными зонами Прадхо-Бей.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "фронт дельты",
+        "продельта",
+        "устьевой бар",
+        "гамма-каротаж",
+        "пойма"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.02",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Как меняется разрез зоны Romeo",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "Р"
+      },
+      "order_rationale": {
+        "text": "После знакомства с месторождением проверяем, как изменилась корреляция разреза.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Смещение дельтовых обстановок формирует полого погружающиеся песчаные клинья, переслаивающиеся с глинистыми породами.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Сравнивают корреляции и проверяют, какая лучше согласуется с историей добычи.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Сходство породы не позволяет увидеть пологий наклон и разрывы само по себе.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c01",
+          "kind": "observation",
+          "text": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+          "quote": "River-dominated deposition resulted in significant lateral and vertical facies changes, which caused a high degree of lateral and vertical heterogeneity in the resulting reservoir",
+          "page": 417,
+          "unit_ids": [
+            "u417_02"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c02",
+          "kind": "observation",
+          "text": "Прежние исследования сопоставляли песчаники и глинистые породы по признакам пород.",
+          "quote": "Past reservoir characterization studies of this delta complex had correlated sandstone and shale units on the basis of lithostratigraphic features",
+          "page": 417,
+          "unit_ids": [
+            "u417_02"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c03",
+          "kind": "observation",
+          "text": "Корреляция по геологическому времени лучше согласовалась с историей добычи.",
+          "quote": "However, Tye et al. (1999) were better able to match well correlations with production history using a sequence- or time-stratigraphic correlation scheme (Fig. 9.18)",
+          "page": 417,
+          "unit_ids": [
+            "u417_02"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c04",
+          "kind": "observation",
+          "text": "Неучтённый пологий наклон песчаников приводил к ошибочной корреляции.",
+          "quote": "Prior to this sequence stratigraphic interpretation, the gently dipping nature of these reservoir sandstones was unrecognized and led to improper correlations",
+          "page": 417,
+          "unit_ids": [
+            "u417_02"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c05",
+          "kind": "observation",
+          "text": "При корреляции по породам прерывистым выглядит только интервал IA.",
+          "quote": "In the lithostratigraphic cross-section, only the interval IA is discontinuous",
+          "page": 418,
+          "unit_ids": [
+            "u418_01"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c06",
+          "kind": "observation",
+          "text": "В корреляции по времени полого погружающиеся нижние интервалы показывают прилегание наклонных слоёв к нижележащей поверхности.",
+          "quote": "In the sequence stratigraphic cross-section, downlap patterns are evident by the gently dipping nature of the basal intervals",
+          "page": 418,
+          "unit_ids": [
+            "u418_01"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.02#c07",
+          "kind": "observation",
+          "text": "Песчаные дельтовые клинья не образуют сплошных плит, а переслаиваются по падению с глинистыми отложениями залива, продельты и шельфа.",
+          "quote": "The poststudy interpretation shows the stratigraphy is not tabular, instead, sand-prone deltaic wedges interfinger downdip with bay and prodelta/shelf shales. *After Tye et al. (1999)",
+          "page": 418,
+          "unit_ids": [
+            "u418_01"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "фация",
+          "definition": "Отложения одной обстановки с характерными признаками",
+          "en": "facies",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление интервалов разреза",
+          "en": "correlation",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Подводная часть дельты вдали от берега",
+          "en": "prodelta",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная часть морского бассейна",
+          "en": "shelf",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "падение пласта",
+          "definition": "Направление максимального наклона слоя",
+          "en": "dip",
+          "page": 417,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.18",
+          "page": 418,
+          "caption": "**FIGURE 9.18** Comparison of prestudy lithostratigraphic correlations (upper cross-section) and poststudy sequence stratigraphic correlations and interpretations of the Romeo interval (lower cross-section). In the lithostratigraphic cross-section, only the interval IA is discontinuous. In the sequence stratigraphic cross-section, downlap patterns are evident by the gently dipping nature of the basal intervals. The poststudy interpretation shows the stratigraphy is not tabular, instead, sand-prone deltaic wedges interfinger downdip with bay and prodelta/shelf shales. *After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.*",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u418_01",
+          "scan": "pages/p418.png"
+        }
+      ],
+      "misconception": {
+        "text": "Если два песчаника похожи, они обязательно лежат в одной сплошной плите.",
+        "correction": "По временной корреляции видны наклонные клинья, разделяемые глинистыми отложениями.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.02.c04",
+          "geo.test_slatt.s9_4_2.02.c05",
+          "geo.test_slatt.s9_4_2.02.c06",
+          "geo.test_slatt.s9_4_2.02.c07"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Сравнивают корреляции и проверяют, какая лучше согласуется с историей добычи. Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях. Песчаные дельтовые клинья не образуют сплошных плит, а переслаиваются по падению с глинистыми отложениями залива, продельты и шельфа.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Сходство породы не позволяет увидеть пологий наклон и разрывы само по себе.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Сравнить два результата связывания записей по независимым данным, а не по тем же полям, на которых строилась связь.",
+        "by_model": true,
+        "breaks_where": "История добычи зависит не только от геометрии песчаных тел."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+        "manual_steps": "Сравнивают корреляции и проверяют, какая лучше согласуется с историей добычи.",
+        "judgment_points": "Сходство породы не позволяет увидеть пологий наклон и разрывы само по себе.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Если два песчаника похожи, они обязательно лежат в одной сплошной плите.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_2.01",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_2.01"
+        },
+        {
+          "to": "geo.test_slatt.x1.01",
+          "type": "example_of",
+          "target": "geo.test_slatt.x1.01"
+        }
+      ],
+      "unit_ids": [
+        "u417_02",
+        "u418_01"
+      ],
+      "pages": [
+        417,
+        418
+      ],
+      "order": 9,
+      "title": "Как меняется разрез зоны Romeo",
+      "threshold": true,
+      "why_here": {
+        "text": "После знакомства с месторождением проверяем, как изменилась корреляция разреза.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "фация",
+        "корреляция",
+        "продельта",
+        "шельф",
+        "падение пласта"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_3.01",
+      "section": "s9_4_3",
+      "title_book": "Месторождение Капарук-Ривер, Аляска, США",
+      "title_beginner": "Шесть песчаных тел Капарука",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П"
+      },
+      "order_rationale": {
+        "text": "Проверяем ту же идею на другом месторождении: отдельные песчаные тела вместо сплошного пласта.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Месторождение Капарук-Ривер, Аляска, США",
+          "by_model": false
+        },
+        "main": {
+          "text": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Вместо единого песчаного слоя интервал A содержит песчаные тела отдельных этапов выдвижения, разделённые морскими глинистыми отложениями.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c01",
+          "kind": "observation",
+          "text": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+          "quote": "A similar example is provided by the Cretaceous Kuparuk River field on the North Slope of Alaska",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c02",
+          "kind": "observation",
+          "text": "Автор называет его вторым по величине нефтяным месторождением Северной Америки с 6BBSTOOIP.",
+          "quote": "This is the second largest oil field in North America, with 6BBSTOOIP",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c03",
+          "kind": "observation",
+          "text": "К 2006 добыли 2BBO.",
+          "quote": "As of 2006, 2BBO had been produced",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c04",
+          "kind": "observation",
+          "text": "Добычу ведут из интервалов A и C.",
+          "quote": "Production is from two intervals, named the A and C units",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c05",
+          "kind": "observation",
+          "text": "В начале разработки каждый интервал считали боковым непрерывным песчаником.",
+          "quote": "In the early days of field development each unit was considered a laterally continuous sandstone body",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c06",
+          "kind": "observation",
+          "text": "В интервале A выделили шесть отдельных песчаных тел, выдвигавшихся к морю и разделённых глинами морских наступлений.",
+          "quote": "However, sequence stratigraphy correlations revealed that the A unit consists of six separate sandstone bodies that prograded in the seaward (northeast) direction, each separated by a high-frequency transgressive marine shale (Fig. 9.25)",
+          "page": 422,
+          "unit_ids": [
+            "u422_03"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_3.01#c07",
+          "kind": "observation",
+          "text": "Рисунок показывает гамма-каротаж, последовательное выдвижение тел A1–A6 и их положение с учётом разломов.",
+          "quote": "Kuparuk River unit A showing a typical gamma-ray log with units A3–A6, the progradational pattern from northwest to southeast of each successively younger unit (units A1–A6), a schematic illustration of the progradational pattern of the six units, and the units (different colors) with faults added",
+          "page": 423,
+          "unit_ids": [
+            "u423_01"
+          ],
+          "by": "author",
+          "page_pdf": 423,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "трансгрессия",
+          "definition": "Наступление моря на сушу",
+          "en": "transgression",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "проградация",
+          "definition": "Выдвижение осадочного тела в сторону моря",
+          "en": "progradation",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Запись естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "BBSTOOIP",
+          "definition": "Миллиарды баррелей исходной нефти в пласте",
+          "en": null,
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "BBO",
+          "definition": "Миллиарды баррелей нефти",
+          "en": null,
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "разлом",
+          "definition": "Нарушение со смещением пород",
+          "en": "fault",
+          "page": 422,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.25",
+          "page": 423,
+          "caption": "FIGURE 9.25 Kuparuk River unit A showing a typical gamma-ray log with units A3–A6, the progradational pattern from northwest to southeast of each successively younger unit (units A1–A6), a schematic illustration of the progradational pattern of the six units, and the units (different colors) with faults added. After Seifert et al. (2006).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u423_01",
+          "scan": "pages/p423.png"
+        }
+      ],
+      "misconception": {
+        "text": "Интервал A — один сплошной песчаный пласт.",
+        "correction": "По временной корреляции в нём выделены шесть отдельных тел, между которыми залегают морские глины.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_3.01.c05",
+          "geo.test_slatt.s9_4_3.01.c06"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов. Капарук — месторождение мелового возраста на северном склоне Аляски. Рисунок показывает гамма-каротаж, последовательное выдвижение тел A1–A6 и их положение с учётом разломов.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "По общему ярлыку видно один набор записей, но по временным отметкам видны отдельные партии.",
+        "by_model": true,
+        "breaks_where": "Границы геологических тел и время определяют интерпретацией, не метками загрузки."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+        "manual_steps": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов.",
+        "judgment_points": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Интервал A — один сплошной песчаный пласт.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_2.02",
+          "type": "example_of",
+          "target": "geo.test_slatt.s9_4_2.02"
+        }
+      ],
+      "unit_ids": [
+        "u422_03",
+        "u423_01"
+      ],
+      "pages": [
+        422,
+        423
+      ],
+      "order": 10,
+      "title": "Шесть песчаных тел Капарука",
+      "threshold": true,
+      "why_here": {
+        "text": "Проверяем ту же идею на другом месторождении: отдельные песчаные тела вместо сплошного пласта.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "трансгрессия",
+        "проградация",
+        "гамма-каротаж",
+        "BBSTOOIP",
+        "BBO",
+        "разлом"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.03",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Как выбрать траекторию скважины",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "П"
+      },
+      "order_rationale": {
+        "text": "Используем боковые изменения проницаемости для выбора траектории скважины.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Высокопроницаемые разновидности песков распределены по бару неравномерно.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Боковое распределение пород и проницаемости изучают по керну горизонтальной скважины и учитывают при выборе траектории.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Вывод о синусоидальной траектории относится к геометрии этого примера; стандартные вертикальные керны не дали ту же информацию по всей длине бара.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.03#c01",
+          "kind": "observation",
+          "text": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+          "quote": "Insights gained into the formation of distributary mouth bars have led to improved recovery in the Prudhoe Bay field",
+          "page": 417,
+          "unit_ids": [
+            "u417_03"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.03#c02",
+          "kind": "observation",
+          "text": "Горизонтальный керн дал боковые сведения о барах; синусоидальная горизонтальная траектория могла пересечь больше высокопроницаемых отложений, чем обычная.",
+          "quote": "Detailed information on the lateral attributes of the mouth bars (including permeability), gained from the horizontal, cored well rather than from interpretations of standard vertical cores, provided the knowledge that a sinusoidal, horizontal well path would contact more high-permeability lithofacies than would a conventional well",
+          "page": 417,
+          "unit_ids": [
+            "u417_03"
+          ],
+          "by": "author",
+          "page_pdf": 417,
+          "source_kind": "text",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "траектория",
+          "definition": "Линия движения ствола скважины в породе",
+          "en": "well path",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Образец породы, извлечённый при бурении",
+          "en": "core",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадков у выхода рукава",
+          "en": "mouth bar",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать флюид",
+          "en": "permeability",
+          "page": 417,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Боковое распределение пород и проницаемости изучают по керну горизонтальной скважины и учитывают при выборе траектории. Понимание образования устьевых баров повысило извлечение в Прадхо-Бей. Горизонтальный керн дал боковые сведения о барах; синусоидальная горизонтальная траектория могла пересечь больше высокопроницаемых отложений, чем обычная.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Вывод о синусоидальной траектории относится к геометрии этого примера; стандартные вертикальные керны не дали ту же информацию по всей длине бара.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Выбор пути в пространстве с неодинаковым качеством данных: оптимальный маршрут пересекает больше целевых областей.",
+        "by_model": true,
+        "breaks_where": "Пробуренный путь нельзя мгновенно изменить, а свойства породы известны неполно."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+        "manual_steps": "Боковое распределение пород и проницаемости изучают по керну горизонтальной скважины и учитывают при выборе траектории.",
+        "judgment_points": "Вывод о синусоидальной траектории относится к геометрии этого примера; стандартные вертикальные керны не дали ту же информацию по всей длине бара.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_1.03",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_1.03"
+        },
+        {
+          "to": "geo.test_slatt.s9_4_2.02",
+          "type": "to_data",
+          "target": "geo.test_slatt.s9_4_2.02"
+        }
+      ],
+      "unit_ids": [
+        "u417_03"
+      ],
+      "pages": [
+        417
+      ],
+      "order": 11,
+      "title": "Как выбрать траекторию скважины",
+      "threshold": false,
+      "why_here": {
+        "text": "Используем боковые изменения проницаемости для выбора траектории скважины.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "траектория",
+        "керн",
+        "устьевой бар",
+        "проницаемость"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.04",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Глинистый барьер и приток воды",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Пр"
+      },
+      "order_rationale": {
+        "text": "Дополняем выбор песчаника проверкой непрерывности глинистого барьера.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Одни глинистые пласты непрерывны на площади больше масштаба сетки скважин; другие прерываются из-за размыва вышележащим песчаником или выклинивания.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Непрерывные глинистые пласты препятствуют вертикальному течению и направляют воду, но размыв или выклинивание открывают связь между соседними песками.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Ограничивают перфорацию нужным интервалом и проверяют глинистую покрышку, прежде чем целиться боковым стволом в песок под ней.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Глинистую породу нужно не только обнаружить, но и проверить её непрерывность. Предположение о нефти под глиной в примере проверили бурением.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c01",
+          "kind": "observation",
+          "text": "Одни глинистые пласты непрерывны на площади больше масштаба сетки скважин; другие прерываются из-за размыва вышележащим песчаником или выклинивания.",
+          "quote": "areas larger than that of the well spacing, but other shales are less continuous because of erosion by an overlying sandstone or by stratigraphic pinch-out (Fig. 9.20)",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c02",
+          "kind": "observation",
+          "text": "Непрерывные глины препятствуют вертикальному перетоку и направляют воду при заводнении.",
+          "quote": "Continuous shales create vertical flow barriers and help to focus a waterflood",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c03",
+          "kind": "observation",
+          "text": "Перфорация только дельтовых песчаников устранила их конкуренцию за воду с более проницаемыми речными песчаниками выше.",
+          "quote": "By restricting perforations in horizontal wells to deltaic sandstones, developers avoided competition for water between these lower-permeability sandstones and overlying higher-permeability fluvial sandstones (Figs. 9.21 and 9.22) (Tye et al., 1999)",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c04",
+          "kind": "observation",
+          "text": "Вертикальная скважина стабильно давала свыше 300 BOPD с мая 1992 по январь 1993.",
+          "quote": "One innovative application of the understanding of shale continuity was applied to a vertical well that had maintained a steady output in excess of 300 BOPD between May 1992 and January 1993",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c05",
+          "kind": "inference",
+          "text": "Рост притока воды указывал на вероятное сильное снижение добычи нефти в будущем.",
+          "quote": "During that time, water production increased, indicating that oil production in that well would decline considerably over time (Fig. 9.23)",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c06",
+          "kind": "inference",
+          "text": "На глубине 8950 ft. выделили покрышку: под ней могла сохраниться нефть в дельтовом песчанике.",
+          "quote": "A shale interval at 8950 ft. was mapped as a sealing shale, which suggests that oil might be trapped in an underlying deltaic sandstone",
+          "page": 418,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 418,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.04#c07",
+          "kind": "observation",
+          "text": "В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+          "quote": "well was drilled as an unconventional completion into the sandstone, and it led to new production of approximately 400 BOPD (Fig. 9.23)",
+          "page": 419,
+          "unit_ids": [
+            "u417_04"
+          ],
+          "by": "author",
+          "page_pdf": 419,
+          "source_kind": "text",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [
+        {
+          "id": "geo.test_slatt.s9_4_2.04.e01",
+          "page": 417,
+          "title": "Как обойти растущий приток воды",
+          "condition": "Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше.",
+          "steps": [
+            "Выделить по разрезу покрышку на 8950 ft.",
+            "Проверить предположение бурением бокового горизонтального ствола в песчаник под покрышкой."
+          ],
+          "result": "Новый ствол дал примерно 400 BOPD в этом примере.",
+          "numbers": [
+            "300",
+            "400",
+            "8950"
+          ],
+          "unit_ids": [
+            "u417_04"
+          ],
+          "example_no": null,
+          "by": "author",
+          "page_pdf": 417
+        }
+      ],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "перфорация",
+          "definition": "Отверстия, создающие связь между скважиной и выбранным пластом",
+          "en": "perforation",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "покрышка",
+          "definition": "Слабопроницаемый слой, препятствующий перемещению флюида",
+          "en": "seal",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "выклинивание",
+          "definition": "Постепенное уменьшение толщины слоя до исчезновения",
+          "en": "pinch-out",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "BOPD",
+          "definition": "Баррелей нефти в сутки",
+          "en": "barrels of oil per day",
+          "page": 418,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Ограничивают перфорацию нужным интервалом и проверяют глинистую покрышку, прежде чем целиться боковым стволом в песок под ней. Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше. В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Глинистую породу нужно не только обнаружить, но и проверить её непрерывность. Предположение о нефти под глиной в примере проверили бурением.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "Изоляция соседних маршрутов работает только пока разделитель непрерывен.",
+        "by_model": true,
+        "breaks_where": "Естественный барьер может прерываться незаметно между измерениями."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше.",
+        "manual_steps": "Ограничивают перфорацию нужным интервалом и проверяют глинистую покрышку, прежде чем целиться боковым стволом в песок под ней.",
+        "judgment_points": "Глинистую породу нужно не только обнаружить, но и проверить её непрерывность. Предположение о нефти под глиной в примере проверили бурением.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_2.02",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_2.02"
+        }
+      ],
+      "unit_ids": [
+        "u417_04"
+      ],
+      "pages": [
+        418,
+        419
+      ],
+      "order": 12,
+      "title": "Глинистый барьер и приток воды",
+      "threshold": true,
+      "why_here": {
+        "text": "Дополняем выбор песчаника проверкой непрерывности глинистого барьера.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "заводнение",
+        "перфорация",
+        "покрышка",
+        "выклинивание",
+        "BOPD"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.06",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Где глинистый слой прерывается",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Р"
+      },
+      "order_rationale": {
+        "text": "По корреляции и результатам добычи проверяем, где барьер действительно работает.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Непрерывная глина отделяет соседние коллекторы; там, где осадок не накопился или был размыт, экран отсутствует.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Сопоставляют каротаж, прослеживают каждый глинистый слой и используют проверенный барьер при выборе глубины бокового ствола.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Развитие каждого экрана неодинаково; вывод по одной скважине нельзя переносить на всю площадь.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c01",
+          "kind": "observation",
+          "text": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+          "quote": "Part of a north–south wire line log correlation across the Sadlerochit Sand at Prudhoe Bay field",
+          "page": 420,
+          "unit_ids": [
+            "u420_01"
+          ],
+          "by": "author",
+          "page_pdf": 420,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c02",
+          "kind": "observation",
+          "text": "Цветом различены пойма, речные и распределительные русла, устьевые бары, фронт, продельта и шельф.",
+          "quote": "Tan is floodplain facies. Yellow is fluvial/distributary-channel facies. White is distributary mouth bar/delta front and prodelta/shelf facies.",
+          "page": 420,
+          "unit_ids": [
+            "u420_01"
+          ],
+          "by": "author",
+          "page_pdf": 420,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c03",
+          "kind": "observation",
+          "text": "Схема показывает три разных по положению глинистых пласта на востоке Прадхо-Бей.",
+          "quote": "Generalized distribution of three stratigraphically distinct shales in the eastern part of Prudhoe Bay field",
+          "page": 420,
+          "unit_ids": [
+            "u420_02"
+          ],
+          "by": "author",
+          "page_pdf": 420,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c04",
+          "kind": "observation",
+          "text": "Местами все три пласта отсутствуют из-за отсутствия накопления или размыва; в других местах все три разделяют коллекторы.",
+          "quote": "In places, all three shales are absent as a result of nondeposition or erosion, whereas in other locations, all three shales separate adjacent reservoir layers",
+          "page": 420,
+          "unit_ids": [
+            "u420_02"
+          ],
+          "by": "author",
+          "page_pdf": 420,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c05",
+          "kind": "inference",
+          "text": "Такое разрешение разреза нужно, чтобы управлять гравитационным стеканием, заводнением и методами увеличения нефтеотдачи.",
+          "quote": "Only with this level of stratigraphic detail can gravity drainage, waterflood, and enhanced oil recovery depletion mechanisms be effectively managed",
+          "page": 420,
+          "unit_ids": [
+            "u420_02"
+          ],
+          "by": "author",
+          "page_pdf": 420,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c06",
+          "kind": "observation",
+          "text": "Скважину 09-35A спроектировали для нижних песчаников Romeo без конкуренции с верхними интервалами и с защитой от воды глиной на 8936 ft. (2725 m).",
+          "quote": "Well 09-35A was designed to produce from the basal Romeo sandstones without competition from stratigraphically higher perforations and to use the shale at 8936 ft. (2725 m) as a barrier from slumping water",
+          "page": 421,
+          "unit_ids": [
+            "u421_02"
+          ],
+          "by": "author",
+          "page_pdf": 421,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c07",
+          "kind": "observation",
+          "text": "На гамма-каротаже штриховка обозначает продуктивные песчаники.",
+          "quote": "The stippled pattern on the gamma-ray log shows the productive sandstones",
+          "page": 421,
+          "unit_ids": [
+            "u421_02"
+          ],
+          "by": "author",
+          "page_pdf": 421,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.06#c08",
+          "kind": "observation",
+          "text": "Сравнительный график на рисунке для 09-35A показывает небольшое увеличение дебита нефти и сильное снижение добычи воды.",
+          "quote": "The graph in the upper left (a) compares oil and water production from the two wells, with a slight increase in oil rate and a dramatic decrease in water production from well 09-35A",
+          "page": 421,
+          "unit_ids": [
+            "u421_02"
+          ],
+          "by": "author",
+          "page_pdf": 421,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "гравитационное стекание",
+          "definition": "Движение флюидов под влиянием разности плотностей",
+          "en": "gravity drainage",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Запись естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "definition": "Объём добываемого флюида за единицу времени",
+          "en": "rate",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Удалённая подводная часть дельты",
+          "en": "prodelta",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная окраина материка",
+          "en": "shelf",
+          "page": 420,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.20",
+          "page": 420,
+          "caption": "FIGURE 9.20 Part of a north–south wire line log correlation across the Sadlerochit Sand at Prudhoe Bay field. Tan is floodplain facies. Yellow is fluvial/distributary-channel facies. White is distributary mouth bar/delta front and prodelta/shelf facies. a, Romeo interval; b, Tango interval; c, Victor interval; d, X-ray interval; and e, Zulu interval. Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u420_01",
+          "scan": "pages/p420.png"
+        },
+        {
+          "number": "9.21",
+          "page": 420,
+          "caption": "FIGURE 9.21 Generalized distribution of three stratigraphically distinct shales in the eastern part of Prudhoe Bay field. In places, all three shales are absent as a result of nondeposition or erosion, whereas in other locations, all three shales separate adjacent reservoir layers. Only with this level of stratigraphic detail can gravity drainage, waterflood, and enhanced oil recovery depletion mechanisms be effectively managed. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u420_02",
+          "scan": "pages/p420.png"
+        },
+        {
+          "number": "9.23",
+          "page": 421,
+          "caption": "FIGURE 9.23 Wire line logs for the original well 09-35, and a horizontal sidetrack well 09-35A (b). Well 09-35A was designed to produce from the basal Romeo sandstones without competition from stratigraphically higher perforations and to use the shale at 8936 ft. (2725 m) as a barrier from slumping water. The stippled pattern on the gamma-ray log shows the productive sandstones. The graph in the upper left (a) compares oil and water production from the two wells, with a slight increase in oil rate and a dramatic decrease in water production from well 09-35A. Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u421_02",
+          "scan": "pages/p421.png"
+        }
+      ],
+      "misconception": {
+        "text": "Если глина есть в одной скважине, она отделяет пласты по всему месторождению.",
+        "correction": "Три глинистых слоя в примере местами присутствуют вместе, а местами все исчезают.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.06.c03",
+          "geo.test_slatt.s9_4_2.06.c04"
+        ],
+        "by": "model",
+        "by_model": true,
+        "ref": null
+      },
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Сопоставляют каротаж, прослеживают каждый глинистый слой и используют проверенный барьер при выборе глубины бокового ствола. Каротажный разрез Sadlerochit Sand проведён с севера на юг. Сравнительный график на рисунке для 09-35A показывает небольшое увеличение дебита нефти и сильное снижение добычи воды.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Развитие каждого экрана неодинаково; вывод по одной скважине нельзя переносить на всю площадь.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "На схеме доступа надо проверить все места, где разделяющее правило отсутствует, а не только точки, где оно присутствует.",
+        "by_model": true,
+        "breaks_where": "Глинистые экраны нельзя задать административно: геолог устанавливает их по разреженным наблюдениям."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+        "manual_steps": "Сопоставляют каротаж, прослеживают каждый глинистый слой и используют проверенный барьер при выборе глубины бокового ствола.",
+        "judgment_points": "Развитие каждого экрана неодинаково; вывод по одной скважине нельзя переносить на всю площадь.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Если глина есть в одной скважине, она отделяет пласты по всему месторождению.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_2.04",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_2.04"
+        }
+      ],
+      "unit_ids": [
+        "u420_01",
+        "u420_02",
+        "u421_02"
+      ],
+      "pages": [
+        420,
+        421
+      ],
+      "order": 13,
+      "title": "Где глинистый слой прерывается",
+      "threshold": true,
+      "why_here": {
+        "text": "По корреляции и результатам добычи проверяем, где барьер действительно работает.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "гравитационное стекание",
+        "заводнение",
+        "гамма-каротаж",
+        "дебит",
+        "продельта",
+        "шельф"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.05",
+      "section": "s9_4_2",
+      "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+      "title_beginner": "Скважина под защитой глины",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н"
+      },
+      "order_rationale": {
+        "text": "В последнем примере объединяем выбор траектории и проверку защиты от газа.",
+        "by": "model"
+      },
+      "layers": {
+        "topic": {
+          "text": "Пример коллектора: месторождение Прадхо-Бей",
+          "by_model": false
+        },
+        "main": {
+          "text": "Скважину 11-30 провели ниже глины залива, защищавшей от газа сверху.",
+          "by_model": false
+        },
+        "mechanism": {
+          "text": "Непрерывный глинистый слой залива защищает целевой песчаник от газа сверху.",
+          "by_model": false
+        },
+        "practice": {
+          "text": "Интерпретируют отложения по соседним скважинам, затем проводят горизонтальный ствол по песчанику под глинистым экраном.",
+          "by_model": false
+        },
+        "nuances": {
+          "text": "Весь участок в песчанике не обязательно продуктивен. Результаты относятся к скважине 11-30.",
+          "by_model": false
+        },
+        "deeper": []
+      },
+      "procedure": [],
+      "claims": [
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c01",
+          "kind": "observation",
+          "text": "Скважину 11-30 провели ниже глины залива, защищавшей от газа сверху.",
+          "quote": "The horizontal well 11-30 was drilled beneath a bay shale that acted as a shield from the overlying gas cap. 894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+          "page": 419,
+          "unit_ids": [
+            "u419_02"
+          ],
+          "by": "author",
+          "page_pdf": 419,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c02",
+          "kind": "observation",
+          "text": "Весь горизонтальный участок 894 ft. (272 m) лежал в целевом песчанике; 475 ft. (144 m) отнесли к продуктивной части.",
+          "quote": "894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+          "page": 419,
+          "unit_ids": [
+            "u419_02"
+          ],
+          "by": "author",
+          "page_pdf": 419,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c03",
+          "kind": "observation",
+          "text": "К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении.",
+          "quote": "stabilized at 1600 BOPD, with a low gas/oil ratio (Tye et al., 1999)",
+          "page": 422,
+          "unit_ids": [
+            "u419_02"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c04",
+          "kind": "inference",
+          "text": "Детальное описание и подобные решения продлевают жизнь месторождения.",
+          "quote": "Detailed characterizations and applications such as these are increasing the life of this giant field",
+          "page": 422,
+          "unit_ids": [
+            "u419_02"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "text",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c05",
+          "kind": "observation",
+          "text": "Горизонтальная скважина проходит внутри русловых и баровых отложений, разделённых глинами.",
+          "quote": "Horizontal well drilled within distributary-channel and mouth-bar facies separated by shales",
+          "page": 421,
+          "unit_ids": [
+            "u421_01"
+          ],
+          "by": "author",
+          "page_pdf": 421,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c06",
+          "kind": "observation",
+          "text": "Глины разделяют песчаники на отсеки и ограждают от газа газовой шапки.",
+          "quote": "The shales compartmentalize the sandstones and shield against gas-cap encroachment",
+          "page": 421,
+          "unit_ids": [
+            "u421_01"
+          ],
+          "by": "author",
+          "page_pdf": 421,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c07",
+          "kind": "observation",
+          "text": "Разрез по скважинам 11-28 и 11-23 использовали для планирования скважины 11-30.",
+          "quote": "Schematic cross-section illustrating facies association interpretations between wells 11-28 and 11-23 and the predrill strategy for placing well 11-30",
+          "page": 422,
+          "unit_ids": [
+            "u422_01"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c08",
+          "kind": "observation",
+          "text": "Горизонтальная траектория 11-30 перпендикулярна плоскости разреза.",
+          "quote": "The horizontal trajectory of 11-30 is perpendicular to the cross-section in a",
+          "page": 422,
+          "unit_ids": [
+            "u422_01"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "figure_caption",
+          "by_model": false
+        },
+        {
+          "id": "geo.test_slatt.s9_4_2.05#c09",
+          "kind": "observation",
+          "text": "Ствол проходит через устьевые песчаники под непрерывной глиной залива.",
+          "quote": "Wellbore path through the distributary-mouth-bar sandstones beneath a continuous bay shale is shown in b. *Modified from Tye et al. (1999)",
+          "page": 422,
+          "unit_ids": [
+            "u422_01"
+          ],
+          "by": "author",
+          "page_pdf": 422,
+          "source_kind": "figure_caption",
+          "by_model": false
+        }
+      ],
+      "worked_examples": [
+        {
+          "id": "geo.test_slatt.s9_4_2.05.e01",
+          "page": 419,
+          "title": "Горизонтальный ствол 11-30",
+          "condition": "Корреляция соседних скважин 11-28 и 11-23.",
+          "steps": [
+            "Выделить непрерывную глину залива.",
+            "Провести горизонтальный участок через песчаники под ней.",
+            "Сравнить длину участка 894 ft. (272 m) с продуктивной частью 475 ft. (144 m)."
+          ],
+          "result": "К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении.",
+          "numbers": [
+            "11",
+            "23",
+            "28",
+            "144",
+            "272",
+            "475",
+            "894",
+            "1600",
+            "1999"
+          ],
+          "unit_ids": [
+            "u419_02",
+            "u421_01",
+            "u422_01"
+          ],
+          "example_no": null,
+          "by": "author",
+          "page_pdf": 419
+        }
+      ],
+      "book_problems": [],
+      "terms": [
+        {
+          "term": "газовая шапка",
+          "definition": "Скопление свободного газа над нефтяной частью залежи",
+          "en": "gas cap",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "BOPD",
+          "definition": "Баррелей нефти в сутки",
+          "en": "barrels of oil per day",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "газонефтяное отношение",
+          "definition": "Отношение количества добытого газа к количеству нефти",
+          "en": "gas/oil ratio",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "продуктивная часть",
+          "definition": "Часть интервала, признанная добываемым коллектором",
+          "en": "net pay",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Песчаное тело у выхода рукава",
+          "en": "mouth bar",
+          "page": 419,
+          "by": "model"
+        }
+      ],
+      "formulas": [],
+      "tables": [],
+      "figures": [
+        {
+          "number": "9.22",
+          "page": 421,
+          "caption": "FIGURE 9.22 Horizontal well drilled within distributary-channel and mouth-bar facies separated by shales. The shales compartmentalize the sandstones and shield against gas-cap encroachment. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u421_01",
+          "scan": "pages/p421.png"
+        },
+        {
+          "number": "9.24",
+          "page": 422,
+          "caption": "**FIGURE 9.24** Schematic cross-section illustrating facies association interpretations between wells 11-28 and 11-23 and the predrill strategy for placing well 11-30. The horizontal trajectory of 11-30 is perpendicular to the cross-section in a. Wellbore path through the distributary-mouth-bar sandstones beneath a continuous bay shale is shown in b. *Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.*",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u422_01",
+          "scan": "pages/p422.png"
+        }
+      ],
+      "misconception": null,
+      "data_meaning": {
+        "from_chapter": {
+          "text": "Интерпретируют отложения по соседним скважинам, затем проводят горизонтальный ствол по песчанику под глинистым экраном. Корреляция соседних скважин 11-28 и 11-23. Ствол проходит через устьевые песчаники под непрерывной глиной залива.",
+          "by_model": false
+        },
+        "breaks": {
+          "text": "Весь участок в песчанике не обязательно продуктивен. Результаты относятся к скважине 11-30.",
+          "by_model": false
+        },
+        "hypotheses": []
+      },
+      "it_analogy": {
+        "text": "При планировании маршрута важно выбрать не просто целевой диапазон, но и область под защитной границей.",
+        "by_model": true,
+        "breaks_where": "Границы осадочных тел интерпретируются, а не заданы с машинной точностью."
+      },
+      "current_practice": {
+        "text": "",
+        "by": "model"
+      },
+      "inefficiency_lens": {
+        "inputs": "Корреляция соседних скважин 11-28 и 11-23.",
+        "manual_steps": "Интерпретируют отложения по соседним скважинам, затем проводят горизонтальный ствол по песчанику под глинистым экраном.",
+        "judgment_points": "Весь участок в песчанике не обязательно продуктивен. Результаты относятся к скважине 11-30.",
+        "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+        "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+        "by": "model",
+        "by_model": true
+      },
+      "links": [
+        {
+          "to": "geo.test_slatt.s9_4_2.03",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_2.03"
+        },
+        {
+          "to": "geo.test_slatt.s9_4_2.06",
+          "type": "prerequisite",
+          "target": "geo.test_slatt.s9_4_2.06"
+        }
+      ],
+      "unit_ids": [
+        "u419_02",
+        "u421_01",
+        "u422_01"
+      ],
+      "pages": [
+        419,
+        421,
+        422
+      ],
+      "order": 14,
+      "title": "Скважина под защитой глины",
+      "threshold": false,
+      "why_here": {
+        "text": "В последнем примере объединяем выбор траектории и проверку защиты от газа.",
+        "by_model": true
+      },
+      "terms_introduced": [
+        "газовая шапка",
+        "BOPD",
+        "газонефтяное отношение",
+        "продуктивная часть",
+        "устьевой бар"
+      ],
+      "needs_scan": [],
+      "now_practice": {
+        "text": "",
+        "by_model": true
+      },
+      "book_tasks": []
+    }
+  ]
+}

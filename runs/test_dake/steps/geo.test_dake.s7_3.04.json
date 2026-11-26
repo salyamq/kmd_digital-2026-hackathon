@@ -1,0 +1,297 @@
+{
+  "node_id": "geo.test_dake.s7_3.04",
+  "chapter": "test_dake",
+  "index": 18,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "От производной к давлению",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    88
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "Интегрирование связывает неизвестное текущее давление с начальным равновесным значением."
+  },
+  "threshold": "Интегрирование связывает неизвестное текущее давление с начальным равновесным значением.",
+  "format": "text",
+  "format_rationale": "Ф/М: для понимания начального и текущего состояния достаточно внимательно проследить порядок пределов.",
+  "order_rationale": "Интегрируем полученную зависимость между начальным и текущим состояниями.",
+  "essence": [
+    "Чтобы получить давление из производной, интегрируют от начального к текущему состоянию.",
+    "Пределы в переменной подобия идут от бесконечности до текущего значения."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Давление интегрируют от начального состояния. По переменной подобия пределы идут от бесконечности до текущего x. В исходной записи бесконечность — начальный предел. Конечным пределом служит текущее x. Решение линейного источника даёт давление как функцию положения и времени.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.04.c01",
+            "geo.test_dake.s7_3.04.c02",
+            "geo.test_dake.s7_3.04.c03"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.04.c01",
+              "quote": "Equation (7.5) can now be integrated between the limits $t = 0$ ($s \\to \\infty$) and the current value of t, for which $s = x$; and $p_i$ (initial pressure) and the current pressure p.",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.04.c02",
+              "quote": "$$\\int_{p_i}^{p} dp = \\frac{q\\mu}{4\\pi kh} \\int_{\\infty}^{x} \\frac{e^{-s}}{s} ds$$",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.04.c03",
+              "quote": "Equation (7.6) is the line source solution of the diffusivity equation giving the pressure $p_{r,t}$ as a function of position and time.",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.04.f01",
+          "latex": "\\int_{p_i}^{p} dp = \\frac{q\\mu}{4\\pi kh} \\int_{\\infty}^{x} \\frac{e^{-s}}{s} ds",
+          "meaning": "Определённый интеграл для разности текущего и начального давлений.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "p_i",
+              "meaning": "начальное равновесное давление",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "x",
+              "meaning": "значение безразмерной переменной на текущем времени",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_25"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Используют начальное давление и текущую переменную подобия как пределы интегрирования.",
+        "inputs": "Давление интегрируют от начального состояния; переменная подобия меняется от бесконечности до текущего x.",
+        "outputs": "Решение линейного источника даёт давление как функцию положения и времени.",
+        "breaks_where": "При начальном времени переменная подобия стремится к бесконечности для ненулевого радиуса. Не путать текущий и начальный пределы.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Давление интегрируют от начального состояния; переменная подобия меняется от бесконечности до текущего x.",
+          "manual_steps": "Используют начальное давление и текущую переменную подобия как пределы интегрирования.",
+          "judgment_points": "При начальном времени переменная подобия стремится к бесконечности для ненулевого радиуса. Не путать текущий и начальный пределы.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Восстановление состояния из скорости изменения требует стартового значения.",
+        "breaks_where": "Здесь пределы относятся к переменной, которая убывает с ростом времени, а не к равномерному шагу по времени.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Проверка пределов",
+          "text": "В текстовой записи результата в запросе оба предела распознаны как бесконечность. Предыдущая строка с вычислением явно даёт пределы от бесконечности до x, поэтому пользуемся ею, а не повреждённой строкой.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "term": "переменная подобия",
+          "en": "similarity variable",
+          "definition": "Комбинация исходных переменных, позволяющая описать решения общей формой.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "линейный источник",
+          "en": "line source",
+          "definition": "Приближение скважины линией, когда её радиус пренебрежимо мал для задачи.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "экспоненциальный интеграл",
+          "en": "exponential integral",
+          "definition": "Здесь положительная функция, равная площади под кривой exp(−s)/s от x до бесконечности.",
+          "page": 88,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Начальное давление → Интеграл с пределами → Давление в текущей точке.",
+      "alt": "Схема: Начальное давление, затем Интеграл с пределами, затем Давление в текущей точке.",
+      "file": "illustrations/geo.test_dake.s7_3.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.04.c01",
+        "geo.test_dake.s7_3.04.c03",
+        "geo.test_dake.s7_3.04.c02"
+      ],
+      "pages": [
+        88
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.04.c01",
+      "kind": "observation",
+      "text": "Давление интегрируют от начального состояния; переменная подобия меняется от бесконечности до текущего x.",
+      "quote": "Equation (7.5) can now be integrated between the limits $t = 0$ ($s \\to \\infty$) and the current value of t, for which $s = x$; and $p_i$ (initial pressure) and the current pressure p.",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.04.c02",
+      "kind": "observation",
+      "text": "В интеграле от бесконечности к текущему x пределы идут в обратном порядке.",
+      "quote": "$$\\int_{p_i}^{p} dp = \\frac{q\\mu}{4\\pi kh} \\int_{\\infty}^{x} \\frac{e^{-s}}{s} ds$$",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.04.c03",
+      "kind": "observation",
+      "text": "Решение линейного источника даёт давление как функцию положения и времени.",
+      "quote": "Equation (7.6) is the line source solution of the diffusivity equation giving the pressure $p_{r,t}$ as a function of position and time.",
+      "page": 88,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.04.t01",
+    "geo.test_dake.s7_3.04.t02",
+    "geo.test_dake.s7_3.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.04.k01",
+    "geo.test_dake.s7_3.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s7_3.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

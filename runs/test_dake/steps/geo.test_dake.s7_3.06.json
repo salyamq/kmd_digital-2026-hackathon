@@ -1,0 +1,439 @@
+{
+  "node_id": "geo.test_dake.s7_3.06",
+  "chapter": "test_dake",
+  "index": 20,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "Как читать давление в скважине",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    89
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "И",
+    "threshold": "Для ранних измерений у ствола геометрия внешней границы не входит в решение; добавка около ствола — отдельный член."
+  },
+  "threshold": "Для ранних измерений у ствола геометрия внешней границы не входит в решение; добавка около ствола — отдельный член.",
+  "format": "data_practice",
+  "format_rationale": "Ф/И: проверяют область пригодности логарифмической формы и отделяют поправку около ствола от геометрии пласта.",
+  "order_rationale": "Применяем это приближение к измерениям у ствола и отделяем локальную поправку.",
+  "essence": [
+    "Для ранних измерений у ствола аргумент обычно мал, но условие нужно проверить.",
+    "Механический скин-фактор добавляет отдельный не зависящий от времени вклад в перепад давления."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        89
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Две кривые демонстрируют область применимости приближения. На стволе x обычно меньше 0,01 даже при малом времени.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.06.c01",
+            "geo.test_dake.s7_3.06.c02"
+          ],
+          "pages": [
+            89
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.06.c01",
+              "quote": "The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9).",
+              "page": 89,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.06.c02",
+              "quote": "it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t.",
+              "page": 89,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Скин-фактор**: Параметр дополнительного перепада давления около ствола. Механический **скин-фактор** включают как не зависящую от времени поправку. Логарифмический член и поправка на скин-фактор определяют снижение забойного давления относительно начального. В раннем решении нет зависимости от площади дренирования или близости внешней границы.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.06.c03",
+            "geo.test_dake.s7_3.06.c04",
+            "geo.test_dake.s7_3.06.c05"
+          ],
+          "pages": [
+            89
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.06.c03",
+              "quote": "if the van Everdingen mechanical skin factor is included as a time independent perturbation",
+              "page": 89,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.06.c04",
+              "quote": "$$p_{wf} = p_i - \\frac{q\\mu}{4\\pi kh} \\left( \\ln \\frac{4kt}{\\gamma \\phi \\mu c r_w^2} + 2S \\right) \\tag{7.10}$$",
+              "page": 89,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.06.c05",
+              "quote": "As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.",
+              "page": 89,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        89
+      ],
+      "data": {
+        "title": "Выбор по исходным условиям",
+        "signs": [
+          "Проверка аргумента у ствола",
+          "Логарифмическая форма"
+        ],
+        "rule": "Для ранних измерений у ствола аргумент обычно мал, но условие нужно проверить.",
+        "conclusion": "Механический скин-фактор добавляет отдельный не зависящий от времени вклад в перепад давления.",
+        "claim_ids": [
+          "geo.test_dake.s7_3.06.c03"
+        ],
+        "cases": [
+          {
+            "given": "Как вводят механический скин-фактор?",
+            "options": [
+              "Как не зависящую от времени поправку",
+              "Как радиус внешней границы",
+              "Как слагаемое, которое обязано расти со временем"
+            ],
+            "answer": 0,
+            "why": "В приведённой формуле это постоянная поправка.",
+            "source": "Условия в учебном узле"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        89
+      ],
+      "items": [
+        {
+          "text": "На стволе x обычно меньше 0,01 даже при малом времени.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.06.c02"
+          ],
+          "pages": [
+            89
+          ]
+        },
+        {
+          "text": "Механический скин-фактор включают как не зависящую от времени поправку.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.06.c03"
+          ],
+          "pages": [
+            89
+          ]
+        },
+        {
+          "text": "В раннем решении нет зависимости от площади дренирования или близости внешней границы.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.06.c05"
+          ],
+          "pages": [
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        89
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.06.f01",
+          "latex": "p_{wf} = p_i - \\frac{q\\mu}{4\\pi kh} \\left( \\ln \\frac{4kt}{\\gamma \\phi \\mu c r_w^2} + 2S \\right)",
+          "meaning": "Забойное давление при малом x с механическим скин-фактором.",
+          "vars": [
+            {
+              "symbol": "p_{wf}",
+              "meaning": "забойное давление при отборе",
+              "unit": null
+            },
+            {
+              "symbol": "p_i",
+              "meaning": "начальное равновесное давление",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "\\gamma",
+              "meaning": "экспонента от постоянной Эйлера",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "r_w^2",
+              "meaning": "квадрат радиуса ствола скважины",
+              "unit": null
+            },
+            {
+              "symbol": "S",
+              "meaning": "механический скин-фактор",
+              "unit": null
+            }
+          ],
+          "page": 89,
+          "unit_id": "u089_11"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Проверяют x и применяют логарифмическую форму к забойному давлению, если условие выполнено.",
+        "inputs": "Две кривые демонстрируют область применимости приближения.",
+        "outputs": "В раннем решении нет зависимости от площади дренирования или близости внешней границы.",
+        "breaks_where": "Уравнение переходного режима не зависит от площади дренирования или положения скважины относительно границы. Вывод ограничен временем применимости решения.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Две кривые демонстрируют область применимости приближения.",
+          "manual_steps": "Проверяют x и применяют логарифмическую форму к забойному давлению, если условие выполнено.",
+          "judgment_points": "Уравнение переходного режима не зависит от площади дренирования или положения скважины относительно границы. Вывод ограничен временем применимости решения.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В модели измерения можно выделить прогностическую зависимость и отдельную постоянную поправку на локальное смещение.",
+        "breaks_where": "Постоянная поправка здесь физическая и не заменяет переход к правильному режиму или проверку малого x.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Проверка обозначений",
+          "text": "В строке определения x около ствола в запросе распознано d вместо пористости. Ориентируемся на общее определение x и на формулу со скин-фактором, где напечатана пористость.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        89
+      ],
+      "items": [
+        {
+          "term": "переходный режим",
+          "en": "transient flow",
+          "definition": "Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы.",
+          "page": 89,
+          "by": "model"
+        },
+        {
+          "term": "экспоненциальный интеграл",
+          "en": "exponential integral",
+          "definition": "Здесь положительная функция, равная площади под кривой exp(−s)/s от x до бесконечности.",
+          "page": 89,
+          "by": "model"
+        },
+        {
+          "term": "переменная подобия",
+          "en": "similarity variable",
+          "definition": "Комбинация исходных переменных, позволяющая описать решения общей формой.",
+          "page": 89,
+          "by": "model"
+        },
+        {
+          "term": "скин-фактор",
+          "en": "mechanical skin factor",
+          "definition": "Параметр дополнительного перепада давления около ствола.",
+          "page": 89,
+          "by": "model"
+        },
+        {
+          "term": "область дренирования",
+          "en": "drainage volume",
+          "definition": "Участок пласта, с которого в данном режиме поступает жидкость к скважине.",
+          "page": 89,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверка аргумента у ствола → Логарифмическая форма → Поправка на скин.",
+      "alt": "Схема: Проверка аргумента у ствола, затем Логарифмическая форма, затем Поправка на скин.",
+      "file": "illustrations/geo.test_dake.s7_3.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.06.c03",
+        "geo.test_dake.s7_3.06.c05",
+        "geo.test_dake.s7_3.06.c02"
+      ],
+      "pages": [
+        89
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.06.c01",
+      "kind": "observation",
+      "text": "Две кривые демонстрируют область применимости приближения.",
+      "quote": "The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9).",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.06.c02",
+      "kind": "observation",
+      "text": "На стволе x обычно меньше 0.01 даже при малом времени.",
+      "quote": "it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t.",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.06.c03",
+      "kind": "observation",
+      "text": "Механический скин-фактор включают как не зависящую от времени поправку.",
+      "quote": "if the van Everdingen mechanical skin factor is included as a time independent perturbation",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.06.c04",
+      "kind": "observation",
+      "text": "Логарифмический член и вклад скин-фактора входят вместе в снижение забойного давления относительно начального.",
+      "quote": "$$p_{wf} = p_i - \\frac{q\\mu}{4\\pi kh} \\left( \\ln \\frac{4kt}{\\gamma \\phi \\mu c r_w^2} + 2S \\right) \\tag{7.10}$$",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.06.c05",
+      "kind": "observation",
+      "text": "В раннем решении нет зависимости от площади дренирования или близости внешней границы.",
+      "quote": "As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.",
+      "page": 89,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.06.t01",
+    "geo.test_dake.s7_3.06.t02",
+    "geo.test_dake.s7_3.06.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.06.k01",
+    "geo.test_dake.s7_3.06.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s7_3.05",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

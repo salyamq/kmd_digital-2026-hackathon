@@ -1,0 +1,575 @@
+{
+  "chapter": "test_dake",
+  "illustrations": [
+    {
+      "id": "geo.test_dake.s5_1.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Коэффициенты зависят от давления → Линеаризация для жидкости → Иная линеаризация для газа.",
+      "alt": "Схема: Коэффициенты зависят от давления, затем Линеаризация для жидкости, затем Иная линеаризация для газа.",
+      "file": "illustrations/geo.test_dake.s5_1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_1.01#c02",
+        "geo.test_dake.s5_1.01#c04",
+        "geo.test_dake.s5_1.01#c05"
+      ],
+      "pages": [
+        75
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_1.01",
+      "node_id": "geo.test_dake.s5_1.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_2.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Однородный пласт → Вскрытие всей толщины → Радиальная модель притока.",
+      "alt": "Схема: Однородный пласт, затем Вскрытие всей толщины, затем Радиальная модель притока.",
+      "file": "illustrations/geo.test_dake.s5_2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.01#c04",
+        "geo.test_dake.s5_2.01#c05",
+        "geo.test_dake.s5_2.01#c06"
+      ],
+      "pages": [
+        75
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_2.01",
+      "node_id": "geo.test_dake.s5_2.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_2.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Масса входит → Масса покидает кольцо → Разность накапливается.",
+      "alt": "Схема: Масса входит, затем Масса покидает кольцо, затем Разность накапливается.",
+      "file": "illustrations/geo.test_dake.s5_2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.02#c02",
+        "geo.test_dake.s5_2.02#c03",
+        "geo.test_dake.s5_2.02#c05"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_2.02",
+      "node_id": "geo.test_dake.s5_2.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_2.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Радиальный расход → Подстановка закона Дарси → Баланс через давление.",
+      "alt": "Схема: Радиальный расход, затем Подстановка закона Дарси, затем Баланс через давление.",
+      "file": "illustrations/geo.test_dake.s5_2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.03#c01",
+        "geo.test_dake.s5_2.03#c02",
+        "geo.test_dake.s5_2.03#c03"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_2.03",
+      "node_id": "geo.test_dake.s5_2.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_2.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Определение сжимаемости → Производная плотности через давление → Подстановка в баланс.",
+      "alt": "Схема: Определение сжимаемости, затем Производная плотности через давление, затем Подстановка в баланс.",
+      "file": "illustrations/geo.test_dake.s5_2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.04#c05",
+        "geo.test_dake.s5_2.04#c06",
+        "geo.test_dake.s5_2.04#c03"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_2.04",
+      "node_id": "geo.test_dake.s5_2.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_3.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Начальное равновесие → Постоянный дебит на стволе → Проверка внешней границы.",
+      "alt": "Схема: Начальное равновесие, затем Постоянный дебит на стволе, затем Проверка внешней границы.",
+      "file": "illustrations/geo.test_dake.s5_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.01#c01",
+        "geo.test_dake.s5_3.01#c02",
+        "geo.test_dake.s5_3.01#c04"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_3.01",
+      "node_id": "geo.test_dake.s5_3.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_3.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Меняем дебит → Измеряем давление → Проверяем влияние границы.",
+      "alt": "Схема: Меняем дебит, затем Измеряем давление, затем Проверяем влияние границы.",
+      "file": "illustrations/geo.test_dake.s5_3.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.02#c03",
+        "geo.test_dake.s5_3.02#c06",
+        "geo.test_dake.s5_3.02#c04"
+      ],
+      "pages": [
+        77
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_3.02",
+      "node_id": "geo.test_dake.s5_3.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_3.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Закрытая граница → Постоянный отбор → Давление убывает с общим темпом.",
+      "alt": "Схема: Закрытая граница, затем Постоянный отбор, затем Давление убывает с общим темпом.",
+      "file": "illustrations/geo.test_dake.s5_3.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.03#c04",
+        "geo.test_dake.s5_3.03#c06",
+        "geo.test_dake.s5_3.03#c03"
+      ],
+      "pages": [
+        77
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_3.03",
+      "node_id": "geo.test_dake.s5_3.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_3.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Средние давления областей → Проверка условий → Усреднение с весами по дебиту.",
+      "alt": "Схема: Средние давления областей, затем Проверка условий, затем Усреднение с весами по дебиту.",
+      "file": "illustrations/geo.test_dake.s5_3.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.04#c07",
+        "geo.test_dake.s5_3.04#c06",
+        "geo.test_dake.s5_3.04#c09"
+      ],
+      "pages": [
+        77,
+        78
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_3.04",
+      "node_id": "geo.test_dake.s5_3.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_3.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Открытая граница → Компенсация отбора → Давление постоянно по времени.",
+      "alt": "Схема: Открытая граница, затем Компенсация отбора, затем Давление постоянно по времени.",
+      "file": "illustrations/geo.test_dake.s5_3.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.05#c02",
+        "geo.test_dake.s5_3.05#c05",
+        "geo.test_dake.s5_3.05#c09"
+      ],
+      "pages": [
+        78
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_3.05",
+      "node_id": "geo.test_dake.s5_3.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_4.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Раскрыть производную → Отбросить малые члены → Зафиксировать коэффициент.",
+      "alt": "Схема: Раскрыть производную, затем Отбросить малые члены, затем Зафиксировать коэффициент.",
+      "file": "illustrations/geo.test_dake.s5_4.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.01#c06",
+        "geo.test_dake.s5_4.01#c03",
+        "geo.test_dake.s5_4.01#c09"
+      ],
+      "pages": [
+        78,
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_4.01",
+      "node_id": "geo.test_dake.s5_4.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_4.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Вклады нефти и воды → Суммарная сжимаемость → Проверка произведения на давление.",
+      "alt": "Схема: Вклады нефти и воды, затем Суммарная сжимаемость, затем Проверка произведения на давление.",
+      "file": "illustrations/geo.test_dake.s5_4.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.02#c02",
+        "geo.test_dake.s5_4.02#c04",
+        "geo.test_dake.s5_4.02#c06"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_4.02",
+      "node_id": "geo.test_dake.s5_4.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_4.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Абсолютная пористость → Согласованная сжимаемость → Эквивалентная пара с другой пористостью.",
+      "alt": "Схема: Абсолютная пористость, затем Согласованная сжимаемость, затем Эквивалентная пара с другой пористостью.",
+      "file": "illustrations/geo.test_dake.s5_4.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.03#c05",
+        "geo.test_dake.s5_4.03#c04",
+        "geo.test_dake.s5_4.03#c02"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_4.03",
+      "node_id": "geo.test_dake.s5_4.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s5_4.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Давление в радиальной модели → Общий оператор → Тепловой аналог.",
+      "alt": "Схема: Давление в радиальной модели, затем Общий оператор, затем Тепловой аналог.",
+      "file": "illustrations/geo.test_dake.s5_4.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.04#c02",
+        "geo.test_dake.s5_4.04#c03",
+        "geo.test_dake.s5_4.04#c01"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s5_4.04",
+      "node_id": "geo.test_dake.s5_4.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Равновесное начало → Бесконечная внешняя область → Постоянный отбор на линии.",
+      "alt": "Схема: Равновесное начало, затем Бесконечная внешняя область, затем Постоянный отбор на линии.",
+      "file": "illustrations/geo.test_dake.s7_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.01#c02",
+        "geo.test_dake.s7_3.01#c06",
+        "geo.test_dake.s7_3.01#c03"
+      ],
+      "pages": [
+        87
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.01",
+      "node_id": "geo.test_dake.s7_3.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Радиус и время → Переменная подобия → Уравнение с одной переменной.",
+      "alt": "Схема: Радиус и время, затем Переменная подобия, затем Уравнение с одной переменной.",
+      "file": "illustrations/geo.test_dake.s7_3.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.02#c02",
+        "geo.test_dake.s7_3.02#c04",
+        "geo.test_dake.s7_3.02#c01"
+      ],
+      "pages": [
+        87
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.02",
+      "node_id": "geo.test_dake.s7_3.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Новая неизвестная → Интегрирование → Подстановка предела на линии.",
+      "alt": "Схема: Новая неизвестная, затем Интегрирование, затем Подстановка предела на линии.",
+      "file": "illustrations/geo.test_dake.s7_3.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.03#c05",
+        "geo.test_dake.s7_3.03#c07",
+        "geo.test_dake.s7_3.03#c06"
+      ],
+      "pages": [
+        88
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.03",
+      "node_id": "geo.test_dake.s7_3.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Начальное давление → Интеграл с пределами → Давление в текущей точке.",
+      "alt": "Схема: Начальное давление, затем Интеграл с пределами, затем Давление в текущей точке.",
+      "file": "illustrations/geo.test_dake.s7_3.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.04#c01",
+        "geo.test_dake.s7_3.04#c03",
+        "geo.test_dake.s7_3.04#c02"
+      ],
+      "pages": [
+        88
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.04",
+      "node_id": "geo.test_dake.s7_3.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Найти аргумент → Проверить область → Выбрать интеграл или логарифм.",
+      "alt": "Схема: Найти аргумент, затем Проверить область, затем Выбрать интеграл или логарифм.",
+      "file": "illustrations/geo.test_dake.s7_3.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.05#c04",
+        "geo.test_dake.s7_3.05#c02",
+        "geo.test_dake.s7_3.05#c06"
+      ],
+      "pages": [
+        88,
+        89
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.05",
+      "node_id": "geo.test_dake.s7_3.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Проверка аргумента у ствола → Логарифмическая форма → Поправка на скин.",
+      "alt": "Схема: Проверка аргумента у ствола, затем Логарифмическая форма, затем Поправка на скин.",
+      "file": "illustrations/geo.test_dake.s7_3.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.06#c03",
+        "geo.test_dake.s7_3.06#c05",
+        "geo.test_dake.s7_3.06#c02"
+      ],
+      "pages": [
+        89
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.06",
+      "node_id": "geo.test_dake.s7_3.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_dake.s7_3.07.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Возмущение на одной скважине → Отклик на другой → Расчёт полным интегралом.",
+      "alt": "Схема: Возмущение на одной скважине, затем Отклик на другой, затем Расчёт полным интегралом.",
+      "file": "illustrations/geo.test_dake.s7_3.07__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.07#c04",
+        "geo.test_dake.s7_3.07#c03",
+        "geo.test_dake.s7_3.07#c02"
+      ],
+      "pages": [
+        89
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_dake.s7_3.07",
+      "node_id": "geo.test_dake.s7_3.07",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    }
+  ]
+}

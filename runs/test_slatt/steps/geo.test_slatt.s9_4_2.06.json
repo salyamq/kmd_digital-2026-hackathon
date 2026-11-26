@@ -1,0 +1,471 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.06",
+  "chapter": "test_slatt",
+  "index": 13,
+  "part": {
+    "id": "part3",
+    "title": "Как геология меняет решение о добыче"
+  },
+  "title_beginner": "Где глинистый слой прерывается",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    420,
+    421
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "Р",
+    "threshold": "Управление добычей требует проверки протяжённости каждого глинистого экрана."
+  },
+  "threshold": "Управление добычей требует проверки протяжённости каждого глинистого экрана.",
+  "format": "data_practice",
+  "format_rationale": "Н/Р: по карте глин и каротажу решаем, где сохраняется разделение и где потребуется дополнительная проверка.",
+  "order_rationale": "По корреляции и результатам добычи проверяем, где барьер действительно работает.",
+  "essence": [
+    "Наличие глины в одной скважине не доказывает сплошной барьер.",
+    "Перерывы глин меняют выбор цели и управление добычей."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        420,
+        421
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "**продельта**: Удалённая подводная часть дельты. **шельф**: Мелководная окраина материка. Каротажный разрез Sadlerochit Sand проведён с севера на юг. Цветом различены пойма, речные и распределительные русла, устьевые бары, фронт, **продельта** и **шельф**.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c01",
+            "geo.test_slatt.s9_4_2.06.c02"
+          ],
+          "pages": [
+            420
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c01",
+              "quote": "Part of a north–south wire line log correlation across the Sadlerochit Sand at Prudhoe Bay field",
+              "page": 420,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c02",
+              "quote": "Tan is floodplain facies. Yellow is fluvial/distributary-channel facies. White is distributary mouth bar/delta front and prodelta/shelf facies.",
+              "page": 420,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Схема показывает три разных по положению глинистых пласта на востоке Прадхо-Бей. Местами все три пласта отсутствуют из-за ненакопления или размыва осадка. В других местах все три пласта разделяют коллекторы. Такое разрешение разреза нужно, чтобы управлять гравитационным стеканием, заводнением и методами увеличения нефтеотдачи.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c03",
+            "geo.test_slatt.s9_4_2.06.c04",
+            "geo.test_slatt.s9_4_2.06.c05"
+          ],
+          "pages": [
+            420
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c03",
+              "quote": "Generalized distribution of three stratigraphically distinct shales in the eastern part of Prudhoe Bay field",
+              "page": 420,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c04",
+              "quote": "In places, all three shales are absent as a result of nondeposition or erosion, whereas in other locations, all three shales separate adjacent reservoir layers",
+              "page": 420,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c05",
+              "quote": "Only with this level of stratigraphic detail can gravity drainage, waterflood, and enhanced oil recovery depletion mechanisms be effectively managed",
+              "page": 420,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Скважину 09-35A спроектировали для нижних песчаников Romeo без конкуренции с верхними интервалами. Глина на 8936 ft. (2725 m) защищала их от воды. На гамма-каротаже штриховка обозначает продуктивные песчаники. Сравнительный график на рисунке для 09-35A показывает небольшое увеличение дебита нефти и сильное снижение добычи воды.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c06",
+            "geo.test_slatt.s9_4_2.06.c07",
+            "geo.test_slatt.s9_4_2.06.c08"
+          ],
+          "pages": [
+            421
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c06",
+              "quote": "Well 09-35A was designed to produce from the basal Romeo sandstones without competition from stratigraphically higher perforations and to use the shale at 8936 ft. (2725 m) as a barrier from slumping water",
+              "page": 421,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c07",
+              "quote": "The stippled pattern on the gamma-ray log shows the productive sandstones",
+              "page": 421,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.06.c08",
+              "quote": "The graph in the upper left (a) compares oil and water production from the two wells, with a slight increase in oil rate and a dramatic decrease in water production from well 09-35A",
+              "page": 421,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        421
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Сопоставляем каротаж",
+          "Проверяем экран"
+        ],
+        "rule": "Наличие глины в одной скважине не доказывает сплошной барьер.",
+        "conclusion": "Перерывы глин меняют выбор цели и управление добычей.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.06.c06"
+        ],
+        "cases": [
+          {
+            "given": "Зачем боковой ствол направили в нижние песчаники Romeo?",
+            "options": [
+              "Чтобы использовать глину как защиту от воды и избежать конкуренции с верхними интервалами",
+              "Чтобы беречь верхний песок от осадков на поверхности",
+              "Чтобы измерить возраст глины"
+            ],
+            "answer": 0,
+            "why": "Выбор опирался на положение барьера и выбранную цель добычи.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        420,
+        421
+      ],
+      "items": [
+        {
+          "text": "Схема показывает три разных по положению глинистых пласта на востоке Прадхо-Бей.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c03"
+          ],
+          "pages": [
+            420
+          ]
+        },
+        {
+          "text": "Местами все три пласта отсутствуют из-за ненакопления или размыва осадка. В других местах все три пласта разделяют коллекторы.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c04"
+          ],
+          "pages": [
+            420
+          ]
+        },
+        {
+          "text": "Скважину 09-35A спроектировали для нижних песчаников Romeo без конкуренции с верхними интервалами. Глина на 8936 ft. (2725 m) защищала их от воды.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.06.c06"
+          ],
+          "pages": [
+            421
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        420
+      ],
+      "data": {
+        "text": "Если глина есть в одной скважине, она отделяет пласты по всему месторождению.",
+        "correction": "Три глинистых слоя в примере местами присутствуют вместе, а местами все исчезают.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.06.c03",
+          "geo.test_slatt.s9_4_2.06.c04"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сопоставляют каротаж, прослеживают каждый глинистый слой и используют проверенный барьер при выборе глубины бокового ствола.",
+        "inputs": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+        "outputs": "Сравнительный график на рисунке для 09-35A показывает небольшое увеличение дебита нефти и сильное снижение добычи воды.",
+        "breaks_where": "Развитие каждого экрана неодинаково; вывод по одной скважине нельзя переносить на всю площадь.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+          "manual_steps": "Сопоставляют каротаж, прослеживают каждый глинистый слой и используют проверенный барьер при выборе глубины бокового ствола.",
+          "judgment_points": "Развитие каждого экрана неодинаково; вывод по одной скважине нельзя переносить на всю площадь.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Если глина есть в одной скважине, она отделяет пласты по всему месторождению.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "На схеме доступа надо проверить все места, где разделяющее правило отсутствует, а не только точки, где оно присутствует.",
+        "breaks_where": "Глинистые экраны нельзя задать административно: геолог устанавливает их по разреженным наблюдениям.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        420,
+        421
+      ],
+      "items": [
+        {
+          "number": "9.20",
+          "page": 420,
+          "caption": "FIGURE 9.20 Part of a north–south wire line log correlation across the Sadlerochit Sand at Prudhoe Bay field. Tan is floodplain facies. Yellow is fluvial/distributary-channel facies. White is distributary mouth bar/delta front and prodelta/shelf facies. a, Romeo interval; b, Tango interval; c, Victor interval; d, X-ray interval; and e, Zulu interval. Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u420_01",
+          "scan": "pages/p420.png"
+        },
+        {
+          "number": "9.21",
+          "page": 420,
+          "caption": "FIGURE 9.21 Generalized distribution of three stratigraphically distinct shales in the eastern part of Prudhoe Bay field. In places, all three shales are absent as a result of nondeposition or erosion, whereas in other locations, all three shales separate adjacent reservoir layers. Only with this level of stratigraphic detail can gravity drainage, waterflood, and enhanced oil recovery depletion mechanisms be effectively managed. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u420_02",
+          "scan": "pages/p420.png"
+        },
+        {
+          "number": "9.23",
+          "page": 421,
+          "caption": "FIGURE 9.23 Wire line logs for the original well 09-35, and a horizontal sidetrack well 09-35A (b). Well 09-35A was designed to produce from the basal Romeo sandstones without competition from stratigraphically higher perforations and to use the shale at 8936 ft. (2725 m) as a barrier from slumping water. The stippled pattern on the gamma-ray log shows the productive sandstones. The graph in the upper left (a) compares oil and water production from the two wells, with a slight increase in oil rate and a dramatic decrease in water production from well 09-35A. Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u421_02",
+          "scan": "pages/p421.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        420
+      ],
+      "items": [
+        {
+          "term": "гравитационное стекание",
+          "definition": "Движение флюидов под влиянием разности плотностей",
+          "en": "gravity drainage",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Запись естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "definition": "Объём добываемого флюида за единицу времени",
+          "en": "rate",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Удалённая подводная часть дельты",
+          "en": "prodelta",
+          "page": 420,
+          "by": "model"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная окраина материка",
+          "en": "shelf",
+          "page": 420,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сопоставляем каротаж → Проверяем экран → Планируем боковой ствол.",
+      "alt": "Схема показывает цепочку: Сопоставляем каротаж, затем Проверяем экран, затем Планируем боковой ствол.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.06.c06",
+        "geo.test_slatt.s9_4_2.06.c04",
+        "geo.test_slatt.s9_4_2.06.c07"
+      ],
+      "pages": [
+        420,
+        421
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c01",
+      "kind": "observation",
+      "text": "Каротажный разрез Sadlerochit Sand проведён с севера на юг.",
+      "quote": "Part of a north–south wire line log correlation across the Sadlerochit Sand at Prudhoe Bay field",
+      "page": 420,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c02",
+      "kind": "observation",
+      "text": "Цветом различены пойма, речные и распределительные русла, устьевые бары, фронт, продельта и шельф.",
+      "quote": "Tan is floodplain facies. Yellow is fluvial/distributary-channel facies. White is distributary mouth bar/delta front and prodelta/shelf facies.",
+      "page": 420,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c03",
+      "kind": "observation",
+      "text": "Схема показывает три разных по положению глинистых пласта на востоке Прадхо-Бей.",
+      "quote": "Generalized distribution of three stratigraphically distinct shales in the eastern part of Prudhoe Bay field",
+      "page": 420,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c04",
+      "kind": "observation",
+      "text": "Местами все три пласта отсутствуют из-за отсутствия накопления или размыва; в других местах все три разделяют коллекторы.",
+      "quote": "In places, all three shales are absent as a result of nondeposition or erosion, whereas in other locations, all three shales separate adjacent reservoir layers",
+      "page": 420,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c05",
+      "kind": "inference",
+      "text": "Такое разрешение разреза нужно, чтобы управлять гравитационным стеканием, заводнением и методами увеличения нефтеотдачи.",
+      "quote": "Only with this level of stratigraphic detail can gravity drainage, waterflood, and enhanced oil recovery depletion mechanisms be effectively managed",
+      "page": 420,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c06",
+      "kind": "observation",
+      "text": "Скважину 09-35A спроектировали для нижних песчаников Romeo без конкуренции с верхними интервалами и с защитой от воды глиной на 8936 ft. (2725 m).",
+      "quote": "Well 09-35A was designed to produce from the basal Romeo sandstones without competition from stratigraphically higher perforations and to use the shale at 8936 ft. (2725 m) as a barrier from slumping water",
+      "page": 421,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c07",
+      "kind": "observation",
+      "text": "На гамма-каротаже штриховка обозначает продуктивные песчаники.",
+      "quote": "The stippled pattern on the gamma-ray log shows the productive sandstones",
+      "page": 421,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.06.c08",
+      "kind": "observation",
+      "text": "Сравнительный график на рисунке для 09-35A показывает небольшое увеличение дебита нефти и сильное снижение добычи воды.",
+      "quote": "The graph in the upper left (a) compares oil and water production from the two wells, with a slight increase in oil rate and a dramatic decrease in water production from well 09-35A",
+      "page": 421,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.06.t01",
+    "geo.test_slatt.s9_4_2.06.t02",
+    "geo.test_slatt.s9_4_2.06.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.06.k01",
+    "geo.test_slatt.s9_4_2.06.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

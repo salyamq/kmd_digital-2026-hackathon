@@ -1,0 +1,534 @@
+{
+  "node_id": "geo.test_slatt.s9_4_1.03",
+  "chapter": "test_slatt",
+  "index": 7,
+  "part": {
+    "id": "part2",
+    "title": "Как устроены песчаные тела"
+  },
+  "title_beginner": "Где бар лучше пропускает нефть",
+  "title_book": "Процессы и отложения",
+  "section": "s9_4_1",
+  "pages": [
+    415,
+    416
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Н",
+    "secondary": "М",
+    "threshold": "Песок в пределах одного бара неодинаков: положение и сортировка меняют проницаемость."
+  },
+  "threshold": "Песок в пределах одного бара неодинаков: положение и сортировка меняют проницаемость.",
+  "format": "data_practice",
+  "format_rationale": "Н/М: решение о расположении проницаемых песков требует сопоставить керн, измерения и аналог.",
+  "order_rationale": "Проверяем неоднородность на кернах: сравним ближнюю и дальнюю части бара.",
+  "essence": [
+    "Положение в баре помогает понять, где песок лучше пропускает жидкость.",
+    "Керны показывают различие, а современный аналог помогает предложить объяснение."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        415,
+        416
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "В песчанике устьевого бара пробурили горизонтальную скважину длиной 1000 ft. (300 m). В ней отобрали три керна. Выделили семь песчаных разновидностей пород: от умеренно до очень хорошо отсортированных, мелко- и очень мелкозернистых.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c01",
+            "geo.test_slatt.s9_4_1.03.c02"
+          ],
+          "pages": [
+            415
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c01",
+              "quote": "A 1000-ft. (300-m) horizontal well was drilled into a distributary mouth-bar reservoir sandstone, and three cores were obtained",
+              "page": 415,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c02",
+              "quote": "Seven sandy lithofacies were identified in the core, all are moderately to very well sorted and fine to very fine-grained",
+              "page": 415,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "**горизонтальная проницаемость**: Способность породы пропускать флюид в горизонтальном направлении. Средняя **горизонтальная проницаемость** шести разновидностей — 12–40 md. Для седьмой, лучше всего отсортированной разновидности среднее равно 129 md.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c03",
+            "geo.test_slatt.s9_4_1.03.c04"
+          ],
+          "pages": [
+            415
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c03",
+              "quote": "Six of the lithofacies exhibit average horizontal permeabilities of 12–40 md",
+              "page": 415,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c04",
+              "quote": "The seventh, best-sorted lithofacies averages 129 md",
+              "page": 415,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Для объяснения происхождения отложений изучили современные речные дельты. По интерпретации авторов, паводковые выносы из русел откладывали самый проницаемый и хорошо отсортированный песок. Он накапливался у вершины и ближнего края бара. Дальше от русла при более слабом течении накапливались более мелкие, хуже отсортированные пески и ил.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c05",
+            "geo.test_slatt.s9_4_1.03.c06",
+            "geo.test_slatt.s9_4_1.03.c07"
+          ],
+          "pages": [
+            415
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c05",
+              "quote": "The origin of these lithofacies was determined by studying modern river-dominated delta processes and sediments",
+              "page": 415,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c06",
+              "quote": "Geoscientists believe that sediment plumes emanating from distributary channels during flood stage deposited the best-sorted and most-permeable sands (the seventh lithofacies) at the apex or most-proximal part of the distributary mouth bars, as well as along the proximal-bar margin (Fig. 9.16)",
+              "page": 415,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c07",
+              "quote": "Finer-grained, more poorly sorted sands and muds were deposited more distally, under lower flow-regime conditions",
+              "page": 415,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "Реконструкция показывает карты ассоциаций отложений трёх слоёв Romeo от ближней зоны к дальней.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c08"
+          ],
+          "pages": [
+            416
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.03.c08",
+              "quote": "Insets are facies association maps for three Romeo stratigraphic layers, from proximal (upper left) to distal (lower right)",
+              "page": 416,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        415
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_slatt_s9_4_1_03_e01",
+          "title": "Керны вдоль устьевого бара",
+          "page": 415,
+          "condition": "Скважина длиной 1000 ft. (300 m) и три керна.",
+          "steps": [
+            "Выделить семь песчаных литофаций.",
+            "Сравнить шесть средних значений 12–40 md с 129 md для самой хорошо отсортированной литофации.",
+            "По современному аналогу предположить, где могла отложиться лучшая разновидность."
+          ],
+          "result": "Вершина и ближний край перспективны в этой интерпретации, но весь бар не однороден.",
+          "numbers": [
+            "12",
+            "40",
+            "129",
+            "300",
+            "1000"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        415
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Паводковый вынос",
+          "Лучше сортировка у вершины"
+        ],
+        "rule": "Положение в баре помогает понять, где песок лучше пропускает жидкость.",
+        "conclusion": "Керны показывают различие, а современный аналог помогает предложить объяснение.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_1.03.c06"
+        ],
+        "cases": [
+          {
+            "given": "Где по интерпретации отложились лучшие пески?",
+            "options": [
+              "У вершины и ближнего края бара",
+              "Равномерно по всему бару",
+              "Только в дальней зоне бара"
+            ],
+            "answer": 0,
+            "why": "Паводковый вынос мог приносить хорошо отсортированный песок к ближней зоне.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        415
+      ],
+      "items": [
+        {
+          "text": "В песчанике устьевого бара пробурили горизонтальную скважину длиной 1000 ft. (300 m). В ней отобрали три керна.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c01"
+          ],
+          "pages": [
+            415
+          ]
+        },
+        {
+          "text": "Выделили семь песчаных разновидностей пород: от умеренно до очень хорошо отсортированных, мелко- и очень мелкозернистых.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c02"
+          ],
+          "pages": [
+            415
+          ]
+        },
+        {
+          "text": "Средняя горизонтальная проницаемость шести разновидностей — 12–40 md.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c03"
+          ],
+          "pages": [
+            415
+          ]
+        },
+        {
+          "text": "Для седьмой, лучше всего отсортированной разновидности среднее равно 129 md.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c04"
+          ],
+          "pages": [
+            415
+          ]
+        },
+        {
+          "text": "Дальше от русла при более слабом течении накапливались более мелкие, хуже отсортированные пески и ил.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.03.c07"
+          ],
+          "pages": [
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        415
+      ],
+      "data": {
+        "text": "Во всём устьевом баре песок одинаково проницаем.",
+        "correction": "Измерения в примере различаются для песков разных литофаций.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_1.03.c02",
+          "geo.test_slatt.s9_4_1.03.c03",
+          "geo.test_slatt.s9_4_1.03.c04",
+          "geo.test_slatt.s9_4_1.03.c06"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "По кернам горизонтальной скважины выделяют разновидности песка и сравнивают их проницаемость; затем сопоставляют с современными дельтами.",
+        "inputs": "Скважина длиной 1000 ft. (300 m) и три керна.",
+        "outputs": "Реконструкция показывает карты ассоциаций отложений трёх слоёв Romeo от ближней зоны к дальней.",
+        "breaks_where": "Паводковое происхождение лучших песков — интерпретация. Значения проницаемости относятся к этому примеру.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Скважина длиной 1000 ft. (300 m) и три керна.",
+          "manual_steps": "По кернам горизонтальной скважины выделяют разновидности песка и сравнивают их проницаемость; затем сопоставляют с современными дельтами.",
+          "judgment_points": "Паводковое происхождение лучших песков — интерпретация. Значения проницаемости относятся к этому примеру.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Во всём устьевом баре песок одинаково проницаем.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Среднее по классу скрывает высокопроводящее подмножество; полезнее разбить выборку по признакам и пространству.",
+        "breaks_where": "Породу классифицируют не только по статистике: связь с течением проверяют геологически.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        416
+      ],
+      "items": [
+        {
+          "number": "9.16",
+          "page": 416,
+          "caption": "**FIGURE 9.16** Schematic paleogeographic reconstruction of Romeo facies associations, as they existed during deposition. Insets are facies association maps for three Romeo stratigraphic layers, from proximal (upper left) to distal (lower right). After *Tye et al. (1999)*. Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u416_01",
+          "scan": "pages/p416.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        415
+      ],
+      "items": [
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадка у выхода рукава в водоём",
+          "en": "mouth bar",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "литофация",
+          "definition": "Разновидность отложений, выделяемая по свойствам породы",
+          "en": "lithofacies",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "сортировка",
+          "definition": "Однородность размера зёрен",
+          "en": "sorting",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "горизонтальная проницаемость",
+          "definition": "Способность породы пропускать флюид в горизонтальном направлении",
+          "en": "horizontal permeability",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "md",
+          "definition": "Миллидарси, единица проницаемости",
+          "en": "millidarcy",
+          "page": 415,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Извлечённый при бурении образец породы",
+          "en": "core",
+          "page": 415,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Паводковый вынос → Лучше сортировка у вершины → Выше проницаемость.",
+      "alt": "Схема показывает цепочку: Паводковый вынос, затем Лучше сортировка у вершины, затем Выше проницаемость.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.03.c06",
+        "geo.test_slatt.s9_4_1.03.c07",
+        "geo.test_slatt.s9_4_1.03.c04"
+      ],
+      "pages": [
+        415
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    },
+    {
+      "id": "ill-2",
+      "template": "ranges",
+      "class": "A",
+      "provenance": "схема",
+      "caption": "У лучше всего отсортированной разновидности среднее выше диапазона для остальных.",
+      "alt": "Показан диапазон 12–40 md и отдельная точка 129 md.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.03__2.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.03.c03",
+        "geo.test_slatt.s9_4_1.03.c04"
+      ],
+      "pages": [
+        415
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c01",
+      "kind": "observation",
+      "text": "В песчанике устьевого бара пробурили горизонтальную скважину длиной 1000 ft. (300 m) и отобрали три керна.",
+      "quote": "A 1000-ft. (300-m) horizontal well was drilled into a distributary mouth-bar reservoir sandstone, and three cores were obtained",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c02",
+      "kind": "observation",
+      "text": "Выделили семь песчаных разновидностей пород: от умеренно до очень хорошо отсортированных, мелко- и очень мелкозернистых.",
+      "quote": "Seven sandy lithofacies were identified in the core, all are moderately to very well sorted and fine to very fine-grained",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c03",
+      "kind": "observation",
+      "text": "Средняя горизонтальная проницаемость шести разновидностей — 12–40 md.",
+      "quote": "Six of the lithofacies exhibit average horizontal permeabilities of 12–40 md",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c04",
+      "kind": "observation",
+      "text": "Для седьмой, лучше всего отсортированной разновидности среднее равно 129 md.",
+      "quote": "The seventh, best-sorted lithofacies averages 129 md",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c05",
+      "kind": "observation",
+      "text": "Для объяснения происхождения отложений изучили современные речные дельты.",
+      "quote": "The origin of these lithofacies was determined by studying modern river-dominated delta processes and sediments",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c06",
+      "kind": "inference",
+      "text": "По интерпретации авторов, паводковые выносы из русел откладывали самый хорошо отсортированный и проницаемый песок у вершины и ближнего края бара.",
+      "quote": "Geoscientists believe that sediment plumes emanating from distributary channels during flood stage deposited the best-sorted and most-permeable sands (the seventh lithofacies) at the apex or most-proximal part of the distributary mouth bars, as well as along the proximal-bar margin (Fig. 9.16)",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c07",
+      "kind": "observation",
+      "text": "Дальше от русла при более слабом течении накапливались более мелкие, хуже отсортированные пески и ил.",
+      "quote": "Finer-grained, more poorly sorted sands and muds were deposited more distally, under lower flow-regime conditions",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.03.c08",
+      "kind": "observation",
+      "text": "Реконструкция показывает карты ассоциаций отложений трёх слоёв Romeo от ближней зоны к дальней.",
+      "quote": "Insets are facies association maps for three Romeo stratigraphic layers, from proximal (upper left) to distal (lower right)",
+      "page": 416,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_1.03.t01",
+    "geo.test_slatt.s9_4_1.03.t02",
+    "geo.test_slatt.s9_4_1.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_1.03.k01",
+    "geo.test_slatt.s9_4_1.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

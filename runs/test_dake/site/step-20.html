@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 20. Как читать давление в скважине — The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_dake.s7_3.06" data-index="20">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#decision">Решение на данных</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#deeper">Глубже</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</a><span aria-hidden="true"> / </span>Шаг 20 из 21</p>
+    <h1>Как читать давление в скважине</h1>
+    <p class="booktitle">В книге: «Решение для постоянного дебита при переходном и псевдоустановившемся течении» <span class="pg">стр. 89</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">◆ Решение на данных</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + интерпретация</span>    </p>
+<p class="relies">Опирается на: <a href="step-19.html">шаг 19 «Когда интеграл заменяют логарифмом»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Для ранних измерений у ствола аргумент обычно мал, но условие нужно проверить.</p><p>Механический скин-фактор добавляет отдельный не зависящий от времени вклад в перепад давления.</p><p class="threshold"><b>Пороговая идея.</b> Для ранних измерений у ствола геометрия внешней границы не входит в решение; добавка около ствола — отдельный член. <span class="chip chip-model">модель</span></p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как работает модель</h3>          <div class="para" id="how-1">
+            <p>Две кривые демонстрируют область применимости приближения. На стволе x обычно меньше 0,01 даже при малом времени. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s7_3.06.c01"><p>«The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9).»</p><footer>— автор, стр. 89 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s7_3.06.c02"><p>«it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t.»</p><footer>— автор, стр. 89 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Математика и наблюдения</h3>          <div class="para" id="how-2">
+            <p><strong class="term">Скин-фактор</strong>: Параметр дополнительного перепада давления около ствола. Механический <strong class="term">скин-фактор</strong> включают как не зависящую от времени поправку. Логарифмический член и поправка на скин-фактор определяют снижение забойного давления относительно начального. В раннем решении нет зависимости от площади дренирования или близости внешней границы. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s7_3.06.c03"><p>«if the van Everdingen mechanical skin factor is included as a time independent perturbation»</p><footer>— автор, стр. 89 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s7_3.06.c04"><p>«$$p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right) \tag{7.10}$$»</p><footer>— автор, стр. 89 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s7_3.06.c05"><p>«As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.»</p><footer>— автор, стр. 89 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="Логика шага" class="ill-svg"><title>Логика шага</title><rect class="ill-bg" x="0" y="0" width="360" height="250" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Логика шага</tspan></text><rect class="ill-box" x="12.0" y="63" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Проверка аргумента у ствола</tspan></text><line class="ill-line" x1="180.0" y1="102.0" x2="180.0" y2="126.0"/><polygon class="ill-arrow" points="180.0,126.0 176.1,117.9 183.9,117.9"/><rect class="ill-box" x="12.0" y="130" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="154" text-anchor="middle"><tspan x="180.0" dy="0">Логарифмическая форма</tspan></text><line class="ill-line" x1="180.0" y1="169.0" x2="180.0" y2="193.0"/><polygon class="ill-arrow" points="180.0,193.0 176.1,184.9 183.9,184.9"/><rect class="ill-box" x="12.0" y="197" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="221" text-anchor="middle"><tspan x="180.0" dy="0">Поправка на скин</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Проверка аргумента у ствола → Логарифмическая форма → Поправка на скин.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 89</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="decision" class="block block-decision" aria-labelledby="h-decision">
+      <h2 id="h-decision">Решение на данных </h2>
+
+        <div class="decision">
+<p class="subtitle">Выбор по исходным условиям</p>          <div class="dec-flow">
+            <div class="dec-box"><span class="dec-label">Признаки</span><ul><li>Проверка аргумента у ствола</li><li>Логарифмическая форма</li></ul></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Правило</span><p>Для ранних измерений у ствола аргумент обычно мал, но условие нужно проверить. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></p></div>
+            <div class="dec-arrow" aria-hidden="true">↓</div>
+            <div class="dec-box"><span class="dec-label">Вывод</span><p>Механический скин-фактор добавляет отдельный не зависящий от времени вклад в перепад давления.</p></div>
+          </div>
+          <h3>Потренируйтесь</h3>
+          <div class="case" data-answer="0">
+            <p><b>Дано:</b> Как вводят механический скин-фактор? <span class="muted small">(Условия в учебном узле)</span></p>
+            <div class="case-opts" role="group" aria-label="Выберите вывод"><button type="button" class="btn ghost case-opt" data-i="0">Как не зависящую от времени поправку</button><button type="button" class="btn ghost case-opt" data-i="1">Как радиус внешней границы</button><button type="button" class="btn ghost case-opt" data-i="2">Как слагаемое, которое обязано расти со временем</button></div>
+            <p class="case-fb" hidden aria-live="polite"><span class="case-verdict"></span> В приведённой формуле это постоянная поправка.</p>
+          </div>
+        </div>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>На стволе x обычно меньше 0,01 даже при малом времени. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></li><li>Механический скин-фактор включают как не зависящую от времени поправку. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></li><li>В раннем решении нет зависимости от площади дренирования или близости внешней границы. <span class="pg" title="Страница книги (по PDF)">стр. 89</span></li></ul>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_dake.s7_3.06.f01">
+          <div class="tex-display" data-tex="p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right)">$$p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right)$$</div>
+          <p>Забойное давление при малом x с механическим скин-фактором. <span class="pg">стр. 89</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$p_{wf}$</td><td>забойное давление при отборе</td><td>—</td></tr><tr><td>$p_i$</td><td>начальное равновесное давление</td><td>—</td></tr><tr><td>$q$</td><td>объёмный дебит</td><td>—</td></tr><tr><td>$\mu$</td><td>вязкость жидкости</td><td>—</td></tr><tr><td>$k$</td><td>проницаемость</td><td>—</td></tr><tr><td>$h$</td><td>толщина пласта</td><td>—</td></tr><tr><td>$t$</td><td>время после начала отбора</td><td>—</td></tr><tr><td>$\gamma$</td><td>экспонента от постоянной Эйлера</td><td>—</td></tr><tr><td>$\phi$</td><td>пористость, доля пор в объёме породы</td><td>—</td></tr><tr><td>$c$</td><td>изотермическая сжимаемость</td><td>—</td></tr><tr><td>$r_w^2$</td><td>квадрат радиуса ствола скважины</td><td>—</td></tr><tr><td>$S$</td><td>механический скин-фактор</td><td>—</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Проверяют x и применяют логарифмическую форму к забойному давлению, если условие выполнено.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Две кривые демонстрируют область применимости приближения.</dd>
+          <dt>Выход</dt><dd>В раннем решении нет зависимости от площади дренирования или близости внешней границы.</dd>
+          <dt>Где ломается</dt><dd>Уравнение переходного режима не зависит от площади дренирования или положения скважины относительно границы. Вывод ограничен временем применимости решения.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Две кривые демонстрируют область применимости приближения.</dd>
+            <dt>Ручные шаги</dt><dd>Проверяют x и применяют логарифмическую форму к забойному давлению, если условие выполнено.</dd>
+            <dt>Точки суждения</dt><dd>Уравнение переходного режима не зависит от площади дренирования или положения скважины относительно границы. Вывод ограничен временем применимости решения.</dd>
+            <dt>Время</dt><dd>Трудозатраты в источнике не оценены.</dd>
+            <dt>Типичные ошибки</dt><dd>Применить формулу, не проверив её граничные условия и допущения.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>В модели измерения можно выделить прогностическую зависимость и отдельную постоянную поправку на локальное смещение.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Постоянная поправка здесь физическая и не заменяет переход к правильному режиму или проверку малого x.</p>
+
+    </section>
+    <section id="deeper" class="block block-deeper" aria-labelledby="h-deeper">
+      <h2 id="h-deeper">Глубже </h2>
+
+<details class="deeper"><summary>Проверка обозначений <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></summary><p>В строке определения x около ствола в запросе распознано d вместо пористости. Ориентируемся на общее определение x и на формулу со скин-фактором, где напечатана пористость.</p></details>
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>переходный режим <span class="en" lang="en">(transient flow)</span></dt><dd>Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы. <span class="pg">стр. 89</span> <span class="chip chip-model">модель</span></dd><dt>экспоненциальный интеграл <span class="en" lang="en">(exponential integral)</span></dt><dd>Здесь положительная функция, равная площади под кривой exp(−s)/s от x до бесконечности. <span class="pg">стр. 89</span> <span class="chip chip-model">модель</span></dd><dt>переменная подобия <span class="en" lang="en">(similarity variable)</span></dt><dd>Комбинация исходных переменных, позволяющая описать решения общей формой. <span class="pg">стр. 89</span> <span class="chip chip-model">модель</span></dd><dt>скин-фактор <span class="en" lang="en">(mechanical skin factor)</span></dt><dd>Параметр дополнительного перепада давления около ствола. <span class="pg">стр. 89</span> <span class="chip chip-model">модель</span></dd><dt>область дренирования <span class="en" lang="en">(drainage volume)</span></dt><dd>Участок пласта, с которого в данном режиме поступает жидкость к скважине. <span class="pg">стр. 89</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_dake-s7_3-06-t01" data-task="geo.test_dake.s7_3.06.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Как вводят механический скин-фактор?</legend>
+    <label class="opt"><input type="radio" name="geo.test_dake.s7_3.06.t01" value="0"> <span>Как радиус внешней границы</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s7_3.06.t01" value="1"> <span>Как не зависящую от времени поправку</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s7_3.06.t01" value="2"> <span>Как слагаемое, которое обязано расти со временем</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Как не зависящую от времени поправку</p>
+    <p class="fb-expl">В приведённой формуле это постоянная поправка. <a href="#how-2">Где это в тексте (стр. 89) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s7_3-06-t02" data-task="geo.test_dake.s7_3.06.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">От чего раннее решение не зависит?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s7_3.06.t02" value="0"> <span>От времени</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s7_3.06.t02" value="1"> <span>От площади дренирования</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s7_3.06.t02" value="2"> <span>От давления в начале отбора</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s7_3.06.t02" value="3"> <span>От положения скважины относительно границы</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> От площади дренирования; От положения скважины относительно границы</p>
+    <p class="fb-expl">По раннему отклику модель не определяет размер и расположение границ. <a href="#how-2">Где это в тексте (стр. 89) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s7_3-06-t03" data-task="geo.test_dake.s7_3.06.t03" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Какой диапазон аргумента обычно подходит при замерах у ствола?</p>
+  <p class="cloze">На стволе x обычно меньше <select aria-label="Пропуск 1"><option value="">—</option><option>вязкости</option><option>0,01</option><option>скин-фактора</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> На стволе x обычно меньше [0,01].</p>
+    <p class="fb-expl">Малость аргумента проверяется для выбранного измерения. <a href="#how-1">Где это в тексте (стр. 89) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_dake.s7_3.06.c01"><p>Две кривые демонстрируют область применимости приближения. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9).»</p><footer>— стр. 89</footer></blockquote></li>
+        <li id="src-geo.test_dake.s7_3.06.c02"><p>На стволе x обычно меньше 0.01 даже при малом времени. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t.»</p><footer>— стр. 89</footer></blockquote></li>
+        <li id="src-geo.test_dake.s7_3.06.c03"><p>Механический скин-фактор включают как не зависящую от времени поправку. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«if the van Everdingen mechanical skin factor is included as a time independent perturbation»</p><footer>— стр. 89</footer></blockquote></li>
+        <li id="src-geo.test_dake.s7_3.06.c04"><p>Логарифмический член и вклад скин-фактора входят вместе в снижение забойного давления относительно начального. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«$$p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right) \tag{7.10}$$»</p><footer>— стр. 89</footer></blockquote></li>
+        <li id="src-geo.test_dake.s7_3.06.c05"><p>В раннем решении нет зависимости от площади дренирования или близости внешней границы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.»</p><footer>— стр. 89</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u089_08-1" tabindex="-1">
+          <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+          <blockquote>The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9). The significance of this approximation is that reservoir engineers are frequently concerned with the analysis of pressures measured in the wellbore, at r=r_w. Since in this case x=dμcr_w^2/4kt, it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t. Equation (7.6) can then be approximated as</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u089_09-1" tabindex="-1">
+          <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+          <blockquote>$$p_{rw^2} = p_{wf} = p_i - \frac{q\mu}{4\pi kh} \ln \frac{4kt}{\gamma \phi \mu c r_w^2}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u089_10-1" tabindex="-1">
+          <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+          <blockquote>Or, if the van Everdingen mechanical skin factor is included as a time independent perturbation (ref. Chapter 4, sec. 7), then</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u089_11-1" tabindex="-1">
+          <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+          <blockquote>$$p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right) \tag{7.10}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u089_12-1" tabindex="-1">
+          <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+          <blockquote>As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-21.html">шаг 21 «Почему дальняя скважина меняет расчёт»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-19.html" rel="prev"><span>← Назад</span><b>Когда интеграл заменяют логарифмом</b></a><a class="next" href="step-21.html" rel="next"><span>Дальше →</span><b>Почему дальняя скважина меняет расчёт</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Как читать давление в скважине</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="geo.test_dake.s7_3.06">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_dake.s7_3.06.t01", "type": "single", "question": "Как вводят механический скин-фактор?", "explanation": "В приведённой формуле это постоянная поправка.", "page": 89, "link": "#how-2", "step_title": "Как читать давление в скважине", "step_index": 20, "node_id": "geo.test_dake.s7_3.06", "options": ["Как радиус внешней границы", "Как не зависящую от времени поправку", "Как слагаемое, которое обязано расти со временем"], "key": [1], "answer_text": "Как не зависящую от времени поправку"}, {"id": "geo.test_dake.s7_3.06.t02", "type": "multiple", "question": "От чего раннее решение не зависит?", "explanation": "По раннему отклику модель не определяет размер и расположение границ.", "page": 89, "link": "#how-2", "step_title": "Как читать давление в скважине", "step_index": 20, "node_id": "geo.test_dake.s7_3.06", "options": ["От времени", "От площади дренирования", "От давления в начале отбора", "От положения скважины относительно границы"], "key": [1, 3], "answer_text": "От площади дренирования; От положения скважины относительно границы"}, {"id": "geo.test_dake.s7_3.06.t03", "type": "cloze", "question": "Какой диапазон аргумента обычно подходит при замерах у ствола?", "explanation": "Малость аргумента проверяется для выбранного измерения.", "page": 89, "link": "#how-1", "step_title": "Как читать давление в скважине", "step_index": 20, "node_id": "geo.test_dake.s7_3.06", "parts": ["На стволе x обычно меньше ", "."], "blanks": [{"options": ["вязкости", "0,01", "скин-фактора"], "answers": ["0,01"]}], "key": [["0,01"]], "answer_text": "На стволе x обычно меньше [0,01]."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

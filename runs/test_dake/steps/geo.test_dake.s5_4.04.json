@@ -1,0 +1,295 @@
+{
+  "node_id": "geo.test_dake.s5_4.04",
+  "chapter": "test_dake",
+  "index": 14,
+  "part": {
+    "id": "part3",
+    "title": "Когда допустимо простое уравнение"
+  },
+  "title_beginner": "Почему давление похоже на тепло",
+  "title_book": "Линеаризация уравнения для жидкости малой постоянной сжимаемости",
+  "section": "s5_4",
+  "pages": [
+    79
+  ],
+  "minutes": 4,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "text",
+  "format_rationale": "Ф/М: тепловой аналог используется для узнавания формы оператора; решения можно сопоставить рядом в тексте.",
+  "order_rationale": "С готовым уравнением узнаём общий оператор диффузии по тепловому аналогу.",
+  "essence": [
+    "Перераспределение давления и тепла можно описывать одной формой радиального уравнения.",
+    "Физические величины и коэффициенты при этом разные."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности. Описывать температуру при теплопроводности с радиальной симметрией можно уравнением той же формы.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.04.c01",
+            "geo.test_dake.s5_4.04.c02"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.04.c01",
+              "quote": "Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\\phi \\mu c$ is called the diffusivity constant",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.04.c02",
+              "quote": "This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "В тепловом аналоге T — абсолютная температура, K — температуропроводность. Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.04.c03",
+            "geo.test_dake.s5_4.04.c04"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.04.c03",
+              "quote": "in which T is the absolute temperature and K the thermal diffusivity constant",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.04.c04",
+              "quote": "which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_4.04.f01",
+          "latex": "\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial T}{\\partial r} \\right) = \\frac{1}{K} \\frac{\\partial T}{\\partial t}",
+          "meaning": "Радиальный тепловой аналог уравнения для давления.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "T",
+              "meaning": "абсолютная температура",
+              "unit": null
+            },
+            {
+              "symbol": "K",
+              "meaning": "температуропроводность",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_22"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Используют математические решения той же формы для подходящих начальных и граничных условий.",
+        "inputs": "Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности.",
+        "outputs": "Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями.",
+        "breaks_where": "Тепловое поле и давление — разные величины; общая форма не заменяет проверку физических условий.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности.",
+          "manual_steps": "Используют математические решения той же формы для подходящих начальных и граничных условий.",
+          "judgment_points": "Тепловое поле и давление — разные величины; общая форма не заменяет проверку физических условий.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Один и тот же численный оператор решает несколько задач, если переставить коэффициенты, данные и условия.",
+        "breaks_where": "Физические единицы, свойства и условия у температуры и давления различаются.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "term": "пьезопроводность",
+          "en": "pressure diffusivity",
+          "definition": "Величина, которая определяет, как быстро перераспределяется давление.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "начальное условие",
+          "en": "initial condition",
+          "definition": "Распределение давления в момент начала расчёта.",
+          "page": 79,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Давление в радиальной модели → Общий оператор → Тепловой аналог.",
+      "alt": "Схема: Давление в радиальной модели, затем Общий оператор, затем Тепловой аналог.",
+      "file": "illustrations/geo.test_dake.s5_4.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.04.c02",
+        "geo.test_dake.s5_4.04.c03",
+        "geo.test_dake.s5_4.04.c01"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_4.04.c01",
+      "kind": "observation",
+      "text": "Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности.",
+      "quote": "Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\\phi \\mu c$ is called the diffusivity constant",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.04.c02",
+      "kind": "observation",
+      "text": "Описывать температуру при теплопроводности с радиальной симметрией можно уравнением той же формы.",
+      "quote": "This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.04.c03",
+      "kind": "observation",
+      "text": "В тепловом аналоге T — абсолютная температура, K — температуропроводность.",
+      "quote": "in which T is the absolute temperature and K the thermal diffusivity constant",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.04.c04",
+      "kind": "observation",
+      "text": "Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями.",
+      "quote": "which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.",
+      "page": 79,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_4.04.t01",
+    "geo.test_dake.s5_4.04.t02",
+    "geo.test_dake.s5_4.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_4.04.k01",
+    "geo.test_dake.s5_4.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_4.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s5_3.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

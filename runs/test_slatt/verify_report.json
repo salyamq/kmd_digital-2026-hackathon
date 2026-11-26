@@ -1,0 +1,42 @@
+{
+  "chapter": "test_slatt",
+  "ok": true,
+  "stats": {
+    "nodes": 14,
+    "claims": 95,
+    "quotes_exact": 95,
+    "quotes_fuzzy": 0,
+    "quotes_missing": 0,
+    "numbers_bad": 0,
+    "errors": 0,
+    "warnings": 5
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_slatt.s9_4_1.01",
+      "message": "uses «разлом» defined later in geo.test_slatt.s9_4_3.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_slatt.s9_4_1.02",
+      "message": "uses «траектория» defined later in geo.test_slatt.s9_4_2.03"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_slatt.x1.03",
+      "message": "uses «разлом» defined later in geo.test_slatt.s9_4_3.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_slatt.s9_4_1.04",
+      "message": "uses «разлом» defined later in geo.test_slatt.s9_4_3.01"
+    },
+    {
+      "type": "term_before_definition",
+      "target": "geo.test_slatt.s9_4_2.01",
+      "message": "uses «разлом» defined later in geo.test_slatt.s9_4_3.01"
+    }
+  ]
+}

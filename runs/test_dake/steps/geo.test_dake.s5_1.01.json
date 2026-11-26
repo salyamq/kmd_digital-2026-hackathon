@@ -1,0 +1,338 @@
+{
+  "node_id": "geo.test_dake.s5_1.01",
+  "chapter": "test_dake",
+  "index": 5,
+  "part": {
+    "id": "part1",
+    "title": "Как составить уравнение радиального потока"
+  },
+  "title_beginner": "Зачем упрощать уравнение потока",
+  "title_book": "Введение",
+  "section": "s5_1",
+  "pages": [
+    75
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Даже однородная порода не делает уравнение линейным: сами свойства жидкости меняются с давлением."
+  },
+  "threshold": "Даже однородная порода не делает уравнение линейным: сами свойства жидкости меняются с давлением.",
+  "format": "text",
+  "format_rationale": "Ф/Н: вводный шаг связывает нелинейные коэффициенты с необходимостью упрощения без новой выкладки.",
+  "order_rationale": "Теперь видны зависящие от давления коэффициенты и причина перехода к линеаризации.",
+  "essence": [
+    "Даже в однородной породе коэффициенты уравнения могут зависеть от давления.",
+    "Чтобы получить простое аналитическое решение, проверяют допустимость приближения."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        75
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Радиальный поток**: Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси. Уравнение описывает **радиальный поток** жидкости в однородной пористой среде. Обе части уравнения имеют коэффициенты, зависящие от искомого давления. Для аналитического решения ищут представление, где зависимость коэффициентов от давления пренебрежима.",
+          "claim_ids": [
+            "geo.test_dake.s5_1.01.c01",
+            "geo.test_dake.s5_1.01.c02",
+            "geo.test_dake.s5_1.01.c03"
+          ],
+          "pages": [
+            75
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_1.01.c01",
+              "quote": "In this chapter the basic equation for the radial flow of a fluid in a homogeneous porous medium is derived as",
+              "page": 75,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_1.01.c02",
+              "quote": "This equation is non-linear since the coefficients on both sides are themselves functions of the dependent variable, the pressure",
+              "page": 75,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_1.01.c03",
+              "quote": "In order to obtain analytical solutions, it is first necessary to linearize the equation by expressing it in a form in which the coefficients have a negligible dependence upon the pressure and can be considered as constants",
+              "page": 75,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Линеаризация**: Здесь — приближение, в котором коэффициенты перестают существенно зависеть от давления. Для жидкости приближённая **линеаризация** приводит к радиальному уравнению пьезопроводности. Для реального газа нужна более сложная линеаризация интегральным преобразованием.",
+          "claim_ids": [
+            "geo.test_dake.s5_1.01.c04",
+            "geo.test_dake.s5_1.01.c05"
+          ],
+          "pages": [
+            75
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_1.01.c04",
+              "quote": "An approximate form of linearization applicable to liquid flow is presented at the end of the chapter in which equ. (5.1) is reduced to the form of the radial diffusivity equation.",
+              "page": 75,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_1.01.c05",
+              "quote": "For the flow of a real gas, however, a more complex linearization by integral transformation is required which will be presented separately in Chapter 8.",
+              "page": 75,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        75
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_1.01.f01",
+          "latex": "\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( \\frac{k \\rho}{\\mu} r \\frac{\\partial p}{\\partial r} \\right) = \\phi c \\rho \\frac{\\partial p}{\\partial t}",
+          "meaning": "Основное уравнение однофазного радиального потока; изменение массового расхода связано с накоплением при изменении давления.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 75,
+          "unit_id": "u075_05"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        75
+      ],
+      "data": {
+        "text": "Достаточно однородной породы, чтобы получить линейную модель давления.",
+        "correction": "Свойства жидкости входят в коэффициенты и могут зависеть от давления.",
+        "claim_ids": [
+          "geo.test_dake.s5_1.01.c02",
+          "geo.test_dake.s5_1.01.c03",
+          "geo.test_dake.s5_1.01.c05"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Для жидкости используют приближение к уравнению пьезопроводности, для реального газа требуется интегральное преобразование.",
+        "inputs": "Уравнение описывает радиальный поток жидкости в однородной пористой среде.",
+        "outputs": "Для реального газа нужна более сложная линеаризация интегральным преобразованием.",
+        "breaks_where": "Приближение для жидкости не переносится автоматически на реальный газ.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Уравнение описывает радиальный поток жидкости в однородной пористой среде.",
+          "manual_steps": "Для жидкости используют приближение к уравнению пьезопроводности, для реального газа требуется интегральное преобразование.",
+          "judgment_points": "Приближение для жидкости не переносится автоматически на реальный газ.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Достаточно однородной породы, чтобы получить линейную модель давления.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Локальное приближение сложной модели простой упрощает расчёт.",
+        "breaks_where": "Для газа замена коэффициентов константами теряет существенную зависимость от давления.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        75
+      ],
+      "items": [
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "линеаризация",
+          "en": "linearization",
+          "definition": "Здесь — приближение, в котором коэффициенты перестают существенно зависеть от давления.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "пьезопроводность",
+          "en": "pressure diffusivity",
+          "definition": "Величина, которая определяет, как быстро перераспределяется давление.",
+          "page": 75,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Коэффициенты зависят от давления → Линеаризация для жидкости → Иная линеаризация для газа.",
+      "alt": "Схема: Коэффициенты зависят от давления, затем Линеаризация для жидкости, затем Иная линеаризация для газа.",
+      "file": "illustrations/geo.test_dake.s5_1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_1.01.c02",
+        "geo.test_dake.s5_1.01.c04",
+        "geo.test_dake.s5_1.01.c05"
+      ],
+      "pages": [
+        75
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_1.01.c01",
+      "kind": "observation",
+      "text": "Уравнение описывает радиальный поток жидкости в однородной пористой среде.",
+      "quote": "In this chapter the basic equation for the radial flow of a fluid in a homogeneous porous medium is derived as",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_1.01.c02",
+      "kind": "observation",
+      "text": "Обе части уравнения имеют коэффициенты, зависящие от искомого давления.",
+      "quote": "This equation is non-linear since the coefficients on both sides are themselves functions of the dependent variable, the pressure",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_1.01.c03",
+      "kind": "observation",
+      "text": "Для аналитического решения ищут представление, где зависимость коэффициентов от давления пренебрежима.",
+      "quote": "In order to obtain analytical solutions, it is first necessary to linearize the equation by expressing it in a form in which the coefficients have a negligible dependence upon the pressure and can be considered as constants",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_1.01.c04",
+      "kind": "observation",
+      "text": "Для жидкости приближённая линеаризация приводит к радиальному уравнению пьезопроводности.",
+      "quote": "An approximate form of linearization applicable to liquid flow is presented at the end of the chapter in which equ. (5.1) is reduced to the form of the radial diffusivity equation.",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_1.01.c05",
+      "kind": "observation",
+      "text": "Для реального газа нужна более сложная линеаризация интегральным преобразованием.",
+      "quote": "For the flow of a real gas, however, a more complex linearization by integral transformation is required which will be presented separately in Chapter 8.",
+      "page": 75,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_1.01.t01",
+    "geo.test_dake.s5_1.01.t02",
+    "geo.test_dake.s5_1.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_1.01.k01",
+    "geo.test_dake.s5_1.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

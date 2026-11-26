@@ -1,0 +1,324 @@
+{
+  "node_id": "geo.test_slatt.s9_4_1.02",
+  "chapter": "test_slatt",
+  "index": 4,
+  "part": {
+    "id": "part1",
+    "title": "Как растёт дельта и что сохраняется в разрезе"
+  },
+  "title_beginner": "Меконг: карта и время",
+  "title_book": "Процессы и отложения",
+  "section": "s9_4_1",
+  "pages": [
+    411,
+    412
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "П",
+    "secondary": "В",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "interactive",
+  "format_rationale": "П/В: на карте и разрезе полезно самостоятельно переключить способ корреляции и проверить связь интервалов.",
+  "order_rationale": "После разбора Меконга читаем карту и сравниваем две корреляции.",
+  "essence": [
+    "Карта связывает скважины с линией разреза.",
+    "Разрезы по древним обстановкам и по времени по-разному связывают осадочные единицы."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        411,
+        412
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы. На карте показана линия разрезов со скважинами.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.02.c01",
+            "geo.test_slatt.s9_4_1.02.c02"
+          ],
+          "pages": [
+            411
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c01",
+              "quote": "Upper delta plain is green and lower delta plain is orange",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c02",
+              "quote": "Cross-sections A–B with well locations are shown",
+              "page": 411,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Первый разрез коррелирует скважины на основе реконструкции древних обстановок. Датированные в тысячах лет линии пересекают границы пород и показывают выдвижение дельты.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.02.c03",
+            "geo.test_slatt.s9_4_1.02.c04"
+          ],
+          "pages": [
+            412
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c03",
+              "quote": "Lithostratigraphic correlation of wells based upon paleoenvironmental interpretation",
+              "page": 412,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c04",
+              "quote": "Numbered lines that crosscut lithofacies boundaries are measured geologic time lines in 1000s of years; they demonstrate the progradational nature of the delta. (c) Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+              "page": 412,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Второй разрез сопоставляет скважины по линиям времени. Выбор корреляции по породам или по времени меняет сопоставление осадочных единиц.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.02.c05",
+            "geo.test_slatt.s9_4_1.02.c06"
+          ],
+          "pages": [
+            412
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c05",
+              "quote": "Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+              "page": 412,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.02.c06",
+              "quote": "Note the difference in correlation of sedimentary units based upon the lithostratigraphic and chronostratigraphic correlation strategies",
+              "page": 412,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Привязывают скважины к карте, после чего сравнивают две корреляции вдоль линии разреза.",
+        "inputs": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+        "outputs": "Выбор корреляции по породам или по времени меняет сопоставление осадочных единиц.",
+        "breaks_where": "Один вариант сопоставляет обстановки, другой возраст. Они не взаимозаменяемы.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+          "manual_steps": "Привязывают скважины к карте, после чего сравнивают две корреляции вдоль линии разреза.",
+          "judgment_points": "Один вариант сопоставляет обстановки, другой возраст. Они не взаимозаменяемы.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Карта — индекс расположения записей, разрез — содержимое записей, а возраст — отдельный ключ.",
+        "breaks_where": "Геологические временные линии выводятся из данных, а не назначаются автоматически.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        411,
+        412
+      ],
+      "items": [
+        {
+          "number": "9.11",
+          "page": 411,
+          "caption": "FIGURE 9.11 (a) Map view of Mekong River Delta. Upper delta plain is green and lower delta plain is orange. Black lines are beach ridges. Cross-sections A–B with well locations are shown.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u411_05",
+          "scan": "pages/p411.png"
+        },
+        {
+          "number": "9.11",
+          "page": 412,
+          "caption": "FIGURE 9.11—cont'd (b) Lithostratigraphic correlation of wells based upon paleoenvironmental interpretation. Numbered lines that crosscut lithofacies boundaries are measured geologic time lines in 1000s of years; they demonstrate the progradational nature of the delta. (c) Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines. Note the difference in correlation of sedimentary units based upon the lithostratigraphic and chronostratigraphic correlation strategies. After Gani and Bhattacharya (2005).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u412_01",
+          "scan": "pages/p412.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        411
+      ],
+      "items": [
+        {
+          "term": "береговой вал",
+          "definition": "Вытянутый осадочный гребень вдоль прежней или современной береговой линии",
+          "en": "beach ridge",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения определённой обстановки",
+          "en": "facies",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление частей разреза между скважинами",
+          "en": "correlation",
+          "page": 411,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Карта привязывает скважины → Сравниваем способы корреляции → Получаем разные связи.",
+      "alt": "Схема показывает цепочку: Карта привязывает скважины, затем Сравниваем способы корреляции, затем Получаем разные связи.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.02.c04",
+        "geo.test_slatt.s9_4_1.02.c01",
+        "geo.test_slatt.s9_4_1.02.c05"
+      ],
+      "pages": [
+        411,
+        412
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c01",
+      "kind": "observation",
+      "text": "На карте цветом разделены верхняя и нижняя равнина дельты, чёрным обозначены береговые валы.",
+      "quote": "Upper delta plain is green and lower delta plain is orange",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c02",
+      "kind": "observation",
+      "text": "На карте показана линия разрезов со скважинами.",
+      "quote": "Cross-sections A–B with well locations are shown",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c03",
+      "kind": "observation",
+      "text": "Первый разрез коррелирует скважины на основе реконструкции древних обстановок.",
+      "quote": "Lithostratigraphic correlation of wells based upon paleoenvironmental interpretation",
+      "page": 412,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c04",
+      "kind": "observation",
+      "text": "Датированные в тысячах лет линии пересекают границы пород и показывают выдвижение дельты.",
+      "quote": "Numbered lines that crosscut lithofacies boundaries are measured geologic time lines in 1000s of years; they demonstrate the progradational nature of the delta. (c) Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+      "page": 412,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c05",
+      "kind": "observation",
+      "text": "Второй разрез сопоставляет скважины по линиям времени.",
+      "quote": "Sequence stratigraphic (chronostratigraphic) correlation of wells based upon the time lines",
+      "page": 412,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.02.c06",
+      "kind": "observation",
+      "text": "Выбор корреляции по породам или по времени меняет сопоставление осадочных единиц.",
+      "quote": "Note the difference in correlation of sedimentary units based upon the lithostratigraphic and chronostratigraphic correlation strategies",
+      "page": 412,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_1.02.t01",
+    "geo.test_slatt.s9_4_1.02.t02",
+    "geo.test_slatt.s9_4_1.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_1.02.k01",
+    "geo.test_slatt.s9_4_1.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.x1.02",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_slatt.x1.01",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

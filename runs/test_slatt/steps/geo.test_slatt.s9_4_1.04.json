@@ -1,0 +1,214 @@
+{
+  "node_id": "geo.test_slatt.s9_4_1.04",
+  "chapter": "test_slatt",
+  "index": 6,
+  "part": {
+    "id": "part2",
+    "title": "Как устроены песчаные тела"
+  },
+  "title_beginner": "Как бары складываются в пояс",
+  "title_book": "Процессы и отложения",
+  "section": "s9_4_1",
+  "pages": [
+    416
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "В",
+    "secondary": "П",
+    "threshold": "Широкий песчаный пояс может состоять из отдельных неоднородных тел."
+  },
+  "threshold": "Широкий песчаный пояс может состоять из отдельных неоднородных тел.",
+  "format": "short",
+  "format_rationale": "В/П: компактная последовательность показывает, как ветвящиеся рукава строят широкий пояс из отдельных баров.",
+  "order_rationale": "Переходим от отдельных баров к песчаному поясу и различаем масштабы неоднородности.",
+  "essence": [
+    "Много отдельных баров могут сложиться в широкий песчаный пояс.",
+    "Общий контур пояса не гарантирует неизменных свойств даже внутри одного бара."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        416
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "**проницаемость**: Способность породы пропускать флюид. При проградации устьевые русла неоднократно ветвились. За длительное время образовался широкий пласт из множества баров. Пласт вытянут вдоль простирания. Даже внутри отдельного бара фации и **проницаемость** меняются и могут прерываться.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.04.c01",
+            "geo.test_slatt.s9_4_1.04.c02"
+          ],
+          "pages": [
+            416
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.04.c01",
+              "quote": "Over a long period of time, repeated bifurcation of distributary mouth channels during progradation led to the development of a broad, strike-parallel sheet composed of numerous mouth bars",
+              "page": 416,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.04.c02",
+              "quote": "However, across a single bar, there are discontinuities in facies and permeability",
+              "page": 416,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Различают песчаный пояс из многих баров и неоднородности внутри отдельного бара.",
+        "inputs": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+        "outputs": "Даже внутри отдельного бара фации и проницаемость меняются и могут прерываться.",
+        "breaks_where": "Большой масштаб песчаного тела не гарантирует, что его свойства непрерывны на меньшем масштабе.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+          "manual_steps": "Различают песчаный пояс из многих баров и неоднородности внутри отдельного бара.",
+          "judgment_points": "Большой масштаб песчаного тела не гарантирует, что его свойства непрерывны на меньшем масштабе.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Общий контур полигона не показывает разрывы между внутренними компонентами.",
+        "breaks_where": "Связь потоков зависит от реальных свойств породы и не читается как формальная связность полигона.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        416
+      ],
+      "items": [
+        {
+          "term": "ветвление русла",
+          "definition": "Разделение потока по расходящимся рукавам",
+          "en": "channel bifurcation",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадка у выхода рукава",
+          "en": "mouth bar",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "простирание",
+          "definition": "Направление вдоль линии пересечения наклонной поверхности с горизонталью",
+          "en": "strike",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать флюид",
+          "en": "permeability",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения, выделенные по характерным признакам",
+          "en": "facies",
+          "page": 416,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Рукава многократно ветвятся → Накапливаются устьевые бары → Образуется широкий пояс.",
+      "alt": "Схема показывает цепочку: Рукава многократно ветвятся, затем Накапливаются устьевые бары, затем Образуется широкий пояс.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.04.c01",
+        "geo.test_slatt.s9_4_1.04.c02"
+      ],
+      "pages": [
+        416
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.04.c01",
+      "kind": "observation",
+      "text": "При проградации повторное ветвление устьевых русел за длительное время создало широкий пласт из множества баров, вытянутый вдоль простирания.",
+      "quote": "Over a long period of time, repeated bifurcation of distributary mouth channels during progradation led to the development of a broad, strike-parallel sheet composed of numerous mouth bars",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.04.c02",
+      "kind": "observation",
+      "text": "Даже внутри отдельного бара фации и проницаемость меняются и могут прерываться.",
+      "quote": "However, across a single bar, there are discontinuities in facies and permeability",
+      "page": 416,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_1.04.t01",
+    "geo.test_slatt.s9_4_1.04.t02",
+    "geo.test_slatt.s9_4_1.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_1.04.k01",
+    "geo.test_slatt.s9_4_1.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

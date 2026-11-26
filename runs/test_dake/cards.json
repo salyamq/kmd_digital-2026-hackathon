@@ -1,0 +1,467 @@
+{
+  "chapter": "test_dake",
+  "cards": [
+    {
+      "front": "Можно ли совместить прямоугольную сетку и радиальное уравнение притока?",
+      "back": "Да, форма модели у ствола может отличаться от сетки всего пласта.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.01.c04"
+      ],
+      "kind": "idea",
+      "page": 75,
+      "id": "geo.test_dake.s5_2.01.k01",
+      "node_id": "geo.test_dake.s5_2.01"
+    },
+    {
+      "front": "На какую толщину открыта скважина?",
+      "back": "Всю толщину.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.01.c06"
+      ],
+      "kind": "term",
+      "page": 75,
+      "id": "geo.test_dake.s5_2.01.k02",
+      "node_id": "geo.test_dake.s5_2.01"
+    },
+    {
+      "front": "Что означает превышение массового притока над оттоком?",
+      "back": "Масса жидкости в кольце растёт.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.02.c02"
+      ],
+      "kind": "idea",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.02.k01",
+      "node_id": "geo.test_dake.s5_2.02"
+    },
+    {
+      "front": "Какая производная остаётся слева после сокращения толщины?",
+      "back": "Массового расхода.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.02.c05"
+      ],
+      "kind": "term",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.02.k02",
+      "node_id": "geo.test_dake.s5_2.02"
+    },
+    {
+      "front": "Зачем в балансе подставляют закон Дарси?",
+      "back": "Чтобы выразить расход через давление.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.03.c01"
+      ],
+      "kind": "idea",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.03.k01",
+      "node_id": "geo.test_dake.s5_2.03"
+    },
+    {
+      "front": "Изменение какой величины по времени стоит справа после подстановки?",
+      "back": "Плотности.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.03.c03"
+      ],
+      "kind": "term",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.03.k02",
+      "node_id": "geo.test_dake.s5_2.03"
+    },
+    {
+      "front": "Куда подставляют связь изменения плотности и давления?",
+      "back": "В правую часть баланса массы.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.04.c05"
+      ],
+      "kind": "idea",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.04.k01",
+      "node_id": "geo.test_dake.s5_2.04"
+    },
+    {
+      "front": "Что удерживают постоянным в переходе от объёма к плотности?",
+      "back": "Массе.",
+      "claim_ids": [
+        "geo.test_dake.s5_2.04.c03"
+      ],
+      "kind": "term",
+      "page": 76,
+      "id": "geo.test_dake.s5_2.04.k02",
+      "node_id": "geo.test_dake.s5_2.04"
+    },
+    {
+      "front": "Почему основное уравнение нелинейно?",
+      "back": "Коэффициенты зависят от искомого давления.",
+      "claim_ids": [
+        "geo.test_dake.s5_1.01.c02"
+      ],
+      "kind": "idea",
+      "page": 75,
+      "id": "geo.test_dake.s5_1.01.k01",
+      "node_id": "geo.test_dake.s5_1.01"
+    },
+    {
+      "front": "Что дополнительно требуется для реального газа?",
+      "back": "Интегральное.",
+      "claim_ids": [
+        "geo.test_dake.s5_1.01.c05"
+      ],
+      "kind": "term",
+      "page": 75,
+      "id": "geo.test_dake.s5_1.01.k02",
+      "node_id": "geo.test_dake.s5_1.01"
+    },
+    {
+      "front": "Что случится, если поменять условия, не меняя уравнение?",
+      "back": "Могут измениться решения.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.01.c01"
+      ],
+      "kind": "idea",
+      "page": 76,
+      "id": "geo.test_dake.s5_3.01.k01",
+      "node_id": "geo.test_dake.s5_3.01"
+    },
+    {
+      "front": "Что кроме времени различает режимы?",
+      "back": "Границе.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.01.c04"
+      ],
+      "kind": "term",
+      "page": 76,
+      "id": "geo.test_dake.s5_3.01.k02",
+      "node_id": "geo.test_dake.s5_3.01"
+    },
+    {
+      "front": "Что означает слово «бесконечный» для переходного режима?",
+      "back": "Внешняя граница не влияет на изучаемый отклик.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.02.c03"
+      ],
+      "kind": "idea",
+      "page": 77,
+      "id": "geo.test_dake.s5_3.02.k01",
+      "node_id": "geo.test_dake.s5_3.02"
+    },
+    {
+      "front": "Что измеряют после смены дебита?",
+      "back": "Давление.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.02.c04"
+      ],
+      "kind": "term",
+      "page": 77,
+      "id": "geo.test_dake.s5_3.02.k02",
+      "node_id": "geo.test_dake.s5_3.02"
+    },
+    {
+      "front": "Что приблизительно одинаково после стабилизации закрытой области?",
+      "back": "Скорость падения давления.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.03.c04"
+      ],
+      "kind": "idea",
+      "page": 77,
+      "id": "geo.test_dake.s5_3.03.k01",
+      "node_id": "geo.test_dake.s5_3.03"
+    },
+    {
+      "front": "Каков градиент давления на закрытой границе?",
+      "back": "Нулю.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.03.c03"
+      ],
+      "kind": "term",
+      "page": 77,
+      "id": "geo.test_dake.s5_3.03.k02",
+      "node_id": "geo.test_dake.s5_3.03"
+    },
+    {
+      "front": "Чем заменяют веса по объёмам, если условия выполнены?",
+      "back": "Дебитами отдельных скважин.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.04.c07"
+      ],
+      "kind": "idea",
+      "page": 78,
+      "id": "geo.test_dake.s5_3.04.k01",
+      "node_id": "geo.test_dake.s5_3.04"
+    },
+    {
+      "front": "Для чего нужно среднее пластовое давление?",
+      "back": "Материальный баланс.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.04.c09"
+      ],
+      "kind": "term",
+      "page": 78,
+      "id": "geo.test_dake.s5_3.04.k02",
+      "node_id": "geo.test_dake.s5_3.04"
+    },
+    {
+      "front": "Почему при постоянном отборе давление может не падать?",
+      "back": "Приток через открытую границу компенсирует отбор.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.05.c02"
+      ],
+      "kind": "idea",
+      "page": 78,
+      "id": "geo.test_dake.s5_3.05.k01",
+      "node_id": "geo.test_dake.s5_3.05"
+    },
+    {
+      "front": "Что наступает сразу после смены дебита?",
+      "back": "Переходный.",
+      "claim_ids": [
+        "geo.test_dake.s5_3.05.c09"
+      ],
+      "kind": "term",
+      "page": 78,
+      "id": "geo.test_dake.s5_3.05.k02",
+      "node_id": "geo.test_dake.s5_3.05"
+    },
+    {
+      "front": "Зачем нужен малый градиент давления?",
+      "back": "Чтобы пренебречь членом с квадратом градиента.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.01.c06"
+      ],
+      "kind": "idea",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.01.k01",
+      "node_id": "geo.test_dake.s5_4.01"
+    },
+    {
+      "front": "Что фиксирует оставшийся коэффициент вместе с другими допущениями?",
+      "back": "Сжимаемости.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.01.c09"
+      ],
+      "kind": "term",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.01.k02",
+      "node_id": "geo.test_dake.s5_4.01"
+    },
+    {
+      "front": "Как проверяют пригодность простой линеаризации?",
+      "back": "Произведение сжимаемости на давление должно быть много меньше единицы.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.02.c02"
+      ],
+      "kind": "idea",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.02.k01",
+      "node_id": "geo.test_dake.s5_4.02"
+    },
+    {
+      "front": "Какое значение произведения сжимаемости на давление приводит автор в примере?",
+      "back": "0,04",
+      "claim_ids": [
+        "geo.test_dake.s5_4.02.c06"
+      ],
+      "kind": "number",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.02.k02",
+      "node_id": "geo.test_dake.s5_4.02"
+    },
+    {
+      "front": "Что одинаково в двух формах записи?",
+      "back": "Произведение пористости на сжимаемость.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.03.c05"
+      ],
+      "kind": "idea",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.03.k01",
+      "node_id": "geo.test_dake.s5_4.03"
+    },
+    {
+      "front": "Какая пористость использована при однофазном насыщении?",
+      "back": "Абсолютную.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.03.c02"
+      ],
+      "kind": "term",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.03.k02",
+      "node_id": "geo.test_dake.s5_4.03"
+    },
+    {
+      "front": "Что совпадает для радиального давления и теплопроводности?",
+      "back": "Математическая форма уравнения.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.04.c02"
+      ],
+      "kind": "idea",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.04.k01",
+      "node_id": "geo.test_dake.s5_4.04"
+    },
+    {
+      "front": "Как называется коэффициент в уравнении для давления?",
+      "back": "Пьезопроводности.",
+      "claim_ids": [
+        "geo.test_dake.s5_4.04.c01"
+      ],
+      "kind": "term",
+      "page": 79,
+      "id": "geo.test_dake.s5_4.04.k02",
+      "node_id": "geo.test_dake.s5_4.04"
+    },
+    {
+      "front": "В каком случае допустима замена ствола линией?",
+      "back": "Когда радиус мал относительно рассматриваемой области.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.01.c02"
+      ],
+      "kind": "idea",
+      "page": 87,
+      "id": "geo.test_dake.s7_3.01.k01",
+      "node_id": "geo.test_dake.s7_3.01"
+    },
+    {
+      "front": "Каково давление до отбора?",
+      "back": "Равновесное.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.01.c03"
+      ],
+      "kind": "term",
+      "page": 87,
+      "id": "geo.test_dake.s7_3.01.k02",
+      "node_id": "geo.test_dake.s7_3.01"
+    },
+    {
+      "front": "Как меняется переменная подобия при росте радиуса и фиксированном времени?",
+      "back": "Растёт с квадратом радиуса.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.02.c02"
+      ],
+      "kind": "idea",
+      "page": 87,
+      "id": "geo.test_dake.s7_3.02.k01",
+      "node_id": "geo.test_dake.s7_3.02"
+    },
+    {
+      "front": "Как применить эту идею?",
+      "back": "После подстановки задача описывается уравнением по одной переменной.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.02.c01"
+      ],
+      "kind": "idea",
+      "page": 87,
+      "id": "geo.test_dake.s7_3.02.k02",
+      "node_id": "geo.test_dake.s7_3.02"
+    },
+    {
+      "front": "Откуда берётся множитель в выражении производной?",
+      "back": "Из граничного условия линейного источника.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.03.c05"
+      ],
+      "kind": "idea",
+      "page": 88,
+      "id": "geo.test_dake.s7_3.03.k01",
+      "node_id": "geo.test_dake.s7_3.03"
+    },
+    {
+      "front": "К чему стремится переменная подобия в пределе у линии?",
+      "back": "Нулю.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.03.c06"
+      ],
+      "kind": "term",
+      "page": 88,
+      "id": "geo.test_dake.s7_3.03.k02",
+      "node_id": "geo.test_dake.s7_3.03"
+    },
+    {
+      "front": "Каковы пределы интеграла по переменной подобия в исходной записи?",
+      "back": "От бесконечности до текущего x.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.04.c01"
+      ],
+      "kind": "idea",
+      "page": 88,
+      "id": "geo.test_dake.s7_3.04.k01",
+      "node_id": "geo.test_dake.s7_3.04"
+    },
+    {
+      "front": "К какому значению интегрируют от бесконечности?",
+      "back": "X.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.04.c02"
+      ],
+      "kind": "term",
+      "page": 88,
+      "id": "geo.test_dake.s7_3.04.k02",
+      "node_id": "geo.test_dake.s7_3.04"
+    },
+    {
+      "front": "Когда автор заменяет интеграл логарифмом?",
+      "back": "При x < 0,01.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.05.c04"
+      ],
+      "kind": "idea",
+      "page": 88,
+      "id": "geo.test_dake.s7_3.05.k01",
+      "node_id": "geo.test_dake.s7_3.05"
+    },
+    {
+      "front": "К какой постоянной относится 0,5772?",
+      "back": "Эйлера.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.05.c06"
+      ],
+      "kind": "term",
+      "page": 89,
+      "id": "geo.test_dake.s7_3.05.k02",
+      "node_id": "geo.test_dake.s7_3.05"
+    },
+    {
+      "front": "Как вводят механический скин-фактор?",
+      "back": "Как не зависящую от времени поправку.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.06.c03"
+      ],
+      "kind": "idea",
+      "page": 89,
+      "id": "geo.test_dake.s7_3.06.k01",
+      "node_id": "geo.test_dake.s7_3.06"
+    },
+    {
+      "front": "Какой диапазон аргумента обычно подходит при замерах у ствола?",
+      "back": "0,01.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.06.c02"
+      ],
+      "kind": "term",
+      "page": 89,
+      "id": "geo.test_dake.s7_3.06.k02",
+      "node_id": "geo.test_dake.s7_3.06"
+    },
+    {
+      "front": "Что используют для дальнего отклика, если логарифмическое приближение неприменимо?",
+      "back": "Полное решение с экспоненциальным интегралом.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.07.c04"
+      ],
+      "kind": "idea",
+      "page": 89,
+      "id": "geo.test_dake.s7_3.07.k01",
+      "node_id": "geo.test_dake.s7_3.07"
+    },
+    {
+      "front": "Что проверяет импульсное испытание?",
+      "back": "Связи.",
+      "claim_ids": [
+        "geo.test_dake.s7_3.07.c02"
+      ],
+      "kind": "term",
+      "page": 89,
+      "id": "geo.test_dake.s7_3.07.k02",
+      "node_id": "geo.test_dake.s7_3.07"
+    }
+  ]
+}

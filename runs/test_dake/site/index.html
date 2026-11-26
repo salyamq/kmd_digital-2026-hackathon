@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="index">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html" aria-current="page">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<main id="main" class="content wide" tabindex="-1">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="catalog-byline">L. P. Dake · 1978</p>
+      <h1>The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</h1>
+      <p class="booktitle">«Fundamentals of Reservoir Engineering»</p>
+      <div class="resume">
+        <a class="btn primary start" href="step-01.html">Начать с шага 1</a>
+        <span class="resume-note" aria-live="polite"></span>
+      </div>
+    </div>
+    <dl class="hero-stats">
+      <div><dt>Шагов</dt><dd>21</dd></div>
+      <div><dt>Время</dt><dd>≈ 128 мин</dd></div>
+      <div><dt>Заданий</dt><dd>63</dd></div>
+      <div><dt>Карточек</dt><dd>42</dd></div>
+    </dl>
+  </section>
+
+
+  <section class="chapter-outline" aria-labelledby="h-path">
+    <h2 id="h-path">Путь по главе</h2>
+    <div class="part">
+      <h3 class="part-title">Как составить уравнение радиального потока</h3>
+      <ol class="path" start="1">
+        <li class="path-step" data-node="geo.test_dake.s5_2.01">
+          <a href="step-01.html">
+            <span class="ps-num" aria-hidden="true">1</span>
+            <span class="ps-body"><span class="ps-title">Когда поток можно считать радиальным</span>
+            <span class="ps-meta">⟳ Интерактив · ≈ 6 мин · стр. 75–76</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_2.02">
+          <a href="step-02.html">
+            <span class="ps-num" aria-hidden="true">2</span>
+            <span class="ps-body"><span class="ps-title">Баланс массы в кольце</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 76</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_2.03">
+          <a href="step-03.html">
+            <span class="ps-num" aria-hidden="true">3</span>
+            <span class="ps-body"><span class="ps-title">Как давление управляет расходом</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 76</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_2.04">
+          <a href="step-04.html">
+            <span class="ps-num" aria-hidden="true">4</span>
+            <span class="ps-body"><span class="ps-title">Как сжимаемость замыкает модель</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 76</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_1.01">
+          <a href="step-05.html">
+            <span class="ps-num" aria-hidden="true">5</span>
+            <span class="ps-body"><span class="ps-title">Зачем упрощать уравнение потока</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 75</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title">Что меняется при разных границах</h3>
+      <ol class="path" start="6">
+        <li class="path-step" data-node="geo.test_dake.s5_3.01">
+          <a href="step-06.html">
+            <span class="ps-num" aria-hidden="true">6</span>
+            <span class="ps-body"><span class="ps-title">Что задаёт решение для скважины</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 76</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_3.02">
+          <a href="step-07.html">
+            <span class="ps-num" aria-hidden="true">7</span>
+            <span class="ps-body"><span class="ps-title">Когда пласт кажется бесконечным</span>
+            <span class="ps-meta">⟳ Анимация · ≈ 7 мин · стр. 77</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_3.03">
+          <a href="step-08.html">
+            <span class="ps-num" aria-hidden="true">8</span>
+            <span class="ps-body"><span class="ps-title">Почему давление падает одинаково</span>
+            <span class="ps-meta">⟳ Интерактив · ≈ 8 мин · стр. 77</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_3.04">
+          <a href="step-09.html">
+            <span class="ps-num" aria-hidden="true">9</span>
+            <span class="ps-body"><span class="ps-title">Как усреднить пластовое давление</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 7 мин · стр. 77–78</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_3.05">
+          <a href="step-10.html">
+            <span class="ps-num" aria-hidden="true">10</span>
+            <span class="ps-body"><span class="ps-title">Когда давление перестаёт меняться</span>
+            <span class="ps-meta">⟳ Интерактив · ≈ 7 мин · стр. 78</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title">Когда допустимо простое уравнение</h3>
+      <ol class="path" start="11">
+        <li class="path-step" data-node="geo.test_dake.s5_4.01">
+          <a href="step-11.html">
+            <span class="ps-num" aria-hidden="true">11</span>
+            <span class="ps-body"><span class="ps-title">Какие члены уравнения отбросить</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 78–79</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_4.02">
+          <a href="step-12.html">
+            <span class="ps-num" aria-hidden="true">12</span>
+            <span class="ps-body"><span class="ps-title">Проверка малой сжимаемости жидкости</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 8 мин · стр. 79</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_4.03">
+          <a href="step-13.html">
+            <span class="ps-num" aria-hidden="true">13</span>
+            <span class="ps-body"><span class="ps-title">Не смешивайте две пористости</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 79</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s5_4.04">
+          <a href="step-14.html">
+            <span class="ps-num" aria-hidden="true">14</span>
+            <span class="ps-body"><span class="ps-title">Почему давление похоже на тепло</span>
+            <span class="ps-meta">¶ Текст · ≈ 4 мин · стр. 79</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="part">
+      <h3 class="part-title">Как рассчитать ранний отклик</h3>
+      <ol class="path" start="15">
+        <li class="path-step" data-node="geo.test_dake.s7_3.01">
+          <a href="step-15.html">
+            <span class="ps-num" aria-hidden="true">15</span>
+            <span class="ps-body"><span class="ps-title">Когда скважину заменяют линией</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 87</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.02">
+          <a href="step-16.html">
+            <span class="ps-num" aria-hidden="true">16</span>
+            <span class="ps-body"><span class="ps-title">Как объединить расстояние и время</span>
+            <span class="ps-meta">⟳ Интерактив · ≈ 8 мин · стр. 87–88</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.03">
+          <a href="step-17.html">
+            <span class="ps-num" aria-hidden="true">17</span>
+            <span class="ps-body"><span class="ps-title">Как дебит задаёт константу</span>
+            <span class="ps-meta">¶ Текст · ≈ 6 мин · стр. 88</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.04">
+          <a href="step-18.html">
+            <span class="ps-num" aria-hidden="true">18</span>
+            <span class="ps-body"><span class="ps-title">От производной к давлению</span>
+            <span class="ps-meta">¶ Текст · ≈ 5 мин · стр. 88</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.05">
+          <a href="step-19.html">
+            <span class="ps-num" aria-hidden="true">19</span>
+            <span class="ps-body"><span class="ps-title">Когда интеграл заменяют логарифмом</span>
+            <span class="ps-meta">⟳ Интерактив · ≈ 7 мин · стр. 88–89</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.06">
+          <a href="step-20.html">
+            <span class="ps-num" aria-hidden="true">20</span>
+            <span class="ps-body"><span class="ps-title">Как читать давление в скважине</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 6 мин · стр. 89</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+        <li class="path-step" data-node="geo.test_dake.s7_3.07">
+          <a href="step-21.html">
+            <span class="ps-num" aria-hidden="true">21</span>
+            <span class="ps-body"><span class="ps-title">Почему дальняя скважина меняет расчёт</span>
+            <span class="ps-meta">◆ Решение на данных · ≈ 6 мин · стр. 89</span></span>
+            <span class="ps-done" aria-label="пройден" hidden>✓</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="tiles" aria-label="Другие разделы">
+    <a class="tile" href="tasks.html"><b>Задания</b><span>Все 63 заданий главы с проверкой</span></a>
+    <a class="tile" href="cards.html"><b>Карточки</b><span>Повторение: «знаю / повторить»</span></a>
+    <a class="tile" href="summary.html"><b>Конспект</b><span>Суть шагов и выводы для данных; печать в PDF</span></a>
+    <a class="tile" href="map.html"><b>Карта связей</b><span>Какой шаг на какой опирается</span></a>
+  </section>
+</main>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в главе?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этой главе"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

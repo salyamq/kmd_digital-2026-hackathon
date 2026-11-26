@@ -1,0 +1,105 @@
+{
+  "chapter": "test_slatt",
+  "nodes": [
+    {
+      "node_id": "geo.test_slatt.s9_4_1.01",
+      "format": "long",
+      "media": "video",
+      "templates": [
+        {
+          "template": "overlay_card",
+          "model": null
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.x1.01",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.02",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.x1.03",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.04",
+      "format": "short",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "timeline_growth",
+          "model": "kmd.visuals.templates.timeline_growth.TimelineGrowth.state"
+        },
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.02",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_3.01",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "timeline_growth",
+          "model": "kmd.visuals.templates.timeline_growth.TimelineGrowth.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.04",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    }
+  ]
+}

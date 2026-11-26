@@ -1,0 +1,441 @@
+{
+  "node_id": "geo.test_dake.s5_2.02",
+  "chapter": "test_dake",
+  "index": 2,
+  "part": {
+    "id": "part1",
+    "title": "Как составить уравнение радиального потока"
+  },
+  "title_beginner": "Баланс массы в кольце",
+  "title_book": "Вывод основного дифференциального уравнения радиального потока",
+  "section": "s5_2",
+  "pages": [
+    76
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "Расход через внешнюю и внутреннюю границы кольца может различаться: разность меняет массу жидкости в порах."
+  },
+  "threshold": "Расход через внешнюю и внутреннюю границы кольца может различаться: разность меняет массу жидкости в порах.",
+  "format": "text",
+  "format_rationale": "Ф/М: пошаговую выкладку баланса тонкого кольца удобнее читать в своём темпе.",
+  "order_rationale": "В заданной геометрии записываем баланс массы для тонкого кольца.",
+  "essence": [
+    "Изменение массы в тонком кольце равно притоку массы минус отток.",
+    "Масса в кольце меняется при изменении плотности жидкости в порах."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Выделяют элемент толщиной dr на расстоянии r от центра области. Изменение массы в кольце равно притоку массы минус отток. Если приток больше оттока, масса в кольце растёт. Разность массовых расходов равна произведению порового объёма на скорость изменения плотности.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.02.c01",
+            "geo.test_dake.s5_2.02.c02",
+            "geo.test_dake.s5_2.02.c03"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.02.c01",
+              "quote": "Consider the flow through a volume element of thickness dr situated at a distance r from the centre of the radial cell",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.02.c02",
+              "quote": "$$\\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { IN } \\end{array} - \\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { OUT } \\end{array} = \\begin{array}{l} \\text { Rate of change of mass in } \\\\ \\text { the volume element } \\end{array}$$",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.02.c03",
+              "quote": "$$q \\rho | _ {r + d r} - q \\rho | _ {r} = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}$$",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Расход на внешней стенке раскрывают через его изменение на толщине кольца. Сокращают толщину кольца. Пространственная производная массового расхода связана со скоростью изменения плотности.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.02.c04",
+            "geo.test_dake.s5_2.02.c05"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.02.c04",
+              "quote": "where $2\\pi rh\\phi dr$ is the volume of the small element of thickness dr. The left hand side of this equation can be expanded as",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.02.c05",
+              "quote": "$$\\frac {\\partial (q \\rho)}{\\partial r} = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.2}$$",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "text": "Выделить тонкое кольцо на расстоянии от ствола.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.02.c01"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Вычесть отток массы из притока.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.02.c02"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Раскрыть разность расходов и сократить толщину кольца.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.02.c05"
+          ],
+          "pages": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_2.02.f01",
+          "latex": "\\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { IN } \\end{array} - \\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { OUT } \\end{array} = \\begin{array}{l} \\text { Rate of change of mass in } \\\\ \\text { the volume element } \\end{array}",
+          "meaning": "Словесная запись баланса массы.",
+          "vars": [],
+          "page": 76,
+          "unit_id": "u076_04"
+        },
+        {
+          "id": "geo.test_dake.s5_2.02.f02",
+          "latex": "q \\rho | _ {r + d r} - q \\rho | _ {r} = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Массовый баланс между внешней и внутренней стенками кольца.",
+          "vars": [
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_05"
+        },
+        {
+          "id": "geo.test_dake.s5_2.02.f03",
+          "latex": "\\left(q \\rho | _ {r} + \\frac {\\partial (q \\rho)}{\\partial r} d r - q \\rho | _ {r}\\right) = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Разложение расхода на внешней границе по малой толщине.",
+          "vars": [
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_07"
+        },
+        {
+          "id": "geo.test_dake.s5_2.02.f04",
+          "latex": "\\frac {\\partial (q \\rho)}{\\partial r} = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Локальная форма баланса массы после сокращения толщины.",
+          "vars": [
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_09"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Учитывают поровый объём кольца и раскрывают внешний массовый расход относительно внутреннего.",
+        "inputs": "Выделяют элемент толщиной dr на расстоянии r от центра области.",
+        "outputs": "После сокращения dr пространственная производная массового расхода связана со скоростью изменения плотности.",
+        "breaks_where": "Баланс записан для тонкого кольцевого элемента и однофазного радиального потока.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Выделяют элемент толщиной dr на расстоянии r от центра области.",
+          "manual_steps": "Учитывают поровый объём кольца и раскрывают внешний массовый расход относительно внутреннего.",
+          "judgment_points": "Баланс записан для тонкого кольцевого элемента и однофазного радиального потока.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Входной и выходной трафик определяют изменение заполнения буфера.",
+        "breaks_where": "Хранилище пласта — поры, а накопление выражено через плотность жидкости.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "баланс массы",
+          "en": "mass conservation",
+          "definition": "Приток массы минус отток равен изменению массы внутри области.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "en": "porosity",
+          "definition": "Доля объёма породы, занятая порами.",
+          "page": 76,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Масса входит → Масса покидает кольцо → Разность накапливается.",
+      "alt": "Схема: Масса входит, затем Масса покидает кольцо, затем Разность накапливается.",
+      "file": "illustrations/geo.test_dake.s5_2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.02.c02",
+        "geo.test_dake.s5_2.02.c03",
+        "geo.test_dake.s5_2.02.c05"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_2.02.c01",
+      "kind": "observation",
+      "text": "Выделяют элемент толщиной dr на расстоянии r от центра области.",
+      "quote": "Consider the flow through a volume element of thickness dr situated at a distance r from the centre of the radial cell",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.02.c02",
+      "kind": "observation",
+      "text": "Изменение массы в кольце равно притоку массы минус отток.",
+      "quote": "$$\\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { IN } \\end{array} - \\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { OUT } \\end{array} = \\begin{array}{l} \\text { Rate of change of mass in } \\\\ \\text { the volume element } \\end{array}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.02.c03",
+      "kind": "observation",
+      "text": "Разность массовых расходов равна произведению порового объёма на скорость изменения плотности.",
+      "quote": "$$q \\rho | _ {r + d r} - q \\rho | _ {r} = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.02.c04",
+      "kind": "observation",
+      "text": "Левая часть разворачивается по изменению массового расхода на длине dr.",
+      "quote": "where $2\\pi rh\\phi dr$ is the volume of the small element of thickness dr. The left hand side of this equation can be expanded as",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.02.c05",
+      "kind": "observation",
+      "text": "После сокращения dr пространственная производная массового расхода связана со скоростью изменения плотности.",
+      "quote": "$$\\frac {\\partial (q \\rho)}{\\partial r} = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.2}$$",
+      "page": 76,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_2.02.t01",
+    "geo.test_dake.s5_2.02.t02",
+    "geo.test_dake.s5_2.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_2.02.k01",
+    "geo.test_dake.s5_2.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_2.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "node_id": "geo.test_dake.s5_3.01",
+  "chapter": "test_dake",
+  "index": 6,
+  "part": {
+    "id": "part2",
+    "title": "Что меняется при разных границах"
+  },
+  "title_beginner": "Что задаёт решение для скважины",
+  "title_book": "Условия решения",
+  "section": "s5_3",
+  "pages": [
+    76
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Одному уравнению соответствуют разные решения при разных начальных и граничных условиях."
+  },
+  "threshold": "Одному уравнению соответствуют разные решения при разных начальных и граничных условиях.",
+  "format": "text",
+  "format_rationale": "Ф/Н: вводятся параметры задачи и названия трёх режимов, которые разбираются отдельно.",
+  "order_rationale": "После уравнения добавляем условия, без которых нельзя выбрать решение.",
+  "essence": [
+    "Одно уравнение без условий не определяет единственный отклик.",
+    "В рассматриваемой задаче скважина начинает отбор при заданном начальном давлении и постоянном дебите."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "При разных начальных и граничных условиях одно уравнение имеет бесконечно много решений. Автор выделяет решение для постоянного дебита на стволе при начальном равновесном давлении.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.01.c01",
+            "geo.test_dake.s5_3.01.c02"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.01.c01",
+              "quote": "In principle, an infinite number of solutions of equ. (5.1) can be obtained depending on the initial and boundary conditions imposed",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.01.c02",
+              "quote": "The most common and useful of these is called the constant terminal rate solution for which the initial condition is that at some fixed time, at which the reservoir is at equilibrium pressure $p_i$, the well is produced at a constant rate q at the wellbore, $r=r_w$",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Разбираются три наиболее ходовых, но не исчерпывающих варианта условий. Три режима соответствуют разным временам от начала добычи и разным условиям на границе.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.01.c03",
+            "geo.test_dake.s5_3.01.c04"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.01.c03",
+              "quote": "it is appropriate, at this stage, to describe the three most common, although not exclusive, conditions for which the constant terminal rate solution is sought.",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.01.c04",
+              "quote": "These conditions are called transient, semi steady state and steady state and are each applicable at different times after the start of production and for different, assumed boundary conditions.",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "text": "Автор выделяет решение для постоянного дебита на стволе при начальном равновесном давлении.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.01.c02"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Три режима соответствуют разным временам от начала добычи и разным условиям на границе.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.01.c04"
+          ],
+          "pages": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "До расчёта указывают начальное давление, условие на стволе и предполагаемую внешнюю границу.",
+        "inputs": "При разных начальных и граничных условиях одно уравнение имеет бесконечно много решений.",
+        "outputs": "Три режима соответствуют разным временам от начала добычи и разным условиям на границе.",
+        "breaks_where": "Переходный, псевдоустановившийся и установившийся режимы — распространённые, но не исчерпывающие случаи.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "При разных начальных и граничных условиях одно уравнение имеет бесконечно много решений.",
+          "manual_steps": "До расчёта указывают начальное давление, условие на стволе и предполагаемую внешнюю границу.",
+          "judgment_points": "Переходный, псевдоустановившийся и установившийся режимы — распространённые, но не исчерпывающие случаи.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Уравнение напоминает функцию, а начальные и граничные условия — обязательные входные параметры.",
+        "breaks_where": "Некоторые границы ниже поверхности приходится восстанавливать по отклику, они не заданы явно в интерфейсе.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "term": "начальное условие",
+          "en": "initial condition",
+          "definition": "Распределение давления в момент начала расчёта.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "переходный режим",
+          "en": "transient flow",
+          "definition": "Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "псевдоустановившийся режим",
+          "en": "semi steady state flow",
+          "definition": "При закрытой границе давление в разных точках падает примерно с одной скоростью при постоянном дебите.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "установившийся режим",
+          "en": "steady state flow",
+          "definition": "При поддерживаемой открытой границе и постоянном дебите давление перестаёт меняться во времени.",
+          "page": 76,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Начальное равновесие → Постоянный дебит на стволе → Проверка внешней границы.",
+      "alt": "Схема: Начальное равновесие, затем Постоянный дебит на стволе, затем Проверка внешней границы.",
+      "file": "illustrations/geo.test_dake.s5_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.01.c01",
+        "geo.test_dake.s5_3.01.c02",
+        "geo.test_dake.s5_3.01.c04"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_3.01.c01",
+      "kind": "observation",
+      "text": "При разных начальных и граничных условиях одно уравнение имеет бесконечно много решений.",
+      "quote": "In principle, an infinite number of solutions of equ. (5.1) can be obtained depending on the initial and boundary conditions imposed",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.01.c02",
+      "kind": "observation",
+      "text": "Автор выделяет решение для постоянного дебита на стволе при начальном равновесном давлении.",
+      "quote": "The most common and useful of these is called the constant terminal rate solution for which the initial condition is that at some fixed time, at which the reservoir is at equilibrium pressure $p_i$, the well is produced at a constant rate q at the wellbore, $r=r_w$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.01.c03",
+      "kind": "observation",
+      "text": "Разбираются три наиболее ходовых, но не исчерпывающих варианта условий.",
+      "quote": "it is appropriate, at this stage, to describe the three most common, although not exclusive, conditions for which the constant terminal rate solution is sought.",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.01.c04",
+      "kind": "observation",
+      "text": "Три режима соответствуют разным временам от начала добычи и разным условиям на границе.",
+      "quote": "These conditions are called transient, semi steady state and steady state and are each applicable at different times after the start of production and for different, assumed boundary conditions.",
+      "page": 76,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_3.01.t01",
+    "geo.test_dake.s5_3.01.t02",
+    "geo.test_dake.s5_3.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_3.01.k01",
+    "geo.test_dake.s5_3.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

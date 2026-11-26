@@ -1,0 +1,1725 @@
+{
+  "chapter": "test_dake",
+  "rows": [
+    {
+      "unit_id": "u075_01",
+      "kind": "heading",
+      "page_pdf": 75,
+      "excerpt": "# CHAPTER 5",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_02",
+      "kind": "heading",
+      "page_pdf": 75,
+      "excerpt": "# THE BASIC DIFFERENTIAL EQUATION FOR RADIAL FLOW IN A POROUS MEDIUM",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_03",
+      "kind": "heading",
+      "page_pdf": 75,
+      "excerpt": "# 5.1 INTRODUCTION",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_04",
+      "kind": "paragraph",
+      "page_pdf": 75,
+      "excerpt": "In this chapter the basic equation for the radial flow of a fluid in a homogeneous porous medium is derived as",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_05",
+      "kind": "formula",
+      "page_pdf": 75,
+      "excerpt": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( \\frac{k \\rho}{\\mu} r \\frac{\\partial p}{\\partial r} \\right) = \\phi c \\rho \\frac{\\partial p}{\\partial t} \\tag{5.1}$$",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_06",
+      "kind": "paragraph",
+      "page_pdf": 75,
+      "excerpt": "This equation is non-linear since the coefficients on both sides are themselves functions of the dependent variable, the pressure. In order to obtain analytical solutions, it is fi",
+      "node_ids": [
+        "geo.test_dake.s5_1.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_07",
+      "kind": "heading",
+      "page_pdf": 75,
+      "excerpt": "# 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_08",
+      "kind": "paragraph",
+      "page_pdf": 75,
+      "excerpt": "The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well. Analytical solutions of the equation can then be obtain",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_09",
+      "kind": "paragraph",
+      "page_pdf": 75,
+      "excerpt": "a) The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u075_10",
+      "kind": "paragraph",
+      "page_pdf": 75,
+      "excerpt": "b) The producing well is completed across the entire formation thickness thus ensuring fully radial flow.",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_01",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "c) The formation is completely saturated with a single fluid.",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_02",
+      "kind": "figure",
+      "page_pdf": 76,
+      "excerpt": "Fig. 5.1 Radial flow of a single phase fluid in the vicinity of a producing well.",
+      "node_ids": [
+        "geo.test_dake.s5_2.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_03",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "Consider the flow through a volume element of thickness dr situated at a distance r from the centre of the radial cell. Then applying the principle of mass conservation",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_04",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { IN } \\end{array} - \\begin{array}{l} \\text { Mass flow rate } \\\\ \\text { OUT } \\end{array} = \\begin{array}{l} \\text { Rate of ",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_05",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$q \\rho | _ {r + d r} - q \\rho | _ {r} = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_06",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "where $2\\pi rh\\phi dr$ is the volume of the small element of thickness dr. The left hand side of this equation can be expanded as",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_07",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\left(q \\rho | _ {r} + \\frac {\\partial (q \\rho)}{\\partial r} d r - q \\rho | _ {r}\\right) = 2 \\pi r h \\phi d r \\frac {\\partial \\rho}{\\partial t}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_08",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "which simplifies to",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_09",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\frac {\\partial (q \\rho)}{\\partial r} = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.2}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_10",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "By applying Darcy's Law for radial, horizontal flow it is possible to substitute for the flow rate q in equ. (5.2) since",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_11",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$q = \\frac {2 \\pi k h r}{\\mu} \\frac {\\partial p}{\\partial r}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_12",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "giving",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_13",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\frac {\\partial}{\\partial r} \\left(\\frac {2 \\pi k h r}{\\mu} \\rho \\frac {\\partial p}{\\partial r}\\right) = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_14",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "or",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_15",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.3}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_16",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "The time derivative of the density appearing on the right hand side of equ. (5.3) can be expressed in terms of a time derivative of the pressure by using the basic thermodynamic de",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_17",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$c = - \\frac {1}{V} \\frac {\\partial V}{\\partial p}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_18",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "and since",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_19",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\rho = \\frac {m}{V}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_20",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "then the compressibility can be alternatively expressed as",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_21",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$c = - \\frac {\\rho}{m} \\frac {\\partial \\left(\\frac {m}{\\rho}\\right)}{\\partial p} = \\frac {1}{\\rho} \\frac {\\partial \\rho}{\\partial p} \\tag {5.4}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_22",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "and differentiating with respect to time gives",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_23",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$c \\rho \\frac {\\partial p}{\\partial t} = \\frac {\\partial \\rho}{\\partial t} \\tag {5.5}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_24",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "Finally, substituting equ. (5.5) in equ. (5.3) reduces the latter to",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_25",
+      "kind": "formula",
+      "page_pdf": 76,
+      "excerpt": "$$\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi c \\rho \\frac {\\partial p}{\\partial t} \\tag {5.1}$$",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_26",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "This is the basic, partial differential equation for the radial flow of any single phase fluid in a porous medium. The equation is referred to as non-linear because of the implicit",
+      "node_ids": [
+        "geo.test_dake.s5_2.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_27",
+      "kind": "heading",
+      "page_pdf": 76,
+      "excerpt": "### 5.3 CONDITIONS OF SOLUTION",
+      "node_ids": [
+        "geo.test_dake.s5_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u076_28",
+      "kind": "paragraph",
+      "page_pdf": 76,
+      "excerpt": "In principle, an infinite number of solutions of equ. (5.1) can be obtained depending on the initial and boundary conditions imposed. The most common and useful of these is called ",
+      "node_ids": [
+        "geo.test_dake.s5_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_01",
+      "kind": "heading",
+      "page_pdf": 77,
+      "excerpt": "# a) Transient condition",
+      "node_ids": [
+        "geo.test_dake.s5_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_02",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "This condition is only applicable for a relatively short period after some pressure disturbance has been created in the reservoir. In terms of the radial flow model this disturbanc",
+      "node_ids": [
+        "geo.test_dake.s5_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_03",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "This gives rise to a complex solution of equ. (5.1) in which both the pressure and pressure derivative, with respect to time, are themselves functions of both position and time, th",
+      "node_ids": [
+        "geo.test_dake.s5_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_04",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$p = g(r,t)$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_05",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "and $$\\frac{\\partial p}{\\partial t} = f(r,t)$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_06",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "Transient analysis techniques and their application to oil and gas well testing will be described in Chapters 7 and 8, respectively.",
+      "node_ids": [],
+      "reason": "Указатель на будущие главы об анализе испытаний, без новой идеи."
+    },
+    {
+      "unit_id": "u077_07",
+      "kind": "heading",
+      "page_pdf": 77,
+      "excerpt": "# b) Semi Steady State condition",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_08",
+      "kind": "figure",
+      "page_pdf": 77,
+      "excerpt": "Fig. 5.2 Radial flow under semi steady state conditions.",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_09",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "This condition is applicable to a reservoir which has been producing for a sufficient period of time so that the effect of the outer boundary has been felt. In terms of the radial ",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_10",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$\\frac{\\partial p}{\\partial r} = 0 \\quad \\text{at} \\quad r = r_e \\tag{5.6}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_11",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "Furthermore, if the well is producing at a constant flow rate then the cell pressure will decline in such a way that",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_12",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$\\frac{\\partial p}{\\partial t} \\approx \\text{constant, for all } r \\text{ and } t. \\tag{5.7}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_13",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "The constant referred to in equ. (5.7) can be obtained from a simple material balance using the compressibility definition, thus",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_14",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$cV \\frac{dp}{dt} = - \\frac{dV}{dt} = - q \\tag{5.8}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_15",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$\\text{or} \\quad \\frac{dp}{dt} = - \\frac{q}{cV} \\tag{5.9}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_16",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "which for the drainage of a radial cell can be expressed as",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_17",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$\\frac{dp}{dt} = - \\frac{q}{c \\pi r_e^2 h \\phi} \\tag{5.10}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_18",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "This is a condition which will be applied in Chapter 6, for oil flow, and in Chapter 8, for gas flow, to derive the well inflow equations under semi steady state conditions, even t",
+      "node_ids": [
+        "geo.test_dake.s5_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_19",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "One important feature of this stabilized type of solution, when applied to a depletion type reservoir, has been pointed out by Matthews, Brons and Hazebroek¹ and is illustrated in ",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_20",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "For this condition dp/dt must be approximately constant throughout the entire reservoir otherwise flow would occur across the boundaries causing a re-adjustment in their positions ",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_21",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$$\\bar{p}_{res} = \\frac{\\sum \\bar{p}_i V_i}{\\sum V_i} \\tag{5.11}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_22",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "in which",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_23",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "$V_i$ = the pore volume of the iᵗʰ drainage volume",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_24",
+      "kind": "formula",
+      "page_pdf": 77,
+      "excerpt": "and $\\bar{p}_i$ = the average pressure within the iᵗʰ drainage volume.",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u077_25",
+      "kind": "paragraph",
+      "page_pdf": 77,
+      "excerpt": "Equation (5.9) implies that since dp/dt is constant for the reservoir then, if the variation in the compressibility is small",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_01",
+      "kind": "figure",
+      "page_pdf": 78,
+      "excerpt": "Fig. 5.3 Reservoir depletion under semi steady state conditions.",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_02",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$q_i \\propto V_i \\tag{5.12}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_03",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "and hence the volume average in equ. (5.11) can be replaced by a rate average, as follows",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_04",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$\\overline{p}_{res} = \\frac{\\sum_i \\overline{p}_i q_i}{\\sum_i q_i} \\tag{5.13}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_05",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "and, whereas the $V_i$'s are difficult to determine in practice, the $q_i$'s are measured on a routine basis throughout the lifetime of the field thus facilitating the calculation ",
+      "node_ids": [
+        "geo.test_dake.s5_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_06",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "Steady State condition",
+      "node_ids": [],
+      "reason": "фрагмент подписи/надписи рисунка или служебная строка без самостоятельного смысла"
+    },
+    {
+      "unit_id": "u078_07",
+      "kind": "figure",
+      "page_pdf": 78,
+      "excerpt": "Fig. 5.4 Radial flow under steady state conditions.",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_08",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary. It is assumed that, for a constant rate of pro",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_09",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$p = p_e = \\text{constant, at } r = r_e \\tag{5.14}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_10",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$\\text{and } \\frac{\\partial p}{\\partial t} = 0 \\text{ for all } r \\text{ and } t \\tag{5.15}$$",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_11",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_12",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir. For instance, semi steady state flow equations are frequentl",
+      "node_ids": [
+        "geo.test_dake.s5_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_13",
+      "kind": "heading",
+      "page_pdf": 78,
+      "excerpt": "### 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_14",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "A simple linearization of equ. (5.1) can be obtained by deletion of some of the terms, dependent upon making various assumptions concerning the nature of fluid for which solutions ",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_15",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$\\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} \\left( \\frac{k}{\\mu} \\right) \\rho r \\frac{\\partial p}{\\partial r} + \\frac{k}{\\mu} \\frac{\\partial p}{\\partial r} r \\frac{\\partial p}",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_16",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "and differentiating equ. (5.4) with respect to r gives",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_17",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$c \\rho \\frac{\\partial p}{\\partial r} = \\frac{\\partial p}{\\partial r} \\tag{5.17}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_18",
+      "kind": "paragraph",
+      "page_pdf": 78,
+      "excerpt": "which when substituted into equ. (5.16) changes the latter to",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u078_19",
+      "kind": "formula",
+      "page_pdf": 78,
+      "excerpt": "$$\\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} \\left( \\frac{k}{\\mu} \\right) \\rho r \\frac{\\partial p}{\\partial r} + \\frac{k}{\\mu} c \\rho r \\left( \\frac{\\partial p}{\\partial r} \\ri",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_01",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "For liquid flow, the following assumptions are conventionally made",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_02",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "- the viscosity $\\mu$ is practically independent of pressure and may be regarded as a constant",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_03",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "- the pressure gradient $\\partial p/\\partial r$ is small and therefore, terms of the order $(\\partial p/\\partial r)^2$ can be neglected.",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_04",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "These two assumptions eliminate the first two terms in the left hand side of equ. (5.18), reducing the latter to",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_05",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\frac{\\partial^2 p}{\\partial r^2} + \\frac{1}{r} \\frac{\\partial p}{\\partial r} = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t} \\tag{5.19}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_06",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "which can be more conveniently expressed as",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_07",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t} \\tag{5.20}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_08",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "Making one final assumption, that the compressibility is constant, means that the coefficient $\\phi \\mu c/k$ is also constant and therefore, the basic equation has been effectively",
+      "node_ids": [
+        "geo.test_dake.s5_4.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_09",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "For the flow of liquids the above assumptions are quite reasonable and have been frequently applied in the past. Dranchuk and Quon$^3$, however, have shown that this simple lineari",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_10",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$cp \\ll 1 \\tag{5.21}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_11",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "This condition makes it necessary to modify the final assumption so that the compressibility is not just constant but both small and constant. The compressibility appearing in equ.",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_12",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$c_t = c_o S_o + c_w S_{wc} + c_f \\tag{5.22}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_13",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "in which the saturations are expressed as fractions of the pore volume. Using typical figures for the components of equ. (5.22)",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_14",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\begin{array}{ll} c_o = 10 \\times 10^{-6} / \\text{psi} & S_{wc} = 0.2 \\\\ c_w = 3 \\times 10^{-6} / \\text{psi} & p = 3000 \\text{ psi} \\\\ c_f = 6 \\times 10^{-6} / \\text{psi} & \\end{",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_15",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "then $c_t$ in equ. (5.22) has the value $14.6 \\times 10^{-6} / \\text{psi}$ and the product expressed by equ. (5.21) has the value 0.04, which satisfies the necessary condition for ",
+      "node_ids": [
+        "geo.test_dake.s5_4.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_16",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "Before leaving the subject of compressibility, it should be noted that the product of $\\phi$ and c in all the equations, in this and the following chapters, is conventionally expre",
+      "node_ids": [
+        "geo.test_dake.s5_4.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_17",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\phi_{\\text{absolute}} \\times (c_o S_o + c_w S_{wc} + c_f) \\tag{5.23}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_18",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "since it was assumed in deriving equ. (5.1) that the porous medium was completely saturated with a single fluid thus implying the use of the absolute porosity. Alternatively, allow",
+      "node_ids": [
+        "geo.test_dake.s5_4.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_19",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\phi_{\\text{absolute}} (1 - S_{wc}) \\times \\frac{(c_o S_o + c_w S_{wc} + c_f)}{(1 - S_{wc})} \\tag{5.24}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_20",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "in which $\\phi_{\\text{absolute}} (1 - S_{wc})$ is the effective, hydrocarbon porosity, and the compressibility is equivalent to that derived in Chapter 3, equ. (3.19), which is use",
+      "node_ids": [
+        "geo.test_dake.s5_4.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_21",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\\phi \\mu c$ is called the diffusivity constant. This is an equation which is frequently applied in ph",
+      "node_ids": [
+        "geo.test_dake.s5_4.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_22",
+      "kind": "formula",
+      "page_pdf": 79,
+      "excerpt": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial T}{\\partial r} \\right) = \\frac{1}{K} \\frac{\\partial T}{\\partial t}$$",
+      "node_ids": [
+        "geo.test_dake.s5_4.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u079_23",
+      "kind": "paragraph",
+      "page_pdf": 79,
+      "excerpt": "in which T is the absolute temperature and K the thermal diffusivity constant. Because of the general nature of equ. (5.20) it is not surprising that many reservoir engineering pap",
+      "node_ids": [
+        "geo.test_dake.s5_4.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_01",
+      "kind": "heading",
+      "page_pdf": 87,
+      "excerpt": "### 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_02",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "During the initial transient flow period, it has been found that the constant terminal rate solution of the radial diffusivity equation, determined using the Laplace transform, can",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_03",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "a) $p = p_i$ at $t = 0$, for all $r$",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_04",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "b) $p = p_i$ at $r = \\infty$, for all $t$ (7.1)",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_05",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "c) $\\lim_{r \\to 0} r \\frac{\\partial p}{\\partial r} = \\frac{q\\mu}{2\\pi kh}$, for $t > 0$",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_06",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "Condition (a) is merely the initial condition that, before producing, the pressure everywhere within the drainage volume is equal to the initial equilibrium pressure $p_i$. Conditi",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_07",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "Condition (c) is the line source inner boundary condition.",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_08",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "In addition, the assumptions made in deriving the radial diffusivity equation in Chapter 5 are retained. That is, that the formation is homogeneous and isotropic, and drained by a ",
+      "node_ids": [
+        "geo.test_dake.s7_3.01"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_09",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "Under the above conditions the diffusivity equation",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_10",
+      "kind": "formula",
+      "page_pdf": 87,
+      "excerpt": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t} \\tag{5.20}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_11",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "can be solved by making use of Boltzmann's transformation",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_12",
+      "kind": "formula",
+      "page_pdf": 87,
+      "excerpt": "$$s = \\frac{r^2}{4(\\text{Diffusivity constant})t} = \\frac{\\phi \\mu c r^2}{4kt}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_13",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "so that",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_14",
+      "kind": "formula",
+      "page_pdf": 87,
+      "excerpt": "$$\\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c r}{2kt} \\tag{7.2}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_15",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "and",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_16",
+      "kind": "formula",
+      "page_pdf": 87,
+      "excerpt": "$$\\frac{\\partial s}{\\partial t} = - \\frac{\\phi \\mu c r^2}{4kt^2} \\tag{7.3}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u087_17",
+      "kind": "paragraph",
+      "page_pdf": 87,
+      "excerpt": "Equation (5.20) can be expressed with respect to this new variable as",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_01",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{1}{r} \\frac{d}{ds} \\left( r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} \\right) \\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c}{k} \\frac{dp}{ds} \\frac{\\partial s}{\\partia",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_02",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "and using equs. (7.2) and (7.3), this becomes",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_03",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{1}{r} \\frac{\\phi \\mu c r}{2kt} \\frac{d}{ds} \\left( \\frac{\\phi \\mu c r^2}{2kt} \\frac{dp}{ds} \\right) = - \\left( \\frac{\\phi \\mu c r}{2kt} \\right)^2 \\frac{dp}{ds}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_04",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "which can be simplified as",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_05",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{d}{ds} \\left( s \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_06",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "or",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_07",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{dp}{ds} + s \\frac{d}{ds} \\left( \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.02"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_08",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "This is an ordinary differential equation which can be solved by letting",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_09",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{dp}{ds} = p'$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_10",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "Then",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_11",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$p' + s \\frac{dp'}{ds} = -sp'$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_12",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{dp'}{p'} = - \\frac{(s+1)}{s} ds \\tag{7.4}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_13",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "Integrating equ. (7.4) gives",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_14",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\ln p' = - \\ln s - s + C_1$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_15",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "or",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_16",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$p' = C_2 \\frac{e^{-s}}{s} \\tag{7.5}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_17",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "where $C_1$ and $C_2$ are constants of integration and $C_2$ can be evaluated using the line source boundary condition",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_18",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\lim_{r \\to 0} r \\frac{\\partial p}{\\partial r} = \\frac{q\\mu}{2\\pi kh} = r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} = 2s \\frac{dp}{ds}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_19",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "therefore,",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_20",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\frac{q\\mu}{4\\pi kh} = C_2 e^{-s}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_21",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "which yields, as r (and therefore s) tends to zero",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_22",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$C_2 = \\frac{q\\mu}{4\\pi kh}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.03"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_23",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "Equation (7.5) can now be integrated between the limits $t = 0$ ($s \\to \\infty$) and the current value of t, for which $s = x$; and $p_i$ (initial pressure) and the current pressur",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_24",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "i.e.",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_25",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\int_{p_i}^{p} dp = \\frac{q\\mu}{4\\pi kh} \\int_{\\infty}^{x} \\frac{e^{-s}}{s} ds$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_26",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "which gives",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_27",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\begin{array}{l} p_{r,t} = p_i - \\frac{q\\mu}{4\\pi kh} \\int_{\\infty}^{\\infty} \\frac{e^{-s}}{s} ds \\tag{7.6} \\\\ x = \\frac{\\phi \\mu c r^2}{4kt} \\end{array}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_28",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "Equation (7.6) is the line source solution of the diffusivity equation giving the pressure $p_{r,t}$ as a function of position and time.",
+      "node_ids": [
+        "geo.test_dake.s7_3.04"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_29",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "The integral",
+      "node_ids": [],
+      "reason": "фрагмент подписи/надписи рисунка или служебная строка без самостоятельного смысла"
+    },
+    {
+      "unit_id": "u088_30",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "(7.7)",
+      "node_ids": [],
+      "reason": "Изолированная метка номера уравнения; содержание и область применимости учтены по соседним единицам."
+    },
+    {
+      "unit_id": "u088_31",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$\\int_{x}^{\\infty} \\frac{e^{-s}}{s} ds = \\int_{x}^{\\infty} \\frac{e^{-s}}{s} ds \\quad x = \\frac{\\phi \\mu c r^2}{4kt}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_32",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "is a standard integral, called the exponential integral, and is denoted by ei(x).",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_33",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "Qualitatively, the nature of this integral can be understood by considering the component parts, fig. 7.2.",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_34",
+      "kind": "paragraph",
+      "page_pdf": 88,
+      "excerpt": "The integral of curve (c) between x and $\\infty$ will have the shape shown in fig. 7.2 (d). Thus ei (x) is large for small values of x, since the ei-function is the area under the ",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u088_35",
+      "kind": "formula",
+      "page_pdf": 88,
+      "excerpt": "$$ei(x) \\approx - \\ln x - 0.5772 \\tag{7.8}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_01",
+      "kind": "figure",
+      "page_pdf": 89,
+      "excerpt": "Fig. 7.2 The exponential integral function ei(x).",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_02",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "where the number 0.5772 is Euler's constant, the exponential of which is denoted by",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_03",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$\\gamma = e^{0.5772} = 1.781$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_04",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "and therefore equ. (7.8) can be expressed as",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_05",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$ei(x) \\approx - \\ln (\\gamma x)$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_06",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$\\text{for } x < 0.01$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.05"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_07",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "(7.9)",
+      "node_ids": [],
+      "reason": "Изолированная метка номера уравнения; содержание и область применимости учтены по соседним единицам."
+    },
+    {
+      "unit_id": "u089_08",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9). The significance of this approximation is that reservoir engineers are freque",
+      "node_ids": [
+        "geo.test_dake.s7_3.06"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_09",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$p_{rw^2} = p_{wf} = p_i - \\frac{q\\mu}{4\\pi kh} \\ln \\frac{4kt}{\\gamma \\phi \\mu c r_w^2}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.06"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_10",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "Or, if the van Everdingen mechanical skin factor is included as a time independent perturbation (ref. Chapter 4, sec. 7), then",
+      "node_ids": [
+        "geo.test_dake.s7_3.06"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_11",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$p_{wf} = p_i - \\frac{q\\mu}{4\\pi kh} \\left( \\ln \\frac{4kt}{\\gamma \\phi \\mu c r_w^2} + 2S \\right) \\tag{7.10}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.06"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_12",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) i",
+      "node_ids": [
+        "geo.test_dake.s7_3.06"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_13",
+      "kind": "figure",
+      "page_pdf": 89,
+      "excerpt": "Fig. 7.3 Graph of the ei-function for 0.001 ≤ x ≤ 5.0.",
+      "node_ids": [
+        "geo.test_dake.s7_3.07"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_14",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "Sometimes pressure tests are conducted in order to determine the degree of communication between wells, for example, pulse testing. In such cases pressure transients caused in one ",
+      "node_ids": [
+        "geo.test_dake.s7_3.07"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_15",
+      "kind": "formula",
+      "page_pdf": 89,
+      "excerpt": "$$p_{r,t} = p_i - \\frac{q\\mu}{4\\pi kh} e^i \\left( \\frac{\\phi \\mu c r^2}{4kt} \\right) \\tag{7.11}$$",
+      "node_ids": [
+        "geo.test_dake.s7_3.07"
+      ],
+      "reason": null
+    },
+    {
+      "unit_id": "u089_16",
+      "kind": "paragraph",
+      "page_pdf": 89,
+      "excerpt": "in which the values of the exponential integral can be obtained from fig. 7.3.",
+      "node_ids": [
+        "geo.test_dake.s7_3.07"
+      ],
+      "reason": null
+    }
+  ]
+}

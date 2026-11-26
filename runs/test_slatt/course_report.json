@@ -1,0 +1,167 @@
+{
+  "chapter": "test_slatt",
+  "nodes": 14,
+  "steps_done": 14,
+  "pending": [],
+  "tasks": 42,
+  "task_types": {
+    "cloze": 9,
+    "multiple": 14,
+    "numeric": 3,
+    "order": 2,
+    "single": 14
+  },
+  "cards": 28,
+  "decision_steps": [
+    "geo.test_slatt.x1.01",
+    "geo.test_slatt.s9_4_1.03",
+    "geo.test_slatt.s9_4_2.02",
+    "geo.test_slatt.s9_4_2.03",
+    "geo.test_slatt.s9_4_2.04",
+    "geo.test_slatt.s9_4_2.06",
+    "geo.test_slatt.s9_4_2.05"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "geo.test_slatt.s9_4_1.01",
+      "status": "ok",
+      "title": "Как дельта растёт в море",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.x1.01",
+      "status": "ok",
+      "title": "Почему похожие пески не связаны",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.x1.02",
+      "status": "ok",
+      "title": "Меконг: время и границы пород",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.02",
+      "status": "ok",
+      "title": "Меконг: карта и время",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.x1.03",
+      "status": "ok",
+      "title": "Что направляет рост дельты",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.04",
+      "status": "ok",
+      "title": "Как бары складываются в пояс",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.03",
+      "status": "ok",
+      "title": "Где бар лучше пропускает нефть",
+      "tasks": 3,
+      "illustrations": 2,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.01",
+      "status": "ok",
+      "title": "Где искать пески Прадхо-Бей",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.02",
+      "status": "ok",
+      "title": "Как меняется разрез зоны Romeo",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_3.01",
+      "status": "ok",
+      "title": "Шесть песчаных тел Капарука",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.03",
+      "status": "ok",
+      "title": "Как выбрать траекторию скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.04",
+      "status": "ok",
+      "title": "Глинистый барьер и приток воды",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.06",
+      "status": "ok",
+      "title": "Где глинистый слой прерывается",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.05",
+      "status": "ok",
+      "title": "Скважина под защитой глины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    }
+  ]
+}

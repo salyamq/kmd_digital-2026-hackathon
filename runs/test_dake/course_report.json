@@ -1,0 +1,234 @@
+{
+  "chapter": "test_dake",
+  "nodes": 21,
+  "steps_done": 21,
+  "pending": [],
+  "tasks": 63,
+  "task_types": {
+    "cloze": 19,
+    "multiple": 20,
+    "numeric": 1,
+    "order": 2,
+    "single": 21
+  },
+  "cards": 42,
+  "decision_steps": [
+    "geo.test_dake.s5_3.04",
+    "geo.test_dake.s5_4.02",
+    "geo.test_dake.s7_3.06",
+    "geo.test_dake.s7_3.07"
+  ],
+  "chapter_errors": [],
+  "steps": [
+    {
+      "node_id": "geo.test_dake.s5_2.01",
+      "status": "ok",
+      "title": "Когда поток можно считать радиальным",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.02",
+      "status": "ok",
+      "title": "Баланс массы в кольце",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.03",
+      "status": "ok",
+      "title": "Как давление управляет расходом",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.04",
+      "status": "ok",
+      "title": "Как сжимаемость замыкает модель",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_1.01",
+      "status": "ok",
+      "title": "Зачем упрощать уравнение потока",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.01",
+      "status": "ok",
+      "title": "Что задаёт решение для скважины",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.02",
+      "status": "ok",
+      "title": "Когда пласт кажется бесконечным",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.03",
+      "status": "ok",
+      "title": "Почему давление падает одинаково",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.04",
+      "status": "ok",
+      "title": "Как усреднить пластовое давление",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.05",
+      "status": "ok",
+      "title": "Когда давление перестаёт меняться",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.01",
+      "status": "ok",
+      "title": "Какие члены уравнения отбросить",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.02",
+      "status": "ok",
+      "title": "Проверка малой сжимаемости жидкости",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.03",
+      "status": "ok",
+      "title": "Не смешивайте две пористости",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.04",
+      "status": "ok",
+      "title": "Почему давление похоже на тепло",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.01",
+      "status": "ok",
+      "title": "Когда скважину заменяют линией",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.02",
+      "status": "ok",
+      "title": "Как объединить расстояние и время",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.03",
+      "status": "ok",
+      "title": "Как дебит задаёт константу",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.04",
+      "status": "ok",
+      "title": "От производной к давлению",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.05",
+      "status": "ok",
+      "title": "Когда интеграл заменяют логарифмом",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.06",
+      "status": "ok",
+      "title": "Как читать давление в скважине",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.07",
+      "status": "ok",
+      "title": "Почему дальняя скважина меняет расчёт",
+      "tasks": 3,
+      "illustrations": 1,
+      "errors": [],
+      "warnings": [],
+      "dropped_tasks": 0
+    }
+  ]
+}

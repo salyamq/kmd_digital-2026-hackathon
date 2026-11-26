@@ -1,0 +1,388 @@
+{
+  "node_id": "geo.test_slatt.s9_4_3.01",
+  "chapter": "test_slatt",
+  "index": 10,
+  "part": {
+    "id": "part2",
+    "title": "Как устроены песчаные тела"
+  },
+  "title_beginner": "Шесть песчаных тел Капарука",
+  "title_book": "Месторождение Капарук-Ривер, Аляска, США",
+  "section": "s9_4_3",
+  "pages": [
+    422,
+    423
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "В",
+    "secondary": "П",
+    "threshold": "Временная корреляция раскрывает отдельные песчаные тела там, где раньше видели сплошной песчаник."
+  },
+  "threshold": "Временная корреляция раскрывает отдельные песчаные тела там, где раньше видели сплошной песчаник.",
+  "format": "interactive",
+  "format_rationale": "В/П: при выборе более молодого этапа видно очередное смещение песчаного тела, а глинистая перемычка остаётся на разрезе.",
+  "order_rationale": "Проверяем ту же идею на другом месторождении: отдельные песчаные тела вместо сплошного пласта.",
+  "essence": [
+    "Интервал A оказался пакетом отдельных песчаных тел, а не единым сплошным песчаником.",
+    "Глинистые прослои разделяют этапы выдвижения дельты."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        422,
+        423
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Капарук — месторождение мелового возраста на северном склоне Аляски. Автор называет его вторым по величине нефтяным месторождением Северной Америки с 6BBSTOOIP. К 2006 добыли 2BBO. Добычу ведут из интервалов A и C.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_3.01.c01",
+            "geo.test_slatt.s9_4_3.01.c02",
+            "geo.test_slatt.s9_4_3.01.c03",
+            "geo.test_slatt.s9_4_3.01.c04"
+          ],
+          "pages": [
+            422
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c01",
+              "quote": "A similar example is provided by the Cretaceous Kuparuk River field on the North Slope of Alaska",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c02",
+              "quote": "This is the second largest oil field in North America, with 6BBSTOOIP",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c03",
+              "quote": "As of 2006, 2BBO had been produced",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c04",
+              "quote": "Production is from two intervals, named the A and C units",
+              "page": 422,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "**гамма-каротаж**: Запись естественной радиоактивности вдоль скважины. В начале разработки каждый интервал считали боковым непрерывным песчаником. В интервале A выделили шесть отдельных песчаных тел. Они выдвигались к морю. Их разделяют глины морских наступлений. Рисунок показывает **гамма-каротаж**, последовательное выдвижение тел A1–A6 и их положение с учётом разломов.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_3.01.c05",
+            "geo.test_slatt.s9_4_3.01.c06",
+            "geo.test_slatt.s9_4_3.01.c07"
+          ],
+          "pages": [
+            422,
+            423
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c05",
+              "quote": "In the early days of field development each unit was considered a laterally continuous sandstone body",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c06",
+              "quote": "However, sequence stratigraphy correlations revealed that the A unit consists of six separate sandstone bodies that prograded in the seaward (northeast) direction, each separated by a high-frequency transgressive marine shale (Fig. 9.25)",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_3.01.c07",
+              "quote": "Kuparuk River unit A showing a typical gamma-ray log with units A3–A6, the progradational pattern from northwest to southeast of each successively younger unit (units A1–A6), a schematic illustration of the progradational pattern of the six units, and the units (different colors) with faults added",
+              "page": 423,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        422
+      ],
+      "items": [
+        {
+          "text": "Автор называет его вторым по величине нефтяным месторождением Северной Америки с 6BBSTOOIP.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_3.01.c02"
+          ],
+          "pages": [
+            422
+          ]
+        },
+        {
+          "text": "К 2006 добыли 2BBO.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_3.01.c03"
+          ],
+          "pages": [
+            422
+          ]
+        },
+        {
+          "text": "В интервале A выделили шесть отдельных песчаных тел. Они выдвигались к морю. Их разделяют глины морских наступлений.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_3.01.c06"
+          ],
+          "pages": [
+            422
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        422
+      ],
+      "data": {
+        "text": "Интервал A — один сплошной песчаный пласт.",
+        "correction": "По временной корреляции в нём выделены шесть отдельных тел, между которыми залегают морские глины.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_3.01.c05",
+          "geo.test_slatt.s9_4_3.01.c06"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов.",
+        "inputs": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+        "outputs": "Рисунок показывает гамма-каротаж, последовательное выдвижение тел A1–A6 и их положение с учётом разломов.",
+        "breaks_where": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+          "manual_steps": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов.",
+          "judgment_points": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Интервал A — один сплошной песчаный пласт.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "По общему ярлыку видно один набор записей, но по временным отметкам видны отдельные партии.",
+        "breaks_where": "Границы геологических тел и время определяют интерпретацией, не метками загрузки.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        423
+      ],
+      "items": [
+        {
+          "number": "9.25",
+          "page": 423,
+          "caption": "FIGURE 9.25 Kuparuk River unit A showing a typical gamma-ray log with units A3–A6, the progradational pattern from northwest to southeast of each successively younger unit (units A1–A6), a schematic illustration of the progradational pattern of the six units, and the units (different colors) with faults added. After Seifert et al. (2006).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u423_01",
+          "scan": "pages/p423.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        422
+      ],
+      "items": [
+        {
+          "term": "трансгрессия",
+          "definition": "Наступление моря на сушу",
+          "en": "transgression",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "проградация",
+          "definition": "Выдвижение осадочного тела в сторону моря",
+          "en": "progradation",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Запись естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "BBSTOOIP",
+          "definition": "Миллиарды баррелей исходной нефти в пласте",
+          "en": null,
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "BBO",
+          "definition": "Миллиарды баррелей нефти",
+          "en": null,
+          "page": 422,
+          "by": "model"
+        },
+        {
+          "term": "разлом",
+          "definition": "Нарушение со смещением пород",
+          "en": "fault",
+          "page": 422,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Кажущаяся непрерывность → Временная корреляция → Отдельные пески и глины.",
+      "alt": "Схема показывает цепочку: Кажущаяся непрерывность, затем Временная корреляция, затем Отдельные пески и глины.",
+      "file": "illustrations/geo.test_slatt.s9_4_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c04"
+      ],
+      "pages": [
+        422
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c01",
+      "kind": "observation",
+      "text": "Капарук — месторождение мелового возраста на северном склоне Аляски.",
+      "quote": "A similar example is provided by the Cretaceous Kuparuk River field on the North Slope of Alaska",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c02",
+      "kind": "observation",
+      "text": "Автор называет его вторым по величине нефтяным месторождением Северной Америки с 6BBSTOOIP.",
+      "quote": "This is the second largest oil field in North America, with 6BBSTOOIP",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c03",
+      "kind": "observation",
+      "text": "К 2006 добыли 2BBO.",
+      "quote": "As of 2006, 2BBO had been produced",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c04",
+      "kind": "observation",
+      "text": "Добычу ведут из интервалов A и C.",
+      "quote": "Production is from two intervals, named the A and C units",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c05",
+      "kind": "observation",
+      "text": "В начале разработки каждый интервал считали боковым непрерывным песчаником.",
+      "quote": "In the early days of field development each unit was considered a laterally continuous sandstone body",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c06",
+      "kind": "observation",
+      "text": "В интервале A выделили шесть отдельных песчаных тел, выдвигавшихся к морю и разделённых глинами морских наступлений.",
+      "quote": "However, sequence stratigraphy correlations revealed that the A unit consists of six separate sandstone bodies that prograded in the seaward (northeast) direction, each separated by a high-frequency transgressive marine shale (Fig. 9.25)",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_3.01.c07",
+      "kind": "observation",
+      "text": "Рисунок показывает гамма-каротаж, последовательное выдвижение тел A1–A6 и их положение с учётом разломов.",
+      "quote": "Kuparuk River unit A showing a typical gamma-ray log with units A3–A6, the progradational pattern from northwest to southeast of each successively younger unit (units A1–A6), a schematic illustration of the progradational pattern of the six units, and the units (different colors) with faults added",
+      "page": 423,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_3.01.t01",
+    "geo.test_slatt.s9_4_3.01.t02",
+    "geo.test_slatt.s9_4_3.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_3.01.k01",
+    "geo.test_slatt.s9_4_3.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_2.02",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

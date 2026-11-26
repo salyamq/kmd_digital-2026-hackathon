@@ -1,0 +1,416 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.01",
+  "chapter": "test_slatt",
+  "index": 8,
+  "part": {
+    "id": "part2",
+    "title": "Как устроены песчаные тела"
+  },
+  "title_beginner": "Где искать пески Прадхо-Бей",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    416,
+    417,
+    419
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "П",
+    "secondary": "М",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "cards",
+  "format_rationale": "П/М: карточки помогут различать песчаники русла и бара, фронт и продельту перед чтением разреза.",
+  "order_rationale": "Связываем типы осадков с продуктивными зонами Прадхо-Бей.",
+  "essence": [
+    "В нижней зоне Romeo продуктивны песчаные тела русел и устьевых баров.",
+    "Зону важно отличать от самых продуктивных речных пород месторождения в целом."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        416,
+        417,
+        419
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске. Наиболее продуктивные породы месторождения отложены разветвлённой рекой.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.01.c01",
+            "geo.test_slatt.s9_4_2.01.c02"
+          ],
+          "pages": [
+            416
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c01",
+              "quote": "General geology of Prudhoe Bay field, Alaska, in the river-dominated deltaic deposits of the ancient Sagavanirktok River, was discussed in Chapter 7",
+              "page": 416,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c02",
+              "quote": "The most prolific reservoir rocks in the field are of fluvial, braided-river origin",
+              "page": 416,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Нижняя зона Romeo сложена в основном отложениями фронта дельты и зоны перед ним. Для добычи преимущественно используют горизонтальные скважины. Продуктивные дельтовые отложения — песчаники распределительных русел и устьевых баров.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.01.c03",
+            "geo.test_slatt.s9_4_2.01.c04"
+          ],
+          "pages": [
+            416
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c03",
+              "quote": "The lower stratigraphic interval, called the Romeo Zone (Figs. 9.16–9.18), is composed mainly of river-dominated delta-front and prodelta deposits (Fig. 7.22 and 7.23, and Fig. 9.17) that in recent years have been targeted for production, mainly from horizontal wells (Tye and Hickey, 2001; Tye et al., 1999)",
+              "page": 416,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c04",
+              "quote": "Productive deltaic facies are distributary-channel and distributary mouth-bar sandstones (Figs. 9.18 and 9.19)",
+              "page": 416,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Пологие мелкозернистые речные системы выдвигались на юго-восток. Они протянулись примерно на 60 miles (100 km) от источника осадка. Соседние речные русла разделяли илистые поймы.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.01.c05",
+            "geo.test_slatt.s9_4_2.01.c06"
+          ],
+          "pages": [
+            416,
+            417
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c05",
+              "quote": "The depositional history depicts southeastward progradation of low-gradient, fine-grained fluvial systems that extended about 60 miles (100 km) from their source area",
+              "page": 416,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c06",
+              "quote": "fluvial channels were separated laterally by muddy floodplains",
+              "page": 417,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "Вниз по течению русла разветвлялись, формируя дельтовую равнину и устьевые бары. При типичном ветвлении русла более крупные частицы концентрируются на вершинах и по краям баров. Вершины расположены ниже точки разделения потока. Каротаж естественной радиоактивности в скважине 07-06 иллюстрирует последовательность пород зоны Romeo.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.01.c07",
+            "geo.test_slatt.s9_4_2.01.c08",
+            "geo.test_slatt.s9_4_2.01.c09"
+          ],
+          "pages": [
+            417,
+            419
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c07",
+              "quote": "In the down-current direction, fluvial channels bifurcated and formed a delta plain and associated distributary mouth bars (Fig. 9.16)",
+              "page": 417,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c08",
+              "quote": "Distributary-mouth channels typically bifurcate as shown, and the bifurcations segregate lithofacies by concentrating the coarser-grained sediment on the bar apices downstream of the bifurcation point and along bar margins",
+              "page": 417,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.01.c09",
+              "quote": "Typical stacking pattern and gamma-ray response of Romeo lithofacies and facies associations in well 07-06",
+              "page": 419,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        416
+      ],
+      "items": [
+        {
+          "text": "Пологие мелкозернистые речные системы выдвигались на юго-восток. Они протянулись примерно на 60 miles (100 km) от источника осадка.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.01.c05"
+          ],
+          "pages": [
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "В зоне Romeo различают отложения фронта дельты и зоны перед ним, затем выделяют продуктивные русловые и баровые песчаники по разрезу.",
+        "inputs": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+        "outputs": "Каротаж естественной радиоактивности в скважине 07-06 иллюстрирует последовательность пород зоны Romeo.",
+        "breaks_where": "В масштабе месторождения наиболее продуктивны речные породы, а не нижняя дельтовая зона.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+          "manual_steps": "В зоне Romeo различают отложения фронта дельты и зоны перед ним, затем выделяют продуктивные русловые и баровые песчаники по разрезу.",
+          "judgment_points": "В масштабе месторождения наиболее продуктивны речные породы, а не нижняя дельтовая зона.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Иерархия классов: внутри всего месторождения важен один тип, внутри нижней зоны — другие типы песков.",
+        "breaks_where": "Продуктивность не выводится непосредственно из метки класса.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        417,
+        419
+      ],
+      "items": [
+        {
+          "number": "9.17",
+          "page": 417,
+          "caption": "FIGURE 9.17 Typical sediment distribution pattern and distributary-mouth-bar cross-section. Distributary-mouth channels typically bifurcate as shown, and the bifurcations segregate lithofacies by concentrating the coarser-grained sediment on the bar apices downstream of the bifurcation point and along bar margins. Modified from Tye and Hickey (2001). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u417_01",
+          "scan": "pages/p417.png"
+        },
+        {
+          "number": "9.19",
+          "page": 419,
+          "caption": "FIGURE 9.19 Typical stacking pattern and gamma-ray response of Romeo lithofacies and facies associations in well 07-06. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u419_01",
+          "scan": "pages/p419.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        416
+      ],
+      "items": [
+        {
+          "term": "фронт дельты",
+          "definition": "Наклонная подводная часть перед дельтовой равниной",
+          "en": "delta front",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Более дальняя подводная зона дельты",
+          "en": "prodelta",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Осадочное тело у выхода рукава",
+          "en": "mouth bar",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "гамма-каротаж",
+          "definition": "Измерение естественной радиоактивности вдоль скважины",
+          "en": "gamma-ray log",
+          "page": 416,
+          "by": "model"
+        },
+        {
+          "term": "пойма",
+          "definition": "Площадь рядом с рекой, затапливаемая при разливах",
+          "en": "floodplain",
+          "page": 416,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Речные русла → Ветвление потока → Дельтовая равнина и бары.",
+      "alt": "Схема показывает цепочку: Речные русла, затем Ветвление потока, затем Дельтовая равнина и бары.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.01.c02",
+        "geo.test_slatt.s9_4_2.01.c08",
+        "geo.test_slatt.s9_4_2.01.c06"
+      ],
+      "pages": [
+        416,
+        417
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c01",
+      "kind": "observation",
+      "text": "Месторождение связано с речной дельтой древней реки Сагаваниркток на Аляске.",
+      "quote": "General geology of Prudhoe Bay field, Alaska, in the river-dominated deltaic deposits of the ancient Sagavanirktok River, was discussed in Chapter 7",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c02",
+      "kind": "observation",
+      "text": "Наиболее продуктивные породы месторождения отложены разветвлённой рекой.",
+      "quote": "The most prolific reservoir rocks in the field are of fluvial, braided-river origin",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c03",
+      "kind": "observation",
+      "text": "Нижняя зона Romeo состоит преимущественно из отложений фронта дельты и зоны перед ним; для добычи преимущественно используют горизонтальные скважины.",
+      "quote": "The lower stratigraphic interval, called the Romeo Zone (Figs. 9.16–9.18), is composed mainly of river-dominated delta-front and prodelta deposits (Fig. 7.22 and 7.23, and Fig. 9.17) that in recent years have been targeted for production, mainly from horizontal wells (Tye and Hickey, 2001; Tye et al., 1999)",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c04",
+      "kind": "observation",
+      "text": "Продуктивные дельтовые отложения — песчаники распределительных русел и устьевых баров.",
+      "quote": "Productive deltaic facies are distributary-channel and distributary mouth-bar sandstones (Figs. 9.18 and 9.19)",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c05",
+      "kind": "observation",
+      "text": "Пологие мелкозернистые речные системы выдвигались на юго-восток и протянулись примерно на 60 miles (100 km) от источника осадка.",
+      "quote": "The depositional history depicts southeastward progradation of low-gradient, fine-grained fluvial systems that extended about 60 miles (100 km) from their source area",
+      "page": 416,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c06",
+      "kind": "observation",
+      "text": "Соседние речные русла разделяли илистые поймы.",
+      "quote": "fluvial channels were separated laterally by muddy floodplains",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c07",
+      "kind": "observation",
+      "text": "Вниз по течению русла разветвлялись, формируя дельтовую равнину и устьевые бары.",
+      "quote": "In the down-current direction, fluvial channels bifurcated and formed a delta plain and associated distributary mouth bars (Fig. 9.16)",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c08",
+      "kind": "observation",
+      "text": "При типичном ветвлении русла более крупные частицы концентрируются на вершинах баров ниже точки разделения потока и по краям баров.",
+      "quote": "Distributary-mouth channels typically bifurcate as shown, and the bifurcations segregate lithofacies by concentrating the coarser-grained sediment on the bar apices downstream of the bifurcation point and along bar margins",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.01.c09",
+      "kind": "observation",
+      "text": "Каротаж естественной радиоактивности в скважине 07-06 иллюстрирует последовательность пород зоны Romeo.",
+      "quote": "Typical stacking pattern and gamma-ray response of Romeo lithofacies and facies associations in well 07-06",
+      "page": 419,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.01.t01",
+    "geo.test_slatt.s9_4_2.01.t02",
+    "geo.test_slatt.s9_4_2.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.01.k01",
+    "geo.test_slatt.s9_4_2.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

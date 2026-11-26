@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 14. Почему давление похоже на тепло — The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_dake.s5_4.04" data-index="14">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#how">Как это работает</a></li><li><a href="#formulas">Формулы</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</a><span aria-hidden="true"> / </span>Шаг 14 из 21</p>
+    <h1>Почему давление похоже на тепло</h1>
+    <p class="booktitle">В книге: «Линеаризация уравнения для жидкости малой постоянной сжимаемости» <span class="pg">стр. 79</span></p>
+    <p class="meta">
+      <span class="chip">≈ 4 мин</span>
+      <span class="chip">¶ Текст</span>
+<span class="chip" title="Тип трудности узла">трудность: формализм + масштаб</span>    </p>
+<p class="relies">Опирается на: <a href="step-11.html">шаг 11 «Какие члены уравнения отбросить»</a> <span class="muted">(предпосылка)</span>, <a href="step-06.html">шаг 6 «Что задаёт решение для скважины»</a> <span class="muted">(предпосылка)</span></p>    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">Перераспределение давления и тепла можно описывать одной формой радиального уравнения.</p><p>Физические величины и коэффициенты при этом разные.</p>    </section>
+
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как работает модель</h3>          <div class="para" id="how-1">
+            <p>Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности. Описывать температуру при теплопроводности с радиальной симметрией можно уравнением той же формы. <span class="pg" title="Страница книги (по PDF)">стр. 79</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_4.04.c01"><p>«Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\phi \mu c$ is called the diffusivity constant»</p><footer>— автор, стр. 79 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_4.04.c02"><p>«This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation»</p><footer>— автор, стр. 79 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="Логика шага" class="ill-svg"><title>Логика шага</title><rect class="ill-bg" x="0" y="0" width="360" height="250" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Логика шага</tspan></text><rect class="ill-box" x="12.0" y="63" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Давление в радиальной модели</tspan></text><line class="ill-line" x1="180.0" y1="102.0" x2="180.0" y2="126.0"/><polygon class="ill-arrow" points="180.0,126.0 176.1,117.9 183.9,117.9"/><rect class="ill-box" x="12.0" y="130" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="154" text-anchor="middle"><tspan x="180.0" dy="0">Общий оператор</tspan></text><line class="ill-line" x1="180.0" y1="169.0" x2="180.0" y2="193.0"/><polygon class="ill-arrow" points="180.0,193.0 176.1,184.9 183.9,184.9"/><rect class="ill-box" x="12.0" y="197" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="221" text-anchor="middle"><tspan x="180.0" dy="0">Тепловой аналог</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Давление в радиальной модели → Общий оператор → Тепловой аналог.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 79</span>
+  </figcaption>
+</figure>
+<h3>Математика и наблюдения</h3>          <div class="para" id="how-2">
+            <p>В тепловом аналоге T — абсолютная температура, K — температуропроводность. Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями. <span class="pg" title="Страница книги (по PDF)">стр. 79</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_4.04.c03"><p>«in which T is the absolute temperature and K the thermal diffusivity constant»</p><footer>— автор, стр. 79 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_4.04.c04"><p>«which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.»</p><footer>— автор, стр. 79 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+
+    </section>
+    <section id="formulas" class="block block-formulas" aria-labelledby="h-formulas">
+      <h2 id="h-formulas">Формулы <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <div class="formula" id="f-geo.test_dake.s5_4.04.f01">
+          <div class="tex-display" data-tex="\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial T}{\partial r} \right) = \frac{1}{K} \frac{\partial T}{\partial t}">$$\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial T}{\partial r} \right) = \frac{1}{K} \frac{\partial T}{\partial t}$$</div>
+          <p>Радиальный тепловой аналог уравнения для давления. <span class="pg">стр. 79</span></p>
+<table class="vars"><caption class="sr">Обозначения</caption><thead><tr><th scope="col">Обозначение</th><th scope="col">Что это</th><th scope="col">Единицы</th></tr></thead><tbody>
+<tr><td>$r$</td><td>радиус, расстояние от центра скважины</td><td>—</td></tr><tr><td>$T$</td><td>абсолютная температура</td><td>—</td></tr><tr><td>$K$</td><td>температуропроводность</td><td>—</td></tr><tr><td>$t$</td><td>время после начала отбора</td><td>—</td></tr>          </tbody></table>        </div>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Используют математические решения той же формы для подходящих начальных и граничных условий.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности.</dd>
+          <dt>Выход</dt><dd>Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями.</dd>
+          <dt>Где ломается</dt><dd>Тепловое поле и давление — разные величины; общая форма не заменяет проверку физических условий.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности.</dd>
+            <dt>Ручные шаги</dt><dd>Используют математические решения той же формы для подходящих начальных и граничных условий.</dd>
+            <dt>Точки суждения</dt><dd>Тепловое поле и давление — разные величины; общая форма не заменяет проверку физических условий.</dd>
+            <dt>Время</dt><dd>Трудозатраты в источнике не оценены.</dd>
+            <dt>Типичные ошибки</dt><dd>Применить формулу, не проверив её граничные условия и допущения.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Один и тот же численный оператор решает несколько задач, если переставить коэффициенты, данные и условия.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Физические единицы, свойства и условия у температуры и давления различаются.</p>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>пьезопроводность <span class="en" lang="en">(pressure diffusivity)</span></dt><dd>Величина, которая определяет, как быстро перераспределяется давление. <span class="pg">стр. 79</span> <span class="chip chip-model">модель</span></dd><dt>радиальный поток <span class="en" lang="en">(radial flow)</span></dt><dd>Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси. <span class="pg">стр. 79</span> <span class="chip chip-model">модель</span></dd><dt>граничное условие <span class="en" lang="en">(boundary condition)</span></dt><dd>Правило на краю области: например, запрет на переток или заданное давление. <span class="pg">стр. 79</span> <span class="chip chip-model">модель</span></dd><dt>начальное условие <span class="en" lang="en">(initial condition)</span></dt><dd>Распределение давления в момент начала расчёта. <span class="pg">стр. 79</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_dake-s5_4-04-t01" data-task="geo.test_dake.s5_4.04.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Что совпадает для радиального давления и теплопроводности?</legend>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_4.04.t01" value="0"> <span>Физический смысл переменных</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_4.04.t01" value="1"> <span>Единицы коэффициентов</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_4.04.t01" value="2"> <span>Математическая форма уравнения</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Математическая форма уравнения</p>
+    <p class="fb-expl">Уравнение тепла имеет тот же оператор радиальной диффузии. <a href="#how-1">Где это в тексте (стр. 79) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_4-04-t02" data-task="geo.test_dake.s5_4.04.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Какие величины используются в тепловом аналоге?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_4.04.t02" value="0"> <span>Дебит скважины</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_4.04.t02" value="1"> <span>Абсолютная температура</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_4.04.t02" value="2"> <span>Сжимаемость нефти</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_4.04.t02" value="3"> <span>Температуропроводность</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Температуропроводность; Абсолютная температура</p>
+    <p class="fb-expl">Температура и температуропроводность заменяют свои аналоги из задачи давления. <a href="#how-2">Где это в тексте (стр. 79) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_4-04-t03" data-task="geo.test_dake.s5_4.04.t03" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">Как называется коэффициент в уравнении для давления?</p>
+  <p class="cloze">Отношение k/(φμc) называют коэффициентом <select aria-label="Пропуск 1"><option value="">—</option><option>температуропроводности</option><option>нефтенасыщенности</option><option>пьезопроводности</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Отношение k/(φμc) называют коэффициентом [пьезопроводности].</p>
+    <p class="fb-expl">У давления и температуры разные физические коэффициенты. <a href="#how-1">Где это в тексте (стр. 79) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_dake.s5_4.04.c01"><p>Коэффициент k/(φμc) в уравнении называется коэффициентом пьезопроводности. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\phi \mu c$ is called the diffusivity constant»</p><footer>— стр. 79</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_4.04.c02"><p>Описывать температуру при теплопроводности с радиальной симметрией можно уравнением той же формы. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation»</p><footer>— стр. 79</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_4.04.c03"><p>В тепловом аналоге T — абсолютная температура, K — температуропроводность. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«in which T is the absolute temperature and K the thermal diffusivity constant»</p><footer>— стр. 79</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_4.04.c04"><p>Автор отмечает практическую ценность готовых решений уравнения с разнообразными начальными и граничными условиями. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.»</p><footer>— стр. 79</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u079_21-1" tabindex="-1">
+          <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+          <blockquote>Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\phi \mu c$ is called the diffusivity constant. This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u079_22-1" tabindex="-1">
+          <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+          <blockquote>$$\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial T}{\partial r} \right) = \frac{1}{K} \frac{\partial T}{\partial t}$$</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u079_23-1" tabindex="-1">
+          <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+          <blockquote>in which T is the absolute temperature and K the thermal diffusivity constant. Because of the general nature of equ. (5.20) it is not surprising that many reservoir engineering papers, when dealing with complex solutions of the diffusivity equation, make reference to a text book entitled &#34;Conduction of Heat in Solids&#34;, by Carslaw and Jaeger$^3$, which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-16.html">шаг 16 «Как объединить расстояние и время»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="step-13.html" rel="prev"><span>← Назад</span><b>Не смешивайте две пористости</b></a><a class="next" href="step-15.html" rel="next"><span>Дальше →</span><b>Когда скважину заменяют линией</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Почему давление похоже на тепло</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="geo.test_dake.s5_4.04">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_dake.s5_4.04.t01", "type": "single", "question": "Что совпадает для радиального давления и теплопроводности?", "explanation": "Уравнение тепла имеет тот же оператор радиальной диффузии.", "page": 79, "link": "#how-1", "step_title": "Почему давление похоже на тепло", "step_index": 14, "node_id": "geo.test_dake.s5_4.04", "options": ["Физический смысл переменных", "Единицы коэффициентов", "Математическая форма уравнения"], "key": [2], "answer_text": "Математическая форма уравнения"}, {"id": "geo.test_dake.s5_4.04.t02", "type": "multiple", "question": "Какие величины используются в тепловом аналоге?", "explanation": "Температура и температуропроводность заменяют свои аналоги из задачи давления.", "page": 79, "link": "#how-2", "step_title": "Почему давление похоже на тепло", "step_index": 14, "node_id": "geo.test_dake.s5_4.04", "options": ["Дебит скважины", "Абсолютная температура", "Сжимаемость нефти", "Температуропроводность"], "key": [1, 3], "answer_text": "Температуропроводность; Абсолютная температура"}, {"id": "geo.test_dake.s5_4.04.t03", "type": "cloze", "question": "Как называется коэффициент в уравнении для давления?", "explanation": "У давления и температуры разные физические коэффициенты.", "page": 79, "link": "#how-1", "step_title": "Почему давление похоже на тепло", "step_index": 14, "node_id": "geo.test_dake.s5_4.04", "parts": ["Отношение k/(φμc) называют коэффициентом ", "."], "blanks": [{"options": ["температуропроводности", "нефтенасыщенности", "пьезопроводности"], "answers": ["пьезопроводности"]}], "key": [["пьезопроводности"]], "answer_text": "Отношение k/(φμc) называют коэффициентом [пьезопроводности]."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

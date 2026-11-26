@@ -1,0 +1,518 @@
+{
+  "node_id": "geo.test_dake.s7_3.01",
+  "chapter": "test_dake",
+  "index": 15,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "Когда скважину заменяют линией",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    87
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Скважину считают линией не потому, что ствола нет, а потому, что его радиус мал для рассматриваемой задачи."
+  },
+  "threshold": "Скважину считают линией не потому, что ствола нет, а потому, что его радиус мал для рассматриваемой задачи.",
+  "format": "text",
+  "format_rationale": "Ф/Н: три исходных условия нужны в проверяемом виде рядом с допущениями.",
+  "order_rationale": "Соединяем ранний режим с допущениями о жидкости и фиксируем условия линейного источника.",
+  "essence": [
+    "Решение линейного источника заменяет ствол линией, если радиус ствола мал в масштабе задачи.",
+    "При этом сохраняются исходные допущения о породе, жидкости и дебите."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        87
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Решение постоянного дебита автор связывает с преобразованием Лапласа. В раннем режиме его приближает решение линейного источника. В модели скважину заменяют линией. Это допустимо, когда радиус ствола пренебрежимо мал относительно размера области.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c01",
+            "geo.test_dake.s7_3.01.c02"
+          ],
+          "pages": [
+            87
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c01",
+              "quote": "During the initial transient flow period, it has been found that the constant terminal rate solution of the radial diffusivity equation, determined using the Laplace transform, can be approximated by the so-called line source solution",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c02",
+              "quote": "in comparison to the apparently infinite reservoir the wellbore radius is negligible and the wellbore itself can be treated as a line.",
+              "page": 87,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Линейный источник**: Приближение скважины линией, когда её радиус пренебрежимо мал для задачи. **Граничное условие**: Правило на краю области: например, запрет на переток или заданное давление. До начала отбора во всей области одинаковое начальное равновесное давление. Давление на бесконечной внешней границе не связано с возмущением на скважине в этом режиме. Внутреннее **граничное условие** задаёт **линейный источник**.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c03",
+            "geo.test_dake.s7_3.01.c04",
+            "geo.test_dake.s7_3.01.c05"
+          ],
+          "pages": [
+            87
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c03",
+              "quote": "Condition (a) is merely the initial condition that, before producing, the pressure everywhere within the drainage volume is equal to the initial equilibrium pressure $p_i$",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c04",
+              "quote": "Condition (b) ensures the condition of transience, namely that the pressure at the outer, infinite boundary is not affected by the pressure disturbance at the wellbore and vice versa.",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c05",
+              "quote": "Condition (c) is the line source inner boundary condition.",
+              "page": 87,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "**Вязкость**: Сопротивление жидкости течению. **Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. В выводе считают пласт однородным и изотропным. Скважина вскрывает всю толщину. **Вязкость** постоянна, а **сжимаемость** мала и постоянна. Решение относится к течению недонасыщенной нефти. Частичное вскрытие и сильно сжимаемые жидкости требуют дальнейшего развития модели.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c06",
+            "geo.test_dake.s7_3.01.c07",
+            "geo.test_dake.s7_3.01.c08"
+          ],
+          "pages": [
+            87
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c06",
+              "quote": "that the formation is homogeneous and isotropic, and drained by a fully penetrating well to ensure radial flow; the fluid itself must have a constant viscosity and a small and constant compressibility",
+              "page": 87,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c07",
+              "quote": "The solution obtained will, therefore, be applicable to the flow of undersaturated oil",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.01.c08",
+              "quote": "many of the restrictions will be removed by considering, for instance, the effects of partial well completion, the flow of highly compressible fluids, etc.",
+              "page": 87,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        87
+      ],
+      "items": [
+        {
+          "text": "До начала отбора во всей области одинаковое начальное равновесное давление.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c03"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "Давление на бесконечной внешней границе не связано с возмущением на скважине в этом режиме.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c04"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "В выводе считают пласт однородным и изотропным. Скважина вскрывает всю толщину. Вязкость постоянна, а сжимаемость мала и постоянна.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c06"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "Решение относится к течению недонасыщенной нефти.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.01.c07"
+          ],
+          "pages": [
+            87
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        87
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.01.f01",
+          "latex": "p(r,0)=p_i",
+          "meaning": "Начальное давление везде одинаково.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "p_i",
+              "meaning": "начальное равновесное давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_03"
+        },
+        {
+          "id": "geo.test_dake.s7_3.01.f02",
+          "latex": "p(\\infty,t)=p_i",
+          "meaning": "Давление на бесконечной границе не возмущено.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "p_i",
+              "meaning": "начальное равновесное давление",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_04"
+        },
+        {
+          "id": "geo.test_dake.s7_3.01.f03",
+          "latex": "\\lim_{r\\to 0}r\\frac{\\partial p}{\\partial r}=\\frac{q\\mu}{2\\pi k h},\\quad t>0",
+          "meaning": "Предел градиента, соответствующий постоянному отбору на линии.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_05"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Проверяют начальное равновесное давление, внешнюю границу на бесконечности и условие отбора на линии.",
+        "inputs": "Линейный источник приближает решение постоянного дебита, полученное преобразованием Лапласа, в начальном переходном режиме.",
+        "outputs": "Частичное вскрытие и сильно сжимаемые жидкости требуют дальнейшего развития модели.",
+        "breaks_where": "Сохраняются однородность, изотропия, вскрытие всей толщины, постоянная вязкость и малая постоянная сжимаемость. Автор использует это для недонасыщенной нефти.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Линейный источник приближает решение постоянного дебита, полученное преобразованием Лапласа, в начальном переходном режиме.",
+          "manual_steps": "Проверяют начальное равновесное давление, внешнюю границу на бесконечности и условие отбора на линии.",
+          "judgment_points": "Сохраняются однородность, изотропия, вскрытие всей толщины, постоянная вязкость и малая постоянная сжимаемость. Автор использует это для недонасыщенной нефти.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Сложный объект можно заменить граничным интерфейсом, если внутренняя геометрия не разрешается масштабом запроса.",
+        "breaks_where": "Геометрические и физические ограничения остаются: нельзя переносить допущение на каждую скважину и жидкость.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        87
+      ],
+      "items": [
+        {
+          "term": "линейный источник",
+          "en": "line source",
+          "definition": "Приближение скважины линией, когда её радиус пренебрежимо мал для задачи.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "переходный режим",
+          "en": "transient flow",
+          "definition": "Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "начальное условие",
+          "en": "initial condition",
+          "definition": "Распределение давления в момент начала расчёта.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "изотропия",
+          "en": "isotropy",
+          "definition": "Свойство не меняется с направлением.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "недонасыщенная нефть",
+          "en": "undersaturated oil",
+          "definition": "Нефть, из которой при рассматриваемом давлении ещё не выделяется отдельная газовая фаза.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "вязкость",
+          "en": "viscosity",
+          "definition": "Сопротивление жидкости течению.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 87,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Равновесное начало → Бесконечная внешняя область → Постоянный отбор на линии.",
+      "alt": "Схема: Равновесное начало, затем Бесконечная внешняя область, затем Постоянный отбор на линии.",
+      "file": "illustrations/geo.test_dake.s7_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.01.c02",
+        "geo.test_dake.s7_3.01.c06",
+        "geo.test_dake.s7_3.01.c03"
+      ],
+      "pages": [
+        87
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c01",
+      "kind": "observation",
+      "text": "Линейный источник приближает решение постоянного дебита, полученное преобразованием Лапласа, в начальном переходном режиме.",
+      "quote": "During the initial transient flow period, it has been found that the constant terminal rate solution of the radial diffusivity equation, determined using the Laplace transform, can be approximated by the so-called line source solution",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c02",
+      "kind": "assumption",
+      "text": "Малый по сравнению с пластом радиус ствола игнорируют, заменяя скважину линией.",
+      "quote": "in comparison to the apparently infinite reservoir the wellbore radius is negligible and the wellbore itself can be treated as a line.",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c03",
+      "kind": "observation",
+      "text": "До начала отбора во всей области одинаковое начальное равновесное давление.",
+      "quote": "Condition (a) is merely the initial condition that, before producing, the pressure everywhere within the drainage volume is equal to the initial equilibrium pressure $p_i$",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c04",
+      "kind": "observation",
+      "text": "Давление на бесконечной внешней границе не связано с возмущением на скважине в этом режиме.",
+      "quote": "Condition (b) ensures the condition of transience, namely that the pressure at the outer, infinite boundary is not affected by the pressure disturbance at the wellbore and vice versa.",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c05",
+      "kind": "observation",
+      "text": "Внутреннее граничное условие задаёт линейный источник.",
+      "quote": "Condition (c) is the line source inner boundary condition.",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c06",
+      "kind": "assumption",
+      "text": "Сохраняют однородность, изотропию, вскрытие всей толщины, постоянную вязкость и малую постоянную сжимаемость.",
+      "quote": "that the formation is homogeneous and isotropic, and drained by a fully penetrating well to ensure radial flow; the fluid itself must have a constant viscosity and a small and constant compressibility",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c07",
+      "kind": "observation",
+      "text": "Решение относится к течению недонасыщенной нефти.",
+      "quote": "The solution obtained will, therefore, be applicable to the flow of undersaturated oil",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.01.c08",
+      "kind": "observation",
+      "text": "Частичное вскрытие и сильно сжимаемые жидкости требуют дальнейшего развития модели.",
+      "quote": "many of the restrictions will be removed by considering, for instance, the effects of partial well completion, the flow of highly compressible fluids, etc.",
+      "page": 87,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.01.t01",
+    "geo.test_dake.s7_3.01.t02",
+    "geo.test_dake.s7_3.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.01.k01",
+    "geo.test_dake.s7_3.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_3.02",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s5_4.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "chapter": "test_dake",
+  "nodes": [
+    {
+      "node_id": "geo.test_dake.s5_2.01",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.02",
+      "format": "long",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "pressure_diffusion",
+          "model": "kmd.visuals.templates.pressure_diffusion.PressureDiffusion.state"
+        },
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.03",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        },
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.05",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "process_chain",
+          "model": "kmd.visuals.templates.process_chain.ProcessChain.state"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.02",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.05",
+      "format": "interactive",
+      "media": "animation",
+      "templates": [
+        {
+          "template": "crossplot",
+          "model": "kmd.visuals.templates.crossplot.Crossplot.draw"
+        }
+      ],
+      "needs_template": false
+    }
+  ]
+}

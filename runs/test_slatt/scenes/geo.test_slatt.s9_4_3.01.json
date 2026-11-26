@@ -1,0 +1,298 @@
+{
+  "node_id": "geo.test_slatt.s9_4_3.01",
+  "format": "interactive",
+  "title": "Шесть песчаных тел Капарука",
+  "idea": "Наступления моря отделяли пески последовательных выдвижений.",
+  "hook": "Один интервал на старом разрезе — обязательно одно песчаное тело?",
+  "views": {
+    "рост": {
+      "template": "timeline_growth",
+      "params": {
+        "width_m": 1000,
+        "base_lith": "generic",
+        "base_thickness_m": 30,
+        "sea_level_m": 24,
+        "events": [
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.24,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A1",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "shale",
+            "shape": "sheet",
+            "center_frac": 0.5,
+            "width_frac": 1,
+            "thickness_m": 1,
+            "label": "Глина наступления моря",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.32999999999999996,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A2",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "shale",
+            "shape": "sheet",
+            "center_frac": 0.5,
+            "width_frac": 1,
+            "thickness_m": 1,
+            "label": "Глина наступления моря",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.42,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A3",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "shale",
+            "shape": "sheet",
+            "center_frac": 0.5,
+            "width_frac": 1,
+            "thickness_m": 1,
+            "label": "Глина наступления моря",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.51,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A4",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "shale",
+            "shape": "sheet",
+            "center_frac": 0.5,
+            "width_frac": 1,
+            "thickness_m": 1,
+            "label": "Глина наступления моря",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.6,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A5",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "shale",
+            "shape": "sheet",
+            "center_frac": 0.5,
+            "width_frac": 1,
+            "thickness_m": 1,
+            "label": "Глина наступления моря",
+            "up_to_sea_level": false
+          },
+          {
+            "kind": "deposit",
+            "lith": "sand",
+            "shape": "prograde",
+            "center_frac": 0.69,
+            "width_frac": 0.31,
+            "thickness_m": 5,
+            "label": "A6",
+            "up_to_sea_level": false
+          }
+        ]
+      },
+      "purpose": "Условная последовательность тел A1–A6 без компасной привязки."
+    }
+  },
+  "objects": [
+    {
+      "name": "Отложения и признаки",
+      "description": "Вместо единого песчаного слоя интервал A содержит песчаные тела отдельных этапов выдвижения, разделённые морскими глинистыми отложениями.",
+      "reference": "Стр. 422, 423"
+    },
+    {
+      "name": "Наблюдение и интерпретация",
+      "description": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов.",
+      "reference": "Учебный узел"
+    }
+  ],
+  "invariants": [
+    "Молодые слои ложатся сверху.",
+    "Глинистые разделители отличны от песчаных тел.",
+    "Право означает сторону моря, не конкретный азимут."
+  ],
+  "assumptions": [
+    "Геометрия и шкалы, если есть, условные; схема не оцифрована из книги."
+  ],
+  "exaggerations": [
+    {
+      "what": "Толщины и расстояния",
+      "factor": "условно"
+    }
+  ],
+  "frames": [
+    {
+      "id": "f1",
+      "view": "рост",
+      "t": [
+        0.0,
+        0.16666666666666666
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "Отслеживаем положение тела A1 и границу со следующим этапом.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    },
+    {
+      "id": "f2",
+      "view": "рост",
+      "t": [
+        0.16666666666666666,
+        0.3333333333333333
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "Отслеживаем положение тела A2 и границу со следующим этапом.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    },
+    {
+      "id": "f3",
+      "view": "рост",
+      "t": [
+        0.3333333333333333,
+        0.5
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "Отслеживаем положение тела A3 и границу со следующим этапом.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    },
+    {
+      "id": "f4",
+      "view": "рост",
+      "t": [
+        0.5,
+        0.6666666666666666
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "Отслеживаем положение тела A4 и границу со следующим этапом.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    },
+    {
+      "id": "f5",
+      "view": "рост",
+      "t": [
+        0.6666666666666666,
+        0.8333333333333334
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "Отслеживаем положение тела A5 и границу со следующим этапом.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    },
+    {
+      "id": "f6",
+      "view": "рост",
+      "t": [
+        0.8333333333333334,
+        1.0
+      ],
+      "class": "B",
+      "provenance": "схема",
+      "description": "В финале сравниваем шесть тел с исходным представлением о непрерывном песчанике.",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01.c05",
+        "geo.test_slatt.s9_4_3.01.c06",
+        "geo.test_slatt.s9_4_3.01.c07"
+      ],
+      "true_scale": false
+    }
+  ],
+  "checklist": [
+    {
+      "item": "Порядок отложений",
+      "ok": true,
+      "note": "Где показаны слои, молодые лежат над старыми."
+    },
+    {
+      "item": "Последовательность причин",
+      "ok": true,
+      "note": "Сначала процесс или наблюдение, затем следствие или вывод."
+    },
+    {
+      "item": "Флюиды в порах",
+      "ok": true,
+      "note": "Нет изображений свободных подземных полостей с флюидом."
+    },
+    {
+      "item": "Источник и точность",
+      "ok": true,
+      "note": "Схематическая геометрия явно отделена от реальных наблюдений."
+    },
+    {
+      "item": "Границы применимости",
+      "ok": true,
+      "note": "В тексте направление выдвижения дано как северо-восточное, а подпись описывает рисунок с северо-запада на юго-восток; без дополнительной проверки не следует считать их одним направлением."
+    },
+    {
+      "item": "Согласованность видов",
+      "ok": true,
+      "note": "Виды используют те же наблюдения и отложения внутри одного примера."
+    }
+  ],
+  "data_bridge": "Сопоставляют интервалы по времени, проверяют порядок выдвижения тел и их положение относительно разломов. Границы геологических тел и время определяют интерпретацией, не метками загрузки.",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "вид «рост» (timeline_growth) [above_sea]: осадки поднялись выше уровня моря — проверить (наземное накопление?)",
+      "нет кадра в истинном масштабе (нужен хотя бы один в серии роликов)"
+    ],
+    "fix_rounds": 0,
+    "status": "ok"
+  }
+}

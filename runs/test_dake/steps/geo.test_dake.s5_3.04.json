@@ -1,0 +1,585 @@
+{
+  "node_id": "geo.test_dake.s5_3.04",
+  "chapter": "test_dake",
+  "index": 9,
+  "part": {
+    "id": "part2",
+    "title": "Что меняется при разных границах"
+  },
+  "title_beginner": "Как усреднить пластовое давление",
+  "title_book": "Условия решения",
+  "section": "s5_3",
+  "pages": [
+    77,
+    78
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Пр",
+    "threshold": "Дебит может заменить труднодоступный поровый объём в весах, но только при оговорённых условиях."
+  },
+  "threshold": "Дебит может заменить труднодоступный поровый объём в весах, но только при оговорённых условиях.",
+  "format": "data_practice",
+  "format_rationale": "Ф/Пр: по давлению и измеренным дебитам выбирают веса и проверяют условия, при которых они законны.",
+  "order_rationale": "Используем общий темп падения, чтобы вывести практическое усреднение по дебитам.",
+  "essence": [
+    "При одинаковом темпе снижения и близких сжимаемостях дебиты пропорциональны поровым объёмам.",
+    "Тогда измеряемые дебиты можно использовать вместо объёмов при усреднении давления."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        77,
+        78
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Каждая скважина независимо дренирует область, ограниченную границей без перетока. Скорость снижения давления должна быть приблизительно одинаковой по пласту. Иначе перетоки сдвигают границы до стабилизации.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c01",
+            "geo.test_dake.s5_3.04.c02"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c01",
+              "quote": "once the reservoir is producing under the semi steady state condition, each well will drain from within its own no-flow boundary quite independently of the other wells.",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c02",
+              "quote": "For this condition dp/dt must be approximately constant throughout the entire reservoir otherwise flow would occur across the boundaries causing a re-adjustment in their positions until stability was eventually achieved",
+              "page": 77,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Давления отдельных областей взвешивают по их поровым объёмам. Объём в взвешивании — поровый объём отдельного участка дренирования. Давление в взвешивании — среднее давление в соответствующем участке дренирования.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c03",
+            "geo.test_dake.s5_3.04.c04",
+            "geo.test_dake.s5_3.04.c05"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c03",
+              "quote": "$$\\bar{p}_{res} = \\frac{\\sum \\bar{p}_i V_i}{\\sum V_i} \\tag{5.11}$$",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c04",
+              "quote": "the pore volume of the iᵗʰ drainage volume",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c05",
+              "quote": "the average pressure within the iᵗʰ drainage volume.",
+              "page": 77,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Для пропорциональности дебита поровому объёму нужен малый разброс сжимаемости при общей скорости падения. При соблюдении условий объёмные веса заменяют дебитами.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c06",
+            "geo.test_dake.s5_3.04.c07"
+          ],
+          "pages": [
+            77,
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c06",
+              "quote": "since dp/dt is constant for the reservoir then, if the variation in the compressibility is small",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c07",
+              "quote": "and hence the volume average in equ. (5.11) can be replaced by a rate average, as follows",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "Поровые объёмы трудно определить. Дебиты измеряют регулярно на протяжении разработки. По усреднённому давлению считают материальный баланс пласта.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c08",
+            "geo.test_dake.s5_3.04.c09"
+          ],
+          "pages": [
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c08",
+              "quote": "and, whereas the $V_i$'s are difficult to determine in practice, the $q_i$'s are measured on a routine basis throughout the lifetime of the field",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.04.c09",
+              "quote": "which is the pressure at which the reservoir material balance is evaluated",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        77,
+        78
+      ],
+      "items": [
+        {
+          "text": "Взять среднее давление каждой области дренирования.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c03"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Проверить общий темп падения и близость сжимаемостей.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c06"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "При выполнении условий взвесить давления по дебитам.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c07"
+          ],
+          "pages": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        78
+      ],
+      "data": {
+        "title": "Выбор по исходным условиям",
+        "signs": [
+          "Средние давления областей",
+          "Проверка условий"
+        ],
+        "rule": "При одинаковом темпе снижения и близких сжимаемостях дебиты пропорциональны поровым объёмам.",
+        "conclusion": "Тогда измеряемые дебиты можно использовать вместо объёмов при усреднении давления.",
+        "claim_ids": [
+          "geo.test_dake.s5_3.04.c07"
+        ],
+        "cases": [
+          {
+            "given": "Чем заменяют веса по объёмам, если условия выполнены?",
+            "options": [
+              "Временем начала испытаний",
+              "Глубинами отдельных скважин",
+              "Дебитами отдельных скважин"
+            ],
+            "answer": 2,
+            "why": "При соблюдении условий измеряемые дебиты пропорциональны поровым объёмам.",
+            "source": "Условия в учебном узле"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "text": "Скорость снижения давления должна быть приблизительно одинаковой по пласту. Иначе перетоки сдвигают границы до стабилизации.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c02"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Для пропорциональности дебита поровому объёму нужен малый разброс сжимаемости при общей скорости падения.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.04.c06"
+          ],
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        77,
+        78
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_3.04.f01",
+          "latex": "\\bar{p}_{res} = \\frac{\\sum \\bar{p}_i V_i}{\\sum V_i}",
+          "meaning": "Среднее давление по весам поровых объёмов.",
+          "vars": [
+            {
+              "symbol": "\\bar{p}_{res}",
+              "meaning": "среднее пластовое давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\bar{p}_i",
+              "meaning": "среднее давление в области отдельной скважины",
+              "unit": null
+            },
+            {
+              "symbol": "V_i",
+              "meaning": "поровый объём области дренирования скважины",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_21"
+        },
+        {
+          "id": "geo.test_dake.s5_3.04.f02",
+          "latex": "q_i \\propto V_i",
+          "meaning": "Пропорциональность дебита объёму при условии общего темпа и близких сжимаемостей.",
+          "vars": [
+            {
+              "symbol": "q_i",
+              "meaning": "дебит скважины",
+              "unit": null
+            },
+            {
+              "symbol": "V_i",
+              "meaning": "поровый объём области дренирования скважины",
+              "unit": null
+            }
+          ],
+          "page": 78,
+          "unit_id": "u078_02"
+        },
+        {
+          "id": "geo.test_dake.s5_3.04.f03",
+          "latex": "\\overline{p}_{res} = \\frac{\\sum_i \\overline{p}_i q_i}{\\sum_i q_i}",
+          "meaning": "Практическое усреднение давления по весам дебитов.",
+          "vars": [
+            {
+              "symbol": "\\bar{p}_{res}",
+              "meaning": "среднее пластовое давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\bar{p}_i",
+              "meaning": "среднее давление в области отдельной скважины",
+              "unit": null
+            },
+            {
+              "symbol": "q_i",
+              "meaning": "дебит скважины",
+              "unit": null
+            }
+          ],
+          "page": 78,
+          "unit_id": "u078_04"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        77,
+        78
+      ],
+      "data": {
+        "text": "Среднее давление можно всегда считать с весами по дебиту.",
+        "correction": "Подстановка дебитов требует общей скорости снижения давления и близкой сжимаемости.",
+        "claim_ids": [
+          "geo.test_dake.s5_3.04.c02",
+          "geo.test_dake.s5_3.04.c06",
+          "geo.test_dake.s5_3.04.c07"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Вместо труднодоступных объёмов берут регулярно измеряемые дебиты и по ним взвешивают средние давления областей.",
+        "inputs": "Каждая скважина независимо дренирует область, ограниченную границей без перетока.",
+        "outputs": "По усреднённому давлению считают материальный баланс пласта.",
+        "breaks_where": "Если скорость падения неодинакова, границы взаимно смещаются до стабилизации. При заметно разных сжимаемостях замена весов не обоснована.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каждая скважина независимо дренирует область, ограниченную границей без перетока.",
+          "manual_steps": "Вместо труднодоступных объёмов берут регулярно измеряемые дебиты и по ним взвешивают средние давления областей.",
+          "judgment_points": "Если скорость падения неодинакова, границы взаимно смещаются до стабилизации. При заметно разных сжимаемостях замена весов не обоснована.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Среднее давление можно всегда считать с весами по дебиту.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Взвешенное среднее можно считать по заменителю веса, если он пропорционален исходной величине.",
+        "breaks_where": "Пропорциональность — вывод из модели пласта, а не свойство всех производственных данных.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "number": "5.3",
+          "page": 78,
+          "caption": "Fig. 5.3 Reservoir depletion under semi steady state conditions.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u078_01",
+          "scan": "pages/p78.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "term": "область дренирования",
+          "en": "drainage volume",
+          "definition": "Участок пласта, с которого в данном режиме поступает жидкость к скважине.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "псевдоустановившийся режим",
+          "en": "semi steady state flow",
+          "definition": "При закрытой границе давление в разных точках падает примерно с одной скоростью при постоянном дебите.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "баланс массы",
+          "en": "mass conservation",
+          "definition": "Приток массы минус отток равен изменению массы внутри области.",
+          "page": 77,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Средние давления областей → Проверка условий → Усреднение с весами по дебиту.",
+      "alt": "Схема: Средние давления областей, затем Проверка условий, затем Усреднение с весами по дебиту.",
+      "file": "illustrations/geo.test_dake.s5_3.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.04.c07",
+        "geo.test_dake.s5_3.04.c06",
+        "geo.test_dake.s5_3.04.c09"
+      ],
+      "pages": [
+        77,
+        78
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c01",
+      "kind": "observation",
+      "text": "Каждая скважина независимо дренирует область, ограниченную границей без перетока.",
+      "quote": "once the reservoir is producing under the semi steady state condition, each well will drain from within its own no-flow boundary quite independently of the other wells.",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c02",
+      "kind": "assumption",
+      "text": "Нужна приблизительно одинаковая скорость снижения давления по пласту; иначе перетоки сдвигают границы до стабилизации.",
+      "quote": "For this condition dp/dt must be approximately constant throughout the entire reservoir otherwise flow would occur across the boundaries causing a re-adjustment in their positions until stability was eventually achieved",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c03",
+      "kind": "observation",
+      "text": "Давления отдельных областей взвешивают по их поровым объёмам.",
+      "quote": "$$\\bar{p}_{res} = \\frac{\\sum \\bar{p}_i V_i}{\\sum V_i} \\tag{5.11}$$",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c04",
+      "kind": "observation",
+      "text": "Объём в взвешивании — поровый объём отдельного участка дренирования.",
+      "quote": "the pore volume of the iᵗʰ drainage volume",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c05",
+      "kind": "observation",
+      "text": "Давление в взвешивании — среднее давление в соответствующем участке дренирования.",
+      "quote": "the average pressure within the iᵗʰ drainage volume.",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c06",
+      "kind": "observation",
+      "text": "Для пропорциональности дебита поровому объёму нужен малый разброс сжимаемости при общей скорости падения.",
+      "quote": "since dp/dt is constant for the reservoir then, if the variation in the compressibility is small",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c07",
+      "kind": "observation",
+      "text": "При соблюдении условий объёмные веса заменяют дебитами.",
+      "quote": "and hence the volume average in equ. (5.11) can be replaced by a rate average, as follows",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c08",
+      "kind": "observation",
+      "text": "Объёмы трудно определить, а дебиты измеряют регулярно на протяжении разработки.",
+      "quote": "and, whereas the $V_i$'s are difficult to determine in practice, the $q_i$'s are measured on a routine basis throughout the lifetime of the field",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.04.c09",
+      "kind": "observation",
+      "text": "По усреднённому давлению считают материальный баланс пласта.",
+      "quote": "which is the pressure at which the reservoir material balance is evaluated",
+      "page": 78,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_3.04.t01",
+    "geo.test_dake.s5_3.04.t02",
+    "geo.test_dake.s5_3.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_3.04.k01",
+    "geo.test_dake.s5_3.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_3.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

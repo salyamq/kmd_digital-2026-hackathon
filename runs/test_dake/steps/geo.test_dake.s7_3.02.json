@@ -1,0 +1,646 @@
+{
+  "node_id": "geo.test_dake.s7_3.02",
+  "chapter": "test_dake",
+  "index": 16,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "Как объединить расстояние и время",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    87,
+    88
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "Радиус и время входят в решение как одна безразмерная комбинация."
+  },
+  "threshold": "Радиус и время входят в решение как одна безразмерная комбинация.",
+  "format": "interactive",
+  "format_rationale": "Ф/М: изменяя радиус и время, можно проверить, как они сводятся к одной переменной подобия.",
+  "order_rationale": "При заданных условиях объединяем радиус и время заменой Больцмана.",
+  "essence": [
+    "Замена Больцмана объединяет квадрат радиуса и время в одной безразмерной величине.",
+    "После подстановки задача описывается уравнением по одной переменной."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        87,
+        88
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Переменная подобия**: Комбинация исходных переменных, позволяющая описать решения общей формой. Для решения автор использует преобразование Больцмана. При том же времени **переменная подобия** растёт с квадратом радиуса. При том же радиусе она обратно пропорциональна времени и пьезопроводности.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c01",
+            "geo.test_dake.s7_3.02.c02"
+          ],
+          "pages": [
+            87
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.02.c01",
+              "quote": "can be solved by making use of Boltzmann's transformation",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.02.c02",
+              "quote": "$$s = \\frac{r^2}{4(\\text{Diffusivity constant})t} = \\frac{\\phi \\mu c r^2}{4kt}$$",
+              "page": 87,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Пространственная производная новой переменной пропорциональна радиусу. Временная производная отрицательна и обратно пропорциональна квадрату времени. После подстановки остаётся обыкновенное дифференциальное уравнение по переменной подобия.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c03",
+            "geo.test_dake.s7_3.02.c04",
+            "geo.test_dake.s7_3.02.c05"
+          ],
+          "pages": [
+            87,
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.02.c03",
+              "quote": "$$\\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c r}{2kt} \\tag{7.2}$$",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.02.c04",
+              "quote": "$$\\frac{\\partial s}{\\partial t} = - \\frac{\\phi \\mu c r^2}{4kt^2} \\tag{7.3}$$",
+              "page": 87,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.02.c05",
+              "quote": "$$\\frac{d}{ds} \\left( s \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}$$",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        87,
+        88
+      ],
+      "items": [
+        {
+          "text": "Ввести переменную подобия.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c02"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "Найти её производную по радиусу.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c03"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "Найти её производную по времени.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c04"
+          ],
+          "pages": [
+            87
+          ]
+        },
+        {
+          "text": "Подставить обе производные в радиальное уравнение.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.02.c05"
+          ],
+          "pages": [
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        87,
+        88
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.02.f01",
+          "latex": "\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t}",
+          "meaning": "Исходное радиальное уравнение диффузии давления.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_10"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f02",
+          "latex": "s = \\frac{r^2}{4(\\text{Diffusivity constant})t} = \\frac{\\phi \\mu c r^2}{4kt}",
+          "meaning": "Безразмерная переменная подобия Больцмана.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_12"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f03",
+          "latex": "\\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c r}{2kt}",
+          "meaning": "Производная переменной подобия по радиусу.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_14"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f04",
+          "latex": "\\frac{\\partial s}{\\partial t} = - \\frac{\\phi \\mu c r^2}{4kt^2}",
+          "meaning": "Производная переменной подобия по времени.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 87,
+          "unit_id": "u087_16"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f05",
+          "latex": "\\frac{1}{r} \\frac{d}{ds} \\left( r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} \\right) \\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c}{k} \\frac{dp}{ds} \\frac{\\partial s}{\\partial t}",
+          "meaning": "Уравнение после перехода к переменной подобия.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_01"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f06",
+          "latex": "\\frac{1}{r} \\frac{\\phi \\mu c r}{2kt} \\frac{d}{ds} \\left( \\frac{\\phi \\mu c r^2}{2kt} \\frac{dp}{ds} \\right) = - \\left( \\frac{\\phi \\mu c r}{2kt} \\right)^2 \\frac{dp}{ds}",
+          "meaning": "Подстановка производных переменной подобия.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_03"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f07",
+          "latex": "\\frac{d}{ds} \\left( s \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}",
+          "meaning": "Обыкновенное дифференциальное уравнение для давления.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_05"
+        },
+        {
+          "id": "geo.test_dake.s7_3.02.f08",
+          "latex": "\\frac{dp}{ds} + s \\frac{d}{ds} \\left( \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}",
+          "meaning": "Раскрытая форма обыкновенного дифференциального уравнения.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_07"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Вычисляют производные новой переменной по радиусу и времени, затем подставляют их в радиальное уравнение.",
+        "inputs": "Для решения автор использует преобразование Больцмана.",
+        "outputs": "После подстановки остаётся обыкновенное дифференциальное уравнение по переменной подобия.",
+        "breaks_where": "Это преобразование относится к решению, где давление представляют через переменную подобия.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Для решения автор использует преобразование Больцмана.",
+          "manual_steps": "Вычисляют производные новой переменной по радиусу и времени, затем подставляют их в радиальное уравнение.",
+          "judgment_points": "Это преобразование относится к решению, где давление представляют через переменную подобия.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Перевод данных к единому ключу объединяет ситуации с разными исходными расстояниями и временами.",
+        "breaks_where": "Комбинация следует из конкретного уравнения, не из произвольной нормализации.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        87
+      ],
+      "items": [
+        {
+          "term": "пьезопроводность",
+          "en": "pressure diffusivity",
+          "definition": "Величина, которая определяет, как быстро перераспределяется давление.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "переменная подобия",
+          "en": "similarity variable",
+          "definition": "Комбинация исходных переменных, позволяющая описать решения общей формой.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 87,
+          "by": "model"
+        },
+        {
+          "term": "линейный источник",
+          "en": "line source",
+          "definition": "Приближение скважины линией, когда её радиус пренебрежимо мал для задачи.",
+          "page": 87,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Радиус и время → Переменная подобия → Уравнение с одной переменной.",
+      "alt": "Схема: Радиус и время, затем Переменная подобия, затем Уравнение с одной переменной.",
+      "file": "illustrations/geo.test_dake.s7_3.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.02.c02",
+        "geo.test_dake.s7_3.02.c04",
+        "geo.test_dake.s7_3.02.c01"
+      ],
+      "pages": [
+        87
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.02.c01",
+      "kind": "observation",
+      "text": "Для решения автор использует преобразование Больцмана.",
+      "quote": "can be solved by making use of Boltzmann's transformation",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.02.c02",
+      "kind": "observation",
+      "text": "Новая переменная пропорциональна квадрату радиуса и обратно пропорциональна времени и пьезопроводности.",
+      "quote": "$$s = \\frac{r^2}{4(\\text{Diffusivity constant})t} = \\frac{\\phi \\mu c r^2}{4kt}$$",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.02.c03",
+      "kind": "observation",
+      "text": "Пространственная производная новой переменной пропорциональна радиусу.",
+      "quote": "$$\\frac{\\partial s}{\\partial r} = \\frac{\\phi \\mu c r}{2kt} \\tag{7.2}$$",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.02.c04",
+      "kind": "observation",
+      "text": "Временная производная отрицательна и обратно пропорциональна квадрату времени.",
+      "quote": "$$\\frac{\\partial s}{\\partial t} = - \\frac{\\phi \\mu c r^2}{4kt^2} \\tag{7.3}$$",
+      "page": 87,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.02.c05",
+      "kind": "observation",
+      "text": "После подстановки остаётся обыкновенное дифференциальное уравнение по переменной подобия.",
+      "quote": "$$\\frac{d}{ds} \\left( s \\frac{dp}{ds} \\right) = -s \\frac{dp}{ds}$$",
+      "page": 88,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.02.t01",
+    "geo.test_dake.s7_3.02.t02",
+    "geo.test_dake.s7_3.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.02.k01",
+    "geo.test_dake.s7_3.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s7_3.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s5_4.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

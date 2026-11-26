@@ -1,0 +1,525 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.05",
+  "chapter": "test_slatt",
+  "index": 14,
+  "part": {
+    "id": "part3",
+    "title": "Как геология меняет решение о добыче"
+  },
+  "title_beginner": "Скважина под защитой глины",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    419,
+    421,
+    422
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "Н",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "data_practice",
+  "format_rationale": "Пр/Н: сопоставляем спроектированный маршрут, продуктивную часть ствола и фактический результат, не подменяя одно другим.",
+  "order_rationale": "В последнем примере объединяем выбор траектории и проверку защиты от газа.",
+  "essence": [
+    "Ствол направили в песчаник под глинистым экраном.",
+    "В целевом песчанике длина продуктивной части меньше длины всего пробуренного участка."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        419,
+        421,
+        422
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Скважину 11-30 провели ниже глины залива, защищавшей от газа сверху. Горизонтальная скважина проходит внутри русловых и баровых отложений, разделённых глинами. Глины разделяют песчаники на отсеки и ограждают от газа газовой шапки.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c01",
+            "geo.test_slatt.s9_4_2.05.c05",
+            "geo.test_slatt.s9_4_2.05.c06"
+          ],
+          "pages": [
+            419,
+            421
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c01",
+              "quote": "The horizontal well 11-30 was drilled beneath a bay shale that acted as a shield from the overlying gas cap. 894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+              "page": 419,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c05",
+              "quote": "Horizontal well drilled within distributary-channel and mouth-bar facies separated by shales",
+              "page": 421,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c06",
+              "quote": "The shales compartmentalize the sandstones and shield against gas-cap encroachment",
+              "page": 421,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Разрез по скважинам 11-28 и 11-23 использовали для планирования скважины 11-30. Горизонтальная траектория 11-30 перпендикулярна плоскости разреза. Ствол проходит через устьевые песчаники под непрерывной глиной залива.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c07",
+            "geo.test_slatt.s9_4_2.05.c08",
+            "geo.test_slatt.s9_4_2.05.c09"
+          ],
+          "pages": [
+            422
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c07",
+              "quote": "Schematic cross-section illustrating facies association interpretations between wells 11-28 and 11-23 and the predrill strategy for placing well 11-30",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c08",
+              "quote": "The horizontal trajectory of 11-30 is perpendicular to the cross-section in a",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c09",
+              "quote": "Wellbore path through the distributary-mouth-bar sandstones beneath a continuous bay shale is shown in b. *Modified from Tye et al. (1999)",
+              "page": 422,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Весь горизонтальный участок 894 ft. (272 m) лежал в целевом песчанике. Из него 475 ft. (144 m) отнесли к продуктивной части. К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении. Детальное описание и подобные решения продлевают жизнь месторождения.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c02",
+            "geo.test_slatt.s9_4_2.05.c03",
+            "geo.test_slatt.s9_4_2.05.c04"
+          ],
+          "pages": [
+            419,
+            422
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c02",
+              "quote": "894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+              "page": 419,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c03",
+              "quote": "stabilized at 1600 BOPD, with a low gas/oil ratio (Tye et al., 1999)",
+              "page": 422,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.05.c04",
+              "quote": "Detailed characterizations and applications such as these are increasing the life of this giant field",
+              "page": 422,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как действовали в примере",
+      "pages": [
+        419,
+        422
+      ],
+      "items": [
+        {
+          "text": "Сопоставить соседние скважины 11-28 и 11-23.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c07"
+          ],
+          "pages": [
+            422
+          ]
+        },
+        {
+          "text": "Наметить путь под непрерывной глиной залива.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c09"
+          ],
+          "pages": [
+            422
+          ]
+        },
+        {
+          "text": "Оценить продуктивную часть горизонтального участка.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c02"
+          ],
+          "pages": [
+            419
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        419
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_slatt_s9_4_2_05_e01",
+          "title": "Горизонтальный ствол 11-30",
+          "page": 419,
+          "condition": "Корреляция соседних скважин 11-28 и 11-23.",
+          "steps": [
+            "Выделить непрерывную глину залива.",
+            "Провести горизонтальный участок через песчаники под ней.",
+            "Сравнить длину участка 894 ft. (272 m) с продуктивной частью 475 ft. (144 m)."
+          ],
+          "result": "К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении.",
+          "numbers": [
+            "11",
+            "23",
+            "28",
+            "144",
+            "272",
+            "475",
+            "894",
+            "1600",
+            "1999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        419
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Соседние скважины",
+          "Проверяем непрерывную глину"
+        ],
+        "rule": "Ствол направили в песчаник под глинистым экраном.",
+        "conclusion": "В целевом песчанике длина продуктивной части меньше длины всего пробуренного участка.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.05.c01"
+        ],
+        "cases": [
+          {
+            "given": "Откуда могла поступать нежелательная фаза?",
+            "options": [
+              "Из избытка воды на поверхности",
+              "Из газовой шапки выше глины",
+              "Из глины ниже ствола"
+            ],
+            "answer": 1,
+            "why": "Глина залива отделяла песчаник от газа сверху.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        419,
+        422
+      ],
+      "items": [
+        {
+          "text": "Весь горизонтальный участок 894 ft. (272 m) лежал в целевом песчанике. Из него 475 ft. (144 m) отнесли к продуктивной части.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c02"
+          ],
+          "pages": [
+            419
+          ]
+        },
+        {
+          "text": "К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.05.c03"
+          ],
+          "pages": [
+            422
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Интерпретируют отложения по соседним скважинам, затем проводят горизонтальный ствол по песчанику под глинистым экраном.",
+        "inputs": "Корреляция соседних скважин 11-28 и 11-23.",
+        "outputs": "Ствол проходит через устьевые песчаники под непрерывной глиной залива.",
+        "breaks_where": "Весь участок в песчанике не обязательно продуктивен. Результаты относятся к скважине 11-30.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Корреляция соседних скважин 11-28 и 11-23.",
+          "manual_steps": "Интерпретируют отложения по соседним скважинам, затем проводят горизонтальный ствол по песчанику под глинистым экраном.",
+          "judgment_points": "Весь участок в песчанике не обязательно продуктивен. Результаты относятся к скважине 11-30.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "При планировании маршрута важно выбрать не просто целевой диапазон, но и область под защитной границей.",
+        "breaks_where": "Границы осадочных тел интерпретируются, а не заданы с машинной точностью.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        421,
+        422
+      ],
+      "items": [
+        {
+          "number": "9.22",
+          "page": 421,
+          "caption": "FIGURE 9.22 Horizontal well drilled within distributary-channel and mouth-bar facies separated by shales. The shales compartmentalize the sandstones and shield against gas-cap encroachment. After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u421_01",
+          "scan": "pages/p421.png"
+        },
+        {
+          "number": "9.24",
+          "page": 422,
+          "caption": "**FIGURE 9.24** Schematic cross-section illustrating facies association interpretations between wells 11-28 and 11-23 and the predrill strategy for placing well 11-30. The horizontal trajectory of 11-30 is perpendicular to the cross-section in a. Wellbore path through the distributary-mouth-bar sandstones beneath a continuous bay shale is shown in b. *Modified from Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.*",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u422_01",
+          "scan": "pages/p422.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        419
+      ],
+      "items": [
+        {
+          "term": "газовая шапка",
+          "definition": "Скопление свободного газа над нефтяной частью залежи",
+          "en": "gas cap",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "BOPD",
+          "definition": "Баррелей нефти в сутки",
+          "en": "barrels of oil per day",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "газонефтяное отношение",
+          "definition": "Отношение количества добытого газа к количеству нефти",
+          "en": "gas/oil ratio",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "продуктивная часть",
+          "definition": "Часть интервала, признанная добываемым коллектором",
+          "en": "net pay",
+          "page": 419,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Песчаное тело у выхода рукава",
+          "en": "mouth bar",
+          "page": 419,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Соседние скважины → Проверяем непрерывную глину → Ствол под экраном.",
+      "alt": "Схема показывает цепочку: Соседние скважины, затем Проверяем непрерывную глину, затем Ствол под экраном.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.05.c01",
+        "geo.test_slatt.s9_4_2.05.c06",
+        "geo.test_slatt.s9_4_2.05.c02"
+      ],
+      "pages": [
+        419,
+        421
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c01",
+      "kind": "observation",
+      "text": "Скважину 11-30 провели ниже глины залива, защищавшей от газа сверху.",
+      "quote": "The horizontal well 11-30 was drilled beneath a bay shale that acted as a shield from the overlying gas cap. 894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+      "page": 419,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c02",
+      "kind": "observation",
+      "text": "Весь горизонтальный участок 894 ft. (272 m) лежал в целевом песчанике; 475 ft. (144 m) отнесли к продуктивной части.",
+      "quote": "894 ft. (272 m)-long horizontal section was drilled entirely within the targeted sandstone, of which 475 ft. (144 m) was determined to be net pay",
+      "page": 419,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c03",
+      "kind": "observation",
+      "text": "К 1999 добыча стабилизировалась на 1600 BOPD при низком газонефтяном отношении.",
+      "quote": "stabilized at 1600 BOPD, with a low gas/oil ratio (Tye et al., 1999)",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c04",
+      "kind": "inference",
+      "text": "Детальное описание и подобные решения продлевают жизнь месторождения.",
+      "quote": "Detailed characterizations and applications such as these are increasing the life of this giant field",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c05",
+      "kind": "observation",
+      "text": "Горизонтальная скважина проходит внутри русловых и баровых отложений, разделённых глинами.",
+      "quote": "Horizontal well drilled within distributary-channel and mouth-bar facies separated by shales",
+      "page": 421,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c06",
+      "kind": "observation",
+      "text": "Глины разделяют песчаники на отсеки и ограждают от газа газовой шапки.",
+      "quote": "The shales compartmentalize the sandstones and shield against gas-cap encroachment",
+      "page": 421,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c07",
+      "kind": "observation",
+      "text": "Разрез по скважинам 11-28 и 11-23 использовали для планирования скважины 11-30.",
+      "quote": "Schematic cross-section illustrating facies association interpretations between wells 11-28 and 11-23 and the predrill strategy for placing well 11-30",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c08",
+      "kind": "observation",
+      "text": "Горизонтальная траектория 11-30 перпендикулярна плоскости разреза.",
+      "quote": "The horizontal trajectory of 11-30 is perpendicular to the cross-section in a",
+      "page": 422,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.05.c09",
+      "kind": "observation",
+      "text": "Ствол проходит через устьевые песчаники под непрерывной глиной залива.",
+      "quote": "Wellbore path through the distributary-mouth-bar sandstones beneath a continuous bay shale is shown in b. *Modified from Tye et al. (1999)",
+      "page": 422,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.05.t01",
+    "geo.test_slatt.s9_4_2.05.t02",
+    "geo.test_slatt.s9_4_2.05.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.05.k01",
+    "geo.test_slatt.s9_4_2.05.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_2.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_slatt.s9_4_2.06",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.02",
+  "chapter": "test_slatt",
+  "index": 9,
+  "part": {
+    "id": "part2",
+    "title": "Как устроены песчаные тела"
+  },
+  "title_beginner": "Как меняется разрез зоны Romeo",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    417,
+    418
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "П",
+    "secondary": "Р",
+    "threshold": "Сходные песчаники могут быть не слоями одинакового возраста, а наклонными клиньями."
+  },
+  "threshold": "Сходные песчаники могут быть не слоями одинакового возраста, а наклонными клиньями.",
+  "format": "interactive",
+  "format_rationale": "П/Р: сравнение наложенных корреляций учит узнавать клинья и отделять их от кажущихся сплошных пластов.",
+  "order_rationale": "После знакомства с месторождением проверяем, как изменилась корреляция разреза.",
+  "essence": [
+    "Временная корреляция выявила наклонные песчаные клинья там, где прежде видели почти сплошные пласты.",
+    "В этом примере она лучше объяснила историю добычи."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        417,
+        418
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях. Прежние исследования сопоставляли песчаники и глинистые породы по признакам пород.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.02.c01",
+            "geo.test_slatt.s9_4_2.02.c02"
+          ],
+          "pages": [
+            417
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c01",
+              "quote": "River-dominated deposition resulted in significant lateral and vertical facies changes, which caused a high degree of lateral and vertical heterogeneity in the resulting reservoir",
+              "page": 417,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c02",
+              "quote": "Past reservoir characterization studies of this delta complex had correlated sandstone and shale units on the basis of lithostratigraphic features",
+              "page": 417,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "**корреляция**: Сопоставление интервалов разреза. **Корреляция** по геологическому времени лучше согласовалась с историей добычи. Неучтённый пологий наклон песчаников приводил к ошибочной корреляции.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.02.c03",
+            "geo.test_slatt.s9_4_2.02.c04"
+          ],
+          "pages": [
+            417
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c03",
+              "quote": "However, Tye et al. (1999) were better able to match well correlations with production history using a sequence- or time-stratigraphic correlation scheme (Fig. 9.18)",
+              "page": 417,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c04",
+              "quote": "Prior to this sequence stratigraphic interpretation, the gently dipping nature of these reservoir sandstones was unrecognized and led to improper correlations",
+              "page": 417,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "При корреляции по породам прерывистым выглядит только интервал IA. В корреляции по времени полого погружающиеся нижние интервалы показывают прилегание наклонных слоёв к нижележащей поверхности. Песчаные дельтовые клинья не образуют сплошных плит, а переслаиваются по падению с глинистыми отложениями залива, продельты и шельфа.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.02.c05",
+            "geo.test_slatt.s9_4_2.02.c06",
+            "geo.test_slatt.s9_4_2.02.c07"
+          ],
+          "pages": [
+            418
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c05",
+              "quote": "In the lithostratigraphic cross-section, only the interval IA is discontinuous",
+              "page": 418,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c06",
+              "quote": "In the sequence stratigraphic cross-section, downlap patterns are evident by the gently dipping nature of the basal intervals",
+              "page": 418,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.02.c07",
+              "quote": "The poststudy interpretation shows the stratigraphy is not tabular, instead, sand-prone deltaic wedges interfinger downdip with bay and prodelta/shelf shales. *After Tye et al. (1999)",
+              "page": 418,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        417
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Корреляция по породам",
+          "Проверка по времени"
+        ],
+        "rule": "Временная корреляция выявила наклонные песчаные клинья там, где прежде видели почти сплошные пласты.",
+        "conclusion": "В этом примере она лучше объяснила историю добычи.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.02.c04"
+        ],
+        "cases": [
+          {
+            "given": "Что привело к ошибкам первоначальной корреляции?",
+            "options": [
+              "Приняли все глины за песок",
+              "Перепутали названия скважин",
+              "Не учли пологий наклон песчаников"
+            ],
+            "answer": 2,
+            "why": "Наклон нижних интервалов важен для выбора сопоставления.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        417,
+        418
+      ],
+      "data": {
+        "text": "Если два песчаника похожи, они обязательно лежат в одной сплошной плите.",
+        "correction": "По временной корреляции видны наклонные клинья, разделяемые глинистыми отложениями.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.02.c04",
+          "geo.test_slatt.s9_4_2.02.c05",
+          "geo.test_slatt.s9_4_2.02.c06",
+          "geo.test_slatt.s9_4_2.02.c07"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сравнивают корреляции и проверяют, какая лучше согласуется с историей добычи.",
+        "inputs": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+        "outputs": "Песчаные дельтовые клинья не образуют сплошных плит, а переслаиваются по падению с глинистыми отложениями залива, продельты и шельфа.",
+        "breaks_where": "Сходство породы не позволяет увидеть пологий наклон и разрывы само по себе.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+          "manual_steps": "Сравнивают корреляции и проверяют, какая лучше согласуется с историей добычи.",
+          "judgment_points": "Сходство породы не позволяет увидеть пологий наклон и разрывы само по себе.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Если два песчаника похожи, они обязательно лежат в одной сплошной плите.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Сравнить два результата связывания записей по независимым данным, а не по тем же полям, на которых строилась связь.",
+        "breaks_where": "История добычи зависит не только от геометрии песчаных тел.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        418
+      ],
+      "items": [
+        {
+          "number": "9.18",
+          "page": 418,
+          "caption": "**FIGURE 9.18** Comparison of prestudy lithostratigraphic correlations (upper cross-section) and poststudy sequence stratigraphic correlations and interpretations of the Romeo interval (lower cross-section). In the lithostratigraphic cross-section, only the interval IA is discontinuous. In the sequence stratigraphic cross-section, downlap patterns are evident by the gently dipping nature of the basal intervals. The poststudy interpretation shows the stratigraphy is not tabular, instead, sand-prone deltaic wedges interfinger downdip with bay and prodelta/shelf shales. *After Tye et al. (1999). Reprinted with permission of AAPG, whose permission is required for further use.*",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u418_01",
+          "scan": "pages/p418.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        417
+      ],
+      "items": [
+        {
+          "term": "фация",
+          "definition": "Отложения одной обстановки с характерными признаками",
+          "en": "facies",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление интервалов разреза",
+          "en": "correlation",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "продельта",
+          "definition": "Подводная часть дельты вдали от берега",
+          "en": "prodelta",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная часть морского бассейна",
+          "en": "shelf",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "падение пласта",
+          "definition": "Направление максимального наклона слоя",
+          "en": "dip",
+          "page": 417,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Корреляция по породам → Проверка по времени → Песчаные клинья.",
+      "alt": "Схема показывает цепочку: Корреляция по породам, затем Проверка по времени, затем Песчаные клинья.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.02.c04",
+        "geo.test_slatt.s9_4_2.02.c07",
+        "geo.test_slatt.s9_4_2.02.c03"
+      ],
+      "pages": [
+        417,
+        418
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c01",
+      "kind": "observation",
+      "text": "Боковые и вертикальные смены отложений сделали коллектор неоднородным в обоих направлениях.",
+      "quote": "River-dominated deposition resulted in significant lateral and vertical facies changes, which caused a high degree of lateral and vertical heterogeneity in the resulting reservoir",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c02",
+      "kind": "observation",
+      "text": "Прежние исследования сопоставляли песчаники и глинистые породы по признакам пород.",
+      "quote": "Past reservoir characterization studies of this delta complex had correlated sandstone and shale units on the basis of lithostratigraphic features",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c03",
+      "kind": "observation",
+      "text": "Корреляция по геологическому времени лучше согласовалась с историей добычи.",
+      "quote": "However, Tye et al. (1999) were better able to match well correlations with production history using a sequence- or time-stratigraphic correlation scheme (Fig. 9.18)",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c04",
+      "kind": "observation",
+      "text": "Неучтённый пологий наклон песчаников приводил к ошибочной корреляции.",
+      "quote": "Prior to this sequence stratigraphic interpretation, the gently dipping nature of these reservoir sandstones was unrecognized and led to improper correlations",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c05",
+      "kind": "observation",
+      "text": "При корреляции по породам прерывистым выглядит только интервал IA.",
+      "quote": "In the lithostratigraphic cross-section, only the interval IA is discontinuous",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c06",
+      "kind": "observation",
+      "text": "В корреляции по времени полого погружающиеся нижние интервалы показывают прилегание наклонных слоёв к нижележащей поверхности.",
+      "quote": "In the sequence stratigraphic cross-section, downlap patterns are evident by the gently dipping nature of the basal intervals",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.02.c07",
+      "kind": "observation",
+      "text": "Песчаные дельтовые клинья не образуют сплошных плит, а переслаиваются по падению с глинистыми отложениями залива, продельты и шельфа.",
+      "quote": "The poststudy interpretation shows the stratigraphy is not tabular, instead, sand-prone deltaic wedges interfinger downdip with bay and prodelta/shelf shales. *After Tye et al. (1999)",
+      "page": 418,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.02.t01",
+    "geo.test_slatt.s9_4_2.02.t02",
+    "geo.test_slatt.s9_4_2.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.02.k01",
+    "geo.test_slatt.s9_4_2.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_2.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_slatt.x1.01",
+      "type": "example"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

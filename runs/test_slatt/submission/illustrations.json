@@ -1,0 +1,410 @@
+{
+  "chapter": "test_slatt",
+  "illustrations": [
+    {
+      "id": "geo.test_slatt.s9_4_1.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Рукава приносят песок → Бар растёт к морю → Зёрна крупнее вверх.",
+      "alt": "Схема показывает цепочку: Рукава приносят песок, затем Бар растёт к морю, затем Зёрна крупнее вверх.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c05",
+        "geo.test_slatt.s9_4_1.01#c08",
+        "geo.test_slatt.s9_4_1.01#c10"
+      ],
+      "pages": [
+        411,
+        413
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_1.01",
+      "node_id": "geo.test_slatt.s9_4_1.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Карта привязывает скважины → Сравниваем способы корреляции → Получаем разные связи.",
+      "alt": "Схема показывает цепочку: Карта привязывает скважины, затем Сравниваем способы корреляции, затем Получаем разные связи.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.02#c04",
+        "geo.test_slatt.s9_4_1.02#c01",
+        "geo.test_slatt.s9_4_1.02#c05"
+      ],
+      "pages": [
+        411,
+        412
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_1.02",
+      "node_id": "geo.test_slatt.s9_4_1.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Паводковый вынос → Лучше сортировка у вершины → Выше проницаемость.",
+      "alt": "Схема показывает цепочку: Паводковый вынос, затем Лучше сортировка у вершины, затем Выше проницаемость.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.03#c06",
+        "geo.test_slatt.s9_4_1.03#c07",
+        "geo.test_slatt.s9_4_1.03#c04"
+      ],
+      "pages": [
+        415
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_1.03",
+      "node_id": "geo.test_slatt.s9_4_1.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.03.ill-2",
+      "template": "ranges",
+      "class": "A",
+      "provenance": "схема",
+      "caption": "У лучше всего отсортированной разновидности среднее выше диапазона для остальных.",
+      "alt": "Показан диапазон 12–40 md и отдельная точка 129 md.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.03__2.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.03#c03",
+        "geo.test_slatt.s9_4_1.03#c04"
+      ],
+      "pages": [
+        415
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_1.03",
+      "node_id": "geo.test_slatt.s9_4_1.03",
+      "origin": "code_from_model",
+      "frame_class": "A",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_1.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Рукава многократно ветвятся → Накапливаются устьевые бары → Образуется широкий пояс.",
+      "alt": "Схема показывает цепочку: Рукава многократно ветвятся, затем Накапливаются устьевые бары, затем Образуется широкий пояс.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.04#c01",
+        "geo.test_slatt.s9_4_1.04#c02"
+      ],
+      "pages": [
+        416
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_1.04",
+      "node_id": "geo.test_slatt.s9_4_1.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Речные русла → Ветвление потока → Дельтовая равнина и бары.",
+      "alt": "Схема показывает цепочку: Речные русла, затем Ветвление потока, затем Дельтовая равнина и бары.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.01#c02",
+        "geo.test_slatt.s9_4_2.01#c08",
+        "geo.test_slatt.s9_4_2.01#c06"
+      ],
+      "pages": [
+        416,
+        417
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.01",
+      "node_id": "geo.test_slatt.s9_4_2.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Корреляция по породам → Проверка по времени → Песчаные клинья.",
+      "alt": "Схема показывает цепочку: Корреляция по породам, затем Проверка по времени, затем Песчаные клинья.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.02#c04",
+        "geo.test_slatt.s9_4_2.02#c07",
+        "geo.test_slatt.s9_4_2.02#c03"
+      ],
+      "pages": [
+        417,
+        418
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.02",
+      "node_id": "geo.test_slatt.s9_4_2.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Боковые данные из керна → Выбор траектории → Больше проницаемых песков.",
+      "alt": "Схема показывает цепочку: Боковые данные из керна, затем Выбор траектории, затем Больше проницаемых песков.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.03#c02"
+      ],
+      "pages": [
+        417
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.03",
+      "node_id": "geo.test_slatt.s9_4_2.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.04.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Воды становится больше → Проверяем покрышку → Бурим в песок ниже.",
+      "alt": "Схема показывает цепочку: Воды становится больше, затем Проверяем покрышку, затем Бурим в песок ниже.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.04#c06",
+        "geo.test_slatt.s9_4_2.04#c01"
+      ],
+      "pages": [
+        418
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.04",
+      "node_id": "geo.test_slatt.s9_4_2.04",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.05.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Соседние скважины → Проверяем непрерывную глину → Ствол под экраном.",
+      "alt": "Схема показывает цепочку: Соседние скважины, затем Проверяем непрерывную глину, затем Ствол под экраном.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.05#c01",
+        "geo.test_slatt.s9_4_2.05#c06",
+        "geo.test_slatt.s9_4_2.05#c02"
+      ],
+      "pages": [
+        419,
+        421
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.05",
+      "node_id": "geo.test_slatt.s9_4_2.05",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_2.06.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сопоставляем каротаж → Проверяем экран → Планируем боковой ствол.",
+      "alt": "Схема показывает цепочку: Сопоставляем каротаж, затем Проверяем экран, затем Планируем боковой ствол.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.06__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.06#c06",
+        "geo.test_slatt.s9_4_2.06#c04",
+        "geo.test_slatt.s9_4_2.06#c07"
+      ],
+      "pages": [
+        420,
+        421
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_2.06",
+      "node_id": "geo.test_slatt.s9_4_2.06",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.s9_4_3.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Кажущаяся непрерывность → Временная корреляция → Отдельные пески и глины.",
+      "alt": "Схема показывает цепочку: Кажущаяся непрерывность, затем Временная корреляция, затем Отдельные пески и глины.",
+      "file": "illustrations/geo.test_slatt.s9_4_3.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_3.01#c06",
+        "geo.test_slatt.s9_4_3.01#c04"
+      ],
+      "pages": [
+        422
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.s9_4_3.01",
+      "node_id": "geo.test_slatt.s9_4_3.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.x1.01.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сходный отклик → Корреляция по времени → Разобщённые пески.",
+      "alt": "Схема показывает цепочку: Сходный отклик, затем Корреляция по времени, затем Разобщённые пески.",
+      "file": "illustrations/geo.test_slatt.x1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.x1.01#c03",
+        "geo.test_slatt.x1.01#c04",
+        "geo.test_slatt.x1.01#c01"
+      ],
+      "pages": [
+        410
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.x1.01",
+      "node_id": "geo.test_slatt.x1.01",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.x1.02.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Рост дельты → Границы пересекаются → Пески могут прерываться.",
+      "alt": "Схема показывает цепочку: Рост дельты, затем Границы пересекаются, затем Пески могут прерываться.",
+      "file": "illustrations/geo.test_slatt.x1.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.x1.02#c03",
+        "geo.test_slatt.x1.02#c02",
+        "geo.test_slatt.x1.02#c01"
+      ],
+      "pages": [
+        410
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.x1.02",
+      "node_id": "geo.test_slatt.x1.02",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    },
+    {
+      "id": "geo.test_slatt.x1.03.ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Уровень моря падает → Река врезается → Берег смещается.",
+      "alt": "Схема показывает цепочку: Уровень моря падает, затем Река врезается, затем Берег смещается.",
+      "file": "illustrations/geo.test_slatt.x1.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.x1.03#c02",
+        "geo.test_slatt.x1.03#c04",
+        "geo.test_slatt.x1.03#c03"
+      ],
+      "pages": [
+        410
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null,
+      "step_id": "geo.test_slatt.x1.03",
+      "node_id": "geo.test_slatt.x1.03",
+      "origin": "code_from_model",
+      "frame_class": "B",
+      "label": "схема"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "node_id": "geo.test_dake.s5_2.03",
+  "chapter": "test_dake",
+  "index": 3,
+  "part": {
+    "id": "part1",
+    "title": "Как составить уравнение радиального потока"
+  },
+  "title_beginner": "Как давление управляет расходом",
+  "title_book": "Вывод основного дифференциального уравнения радиального потока",
+  "section": "s5_2",
+  "pages": [
+    76
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "text",
+  "format_rationale": "Ф/М: подстановку закона Дарси в баланс лучше проверять по символам в тексте.",
+  "order_rationale": "Подставляем закон Дарси в готовый баланс и заменяем расход градиентом давления.",
+  "essence": [
+    "Закон Дарси выражает расход через градиент давления и свойства породы и жидкости.",
+    "После подстановки в баланс массовый расход больше не остаётся отдельной неизвестной."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Для радиального горизонтального течения подставляют выражение дебита по закону Дарси. Дебит связан с градиентом давления, радиусом и толщиной. Его масштаб определяет отношение проницаемости к вязкости. В результате пространственное изменение градиента давления связано с изменением плотности во времени.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.03.c01",
+            "geo.test_dake.s5_2.03.c02",
+            "geo.test_dake.s5_2.03.c03"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.03.c01",
+              "quote": "By applying Darcy's Law for radial, horizontal flow it is possible to substitute for the flow rate q in equ. (5.2) since",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.03.c02",
+              "quote": "$$q = \\frac {2 \\pi k h r}{\\mu} \\frac {\\partial p}{\\partial r}$$",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.03.c03",
+              "quote": "$$\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.3}$$",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "text": "Записать выражение радиального расхода по закону Дарси.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.03.c01"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Подставить расход в баланс и связать давление с накоплением.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.03.c03"
+          ],
+          "pages": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_2.03.f01",
+          "latex": "q = \\frac {2 \\pi k h r}{\\mu} \\frac {\\partial p}{\\partial r}",
+          "meaning": "Радиальный закон Дарси с положительным добычным расходом к скважине.",
+          "vars": [
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_11"
+        },
+        {
+          "id": "geo.test_dake.s5_2.03.f02",
+          "latex": "\\frac {\\partial}{\\partial r} \\left(\\frac {2 \\pi k h r}{\\mu} \\rho \\frac {\\partial p}{\\partial r}\\right) = 2 \\pi r h \\phi \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Массовый баланс после подстановки закона Дарси.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_13"
+        },
+        {
+          "id": "geo.test_dake.s5_2.03.f03",
+          "latex": "\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Сокращённое уравнение до подстановки сжимаемости.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_15"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Подставляют выражение расхода в баланс массы и сокращают неизменные геометрические множители.",
+        "inputs": "Для радиального горизонтального течения подставляют выражение дебита по закону Дарси.",
+        "outputs": "В результате пространственное изменение градиента давления связано с изменением плотности во времени.",
+        "breaks_where": "Форма закона в этом выводе относится к радиальному горизонтальному течению.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Для радиального горизонтального течения подставляют выражение дебита по закону Дарси.",
+          "manual_steps": "Подставляют выражение расхода в баланс массы и сокращают неизменные геометрические множители.",
+          "judgment_points": "Форма закона в этом выводе относится к радиальному горизонтальному течению.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Подстановка интерфейса переводит зависимость одного модуля в величины, известные соседнему.",
+        "breaks_where": "Закон Дарси применим при физических условиях, а не как произвольная замена переменной.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "term": "закон Дарси",
+          "en": "Darcy law",
+          "definition": "Связь расхода через породу с перепадом давления, вязкостью и проницаемостью.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "градиент давления",
+          "en": "pressure gradient",
+          "definition": "Как быстро меняется давление в пространстве.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "баланс массы",
+          "en": "mass conservation",
+          "definition": "Приток массы минус отток равен изменению массы внутри области.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "вязкость",
+          "en": "viscosity",
+          "definition": "Сопротивление жидкости течению.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "en": "permeability",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "page": 76,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Радиальный расход → Подстановка закона Дарси → Баланс через давление.",
+      "alt": "Схема: Радиальный расход, затем Подстановка закона Дарси, затем Баланс через давление.",
+      "file": "illustrations/geo.test_dake.s5_2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.03.c01",
+        "geo.test_dake.s5_2.03.c02",
+        "geo.test_dake.s5_2.03.c03"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_2.03.c01",
+      "kind": "observation",
+      "text": "Для радиального горизонтального течения подставляют выражение дебита по закону Дарси.",
+      "quote": "By applying Darcy's Law for radial, horizontal flow it is possible to substitute for the flow rate q in equ. (5.2) since",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.03.c02",
+      "kind": "observation",
+      "text": "Дебит связан с градиентом давления, радиусом и толщиной; его масштаб определяет отношение проницаемости к вязкости.",
+      "quote": "$$q = \\frac {2 \\pi k h r}{\\mu} \\frac {\\partial p}{\\partial r}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.03.c03",
+      "kind": "observation",
+      "text": "В результате пространственное изменение градиента давления связано с изменением плотности во времени.",
+      "quote": "$$\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi \\frac {\\partial \\rho}{\\partial t} \\tag {5.3}$$",
+      "page": 76,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_2.03.t01",
+    "geo.test_dake.s5_2.03.t02",
+    "geo.test_dake.s5_2.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_2.03.k01",
+    "geo.test_dake.s5_2.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_2.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

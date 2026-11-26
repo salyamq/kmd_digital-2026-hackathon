@@ -1,0 +1,481 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.04",
+  "chapter": "test_slatt",
+  "index": 12,
+  "part": {
+    "id": "part3",
+    "title": "Как геология меняет решение о добыче"
+  },
+  "title_beginner": "Глинистый барьер и приток воды",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    417,
+    418,
+    419
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "М",
+    "secondary": "Пр",
+    "threshold": "Глина в одном месте разделяет потоки, но в другом тот же слой может исчезнуть."
+  },
+  "threshold": "Глина в одном месте разделяет потоки, но в другом тот же слой может исчезнуть.",
+  "format": "interactive",
+  "format_rationale": "М/Пр: переключаем непрерывность покрышки и сравниваем пути движения воды и выбор интервала перфорации.",
+  "order_rationale": "Дополняем выбор песчаника проверкой непрерывности глинистого барьера.",
+  "essence": [
+    "Непрерывная глина ограничивает вертикальный переток.",
+    "Её положение помогает выбрать интервал перфорации или цель для бокового ствола."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        418,
+        419
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Одни глинистые пласты непрерывны на площади больше масштаба сетки скважин. Другие прерываются из-за размыва вышележащим песчаником или выклинивания. Непрерывные глины препятствуют вертикальному перетоку и направляют воду при заводнении.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c01",
+            "geo.test_slatt.s9_4_2.04.c02"
+          ],
+          "pages": [
+            418
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c01",
+              "quote": "areas larger than that of the well spacing, but other shales are less continuous because of erosion by an overlying sandstone or by stratigraphic pinch-out (Fig. 9.20)",
+              "page": 418,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c02",
+              "quote": "Continuous shales create vertical flow barriers and help to focus a waterflood",
+              "page": 418,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "**перфорация**: Отверстия, создающие связь между скважиной и выбранным пластом. **Перфорация** только дельтовых песчаников устранила их конкуренцию за воду с более проницаемыми речными песчаниками выше.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c03"
+          ],
+          "pages": [
+            418
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c03",
+              "quote": "By restricting perforations in horizontal wells to deltaic sandstones, developers avoided competition for water between these lower-permeability sandstones and overlying higher-permeability fluvial sandstones (Figs. 9.21 and 9.22) (Tye et al., 1999)",
+              "page": 418,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Вертикальная скважина стабильно давала свыше 300 BOPD с мая 1992 по январь 1993. Рост притока воды указывал на вероятное сильное снижение добычи нефти в будущем.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c04",
+            "geo.test_slatt.s9_4_2.04.c05"
+          ],
+          "pages": [
+            418
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c04",
+              "quote": "One innovative application of the understanding of shale continuity was applied to a vertical well that had maintained a steady output in excess of 300 BOPD between May 1992 and January 1993",
+              "page": 418,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c05",
+              "quote": "During that time, water production increased, indicating that oil production in that well would decline considerably over time (Fig. 9.23)",
+              "page": 418,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "На глубине 8950 ft. выделили покрышку. Автор предположил, что под ней могла сохраниться нефть в дельтовом песчанике. В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c06",
+            "geo.test_slatt.s9_4_2.04.c07"
+          ],
+          "pages": [
+            418,
+            419
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c06",
+              "quote": "A shale interval at 8950 ft. was mapped as a sealing shale, which suggests that oil might be trapped in an underlying deltaic sandstone",
+              "page": 418,
+              "kind": "inference"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.04.c07",
+              "quote": "well was drilled as an unconventional completion into the sandstone, and it led to new production of approximately 400 BOPD (Fig. 9.23)",
+              "page": 419,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как действовали в примере",
+      "pages": [
+        418,
+        419
+      ],
+      "items": [
+        {
+          "text": "Отметить увеличение притока воды.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c05"
+          ],
+          "pages": [
+            418
+          ]
+        },
+        {
+          "text": "Выделить покрышку на 8950 ft. и проверить предположение о песчанике под ней.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c06"
+          ],
+          "pages": [
+            418
+          ]
+        },
+        {
+          "text": "Пробурить боковой ствол в целевой песчаник.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c07"
+          ],
+          "pages": [
+            419
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        417
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_slatt_s9_4_2_04_e01",
+          "title": "Как обойти растущий приток воды",
+          "page": 417,
+          "condition": "Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше.",
+          "steps": [
+            "Выделить по разрезу покрышку на 8950 ft.",
+            "Проверить предположение бурением бокового горизонтального ствола в песчаник под покрышкой."
+          ],
+          "result": "Новый ствол дал примерно 400 BOPD в этом примере.",
+          "numbers": [
+            "300",
+            "400",
+            "8950"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        418
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Воды становится больше",
+          "Проверяем покрышку"
+        ],
+        "rule": "Непрерывная глина ограничивает вертикальный переток.",
+        "conclusion": "Её положение помогает выбрать интервал перфорации или цель для бокового ствола.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.04.c06"
+        ],
+        "cases": [
+          {
+            "given": "Где ожидали найти оставшуюся нефть?",
+            "options": [
+              "В дельтовом песчанике под покрышкой",
+              "В самой глине",
+              "В газовой шапке"
+            ],
+            "answer": 0,
+            "why": "Автор сформулировал и проверил гипотезу о песке ниже покрышки.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        418,
+        419
+      ],
+      "items": [
+        {
+          "text": "Одни глинистые пласты непрерывны на площади больше масштаба сетки скважин. Другие прерываются из-за размыва вышележащим песчаником или выклинивания.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c01"
+          ],
+          "pages": [
+            418
+          ]
+        },
+        {
+          "text": "Вертикальная скважина стабильно давала свыше 300 BOPD с мая 1992 по январь 1993.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c04"
+          ],
+          "pages": [
+            418
+          ]
+        },
+        {
+          "text": "На глубине 8950 ft. выделили покрышку. Автор предположил, что под ней могла сохраниться нефть в дельтовом песчанике.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c06"
+          ],
+          "pages": [
+            418
+          ]
+        },
+        {
+          "text": "В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.04.c07"
+          ],
+          "pages": [
+            419
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Ограничивают перфорацию нужным интервалом и проверяют глинистую покрышку, прежде чем целиться боковым стволом в песок под ней.",
+        "inputs": "Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше.",
+        "outputs": "В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+        "breaks_where": "Глинистую породу нужно не только обнаружить, но и проверить её непрерывность. Предположение о нефти под глиной в примере проверили бурением.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Вертикальная скважина давала свыше 300 BOPD, но воды становилось больше.",
+          "manual_steps": "Ограничивают перфорацию нужным интервалом и проверяют глинистую покрышку, прежде чем целиться боковым стволом в песок под ней.",
+          "judgment_points": "Глинистую породу нужно не только обнаружить, но и проверить её непрерывность. Предположение о нефти под глиной в примере проверили бурением.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Изоляция соседних маршрутов работает только пока разделитель непрерывен.",
+        "breaks_where": "Естественный барьер может прерываться незаметно между измерениями.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        418
+      ],
+      "items": [
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "перфорация",
+          "definition": "Отверстия, создающие связь между скважиной и выбранным пластом",
+          "en": "perforation",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "покрышка",
+          "definition": "Слабопроницаемый слой, препятствующий перемещению флюида",
+          "en": "seal",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "выклинивание",
+          "definition": "Постепенное уменьшение толщины слоя до исчезновения",
+          "en": "pinch-out",
+          "page": 418,
+          "by": "model"
+        },
+        {
+          "term": "BOPD",
+          "definition": "Баррелей нефти в сутки",
+          "en": "barrels of oil per day",
+          "page": 418,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Воды становится больше → Проверяем покрышку → Бурим в песок ниже.",
+      "alt": "Схема показывает цепочку: Воды становится больше, затем Проверяем покрышку, затем Бурим в песок ниже.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.04.c06",
+        "geo.test_slatt.s9_4_2.04.c01"
+      ],
+      "pages": [
+        418
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c01",
+      "kind": "observation",
+      "text": "Одни глинистые пласты непрерывны на площади больше масштаба сетки скважин; другие прерываются из-за размыва вышележащим песчаником или выклинивания.",
+      "quote": "areas larger than that of the well spacing, but other shales are less continuous because of erosion by an overlying sandstone or by stratigraphic pinch-out (Fig. 9.20)",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c02",
+      "kind": "observation",
+      "text": "Непрерывные глины препятствуют вертикальному перетоку и направляют воду при заводнении.",
+      "quote": "Continuous shales create vertical flow barriers and help to focus a waterflood",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c03",
+      "kind": "observation",
+      "text": "Перфорация только дельтовых песчаников устранила их конкуренцию за воду с более проницаемыми речными песчаниками выше.",
+      "quote": "By restricting perforations in horizontal wells to deltaic sandstones, developers avoided competition for water between these lower-permeability sandstones and overlying higher-permeability fluvial sandstones (Figs. 9.21 and 9.22) (Tye et al., 1999)",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c04",
+      "kind": "observation",
+      "text": "Вертикальная скважина стабильно давала свыше 300 BOPD с мая 1992 по январь 1993.",
+      "quote": "One innovative application of the understanding of shale continuity was applied to a vertical well that had maintained a steady output in excess of 300 BOPD between May 1992 and January 1993",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c05",
+      "kind": "inference",
+      "text": "Рост притока воды указывал на вероятное сильное снижение добычи нефти в будущем.",
+      "quote": "During that time, water production increased, indicating that oil production in that well would decline considerably over time (Fig. 9.23)",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c06",
+      "kind": "inference",
+      "text": "На глубине 8950 ft. выделили покрышку: под ней могла сохраниться нефть в дельтовом песчанике.",
+      "quote": "A shale interval at 8950 ft. was mapped as a sealing shale, which suggests that oil might be trapped in an underlying deltaic sandstone",
+      "page": 418,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.04.c07",
+      "kind": "observation",
+      "text": "В этот песчаник пробурили горизонтальный боковой ствол, давший примерно 400 BOPD.",
+      "quote": "well was drilled as an unconventional completion into the sandstone, and it led to new production of approximately 400 BOPD (Fig. 9.23)",
+      "page": 419,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.04.t01",
+    "geo.test_slatt.s9_4_2.04.t02",
+    "geo.test_slatt.s9_4_2.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.04.k01",
+    "geo.test_slatt.s9_4_2.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_2.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

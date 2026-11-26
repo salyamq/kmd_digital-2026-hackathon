@@ -1,0 +1,337 @@
+{
+  "chapter": "test_slatt",
+  "routes": [
+    {
+      "node_id": "geo.test_slatt.s9_4_1.01",
+      "format": "длинное видео",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "М",
+        "threshold": "Боковое смещение дельтовых зон оставляет вертикальную смену отложений на одном месте."
+      },
+      "video_criteria": [
+        "time_change",
+        "scale_jump",
+        "cause_effect"
+      ],
+      "scene_template": "cross_section_evolution",
+      "hook_only": false,
+      "rationale": "В/М: сначала показываем движение русла и бара по карте, затем читаем результат на фиксированном вертикальном разрезе.",
+      "why": "В/М: сначала показываем движение русла и бара по карте, затем читаем результат на фиксированном вертикальном разрезе.",
+      "template": "cross_section_evolution",
+      "hook_short": false,
+      "video_scores": {
+        "time": 1,
+        "invisible": 0,
+        "scale": 1,
+        "counterintuitive": 0,
+        "cause_effect": 1
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.x1.01",
+      "format": "шортс",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "Н",
+        "threshold": "Одинаковая порода в двух скважинах не доказывает одновременность её отложения или гидравлическую связь."
+      },
+      "video_criteria": [
+        "invisible_visible",
+        "counterintuitive"
+      ],
+      "scene_template": "cross_section",
+      "hook_only": false,
+      "rationale": "П/Н: на одном разрезе переключаем способ корреляции и показываем скрытую преграду, которая разделяет пески.",
+      "why": "П/Н: на одном разрезе переключаем способ корреляции и показываем скрытую преграду, которая разделяет пески.",
+      "template": "cross_section",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 1,
+        "scale": 0,
+        "counterintuitive": 1,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.x1.02",
+      "format": "текст",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "В/П: короткий переход от условного примера к датированному Меконгу; самостоятельного анимационного механизма нет.",
+      "why": "В/П: короткий переход от условного примера к датированному Меконгу; самостоятельного анимационного механизма нет.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.02",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "В",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "map_and_section",
+      "hook_only": false,
+      "rationale": "П/В: на карте и разрезе полезно самостоятельно переключить способ корреляции и проверить связь интервалов.",
+      "why": "П/В: на карте и разрезе полезно самостоятельно переключить способ корреляции и проверить связь интервалов.",
+      "template": "map_and_section",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.x1.03",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "М",
+        "threshold": "Дельта меняет направление роста и без изменения уровня моря."
+      },
+      "video_criteria": [],
+      "scene_template": "sequence",
+      "hook_only": false,
+      "rationale": "В/М: переключатель показывает смену активного рукава отдельно от изменения относительного уровня моря.",
+      "why": "В/М: переключатель показывает смену активного рукава отдельно от изменения относительного уровня моря.",
+      "template": "sequence",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.04",
+      "format": "шортс",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П",
+        "threshold": "Широкий песчаный пояс может состоять из отдельных неоднородных тел."
+      },
+      "video_criteria": [
+        "time_change",
+        "scale_jump"
+      ],
+      "scene_template": "cross_section_evolution",
+      "hook_only": false,
+      "rationale": "В/П: компактная последовательность показывает, как ветвящиеся рукава строят широкий пояс из отдельных баров.",
+      "why": "В/П: компактная последовательность показывает, как ветвящиеся рукава строят широкий пояс из отдельных баров.",
+      "template": "cross_section_evolution",
+      "hook_short": false,
+      "video_scores": {
+        "time": 1,
+        "invisible": 0,
+        "scale": 1,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_1.03",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "М",
+        "threshold": "Песок в пределах одного бара неодинаков: положение и сортировка меняют проницаемость."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Н/М: решение о расположении проницаемых песков требует сопоставить керн, измерения и аналог.",
+      "why": "Н/М: решение о расположении проницаемых песков требует сопоставить керн, измерения и аналог.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.01",
+      "format": "карточки",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "М",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "П/М: карточки помогут различать песчаники русла и бара, фронт и продельту перед чтением разреза.",
+      "why": "П/М: карточки помогут различать песчаники русла и бара, фронт и продельту перед чтением разреза.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.02",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "Р",
+        "threshold": "Сходные песчаники могут быть не слоями одинакового возраста, а наклонными клиньями."
+      },
+      "video_criteria": [],
+      "scene_template": "cross_section",
+      "hook_only": false,
+      "rationale": "П/Р: сравнение наложенных корреляций учит узнавать клинья и отделять их от кажущихся сплошных пластов.",
+      "why": "П/Р: сравнение наложенных корреляций учит узнавать клинья и отделять их от кажущихся сплошных пластов.",
+      "template": "cross_section",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_3.01",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "П",
+        "threshold": "Временная корреляция раскрывает отдельные песчаные тела там, где раньше видели сплошной песчаник."
+      },
+      "video_criteria": [],
+      "scene_template": "timeline",
+      "hook_only": false,
+      "rationale": "В/П: при выборе более молодого этапа видно очередное смещение песчаного тела, а глинистая перемычка остаётся на разрезе.",
+      "why": "В/П: при выборе более молодого этапа видно очередное смещение песчаного тела, а глинистая перемычка остаётся на разрезе.",
+      "template": "timeline",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.03",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "П",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Пр/П: по боковым данным выбираем, какая траектория вероятнее пересечёт нужные пески.",
+      "why": "Пр/П: по боковым данным выбираем, какая траектория вероятнее пересечёт нужные пески.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.04",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Пр",
+        "threshold": "Глина в одном месте разделяет потоки, но в другом тот же слой может исчезнуть."
+      },
+      "video_criteria": [],
+      "scene_template": "process_chain",
+      "hook_only": false,
+      "rationale": "М/Пр: переключаем непрерывность покрышки и сравниваем пути движения воды и выбор интервала перфорации.",
+      "why": "М/Пр: переключаем непрерывность покрышки и сравниваем пути движения воды и выбор интервала перфорации.",
+      "template": "process_chain",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.06",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Н",
+        "secondary": "Р",
+        "threshold": "Управление добычей требует проверки протяжённости каждого глинистого экрана."
+      },
+      "video_criteria": [],
+      "scene_template": "decision_scale",
+      "hook_only": false,
+      "rationale": "Н/Р: по карте глин и каротажу решаем, где сохраняется разделение и где потребуется дополнительная проверка.",
+      "why": "Н/Р: по карте глин и каротажу решаем, где сохраняется разделение и где потребуется дополнительная проверка.",
+      "template": "decision_scale",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_slatt.s9_4_2.05",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Пр",
+        "secondary": "Н",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "decision_flow",
+      "hook_only": false,
+      "rationale": "Пр/Н: сопоставляем спроектированный маршрут, продуктивную часть ствола и фактический результат, не подменяя одно другим.",
+      "why": "Пр/Н: сопоставляем спроектированный маршрут, продуктивную часть ствола и фактический результат, не подменяя одно другим.",
+      "template": "decision_flow",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    }
+  ]
+}

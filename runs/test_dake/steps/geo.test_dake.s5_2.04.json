@@ -1,0 +1,545 @@
+{
+  "node_id": "geo.test_dake.s5_2.04",
+  "chapter": "test_dake",
+  "index": 4,
+  "part": {
+    "id": "part1",
+    "title": "Как составить уравнение радиального потока"
+  },
+  "title_beginner": "Как сжимаемость замыкает модель",
+  "title_book": "Вывод основного дифференциального уравнения радиального потока",
+  "section": "s5_2",
+  "pages": [
+    76
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "Плотность в массовом балансе можно выразить через давление, но коэффициенты не становятся постоянными сами собой."
+  },
+  "threshold": "Плотность в массовом балансе можно выразить через давление, но коэффициенты не становятся постоянными сами собой.",
+  "format": "text",
+  "format_rationale": "Ф/М: цепочка производных и определение сжимаемости требуют аккуратной записи, а не быстрого показа.",
+  "order_rationale": "После закона Дарси выражаем изменение плотности через сжимаемость и давление.",
+  "essence": [
+    "Сжимаемость связывает изменение плотности и давления по времени.",
+    "Эта замена даёт уравнение по давлению, но его коэффициенты остаются зависимыми от давления."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. Изотермическая **сжимаемость** даёт связь производных плотности и давления по времени. Сжимаемость — отрицательная относительная производная объёма по давлению. При постоянной массе сжимаемость можно выразить через относительное изменение плотности по давлению.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c01",
+            "geo.test_dake.s5_2.04.c02",
+            "geo.test_dake.s5_2.04.c03"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c01",
+              "quote": "The time derivative of the density appearing on the right hand side of equ. (5.3) can be expressed in terms of a time derivative of the pressure by using the basic thermodynamic definition of isothermal compressibility",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c02",
+              "quote": "$$c = - \\frac {1}{V} \\frac {\\partial V}{\\partial p}$$",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c03",
+              "quote": "$$c = - \\frac {\\rho}{m} \\frac {\\partial \\left(\\frac {m}{\\rho}\\right)}{\\partial p} = \\frac {1}{\\rho} \\frac {\\partial \\rho}{\\partial p} \\tag {5.4}$$",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Производная плотности по времени равна произведению плотности, сжимаемости и производной давления по времени. Связь подставляют в правую часть массового баланса.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c04",
+            "geo.test_dake.s5_2.04.c05"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c04",
+              "quote": "$$c \\rho \\frac {\\partial p}{\\partial t} = \\frac {\\partial \\rho}{\\partial t} \\tag {5.5}$$",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c05",
+              "quote": "Finally, substituting equ. (5.5) in equ. (5.3) reduces the latter to",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Нелинейность обусловлена скрытой зависимостью плотности, сжимаемости и вязкости от давления. Простое аналитическое решение требует линеаризации. Простое приближение подходит для малой постоянной сжимаемости. Для газа автор указывает более сложное преобразование Кирхгофа.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c06",
+            "geo.test_dake.s5_2.04.c07",
+            "geo.test_dake.s5_2.04.c08"
+          ],
+          "pages": [
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c06",
+              "quote": "The equation is referred to as non-linear because of the implicit pressure dependence of the density, compressibility and viscosity appearing in the coefficients $k\\rho/\\mu$ and $\\phi c\\rho$.",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c07",
+              "quote": "Because of this, it is not possible to find simple analytical solutions of the equation without first linearizing it so that the coefficients somehow lose their pressure dependence",
+              "page": 76,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.04.c08",
+              "quote": "A simple form of linearization applicable to the flow of liquids of small and constant compressibility (under-saturated oil) will be considered in sec. 5.4, while a more rigorous method, using the Kirchhoff integral transformation, will be presented in Chapter 8 for the more complex case of linearization for the flow of a real gas.",
+              "page": 76,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "text": "Записать изотермическую сжимаемость через объём.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c02"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Перейти от объёма к плотности при постоянной массе.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c03"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Взять производную по времени.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c04"
+          ],
+          "pages": [
+            76
+          ]
+        },
+        {
+          "text": "Заменить производную плотности в правой части баланса.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.04.c05"
+          ],
+          "pages": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_2.04.f01",
+          "latex": "c = - \\frac {1}{V} \\frac {\\partial V}{\\partial p}",
+          "meaning": "Изотермическая сжимаемость через объём.",
+          "vars": [
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "V",
+              "meaning": "поровый объём или объём жидкости по контексту",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_17"
+        },
+        {
+          "id": "geo.test_dake.s5_2.04.f02",
+          "latex": "\\rho = \\frac {m}{V}",
+          "meaning": "Плотность через массу и объём.",
+          "vars": [
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "масса жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "V",
+              "meaning": "поровый объём или объём жидкости по контексту",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_19"
+        },
+        {
+          "id": "geo.test_dake.s5_2.04.f03",
+          "latex": "c = - \\frac {\\rho}{m} \\frac {\\partial \\left(\\frac {m}{\\rho}\\right)}{\\partial p} = \\frac {1}{\\rho} \\frac {\\partial \\rho}{\\partial p}",
+          "meaning": "Изотермическая сжимаемость через плотность.",
+          "vars": [
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "m",
+              "meaning": "масса жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_21"
+        },
+        {
+          "id": "geo.test_dake.s5_2.04.f04",
+          "latex": "c \\rho \\frac {\\partial p}{\\partial t} = \\frac {\\partial \\rho}{\\partial t}",
+          "meaning": "Производная плотности по времени через давление.",
+          "vars": [
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_23"
+        },
+        {
+          "id": "geo.test_dake.s5_2.04.f05",
+          "latex": "\\frac {1}{r} \\frac {\\partial}{\\partial r} \\left(\\frac {k \\rho}{\\mu} r \\frac {\\partial p}{\\partial r}\\right) = \\phi c \\rho \\frac {\\partial p}{\\partial t}",
+          "meaning": "Основное уравнение радиального потока через давление.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 76,
+          "unit_id": "u076_25"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Подставляют определение сжимаемости в баланс и проверяют, допустима ли линеаризация для выбранной жидкости.",
+        "inputs": "Изотермическая сжимаемость даёт связь производных плотности и давления по времени.",
+        "outputs": "Для малой постоянной сжимаемости подходит простая линеаризация; для газа рассматривают более сложное преобразование Кирхгофа.",
+        "breaks_where": "Для мало и постоянно сжимаемой жидкости подходит упрощение. Для реального газа автор указывает преобразование Кирхгофа.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Изотермическая сжимаемость даёт связь производных плотности и давления по времени.",
+          "manual_steps": "Подставляют определение сжимаемости в баланс и проверяют, допустима ли линеаризация для выбранной жидкости.",
+          "judgment_points": "Для мало и постоянно сжимаемой жидкости подходит упрощение. Для реального газа автор указывает преобразование Кирхгофа.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В модели оставляют одну искомую переменную, связав её с наблюдаемым состоянием среды.",
+        "breaks_where": "Преобразование переменных здесь не убирает физическую зависимость коэффициентов.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "баланс массы",
+          "en": "mass conservation",
+          "definition": "Приток массы минус отток равен изменению массы внутри области.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "линеаризация",
+          "en": "linearization",
+          "definition": "Здесь — приближение, в котором коэффициенты перестают существенно зависеть от давления.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "вязкость",
+          "en": "viscosity",
+          "definition": "Сопротивление жидкости течению.",
+          "page": 76,
+          "by": "model"
+        },
+        {
+          "term": "недонасыщенная нефть",
+          "en": "undersaturated oil",
+          "definition": "Нефть, из которой при рассматриваемом давлении ещё не выделяется отдельная газовая фаза.",
+          "page": 76,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Определение сжимаемости → Производная плотности через давление → Подстановка в баланс.",
+      "alt": "Схема: Определение сжимаемости, затем Производная плотности через давление, затем Подстановка в баланс.",
+      "file": "illustrations/geo.test_dake.s5_2.04__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.04.c05",
+        "geo.test_dake.s5_2.04.c06",
+        "geo.test_dake.s5_2.04.c03"
+      ],
+      "pages": [
+        76
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c01",
+      "kind": "observation",
+      "text": "Изотермическая сжимаемость даёт связь производных плотности и давления по времени.",
+      "quote": "The time derivative of the density appearing on the right hand side of equ. (5.3) can be expressed in terms of a time derivative of the pressure by using the basic thermodynamic definition of isothermal compressibility",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c02",
+      "kind": "observation",
+      "text": "Сжимаемость — отрицательная относительная производная объёма по давлению.",
+      "quote": "$$c = - \\frac {1}{V} \\frac {\\partial V}{\\partial p}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c03",
+      "kind": "observation",
+      "text": "При постоянной массе сжимаемость можно выразить через относительное изменение плотности по давлению.",
+      "quote": "$$c = - \\frac {\\rho}{m} \\frac {\\partial \\left(\\frac {m}{\\rho}\\right)}{\\partial p} = \\frac {1}{\\rho} \\frac {\\partial \\rho}{\\partial p} \\tag {5.4}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c04",
+      "kind": "observation",
+      "text": "Производная плотности по времени равна произведению плотности, сжимаемости и производной давления по времени.",
+      "quote": "$$c \\rho \\frac {\\partial p}{\\partial t} = \\frac {\\partial \\rho}{\\partial t} \\tag {5.5}$$",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c05",
+      "kind": "observation",
+      "text": "Связь подставляют в правую часть массового баланса.",
+      "quote": "Finally, substituting equ. (5.5) in equ. (5.3) reduces the latter to",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c06",
+      "kind": "observation",
+      "text": "Нелинейность обусловлена скрытой зависимостью плотности, сжимаемости и вязкости от давления.",
+      "quote": "The equation is referred to as non-linear because of the implicit pressure dependence of the density, compressibility and viscosity appearing in the coefficients $k\\rho/\\mu$ and $\\phi c\\rho$.",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c07",
+      "kind": "observation",
+      "text": "Простое аналитическое решение требует линеаризации.",
+      "quote": "Because of this, it is not possible to find simple analytical solutions of the equation without first linearizing it so that the coefficients somehow lose their pressure dependence",
+      "page": 76,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.04.c08",
+      "kind": "observation",
+      "text": "Для малой постоянной сжимаемости подходит простая линеаризация; для газа рассматривают более сложное преобразование Кирхгофа.",
+      "quote": "A simple form of linearization applicable to the flow of liquids of small and constant compressibility (under-saturated oil) will be considered in sec. 5.4, while a more rigorous method, using the Kirchhoff integral transformation, will be presented in Chapter 8 for the more complex case of linearization for the flow of a real gas.",
+      "page": 76,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_2.04.t01",
+    "geo.test_dake.s5_2.04.t02",
+    "geo.test_dake.s5_2.04.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_2.04.k01",
+    "geo.test_dake.s5_2.04.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_2.03",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

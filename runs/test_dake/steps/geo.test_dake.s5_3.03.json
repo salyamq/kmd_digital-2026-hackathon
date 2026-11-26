@@ -1,0 +1,580 @@
+{
+  "node_id": "geo.test_dake.s5_3.03",
+  "chapter": "test_dake",
+  "index": 8,
+  "part": {
+    "id": "part2",
+    "title": "Что меняется при разных границах"
+  },
+  "title_beginner": "Почему давление падает одинаково",
+  "title_book": "Условия решения",
+  "section": "s5_3",
+  "pages": [
+    77
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "В псевдоустановившемся режиме выравнивается скорость падения давления, а не само давление."
+  },
+  "threshold": "В псевдоустановившемся режиме выравнивается скорость падения давления, а не само давление.",
+  "format": "interactive",
+  "format_rationale": "Ф/М: двигая дебит и объём, сравнивают различное падение при закрытой границе и сохраняют одинаковый темп по области.",
+  "order_rationale": "Теперь даём границе повлиять на отклик и рассматриваем закрытую область.",
+  "essence": [
+    "В закрытом пласте при постоянном отборе давление убывает примерно с одинаковой скоростью по всей области.",
+    "Одинаковый темп падения не означает одинакового давления во всех точках."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Градиент давления**: Как быстро меняется давление в пространстве. Для закрытого случая режим наступает после того, как сказалось влияние внешней границы. Предполагают, что внешняя граница не пропускает жидкость в область дренирования. **Градиент давления** на непроницаемой внешней границе равен нулю.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c01",
+            "geo.test_dake.s5_3.03.c02",
+            "geo.test_dake.s5_3.03.c03"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c01",
+              "quote": "This condition is applicable to a reservoir which has been producing for a sufficient period of time so that the effect of the outer boundary has been felt.",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c02",
+              "quote": "It is considered that the well is surrounded, at its outer boundary, by a solid \"brick wall\" which prevents the flow of fluids into the radial cell",
+              "page": 77,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c03",
+              "quote": "$$\\frac{\\partial p}{\\partial r} = 0 \\quad \\text{at} \\quad r = r_e \\tag{5.6}$$",
+              "page": 77,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Пористость**: Доля объёма породы, занятая порами. При постоянном дебите давление во всех точках снижается с приблизительно одинаковой скоростью. Скорость снижения выводят из материального баланса и определения сжимаемости. В радиальной ячейке поровый объём выражают через радиус границы, толщину и **пористость**.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c04",
+            "geo.test_dake.s5_3.03.c05",
+            "geo.test_dake.s5_3.03.c06"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c04",
+              "quote": "Furthermore, if the well is producing at a constant flow rate then the cell pressure will decline in such a way that",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c05",
+              "quote": "The constant referred to in equ. (5.7) can be obtained from a simple material balance using the compressibility definition, thus",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c06",
+              "quote": "$$\\frac{dp}{dt} = - \\frac{q}{c \\pi r_e^2 h \\phi} \\tag{5.10}$$",
+              "page": 77,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "**Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. Автор применяет это условие к нефти и газу. При этом у газа **сжимаемость** не постоянна.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c07"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.03.c07",
+              "quote": "This is a condition which will be applied in Chapter 6, for oil flow, and in Chapter 8, for gas flow, to derive the well inflow equations under semi steady state conditions, even though in the latter case the gas compressibility is not constant.",
+              "page": 77,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "text": "Предполагают, что внешняя граница не пропускает жидкость в область дренирования.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c02"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Градиент давления на непроницаемой внешней границе равен нулю.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c03"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "При постоянном дебите давление во всех точках снижается с приблизительно одинаковой скоростью.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c04"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Автор применяет это условие к нефти и газу. При этом у газа сжимаемость не постоянна.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.03.c07"
+          ],
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_3.03.f01",
+          "latex": "\\frac{\\partial p}{\\partial r} = 0 \\quad \\text{at} \\quad r = r_e",
+          "meaning": "Нулевой градиент на внешней границе означает отсутствие перетока.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "r_e",
+              "meaning": "радиус внешней границы",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_10"
+        },
+        {
+          "id": "geo.test_dake.s5_3.03.f02",
+          "latex": "\\frac{\\partial p}{\\partial t} \\approx \\text{constant, for all } r \\text{ and } t.",
+          "meaning": "При постоянном дебите пространственно почти одинаковая скорость падения.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_12"
+        },
+        {
+          "id": "geo.test_dake.s5_3.03.f03",
+          "latex": "cV \\frac{dp}{dt} = - \\frac{dV}{dt} = - q",
+          "meaning": "Материальный баланс закрытой области.",
+          "vars": [
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "V",
+              "meaning": "поровый объём или объём жидкости по контексту",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_14"
+        },
+        {
+          "id": "geo.test_dake.s5_3.03.f04",
+          "latex": "\\text{or} \\quad \\frac{dp}{dt} = - \\frac{q}{cV}",
+          "meaning": "Скорость падения через дебит и доступную сжимаемую ёмкость.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "V",
+              "meaning": "поровый объём или объём жидкости по контексту",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_15"
+        },
+        {
+          "id": "geo.test_dake.s5_3.03.f05",
+          "latex": "\\frac{dp}{dt} = - \\frac{q}{c \\pi r_e^2 h \\phi}",
+          "meaning": "Скорость падения для радиальной ячейки.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "r_e",
+              "meaning": "радиус внешней границы",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_17"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        77
+      ],
+      "data": {
+        "text": "Одинаковая скорость падения означает одинаковое давление по всему пласту.",
+        "correction": "Условие задаёт производную по времени, а не равенство давлений.",
+        "claim_ids": [
+          "geo.test_dake.s5_3.03.c03",
+          "geo.test_dake.s5_3.03.c04",
+          "geo.test_dake.s5_3.03.c05"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Скорость снижения получают из баланса: дебит относят к произведению сжимаемости на поровый объём.",
+        "inputs": "Для закрытого случая режим наступает после того, как сказалось влияние внешней границы.",
+        "outputs": "Автор применяет это условие для нефти и газа, хотя у газа сжимаемость не постоянна.",
+        "breaks_where": "Режим рассматривают после появления влияния границы. Автор использует условие и при анализе газа, хотя его сжимаемость меняется.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Для закрытого случая режим наступает после того, как сказалось влияние внешней границы.",
+          "manual_steps": "Скорость снижения получают из баланса: дебит относят к произведению сжимаемости на поровый объём.",
+          "judgment_points": "Режим рассматривают после появления влияния границы. Автор использует условие и при анализе газа, хотя его сжимаемость меняется.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Одинаковая скорость падения означает одинаковое давление по всему пласту.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В закрытом резервуаре равномерный расход опустошает доступную ёмкость; чем она больше, тем медленнее изменение.",
+        "breaks_where": "Модель описывает давление через сжимаемость; она не означает одинакового давления или пустых подземных ёмкостей.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "number": "5.2",
+          "page": 77,
+          "caption": "Fig. 5.2 Radial flow under semi steady state conditions.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u077_08",
+          "scan": "pages/p77.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "term": "псевдоустановившийся режим",
+          "en": "semi steady state flow",
+          "definition": "При закрытой границе давление в разных точках падает примерно с одной скоростью при постоянном дебите.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "en": "porosity",
+          "definition": "Доля объёма породы, занятая порами.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "градиент давления",
+          "en": "pressure gradient",
+          "definition": "Как быстро меняется давление в пространстве.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "баланс массы",
+          "en": "mass conservation",
+          "definition": "Приток массы минус отток равен изменению массы внутри области.",
+          "page": 77,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Закрытая граница → Постоянный отбор → Давление убывает с общим темпом.",
+      "alt": "Схема: Закрытая граница, затем Постоянный отбор, затем Давление убывает с общим темпом.",
+      "file": "illustrations/geo.test_dake.s5_3.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.03.c04",
+        "geo.test_dake.s5_3.03.c06",
+        "geo.test_dake.s5_3.03.c03"
+      ],
+      "pages": [
+        77
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c01",
+      "kind": "observation",
+      "text": "Для закрытого случая режим наступает после того, как сказалось влияние внешней границы.",
+      "quote": "This condition is applicable to a reservoir which has been producing for a sufficient period of time so that the effect of the outer boundary has been felt.",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c02",
+      "kind": "assumption",
+      "text": "Внешняя граница не пропускает поступление жидкости в дренируемую область.",
+      "quote": "It is considered that the well is surrounded, at its outer boundary, by a solid \"brick wall\" which prevents the flow of fluids into the radial cell",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c03",
+      "kind": "observation",
+      "text": "Градиент давления на непроницаемой внешней границе равен нулю.",
+      "quote": "$$\\frac{\\partial p}{\\partial r} = 0 \\quad \\text{at} \\quad r = r_e \\tag{5.6}$$",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c04",
+      "kind": "observation",
+      "text": "При постоянном дебите давление в ячейке снижается с приблизительно одинаковой скоростью.",
+      "quote": "Furthermore, if the well is producing at a constant flow rate then the cell pressure will decline in such a way that",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c05",
+      "kind": "observation",
+      "text": "Скорость снижения выводят из материального баланса и определения сжимаемости.",
+      "quote": "The constant referred to in equ. (5.7) can be obtained from a simple material balance using the compressibility definition, thus",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c06",
+      "kind": "observation",
+      "text": "В радиальной ячейке поровый объём выражают через радиус границы, толщину и пористость.",
+      "quote": "$$\\frac{dp}{dt} = - \\frac{q}{c \\pi r_e^2 h \\phi} \\tag{5.10}$$",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.03.c07",
+      "kind": "observation",
+      "text": "Автор применяет это условие для нефти и газа, хотя у газа сжимаемость не постоянна.",
+      "quote": "This is a condition which will be applied in Chapter 6, for oil flow, and in Chapter 8, for gas flow, to derive the well inflow equations under semi steady state conditions, even though in the latter case the gas compressibility is not constant.",
+      "page": 77,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_3.03.t01",
+    "geo.test_dake.s5_3.03.t02",
+    "geo.test_dake.s5_3.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_3.03.k01",
+    "geo.test_dake.s5_3.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_3.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

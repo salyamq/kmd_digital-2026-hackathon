@@ -1,0 +1,683 @@
+{
+  "node_id": "geo.test_slatt.s9_4_1.01",
+  "chapter": "test_slatt",
+  "index": 1,
+  "part": {
+    "id": "part1",
+    "title": "Как растёт дельта и что сохраняется в разрезе"
+  },
+  "title_beginner": "Как дельта растёт в море",
+  "title_book": "Процессы и отложения",
+  "section": "s9_4_1",
+  "pages": [
+    411,
+    413,
+    414,
+    415
+  ],
+  "minutes": 10,
+  "difficulty": {
+    "primary": "В",
+    "secondary": "М",
+    "threshold": "Боковое смещение дельтовых зон оставляет вертикальную смену отложений на одном месте."
+  },
+  "threshold": "Боковое смещение дельтовых зон оставляет вертикальную смену отложений на одном месте.",
+  "format": "long",
+  "format_rationale": "В/М: сначала показываем движение русла и бара по карте, затем читаем результат на фиксированном вертикальном разрезе.",
+  "order_rationale": "Сначала разберём движение русла и устьевого бара; без этого трудно понять наклон и смещение песчаных тел.",
+  "essence": [
+    "Устьевой бар продвигается в море, и над мелким осадком в фиксированной точке оказывается более крупный.",
+    "Керн помогает увидеть этот вертикальный след, а соседние скважины показывают боковые изменения."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        411,
+        413,
+        414,
+        415
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Миссисипи — классический пример речной дельты. У защищённого берега сильные волны и течения не перерабатывают и не рассеивают осадок вдоль берега.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c01",
+            "geo.test_slatt.s9_4_1.01.c02"
+          ],
+          "pages": [
+            411
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c01",
+              "quote": "The Mississippi River Delta (Fig. 9.13) has long been considered the “type” river-dominated delta (Fig. 9.5)",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c02",
+              "quote": "Strong waves and currents do not impinge upon its protected shoreline, so sediment deposited at and near the shore zone is not reworked or dispersed laterally (Figs. 9.4 and 9.7)",
+              "page": 411,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Дельта и её зоны со временем выдвигаются к морю. Для этого между дном и поверхностью воды должно хватать места для осадка. При выдвижении дельты линии равного геологического времени пересекают границы разных отложений. Выдвижение и накопление вверх постепенно обмеляют дно. Питающая река может сместить русло в сторону более глубокого участка. За последние 4600 лет в дельте Миссисипи было не менее восьми периодов переключения русел и лопастей.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c03",
+            "geo.test_slatt.s9_4_1.01.c04",
+            "geo.test_slatt.s9_4_1.01.c05",
+            "geo.test_slatt.s9_4_1.01.c06"
+          ],
+          "pages": [
+            411
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c03",
+              "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c04",
+              "quote": "By that process, surfaces representing instants in geologic time crosscut boundaries between sedimentary facies (see the time lines or clinoforms in Fig. 9.9)",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c05",
+              "quote": "However, over time, progradation and vertical aggradation lead to a progressive shallowing of the water depth, to the point at which the main river(s) feeding sediment to its delta will shift toward deeper water (toward lower points on the seafloor), thereby causing the distributary-channel switching discussed earlier (Fig. 9.11)",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c06",
+              "quote": "During the past 4600 years, there have been no fewer than eight periods of channel and lobe switching on the Mississippi River Delta (Fig. 9.12)",
+              "page": 411,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Схема показывает, как разновидности осадков речной дельты расположены в пространстве. Песчаные коллекторы связаны с отложениями распределительных русел и устьевых баров. Межрусловые заливы, болота и лагуны разделяют песчаные тела. Их глинистые отложения образуют барьеры. Иногда это нефтегазоматеринские породы.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c07",
+            "geo.test_slatt.s9_4_1.01.c08",
+            "geo.test_slatt.s9_4_1.01.c09"
+          ],
+          "pages": [
+            411
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c07",
+              "quote": "The main facies of a river-dominated delta, and their distribution in space, are shown in Fig. 9.14",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c08",
+              "quote": "Sandy reservoir facies are deposits of distributary channels and distributary mouth-bars",
+              "page": 411,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c09",
+              "quote": "Interdistributary bays, marshes, and lagoons separate sandy facies and provide shale barriers in subsurface reservoirs, and sometimes, they provide hydrocarbon source rocks",
+              "page": 411,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "**устьевой бар**: Скопление осадка у выхода речного рукава в водоём. Схема современной дельты Миссисипи показывает распределение обстановок и отложений в дельте типа «птичья лапа». Разрезы различают выдвинувшийся **устьевой бар** и песчаное заполнение рукава вытянутой речной лопасти. Модель показывает переориентацию распределительного русла от общей вершины к разным частям дельты. Схема роста показывает смену лопастей Миссисипи за последние 4600 лет.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c14",
+            "geo.test_slatt.s9_4_1.01.c15",
+            "geo.test_slatt.s9_4_1.01.c12",
+            "geo.test_slatt.s9_4_1.01.c13"
+          ],
+          "pages": [
+            413,
+            414,
+            415
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c14",
+              "quote": "Schematic illustration of the distribution of facies and environments in the modern Mississippi bird-foot delta",
+              "page": 414,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c15",
+              "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe",
+              "page": 415,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c12",
+              "quote": "Model of delta distributary channel switching from a common apex to different orientations and locations on the delta",
+              "page": 413,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c13",
+              "quote": "Growth patterns of the Mississippi River Delta's lobes during the past 4600 years",
+              "page": 413,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-5",
+          "section": "Условия",
+          "text": "В обнажении отложения узнают по взаимному положению, укрупнению зёрен вверх и сочетанию осадочных структур. Под землёй те же признаки ищут в керне и каротаже. При удалении от оси русла отклик отражает уменьшение толщины и зернистости.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c10",
+            "geo.test_slatt.s9_4_1.01.c11"
+          ],
+          "pages": [
+            413
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c10",
+              "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)",
+              "page": 413,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c11",
+              "quote": "In the subsurface, these same features can be identified in cores and on well logs, including a lateral thinning and fining log response away from the channel axis (Fig. 9.15)",
+              "page": 413,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-6",
+          "section": "Условия",
+          "text": "Каротажные профили собраны по скважинам системы Холли-Спрингс, север Мексиканского залива. Отдельный вертикальный профиль показывает строение песчаного устьевого бара.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c16",
+            "geo.test_slatt.s9_4_1.01.c17"
+          ],
+          "pages": [
+            415
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c16",
+              "quote": "Well log profiles are from borehole data from the Wilcox (Eocene) Holly Springs delta system of the northern Gulf Coast Basin. . (C) Generalized vertical profile through a channel-mouth-bar sand body",
+              "page": 415,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_1.01.c17",
+              "quote": "Generalized vertical profile through a channel-mouth-bar sand body",
+              "page": 415,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-7",
+          "section": "Почему крупнее вверх",
+          "text": "Представьте неподвижную точку перед баром. Сначала там откладывается мелкий осадок. Бар выдвигается к этой точке. Более крупный осадок ложится выше. Так боковое движение оставляет вертикальную запись.",
+          "claim_ids": [],
+          "pages": [],
+          "by": "model",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        411
+      ],
+      "items": [
+        {
+          "text": "У защищённого берега сильные волны и течения не перерабатывают и не рассеивают осадок вдоль берега.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c02"
+          ],
+          "pages": [
+            411
+          ]
+        },
+        {
+          "text": "Дельта и её зоны со временем выдвигаются к морю. Для этого между дном и поверхностью воды должно хватать места для осадка.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c03"
+          ],
+          "pages": [
+            411
+          ]
+        },
+        {
+          "text": "За последние 4600 лет в дельте Миссисипи было не менее восьми периодов переключения русел и лопастей.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_1.01.c06"
+          ],
+          "pages": [
+            411
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        411,
+        413
+      ],
+      "data": {
+        "text": "Весь песок дельты образует сплошной пласт, а укрупнение вверх означает усиление течения во всех рукавах.",
+        "correction": "Песок концентрируется в руслах и на барах, разделённых другими отложениями. Вертикальную смену можно связать с продвижением зон, а не с усилением потока повсюду.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_1.01.c03",
+          "geo.test_slatt.s9_4_1.01.c08",
+          "geo.test_slatt.s9_4_1.01.c09",
+          "geo.test_slatt.s9_4_1.01.c10",
+          "geo.test_slatt.s9_4_1.01.c11"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "В обнажении сравнивают положение соседних отложений, изменение размера зёрен вверх и осадочные структуры. Ту же последовательность проверяют по керну и каротажу, отличая вертикальное изменение от бокового утонения и измельчения вдали от оси русла.",
+        "inputs": "Миссисипи — классический пример речной дельты.",
+        "outputs": "Отдельный вертикальный профиль показывает строение песчаного устьевого бара.",
+        "breaks_where": "Выдвижение требует места для нового осадка. Заливы, болота и лагуны могут отделять песчаные тела друг от друга. Признак укрупнения проверяют вместе с другими признаками, а не сам по себе.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Миссисипи — классический пример речной дельты.",
+          "manual_steps": "В обнажении сравнивают положение соседних отложений, изменение размера зёрен вверх и осадочные структуры. Ту же последовательность проверяют по керну и каротажу, отличая вертикальное изменение от бокового утонения и измельчения вдали от оси русла.",
+          "judgment_points": "Выдвижение требует места для нового осадка. Заливы, болота и лагуны могут отделять песчаные тела друг от друга. Признак укрупнения проверяют вместе с другими признаками, а не сам по себе.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Весь песок дельты образует сплошной пласт, а укрупнение вверх означает усиление течения во всех рукавах.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Фиксированная точка сохраняет последовательные состояния, как журнал наблюдений при движении зоны по карте.",
+        "breaks_where": "Осадочная летопись неполна: могут быть перерывы, размывы и смена русла.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Почему крупнее именно вверх",
+          "text": "Представьте одну неподвижную точку у дна перед растущим баром. Пока бар далеко, в этой точке накапливается более тонкий осадок. С приближением и продвижением бара поверх него откладывается более крупный материал. При чтении разреза снизу вверх мы восстанавливаем движение обстановок по горизонтали — не увеличение всех зёрен в одном потоке.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        413,
+        414,
+        415
+      ],
+      "items": [
+        {
+          "number": "9.12",
+          "page": 413,
+          "caption": "FIGURE 9.12 Model of delta distributary channel switching from a common apex to different orientations and locations on the delta. After Overeem et al. (2005).",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u413_01",
+          "scan": "pages/p413.png"
+        },
+        {
+          "number": "9.13",
+          "page": 413,
+          "caption": "FIGURE 9.13 Growth patterns of the Mississippi River Delta's lobes during the past 4600 years. Modified from Kolb and Van Lopik, Fig. 9.2, in Shirley (1966). Reprinted with permission of Houston Geol. Soc.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u413_02",
+          "scan": "pages/p413.png"
+        },
+        {
+          "number": "9.14",
+          "page": 414,
+          "caption": "FIGURE 9.14 Schematic illustration of the distribution of facies and environments in the modern Mississippi bird-foot delta. Modified from Fisk (1961). Reprinted with permission of AAPG, whose permission is required for further use.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u414_01",
+          "scan": "pages/p414.png"
+        },
+        {
+          "number": "9.15",
+          "page": 415,
+          "caption": "FIGURE 9.15 (a) Pennsylvanian-age distributary-channel sandstone. (b) Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe. Well log profiles are from borehole data from the Wilcox (Eocene) Holly Springs delta system of the northern Gulf Coast Basin. . (C) Generalized vertical profile through a channel-mouth-bar sand body. Modified from Galloway (1968). Reprinted with permission of Gulf Coast Assoc. Geol. Societies.",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u415_01",
+          "scan": "pages/p415.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        411
+      ],
+      "items": [
+        {
+          "term": "распределительное русло",
+          "definition": "Ветвь реки, по которой вода и осадок идут через дельту",
+          "en": "distributary channel",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Скопление осадка у выхода речного рукава в водоём",
+          "en": "mouth bar",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "проградация",
+          "definition": "Выдвижение дельты и её зон в сторону моря",
+          "en": "progradation",
+          "page": 411,
+          "by": "author"
+        },
+        {
+          "term": "агградация",
+          "definition": "Нарастание слоя за счёт накопления осадка вверх",
+          "en": "aggradation",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "фация",
+          "definition": "Отложения с признаками определённой обстановки",
+          "en": "facies",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Извлечённый при бурении образец породы",
+          "en": "core",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерения свойств вдоль ствола скважины",
+          "en": "well logs",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "клиноформа",
+          "definition": "Наклонная линия равного геологического времени на разрезе",
+          "en": "clinoform",
+          "page": 411,
+          "by": "author"
+        },
+        {
+          "term": "коллектор",
+          "definition": "Порода, способная вмещать и пропускать флюиды",
+          "en": "reservoir",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "лопасть дельты",
+          "definition": "Выступ дельты, питаемый рукавом или группой рукавов",
+          "en": "delta lobe",
+          "page": 411,
+          "by": "model"
+        },
+        {
+          "term": "нефтегазоматеринская порода",
+          "definition": "Порода, в которой могут образовываться нефть и газ",
+          "en": "source rock",
+          "page": 411,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Рукава приносят песок → Бар растёт к морю → Зёрна крупнее вверх.",
+      "alt": "Схема показывает цепочку: Рукава приносят песок, затем Бар растёт к морю, затем Зёрна крупнее вверх.",
+      "file": "illustrations/geo.test_slatt.s9_4_1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01.c05",
+        "geo.test_slatt.s9_4_1.01.c08",
+        "geo.test_slatt.s9_4_1.01.c10"
+      ],
+      "pages": [
+        411,
+        413
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c01",
+      "kind": "observation",
+      "text": "Миссисипи — классический пример речной дельты.",
+      "quote": "The Mississippi River Delta (Fig. 9.13) has long been considered the “type” river-dominated delta (Fig. 9.5)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c02",
+      "kind": "observation",
+      "text": "У защищённого берега сильные волны и течения не перерабатывают и не рассеивают осадок вдоль берега.",
+      "quote": "Strong waves and currents do not impinge upon its protected shoreline, so sediment deposited at and near the shore zone is not reworked or dispersed laterally (Figs. 9.4 and 9.7)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c03",
+      "kind": "observation",
+      "text": "Если между дном и поверхностью моря достаточно места для осадка, дельта и её зоны со временем выдвигаются к морю.",
+      "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c04",
+      "kind": "observation",
+      "text": "При выдвижении дельты линии равного геологического времени пересекают границы разных отложений.",
+      "quote": "By that process, surfaces representing instants in geologic time crosscut boundaries between sedimentary facies (see the time lines or clinoforms in Fig. 9.9)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c05",
+      "kind": "observation",
+      "text": "Выдвижение и накопление вверх постепенно обмеляют дно; питающая река может сместить русло в сторону более глубокого участка.",
+      "quote": "However, over time, progradation and vertical aggradation lead to a progressive shallowing of the water depth, to the point at which the main river(s) feeding sediment to its delta will shift toward deeper water (toward lower points on the seafloor), thereby causing the distributary-channel switching discussed earlier (Fig. 9.11)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c06",
+      "kind": "observation",
+      "text": "За последние 4600 лет в дельте Миссисипи было не менее восьми периодов переключения русел и лопастей.",
+      "quote": "During the past 4600 years, there have been no fewer than eight periods of channel and lobe switching on the Mississippi River Delta (Fig. 9.12)",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c07",
+      "kind": "observation",
+      "text": "Схема показывает, как разновидности осадков речной дельты расположены в пространстве.",
+      "quote": "The main facies of a river-dominated delta, and their distribution in space, are shown in Fig. 9.14",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c08",
+      "kind": "observation",
+      "text": "Песчаные коллекторы связаны с отложениями распределительных русел и устьевых баров.",
+      "quote": "Sandy reservoir facies are deposits of distributary channels and distributary mouth-bars",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c09",
+      "kind": "observation",
+      "text": "Межрусловые заливы, болота и лагуны разделяют песчаные тела, создавая глинистые барьеры; иногда это нефтегазоматеринские породы.",
+      "quote": "Interdistributary bays, marshes, and lagoons separate sandy facies and provide shale barriers in subsurface reservoirs, and sometimes, they provide hydrocarbon source rocks",
+      "page": 411,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c10",
+      "kind": "observation",
+      "text": "В обнажении отложения узнают по взаимному положению, укрупнению зёрен вверх и сочетанию осадочных структур.",
+      "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)",
+      "page": 413,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c11",
+      "kind": "observation",
+      "text": "Под землёй те же признаки ищут в керне и каротаже; при удалении от оси русла отклик отражает уменьшение толщины и зернистости.",
+      "quote": "In the subsurface, these same features can be identified in cores and on well logs, including a lateral thinning and fining log response away from the channel axis (Fig. 9.15)",
+      "page": 413,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c12",
+      "kind": "observation",
+      "text": "Модель показывает переориентацию распределительного русла от общей вершины к разным частям дельты.",
+      "quote": "Model of delta distributary channel switching from a common apex to different orientations and locations on the delta",
+      "page": 413,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c13",
+      "kind": "observation",
+      "text": "Схема роста показывает смену лопастей Миссисипи за последние 4600 лет.",
+      "quote": "Growth patterns of the Mississippi River Delta's lobes during the past 4600 years",
+      "page": 413,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c14",
+      "kind": "observation",
+      "text": "Схема современной дельты Миссисипи показывает распределение обстановок и отложений в дельте типа «птичья лапа».",
+      "quote": "Schematic illustration of the distribution of facies and environments in the modern Mississippi bird-foot delta",
+      "page": 414,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c15",
+      "kind": "observation",
+      "text": "Разрезы различают выдвинувшийся устьевой бар и песчаное заполнение рукава вытянутой речной лопасти.",
+      "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c16",
+      "kind": "observation",
+      "text": "Каротажные профили собраны по скважинам системы Холли-Спрингс, север Мексиканского залива.",
+      "quote": "Well log profiles are from borehole data from the Wilcox (Eocene) Holly Springs delta system of the northern Gulf Coast Basin. . (C) Generalized vertical profile through a channel-mouth-bar sand body",
+      "page": 415,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01.c17",
+      "kind": "observation",
+      "text": "Отдельный вертикальный профиль показывает строение песчаного устьевого бара.",
+      "quote": "Generalized vertical profile through a channel-mouth-bar sand body",
+      "page": 415,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_1.01.t01",
+    "geo.test_slatt.s9_4_1.01.t02",
+    "geo.test_slatt.s9_4_1.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_1.01.k01",
+    "geo.test_slatt.s9_4_1.01.k02"
+  ],
+  "links": [],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

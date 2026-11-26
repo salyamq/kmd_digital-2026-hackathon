@@ -1,0 +1,492 @@
+{
+  "chapter": "test_dake",
+  "routes": [
+    {
+      "node_id": "geo.test_dake.s5_2.01",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "П",
+        "secondary": "Ф",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": "cross_section",
+      "hook_only": false,
+      "rationale": "П/Ф: разрез помогает понять вскрытие всей толщины и проверить предпосылки радиальной симметрии.",
+      "why": "П/Ф: разрез помогает понять вскрытие всей толщины и проверить предпосылки радиальной симметрии.",
+      "template": "cross_section",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.02",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "Расход через внешнюю и внутреннюю границы кольца может различаться: разность меняет массу жидкости в порах."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: пошаговую выкладку баланса тонкого кольца удобнее читать в своём темпе.",
+      "why": "Ф/М: пошаговую выкладку баланса тонкого кольца удобнее читать в своём темпе.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.03",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: подстановку закона Дарси в баланс лучше проверять по символам в тексте.",
+      "why": "Ф/М: подстановку закона Дарси в баланс лучше проверять по символам в тексте.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_2.04",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "Плотность в массовом балансе можно выразить через давление, но коэффициенты не становятся постоянными сами собой."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: цепочка производных и определение сжимаемости требуют аккуратной записи, а не быстрого показа.",
+      "why": "Ф/М: цепочка производных и определение сжимаемости требуют аккуратной записи, а не быстрого показа.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_1.01",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Даже однородная порода не делает уравнение линейным: сами свойства жидкости меняются с давлением."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/Н: вводный шаг связывает нелинейные коэффициенты с необходимостью упрощения без новой выкладки.",
+      "why": "Ф/Н: вводный шаг связывает нелинейные коэффициенты с необходимостью упрощения без новой выкладки.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.01",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Одному уравнению соответствуют разные решения при разных начальных и граничных условиях."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/Н: вводятся параметры задачи и названия трёх режимов, которые разбираются отдельно.",
+      "why": "Ф/Н: вводятся параметры задачи и названия трёх режимов, которые разбираются отдельно.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.02",
+      "format": "длинное видео",
+      "difficulty": {
+        "primary": "В",
+        "secondary": "Ф",
+        "threshold": "Бесконечность в модели означает, что граница ещё не повлияла на наблюдение, а не бесконечный геологический объём."
+      },
+      "video_criteria": [
+        "time_change",
+        "invisible_visible",
+        "cause_effect"
+      ],
+      "scene_template": "cross_section_evolution",
+      "hook_only": false,
+      "rationale": "В/Ф: движение во времени имеет смысл показать через изменение давления по радиусу и синхронный отклик; граница не превращается в мгновенный фронт.",
+      "why": "В/Ф: движение во времени имеет смысл показать через изменение давления по радиусу и синхронный отклик; граница не превращается в мгновенный фронт.",
+      "template": "cross_section_evolution",
+      "hook_short": false,
+      "video_scores": {
+        "time": 1,
+        "invisible": 1,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 1
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.03",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "В псевдоустановившемся режиме выравнивается скорость падения давления, а не само давление."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Ф/М: двигая дебит и объём, сравнивают различное падение при закрытой границе и сохраняют одинаковый темп по области.",
+      "why": "Ф/М: двигая дебит и объём, сравнивают различное падение при закрытой границе и сохраняют одинаковый темп по области.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.04",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Пр",
+        "threshold": "Дебит может заменить труднодоступный поровый объём в весах, но только при оговорённых условиях."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Ф/Пр: по давлению и измеренным дебитам выбирают веса и проверяют условия, при которых они законны.",
+      "why": "Ф/Пр: по давлению и измеренным дебитам выбирают веса и проверяют условия, при которых они законны.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_3.05",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "М",
+        "secondary": "Ф",
+        "threshold": "Открытая подпитываемая граница может уравновесить отбор. Это не то же самое, что закрытый пласт с одинаковым снижением."
+      },
+      "video_criteria": [],
+      "scene_template": "process_chain",
+      "hook_only": false,
+      "rationale": "М/Ф: полезно переключить подпитку границы или режим работы и объяснить, когда давление вновь меняется.",
+      "why": "М/Ф: полезно переключить подпитку границы или режим работы и объяснить, когда давление вновь меняется.",
+      "template": "process_chain",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.01",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Линейная форма получается не простой перестановкой, а отбрасыванием членов при оговорённых допущениях."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/Н: разобрать порядок исключения членов с обращением к каждой строке уравнения.",
+      "why": "Ф/Н: разобрать порядок исключения членов с обращением к каждой строке уравнения.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.02",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Постоянная сжимаемость недостаточна: произведение сжимаемости на давление должно быть много меньше единицы."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Ф/Н: по авторскому числовому примеру проверяют пригодность линейной модели по произведению сжимаемости на давление.",
+      "why": "Ф/Н: по авторскому числовому примеру проверяют пригодность линейной модели по произведению сжимаемости на давление.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.03",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Одно и то же произведение можно записать с разными согласованными парами: менять только пористость нельзя."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/Н: полезнее записать рядом две согласованные пары множителей, чем анимировать равенство.",
+      "why": "Ф/Н: полезнее записать рядом две согласованные пары множителей, чем анимировать равенство.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s5_4.04",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": ""
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: тепловой аналог используется для узнавания формы оператора; решения можно сопоставить рядом в тексте.",
+      "why": "Ф/М: тепловой аналог используется для узнавания формы оператора; решения можно сопоставить рядом в тексте.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.01",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Н",
+        "threshold": "Скважину считают линией не потому, что ствола нет, а потому, что его радиус мал для рассматриваемой задачи."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/Н: три исходных условия нужны в проверяемом виде рядом с допущениями.",
+      "why": "Ф/Н: три исходных условия нужны в проверяемом виде рядом с допущениями.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.02",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "Радиус и время входят в решение как одна безразмерная комбинация."
+      },
+      "video_criteria": [],
+      "scene_template": "parameter_sweep",
+      "hook_only": false,
+      "rationale": "Ф/М: изменяя радиус и время, можно проверить, как они сводятся к одной переменной подобия.",
+      "why": "Ф/М: изменяя радиус и время, можно проверить, как они сводятся к одной переменной подобия.",
+      "template": "parameter_sweep",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.03",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "Граничное условие на скважине фиксирует масштаб решения, который нельзя выбрать свободно."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: отдельные стадии интегрирования и взятия предела требуют возможности сверить каждый символ.",
+      "why": "Ф/М: отдельные стадии интегрирования и взятия предела требуют возможности сверить каждый символ.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.04",
+      "format": "текст",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "М",
+        "threshold": "Интегрирование связывает неизвестное текущее давление с начальным равновесным значением."
+      },
+      "video_criteria": [],
+      "scene_template": null,
+      "hook_only": false,
+      "rationale": "Ф/М: для понимания начального и текущего состояния достаточно внимательно проследить порядок пределов.",
+      "why": "Ф/М: для понимания начального и текущего состояния достаточно внимательно проследить порядок пределов.",
+      "template": null,
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.05",
+      "format": "интерактив",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "Р",
+        "threshold": "Логарифмическая форма — приближение с областью применимости, а не другое имя полного интеграла."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Ф/Р: на графике двух выражений важно самому найти диапазон малого x, а не запомнить вид формулы.",
+      "why": "Ф/Р: на графике двух выражений важно самому найти диапазон малого x, а не запомнить вид формулы.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.06",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "Ф",
+        "secondary": "И",
+        "threshold": "Для ранних измерений у ствола геометрия внешней границы не входит в решение; добавка около ствола — отдельный член."
+      },
+      "video_criteria": [],
+      "scene_template": "function_plot",
+      "hook_only": false,
+      "rationale": "Ф/И: проверяют область пригодности логарифмической формы и отделяют поправку около ствола от геометрии пласта.",
+      "why": "Ф/И: проверяют область пригодности логарифмической формы и отделяют поправку около ствола от геометрии пласта.",
+      "template": "function_plot",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    },
+    {
+      "node_id": "geo.test_dake.s7_3.07",
+      "format": "практикум на данных",
+      "difficulty": {
+        "primary": "И",
+        "secondary": "Ф",
+        "threshold": "Условие малого x обычно подходит у ствола, но перенос этого допущения на удалённую скважину требует проверки."
+      },
+      "video_criteria": [],
+      "scene_template": "log_track",
+      "hook_only": false,
+      "rationale": "И/Ф: сравнивают положение точки измерения и выбирают между приближением и полной формой по условию главы.",
+      "why": "И/Ф: сравнивают положение точки измерения и выбирают между приближением и полной формой по условию главы.",
+      "template": "log_track",
+      "hook_short": false,
+      "video_scores": {
+        "time": 0,
+        "invisible": 0,
+        "scale": 0,
+        "counterintuitive": 0,
+        "cause_effect": 0
+      }
+    }
+  ]
+}

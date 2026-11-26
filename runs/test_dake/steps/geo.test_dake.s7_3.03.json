@@ -1,0 +1,590 @@
+{
+  "node_id": "geo.test_dake.s7_3.03",
+  "chapter": "test_dake",
+  "index": 17,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "Как дебит задаёт константу",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    88
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "М",
+    "threshold": "Граничное условие на скважине фиксирует масштаб решения, который нельзя выбрать свободно."
+  },
+  "threshold": "Граничное условие на скважине фиксирует масштаб решения, который нельзя выбрать свободно.",
+  "format": "text",
+  "format_rationale": "Ф/М: отдельные стадии интегрирования и взятия предела требуют возможности сверить каждый символ.",
+  "order_rationale": "Определяем множитель производной из граничного условия на скважине.",
+  "essence": [
+    "После интегрирования в выражении для производной остаётся неизвестный множитель.",
+    "Его фиксируют из условия заданного дебита на линии."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Уравнение решают заменой производной давления новой неизвестной. После разделения переменных интегрируют отношение дифференциала производной к её значению. Результат первого интегрирования — логарифм производной с постоянной интегрирования.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c01",
+            "geo.test_dake.s7_3.03.c02",
+            "geo.test_dake.s7_3.03.c03"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c01",
+              "quote": "This is an ordinary differential equation which can be solved by letting",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c02",
+              "quote": "$$\\frac{dp'}{p'} = - \\frac{(s+1)}{s} ds \\tag{7.4}$$",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c03",
+              "quote": "$$\\ln p' = - \\ln s - s + C_1$$",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Производная пропорциональна экспоненте, делённой на переменную подобия. Постоянную в форме производной определяют из условия линейного источника.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c04",
+            "geo.test_dake.s7_3.03.c05"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c04",
+              "quote": "$$p' = C_2 \\frac{e^{-s}}{s} \\tag{7.5}$$",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c05",
+              "quote": "C_2$ are constants of integration and $C_2$ can be evaluated using the line source boundary condition",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "**Дебит**: Объём жидкости, добываемой за единицу времени. Выбирают предел при стремлении радиуса и переменной подобия к нулю. **Дебит** и вязкость увеличивают коэффициент производной. Проницаемость и толщина уменьшают его при прочих равных.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c06",
+            "geo.test_dake.s7_3.03.c07"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c06",
+              "quote": "which yields, as r (and therefore s) tends to zero",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.03.c07",
+              "quote": "$$\\lim_{r \\to 0} r \\frac{\\partial p}{\\partial r} = \\frac{q\\mu}{2\\pi kh} = r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} = 2s \\frac{dp}{ds}$$",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "text": "Назначить производную давления новой неизвестной.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c01"
+          ],
+          "pages": [
+            88
+          ]
+        },
+        {
+          "text": "Разделить переменные и проинтегрировать.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c02"
+          ],
+          "pages": [
+            88
+          ]
+        },
+        {
+          "text": "Определить постоянную из граничного условия на линии.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.03.c05"
+          ],
+          "pages": [
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.03.f01",
+          "latex": "\\frac{dp}{ds} = p'",
+          "meaning": "Определение новой неизвестной.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "p'",
+              "meaning": "производная давления по переменной подобия",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_09"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f02",
+          "latex": "p' + s \\frac{dp'}{ds} = -sp'",
+          "meaning": "Уравнение для производной.",
+          "vars": [
+            {
+              "symbol": "p'",
+              "meaning": "производная давления по переменной подобия",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_11"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f03",
+          "latex": "\\frac{dp'}{p'} = - \\frac{(s+1)}{s} ds",
+          "meaning": "Разделение переменных.",
+          "vars": [
+            {
+              "symbol": "p'",
+              "meaning": "производная давления по переменной подобия",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_12"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f04",
+          "latex": "\\ln p' = - \\ln s - s + C_1",
+          "meaning": "Результат первого интегрирования.",
+          "vars": [
+            {
+              "symbol": "p'",
+              "meaning": "производная давления по переменной подобия",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "C_1",
+              "meaning": "постоянная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_14"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f05",
+          "latex": "p' = C_2 \\frac{e^{-s}}{s}",
+          "meaning": "Форма производной давления.",
+          "vars": [
+            {
+              "symbol": "p'",
+              "meaning": "производная давления по переменной подобия",
+              "unit": null
+            },
+            {
+              "symbol": "C_2",
+              "meaning": "постоянная интегрирования из условия на скважине",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_16"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f06",
+          "latex": "\\lim_{r \\to 0} r \\frac{\\partial p}{\\partial r} = \\frac{q\\mu}{2\\pi kh} = r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} = 2s \\frac{dp}{ds}",
+          "meaning": "Внутреннее условие через производную по переменной подобия.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_18"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f07",
+          "latex": "\\frac{q\\mu}{4\\pi kh} = C_2 e^{-s}",
+          "meaning": "Подстановка найденной формы производной.",
+          "vars": [
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            },
+            {
+              "symbol": "C_2",
+              "meaning": "постоянная интегрирования из условия на скважине",
+              "unit": null
+            },
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_20"
+        },
+        {
+          "id": "geo.test_dake.s7_3.03.f08",
+          "latex": "C_2 = \\frac{q\\mu}{4\\pi kh}",
+          "meaning": "Множитель, фиксируемый заданным дебитом.",
+          "vars": [
+            {
+              "symbol": "C_2",
+              "meaning": "постоянная интегрирования из условия на скважине",
+              "unit": null
+            },
+            {
+              "symbol": "q",
+              "meaning": "объёмный дебит",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "h",
+              "meaning": "толщина пласта",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_22"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Находят форму производной, затем берут предел у источника, где радиус и переменная подобия стремятся к нулю.",
+        "inputs": "Уравнение решают заменой производной давления новой неизвестной.",
+        "outputs": "В пределе у скважины масштаб производной пропорционален дебиту и вязкости и обратно пропорционален проницаемости и толщине.",
+        "breaks_where": "Условие определяет коэффициент, но давление ещё требуется получить интегрированием по переменной подобия.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Уравнение решают заменой производной давления новой неизвестной.",
+          "manual_steps": "Находят форму производной, затем берут предел у источника, где радиус и переменная подобия стремятся к нулю.",
+          "judgment_points": "Условие определяет коэффициент, но давление ещё требуется получить интегрированием по переменной подобия.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В результате вычисления остаётся масштабный множитель, который калибруется наблюдаемым входом.",
+        "breaks_where": "Здесь масштаб точно задаётся граничным условием, а не статистической подгонкой.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "переменная подобия",
+          "en": "similarity variable",
+          "definition": "Комбинация исходных переменных, позволяющая описать решения общей формой.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "линейный источник",
+          "en": "line source",
+          "definition": "Приближение скважины линией, когда её радиус пренебрежимо мал для задачи.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 88,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Новая неизвестная → Интегрирование → Подстановка предела на линии.",
+      "alt": "Схема: Новая неизвестная, затем Интегрирование, затем Подстановка предела на линии.",
+      "file": "illustrations/geo.test_dake.s7_3.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.03.c05",
+        "geo.test_dake.s7_3.03.c07",
+        "geo.test_dake.s7_3.03.c06"
+      ],
+      "pages": [
+        88
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c01",
+      "kind": "observation",
+      "text": "Уравнение решают заменой производной давления новой неизвестной.",
+      "quote": "This is an ordinary differential equation which can be solved by letting",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c02",
+      "kind": "observation",
+      "text": "После разделения переменных интегрируют отношение дифференциала производной к её значению.",
+      "quote": "$$\\frac{dp'}{p'} = - \\frac{(s+1)}{s} ds \\tag{7.4}$$",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c03",
+      "kind": "observation",
+      "text": "Результат первого интегрирования — логарифм производной с постоянной интегрирования.",
+      "quote": "$$\\ln p' = - \\ln s - s + C_1$$",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c04",
+      "kind": "observation",
+      "text": "Производная пропорциональна экспоненте, делённой на переменную подобия.",
+      "quote": "$$p' = C_2 \\frac{e^{-s}}{s} \\tag{7.5}$$",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c05",
+      "kind": "observation",
+      "text": "Постоянную в форме производной определяют из условия линейного источника.",
+      "quote": "C_2$ are constants of integration and $C_2$ can be evaluated using the line source boundary condition",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c06",
+      "kind": "observation",
+      "text": "Выбирают предел при стремлении радиуса и переменной подобия к нулю.",
+      "quote": "which yields, as r (and therefore s) tends to zero",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.03.c07",
+      "kind": "observation",
+      "text": "В пределе у скважины масштаб производной пропорционален дебиту и вязкости и обратно пропорционален проницаемости и толщине.",
+      "quote": "$$\\lim_{r \\to 0} r \\frac{\\partial p}{\\partial r} = \\frac{q\\mu}{2\\pi kh} = r \\frac{dp}{ds} \\frac{\\partial s}{\\partial r} = 2s \\frac{dp}{ds}$$",
+      "page": 88,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.03.t01",
+    "geo.test_dake.s7_3.03.t02",
+    "geo.test_dake.s7_3.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.03.k01",
+    "geo.test_dake.s7_3.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s7_3.02",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s7_3.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,490 @@
+{
+  "node_id": "geo.test_dake.s5_3.05",
+  "chapter": "test_dake",
+  "index": 10,
+  "part": {
+    "id": "part2",
+    "title": "Что меняется при разных границах"
+  },
+  "title_beginner": "Когда давление перестаёт меняться",
+  "title_book": "Условия решения",
+  "section": "s5_3",
+  "pages": [
+    78
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "М",
+    "secondary": "Ф",
+    "threshold": "Открытая подпитываемая граница может уравновесить отбор. Это не то же самое, что закрытый пласт с одинаковым снижением."
+  },
+  "threshold": "Открытая подпитываемая граница может уравновесить отбор. Это не то же самое, что закрытый пласт с одинаковым снижением.",
+  "format": "interactive",
+  "format_rationale": "М/Ф: полезно переключить подпитку границы или режим работы и объяснить, когда давление вновь меняется.",
+  "order_rationale": "Противопоставляем закрытой области открытую: приток может уравновесить отбор.",
+  "essence": [
+    "При открытой границе приток может уравновесить постоянную добычу.",
+    "Тогда давление больше не меняется со временем, пока режим остаётся прежним."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "После переходного периода для установившегося режима рассматривают открытую внешнюю границу. Предполагают, что при постоянной добыче приток через открытую границу полностью компенсирует отбор. На внешней границе давление задано и постоянно. Давление перестаёт меняться по времени во всей области.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c01",
+            "geo.test_dake.s5_3.05.c02",
+            "geo.test_dake.s5_3.05.c03",
+            "geo.test_dake.s5_3.05.c04"
+          ],
+          "pages": [
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c01",
+              "quote": "The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c02",
+              "quote": "It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,",
+              "page": 78,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c03",
+              "quote": "$$p = p_e = \\text{constant, at } r = r_e \\tag{5.14}$$",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c04",
+              "quote": "$$\\text{and } \\frac{\\partial p}{\\partial t} = 0 \\text{ for all } r \\text{ and } t \\tag{5.15}$$",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости. В пласте оба стабилизированных режима могут реализовываться лишь приближённо. На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c05",
+            "geo.test_dake.s5_3.05.c06",
+            "geo.test_dake.s5_3.05.c07"
+          ],
+          "pages": [
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c05",
+              "quote": "This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c06",
+              "quote": "It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c07",
+              "quote": "For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Производственные и закачные установки рассчитаны на постоянные дебиты, поэтому приближение часто полезно. Смена дебита вызывает новый короткий переходный этап до стабилизации. Так бывает, например, при остановке скважины на ремонт.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c08",
+            "geo.test_dake.s5_3.05.c09"
+          ],
+          "pages": [
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c08",
+              "quote": "Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.05.c09",
+              "quote": "If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "text": "Предполагают, что при постоянной добыче приток через открытую границу полностью компенсирует отбор.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c02"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "На внешней границе давление задано и постоянно.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c03"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c05"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "В пласте оба стабилизированных режима могут реализовываться лишь приближённо.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c06"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.05.c07"
+          ],
+          "pages": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_3.05.f01",
+          "latex": "p = p_e = \\text{constant, at } r = r_e",
+          "meaning": "Постоянное давление на внешней границе.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "p_e",
+              "meaning": "давление на внешней границе",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "r_e",
+              "meaning": "радиус внешней границы",
+              "unit": null
+            }
+          ],
+          "page": 78,
+          "unit_id": "u078_09"
+        },
+        {
+          "id": "geo.test_dake.s5_3.05.f02",
+          "latex": "\\text{and } \\frac{\\partial p}{\\partial t} = 0 \\text{ for all } r \\text{ and } t",
+          "meaning": "Неизменность давления по времени в установившемся режиме.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            }
+          ],
+          "page": 78,
+          "unit_id": "u078_10"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Условие применяют при поддержании давления естественным притоком воды либо закачкой вытесняющей жидкости.",
+        "inputs": "После переходного периода для установившегося режима рассматривают открытую внешнюю границу.",
+        "outputs": "Смена дебита, например при остановке на ремонт, вызывает новый короткий переходный этап до стабилизации.",
+        "breaks_where": "В поле оба стабилизированных режима приближённы. Смена дебита вновь вызывает короткий переходный период.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "После переходного периода для установившегося режима рассматривают открытую внешнюю границу.",
+          "manual_steps": "Условие применяют при поддержании давления естественным притоком воды либо закачкой вытесняющей жидкости.",
+          "judgment_points": "В поле оба стабилизированных режима приближённы. Смена дебита вновь вызывает короткий переходный период.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "У равновесного буфера вход равен выходу, поэтому его заполнение не меняется.",
+        "breaks_where": "Неизменность состояния во времени не означает равных давлений в разных точках.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "number": "5.4",
+          "page": 78,
+          "caption": "Fig. 5.4 Radial flow under steady state conditions.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u078_07",
+          "scan": "pages/p78.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "переходный режим",
+          "en": "transient flow",
+          "definition": "Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "псевдоустановившийся режим",
+          "en": "semi steady state flow",
+          "definition": "При закрытой границе давление в разных точках падает примерно с одной скоростью при постоянном дебите.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "установившийся режим",
+          "en": "steady state flow",
+          "definition": "При поддерживаемой открытой границе и постоянном дебите давление перестаёт меняться во времени.",
+          "page": 78,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Открытая граница → Компенсация отбора → Давление постоянно по времени.",
+      "alt": "Схема: Открытая граница, затем Компенсация отбора, затем Давление постоянно по времени.",
+      "file": "illustrations/geo.test_dake.s5_3.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.05.c02",
+        "geo.test_dake.s5_3.05.c05",
+        "geo.test_dake.s5_3.05.c09"
+      ],
+      "pages": [
+        78
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c01",
+      "kind": "observation",
+      "text": "После переходного периода для установившегося режима рассматривают открытую внешнюю границу.",
+      "quote": "The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c02",
+      "kind": "assumption",
+      "text": "При постоянной добыче приток через открытую границу полностью компенсирует отбор.",
+      "quote": "It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c03",
+      "kind": "observation",
+      "text": "На внешней границе давление задано и постоянно.",
+      "quote": "$$p = p_e = \\text{constant, at } r = r_e \\tag{5.14}$$",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c04",
+      "kind": "observation",
+      "text": "Давление перестаёт меняться по времени во всей области.",
+      "quote": "$$\\text{and } \\frac{\\partial p}{\\partial t} = 0 \\text{ for all } r \\text{ and } t \\tag{5.15}$$",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c05",
+      "kind": "observation",
+      "text": "Такое условие соответствует естественной водной подпитке или закачке вытесняющей жидкости.",
+      "quote": "This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c06",
+      "kind": "observation",
+      "text": "В пласте оба стабилизированных режима могут реализовываться лишь приближённо.",
+      "quote": "It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c07",
+      "kind": "observation",
+      "text": "На практике применяют псевдоустановившуюся формулу и при медленном изменении дебита и границы.",
+      "quote": "For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c08",
+      "kind": "observation",
+      "text": "Производственные и закачные установки рассчитаны на постоянные дебиты, поэтому приближение часто полезно.",
+      "quote": "Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.05.c09",
+      "kind": "observation",
+      "text": "Смена дебита, например при остановке на ремонт, вызывает новый короткий переходный этап до стабилизации.",
+      "quote": "If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.",
+      "page": 78,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_3.05.t01",
+    "geo.test_dake.s5_3.05.t02",
+    "geo.test_dake.s5_3.05.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_3.05.k01",
+    "geo.test_dake.s5_3.05.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_3.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s5_3.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

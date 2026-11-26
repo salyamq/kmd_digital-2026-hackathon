@@ -1,0 +1,435 @@
+{
+  "node_id": "geo.test_dake.s5_3.02",
+  "chapter": "test_dake",
+  "index": 7,
+  "part": {
+    "id": "part2",
+    "title": "Что меняется при разных границах"
+  },
+  "title_beginner": "Когда пласт кажется бесконечным",
+  "title_book": "Условия решения",
+  "section": "s5_3",
+  "pages": [
+    77
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "В",
+    "secondary": "Ф",
+    "threshold": "Бесконечность в модели означает, что граница ещё не повлияла на наблюдение, а не бесконечный геологический объём."
+  },
+  "threshold": "Бесконечность в модели означает, что граница ещё не повлияла на наблюдение, а не бесконечный геологический объём.",
+  "format": "long",
+  "format_rationale": "В/Ф: движение во времени имеет смысл показать через изменение давления по радиусу и синхронный отклик; граница не превращается в мгновенный фронт.",
+  "order_rationale": "Начинаем с раннего участка времени, пока внешняя граница не влияет на наблюдение.",
+  "essence": [
+    "В раннем окне пласт математически кажется бесконечным: граница ещё не влияет на наблюдение.",
+    "Для очень малого пласта это допущение нужно проверять особенно внимательно."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Переходный режим**: Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы. **Переходный режим** относится к короткому периоду после возмущения давления. Возмущение типично создаётся изменением дебита на стволе. Для раннего режима предполагают, что внешняя граница не влияет на отклик. Поэтому в расчёте пласт выглядит бесконечным.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c01",
+            "geo.test_dake.s5_3.02.c02",
+            "geo.test_dake.s5_3.02.c03"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c01",
+              "quote": "This condition is only applicable for a relatively short period after some pressure disturbance has been created in the reservoir",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c02",
+              "quote": "In terms of the radial flow model this disturbance would be typically caused by altering the well's production rate at $r=r_w$",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c03",
+              "quote": "In the time for which the transient condition is applicable it is assumed that the pressure response in the reservoir is not affected by the presence of the outer boundary, thus the reservoir appears infinite in extent",
+              "page": 77,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "После преднамеренной смены дебита измеряют и анализируют давление на стволе в течение нескольких часов. Для очень малого пласта допущение независимости от границы может нарушиться. И давление, и его производная по времени зависят от расстояния и времени.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c04",
+            "geo.test_dake.s5_3.02.c05",
+            "geo.test_dake.s5_3.02.c06"
+          ],
+          "pages": [
+            77
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c04",
+              "quote": "The condition is mainly applied to the analysis of well tests in which the well's production rate is deliberately changed and the resulting pressure response in the wellbore is measured and analysed during a brief period of a few hours after the rate change has occurred",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c05",
+              "quote": "Then, unless the reservoir is extremely small, the boundary effects will not be felt and the reservoir is, mathematically, infinite.",
+              "page": 77,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_3.02.c06",
+              "quote": "This gives rise to a complex solution of equ. (5.1) in which both the pressure and pressure derivative, with respect to time, are themselves functions of both position and time, thus",
+              "page": 77,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "text": "Преднамеренно изменить дебит на стволе.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c02"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Измерять давление на стволе в течение нескольких часов.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c04"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Проверить, можно ли не учитывать внешнюю границу.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c05"
+          ],
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "text": "Для раннего режима предполагают, что внешняя граница не влияет на отклик. Поэтому в расчёте пласт выглядит бесконечным.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c03"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "После преднамеренной смены дебита измеряют и анализируют давление на стволе в течение нескольких часов.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c04"
+          ],
+          "pages": [
+            77
+          ]
+        },
+        {
+          "text": "Для очень малого пласта допущение независимости от границы может нарушиться.",
+          "claim_ids": [
+            "geo.test_dake.s5_3.02.c05"
+          ],
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_3.02.f01",
+          "latex": "p = g(r,t)",
+          "meaning": "Давление в переходном режиме как функция расстояния и времени.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_04"
+        },
+        {
+          "id": "geo.test_dake.s5_3.02.f02",
+          "latex": "\\frac{\\partial p}{\\partial t} = f(r,t)",
+          "meaning": "Производная давления по времени тоже зависит от расстояния и времени.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 77,
+          "unit_id": "u077_05"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        77
+      ],
+      "data": {
+        "text": "Если в решении пласт бесконечен, то реальной границы не существует.",
+        "correction": "В раннем окне граница ещё не влияет на наблюдаемый отклик.",
+        "claim_ids": [
+          "geo.test_dake.s5_3.02.c03",
+          "geo.test_dake.s5_3.02.c05"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "В испытании намеренно меняют дебит и измеряют отклик давления в стволе в течение нескольких часов после изменения.",
+        "inputs": "Переходный режим относится к короткому периоду после возмущения давления.",
+        "outputs": "И давление, и его производная по времени зависят от расстояния и времени.",
+        "breaks_where": "Допущение неприменимо, если участок очень мал и граница влияет уже на ранний отклик.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Переходный режим относится к короткому периоду после возмущения давления.",
+          "manual_steps": "В испытании намеренно меняют дебит и измеряют отклик давления в стволе в течение нескольких часов после изменения.",
+          "judgment_points": "Допущение неприменимо, если участок очень мал и граница влияет уже на ранний отклик.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Если в решении пласт бесконечен, то реальной границы не существует.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В коротком окне локальная модель работает без описания всей системы, пока край не влияет на метрику.",
+        "breaks_where": "Речь о наблюдаемом влиянии границы, а не о волне с фиксированной скоростью.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        77
+      ],
+      "items": [
+        {
+          "term": "дебит",
+          "en": "flow rate",
+          "definition": "Объём жидкости, добываемой за единицу времени.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "переходный режим",
+          "en": "transient flow",
+          "definition": "Ранний режим в данном разборе: изменение давления ещё не зависит от внешней границы.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 77,
+          "by": "model"
+        },
+        {
+          "term": "область дренирования",
+          "en": "drainage volume",
+          "definition": "Участок пласта, с которого в данном режиме поступает жидкость к скважине.",
+          "page": 77,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Меняем дебит → Измеряем давление → Проверяем влияние границы.",
+      "alt": "Схема: Меняем дебит, затем Измеряем давление, затем Проверяем влияние границы.",
+      "file": "illustrations/geo.test_dake.s5_3.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_3.02.c03",
+        "geo.test_dake.s5_3.02.c06",
+        "geo.test_dake.s5_3.02.c04"
+      ],
+      "pages": [
+        77
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c01",
+      "kind": "observation",
+      "text": "Переходный режим относится к короткому периоду после возмущения давления.",
+      "quote": "This condition is only applicable for a relatively short period after some pressure disturbance has been created in the reservoir",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c02",
+      "kind": "observation",
+      "text": "Возмущение типично создаётся изменением дебита на стволе.",
+      "quote": "In terms of the radial flow model this disturbance would be typically caused by altering the well's production rate at $r=r_w$",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c03",
+      "kind": "assumption",
+      "text": "Пока внешняя граница не влияет на отклик, пласт математически выглядит бесконечным.",
+      "quote": "In the time for which the transient condition is applicable it is assumed that the pressure response in the reservoir is not affected by the presence of the outer boundary, thus the reservoir appears infinite in extent",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c04",
+      "kind": "observation",
+      "text": "После преднамеренной смены дебита измеряют и анализируют давление на стволе в течение нескольких часов.",
+      "quote": "The condition is mainly applied to the analysis of well tests in which the well's production rate is deliberately changed and the resulting pressure response in the wellbore is measured and analysed during a brief period of a few hours after the rate change has occurred",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c05",
+      "kind": "observation",
+      "text": "Для очень малого пласта допущение независимости от границы может нарушиться.",
+      "quote": "Then, unless the reservoir is extremely small, the boundary effects will not be felt and the reservoir is, mathematically, infinite.",
+      "page": 77,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_3.02.c06",
+      "kind": "observation",
+      "text": "И давление, и его производная по времени зависят от расстояния и времени.",
+      "quote": "This gives rise to a complex solution of equ. (5.1) in which both the pressure and pressure derivative, with respect to time, are themselves functions of both position and time, thus",
+      "page": 77,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_3.02.t01",
+    "geo.test_dake.s5_3.02.t02",
+    "geo.test_dake.s5_3.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_3.02.k01",
+    "geo.test_dake.s5_3.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_3.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "node_id": "geo.test_slatt.s9_4_1.01",
+    "format": "long",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "М",
+      "threshold": "Боковое смещение дельтовых зон оставляет вертикальную смену отложений на одном месте."
+    },
+    "video_criteria": [
+      "time_change",
+      "scale_jump",
+      "cause_effect"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "В/М: сначала показываем движение русла и бара по карте, затем читаем результат на фиксированном вертикальном разрезе."
+  },
+  {
+    "node_id": "geo.test_slatt.x1.01",
+    "format": "short",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Н",
+      "threshold": "Одинаковая порода в двух скважинах не доказывает одновременность её отложения или гидравлическую связь."
+    },
+    "video_criteria": [
+      "invisible_visible",
+      "counterintuitive"
+    ],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "П/Н: на одном разрезе переключаем способ корреляции и показываем скрытую преграду, которая разделяет пески."
+  },
+  {
+    "node_id": "geo.test_slatt.x1.02",
+    "format": "text",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "В/П: короткий переход от условного примера к датированному Меконгу; самостоятельного анимационного механизма нет."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_1.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "В",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "map_and_section",
+    "hook_only": false,
+    "rationale": "П/В: на карте и разрезе полезно самостоятельно переключить способ корреляции и проверить связь интервалов."
+  },
+  {
+    "node_id": "geo.test_slatt.x1.03",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "М",
+      "threshold": "Дельта меняет направление роста и без изменения уровня моря."
+    },
+    "video_criteria": [],
+    "scene_template": "sequence",
+    "hook_only": false,
+    "rationale": "В/М: переключатель показывает смену активного рукава отдельно от изменения относительного уровня моря."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_1.04",
+    "format": "short",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": "Широкий песчаный пояс может состоять из отдельных неоднородных тел."
+    },
+    "video_criteria": [
+      "time_change",
+      "scale_jump"
+    ],
+    "scene_template": "cross_section_evolution",
+    "hook_only": false,
+    "rationale": "В/П: компактная последовательность показывает, как ветвящиеся рукава строят широкий пояс из отдельных баров."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_1.03",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "М",
+      "threshold": "Песок в пределах одного бара неодинаков: положение и сортировка меняют проницаемость."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "Н/М: решение о расположении проницаемых песков требует сопоставить керн, измерения и аналог."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.01",
+    "format": "cards",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "М",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": null,
+    "hook_only": false,
+    "rationale": "П/М: карточки помогут различать песчаники русла и бара, фронт и продельту перед чтением разреза."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.02",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "П",
+      "secondary": "Р",
+      "threshold": "Сходные песчаники могут быть не слоями одинакового возраста, а наклонными клиньями."
+    },
+    "video_criteria": [],
+    "scene_template": "cross_section",
+    "hook_only": false,
+    "rationale": "П/Р: сравнение наложенных корреляций учит узнавать клинья и отделять их от кажущихся сплошных пластов."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_3.01",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "В",
+      "secondary": "П",
+      "threshold": "Временная корреляция раскрывает отдельные песчаные тела там, где раньше видели сплошной песчаник."
+    },
+    "video_criteria": [],
+    "scene_template": "timeline",
+    "hook_only": false,
+    "rationale": "В/П: при выборе более молодого этапа видно очередное смещение песчаного тела, а глинистая перемычка остаётся на разрезе."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.03",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "П",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Пр/П: по боковым данным выбираем, какая траектория вероятнее пересечёт нужные пески."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.04",
+    "format": "interactive",
+    "difficulty": {
+      "primary": "М",
+      "secondary": "Пр",
+      "threshold": "Глина в одном месте разделяет потоки, но в другом тот же слой может исчезнуть."
+    },
+    "video_criteria": [],
+    "scene_template": "process_chain",
+    "hook_only": false,
+    "rationale": "М/Пр: переключаем непрерывность покрышки и сравниваем пути движения воды и выбор интервала перфорации."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.06",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Н",
+      "secondary": "Р",
+      "threshold": "Управление добычей требует проверки протяжённости каждого глинистого экрана."
+    },
+    "video_criteria": [],
+    "scene_template": "decision_scale",
+    "hook_only": false,
+    "rationale": "Н/Р: по карте глин и каротажу решаем, где сохраняется разделение и где потребуется дополнительная проверка."
+  },
+  {
+    "node_id": "geo.test_slatt.s9_4_2.05",
+    "format": "data_practice",
+    "difficulty": {
+      "primary": "Пр",
+      "secondary": "Н",
+      "threshold": ""
+    },
+    "video_criteria": [],
+    "scene_template": "decision_flow",
+    "hook_only": false,
+    "rationale": "Пр/Н: сопоставляем спроектированный маршрут, продуктивную часть ствола и фактический результат, не подменяя одно другим."
+  }
+]

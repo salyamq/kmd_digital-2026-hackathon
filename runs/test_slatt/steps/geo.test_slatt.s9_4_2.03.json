@@ -1,0 +1,274 @@
+{
+  "node_id": "geo.test_slatt.s9_4_2.03",
+  "chapter": "test_slatt",
+  "index": 11,
+  "part": {
+    "id": "part3",
+    "title": "Как геология меняет решение о добыче"
+  },
+  "title_beginner": "Как выбрать траекторию скважины",
+  "title_book": "Пример коллектора: месторождение Прадхо-Бей",
+  "section": "s9_4_2",
+  "pages": [
+    417
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Пр",
+    "secondary": "П",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "data_practice",
+  "format_rationale": "Пр/П: по боковым данным выбираем, какая траектория вероятнее пересечёт нужные пески.",
+  "order_rationale": "Используем боковые изменения проницаемости для выбора траектории скважины.",
+  "essence": [
+    "Для выбора траектории нужны сведения о боковом строении бара.",
+    "В этом случае горизонтальный керн дал данные, которых не хватало вертикальным кернам."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        417
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "**траектория**: Линия движения ствола скважины в породе. **керн**: Образец породы, извлечённый при бурении. Понимание образования устьевых баров повысило извлечение в Прадхо-Бей. Горизонтальный **керн** дал боковые сведения о барах. Синусоидальная горизонтальная **траектория** могла пересечь больше высокопроницаемых отложений, чем обычная.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.03.c01",
+            "geo.test_slatt.s9_4_2.03.c02"
+          ],
+          "pages": [
+            417
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.03.c01",
+              "quote": "Insights gained into the formation of distributary mouth bars have led to improved recovery in the Prudhoe Bay field",
+              "page": 417,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.s9_4_2.03.c02",
+              "quote": "Detailed information on the lateral attributes of the mouth bars (including permeability), gained from the horizontal, cored well rather than from interpretations of standard vertical cores, provided the knowledge that a sinusoidal, horizontal well path would contact more high-permeability lithofacies than would a conventional well",
+              "page": 417,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Как действовали в примере",
+      "pages": [
+        417
+      ],
+      "items": [
+        {
+          "text": "Изучить боковое распределение пород по горизонтальному керну.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.03.c02"
+          ],
+          "pages": [
+            417
+          ]
+        },
+        {
+          "text": "Выбрать траекторию, пересекающую больше высокопроницаемых отложений.",
+          "claim_ids": [
+            "geo.test_slatt.s9_4_2.03.c02"
+          ],
+          "pages": [
+            417
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        417
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Боковые данные из керна",
+          "Выбор траектории"
+        ],
+        "rule": "Для выбора траектории нужны сведения о боковом строении бара.",
+        "conclusion": "В этом случае горизонтальный керн дал данные, которых не хватало вертикальным кернам.",
+        "claim_ids": [
+          "geo.test_slatt.s9_4_2.03.c02"
+        ],
+        "cases": [
+          {
+            "given": "Что изменили, чтобы встретить больше проницаемых отложений?",
+            "options": [
+              "Отказались от боковых наблюдений",
+              "Полностью перешли на вертикальное бурение",
+              "Горизонтальную траекторию сделали синусоидальной"
+            ],
+            "answer": 2,
+            "why": "Изгиб траектории отвечает конкретной геометрии бара.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Боковое распределение пород и проницаемости изучают по керну горизонтальной скважины и учитывают при выборе траектории.",
+        "inputs": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+        "outputs": "Горизонтальный керн дал боковые сведения о барах; синусоидальная горизонтальная траектория могла пересечь больше высокопроницаемых отложений, чем обычная.",
+        "breaks_where": "Вывод о синусоидальной траектории относится к геометрии этого примера; стандартные вертикальные керны не дали ту же информацию по всей длине бара.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+          "manual_steps": "Боковое распределение пород и проницаемости изучают по керну горизонтальной скважины и учитывают при выборе траектории.",
+          "judgment_points": "Вывод о синусоидальной траектории относится к геометрии этого примера; стандартные вертикальные керны не дали ту же информацию по всей длине бара.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Перенести наблюдение из конкретного примера на всё месторождение без проверки.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Выбор пути в пространстве с неодинаковым качеством данных: оптимальный маршрут пересекает больше целевых областей.",
+        "breaks_where": "Пробуренный путь нельзя мгновенно изменить, а свойства породы известны неполно.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        417
+      ],
+      "items": [
+        {
+          "term": "траектория",
+          "definition": "Линия движения ствола скважины в породе",
+          "en": "well path",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "керн",
+          "definition": "Образец породы, извлечённый при бурении",
+          "en": "core",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "устьевой бар",
+          "definition": "Тело осадков у выхода рукава",
+          "en": "mouth bar",
+          "page": 417,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "definition": "Способность породы пропускать флюид",
+          "en": "permeability",
+          "page": 417,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Боковые данные из керна → Выбор траектории → Больше проницаемых песков.",
+      "alt": "Схема показывает цепочку: Боковые данные из керна, затем Выбор траектории, затем Больше проницаемых песков.",
+      "file": "illustrations/geo.test_slatt.s9_4_2.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.s9_4_2.03.c02"
+      ],
+      "pages": [
+        417
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.03.c01",
+      "kind": "observation",
+      "text": "Понимание образования устьевых баров повысило извлечение в Прадхо-Бей.",
+      "quote": "Insights gained into the formation of distributary mouth bars have led to improved recovery in the Prudhoe Bay field",
+      "page": 417,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_2.03.c02",
+      "kind": "observation",
+      "text": "Горизонтальный керн дал боковые сведения о барах; синусоидальная горизонтальная траектория могла пересечь больше высокопроницаемых отложений, чем обычная.",
+      "quote": "Detailed information on the lateral attributes of the mouth bars (including permeability), gained from the horizontal, cored well rather than from interpretations of standard vertical cores, provided the knowledge that a sinusoidal, horizontal well path would contact more high-permeability lithofacies than would a conventional well",
+      "page": 417,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.s9_4_2.03.t01",
+    "geo.test_slatt.s9_4_2.03.t02",
+    "geo.test_slatt.s9_4_2.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.s9_4_2.03.k01",
+    "geo.test_slatt.s9_4_2.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.03",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_slatt.s9_4_2.02",
+      "type": "to_data"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

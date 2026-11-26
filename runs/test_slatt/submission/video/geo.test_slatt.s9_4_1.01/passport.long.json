@@ -1,0 +1,741 @@
+{
+  "video_id": "long",
+  "node_id": "geo.test_slatt.s9_4_1.01",
+  "node_card": {
+    "node_id": "geo.test_slatt.s9_4_1.01",
+    "title": "Как дельта растёт в море",
+    "difficulty_types": [
+      "в",
+      "м"
+    ],
+    "misconception_fixed": {
+      "wrong": "Весь песок дельты образует сплошной пласт, а укрупнение вверх означает усиление течения во всех рукавах.",
+      "right": "Песок концентрируется в руслах и на барах, разделённых другими отложениями. Вертикальную смену можно связать с продвижением зон, а не с усилением потока повсюду.",
+      "claim_id": "geo.test_slatt.s9_4_1.01.c03",
+      "page": null,
+      "quote": null
+    },
+    "lang": "ru",
+    "source": {
+      "title": "Clinoforms; river-dominated delta deposits and reservoirs",
+      "book": "Stratigraphic Reservoir Characterization for Petroleum Geologists, Geophysicists, and Engineers",
+      "chapter": "test_slatt",
+      "pages": [
+        411,
+        413,
+        414,
+        415
+      ]
+    },
+    "node_file_sha1": "1cd0e6bff56cedd0"
+  },
+  "script": [
+    {
+      "id": "L1",
+      "role": "hook",
+      "text": "Как *дельта* строит берег?",
+      "t0": 0.25,
+      "t1": 1.819,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 0.25,
+      "t_end": 1.819,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L2",
+      "role": "prediction",
+      "text": "Представьте точку на морском дне перед устьем. Река приносит осадок, и дельта приближается. Какую последовательность вы ожидаете увидеть в этой точке: *мелкое под крупным* или крупное под мелким?",
+      "t0": 2.039,
+      "t1": 14.92,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 2.039,
+      "t_end": 14.92,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L3",
+      "role": "reveal",
+      "text": "Для устьевого бара характерно *укрупнение вверх*: в вертикальном разрезе более крупный материал лежит поверх более мелкого. Проследим, как боковое движение бара превращается в вертикальную последовательность слоёв.",
+      "t0": 15.55,
+      "t1": 28.499,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c10",
+          "page": 413,
+          "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c15",
+          "page": 415,
+          "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c17",
+          "page": 415,
+          "quote": "Generalized vertical profile through a channel-mouth-bar sand body"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 15.55,
+      "t_end": 28.499,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c10",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c10",
+        "geo.test_slatt.s9_4_1.01#c15",
+        "geo.test_slatt.s9_4_1.01#c17"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L4",
+      "role": "mechanism",
+      "text": "Начнём с карты. В *распределительных руслах* река расходится на рукава. Песок накапливается в самих руслах и у их выхода в воду. Песчаное тело у выхода рукава называют *устьевым баром*.",
+      "t0": 29.117,
+      "t1": 43.073,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c07",
+          "page": 411,
+          "quote": "The main facies of a river-dominated delta, and their distribution in space, are shown in Fig. 9.14"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c08",
+          "page": 411,
+          "quote": "Sandy reservoir facies are deposits of distributary channels and distributary mouth-bars"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c15",
+          "page": 415,
+          "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 29.117,
+      "t_end": 43.073,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c07",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c07",
+        "geo.test_slatt.s9_4_1.01#c08",
+        "geo.test_slatt.s9_4_1.01#c15"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L5",
+      "role": "mechanism",
+      "text": "Дельта Миссисипи — пример берега, где волны и течения не разносят осадок вдоль побережья. Пока есть место между морским дном и поверхностью воды, новые отложения наращивают дельту в сторону моря. Это *проградация*.",
+      "t0": 43.683,
+      "t1": 58.109,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c01",
+          "page": 411,
+          "quote": "The Mississippi River Delta (Fig. 9.13) has long been considered the “type” river-dominated delta (Fig. 9.5)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c02",
+          "page": 411,
+          "quote": "Strong waves and currents do not impinge upon its protected shoreline, so sediment deposited at and near the shore zone is not reworked or dispersed laterally (Figs. 9.4 and 9.7)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c03",
+          "page": 411,
+          "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 43.683,
+      "t_end": 58.109,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c01",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c01",
+        "geo.test_slatt.s9_4_1.01#c02",
+        "geo.test_slatt.s9_4_1.01#c03"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L6",
+      "role": "mechanism",
+      "text": "Теперь смотрим сбоку и не двигаем точку наблюдения. Сперва она находится перед баром, и здесь откладывается более *мелкий осадок*. Когда бар выдвигается и доходит до этой точки, поверх мелкого осадка накапливается более крупный. Поэтому след движения вбок читается снизу вверх.",
+      "t0": 58.717,
+      "t1": 77.933,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c03",
+          "page": 411,
+          "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c10",
+          "page": 413,
+          "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c15",
+          "page": 415,
+          "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c17",
+          "page": 415,
+          "quote": "Generalized vertical profile through a channel-mouth-bar sand body"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 58.717,
+      "t_end": 77.933,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c03",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c03",
+        "geo.test_slatt.s9_4_1.01#c10",
+        "geo.test_slatt.s9_4_1.01#c15",
+        "geo.test_slatt.s9_4_1.01#c17"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L7",
+      "role": "mechanism",
+      "text": "Накопление осадка постепенно делает воду мельче. Тогда питающее русло может *переключиться* и направить поток к более глубокому участку. Дельта растёт не обязательно всё время в одном направлении.",
+      "t0": 78.55,
+      "t1": 91.636,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c05",
+          "page": 411,
+          "quote": "However, over time, progradation and vertical aggradation lead to a progressive shallowing of the water depth, to the point at which the main river(s) feeding sediment to its delta will shift toward deeper water (toward lower points on the seafloor), thereby causing the distributary-channel switching discussed earlier (Fig. 9.11)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c12",
+          "page": 413,
+          "quote": "Model of delta distributary channel switching from a common apex to different orientations and locations on the delta"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c13",
+          "page": 413,
+          "quote": "Growth patterns of the Mississippi River Delta's lobes during the past 4600 years"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 78.55,
+      "t_end": 91.636,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c05",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c05",
+        "geo.test_slatt.s9_4_1.01#c12",
+        "geo.test_slatt.s9_4_1.01#c13"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L8",
+      "role": "data",
+      "text": "В *керне*, то есть в образце породы из скважины, смотрят на размер зёрен и строение осадка. По каротажу, измерениям вдоль ствола, проверяют и боковое изменение: вдали от оси русла отложения становятся тоньше и мельче.",
+      "t0": 92.25,
+      "t1": 106.173,
+      "sources": [
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c10",
+          "page": 413,
+          "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)"
+        },
+        {
+          "type": "claim",
+          "claim_id": "geo.test_slatt.s9_4_1.01.c11",
+          "page": 413,
+          "quote": "In the subsurface, these same features can be identified in cores and on well logs, including a lateral thinning and fining log response away from the channel axis (Fig. 9.15)"
+        }
+      ],
+      "asserts_fact": true,
+      "t_start": 92.25,
+      "t_end": 106.173,
+      "claim_id": "geo.test_slatt.s9_4_1.01#c10",
+      "claim_ids": [
+        "geo.test_slatt.s9_4_1.01#c10",
+        "geo.test_slatt.s9_4_1.01#c11"
+      ],
+      "on_screen": ""
+    },
+    {
+      "id": "L9",
+      "role": "bridge",
+      "text": "Если вы размечаете скважинные данные, попробуйте сначала отделить вертикальный тренд от бокового. Рабочая *гипотеза*: сходный тренд полезно проверить по соседнему разрезу, прежде чем размечать границу устьевого бара.",
+      "t0": 106.393,
+      "t1": 119.975,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 106.393,
+      "t_end": 119.975,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    },
+    {
+      "id": "L10",
+      "role": "transfer",
+      "text": "А если верхний песок есть в одной скважине, но почти исчезает в соседней, что вы проверите: *положение относительно оси русла* или только порядок слоёв?",
+      "t0": 120.195,
+      "t1": 128.912,
+      "sources": [],
+      "asserts_fact": false,
+      "t_start": 120.195,
+      "t_end": 128.912,
+      "claim_id": null,
+      "claim_ids": [],
+      "on_screen": ""
+    }
+  ],
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c10",
+      "page_or_dataset": "413",
+      "quote": "facies can be recognized in outcrop by facies relationships and by a distinctive coarsening-upward grain size with a characteristic assemblage of sedimentary structures (Fig. 9.15)"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c15",
+      "page_or_dataset": "415",
+      "quote": "Schematic facies cross-sections of a progradational channel mouth bar and distributary-channel-fill sand bodies of an elongate, fluvially dominated delta lobe"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c17",
+      "page_or_dataset": "415",
+      "quote": "Generalized vertical profile through a channel-mouth-bar sand body"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c07",
+      "page_or_dataset": "411",
+      "quote": "The main facies of a river-dominated delta, and their distribution in space, are shown in Fig. 9.14"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c08",
+      "page_or_dataset": "411",
+      "quote": "Sandy reservoir facies are deposits of distributary channels and distributary mouth-bars"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c01",
+      "page_or_dataset": "411",
+      "quote": "The Mississippi River Delta (Fig. 9.13) has long been considered the “type” river-dominated delta (Fig. 9.5)"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c02",
+      "page_or_dataset": "411",
+      "quote": "Strong waves and currents do not impinge upon its protected shoreline, so sediment deposited at and near the shore zone is not reworked or dispersed laterally (Figs. 9.4 and 9.7)"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c03",
+      "page_or_dataset": "411",
+      "quote": "With time and sufficient accommodation space between the sea surface and seafloor to accept sediment, such a delta will prograde seaward (Fig. 9.9), as will the delta zones (Fig. 9.7)"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c05",
+      "page_or_dataset": "411",
+      "quote": "However, over time, progradation and vertical aggradation lead to a progressive shallowing of the water depth, to the point at which the main river(s) feeding sediment to its delta will shift toward deeper water (toward lower points on the seafloor), thereby causing the distributary-channel switching discussed earlier (Fig. 9.11)"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c12",
+      "page_or_dataset": "413",
+      "quote": "Model of delta distributary channel switching from a common apex to different orientations and locations on the delta"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c13",
+      "page_or_dataset": "413",
+      "quote": "Growth patterns of the Mississippi River Delta's lobes during the past 4600 years"
+    },
+    {
+      "claim_id": "geo.test_slatt.s9_4_1.01#c11",
+      "page_or_dataset": "413",
+      "quote": "In the subsurface, these same features can be identified in cores and on well logs, including a lateral thinning and fining log response away from the channel axis (Fig. 9.15)"
+    }
+  ],
+  "scene_spec": "passport.long.scenes.json",
+  "frames": [
+    {
+      "shot": "S1",
+      "t0": 0.0,
+      "t1": 15.3,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 0.0,
+      "label": "схема"
+    },
+    {
+      "shot": "S2",
+      "t0": 15.3,
+      "t1": 28.867,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 15.3,
+      "label": "схема"
+    },
+    {
+      "shot": "S3",
+      "t0": 28.867,
+      "t1": 43.433,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 28.867,
+      "label": "схема"
+    },
+    {
+      "shot": "S4",
+      "t0": 43.433,
+      "t1": 58.467,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 43.433,
+      "label": "схема"
+    },
+    {
+      "shot": "S5",
+      "t0": 58.467,
+      "t1": 78.3,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 58.467,
+      "label": "схема"
+    },
+    {
+      "shot": "S6",
+      "t0": 78.3,
+      "t1": 92.0,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 78.3,
+      "label": "схема"
+    },
+    {
+      "shot": "S7",
+      "t0": 92.0,
+      "t1": 129.267,
+      "class": "B",
+      "template": "overlay_card",
+      "method": "render2d (Cairo draw-list)",
+      "provenance_label": "схема",
+      "state_model": null,
+      "ai": null,
+      "t": 92.0,
+      "label": "схема"
+    }
+  ],
+  "physics_checklist": [
+    {
+      "item": "Море справа; показан ранний этап роста.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Более мелкий осадок находится снизу.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Карта условная, это не вертикальный разрез. Бары показаны у выходов рукавов.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Линия отсчёта фиксирована; море справа; перед баром лежит более мелкий осадок.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Линия отсчёта на том же месте, что и ранее; мелкий осадок не перемещается вместе с баром.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Вид сверху; направление потока изменилось, отложения прежних рукавов остались.",
+      "answer": "н/п"
+    },
+    {
+      "item": "Схема разрезов, не реальные каротажи; глубина растёт вниз; вдали от оси песчаная часть тоньше и мельче.",
+      "answer": "н/п"
+    }
+  ],
+  "audio_check": {
+    "person_minutes": 0.0,
+    "machine_minutes": 10.67,
+    "machine_seconds_by_stage": {
+      "script": 0.03,
+      "shotlist": 0.41,
+      "specs": 0.41,
+      "models": 0.0,
+      "audio": 83.9,
+      "layout": 0.06,
+      "render": 218.33,
+      "overlays": 0.01,
+      "compose": 336.85,
+      "qa": 0.03
+    },
+    "money_usd": 0,
+    "money_by_currency": {},
+    "tts_chars": 1870,
+    "tts_audio_s": 124.3,
+    "money_note": "some external calls have unknown cost",
+    "cost_per_minute_usd": 0.0,
+    "manual_share": 0.0,
+    "mentor_minutes": 0.0,
+    "external_calls": [
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T05:56:58"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "script",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T05:57:49"
+      },
+      {
+        "kind": "llm",
+        "provider": "kmd",
+        "model": "kmd",
+        "stage": "shots",
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "wall_s": 0.0,
+        "ts": "2026-11-26T05:57:49"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 24,
+        "audio_s": 1.569,
+        "stage": "audio",
+        "line": "L1",
+        "ts": "2026-11-26T05:57:52"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 193,
+        "audio_s": 12.881458333333333,
+        "stage": "audio",
+        "line": "L2",
+        "ts": "2026-11-26T05:58:00"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 212,
+        "audio_s": 12.948833333333333,
+        "stage": "audio",
+        "line": "L3",
+        "ts": "2026-11-26T05:58:06"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 181,
+        "audio_s": 13.955916666666667,
+        "stage": "audio",
+        "line": "L4",
+        "ts": "2026-11-26T05:58:18"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 212,
+        "audio_s": 14.426125,
+        "stage": "audio",
+        "line": "L5",
+        "ts": "2026-11-26T05:58:23"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 275,
+        "audio_s": 19.216333333333335,
+        "stage": "audio",
+        "line": "L6",
+        "ts": "2026-11-26T05:58:40"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 194,
+        "audio_s": 13.086083333333333,
+        "stage": "audio",
+        "line": "L7",
+        "ts": "2026-11-26T05:58:50"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 215,
+        "audio_s": 13.922625,
+        "stage": "audio",
+        "line": "L8",
+        "ts": "2026-11-26T05:58:59"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 214,
+        "audio_s": 13.581791666666666,
+        "stage": "audio",
+        "line": "L9",
+        "ts": "2026-11-26T05:59:07"
+      },
+      {
+        "kind": "tts",
+        "provider": "microsoft",
+        "chars": 150,
+        "audio_s": 8.7175,
+        "stage": "audio",
+        "line": "L10",
+        "ts": "2026-11-26T05:59:13"
+      }
+    ],
+    "asr_model": "faster-whisper medium (int8, CPU, local)",
+    "wer": 0.0519,
+    "wer_stem": 0.0296,
+    "ref_words": 270,
+    "heard_text": "Как дельта строит берег, представьте точку на морском дне перед устьем. Река приносит осадок и дельта приближается. Какую последовательность вы ожидаете увидеть в этой точке, мелкая под крупным или крупная под мелким? Для устьевого бара характерно укрупнение вверх, в вертикальном разрезе более крупный материал лежит поверх более мелкого. Проследим, как боковое движение бара превращается в вертикальную последовательность слоев. Начнем с карты. В распределительных руслах река расходится на рукава. Песок накапливается в самих руслах и у их выхода в воду. Песчаное тело у выхода рукава называют устьевым баром. Дельта Миссисипи – пример берега, где волны и течение не разносят осадок вдоль побережья. Пока есть место между морским дном и поверхности воды, новые отложения наращивают дельту в сторону моря. Это проградация. Теперь смотрим сбоку и не двигаем точку наблюдения. Сперва она находится перед баром и здесь откладывается более мелкий осадок. Когда бар выдвигается и доходит до этой точки, поверх мелкого осадка накапливается более крупный. Поэтому след движения в бок читается снизу вверх. Накопление осадка постепенно делает воду мельче. Тогда питающее русло может переключиться и направить поток к более глубокому участку. Дельта растет не обязательно все время в одном направлении. В керне, то есть в образце породы и скважины, смотрят на размер зерен и строение осадка. По коротажу, измерением вдоль ствола, прогреют и боковое изменение, вдали от оси русло отложения становится тоньше и мельче. Если вы размечаете скваженные данные, попробуйте сначала отделить вертикальный тренд от бокового. Рабочая гипотеза, сходный тренд полезно проверить по соседнему разрезу, прежде чем размечать границу устьевого бара. А если верхний песок есть в одной скважине, но почти исчезает с соседней, что вы проверите положение относительно оси русла или только порядок слоев?",
+    "terms": [
+      {
+        "term": "проградация",
+        "ok": true
+      },
+      {
+        "term": "керн",
+        "ok": true
+      },
+      {
+        "term": "каротаж",
+        "ok": false
+      }
+    ],
+    "terms_ok": false,
+    "sync_max_s": 0.25,
+    "sync_mean_s": 0.118,
+    "sync_per_phrase": [
+      {
+        "id": "L1",
+        "heard_start": 0.0,
+        "offset": -0.25
+      },
+      {
+        "id": "L2",
+        "heard_start": 2.24,
+        "offset": 0.2
+      },
+      {
+        "id": "L3",
+        "heard_start": 15.64,
+        "offset": 0.09
+      },
+      {
+        "id": "L4",
+        "heard_start": 29.28,
+        "offset": 0.16
+      },
+      {
+        "id": "L5",
+        "heard_start": 43.88,
+        "offset": 0.2
+      },
+      {
+        "id": "L6",
+        "heard_start": 58.74,
+        "offset": 0.02
+      },
+      {
+        "id": "L7",
+        "heard_start": 78.68,
+        "offset": 0.13
+      },
+      {
+        "id": "L8",
+        "heard_start": 92.26,
+        "offset": 0.01
+      },
+      {
+        "id": "L9",
+        "heard_start": 106.48,
+        "offset": 0.09
+      },
+      {
+        "id": "L10",
+        "heard_start": 120.22,
+        "offset": 0.03
+      }
+    ],
+    "voice": {
+      "provider": "microsoft",
+      "voice": "ru-RU-DmitryNeural",
+      "role": null,
+      "speed": null,
+      "rate": null,
+      "numbers": "words"
+    }
+  },
+  "exaggerations": [
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости.",
+    "Схематические контуры и условные пропорции для читаемости."
+  ],
+  "prediction_question": "Что окажется внизу, если устьевой бар надвинется на точку?",
+  "transfer_question": "А если верхний песок есть в одной скважине, но почти исчезает в соседней, что вы проверите: *положение относительно оси русла* или только порядок слоёв?",
+  "data_it_bridge": "Вертикальные тренды в керне и каротаже, боковые изменения толщины и зернистости по соседним скважинам. Различить изменение по глубине и вбок, затем сопоставить положение разрезов. Сходный тренд стоит проверить по соседнему разрезу, прежде чем размечать границу бара."
+}

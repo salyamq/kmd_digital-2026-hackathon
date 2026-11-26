@@ -1,0 +1,373 @@
+{
+  "node_id": "geo.test_dake.s5_2.01",
+  "chapter": "test_dake",
+  "index": 1,
+  "part": {
+    "id": "part1",
+    "title": "Как составить уравнение радиального потока"
+  },
+  "title_beginner": "Когда поток можно считать радиальным",
+  "title_book": "Вывод основного дифференциального уравнения радиального потока",
+  "section": "s5_2",
+  "pages": [
+    75,
+    76
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "П",
+    "secondary": "Ф",
+    "threshold": ""
+  },
+  "threshold": "",
+  "format": "interactive",
+  "format_rationale": "П/Ф: разрез помогает понять вскрытие всей толщины и проверить предпосылки радиальной симметрии.",
+  "order_rationale": "Сначала вводим геометрию ствола, толщину вскрытия и симметрию потока.",
+  "essence": [
+    "У ствола скважины поток можно описывать в радиальной геометрии — отложив расстояние от его оси.",
+    "Это отдельное приближение, даже если модель всего пласта использует прямоугольную сетку."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        75,
+        76
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Радиальная форма описывает окрестность скважины. Решения с разными граничными и начальными условиями нужны для испытаний и расчёта притока.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c01",
+            "geo.test_dake.s5_2.01.c02"
+          ],
+          "pages": [
+            75
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c01",
+              "quote": "The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well",
+              "page": 75,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c02",
+              "quote": "Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering",
+              "page": 75,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Аналитические картезианские решения автор считает менее полезными для промысловой практики. При численном моделировании чаще используют прямоугольную сетку. Приток в ствол или из него всё равно описывают радиальными уравнениями.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c03",
+            "geo.test_dake.s5_2.01.c04"
+          ],
+          "pages": [
+            75
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c03",
+              "quote": "This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers",
+              "page": 75,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c04",
+              "quote": "In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters",
+              "page": 75,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "**Проницаемость**: Способность породы пропускать жидкость или газ. В исходной модели свойства породы считают однородными. **Проницаемость** принимают одинаковой по всем направлениям. Скважину считают открытой на всю толщину пласта. Это обеспечивает радиальную геометрию. Предполагают, что поры полностью заняты одной фазой.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c05",
+            "geo.test_dake.s5_2.01.c06",
+            "geo.test_dake.s5_2.01.c07"
+          ],
+          "pages": [
+            75,
+            76
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c05",
+              "quote": "The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.",
+              "page": 75,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c06",
+              "quote": "The producing well is completed across the entire formation thickness thus ensuring fully radial flow.",
+              "page": 75,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_2.01.c07",
+              "quote": "The formation is completely saturated with a single fluid.",
+              "page": 76,
+              "kind": "assumption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        75,
+        76
+      ],
+      "items": [
+        {
+          "text": "В исходной модели свойства породы считают однородными. Проницаемость принимают одинаковой по всем направлениям.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c05"
+          ],
+          "pages": [
+            75
+          ]
+        },
+        {
+          "text": "Скважину считают открытой на всю толщину пласта. Это обеспечивает радиальную геометрию.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c06"
+          ],
+          "pages": [
+            75
+          ]
+        },
+        {
+          "text": "Предполагают, что поры полностью заняты одной фазой.",
+          "claim_ids": [
+            "geo.test_dake.s5_2.01.c07"
+          ],
+          "pages": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Радиальную геометрию применяют для расчёта притока и интерпретации испытаний около ствола, в том числе как скважинное подусловие сеточной модели.",
+        "inputs": "Радиальная форма описывает окрестность скважины.",
+        "outputs": "Пласт полностью насыщен одной фазой.",
+        "breaks_where": "Картезианская сетка численной модели и закон притока около ствола не обязаны иметь одну геометрию.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Радиальная форма описывает окрестность скважины.",
+          "manual_steps": "Радиальную геометрию применяют для расчёта притока и интерпретации испытаний около ствола, в том числе как скважинное подусловие сеточной модели.",
+          "judgment_points": "Картезианская сетка численной модели и закон притока около ствола не обязаны иметь одну геометрию.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Прямоугольная сетка сервиса может пользоваться отдельной локальной моделью узла.",
+        "breaks_where": "Радиальную симметрию здесь задают физические допущения о пласте и скважине.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        76
+      ],
+      "items": [
+        {
+          "number": "5.1",
+          "page": 76,
+          "caption": "Fig. 5.1 Radial flow of a single phase fluid in the vicinity of a producing well.",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u076_02",
+          "scan": "pages/p76.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        75
+      ],
+      "items": [
+        {
+          "term": "радиальный поток",
+          "en": "radial flow",
+          "definition": "Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "изотропия",
+          "en": "isotropy",
+          "definition": "Свойство не меняется с направлением.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "en": "permeability",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "граничное условие",
+          "en": "boundary condition",
+          "definition": "Правило на краю области: например, запрет на переток или заданное давление.",
+          "page": 75,
+          "by": "model"
+        },
+        {
+          "term": "начальное условие",
+          "en": "initial condition",
+          "definition": "Распределение давления в момент начала расчёта.",
+          "page": 75,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Однородный пласт → Вскрытие всей толщины → Радиальная модель притока.",
+      "alt": "Схема: Однородный пласт, затем Вскрытие всей толщины, затем Радиальная модель притока.",
+      "file": "illustrations/geo.test_dake.s5_2.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_2.01.c04",
+        "geo.test_dake.s5_2.01.c05",
+        "geo.test_dake.s5_2.01.c06"
+      ],
+      "pages": [
+        75
+      ],
+      "after_block": "how-3",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c01",
+      "kind": "observation",
+      "text": "Радиальная форма описывает окрестность скважины.",
+      "quote": "The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c02",
+      "kind": "observation",
+      "text": "Решения с разными граничными и начальными условиями нужны для испытаний и расчёта притока.",
+      "quote": "Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c03",
+      "kind": "observation",
+      "text": "Аналитические картезианские решения автор считает менее полезными для промысловой практики.",
+      "quote": "This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c04",
+      "kind": "observation",
+      "text": "В численном моделировании чаще применяют картезианские координаты, но в ствол или из него поток регулируется радиальными уравнениями.",
+      "quote": "In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c05",
+      "kind": "assumption",
+      "text": "Свойства породы однородны, проницаемость изотропна.",
+      "quote": "The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c06",
+      "kind": "assumption",
+      "text": "Скважина открыта на всю толщину, чтобы поток был радиальным.",
+      "quote": "The producing well is completed across the entire formation thickness thus ensuring fully radial flow.",
+      "page": 75,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_2.01.c07",
+      "kind": "assumption",
+      "text": "Пласт полностью насыщен одной фазой.",
+      "quote": "The formation is completely saturated with a single fluid.",
+      "page": 76,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_2.01.t01",
+    "geo.test_dake.s5_2.01.t02",
+    "geo.test_dake.s5_2.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_2.01.k01",
+    "geo.test_dake.s5_2.01.k02"
+  ],
+  "links": [],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

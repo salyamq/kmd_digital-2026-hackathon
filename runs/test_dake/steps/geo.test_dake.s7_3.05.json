@@ -1,0 +1,514 @@
+{
+  "node_id": "geo.test_dake.s7_3.05",
+  "chapter": "test_dake",
+  "index": 19,
+  "part": {
+    "id": "part4",
+    "title": "Как рассчитать ранний отклик"
+  },
+  "title_beginner": "Когда интеграл заменяют логарифмом",
+  "title_book": "Решение для постоянного дебита при переходном и псевдоустановившемся течении",
+  "section": "s7_3",
+  "pages": [
+    88,
+    89
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Р",
+    "threshold": "Логарифмическая форма — приближение с областью применимости, а не другое имя полного интеграла."
+  },
+  "threshold": "Логарифмическая форма — приближение с областью применимости, а не другое имя полного интеграла.",
+  "format": "interactive",
+  "format_rationale": "Ф/Р: на графике двух выражений важно самому найти диапазон малого x, а не запомнить вид формулы.",
+  "order_rationale": "Выясняем, когда интеграл в решении можно заменить логарифмом.",
+  "essence": [
+    "Экспоненциальный интеграл можно заменить логарифмом только при малом безразмерном аргументе.",
+    "Иначе остаётся полная функция, площадь под кривой от аргумента до бесконечности."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        88,
+        89
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "Автор обозначает интеграл величины exp(−s)/s от x до бесконечности как ei(x). При малом x интеграл охватывает большую площадь. При большом x остаётся меньшая площадь. Функцию обычно представляют на осях с логарифмическими шкалами.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c01",
+            "geo.test_dake.s7_3.05.c02",
+            "geo.test_dake.s7_3.05.c03"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c01",
+              "quote": "is a standard integral, called the exponential integral, and is denoted by ei(x).",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c02",
+              "quote": "Thus ei (x) is large for small values of x, since the ei-function is the area under the graph from the particular value of x out to infinity (i.e. the shaded area in curve (c) of fig. 7.2) and, conversely, small for large values of x.",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c03",
+              "quote": "The ei-function is normally plotted on a log-log scale and such a version is included as fig. 7.3.",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "Автор использует логарифмическое приближение, если x < 0,01. В исходной форме приближения из отрицательного логарифма x вычитают 0,5772.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c04",
+            "geo.test_dake.s7_3.05.c05"
+          ],
+          "pages": [
+            88
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c04",
+              "quote": "From this curve it can be seen that if x < 0.01, ei (x) can be approximated as",
+              "page": 88,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c05",
+              "quote": "$$ei(x) \\approx - \\ln x - 0.5772 \\tag{7.8}$$",
+              "page": 88,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Число 0,5772 — постоянная Эйлера. Автор выделяет её экспоненту. Экспоненту постоянной обозначают γ. Формула даёт значение 1,781. Приближение можно записать как минус логарифм произведения γ и x.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c06",
+            "geo.test_dake.s7_3.05.c07",
+            "geo.test_dake.s7_3.05.c08"
+          ],
+          "pages": [
+            89
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c06",
+              "quote": "where the number 0.5772 is Euler's constant, the exponential of which is denoted by",
+              "page": 89,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c07",
+              "quote": "where the number 0.5772 is Euler's constant, the exponential of which is denoted by",
+              "page": 89,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s7_3.05.c08",
+              "quote": "$$ei(x) \\approx - \\ln (\\gamma x)$$",
+              "page": 89,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        88,
+        89
+      ],
+      "items": [
+        {
+          "text": "Автор использует логарифмическое приближение, если x < 0,01.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c04"
+          ],
+          "pages": [
+            88
+          ]
+        },
+        {
+          "text": "В исходной форме приближения из отрицательного логарифма x вычитают 0,5772.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c05"
+          ],
+          "pages": [
+            88
+          ]
+        },
+        {
+          "text": "Экспоненту постоянной обозначают γ. Формула даёт значение 1,781.",
+          "claim_ids": [
+            "geo.test_dake.s7_3.05.c07"
+          ],
+          "pages": [
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        88,
+        89
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s7_3.05.f01",
+          "latex": "\\int_{x}^{\\infty} \\frac{e^{-s}}{s} ds = \\int_{x}^{\\infty} \\frac{e^{-s}}{s} ds \\quad x = \\frac{\\phi \\mu c r^2}{4kt}",
+          "meaning": "Экспоненциальный интеграл с текущим нижним пределом.",
+          "vars": [
+            {
+              "symbol": "s",
+              "meaning": "безразмерная переменная подобия или переменная интегрирования",
+              "unit": null
+            },
+            {
+              "symbol": "x",
+              "meaning": "значение безразмерной переменной на текущем времени",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_31"
+        },
+        {
+          "id": "geo.test_dake.s7_3.05.f02",
+          "latex": "ei(x) \\approx - \\ln x - 0.5772",
+          "meaning": "Логарифмическое приближение с постоянной Эйлера.",
+          "vars": [
+            {
+              "symbol": "x",
+              "meaning": "значение безразмерной переменной на текущем времени",
+              "unit": null
+            }
+          ],
+          "page": 88,
+          "unit_id": "u088_35"
+        },
+        {
+          "id": "geo.test_dake.s7_3.05.f03",
+          "latex": "\\gamma = e^{0.5772} = 1.781",
+          "meaning": "Экспонента от постоянной Эйлера с авторским округлением.",
+          "vars": [
+            {
+              "symbol": "\\gamma",
+              "meaning": "экспонента от постоянной Эйлера",
+              "unit": null
+            }
+          ],
+          "page": 89,
+          "unit_id": "u089_03"
+        },
+        {
+          "id": "geo.test_dake.s7_3.05.f04",
+          "latex": "ei(x) \\approx - \\ln (\\gamma x)",
+          "meaning": "Компактная запись логарифмического приближения.",
+          "vars": [
+            {
+              "symbol": "x",
+              "meaning": "значение безразмерной переменной на текущем времени",
+              "unit": null
+            },
+            {
+              "symbol": "\\gamma",
+              "meaning": "экспонента от постоянной Эйлера",
+              "unit": null
+            }
+          ],
+          "page": 89,
+          "unit_id": "u089_05"
+        },
+        {
+          "id": "geo.test_dake.s7_3.05.f05",
+          "latex": "\\text{for } x < 0.01",
+          "meaning": "Область допустимости указанного приближения.",
+          "vars": [
+            {
+              "symbol": "x",
+              "meaning": "значение безразмерной переменной на текущем времени",
+              "unit": null
+            }
+          ],
+          "page": 89,
+          "unit_id": "u089_06"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        88,
+        89
+      ],
+      "data": {
+        "text": "Экспоненциальный интеграл можно всегда заменить логарифмом.",
+        "correction": "У автора это приближение применяется при x < 0.01.",
+        "claim_ids": [
+          "geo.test_dake.s7_3.05.c03",
+          "geo.test_dake.s7_3.05.c04",
+          "geo.test_dake.s7_3.05.c08"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сначала находят безразмерный x. Сверяют его с областью применимости, затем при малом x можно заменить полный интеграл логарифмом.",
+        "inputs": "Автор обозначает интеграл величины exp(−s)/s от x до бесконечности как ei(x).",
+        "outputs": "Приближение можно записать как минус логарифм произведения γ и x.",
+        "breaks_where": "Функцию обычно строят на логарифмических осях. Приближение задаётся строгим условием x < 0.01, а не правилом для любого расстояния или времени.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Автор обозначает интеграл величины exp(−s)/s от x до бесконечности как ei(x).",
+          "manual_steps": "Сначала находят безразмерный x. Сверяют его с областью применимости, затем при малом x можно заменить полный интеграл логарифмом.",
+          "judgment_points": "Функцию обычно строят на логарифмических осях. Приближение задаётся строгим условием x < 0.01, а не правилом для любого расстояния или времени.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Экспоненциальный интеграл можно всегда заменить логарифмом.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "В пределах допустимого диапазона можно заменить дорогую математическую функцию простой аппроксимацией.",
+        "breaks_where": "За границей области результат аппроксимации не считается точным, даже если выражение вычисляется.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        89
+      ],
+      "items": [
+        {
+          "number": "7.2",
+          "page": 89,
+          "caption": "Fig. 7.2 The exponential integral function ei(x).",
+          "role": "illustration",
+          "redraw": false,
+          "unit_id": "u089_01",
+          "scan": "pages/p89.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        88
+      ],
+      "items": [
+        {
+          "term": "экспоненциальный интеграл",
+          "en": "exponential integral",
+          "definition": "Здесь положительная функция, равная площади под кривой exp(−s)/s от x до бесконечности.",
+          "page": 88,
+          "by": "model"
+        },
+        {
+          "term": "переменная подобия",
+          "en": "similarity variable",
+          "definition": "Комбинация исходных переменных, позволяющая описать решения общей формой.",
+          "page": 88,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Найти аргумент → Проверить область → Выбрать интеграл или логарифм.",
+      "alt": "Схема: Найти аргумент, затем Проверить область, затем Выбрать интеграл или логарифм.",
+      "file": "illustrations/geo.test_dake.s7_3.05__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s7_3.05.c04",
+        "geo.test_dake.s7_3.05.c02",
+        "geo.test_dake.s7_3.05.c06"
+      ],
+      "pages": [
+        88,
+        89
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c01",
+      "kind": "observation",
+      "text": "Автор обозначает интеграл величины exp(−s)/s от x до бесконечности как ei(x).",
+      "quote": "is a standard integral, called the exponential integral, and is denoted by ei(x).",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c02",
+      "kind": "observation",
+      "text": "При малых x интеграл велик, поскольку захватывает большую площадь под кривой; при больших x мала остающаяся площадь.",
+      "quote": "Thus ei (x) is large for small values of x, since the ei-function is the area under the graph from the particular value of x out to infinity (i.e. the shaded area in curve (c) of fig. 7.2) and, conversely, small for large values of x.",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c03",
+      "kind": "observation",
+      "text": "Функцию обычно представляют на осях с логарифмическими шкалами.",
+      "quote": "The ei-function is normally plotted on a log-log scale and such a version is included as fig. 7.3.",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c04",
+      "kind": "observation",
+      "text": "Автор использует логарифмическое приближение, если x < 0.01.",
+      "quote": "From this curve it can be seen that if x < 0.01, ei (x) can be approximated as",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c05",
+      "kind": "observation",
+      "text": "В исходной форме приближения из отрицательного логарифма x вычитают 0.5772.",
+      "quote": "$$ei(x) \\approx - \\ln x - 0.5772 \\tag{7.8}$$",
+      "page": 88,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c06",
+      "kind": "observation",
+      "text": "Число 0.5772 — постоянная Эйлера; автор выделяет её экспоненту.",
+      "quote": "where the number 0.5772 is Euler's constant, the exponential of which is denoted by",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c07",
+      "kind": "observation",
+      "text": "Экспоненту постоянной обозначают γ; формула даёт значение 1.781.",
+      "quote": "where the number 0.5772 is Euler's constant, the exponential of which is denoted by",
+      "page": 89,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s7_3.05.c08",
+      "kind": "observation",
+      "text": "Приближение можно записать как минус логарифм произведения γ и x.",
+      "quote": "$$ei(x) \\approx - \\ln (\\gamma x)$$",
+      "page": 89,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s7_3.05.t01",
+    "geo.test_dake.s7_3.05.t02",
+    "geo.test_dake.s7_3.05.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s7_3.05.k01",
+    "geo.test_dake.s7_3.05.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s7_3.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

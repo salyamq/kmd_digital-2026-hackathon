@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаг 1. Когда поток можно считать радиальным — The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="step">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<div class="layout" data-node="geo.test_dake.s5_2.01" data-index="1">
+  <aside class="toc" aria-label="Оглавление шага">
+    <details class="toc-box" open>
+      <summary>На этой странице</summary>
+      <ol><li><a href="#essence">Суть</a></li><li><a href="#media">Интерактив</a></li><li><a href="#how">Как это работает</a></li><li><a href="#numbers">Цифры и условия</a></li><li><a href="#data">Что это значит для данных</a></li><li><a href="#analogy">Аналогия</a></li><li><a href="#book_figures">Рисунки книги к этому шагу</a></li><li><a href="#glossary">Новые понятия</a></li><li><a href="#check">Проверь себя</a></li><li><a href="#sources">Источник</a></li></ol>
+    </details>
+  </aside>
+  <main id="main" class="content" tabindex="-1">
+    <header class="lesson-heading">
+    <p class="crumbs"><a href="index.html">The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</a><span aria-hidden="true"> / </span>Шаг 1 из 21</p>
+    <h1>Когда поток можно считать радиальным</h1>
+    <p class="booktitle">В книге: «Вывод основного дифференциального уравнения радиального потока» <span class="pg">стр. 75–76</span></p>
+    <p class="meta">
+      <span class="chip">≈ 6 мин</span>
+      <span class="chip">⟳ Интерактив</span>
+<span class="chip" title="Тип трудности узла">трудность: пространство + формализм</span>    </p>
+    </header>
+
+    <section id="essence" class="essence" aria-labelledby="h-essence">
+      <h2 id="h-essence">Суть</h2>
+<p class="lead">У ствола скважины поток можно описывать в радиальной геометрии — отложив расстояние от его оси.</p><p>Это отдельное приближение, даже если модель всего пласта использует прямоугольную сетку.</p>    </section>
+
+    <section id="media" class="media" aria-labelledby="h-media">
+      <h2 id="h-media">Интерактив: как это происходит</h2>
+      <div class="anim" data-frames="6">
+        <div class="anim-stage ill-frame ill-raster">
+<picture ><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m00.svg"><img src="media/geo-test-dake-s5-2-01/f00.svg" alt="Кадр 1 из 6: Всю окрестность считаем однородной." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m01.svg"><img src="media/geo-test-dake-s5-2-01/f01.svg" alt="Кадр 2 из 6: Проницаемость не зависит от направления." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m02.svg"><img src="media/geo-test-dake-s5-2-01/f02.svg" alt="Кадр 3 из 6: Открыта вся толщина, а не часть пласта." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m03.svg"><img src="media/geo-test-dake-s5-2-01/f03.svg" alt="Кадр 4 из 6: Допущение относится к однофазному потоку." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m04.svg"><img src="media/geo-test-dake-s5-2-01/f04.svg" alt="Кадр 5 из 6: Радиальные уравнения используются и со скважиной в картезианской сетке." loading="lazy"></picture><picture hidden><source media="(max-width: 600px)" srcset="media/geo-test-dake-s5-2-01/m05.svg"><img src="media/geo-test-dake-s5-2-01/f05.svg" alt="Кадр 6 из 6: Проверяем условия перед расчётом притока или интерпретацией испытания." loading="lazy"></picture>        </div>
+        <div class="anim-ctrl">
+          <button type="button" class="btn play" aria-label="Воспроизвести">▶</button>
+          <label class="anim-slider"><span class="sr">Кадр</span><input type="range" min="0" max="5" value="0"></label>
+          <span class="anim-count" aria-live="polite">1 / 6</span>
+        </div>
+        <p class="anim-cap">Всю окрестность считаем однородной.</p>
+        <script type="application/json" class="anim-caps">["\u0412\u0441\u044e \u043e\u043a\u0440\u0435\u0441\u0442\u043d\u043e\u0441\u0442\u044c \u0441\u0447\u0438\u0442\u0430\u0435\u043c \u043e\u0434\u043d\u043e\u0440\u043e\u0434\u043d\u043e\u0439.", "\u041f\u0440\u043e\u043d\u0438\u0446\u0430\u0435\u043c\u043e\u0441\u0442\u044c \u043d\u0435 \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043e\u0442 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f.", "\u041e\u0442\u043a\u0440\u044b\u0442\u0430 \u0432\u0441\u044f \u0442\u043e\u043b\u0449\u0438\u043d\u0430, \u0430 \u043d\u0435 \u0447\u0430\u0441\u0442\u044c \u043f\u043b\u0430\u0441\u0442\u0430.", "\u0414\u043e\u043f\u0443\u0449\u0435\u043d\u0438\u0435 \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0441\u044f \u043a \u043e\u0434\u043d\u043e\u0444\u0430\u0437\u043d\u043e\u043c\u0443 \u043f\u043e\u0442\u043e\u043a\u0443.", "\u0420\u0430\u0434\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0438 \u0441\u043e \u0441\u043a\u0432\u0430\u0436\u0438\u043d\u043e\u0439 \u0432 \u043a\u0430\u0440\u0442\u0435\u0437\u0438\u0430\u043d\u0441\u043a\u043e\u0439 \u0441\u0435\u0442\u043a\u0435.", "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u043f\u0435\u0440\u0435\u0434 \u0440\u0430\u0441\u0447\u0451\u0442\u043e\u043c \u043f\u0440\u0438\u0442\u043e\u043a\u0430 \u0438\u043b\u0438 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u0435\u0439 \u0438\u0441\u043f\u044b\u0442\u0430\u043d\u0438\u044f."]</script>
+<p class="muted small">Допущения: Схемы и относительные оси условны; реальные замеры не использованы..</p>      </div>
+    </section>
+
+    <section id="how" class="block block-how" aria-labelledby="h-how">
+      <h2 id="h-how">Как это работает </h2>
+
+<h3>Как работает модель</h3>          <div class="para" id="how-1">
+            <p>Радиальная форма описывает окрестность скважины. Решения с разными граничными и начальными условиями нужны для испытаний и расчёта притока. <span class="pg" title="Страница книги (по PDF)">стр. 75</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c01"><p>«The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well»</p><footer>— автор, стр. 75 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c02"><p>«Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering»</p><footer>— автор, стр. 75 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Математика и наблюдения</h3>          <div class="para" id="how-2">
+            <p>Аналитические картезианские решения автор считает менее полезными для промысловой практики. При численном моделировании чаще используют прямоугольную сетку. Приток в ствол или из него всё равно описывают радиальными уравнениями. <span class="pg" title="Страница книги (по PDF)">стр. 75</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c03"><p>«This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers»</p><footer>— автор, стр. 75 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c04"><p>«In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters»</p><footer>— автор, стр. 75 <span class="kind kind-observation">наблюдение</span></footer></blockquote>
+          </div>
+<h3>Практика</h3>          <div class="para" id="how-3">
+            <p><strong class="term">Проницаемость</strong>: Способность породы пропускать жидкость или газ. В исходной модели свойства породы считают однородными. <strong class="term">Проницаемость</strong> принимают одинаковой по всем направлениям. Скважину считают открытой на всю толщину пласта. Это обеспечивает радиальную геометрию. Предполагают, что поры полностью заняты одной фазой. <span class="pg" title="Страница книги (по PDF)">стр. 75–76</span></p>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c05"><p>«The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.»</p><footer>— автор, стр. 75 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c06"><p>«The producing well is completed across the entire formation thickness thus ensuring fully radial flow.»</p><footer>— автор, стр. 75 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+            <blockquote class="quote" cite="#src-geo.test_dake.s5_2.01.c07"><p>«The formation is completely saturated with a single fluid.»</p><footer>— автор, стр. 76 <span class="kind kind-assumption">допущение</span></footer></blockquote>
+          </div>
+<figure class="ill" id="ill-1">
+  <div class="ill-frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="Логика шага" class="ill-svg"><title>Логика шага</title><rect class="ill-bg" x="0" y="0" width="360" height="250" rx="8"/><text class="ill-title" x="180.0" y="38" text-anchor="middle"><tspan x="180.0" dy="0">Логика шага</tspan></text><rect class="ill-box" x="12.0" y="63" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="87" text-anchor="middle"><tspan x="180.0" dy="0">Однородный пласт</tspan></text><line class="ill-line" x1="180.0" y1="102.0" x2="180.0" y2="126.0"/><polygon class="ill-arrow" points="180.0,126.0 176.1,117.9 183.9,117.9"/><rect class="ill-box" x="12.0" y="130" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="154" text-anchor="middle"><tspan x="180.0" dy="0">Вскрытие всей толщины</tspan></text><line class="ill-line" x1="180.0" y1="169.0" x2="180.0" y2="193.0"/><polygon class="ill-arrow" points="180.0,193.0 176.1,184.9 183.9,184.9"/><rect class="ill-box" x="12.0" y="197" width="336" height="37" rx="10"/><text class="ill-text" x="180.0" y="221" text-anchor="middle"><tspan x="180.0" dy="0">Радиальная модель притока</tspan></text><text class="ill-label" x="350" y="16" text-anchor="end">схема</text></svg><span class="prov" title="Метка происхождения: как сделана картинка">схема</span>  </div>
+  <figcaption>
+    Однородный пласт → Вскрытие всей толщины → Радиальная модель притока.
+    <span class="ill-meta">Класс B · схема · нарисовано кодом · стр. 75</span>
+  </figcaption>
+</figure>
+
+    </section>
+    <section id="numbers" class="block block-numbers" aria-labelledby="h-numbers">
+      <h2 id="h-numbers">Цифры и условия </h2>
+
+        <ul class="nums"><li>В исходной модели свойства породы считают однородными. Проницаемость принимают одинаковой по всем направлениям. <span class="pg" title="Страница книги (по PDF)">стр. 75</span></li><li>Скважину считают открытой на всю толщину пласта. Это обеспечивает радиальную геометрию. <span class="pg" title="Страница книги (по PDF)">стр. 75</span></li><li>Предполагают, что поры полностью заняты одной фазой. <span class="pg" title="Страница книги (по PDF)">стр. 76</span></li></ul>
+
+    </section>
+    <section id="data" class="block block-data" aria-labelledby="h-data">
+      <h2 id="h-data">Что это значит для данных <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <p>Радиальную геометрию применяют для расчёта притока и интерпретации испытаний около ствола, в том числе как скважинное подусловие сеточной модели.</p>
+        <dl class="io">
+          <dt>Вход</dt><dd>Радиальная форма описывает окрестность скважины.</dd>
+          <dt>Выход</dt><dd>Пласт полностью насыщен одной фазой.</dd>
+          <dt>Где ломается</dt><dd>Картезианская сетка численной модели и закон притока около ствола не обязаны иметь одну геометрию.</dd>
+        </dl>
+        <details class="lens"><summary>Где здесь ручной труд специалиста</summary>
+          <dl class="io">
+            <dt>Входные данные</dt><dd>Радиальная форма описывает окрестность скважины.</dd>
+            <dt>Ручные шаги</dt><dd>Радиальную геометрию применяют для расчёта притока и интерпретации испытаний около ствола, в том числе как скважинное подусловие сеточной модели.</dd>
+            <dt>Точки суждения</dt><dd>Картезианская сетка численной модели и закон притока около ствола не обязаны иметь одну геометрию.</dd>
+            <dt>Время</dt><dd>Трудозатраты в источнике не оценены.</dd>
+            <dt>Типичные ошибки</dt><dd>Применить формулу, не проверив её граничные условия и допущения.</dd>
+          </dl>
+        </details>
+
+    </section>
+    <section id="analogy" class="block block-analogy" aria-labelledby="h-analogy">
+      <h2 id="h-analogy">Аналогия <span class="chip chip-model" title="Этот блок написан моделью: в книге его нет">модель</span></h2>
+
+        <p>Прямоугольная сетка сервиса может пользоваться отдельной локальной моделью узла.</p>
+        <p class="limit"><b>Где аналогия перестаёт работать:</b> Радиальную симметрию здесь задают физические допущения о пласте и скважине.</p>
+
+    </section>
+    <section id="book_figures" class="block block-book_figures" aria-labelledby="h-book_figures">
+      <h2 id="h-book_figures">Рисунки книги к этому шагу <span class="chip chip-author" title="По книге">по книге</span></h2>
+
+        <ul class="bookfigs"><li>Рис. 5.1. Fig. 5.1 Radial flow of a single phase fluid in the vicinity of a producing well. <span class="pg">стр. 76</span> <span class="muted small">(не перерисован — смотрите в книге)</span></li></ul>
+
+    </section>
+    <section id="glossary" class="block block-glossary" aria-labelledby="h-glossary">
+      <h2 id="h-glossary">Новые понятия </h2>
+
+        <dl class="gloss"><dt>радиальный поток <span class="en" lang="en">(radial flow)</span></dt><dd>Поток направлен к скважине или от неё вдоль радиусов; характер движения одинаков по всем направлениям вокруг оси. <span class="pg">стр. 75</span> <span class="chip chip-model">модель</span></dd><dt>изотропия <span class="en" lang="en">(isotropy)</span></dt><dd>Свойство не меняется с направлением. <span class="pg">стр. 75</span> <span class="chip chip-model">модель</span></dd><dt>проницаемость <span class="en" lang="en">(permeability)</span></dt><dd>Способность породы пропускать жидкость или газ. <span class="pg">стр. 75</span> <span class="chip chip-model">модель</span></dd><dt>граничное условие <span class="en" lang="en">(boundary condition)</span></dt><dd>Правило на краю области: например, запрет на переток или заданное давление. <span class="pg">стр. 75</span> <span class="chip chip-model">модель</span></dd><dt>начальное условие <span class="en" lang="en">(initial condition)</span></dt><dd>Распределение давления в момент начала расчёта. <span class="pg">стр. 75</span> <span class="chip chip-model">модель</span></dd></dl>
+    </section>
+
+    <section id="check" class="block" aria-labelledby="h-check">
+      <h2 id="h-check">Проверь себя</h2>
+<div class="task" id="task-geo-test_dake-s5_2-01-t01" data-task="geo.test_dake.s5_2.01.t01" data-type="single">
+  <div class="task-head">
+    <span class="task-type">Один ответ</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Можно ли совместить прямоугольную сетку и радиальное уравнение притока?</legend>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_2.01.t01" value="0"> <span>Нет, сетка запрещает локальные уравнения другой формы</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_2.01.t01" value="1"> <span>Да, но только если скважина закрыта</span></label>
+    <label class="opt"><input type="radio" name="geo.test_dake.s5_2.01.t01" value="2"> <span>Да, форма модели у ствола может отличаться от сетки всего пласта</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Да, форма модели у ствола может отличаться от сетки всего пласта</p>
+    <p class="fb-expl">Уравнение притока описывает локальную окрестность ствола. <a href="#how-2">Где это в тексте (стр. 75) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_2-01-t02" data-task="geo.test_dake.s5_2.01.t02" data-type="multiple">
+  <div class="task-head">
+    <span class="task-type">Несколько ответов</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <fieldset>
+    <legend class="task-q">Как характеризуют породу в исходном выводе?</legend>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_2.01.t02" value="0"> <span>Слои обязательно имеют разную проницаемость</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_2.01.t02" value="1"> <span>Поток идёт вдоль единственного направления</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_2.01.t02" value="2"> <span>Свойства однородны</span></label>
+    <label class="opt"><input type="checkbox" name="geo.test_dake.s5_2.01.t02" value="3"> <span>Проницаемость одинакова по направлениям</span></label>
+  </fieldset>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> Проницаемость одинакова по направлениям; Свойства однородны</p>
+    <p class="fb-expl">В модели отдельное направление не выделяют. <a href="#how-3">Где это в тексте (стр. 75) →</a></p>
+  </div>
+</div>
+<div class="task" id="task-geo-test_dake-s5_2-01-t03" data-task="geo.test_dake.s5_2.01.t03" data-type="cloze">
+  <div class="task-head">
+    <span class="task-type">Пропуск в тексте</span>
+    <span class="task-state" aria-live="polite"></span>
+  </div>
+  <p class="task-q">На какую толщину открыта скважина?</p>
+  <p class="cloze">В исходном выводе скважина открыта на <select aria-label="Пропуск 1"><option value="">—</option><option>часть толщины</option><option>всю толщину</option><option>толщину только верхнего слоя</option></select>.</p>
+  <div class="task-actions"><button type="button" class="btn check">Проверить</button><button type="button" class="btn ghost retry" hidden>Ещё раз</button></div>
+  <div class="feedback" hidden>
+    <p class="fb-verdict"></p>
+    <p class="fb-answer"><b>Верный ответ:</b> В исходном выводе скважина открыта на [всю толщину].</p>
+    <p class="fb-expl">Полное вскрытие позволяет принять радиальную геометрию. <a href="#how-3">Где это в тексте (стр. 75) →</a></p>
+  </div>
+</div>
+    </section>
+
+    <section id="sources" class="block sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Источник</h2>
+      <p class="muted small">Все утверждения шага с дословной цитатой автора и страницей книги (по PDF).</p>
+      <ol class="src">
+        <li id="src-geo.test_dake.s5_2.01.c01"><p>Радиальная форма описывает окрестность скважины. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c02"><p>Решения с разными граничными и начальными условиями нужны для испытаний и расчёта притока. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c03"><p>Аналитические картезианские решения автор считает менее полезными для промысловой практики. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c04"><p>В численном моделировании чаще применяют картезианские координаты, но в ствол или из него поток регулируется радиальными уравнениями. <span class="kind kind-observation">наблюдение</span></p><blockquote class="quote"><p>«In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c05"><p>Свойства породы однородны, проницаемость изотропна. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c06"><p>Скважина открыта на всю толщину, чтобы поток был радиальным. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The producing well is completed across the entire formation thickness thus ensuring fully radial flow.»</p><footer>— стр. 75</footer></blockquote></li>
+        <li id="src-geo.test_dake.s5_2.01.c07"><p>Пласт полностью насыщен одной фазой. <span class="kind kind-assumption">допущение</span></p><blockquote class="quote"><p>«The formation is completely saturated with a single fluid.»</p><footer>— стр. 76</footer></blockquote></li>
+      </ol>
+      <details class="lesson-excerpts">
+        <summary>Исходный текст урока</summary>
+        <article class="source-excerpt" id="excerpt-u075_08-1" tabindex="-1">
+          <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+          <blockquote>The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well. Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering. This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers. In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters. The radial cell geometry is shown in fig. 5.1 and initially the following simplifying assumptions will be made.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u075_09-1" tabindex="-1">
+          <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+          <blockquote>a) The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u075_10-1" tabindex="-1">
+          <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+          <blockquote>b) The producing well is completed across the entire formation thickness thus ensuring fully radial flow.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u076_01-1" tabindex="-1">
+          <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+          <blockquote>c) The formation is completely saturated with a single fluid.</blockquote>
+        </article>
+        <article class="source-excerpt" id="excerpt-u076_02-1" tabindex="-1">
+          <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+          <blockquote>Fig. 5.1 Radial flow of a single phase fluid in the vicinity of a producing well.</blockquote>
+        </article>
+      </details>
+<p>На этот шаг опираются: <a href="step-02.html">шаг 2 «Баланс массы в кольце»</a>.</p>    </section>
+
+    <div class="done-row"><button type="button" class="btn mark-done" aria-pressed="false">Отметить шаг пройденным</button></div>
+    <nav class="pager" aria-label="Соседние шаги">
+<a class="prev" href="index.html"><span>← К пути</span><b>Все шаги</b></a><a class="next" href="step-02.html" rel="next"><span>Дальше →</span><b>Баланс массы в кольце</b></a>    </nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>Когда поток можно считать радиальным</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в уроке?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="geo.test_dake.s5_2.01">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этому уроку"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script>window.KMD_TASKS = [{"id": "geo.test_dake.s5_2.01.t01", "type": "single", "question": "Можно ли совместить прямоугольную сетку и радиальное уравнение притока?", "explanation": "Уравнение притока описывает локальную окрестность ствола.", "page": 75, "link": "#how-2", "step_title": "Когда поток можно считать радиальным", "step_index": 1, "node_id": "geo.test_dake.s5_2.01", "options": ["Нет, сетка запрещает локальные уравнения другой формы", "Да, но только если скважина закрыта", "Да, форма модели у ствола может отличаться от сетки всего пласта"], "key": [2], "answer_text": "Да, форма модели у ствола может отличаться от сетки всего пласта"}, {"id": "geo.test_dake.s5_2.01.t02", "type": "multiple", "question": "Как характеризуют породу в исходном выводе?", "explanation": "В модели отдельное направление не выделяют.", "page": 75, "link": "#how-3", "step_title": "Когда поток можно считать радиальным", "step_index": 1, "node_id": "geo.test_dake.s5_2.01", "options": ["Слои обязательно имеют разную проницаемость", "Поток идёт вдоль единственного направления", "Свойства однородны", "Проницаемость одинакова по направлениям"], "key": [2, 3], "answer_text": "Проницаемость одинакова по направлениям; Свойства однородны"}, {"id": "geo.test_dake.s5_2.01.t03", "type": "cloze", "question": "На какую толщину открыта скважина?", "explanation": "Полное вскрытие позволяет принять радиальную геометрию.", "page": 75, "link": "#how-3", "step_title": "Когда поток можно считать радиальным", "step_index": 1, "node_id": "geo.test_dake.s5_2.01", "parts": ["В исходном выводе скважина открыта на ", "."], "blanks": [{"options": ["часть толщины", "всю толщину", "толщину только верхнего слоя"], "answers": ["всю толщину"]}], "key": [["всю толщину"]], "answer_text": "В исходном выводе скважина открыта на [всю толщину]."}];</script><script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

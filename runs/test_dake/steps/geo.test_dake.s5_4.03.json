@@ -1,0 +1,348 @@
+{
+  "node_id": "geo.test_dake.s5_4.03",
+  "chapter": "test_dake",
+  "index": 13,
+  "part": {
+    "id": "part3",
+    "title": "Когда допустимо простое уравнение"
+  },
+  "title_beginner": "Не смешивайте две пористости",
+  "title_book": "Линеаризация уравнения для жидкости малой постоянной сжимаемости",
+  "section": "s5_4",
+  "pages": [
+    79
+  ],
+  "minutes": 5,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Одно и то же произведение можно записать с разными согласованными парами: менять только пористость нельзя."
+  },
+  "threshold": "Одно и то же произведение можно записать с разными согласованными парами: менять только пористость нельзя.",
+  "format": "text",
+  "format_rationale": "Ф/Н: полезнее записать рядом две согласованные пары множителей, чем анимировать равенство.",
+  "order_rationale": "Уточняем, с какой пористостью и сжимаемостью следует работать совместно.",
+  "essence": [
+    "Пористость и сжимаемость можно записать двумя согласованными способами.",
+    "Нельзя брать пористость из одной записи, а сжимаемость из другой."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Пористость**: Доля объёма породы, занятая порами. В формулах главы произведение пористости и сжимаемости традиционно записано через абсолютную **пористость**. Полное насыщение одной фазой в исходном выводе подразумевает абсолютную пористость.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.03.c01",
+            "geo.test_dake.s5_4.03.c02"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.03.c01",
+              "quote": "Before leaving the subject of compressibility, it should be noted that the product of $\\phi$ and c in all the equations, in this and the following chapters, is conventionally expressed as",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.03.c02",
+              "quote": "since it was assumed in deriving equ. (5.1) that the porous medium was completely saturated with a single fluid thus implying the use of the absolute porosity",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. При учёте связанной воды доступна эквивалентная запись произведения через углеводородную пористость. Эффективная пористость относится к объёму углеводородов. **Сжимаемость** в этой записи берут в той же нормировке. Два произведения равны, но отдельные множители смешивать нельзя.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.03.c03",
+            "geo.test_dake.s5_4.03.c04",
+            "geo.test_dake.s5_4.03.c05"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.03.c03",
+              "quote": "Alternatively, allowing for the presence of a connate water saturation, the $\\phi c$ product can be interpreted as",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.03.c04",
+              "quote": "is the effective, hydrocarbon porosity, and the compressibility is equivalent to that derived in Chapter 3, equ. (3.19), which is used in conjunction with the hydrocarbon pore volume.",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.03.c05",
+              "quote": "In either event, the products expressed in equ. (5.23) and (5.24) have the same value, the reader must only be careful not to mix the individual terms appearing in the separate equations.",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_4.03.f01",
+          "latex": "\\phi_{\\text{absolute}} \\times (c_o S_o + c_w S_{wc} + c_f)",
+          "meaning": "Конвенция с абсолютной пористостью.",
+          "vars": [
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "c_o",
+              "meaning": "сжимаемость нефти",
+              "unit": null
+            },
+            {
+              "symbol": "S_o",
+              "meaning": "доля порового объёма, занятая нефтью",
+              "unit": null
+            },
+            {
+              "symbol": "c_w",
+              "meaning": "сжимаемость воды",
+              "unit": null
+            },
+            {
+              "symbol": "S_{wc}",
+              "meaning": "доля порового объёма, занятая связанной водой",
+              "unit": null
+            },
+            {
+              "symbol": "c_f",
+              "meaning": "вклад сжимаемости породы",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_17"
+        },
+        {
+          "id": "geo.test_dake.s5_4.03.f02",
+          "latex": "\\phi_{\\text{absolute}} (1 - S_{wc}) \\times \\frac{(c_o S_o + c_w S_{wc} + c_f)}{(1 - S_{wc})}",
+          "meaning": "Конвенция с эффективной углеводородной пористостью.",
+          "vars": [
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "c_o",
+              "meaning": "сжимаемость нефти",
+              "unit": null
+            },
+            {
+              "symbol": "S_o",
+              "meaning": "доля порового объёма, занятая нефтью",
+              "unit": null
+            },
+            {
+              "symbol": "c_w",
+              "meaning": "сжимаемость воды",
+              "unit": null
+            },
+            {
+              "symbol": "S_{wc}",
+              "meaning": "доля порового объёма, занятая связанной водой",
+              "unit": null
+            },
+            {
+              "symbol": "c_f",
+              "meaning": "вклад сжимаемости породы",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_19"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "При чтении и обмене данными указывают, к какому поровому объёму отнесена сжимаемость.",
+        "inputs": "В формулах главы произведение пористости и сжимаемости традиционно записано через абсолютную пористость.",
+        "outputs": "Два произведения равны, но отдельные множители смешивать нельзя.",
+        "breaks_where": "Члены из разных конвенций нельзя смешивать.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "В формулах главы произведение пористости и сжимаемости традиционно записано через абсолютную пористость.",
+          "manual_steps": "При чтении и обмене данными указывают, к какому поровому объёму отнесена сжимаемость.",
+          "judgment_points": "Члены из разных конвенций нельзя смешивать.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Как при смене нормировки, меняются оба согласованных множителя, а конечная величина сохраняется.",
+        "breaks_where": "Здесь поправка зависит от конкретной доли связанной воды.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "term": "пористость",
+          "en": "porosity",
+          "definition": "Доля объёма породы, занятая порами.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "связанная вода",
+          "en": "connate water",
+          "definition": "Вода, учитываемая как занимающая часть порового объёма наряду с углеводородами.",
+          "page": 79,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Абсолютная пористость → Согласованная сжимаемость → Эквивалентная пара с другой пористостью.",
+      "alt": "Схема: Абсолютная пористость, затем Согласованная сжимаемость, затем Эквивалентная пара с другой пористостью.",
+      "file": "illustrations/geo.test_dake.s5_4.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.03.c05",
+        "geo.test_dake.s5_4.03.c04",
+        "geo.test_dake.s5_4.03.c02"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_4.03.c01",
+      "kind": "observation",
+      "text": "В формулах главы произведение пористости и сжимаемости традиционно записано через абсолютную пористость.",
+      "quote": "Before leaving the subject of compressibility, it should be noted that the product of $\\phi$ and c in all the equations, in this and the following chapters, is conventionally expressed as",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.03.c02",
+      "kind": "observation",
+      "text": "Полное насыщение одной фазой в исходном выводе подразумевает абсолютную пористость.",
+      "quote": "since it was assumed in deriving equ. (5.1) that the porous medium was completely saturated with a single fluid thus implying the use of the absolute porosity",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.03.c03",
+      "kind": "observation",
+      "text": "При учёте связанной воды доступна эквивалентная запись произведения через углеводородную пористость.",
+      "quote": "Alternatively, allowing for the presence of a connate water saturation, the $\\phi c$ product can be interpreted as",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.03.c04",
+      "kind": "observation",
+      "text": "Эффективная пористость относится к объёму углеводородов, и сжимаемость в этой записи учитывается в той же нормировке.",
+      "quote": "is the effective, hydrocarbon porosity, and the compressibility is equivalent to that derived in Chapter 3, equ. (3.19), which is used in conjunction with the hydrocarbon pore volume.",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.03.c05",
+      "kind": "observation",
+      "text": "Два произведения равны, но отдельные множители смешивать нельзя.",
+      "quote": "In either event, the products expressed in equ. (5.23) and (5.24) have the same value, the reader must only be careful not to mix the individual terms appearing in the separate equations.",
+      "page": 79,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_4.03.t01",
+    "geo.test_dake.s5_4.03.t02",
+    "geo.test_dake.s5_4.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_4.03.k01",
+    "geo.test_dake.s5_4.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_4.02",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

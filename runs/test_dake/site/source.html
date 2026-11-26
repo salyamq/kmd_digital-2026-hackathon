@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Текст главы — The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</title>
+<script>
+(function(){try{document.documentElement.dataset.theme=localStorage.getItem("kmd:theme")||"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="source">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../index.html" title="Все главы">
+      Глава → курс
+    </a>
+    <nav class="mainnav" aria-label="Разделы курса">
+      <a href="index.html">Путь</a>
+<a href="media.html">Медиа</a>      <a href="tasks.html">Задания</a>
+      <a href="cards.html">Карточки</a>
+      <a href="summary.html">Конспект</a>
+      <a href="map.html">Карта<span class="wide-only"> связей</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему: светлая или тёмная" title="Светлая / тёмная тема"><span aria-hidden="true">◐</span></button>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Пройдено шагов" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="progress-bar"></div></div>
+</header>
+<main id="main" class="content" tabindex="-1">
+  <p class="crumbs"><a href="index.html">Путь по главе</a></p>
+  <h1>Текст главы «The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution»</h1>
+  <article class="source-excerpt" id="excerpt-u075_04-1">
+    <p class="pg">Стр. 75 · 5.1 INTRODUCTION</p>
+    <blockquote>In this chapter the basic equation for the radial flow of a fluid in a homogeneous porous medium is derived as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u075_05-1">
+    <p class="pg">Стр. 75 · 5.1 INTRODUCTION</p>
+    <blockquote>$$\frac{1}{r} \frac{\partial}{\partial r} \left( \frac{k \rho}{\mu} r \frac{\partial p}{\partial r} \right) = \phi c \rho \frac{\partial p}{\partial t} \tag{5.1}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u075_06-1">
+    <p class="pg">Стр. 75 · 5.1 INTRODUCTION</p>
+    <blockquote>This equation is non-linear since the coefficients on both sides are themselves functions of the dependent variable, the pressure. In order to obtain analytical solutions, it is first necessary to linearize the equation by expressing it in a form in which the coefficients have a negligible dependence upon the pressure and can be considered as constants. An approximate form of linearization applicable to liquid flow is presented at the end of the chapter in which equ. (5.1) is reduced to the form of the radial diffusivity equation. Solutions of this equation and their applications for the flow of oil are presented in detail in Chapters 6 and 7. For the flow of a real gas, however, a more complex linearization by integral transformation is required which will be presented separately in Chapter 8.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u075_08-1">
+    <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>The basic differential equation will be derived in radial form thus simulating the flow of fluids in the vicinity of a well. Analytical solutions of the equation can then be obtained under various boundary and initial conditions for use in the description of well testing and well inflow, which have considerable practical application in reservoir engineering. This is considered of greater importance than deriving the basic equation in cartesian coordinates since analytical solutions of the latter are seldom used in practice by field engineers. In numerical reservoir simulation, however, cartesian geometry is more commonly used but even in this case the flow into or out of a well is controlled by equations expressed in radial form such as those presented in the next four chapters. The radial cell geometry is shown in fig. 5.1 and initially the following simplifying assumptions will be made.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u075_09-1">
+    <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>a) The reservoir is considered homogeneous in all rock properties and isotropic with respect to permeability.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u075_10-1">
+    <p class="pg">Стр. 75 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>b) The producing well is completed across the entire formation thickness thus ensuring fully radial flow.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_01-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>c) The formation is completely saturated with a single fluid.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_02-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>Fig. 5.1 Radial flow of a single phase fluid in the vicinity of a producing well.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_03-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>Consider the flow through a volume element of thickness dr situated at a distance r from the centre of the radial cell. Then applying the principle of mass conservation</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_04-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\begin{array}{l} \text { Mass flow rate } \\ \text { IN } \end{array} - \begin{array}{l} \text { Mass flow rate } \\ \text { OUT } \end{array} = \begin{array}{l} \text { Rate of change of mass in } \\ \text { the volume element } \end{array}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_05-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$q \rho | _ {r + d r} - q \rho | _ {r} = 2 \pi r h \phi d r \frac {\partial \rho}{\partial t}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_06-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>where $2\pi rh\phi dr$ is the volume of the small element of thickness dr. The left hand side of this equation can be expanded as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_07-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\left(q \rho | _ {r} + \frac {\partial (q \rho)}{\partial r} d r - q \rho | _ {r}\right) = 2 \pi r h \phi d r \frac {\partial \rho}{\partial t}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_08-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>which simplifies to</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_09-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\frac {\partial (q \rho)}{\partial r} = 2 \pi r h \phi \frac {\partial \rho}{\partial t} \tag {5.2}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_10-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>By applying Darcy&#39;s Law for radial, horizontal flow it is possible to substitute for the flow rate q in equ. (5.2) since</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_11-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$q = \frac {2 \pi k h r}{\mu} \frac {\partial p}{\partial r}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_12-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>giving</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_13-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\frac {\partial}{\partial r} \left(\frac {2 \pi k h r}{\mu} \rho \frac {\partial p}{\partial r}\right) = 2 \pi r h \phi \frac {\partial \rho}{\partial t}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_14-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>or</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_15-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\frac {1}{r} \frac {\partial}{\partial r} \left(\frac {k \rho}{\mu} r \frac {\partial p}{\partial r}\right) = \phi \frac {\partial \rho}{\partial t} \tag {5.3}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_16-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>The time derivative of the density appearing on the right hand side of equ. (5.3) can be expressed in terms of a time derivative of the pressure by using the basic thermodynamic definition of isothermal compressibility</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_17-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$c = - \frac {1}{V} \frac {\partial V}{\partial p}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_18-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>and since</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_19-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\rho = \frac {m}{V}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_20-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>then the compressibility can be alternatively expressed as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_21-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$c = - \frac {\rho}{m} \frac {\partial \left(\frac {m}{\rho}\right)}{\partial p} = \frac {1}{\rho} \frac {\partial \rho}{\partial p} \tag {5.4}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_22-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>and differentiating with respect to time gives</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_23-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$c \rho \frac {\partial p}{\partial t} = \frac {\partial \rho}{\partial t} \tag {5.5}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_24-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>Finally, substituting equ. (5.5) in equ. (5.3) reduces the latter to</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_25-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>$$\frac {1}{r} \frac {\partial}{\partial r} \left(\frac {k \rho}{\mu} r \frac {\partial p}{\partial r}\right) = \phi c \rho \frac {\partial p}{\partial t} \tag {5.1}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_26-1">
+    <p class="pg">Стр. 76 · 5.2 DERIVATION OF THE BASIC RADIAL DIFFERENTIAL EQUATION</p>
+    <blockquote>This is the basic, partial differential equation for the radial flow of any single phase fluid in a porous medium. The equation is referred to as non-linear because of the implicit pressure dependence of the density, compressibility and viscosity appearing in the coefficients $k\rho/\mu$ and $\phi c\rho$. Because of this, it is not possible to find simple analytical solutions of the equation without first linearizing it so that the coefficients somehow lose their pressure dependence. A simple form of linearization applicable to the flow of liquids of small and constant compressibility (under-saturated oil) will be considered in sec. 5.4, while a more rigorous method, using the Kirchhoff integral transformation, will be presented in Chapter 8 for the more complex case of linearization for the flow of a real gas.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u076_28-1">
+    <p class="pg">Стр. 76 · 5.3 CONDITIONS OF SOLUTION</p>
+    <blockquote>In principle, an infinite number of solutions of equ. (5.1) can be obtained depending on the initial and boundary conditions imposed. The most common and useful of these is called the constant terminal rate solution for which the initial condition is that at some fixed time, at which the reservoir is at equilibrium pressure $p_i$, the well is produced at a constant rate q at the wellbore, $r=r_w$. This type of solution will be examined in detail in Chapters 7 and 8 but it is appropriate, at this stage, to describe the three most common, although not exclusive, conditions for which the constant terminal rate solution is sought. These conditions are called transient, semi steady state and steady state and are each applicable at different times after the start of production and for different, assumed boundary conditions.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_02-1">
+    <p class="pg">Стр. 77 · a) Transient condition</p>
+    <blockquote>This condition is only applicable for a relatively short period after some pressure disturbance has been created in the reservoir. In terms of the radial flow model this disturbance would be typically caused by altering the well&#39;s production rate at $r=r_w$. In the time for which the transient condition is applicable it is assumed that the pressure response in the reservoir is not affected by the presence of the outer boundary, thus the reservoir appears infinite in extent. The condition is mainly applied to the analysis of well tests in which the well&#39;s production rate is deliberately changed and the resulting pressure response in the wellbore is measured and analysed during a brief period of a few hours after the rate change has occurred. Then, unless the reservoir is extremely small, the boundary effects will not be felt and the reservoir is, mathematically, infinite.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_03-1">
+    <p class="pg">Стр. 77 · a) Transient condition</p>
+    <blockquote>This gives rise to a complex solution of equ. (5.1) in which both the pressure and pressure derivative, with respect to time, are themselves functions of both position and time, thus</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_04-1">
+    <p class="pg">Стр. 77 · a) Transient condition</p>
+    <blockquote>$$p = g(r,t)$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_05-1">
+    <p class="pg">Стр. 77 · a) Transient condition</p>
+    <blockquote>and $$\frac{\partial p}{\partial t} = f(r,t)$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_06-1">
+    <p class="pg">Стр. 77 · a) Transient condition</p>
+    <blockquote>Transient analysis techniques and their application to oil and gas well testing will be described in Chapters 7 and 8, respectively.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_08-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>Fig. 5.2 Radial flow under semi steady state conditions.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_09-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>This condition is applicable to a reservoir which has been producing for a sufficient period of time so that the effect of the outer boundary has been felt. In terms of the radial flow model, the situation is depicted in fig. 5.2. It is considered that the well is surrounded, at its outer boundary, by a solid &#34;brick wall&#34; which prevents the flow of fluids into the radial cell. Thus at the outer boundary, in accordance with Darcy&#39;s law</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_10-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$\frac{\partial p}{\partial r} = 0 \quad \text{at} \quad r = r_e \tag{5.6}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_11-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>Furthermore, if the well is producing at a constant flow rate then the cell pressure will decline in such a way that</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_12-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$\frac{\partial p}{\partial t} \approx \text{constant, for all } r \text{ and } t. \tag{5.7}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_13-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>The constant referred to in equ. (5.7) can be obtained from a simple material balance using the compressibility definition, thus</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_14-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$cV \frac{dp}{dt} = - \frac{dV}{dt} = - q \tag{5.8}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_15-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$\text{or} \quad \frac{dp}{dt} = - \frac{q}{cV} \tag{5.9}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_16-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>which for the drainage of a radial cell can be expressed as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_17-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$\frac{dp}{dt} = - \frac{q}{c \pi r_e^2 h \phi} \tag{5.10}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_18-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>This is a condition which will be applied in Chapter 6, for oil flow, and in Chapter 8, for gas flow, to derive the well inflow equations under semi steady state conditions, even though in the latter case the gas compressibility is not constant.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_19-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>One important feature of this stabilized type of solution, when applied to a depletion type reservoir, has been pointed out by Matthews, Brons and Hazebroek¹ and is illustrated in fig. 5.3. This is the fact that, once the reservoir is producing under the semi steady state condition, each well will drain from within its own no-flow boundary quite independently of the other wells.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_20-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>For this condition dp/dt must be approximately constant throughout the entire reservoir otherwise flow would occur across the boundaries causing a re-adjustment in their positions until stability was eventually achieved. In this case a simple technique can be applied to determine the volume averaged reservoir pressure</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_21-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$$\bar{p}_{res} = \frac{\sum \bar{p}_i V_i}{\sum V_i} \tag{5.11}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_22-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>in which</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_23-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>$V_i$ = the pore volume of the iᵗʰ drainage volume</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_24-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>and $\bar{p}_i$ = the average pressure within the iᵗʰ drainage volume.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u077_25-1">
+    <p class="pg">Стр. 77 · b) Semi Steady State condition</p>
+    <blockquote>Equation (5.9) implies that since dp/dt is constant for the reservoir then, if the variation in the compressibility is small</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_01-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>Fig. 5.3 Reservoir depletion under semi steady state conditions.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_02-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>$$q_i \propto V_i \tag{5.12}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_03-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>and hence the volume average in equ. (5.11) can be replaced by a rate average, as follows</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_04-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>$$\overline{p}_{res} = \frac{\sum_i \overline{p}_i q_i}{\sum_i q_i} \tag{5.13}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_05-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>and, whereas the $V_i$&#39;s are difficult to determine in practice, the $q_i$&#39;s are measured on a routine basis throughout the lifetime of the field thus facilitating the calculation of $\overline{p}_{res}$, which is the pressure at which the reservoir material balance is evaluated. The method by which the individual $\overline{p}_i$&#39;s can be determined will be detailed in Chapter 7, sec. 7.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_06-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>Steady State condition</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_07-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>Fig. 5.4 Radial flow under steady state conditions.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_08-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>The steady state condition applies, after the transient period, to a well draining a cell which has a completely open outer boundary. It is assumed that, for a constant rate of production, fluid withdrawal from the cell will be exactly balanced by fluid entry across the open boundary and therefore,</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_09-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>$$p = p_e = \text{constant, at } r = r_e \tag{5.14}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_10-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>$$\text{and } \frac{\partial p}{\partial t} = 0 \text{ for all } r \text{ and } t \tag{5.15}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_11-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>This condition is appropriate when pressure is being maintained in the reservoir due to either natural water influx or the injection of some displacing fluid (refer Chapter 10).</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_12-1">
+    <p class="pg">Стр. 78 · b) Semi Steady State condition</p>
+    <blockquote>It should be noted that the semi steady state and steady state conditions may never be fully realised in the reservoir. For instance, semi steady state flow equations are frequently applied when the rate, and consequently the position of the no-flow boundary surrounding a well, are slowly varying functions of time. Nevertheless, the defining conditions specified by equ. (5.7) and (5.15) are frequently approximated in the field since both production and injection facilities are usually designed to operate at constant rates and it makes little sense to unnecessarily alter these. If the production rate of an individual well is changed, for instance, due to closure for repair or increasing the rate to obtain a more even fluid withdrawal pattern throughout the reservoir, there will be a brief period when transient flow conditions prevail followed by stabilized flow for the new distribution of individual well rates.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_14-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>A simple linearization of equ. (5.1) can be obtained by deletion of some of the terms, dependent upon making various assumptions concerning the nature of fluid for which solutions are being sought. In this section the fluid considered will be a liquid which, in a practical sense, will apply to the flow of undersaturated oil. Expanding the left hand side of equ. (5.1), using the chain rule for differentiation gives</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_15-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\frac{1}{r} \left[ \frac{\partial}{\partial r} \left( \frac{k}{\mu} \right) \rho r \frac{\partial p}{\partial r} + \frac{k}{\mu} \frac{\partial p}{\partial r} r \frac{\partial p}{\partial r} + \frac{k \rho}{\mu} \frac{\partial p}{\partial r} + \frac{k \rho}{\mu} r \frac{\partial^2 p}{\partial r^2} \right] = \phi c \rho \frac{\partial p}{\partial t} \tag{5.16}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_16-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>and differentiating equ. (5.4) with respect to r gives</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_17-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$c \rho \frac{\partial p}{\partial r} = \frac{\partial p}{\partial r} \tag{5.17}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_18-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>which when substituted into equ. (5.16) changes the latter to</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u078_19-1">
+    <p class="pg">Стр. 78 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\frac{1}{r} \left[ \frac{\partial}{\partial r} \left( \frac{k}{\mu} \right) \rho r \frac{\partial p}{\partial r} + \frac{k}{\mu} c \rho r \left( \frac{\partial p}{\partial r} \right)^2 + \frac{k \rho}{\mu} \frac{\partial p}{\partial r} + \frac{k \rho}{\mu} r \frac{\partial^2 p}{\partial r^2} \right] = \phi c \rho \frac{\partial p}{\partial t} \tag{5.18}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_01-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>For liquid flow, the following assumptions are conventionally made</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_02-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>- the viscosity $\mu$ is practically independent of pressure and may be regarded as a constant</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_03-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>- the pressure gradient $\partial p/\partial r$ is small and therefore, terms of the order $(\partial p/\partial r)^2$ can be neglected.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_04-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>These two assumptions eliminate the first two terms in the left hand side of equ. (5.18), reducing the latter to</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_05-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\frac{\partial^2 p}{\partial r^2} + \frac{1}{r} \frac{\partial p}{\partial r} = \frac{\phi \mu c}{k} \frac{\partial p}{\partial t} \tag{5.19}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_06-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>which can be more conveniently expressed as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_07-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right) = \frac{\phi \mu c}{k} \frac{\partial p}{\partial t} \tag{5.20}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_08-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>Making one final assumption, that the compressibility is constant, means that the coefficient $\phi \mu c/k$ is also constant and therefore, the basic equation has been effectively linearized.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_09-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>For the flow of liquids the above assumptions are quite reasonable and have been frequently applied in the past. Dranchuk and Quon$^3$, however, have shown that this simple linearization by deletion must be treated with caution and can only be applied when the product</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_10-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$cp \ll 1 \tag{5.21}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_11-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>This condition makes it necessary to modify the final assumption so that the compressibility is not just constant but both small and constant. The compressibility appearing in equ. (5.20) is the total, or saturation weighted, compressibility of the entire reservoir-liquid system</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_12-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$c_t = c_o S_o + c_w S_{wc} + c_f \tag{5.22}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_13-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>in which the saturations are expressed as fractions of the pore volume. Using typical figures for the components of equ. (5.22)</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_14-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\begin{array}{ll} c_o = 10 \times 10^{-6} / \text{psi} &amp; S_{wc} = 0.2 \\ c_w = 3 \times 10^{-6} / \text{psi} &amp; p = 3000 \text{ psi} \\ c_f = 6 \times 10^{-6} / \text{psi} &amp; \end{array}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_15-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>then $c_t$ in equ. (5.22) has the value $14.6 \times 10^{-6} / \text{psi}$ and the product expressed by equ. (5.21) has the value 0.04, which satisfies the necessary condition for this simple linearization to be valid. However, when dealing with reservoir systems which have a higher total compressibility it will be necessary to linearize equ. (5.1) using some form of integral transformation as detailed by Dranchuk and Quon. Such an approach will be required when describing the flow of a real gas since, in this case, the compressibility of the gas alone may, to a first approximation, be expressed as the reciprocal of the pressure and the cp product, equ. (5.21), will itself be unity. The linearization of equ. (5.1) under these circumstances will be described in Chapter 8, secs. 2-4.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_16-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>Before leaving the subject of compressibility, it should be noted that the product of $\phi$ and c in all the equations, in this and the following chapters, is conventionally expressed as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_17-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\phi_{\text{absolute}} \times (c_o S_o + c_w S_{wc} + c_f) \tag{5.23}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_18-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>since it was assumed in deriving equ. (5.1) that the porous medium was completely saturated with a single fluid thus implying the use of the absolute porosity. Alternatively, allowing for the presence of a connate water saturation, the $\phi c$ product can be interpreted as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_19-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\phi_{\text{absolute}} (1 - S_{wc}) \times \frac{(c_o S_o + c_w S_{wc} + c_f)}{(1 - S_{wc})} \tag{5.24}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_20-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>in which $\phi_{\text{absolute}} (1 - S_{wc})$ is the effective, hydrocarbon porosity, and the compressibility is equivalent to that derived in Chapter 3, equ. (3.19), which is used in conjunction with the hydrocarbon pore volume. In either event, the products expressed in equ. (5.23) and (5.24) have the same value, the reader must only be careful not to mix the individual terms appearing in the separate equations.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_21-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>Equation (5.20) is the radial diffusivity equation in which the coefficient $k/\phi \mu c$ is called the diffusivity constant. This is an equation which is frequently applied in physics, for instance, the temperature distribution due to the conduction of heat in radial symmetry would be described by the equation</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_22-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>$$\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial T}{\partial r} \right) = \frac{1}{K} \frac{\partial T}{\partial t}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u079_23-1">
+    <p class="pg">Стр. 79 · 5.4 THE LINEARIZATION OF EQUATION 5.1 FOR FLUIDS OF SMALL AND CONSTANT COMPRESSIBILITY</p>
+    <blockquote>in which T is the absolute temperature and K the thermal diffusivity constant. Because of the general nature of equ. (5.20) it is not surprising that many reservoir engineering papers, when dealing with complex solutions of the diffusivity equation, make reference to a text book entitled &#34;Conduction of Heat in Solids&#34;, by Carslaw and Jaeger$^3$, which gives the solutions of the equation for a large variety of boundary and initial conditions and is regarded as a standard text in reservoir engineering.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_02-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>During the initial transient flow period, it has been found that the constant terminal rate solution of the radial diffusivity equation, determined using the Laplace transform, can be approximated by the so-called line source solution which assumes that in comparison to the apparently infinite reservoir the wellbore radius is negligible and the wellbore itself can be treated as a line. This leads to a considerable simplification in the mathematics and for this solution the boundary and initial conditions may be stated as follows</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_03-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>a) $p = p_i$ at $t = 0$, for all $r$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_04-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>b) $p = p_i$ at $r = \infty$, for all $t$ (7.1)</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_05-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>c) $\lim_{r \to 0} r \frac{\partial p}{\partial r} = \frac{q\mu}{2\pi kh}$, for $t &gt; 0$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_06-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Condition (a) is merely the initial condition that, before producing, the pressure everywhere within the drainage volume is equal to the initial equilibrium pressure $p_i$. Condition (b) ensures the condition of transience, namely that the pressure at the outer, infinite boundary is not affected by the pressure disturbance at the wellbore and vice versa.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_07-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Condition (c) is the line source inner boundary condition.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_08-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>In addition, the assumptions made in deriving the radial diffusivity equation in Chapter 5 are retained. That is, that the formation is homogeneous and isotropic, and drained by a fully penetrating well to ensure radial flow; the fluid itself must have a constant viscosity and a small and constant compressibility. The solution obtained will, therefore, be applicable to the flow of undersaturated oil. Having developed the simple theory of pressure analysis based on these assumptions, many of the restrictions will be removed by considering, for instance, the effects of partial well completion, the flow of highly compressible fluids, etc. These modifications to the basic theory will be gradually introduced in this and the following chapter.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_09-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Under the above conditions the diffusivity equation</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_10-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right) = \frac{\phi \mu c}{k} \frac{\partial p}{\partial t} \tag{5.20}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_11-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>can be solved by making use of Boltzmann&#39;s transformation</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_12-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$s = \frac{r^2}{4(\text{Diffusivity constant})t} = \frac{\phi \mu c r^2}{4kt}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_13-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>so that</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_14-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{\partial s}{\partial r} = \frac{\phi \mu c r}{2kt} \tag{7.2}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_15-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>and</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_16-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{\partial s}{\partial t} = - \frac{\phi \mu c r^2}{4kt^2} \tag{7.3}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u087_17-1">
+    <p class="pg">Стр. 87 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Equation (5.20) can be expressed with respect to this new variable as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_01-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{1}{r} \frac{d}{ds} \left( r \frac{dp}{ds} \frac{\partial s}{\partial r} \right) \frac{\partial s}{\partial r} = \frac{\phi \mu c}{k} \frac{dp}{ds} \frac{\partial s}{\partial t}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_02-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>and using equs. (7.2) and (7.3), this becomes</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_03-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{1}{r} \frac{\phi \mu c r}{2kt} \frac{d}{ds} \left( \frac{\phi \mu c r^2}{2kt} \frac{dp}{ds} \right) = - \left( \frac{\phi \mu c r}{2kt} \right)^2 \frac{dp}{ds}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_04-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>which can be simplified as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_05-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{d}{ds} \left( s \frac{dp}{ds} \right) = -s \frac{dp}{ds}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_06-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>or</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_07-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{dp}{ds} + s \frac{d}{ds} \left( \frac{dp}{ds} \right) = -s \frac{dp}{ds}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_08-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>This is an ordinary differential equation which can be solved by letting</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_09-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{dp}{ds} = p&#39;$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_10-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Then</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_11-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$p&#39; + s \frac{dp&#39;}{ds} = -sp&#39;$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_12-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{dp&#39;}{p&#39;} = - \frac{(s+1)}{s} ds \tag{7.4}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_13-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Integrating equ. (7.4) gives</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_14-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\ln p&#39; = - \ln s - s + C_1$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_15-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>or</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_16-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$p&#39; = C_2 \frac{e^{-s}}{s} \tag{7.5}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_17-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>where $C_1$ and $C_2$ are constants of integration and $C_2$ can be evaluated using the line source boundary condition</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_18-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\lim_{r \to 0} r \frac{\partial p}{\partial r} = \frac{q\mu}{2\pi kh} = r \frac{dp}{ds} \frac{\partial s}{\partial r} = 2s \frac{dp}{ds}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_19-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>therefore,</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_20-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\frac{q\mu}{4\pi kh} = C_2 e^{-s}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_21-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>which yields, as r (and therefore s) tends to zero</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_22-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$C_2 = \frac{q\mu}{4\pi kh}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_23-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Equation (7.5) can now be integrated between the limits $t = 0$ ($s \to \infty$) and the current value of t, for which $s = x$; and $p_i$ (initial pressure) and the current pressure p.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_24-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>i.e.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_25-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\int_{p_i}^{p} dp = \frac{q\mu}{4\pi kh} \int_{\infty}^{x} \frac{e^{-s}}{s} ds$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_26-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>which gives</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_27-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\begin{array}{l} p_{r,t} = p_i - \frac{q\mu}{4\pi kh} \int_{\infty}^{\infty} \frac{e^{-s}}{s} ds \tag{7.6} \\ x = \frac{\phi \mu c r^2}{4kt} \end{array}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_28-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Equation (7.6) is the line source solution of the diffusivity equation giving the pressure $p_{r,t}$ as a function of position and time.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_29-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>The integral</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_30-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>(7.7)</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_31-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\int_{x}^{\infty} \frac{e^{-s}}{s} ds = \int_{x}^{\infty} \frac{e^{-s}}{s} ds \quad x = \frac{\phi \mu c r^2}{4kt}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_32-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>is a standard integral, called the exponential integral, and is denoted by ei(x).</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_33-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Qualitatively, the nature of this integral can be understood by considering the component parts, fig. 7.2.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_34-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>The integral of curve (c) between x and $\infty$ will have the shape shown in fig. 7.2 (d). Thus ei (x) is large for small values of x, since the ei-function is the area under the graph from the particular value of x out to infinity (i.e. the shaded area in curve (c) of fig. 7.2) and, conversely, small for large values of x. The ei-function is normally plotted on a log-log scale and such a version is included as fig. 7.3. From this curve it can be seen that if x &lt; 0.01, ei (x) can be approximated as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u088_35-1">
+    <p class="pg">Стр. 88 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$ei(x) \approx - \ln x - 0.5772 \tag{7.8}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_01-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Fig. 7.2 The exponential integral function ei(x).</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_02-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>where the number 0.5772 is Euler&#39;s constant, the exponential of which is denoted by</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_03-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\gamma = e^{0.5772} = 1.781$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_04-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>and therefore equ. (7.8) can be expressed as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_05-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$ei(x) \approx - \ln (\gamma x)$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_06-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$\text{for } x &lt; 0.01$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_07-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>(7.9)</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_08-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>The separate plots of ei(x) and -ln(γx), in Fig. 7.3, demonstrate the range of validity of equ. (7.9). The significance of this approximation is that reservoir engineers are frequently concerned with the analysis of pressures measured in the wellbore, at r=r_w. Since in this case x=dμcr_w^2/4kt, it is usually found that for measurements in the wellbore, x will be less than 0.01 even for small values of t. Equation (7.6) can then be approximated as</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_09-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$p_{rw^2} = p_{wf} = p_i - \frac{q\mu}{4\pi kh} \ln \frac{4kt}{\gamma \phi \mu c r_w^2}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_10-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Or, if the van Everdingen mechanical skin factor is included as a time independent perturbation (ref. Chapter 4, sec. 7), then</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_11-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$p_{wf} = p_i - \frac{q\mu}{4\pi kh} \left( \ln \frac{4kt}{\gamma \phi \mu c r_w^2} + 2S \right) \tag{7.10}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_12-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>As expected for this transient solution there is no dependence at all upon the area drained or well position with respect to the boundary since for the short time when equ.(7.10) is applicable the reservoir appears to be infinite in extent.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_13-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Fig. 7.3 Graph of the ei-function for 0.001 ≤ x ≤ 5.0.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_14-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>Sometimes pressure tests are conducted in order to determine the degree of communication between wells, for example, pulse testing. In such cases pressure transients caused in one well are recorded in a distant well and, under these circumstances, r is large and the approximation of equ. (7.9) is no longer valid. Equation (7.6) must then be used in its full form, i.e.</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_15-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>$$p_{r,t} = p_i - \frac{q\mu}{4\pi kh} e^i \left( \frac{\phi \mu c r^2}{4kt} \right) \tag{7.11}$$</blockquote>
+  </article>
+  <article class="source-excerpt" id="excerpt-u089_16-1">
+    <p class="pg">Стр. 89 · 7.3 THE CONSTANT TERMINAL RATE SOLUTION FOR TRANSIENT AND SEMI STEADY STATE FLOW CONDITIONS</p>
+    <blockquote>in which the values of the exponential integral can be obtained from fig. 7.3.</blockquote>
+  </article>
+</main>
+<footer class="foot">
+  <p>L. P. Dake · «Fundamentals of Reservoir Engineering» · 1978. Нумерация страниц по PDF.</p>
+  <p class="legend-line"><span class="chip chip-author">автор</span> — дословно из книги · <span class="chip chip-model">модель</span> — написано моделью, в книге этого нет · обычный текст со «стр. N» — пересказ книги моделью.</p>
+</footer>
+<div id="ask" class="rag">
+  <section class="rag-panel" id="rag-panel" role="dialog" aria-labelledby="h-ask" hidden>
+    <header class="rag-header">
+      <div>
+        <h2 id="h-ask">Помощник по книге</h2>
+        <p>The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution</p>
+      </div>
+      <button class="rag-close" type="button" aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="rag-content">
+      <div class="rag-intro">
+        <span class="rag-book" aria-hidden="true"></span>
+        <h3>Что пояснить в главе?</h3>
+        <p>Ссылки в ответе ведут к исходному тексту.</p>
+      </div>
+      <div class="rag-messages" aria-label="История чата" role="log"></div>
+      <p class="rag-status muted" role="status"></p>
+    </div>
+    <form class="rag-form" data-chapter="test_dake" data-node="">
+      <label class="sr" for="rag-question">Ваш вопрос</label>
+      <textarea id="rag-question" name="question" required minlength="5" maxlength="1200" rows="2" aria-describedby="rag-shortcuts"
+                placeholder="Вопрос по этой главе"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="rag-shortcuts" id="rag-shortcuts"><kbd>Enter</kbd> отправить · <kbd>Ctrl+Enter</kbd> новая строка</p>
+    </form>
+  </section>
+  <button class="rag-launcher" type="button" aria-expanded="false" aria-controls="rag-panel">
+    <span class="rag-icon" aria-hidden="true"></span> <span class="rag-launcher-label">Чат по книге</span>
+  </button>
+</div>
+<script>window.KMD_COURSE = {"chapter": "test_dake", "title": "The Basic Differential Equation for Radial Flow in a Porous Medium; the constant terminal rate solution", "book": {"author": "L. P. Dake", "title": "Fundamentals of Reservoir Engineering", "year": 1978, "md": "md/test_dake.md"}, "steps": [{"node_id": "geo.test_dake.s5_2.01", "index": 1, "title": "Когда поток можно считать радиальным", "url": "step-01.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_2.02", "index": 2, "title": "Баланс массы в кольце", "url": "step-02.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.03", "index": 3, "title": "Как давление управляет расходом", "url": "step-03.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_2.04", "index": 4, "title": "Как сжимаемость замыкает модель", "url": "step-04.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_1.01", "index": 5, "title": "Зачем упрощать уравнение потока", "url": "step-05.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.01", "index": 6, "title": "Что задаёт решение для скважины", "url": "step-06.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_3.02", "index": 7, "title": "Когда пласт кажется бесконечным", "url": "step-07.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.03", "index": 8, "title": "Почему давление падает одинаково", "url": "step-08.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_3.04", "index": 9, "title": "Как усреднить пластовое давление", "url": "step-09.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_3.05", "index": 10, "title": "Когда давление перестаёт меняться", "url": "step-10.html", "minutes": 7}, {"node_id": "geo.test_dake.s5_4.01", "index": 11, "title": "Какие члены уравнения отбросить", "url": "step-11.html", "minutes": 6}, {"node_id": "geo.test_dake.s5_4.02", "index": 12, "title": "Проверка малой сжимаемости жидкости", "url": "step-12.html", "minutes": 8}, {"node_id": "geo.test_dake.s5_4.03", "index": 13, "title": "Не смешивайте две пористости", "url": "step-13.html", "minutes": 5}, {"node_id": "geo.test_dake.s5_4.04", "index": 14, "title": "Почему давление похоже на тепло", "url": "step-14.html", "minutes": 4}, {"node_id": "geo.test_dake.s7_3.01", "index": 15, "title": "Когда скважину заменяют линией", "url": "step-15.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.02", "index": 16, "title": "Как объединить расстояние и время", "url": "step-16.html", "minutes": 8}, {"node_id": "geo.test_dake.s7_3.03", "index": 17, "title": "Как дебит задаёт константу", "url": "step-17.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.04", "index": 18, "title": "От производной к давлению", "url": "step-18.html", "minutes": 5}, {"node_id": "geo.test_dake.s7_3.05", "index": 19, "title": "Когда интеграл заменяют логарифмом", "url": "step-19.html", "minutes": 7}, {"node_id": "geo.test_dake.s7_3.06", "index": 20, "title": "Как читать давление в скважине", "url": "step-20.html", "minutes": 6}, {"node_id": "geo.test_dake.s7_3.07", "index": 21, "title": "Почему дальняя скважина меняет расчёт", "url": "step-21.html", "minutes": 6}], "minutes": 128, "n_tasks": 63, "n_cards": 42, "has_media": true, "library": true, "has_before": false};</script>
+<script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/vendor/katex/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

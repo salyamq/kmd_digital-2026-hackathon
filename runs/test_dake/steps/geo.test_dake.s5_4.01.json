@@ -1,0 +1,621 @@
+{
+  "node_id": "geo.test_dake.s5_4.01",
+  "chapter": "test_dake",
+  "index": 11,
+  "part": {
+    "id": "part3",
+    "title": "Когда допустимо простое уравнение"
+  },
+  "title_beginner": "Какие члены уравнения отбросить",
+  "title_book": "Линеаризация уравнения для жидкости малой постоянной сжимаемости",
+  "section": "s5_4",
+  "pages": [
+    78,
+    79
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Линейная форма получается не простой перестановкой, а отбрасыванием членов при оговорённых допущениях."
+  },
+  "threshold": "Линейная форма получается не простой перестановкой, а отбрасыванием членов при оговорённых допущениях.",
+  "format": "text",
+  "format_rationale": "Ф/Н: разобрать порядок исключения членов с обращением к каждой строке уравнения.",
+  "order_rationale": "Возвращаемся к нелинейному уравнению и проверяем, какие члены разрешено отбросить.",
+  "essence": [
+    "Линейную форму получают, отбросив члены лишь при подходящих свойствах жидкости и малом градиенте давления.",
+    "Сжимаемость фиксирует коэффициент в упрощённом уравнении, если её считают постоянной."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        78,
+        79
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Недонасыщенная нефть**: Нефть, из которой при рассматриваемом давлении ещё не выделяется отдельная газовая фаза. Автор упрощает уравнение удалением членов на основе допущений о жидкости. В приложении рассматривается **недонасыщенная нефть**. Левую часть раскрывают правилом дифференцирования произведения.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c01",
+            "geo.test_dake.s5_4.01.c02",
+            "geo.test_dake.s5_4.01.c03"
+          ],
+          "pages": [
+            78
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c01",
+              "quote": "A simple linearization of equ. (5.1) can be obtained by deletion of some of the terms, dependent upon making various assumptions concerning the nature of fluid for which solutions are being sought",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c02",
+              "quote": "In this section the fluid considered will be a liquid which, in a practical sense, will apply to the flow of undersaturated oil",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c03",
+              "quote": "Expanding the left hand side of equ. (5.1), using the chain rule for differentiation gives",
+              "page": 78,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "**Вязкость**: Сопротивление жидкости течению. После замены производной плотности появляется член с квадратом градиента давления. **Вязкость** жидкости в этой модели принимают почти независимой от давления. При малом градиенте давления его квадратом в уравнении пренебрегают.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c04",
+            "geo.test_dake.s5_4.01.c05",
+            "geo.test_dake.s5_4.01.c06"
+          ],
+          "pages": [
+            78,
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c04",
+              "quote": "$$\\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} \\left( \\frac{k}{\\mu} \\right) \\rho r \\frac{\\partial p}{\\partial r} + \\frac{k}{\\mu} c \\rho r \\left( \\frac{\\partial p}{\\partial r} \\right)^2 + \\frac{k \\rho}{\\mu} \\frac{\\partial p}{\\partial r} + \\frac{k \\rho}{\\mu} r \\frac{\\partial^2 p}{\\partial r^2} \\right] = \\phi c \\rho \\frac{\\partial p}{\\partial t} \\tag{5.18}$$",
+              "page": 78,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c05",
+              "quote": "the viscosity $\\mu$ is practically independent of pressure and may be regarded as a constant",
+              "page": 79,
+              "kind": "assumption"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c06",
+              "quote": "the pressure gradient $\\partial p/\\partial r$ is small and therefore, terms of the order $(\\partial p/\\partial r)^2$ can be neglected.",
+              "page": 79,
+              "kind": "assumption"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "**Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. Из раскрытой левой части исключают первые два члена. Оставшийся радиальный оператор записывают как производную произведения радиуса на градиент. Постоянная **сжимаемость** фиксирует оставшийся коэффициент. Так автор получает линейное уравнение.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c07",
+            "geo.test_dake.s5_4.01.c08",
+            "geo.test_dake.s5_4.01.c09"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c07",
+              "quote": "These two assumptions eliminate the first two terms in the left hand side of equ. (5.18), reducing the latter to",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c08",
+              "quote": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t} \\tag{5.20}$$",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.01.c09",
+              "quote": "Making one final assumption, that the compressibility is constant, means that the coefficient $\\phi \\mu c/k$ is also constant and therefore, the basic equation has been effectively linearized.",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        78,
+        79
+      ],
+      "items": [
+        {
+          "text": "Раскрыть производную произведения.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c03"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "Отбросить члены с производной вязкости и квадратом градиента.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c07"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "При постоянной сжимаемости считать оставшийся коэффициент неизменным.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c09"
+          ],
+          "pages": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        78,
+        79
+      ],
+      "items": [
+        {
+          "text": "В приложении рассматривается недонасыщенная нефть.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c02"
+          ],
+          "pages": [
+            78
+          ]
+        },
+        {
+          "text": "Вязкость жидкости в этой модели принимают почти независимой от давления.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c05"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "При малом градиенте давления его квадратом в уравнении пренебрегают.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c06"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Постоянная сжимаемость фиксирует оставшийся коэффициент. Так автор получает линейное уравнение.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.01.c09"
+          ],
+          "pages": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        78,
+        79
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_4.01.f01",
+          "latex": "\\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} \\left( \\frac{k}{\\mu} \\right) \\rho r \\frac{\\partial p}{\\partial r} + \\frac{k}{\\mu} c \\rho r \\left( \\frac{\\partial p}{\\partial r} \\right)^2 + \\frac{k \\rho}{\\mu} \\frac{\\partial p}{\\partial r} + \\frac{k \\rho}{\\mu} r \\frac{\\partial^2 p}{\\partial r^2} \\right] = \\phi c \\rho \\frac{\\partial p}{\\partial t}",
+          "meaning": "Развёрнутая исходная левая часть с производной отношения проницаемости к вязкости и квадратом градиента.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "\\rho",
+              "meaning": "плотность жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 78,
+          "unit_id": "u078_19"
+        },
+        {
+          "id": "geo.test_dake.s5_4.01.f02",
+          "latex": "\\frac{\\partial^2 p}{\\partial r^2} + \\frac{1}{r} \\frac{\\partial p}{\\partial r} = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t}",
+          "meaning": "Линейное радиальное уравнение после исключения двух членов.",
+          "vars": [
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_05"
+        },
+        {
+          "id": "geo.test_dake.s5_4.01.f03",
+          "latex": "\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t}",
+          "meaning": "Компактная форма радиального оператора пьезопроводности.",
+          "vars": [
+            {
+              "symbol": "r",
+              "meaning": "радиус, расстояние от центра скважины",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            },
+            {
+              "symbol": "\\phi",
+              "meaning": "пористость, доля пор в объёме породы",
+              "unit": null
+            },
+            {
+              "symbol": "\\mu",
+              "meaning": "вязкость жидкости",
+              "unit": null
+            },
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "k",
+              "meaning": "проницаемость",
+              "unit": null
+            },
+            {
+              "symbol": "t",
+              "meaning": "время после начала отбора",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_07"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Выполняют подстановку связи производной плотности и давления и переходят к компактной форме оператора.",
+        "inputs": "Автор упрощает уравнение удалением членов на основе допущений о жидкости.",
+        "outputs": "При постоянной сжимаемости коэффициент становится постоянным и уравнение линеаризуется.",
+        "breaks_where": "Речь о жидкостях, прежде всего о недонасыщенной нефти. Малый градиент нужен, чтобы его квадратом можно было пренебречь.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Автор упрощает уравнение удалением членов на основе допущений о жидкости.",
+          "manual_steps": "Выполняют подстановку связи производной плотности и давления и переходят к компактной форме оператора.",
+          "judgment_points": "Речь о жидкостях, прежде всего о недонасыщенной нефти. Малый градиент нужен, чтобы его квадратом можно было пренебречь.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Применить формулу, не проверив её граничные условия и допущения.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Приближение убирает малые члены, как оптимизация модели по существенным признакам.",
+        "breaks_where": "Если градиенты велики или свойства сильно меняются, убранные члены могут оказаться важны.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "deeper",
+      "kind": "deeper",
+      "title": "Глубже",
+      "by": "mixed",
+      "pages": [],
+      "items": [
+        {
+          "title": "Проверьте промежуточную запись",
+          "text": "В запросе правой частью промежуточного равенства перед подстановкой стоит производная давления. Из предыдущего определения сжимаемости и следующего раскрытия следует, что там нужна производная плотности; буквальную строку не используем для расчётов.",
+          "by": "model"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        78
+      ],
+      "items": [
+        {
+          "term": "линеаризация",
+          "en": "linearization",
+          "definition": "Здесь — приближение, в котором коэффициенты перестают существенно зависеть от давления.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "недонасыщенная нефть",
+          "en": "undersaturated oil",
+          "definition": "Нефть, из которой при рассматриваемом давлении ещё не выделяется отдельная газовая фаза.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "вязкость",
+          "en": "viscosity",
+          "definition": "Сопротивление жидкости течению.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "градиент давления",
+          "en": "pressure gradient",
+          "definition": "Как быстро меняется давление в пространстве.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "пористость",
+          "en": "porosity",
+          "definition": "Доля объёма породы, занятая порами.",
+          "page": 78,
+          "by": "model"
+        },
+        {
+          "term": "проницаемость",
+          "en": "permeability",
+          "definition": "Способность породы пропускать жидкость или газ.",
+          "page": 78,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Раскрыть производную → Отбросить малые члены → Зафиксировать коэффициент.",
+      "alt": "Схема: Раскрыть производную, затем Отбросить малые члены, затем Зафиксировать коэффициент.",
+      "file": "illustrations/geo.test_dake.s5_4.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.01.c06",
+        "geo.test_dake.s5_4.01.c03",
+        "geo.test_dake.s5_4.01.c09"
+      ],
+      "pages": [
+        78,
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c01",
+      "kind": "observation",
+      "text": "Автор упрощает уравнение удалением членов на основе допущений о жидкости.",
+      "quote": "A simple linearization of equ. (5.1) can be obtained by deletion of some of the terms, dependent upon making various assumptions concerning the nature of fluid for which solutions are being sought",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c02",
+      "kind": "observation",
+      "text": "В приложении рассматривается недонасыщенная нефть.",
+      "quote": "In this section the fluid considered will be a liquid which, in a practical sense, will apply to the flow of undersaturated oil",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c03",
+      "kind": "observation",
+      "text": "Левую часть раскрывают правилом дифференцирования произведения.",
+      "quote": "Expanding the left hand side of equ. (5.1), using the chain rule for differentiation gives",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c04",
+      "kind": "observation",
+      "text": "После замены производной плотности появляется член с квадратом градиента давления.",
+      "quote": "$$\\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} \\left( \\frac{k}{\\mu} \\right) \\rho r \\frac{\\partial p}{\\partial r} + \\frac{k}{\\mu} c \\rho r \\left( \\frac{\\partial p}{\\partial r} \\right)^2 + \\frac{k \\rho}{\\mu} \\frac{\\partial p}{\\partial r} + \\frac{k \\rho}{\\mu} r \\frac{\\partial^2 p}{\\partial r^2} \\right] = \\phi c \\rho \\frac{\\partial p}{\\partial t} \\tag{5.18}$$",
+      "page": 78,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c05",
+      "kind": "assumption",
+      "text": "Зависимость вязкости жидкости от давления считают пренебрежимо малой.",
+      "quote": "the viscosity $\\mu$ is practically independent of pressure and may be regarded as a constant",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c06",
+      "kind": "assumption",
+      "text": "При малом градиенте член второго порядка по градиенту отбрасывается.",
+      "quote": "the pressure gradient $\\partial p/\\partial r$ is small and therefore, terms of the order $(\\partial p/\\partial r)^2$ can be neglected.",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c07",
+      "kind": "observation",
+      "text": "Из раскрытой левой части исключают первые два члена.",
+      "quote": "These two assumptions eliminate the first two terms in the left hand side of equ. (5.18), reducing the latter to",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c08",
+      "kind": "observation",
+      "text": "Оставшийся радиальный оператор записывают как производную произведения радиуса на градиент.",
+      "quote": "$$\\frac{1}{r} \\frac{\\partial}{\\partial r} \\left( r \\frac{\\partial p}{\\partial r} \\right) = \\frac{\\phi \\mu c}{k} \\frac{\\partial p}{\\partial t} \\tag{5.20}$$",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.01.c09",
+      "kind": "observation",
+      "text": "При постоянной сжимаемости коэффициент становится постоянным и уравнение линеаризуется.",
+      "quote": "Making one final assumption, that the compressibility is constant, means that the coefficient $\\phi \\mu c/k$ is also constant and therefore, the basic equation has been effectively linearized.",
+      "page": 79,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_4.01.t01",
+    "geo.test_dake.s5_4.01.t02",
+    "geo.test_dake.s5_4.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_4.01.k01",
+    "geo.test_dake.s5_4.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_1.01",
+      "type": "prerequisite"
+    },
+    {
+      "to": "geo.test_dake.s5_2.04",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [
+      "tasks[2] (cloze): cloze blank 0: ответ «сжимаемости» не виден в evidence"
+    ],
+    "dropped_tasks": []
+  }
+}

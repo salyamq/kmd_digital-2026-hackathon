@@ -1,0 +1,306 @@
+{
+  "node_id": "geo.test_slatt.x1.03",
+  "chapter": "test_slatt",
+  "index": 5,
+  "part": {
+    "id": "part1",
+    "title": "Как растёт дельта и что сохраняется в разрезе"
+  },
+  "title_beginner": "Что направляет рост дельты",
+  "title_book": "Клиноформы и стратиграфическое сопоставление",
+  "section": "x1",
+  "pages": [
+    410
+  ],
+  "minutes": 6,
+  "difficulty": {
+    "primary": "В",
+    "secondary": "М",
+    "threshold": "Дельта меняет направление роста и без изменения уровня моря."
+  },
+  "threshold": "Дельта меняет направление роста и без изменения уровня моря.",
+  "format": "interactive",
+  "format_rationale": "В/М: переключатель показывает смену активного рукава отдельно от изменения относительного уровня моря.",
+  "order_rationale": "Уточняем, как смена рукавов и относительный уровень моря меняют дельту.",
+  "essence": [
+    "Дельта может менять направление и без перемены уровня моря.",
+    "Важно отличать смену активного русла от врезания долины при падении уровня моря."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел. По приведённой оценке переключение русел может сильнее влиять на эволюцию дельты, чем изменение уровня моря.",
+          "claim_ids": [
+            "geo.test_slatt.x1.03.c01",
+            "geo.test_slatt.x1.03.c02"
+          ],
+          "pages": [
+            410
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.x1.03.c01",
+              "quote": "In addition to sea-level fluctuations, deltas are subject to “delta distributary switching processes,” such as modeled in Fig. 9.12",
+              "page": 410,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.x1.03.c02",
+              "quote": "According to Overeem et al. (2005), channel switching may be an even more important control on the evolution of deltaic systems than is sea-level change",
+              "page": 410,
+              "kind": "inference"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Дельты могут образовываться при относительном падении уровня моря; такие тела называют дельтами низкого стояния или края шельфа. В начале падения уровня моря река врезается в долину, а береговая линия смещается к морю и понижается. Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+          "claim_ids": [
+            "geo.test_slatt.x1.03.c03",
+            "geo.test_slatt.x1.03.c04",
+            "geo.test_slatt.x1.03.c05"
+          ],
+          "pages": [
+            410
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.x1.03.c03",
+              "quote": "Deltas can also form during a relative fall in sea level; these are often referred to as “lowstand” or “shelf-margin” deltas or systems tracts (Figs. 5.18 and 5.19)",
+              "page": 410,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.x1.03.c04",
+              "quote": "These deposits form in response to early fall in sea level, which causes valley incision, and a seaward retreat and lowering of the shoreline",
+              "page": 410,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.x1.03.c05",
+              "quote": "Although important, these lowstand deltas are generally not as large, nor as prevalent as highstand deltas",
+              "page": 410,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "text": "Дельты могут образовываться при относительном падении уровня моря; такие тела называют дельтами низкого стояния или края шельфа.",
+          "claim_ids": [
+            "geo.test_slatt.x1.03.c03"
+          ],
+          "pages": [
+            410
+          ]
+        },
+        {
+          "text": "Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+          "claim_ids": [
+            "geo.test_slatt.x1.03.c05"
+          ],
+          "pages": [
+            410
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        410
+      ],
+      "data": {
+        "text": "Любое изменение положения дельты означает изменение уровня моря.",
+        "correction": "Активное русло также может сменить направление подачи осадка.",
+        "claim_ids": [
+          "geo.test_slatt.x1.03.c01",
+          "geo.test_slatt.x1.03.c02"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "При восстановлении истории роста дельты учитывают и изменение положения берега, и переключение русел.",
+        "inputs": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+        "outputs": "Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+        "breaks_where": "Сравнение влияния русел и уровня моря условное; различие размеров низких и высоких дельт сформулировано как тенденция.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+          "manual_steps": "При восстановлении истории роста дельты учитывают и изменение положения берега, и переключение русел.",
+          "judgment_points": "Сравнение влияния русел и уровня моря условное; различие размеров низких и высоких дельт сформулировано как тенденция.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Любое изменение положения дельты означает изменение уровня моря.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Форма маршрутов зависит и от внешней границы сети, и от переключения активных ветвей.",
+        "breaks_where": "Русло меняет положение за счёт переноса и накопления осадка, а не по команде маршрутизатора.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "term": "распределительное русло",
+          "definition": "Ветвь реки, выносящая материал через дельту",
+          "en": "distributary channel",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "дельта низкого стояния",
+          "definition": "Дельта, образовавшаяся при относительном падении уровня моря",
+          "en": "lowstand delta",
+          "page": 410,
+          "by": "author"
+        },
+        {
+          "term": "шельф",
+          "definition": "Мелководная окраина материка",
+          "en": "shelf",
+          "page": 410,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Уровень моря падает → Река врезается → Берег смещается.",
+      "alt": "Схема показывает цепочку: Уровень моря падает, затем Река врезается, затем Берег смещается.",
+      "file": "illustrations/geo.test_slatt.x1.03__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.x1.03.c02",
+        "geo.test_slatt.x1.03.c04",
+        "geo.test_slatt.x1.03.c03"
+      ],
+      "pages": [
+        410
+      ],
+      "after_block": "how-2",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.x1.03.c01",
+      "kind": "observation",
+      "text": "Помимо колебаний уровня моря на дельты действует переключение распределительных русел.",
+      "quote": "In addition to sea-level fluctuations, deltas are subject to “delta distributary switching processes,” such as modeled in Fig. 9.12",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.03.c02",
+      "kind": "inference",
+      "text": "По приведённой оценке переключение русел может сильнее влиять на эволюцию дельты, чем изменение уровня моря.",
+      "quote": "According to Overeem et al. (2005), channel switching may be an even more important control on the evolution of deltaic systems than is sea-level change",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.03.c03",
+      "kind": "observation",
+      "text": "Дельты могут образовываться при относительном падении уровня моря; такие тела называют дельтами низкого стояния или края шельфа.",
+      "quote": "Deltas can also form during a relative fall in sea level; these are often referred to as “lowstand” or “shelf-margin” deltas or systems tracts (Figs. 5.18 and 5.19)",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.03.c04",
+      "kind": "observation",
+      "text": "В начале падения уровня моря река врезается в долину, а береговая линия смещается к морю и понижается.",
+      "quote": "These deposits form in response to early fall in sea level, which causes valley incision, and a seaward retreat and lowering of the shoreline",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.03.c05",
+      "kind": "observation",
+      "text": "Дельты низкого стояния, как правило, меньше и встречаются реже, чем дельты высокого стояния.",
+      "quote": "Although important, these lowstand deltas are generally not as large, nor as prevalent as highstand deltas",
+      "page": 410,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.x1.03.t01",
+    "geo.test_slatt.x1.03.t02",
+    "geo.test_slatt.x1.03.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.x1.03.k01",
+    "geo.test_slatt.x1.03.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

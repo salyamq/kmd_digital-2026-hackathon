@@ -1,0 +1,379 @@
+{
+  "node_id": "geo.test_slatt.x1.01",
+  "chapter": "test_slatt",
+  "index": 2,
+  "part": {
+    "id": "part1",
+    "title": "Как растёт дельта и что сохраняется в разрезе"
+  },
+  "title_beginner": "Почему похожие пески не связаны",
+  "title_book": "Клиноформы и стратиграфическое сопоставление",
+  "section": "x1",
+  "pages": [
+    410
+  ],
+  "minutes": 7,
+  "difficulty": {
+    "primary": "П",
+    "secondary": "Н",
+    "threshold": "Одинаковая порода в двух скважинах не доказывает одновременность её отложения или гидравлическую связь."
+  },
+  "threshold": "Одинаковая порода в двух скважинах не доказывает одновременность её отложения или гидравлическую связь.",
+  "format": "short",
+  "format_rationale": "П/Н: на одном разрезе переключаем способ корреляции и показываем скрытую преграду, которая разделяет пески.",
+  "order_rationale": "Теперь можно объяснить, почему похожие пески оказываются разобщены.",
+  "essence": [
+    "Похожий отклик каротажа ещё не означает связи двух песков.",
+    "Выбор корреляции меняет прогноз заводнения и одиночной добычи."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Механизм",
+          "text": "Клиноформы представляют линии геологического времени и пересекают границы, проведённые по породам. В условном примере сопоставлены интервалы либо по сходству каротажа, либо по времени отложения.",
+          "claim_ids": [
+            "geo.test_slatt.x1.01.c01",
+            "geo.test_slatt.x1.01.c02"
+          ],
+          "pages": [
+            410
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.x1.01.c01",
+              "quote": "It is important for proper subsurface correlations to understand that clinoforms, which represent geological time lines, crosscut lithostratigraphic boundaries",
+              "page": 410,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.x1.01.c02",
+              "quote": "The hypothetical example in Fig. 9.10 shows correlations based upon lithofacies (stratigraphic intervals with similarities in well log response) and upon geological time",
+              "page": 410,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Как это видно",
+          "text": "Глинистые и неоднородные отложения разделяют пески, поэтому между скважинами 1 и 2 нет связи. На временном разрезе между песками видны неоднородные и глинистые слои, хотя на разрезе по породам пески кажутся непрерывными.",
+          "claim_ids": [
+            "geo.test_slatt.x1.01.c03",
+            "geo.test_slatt.x1.01.c05"
+          ],
+          "pages": [
+            410
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.x1.01.c03",
+              "quote": "Note that shaley and heterolithic intervals separate sandy intervals, so that the sands between wells 1 and 2 are not in communication",
+              "page": 410,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_slatt.x1.01.c05",
+              "quote": "Note the heterolithics and shales that separate sands in the chronostratigraphic correlation compared with the continuity of the sands in the lithostratigraphic correlation",
+              "page": 410,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "Разобщение песков ухудшает эффективность заводнения и продуктивность отдельной скважины.",
+          "claim_ids": [
+            "geo.test_slatt.x1.01.c04"
+          ],
+          "pages": [
+            410
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_slatt.x1.01.c04",
+              "quote": "This feature will adversely affect waterflood performance as well as single-well productivity",
+              "page": 410,
+              "kind": "inference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_slatt_x1_01_e01",
+          "title": "Два варианта одного разреза",
+          "page": 410,
+          "condition": "Каротаж и предполагаемые линии возраста в двух скважинах.",
+          "steps": [
+            "Сопоставить похожие песчаные интервалы по каротажу.",
+            "Пересопоставить с учётом наклонных линий времени.",
+            "Проверить, лежат ли между песками глинистые и неоднородные отложения."
+          ],
+          "result": "Сходные пески между скважинами 1 и 2 разобщены.",
+          "numbers": [
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "data": {
+        "title": "Как применить правило",
+        "signs": [
+          "Сходный отклик",
+          "Корреляция по времени"
+        ],
+        "rule": "Похожий отклик каротажа ещё не означает связи двух песков.",
+        "conclusion": "Выбор корреляции меняет прогноз заводнения и одиночной добычи.",
+        "claim_ids": [
+          "geo.test_slatt.x1.01.c03"
+        ],
+        "cases": [
+          {
+            "given": "Почему пески между этими скважинами не сообщаются?",
+            "options": [
+              "Возраст песка невозможно сопоставить",
+              "Обе скважины расположены в песке",
+              "Между ними глинистые и неоднородные отложения"
+            ],
+            "answer": 2,
+            "why": "Пески обособлены глинистыми и неоднородными интервалами.",
+            "source": "Пример из учебного узла"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        410
+      ],
+      "data": {
+        "text": "Если пески выглядят одинаково, вода свободно проходит от одной скважины к другой.",
+        "correction": "В примере между песками лежат барьеры, видимые при корреляции по времени.",
+        "claim_ids": [
+          "geo.test_slatt.x1.01.c01",
+          "geo.test_slatt.x1.01.c03",
+          "geo.test_slatt.x1.01.c05"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "Сравнивают две корреляции разрезов скважин: по сходству отклика и по времени отложения; на второй проверяют расположение преград.",
+        "inputs": "Каротаж и предполагаемые линии возраста в двух скважинах.",
+        "outputs": "На временном разрезе между песками видны неоднородные и глинистые слои, хотя на разрезе по породам пески кажутся непрерывными.",
+        "breaks_where": "Наблюдаемое сходство каротажа не гарантирует сообщения между песками. В примере разобщение важно и для заводнения, и для отдельной скважины.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Каротаж и предполагаемые линии возраста в двух скважинах.",
+          "manual_steps": "Сравнивают две корреляции разрезов скважин: по сходству отклика и по времени отложения; на второй проверяют расположение преград.",
+          "judgment_points": "Наблюдаемое сходство каротажа не гарантирует сообщения между песками. В примере разобщение важно и для заводнения, и для отдельной скважины.",
+          "time": "Глава не оценивает трудозатраты; время зависит от объёма проверки и качества исходных наблюдений.",
+          "typical_errors": "Если пески выглядят одинаково, вода свободно проходит от одной скважины к другой.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Соединение записей по похожим атрибутам может дать пары, отличные от соединения по времени событий.",
+        "breaks_where": "В породах нет полного журнала времени; поверхности приходится интерпретировать.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "book_figures",
+      "kind": "book_figures",
+      "title": "Рисунки книги к этому шагу",
+      "by": "author",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "number": "9.10",
+          "page": 410,
+          "caption": "**FIGURE 9.10** Lithostratigraphic (upper) and chronostratigraphic (lower) correlation across two wells in a prograding delta system. Note the heterolithics and shales that separate sands in the chronostratigraphic correlation compared with the continuity of the sands in the lithostratigraphic correlation. After Gani and Bhattacharya (2005).",
+          "role": "example",
+          "redraw": true,
+          "unit_id": "u410_05",
+          "scan": "pages/p410.png"
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        410
+      ],
+      "items": [
+        {
+          "term": "клиноформа",
+          "definition": "Наклонная поверхность, рассматриваемая здесь как линия равного геологического времени на разрезе",
+          "en": "clinoform",
+          "page": 410,
+          "by": "author"
+        },
+        {
+          "term": "каротаж",
+          "definition": "Измерения вдоль ствола скважины",
+          "en": "well logging",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "заводнение",
+          "definition": "Закачка воды для вытеснения нефти",
+          "en": "waterflood",
+          "page": 410,
+          "by": "model"
+        },
+        {
+          "term": "корреляция",
+          "definition": "Сопоставление интервалов в разных разрезах",
+          "en": "correlation",
+          "page": 410,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Сходный отклик → Корреляция по времени → Разобщённые пески.",
+      "alt": "Схема показывает цепочку: Сходный отклик, затем Корреляция по времени, затем Разобщённые пески.",
+      "file": "illustrations/geo.test_slatt.x1.01__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_slatt.x1.01.c03",
+        "geo.test_slatt.x1.01.c04",
+        "geo.test_slatt.x1.01.c01"
+      ],
+      "pages": [
+        410
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_slatt.x1.01.c01",
+      "kind": "observation",
+      "text": "Клиноформы представляют линии геологического времени и пересекают границы, проведённые по породам.",
+      "quote": "It is important for proper subsurface correlations to understand that clinoforms, which represent geological time lines, crosscut lithostratigraphic boundaries",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.01.c02",
+      "kind": "observation",
+      "text": "В условном примере сопоставлены интервалы либо по сходству каротажа, либо по времени отложения.",
+      "quote": "The hypothetical example in Fig. 9.10 shows correlations based upon lithofacies (stratigraphic intervals with similarities in well log response) and upon geological time",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.01.c03",
+      "kind": "observation",
+      "text": "Глинистые и неоднородные отложения разделяют пески, поэтому между скважинами 1 и 2 нет связи.",
+      "quote": "Note that shaley and heterolithic intervals separate sandy intervals, so that the sands between wells 1 and 2 are not in communication",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.01.c04",
+      "kind": "inference",
+      "text": "Разобщение песков ухудшает эффективность заводнения и продуктивность отдельной скважины.",
+      "quote": "This feature will adversely affect waterflood performance as well as single-well productivity",
+      "page": 410,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_slatt.x1.01.c05",
+      "kind": "observation",
+      "text": "На временном разрезе между песками видны неоднородные и глинистые слои, хотя на разрезе по породам пески кажутся непрерывными.",
+      "quote": "Note the heterolithics and shales that separate sands in the chronostratigraphic correlation compared with the continuity of the sands in the lithostratigraphic correlation",
+      "page": 410,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_slatt.x1.01.t01",
+    "geo.test_slatt.x1.01.t02",
+    "geo.test_slatt.x1.01.t03"
+  ],
+  "card_ids": [
+    "geo.test_slatt.x1.01.k01",
+    "geo.test_slatt.x1.01.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_slatt.s9_4_1.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "node_id": "geo.test_dake.s5_4.02",
+  "chapter": "test_dake",
+  "index": 12,
+  "part": {
+    "id": "part3",
+    "title": "Когда допустимо простое уравнение"
+  },
+  "title_beginner": "Проверка малой сжимаемости жидкости",
+  "title_book": "Линеаризация уравнения для жидкости малой постоянной сжимаемости",
+  "section": "s5_4",
+  "pages": [
+    79
+  ],
+  "minutes": 8,
+  "difficulty": {
+    "primary": "Ф",
+    "secondary": "Н",
+    "threshold": "Постоянная сжимаемость недостаточна: произведение сжимаемости на давление должно быть много меньше единицы."
+  },
+  "threshold": "Постоянная сжимаемость недостаточна: произведение сжимаемости на давление должно быть много меньше единицы.",
+  "format": "data_practice",
+  "format_rationale": "Ф/Н: по авторскому числовому примеру проверяют пригодность линейной модели по произведению сжимаемости на давление.",
+  "order_rationale": "После формального упрощения оцениваем, выполнено ли его физическое условие на примере.",
+  "essence": [
+    "Для упрощения сжимаемость должна быть малой и постоянной.",
+    "На примере автора пригодность проверяют по произведению суммарной сжимаемости на давление."
+  ],
+  "blocks": [
+    {
+      "id": "how",
+      "kind": "how",
+      "title": "Как это работает",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "how-1",
+          "section": "Как работает модель",
+          "text": "**Сжимаемость**: Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна. Для жидкостей такие допущения часто применяли; автор предупреждает о проверке применимости. Для отбрасывания членов автор требует условие на произведение cp: оно много меньше единицы. **Сжимаемость** требуется не только постоянная, но и малая.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c01",
+            "geo.test_dake.s5_4.02.c02",
+            "geo.test_dake.s5_4.02.c03"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c01",
+              "quote": "For the flow of liquids the above assumptions are quite reasonable and have been frequently applied in the past. Dranchuk and Quon$^3$, however, have shown that this simple linearization by deletion must be treated with caution and can only be applied when the product",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c02",
+              "quote": "can only be applied when the product",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c03",
+              "quote": "This condition makes it necessary to modify the final assumption so that the compressibility is not just constant but both small and constant",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-2",
+          "section": "Математика и наблюдения",
+          "text": "В уравнение входит суммарная сжимаемость системы с взвешиванием вкладов по насыщенности. Насыщенности выражены в долях порового объёма.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c04",
+            "geo.test_dake.s5_4.02.c05"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c04",
+              "quote": "The compressibility appearing in equ. (5.20) is the total, or saturation weighted, compressibility of the entire reservoir-liquid system",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c05",
+              "quote": "in which the saturations are expressed as fractions of the pore volume",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-3",
+          "section": "Практика",
+          "text": "В примере суммарная сжимаемость равна 14,6 × 10⁻⁶ / psi. Произведение на давление равно 0,04. Значение подтверждает применимость упрощения.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c06"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c06",
+              "quote": "then $c_t$ in equ. (5.22) has the value $14.6 \\times 10^{-6} / \\text{psi}$ and the product expressed by equ. (5.21) has the value 0.04, which satisfies the necessary condition for this simple linearization to be valid.",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        },
+        {
+          "id": "how-4",
+          "section": "Условия",
+          "text": "Для системы с большей суммарной сжимаемостью требуется интегральное преобразование. Для реального газа сжимаемость в первом приближении обратно пропорциональна давлению. Произведение близко к единице.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c07",
+            "geo.test_dake.s5_4.02.c08"
+          ],
+          "pages": [
+            79
+          ],
+          "by": "author",
+          "quotes": [
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c07",
+              "quote": "However, when dealing with reservoir systems which have a higher total compressibility it will be necessary to linearize equ. (5.1) using some form of integral transformation as detailed by Dranchuk and Quon",
+              "page": 79,
+              "kind": "observation"
+            },
+            {
+              "claim_id": "geo.test_dake.s5_4.02.c08",
+              "quote": "Such an approach will be required when describing the flow of a real gas since, in this case, the compressibility of the gas alone may, to a first approximation, be expressed as the reciprocal of the pressure and the cp product, equ. (5.21), will itself be unity.",
+              "page": 79,
+              "kind": "observation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "kind": "procedure",
+      "title": "По шагам",
+      "by": "mixed",
+      "subtitle": "Последовательность действий",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "text": "Посчитать суммарную сжимаемость по долям и вкладу породы.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c04"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Умножить полученную сжимаемость на давление.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c02"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Проверить малость произведения перед линеаризацией.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c03"
+          ],
+          "pages": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "kind": "examples",
+      "title": "Разбор примеров из книги",
+      "by": "author",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "ex-geo_test_dake_s5_4_02_e01",
+          "title": "Оценка допустимости линеаризации",
+          "page": 79,
+          "condition": "Давление 3000 psi; доля связанной воды 0.2. Сжимаемости нефти, воды и породы соответственно 10, 3 и 6 × 10⁻⁶ / psi.",
+          "steps": [
+            "Взвесить сжимаемости жидкостей по насыщенности и прибавить сжимаемость породы.",
+            "Получить авторское значение суммарной сжимаемости 14.6 × 10⁻⁶ / psi.",
+            "Проверить произведение на давление: автор приводит 0.04."
+          ],
+          "result": "Для приведённого примера условие cp ≪ 1 выполняется.",
+          "numbers": [
+            "0.04",
+            "0.2",
+            "1",
+            "3",
+            "6",
+            "10",
+            "14.6",
+            "3000"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "title": "Решение на данных",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "data": {
+        "title": "Выбор по исходным условиям",
+        "signs": [
+          "Вклады нефти и воды",
+          "Суммарная сжимаемость"
+        ],
+        "rule": "Для упрощения сжимаемость должна быть малой и постоянной.",
+        "conclusion": "На примере автора пригодность проверяют по произведению суммарной сжимаемости на давление.",
+        "claim_ids": [
+          "geo.test_dake.s5_4.02.c02"
+        ],
+        "cases": [
+          {
+            "given": "Как проверяют пригодность простой линеаризации?",
+            "options": [
+              "Вязкость должна расти вместе с давлением",
+              "Хватает постоянного измеренного дебита",
+              "Произведение сжимаемости на давление должно быть много меньше единицы"
+            ],
+            "answer": 2,
+            "why": "Число cp определяет применимость приближения из главы.",
+            "source": "Условия в учебном узле"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numbers",
+      "kind": "numbers",
+      "title": "Цифры и условия",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "text": "Для отбрасывания членов автор требует условие на произведение cp: оно много меньше единицы.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c02"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Сжимаемость требуется не только постоянная, но и малая.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c03"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "В примере суммарная сжимаемость равна 14,6 × 10⁻⁶ / psi. Произведение на давление равно 0,04. Значение подтверждает применимость упрощения.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c06"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Для реального газа сжимаемость в первом приближении обратно пропорциональна давлению. Произведение близко к единице.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c08"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "В примере автора давление равно 3000 psi, а доля связанной воды — 0,2.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c05",
+            "geo.test_dake.s5_4.02.c06"
+          ],
+          "pages": [
+            79
+          ]
+        },
+        {
+          "text": "Сжимаемости нефти, воды и породы: 10, 3 и 6 × 10⁻⁶ / psi соответственно.",
+          "claim_ids": [
+            "geo.test_dake.s5_4.02.c04",
+            "geo.test_dake.s5_4.02.c06"
+          ],
+          "pages": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "formulas",
+      "title": "Формулы",
+      "by": "author",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "id": "geo.test_dake.s5_4.02.f01",
+          "latex": "cp \\ll 1",
+          "meaning": "Условие малости произведения сжимаемости на давление.",
+          "vars": [
+            {
+              "symbol": "c",
+              "meaning": "изотермическая сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_10"
+        },
+        {
+          "id": "geo.test_dake.s5_4.02.f02",
+          "latex": "c_t = c_o S_o + c_w S_{wc} + c_f",
+          "meaning": "Суммарная сжимаемость нефти, воды и породы.",
+          "vars": [
+            {
+              "symbol": "c_t",
+              "meaning": "суммарная сжимаемость",
+              "unit": null
+            },
+            {
+              "symbol": "c_o",
+              "meaning": "сжимаемость нефти",
+              "unit": null
+            },
+            {
+              "symbol": "S_o",
+              "meaning": "доля порового объёма, занятая нефтью",
+              "unit": null
+            },
+            {
+              "symbol": "c_w",
+              "meaning": "сжимаемость воды",
+              "unit": null
+            },
+            {
+              "symbol": "S_{wc}",
+              "meaning": "доля порового объёма, занятая связанной водой",
+              "unit": null
+            },
+            {
+              "symbol": "c_f",
+              "meaning": "вклад сжимаемости породы",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_12"
+        },
+        {
+          "id": "geo.test_dake.s5_4.02.f03",
+          "latex": "\\begin{array}{ll} c_o = 10 \\times 10^{-6} / \\text{psi} & S_{wc} = 0.2 \\\\ c_w = 3 \\times 10^{-6} / \\text{psi} & p = 3000 \\text{ psi} \\\\ c_f = 6 \\times 10^{-6} / \\text{psi} & \\end{array}",
+          "meaning": "Заданные параметры авторского примера.",
+          "vars": [
+            {
+              "symbol": "c_o",
+              "meaning": "сжимаемость нефти",
+              "unit": null
+            },
+            {
+              "symbol": "c_w",
+              "meaning": "сжимаемость воды",
+              "unit": null
+            },
+            {
+              "symbol": "c_f",
+              "meaning": "вклад сжимаемости породы",
+              "unit": null
+            },
+            {
+              "symbol": "S_{wc}",
+              "meaning": "доля порового объёма, занятая связанной водой",
+              "unit": null
+            },
+            {
+              "symbol": "p",
+              "meaning": "давление",
+              "unit": null
+            }
+          ],
+          "page": 79,
+          "unit_id": "u079_14"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "kind": "mistake",
+      "title": "Частая ошибка",
+      "by": "model",
+      "pages": [
+        79
+      ],
+      "data": {
+        "text": "Достаточно зафиксировать сжимаемость, даже если она велика.",
+        "correction": "Проверяют, мало ли произведение сжимаемости на давление.",
+        "claim_ids": [
+          "geo.test_dake.s5_4.02.c02",
+          "geo.test_dake.s5_4.02.c03",
+          "geo.test_dake.s5_4.02.c06",
+          "geo.test_dake.s5_4.02.c07"
+        ],
+        "by": "model"
+      }
+    },
+    {
+      "id": "data",
+      "kind": "data",
+      "title": "Что это значит для данных",
+      "by": "author",
+      "pages": [],
+      "data": {
+        "text": "По составу системы считают суммарную сжимаемость и проверяют условие на произведение с давлением.",
+        "inputs": "Для жидкостей такие допущения часто применяли; автор предупреждает о проверке применимости.",
+        "outputs": "Для реального газа сжимаемость в первом приближении обратно пропорциональна давлению, и произведение близко к единице.",
+        "breaks_where": "Для высокой сжимаемости требуется интегральное преобразование. Для реального газа приблизительная обратная зависимость сжимаемости от давления даёт произведение порядка единицы.",
+        "hypotheses": [],
+        "by": "author",
+        "lens": {
+          "inputs": "Для жидкостей такие допущения часто применяли; автор предупреждает о проверке применимости.",
+          "manual_steps": "По составу системы считают суммарную сжимаемость и проверяют условие на произведение с давлением.",
+          "judgment_points": "Для высокой сжимаемости требуется интегральное преобразование. Для реального газа приблизительная обратная зависимость сжимаемости от давления даёт произведение порядка единицы.",
+          "time": "Трудозатраты в источнике не оценены.",
+          "typical_errors": "Достаточно зафиксировать сжимаемость, даже если она велика.",
+          "by": "model"
+        }
+      }
+    },
+    {
+      "id": "analogy",
+      "kind": "analogy",
+      "title": "Аналогия",
+      "by": "model",
+      "pages": [],
+      "data": {
+        "text": "Проверка малости безразмерного параметра окружает упрощённую модель условием её запуска.",
+        "breaks_where": "Порог «много меньше» не превращается без дополнительных данных в универсальную жёсткую границу.",
+        "by": "model"
+      }
+    },
+    {
+      "id": "glossary",
+      "kind": "glossary",
+      "title": "Новые понятия",
+      "by": "mixed",
+      "pages": [
+        79
+      ],
+      "items": [
+        {
+          "term": "сжимаемость",
+          "en": "compressibility",
+          "definition": "Относительное изменение объёма при изменении давления; для изотермической величины температура постоянна.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "связанная вода",
+          "en": "connate water",
+          "definition": "Вода, учитываемая как занимающая часть порового объёма наряду с углеводородами.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "линеаризация",
+          "en": "linearization",
+          "definition": "Здесь — приближение, в котором коэффициенты перестают существенно зависеть от давления.",
+          "page": 79,
+          "by": "model"
+        },
+        {
+          "term": "недонасыщенная нефть",
+          "en": "undersaturated oil",
+          "definition": "Нефть, из которой при рассматриваемом давлении ещё не выделяется отдельная газовая фаза.",
+          "page": 79,
+          "by": "model"
+        }
+      ]
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill-1",
+      "template": "chain",
+      "class": "B",
+      "provenance": "схема",
+      "caption": "Вклады нефти и воды → Суммарная сжимаемость → Проверка произведения на давление.",
+      "alt": "Схема: Вклады нефти и воды, затем Суммарная сжимаемость, затем Проверка произведения на давление.",
+      "file": "illustrations/geo.test_dake.s5_4.02__1.svg",
+      "renderer": "builtin",
+      "file_m": null,
+      "claim_ids": [
+        "geo.test_dake.s5_4.02.c02",
+        "geo.test_dake.s5_4.02.c04",
+        "geo.test_dake.s5_4.02.c06"
+      ],
+      "pages": [
+        79
+      ],
+      "after_block": "how-1",
+      "redrawn_from": null,
+      "exaggerations": null
+    }
+  ],
+  "media": null,
+  "sources": [
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c01",
+      "kind": "observation",
+      "text": "Для жидкостей такие допущения часто применяли; автор предупреждает о проверке применимости.",
+      "quote": "For the flow of liquids the above assumptions are quite reasonable and have been frequently applied in the past. Dranchuk and Quon$^3$, however, have shown that this simple linearization by deletion must be treated with caution and can only be applied when the product",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c02",
+      "kind": "observation",
+      "text": "Для отбрасывания членов автор требует условие на произведение cp: оно много меньше единицы.",
+      "quote": "can only be applied when the product",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c03",
+      "kind": "observation",
+      "text": "Сжимаемость требуется не только постоянная, но и малая.",
+      "quote": "This condition makes it necessary to modify the final assumption so that the compressibility is not just constant but both small and constant",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c04",
+      "kind": "observation",
+      "text": "В уравнение входит суммарная сжимаемость системы с взвешиванием вкладов по насыщенности.",
+      "quote": "The compressibility appearing in equ. (5.20) is the total, or saturation weighted, compressibility of the entire reservoir-liquid system",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c05",
+      "kind": "observation",
+      "text": "Насыщенности выражены в долях порового объёма.",
+      "quote": "in which the saturations are expressed as fractions of the pore volume",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c06",
+      "kind": "observation",
+      "text": "В примере суммарная сжимаемость 14.6 × 10⁻⁶ / psi, а произведение равно 0.04; условие выполнено.",
+      "quote": "then $c_t$ in equ. (5.22) has the value $14.6 \\times 10^{-6} / \\text{psi}$ and the product expressed by equ. (5.21) has the value 0.04, which satisfies the necessary condition for this simple linearization to be valid.",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c07",
+      "kind": "observation",
+      "text": "Для системы с большей суммарной сжимаемостью требуется интегральное преобразование.",
+      "quote": "However, when dealing with reservoir systems which have a higher total compressibility it will be necessary to linearize equ. (5.1) using some form of integral transformation as detailed by Dranchuk and Quon",
+      "page": 79,
+      "by": "author"
+    },
+    {
+      "claim_id": "geo.test_dake.s5_4.02.c08",
+      "kind": "observation",
+      "text": "Для реального газа сжимаемость в первом приближении обратно пропорциональна давлению, и произведение близко к единице.",
+      "quote": "Such an approach will be required when describing the flow of a real gas since, in this case, the compressibility of the gas alone may, to a first approximation, be expressed as the reciprocal of the pressure and the cp product, equ. (5.21), will itself be unity.",
+      "page": 79,
+      "by": "author"
+    }
+  ],
+  "task_ids": [
+    "geo.test_dake.s5_4.02.t01",
+    "geo.test_dake.s5_4.02.t02",
+    "geo.test_dake.s5_4.02.t03"
+  ],
+  "card_ids": [
+    "geo.test_dake.s5_4.02.k01",
+    "geo.test_dake.s5_4.02.k02"
+  ],
+  "links": [
+    {
+      "to": "geo.test_dake.s5_4.01",
+      "type": "prerequisite"
+    }
+  ],
+  "overridden": false,
+  "checks": {
+    "errors": [],
+    "warnings": [],
+    "fixed": [],
+    "dropped_tasks": []
+  }
+}
