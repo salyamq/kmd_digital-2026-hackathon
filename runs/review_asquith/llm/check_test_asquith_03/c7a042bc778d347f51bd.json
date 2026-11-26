@@ -1,0 +1,211 @@
+{
+  "request": {
+    "task": "check_test_asquith_03",
+    "key": "c7a042bc778d347f51bd",
+    "prompt": "check_review",
+    "system": "Ты — строгий, но справедливый предметный рецензент (домен: Геология и геофизика нефтегазовых коллекторов). Тебе дают элементы чужого чернового пакета по главе книги\n(утверждения, фразы сценария, спецификации сцен, описания кадров) и для каждого — фрагменты исходного текста главы со страницами.\nЗадача: найти ошибки. Примерно 20–25 % элементов содержат ошибку; часть верных элементов звучит неожиданно, но верна —\nложная тревога (пометка верного элемента) наказывается так же сильно, как пропуск ошибки.\n\nТипы ошибок (error_type):\n- overgeneralization — обобщение сверх источника («всегда», «любой», снято «как правило», частный случай выдан за общий);\n- sign_flip — перевёрнут знак/направление зависимости (растёт ↔ падает, больше ↔ меньше, выше ↔ ниже);\n- measured_vs_derived — вычисляемое выдано за измеряемое или наоборот; сигнал прибора выдан за свойство породы;\n- lost_condition — потеряно условие применимости (тип раствора, диапазон, «при …», допущение модели);\n- missing_caveat — нет обязательной оговорки (неоднозначность, «не в масштабе», исключение, о котором говорит автор);\n- wrong_scaling_law — неверный закон масштабирования/зависимости (линейно вместо √t, обратная пропорциональность и т.п.);\n- wrong_mechanism — неверный физический механизм процесса или прибора;\n- wrong_number — число/единица/диапазон не совпадает с автором;\n- outdated_as_current — устаревшая техника из книги выдана за сегодняшнюю практику;\n- it_analogy_without_limit — ИТ-аналогия без названной границы, где она ломается, или аналогия, вводящая в заблуждение;\n- frame_error — ошибка кадра/сцены: нарушен чек-лист физики, класс кадра или метка происхождения не соответствуют способу изготовления, сгенерированный кадр утверждает факт, глубина/шкалы/полярность неверны, объект меняется между кадрами;\n- misconception — элемент закрепляет типичное заблуждение из списка;\n- unsupported — утверждение выдано за авторское, но в главе его нет и оно не следует из неё (используй только при явной выдумке).\n\nУровни (severity): 3 — критическая (заблуждение, неверный механизм, нарушена причинность, перевёрнут знак); 2 — существенная (неверное число/деталь, потеряно условие, неверная страница при неверном факте); 1 — допустимая неточность/мелочь.\n\nПравила точности:\n1. Сначала найди в фрагментах источника место, которое говорит о том же. Ошибка — только если элемент ПРОТИВОРЕЧИТ источнику, искажает его (знак, число, условие, область применимости) или нарушает чек-лист физики / закрепляет заблуждение из списка.\n2. Если источник подтверждает элемент — verdict \"ok\", даже если звучит неожиданно. Упрощение без искажения смысла — \"ok\".\n3. Если источник молчит, а элемент не противоречит физике и не закрепляет заблуждение — \"ok\" (не придумывай ошибку). Если не уверен — \"unsure\".\n4. Для каждой ошибки: evidence_quote — ДОСЛОВНАЯ цитата из приведённых фрагментов источника (5–40 слов), page — её страница; fix — исправленная формулировка элемента (одна фраза, по источнику).\n5. Не помечай стиль, орфографию, порядок слов и само по себе расхождение страниц у верного пересказа без прямой цитаты. Одна ошибка — один тип (самый точный).\n   Для «потеряно условие» процитируй место, где условие ограничивает именно этот вывод. Учитывай область, уже заданную соседними условиями, формулировкой элемента и спецификацией сцены.\n6. Для кадров с вложением используй видимое изображение, его плашку и спецификацию сцены. Если ошибка подтверждается только самим кадром или чек-листом, не подставляй фиктивную цитату и страницу.\n\nТипичные заблуждения:\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nЧек-лист физики и предметной корректности:\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.",
+    "user": "Глава: Log Interpretation (checker test package) (G. Asquith, D. Krygowski, «Basic Well Log Analysis»).\n\n\n\n=== Элемент C021 (claim, ссылается на стр. 128)\nИтоговая формула: Swr равна отношению (Rxo/Rt)/(Rmf/Rw) в степени 0,625.\n\n\nЦитата, на которую ссылается элемент: «$$S_{wr} = \\left( \\frac{R_{xo} / R_t}{R_{mf} / R_w} \\right)^{0.625} \\tag{7.7}$$»\n\nФрагменты источника:\n  [стр. 128] $$S_{wr} = \\left( \\frac{R_{xo} / R_t}{R_{mf} / R_w} \\right)^{0.625} \\tag{7.7}$$\n  [стр. 128] $$S_{wr} = \\left( \\frac{R_{xo} / R_t}{R_{mf} / R_w} \\right)^{\\frac{5}{8}} \\tag{7.6}$$\n  [стр. 128] $$(S_w)_{COR} = S_{wa} \\times \\left( \\frac{S_{wa}}{S_{wr}} \\right)^{0.25} \\tag{7.8}$$\n\n\n=== Элемент C022 (claim, ссылается на стр. 128)\nЕсли Swa ≈ Swr, допущение ступенчатого профиля проникновения верно, и найденные значения достоверны.\n\n\nЦитата, на которую ссылается элемент: «If $S_{wa} \\sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.»\n\nФрагменты источника:\n  [стр. 128] 1. If $S_{wa} \\sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.\n  [стр. 128] 2. If $S_{wa} > S_{wr}$, then the value for $R_{xo}/R_t$ is too low. $R_{xo}$ is too low because invasion is very shallow, or $R_t$ is too high because invasion is very deep. Also, a transition-type invasion profile might be indicated and $S_{wa}$ is considered a good value for the zone's actual water saturation.\n  [стр. 128] 3. If $S_{wa} < S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds, or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$. Also, an annulus-type invasion profile might be indicated and/or $S_{xo} < S_w^{1/5}$ (from Equation 7.5). In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):\n\n\n=== Элемент C023 (claim, ссылается на стр. 128)\nЕсли Swa > Swr, отношение Rxo/Rt занижено: из-за очень мелкого вторжения Rxo мало или из-за очень глубокого Rt завышено.\n\n\nЦитата, на которую ссылается элемент: «If $S_{wa} > S_{wr}$, then the value for $R_{xo}/R_t$ is too low. $R_{xo}$ is too low because invasion is very shallow, or $R_t$ is too high because invasion is very deep.»\n\nФрагменты источника:\n  [стр. 128] 2. If $S_{wa} > S_{wr}$, then the value for $R_{xo}/R_t$ is too low. $R_{xo}$ is too low because invasion is very shallow, or $R_t$ is too high because invasion is very deep. Also, a transition-type invasion profile might be indicated and $S_{wa}$ is considered a good value for the zone's actual water saturation.\n  [стр. 128] 3. If $S_{wa} < S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds, or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$. Also, an annulus-type invasion profile might be indicated and/or $S_{xo} < S_w^{1/5}$ (from Equation 7.5). In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):\n  [стр. 128] $R_t$ = true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)\n\n\n=== Элемент C024 (claim, ссылается на стр. 128)\nЕсли Swa < Swr, отношение Rxo/Rt завышено, в частности из-за влияния соседних высокоомных пластов.\n\n\nЦитата, на которую ссылается элемент: «If $S_{wa} < S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds»\n\nФрагменты источника:\n  [стр. 128] 3. If $S_{wa} < S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds, or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$. Also, an annulus-type invasion profile might be indicated and/or $S_{xo} < S_w^{1/5}$ (from Equation 7.5). In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):\n  [стр. 128] 2. If $S_{wa} > S_{wr}$, then the value for $R_{xo}/R_t$ is too low. $R_{xo}$ is too low because invasion is very shallow, or $R_t$ is too high because invasion is very deep. Also, a transition-type invasion profile might be indicated and $S_{wa}$ is considered a good value for the zone's actual water saturation.\n  [стр. 128] - Wet resistivity ($R_o$)\n\n\n=== Элемент C025 (claim, ссылается на стр. 128)\nЕсли Swa < Swr, коллектор — карбонат с молдовой пористостью и низкой проницаемостью; других объяснений у такого расхождения нет.\n\n\nЦитата, на которую ссылается элемент: «If $S_{wa} < S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.»\n\nФрагменты источника:\n  [стр. 128] 4. If $S_{wa} < S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.\n  [стр. 126] Figure 7.1 is a flowchart for one such scanning technique. Note that it has two paths, one for clastics and one for carbonates. In the clastic case, the resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales of slowly varying resistivity. The changes in resistivity due to changes in fluid content of the reservoirs tend to stand out against this relatively constant background. On the carbonate path, on the other hand, formation resistivities tend to vary widely with changing rock types, and commonly there are few shales against which to measure changes. In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, those with the capacity to hold fluids (of any type) can be identified.\n  [стр. 144] Figure 7.6. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for carbonates. (Western Atlas International, Inc., 1995, Chart 7-80) The y-axis is constructed with tortuosity factor (a) = 0.62 and cementation exponent (m) = 2.15\n\n\n=== Элемент C026 (claim, ссылается на стр. 131)\nКривая Ro — один из старейших экспресс-методов. Её накладывают на кривую сопротивления, а другие экспресс-кривые сравнивают с ПС.\n\n\nЦитата, на которую ссылается элемент: «The wet-resistivity curve ($R_o$) is one of the oldest quick-look techniques. Unlike the other curves, which tend to be compared to the SP curve, it is plotted as an overlay on the resistivity curve.»\n\nФрагменты источника:\n  [стр. 131] The wet-resistivity curve ($R_o$) is one of the oldest quick-look techniques. Unlike the other curves, which tend to be compared to the SP curve, it is plotted as an overlay on the resistivity curve.\n  [стр. 128] The $R_{xo}/R_t$ technique relies on the comparison of the resistivity ratio, plotted as a curve on the log display, to the SP curve.\n  [стр. 131] 2. Plot $R_o$ as a curve at the same scale as the resistivity curves and compare the values to the value of the deep-resistivity measurement.\n\n\n=== Элемент C027 (claim, ссылается на стр. 131)\nВ углеводородных зонах глубокое сопротивление ниже Ro, и отрыв растёт с насыщенностью углеводородами.\n\n\nЦитата, на которую ссылается элемент: «In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation.»\n\nФрагменты источника:\n  [стр. 131] 2. In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation.\n  [стр. 131] 1. In water-bearing zones, $R_o$ and the deep resistivity should overlay.\n  [стр. 129] 2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.\n\n\n=== Элемент C028 (claim, ссылается на стр. 131)\nЕсли Rw для Ro выбрано неверно, кривые не совпадут даже в водоносных зонах.\n\n\nЦитата, на которую ссылается элемент: «If the value of $R_w$ chosen to calculate $R_o$ is incorrect, the curves would not align in water-bearing zones.»\n\nФрагменты источника:\n  [стр. 131] If the value of $R_w$ chosen to calculate $R_o$ is incorrect, the curves would not align in water-bearing zones.\n  [стр. 131] 1. In water-bearing zones, $R_o$ and the deep resistivity should overlay.\n  [стр. 130] This technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$). The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.\n\n\n=== Элемент C029 (claim, ссылается на стр. 129)\nRwa = Rt·φ^m/a (ф. 7.16). Если пласт водоносный, Rt превращается в Ro и Rwa равно Rw.\n\n\nЦитата, на которую ссылается элемент: «When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$.»\n\nФрагменты источника:\n  [стр. 129] When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$. If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$. By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered. If the zone with the minimum $R_{wa}$ value actually contains\n  [стр. 129] 1. Calculate an apparent water resistivity ($R_{wa}$) from the porosity and uninvaded zone resistivity measurements.\n  [стр. 129] 1. The zone with the lowest value of $R_{wa}$ is the most likely to be water-bearing, and the value of $R_{wa}$ is closest to the actual value of $R_w$ in the formation.\n\n\n=== Элемент C030 (claim, ссылается на стр. 129)\nМинимальное значение Rwa — это измеренное сопротивление пластовой воды Rw; значения выше минимума указывают на углеводороды.\n\n\nЦитата, на которую ссылается элемент: «The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons.»\n\nФрагменты источника:\n  [стр. 129] The $R_{wa}$ technique relies on the comparison of calculated values of water resistivity between intervals in a well. This comparison can be made between different zones or within the same zone if a water-hydrocarbon contact is suspected in that zone. The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons. A water saturation can also be calculated from the values of $R_{wa}$.\n  [стр. 129] When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$. If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$. By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered. If the zone with the minimum $R_{wa}$ value actually contains\n  [стр. 130] By using the form of the equation above (7.19), the water-filled porosity is determined. Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$). The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters. When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.\n\n\nВерни reviews — по одному объекту на каждый элемент: id, verdict (ok | error | unsure), error_type (или null), severity (3/2/1 или null), explanation (1 фраза), fix (или null), page (или null), evidence_quote (или null).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"reviews\"], \"properties\": {\"reviews\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"id\", \"verdict\", \"error_type\", \"severity\", \"explanation\", \"fix\", \"page\", \"evidence_quote\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"verdict\": {\"enum\": [\"ok\", \"error\", \"unsure\"]}, \"error_type\": {\"anyOf\": [{\"enum\": [\"overgeneralization\", \"sign_flip\", \"measured_vs_derived\", \"lost_condition\", \"missing_caveat\", \"wrong_scaling_law\", \"wrong_mechanism\", \"wrong_number\", \"outdated_as_current\", \"it_analogy_without_limit\", \"frame_error\", \"misconception\", \"unsupported\"]}, {\"type\": \"null\"}]}, \"severity\": {\"enum\": [1, 2, 3, null]}, \"explanation\": {\"type\": \"string\"}, \"fix\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"evidence_quote\": {\"type\": [\"string\", \"null\"]}}}}}}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "reviews"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "verdict",
+              "error_type",
+              "severity",
+              "explanation",
+              "fix",
+              "page",
+              "evidence_quote"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "ok",
+                  "error",
+                  "unsure"
+                ]
+              },
+              "error_type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "overgeneralization",
+                      "sign_flip",
+                      "measured_vs_derived",
+                      "lost_condition",
+                      "missing_caveat",
+                      "wrong_scaling_law",
+                      "wrong_mechanism",
+                      "wrong_number",
+                      "outdated_as_current",
+                      "it_analogy_without_limit",
+                      "frame_error",
+                      "misconception",
+                      "unsupported"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "severity": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  null
+                ]
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "fix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/review_asquith/llm/check_test_asquith_03/c7a042bc778d347f51bd.json",
+    "created": "2026-11-26T08:44:54"
+  },
+  "response": {
+    "reviews": [
+      {
+        "id": "C021",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Уравнение 7.7 подтверждает состав отношения и показатель 0,625, равный 5/8.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C022",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "При близости двух оценок автор считает ступенчатый профиль и рассчитанные параметры согласованными.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C023",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "При Swa > Swr занижение отношения и обе его возможные причины названы в источнике.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C024",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "При Swa < Swr высокое сопротивление соседних пластов действительно приведено как возможная причина завышения отношения.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C025",
+        "verdict": "error",
+        "error_type": "overgeneralization",
+        "severity": 2,
+        "explanation": "Низкопроницаемый карбонат с молдовой пористостью указан как одна из возможностей, а не как единственное объяснение.",
+        "fix": "Если Swa < Swr, одним из возможных объяснений является низкопроницаемый карбонатный коллектор с молдовой пористостью.",
+        "page": 128,
+        "evidence_quote": "If $S_{wa} < S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability."
+      },
+      {
+        "id": "C026",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Автор относит кривую Ro к старым экспресс-методам и предписывает накладывать её именно на кривую сопротивления.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C027",
+        "verdict": "error",
+        "error_type": "sign_flip",
+        "severity": 3,
+        "explanation": "В углеводородных зонах глубокое сопротивление выше, а не ниже Ro.",
+        "fix": "В углеводородных зонах глубокое сопротивление выше Ro, и разница растёт с увеличением насыщенности углеводородами.",
+        "page": 131,
+        "evidence_quote": "In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation."
+      },
+      {
+        "id": "C028",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник подтверждает, что ошибочное Rw нарушает совмещение кривых даже в водоносных зонах.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C029",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Выражение для кажущегося сопротивления воды согласуется с описанным случаем водоносной зоны, где Rt равно Ro и Rwa равно Rw.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C030",
+        "verdict": "error",
+        "error_type": "measured_vs_derived",
+        "severity": 2,
+        "explanation": "Минимальное Rwa — расчётная оценка истинного Rw при допущении о водоносности зоны, а не прямое измерение.",
+        "fix": "Если интервал с минимальным расчётным Rwa считается водоносным, его Rwa используют как приближение Rw, а более высокие значения служат признаком возможного присутствия углеводородов.",
+        "page": 129,
+        "evidence_quote": "The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons."
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 22456,
+    "output_chars": 3215
+  }
+}

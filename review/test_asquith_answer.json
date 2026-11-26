@@ -1,0 +1,384 @@
+{
+ "package_id": "test_asquith",
+ "chapter": "review_asquith",
+ "items_checked": 95,
+ "findings": [
+  {
+   "target_id": "C027",
+   "error_type": "sign_flip",
+   "severity": 3,
+   "message": "В углеводородных зонах глубокое сопротивление выше, а не ниже Ro.",
+   "fix": "В углеводородных зонах глубокое сопротивление выше Ro, и разница растёт с увеличением насыщенности углеводородами.",
+   "page": 131,
+   "evidence_quote": "In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C037",
+   "error_type": "wrong_mechanism",
+   "severity": 3,
+   "message": "Отношение снижается из-за увеличения знаменателя Rt, а не из-за уменьшения числителя Rxo.",
+   "fix": "В углеводородном интервале отношение Rxo/Rt падает вследствие роста Rt, и кривая отношения расходится с ПС.",
+   "page": 129,
+   "evidence_quote": "the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C039",
+   "error_type": "wrong_mechanism",
+   "severity": 3,
+   "message": "Неснижаемую воду удерживают капиллярные силы на зёрнах породы, а не глинистая корка на стенке скважины.",
+   "fix": "При неснижаемой водонасыщенности вода в неизменённой зоне неподвижна, так как капиллярное давление удерживает её на зёрнах породы.",
+   "page": 131,
+   "evidence_quote": "When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "L10",
+   "error_type": "measured_vs_derived",
+   "severity": 3,
+   "message": "Сценарий выдаёт оценки насыщенности, получаемые интерпретацией, за непосредственные показания зондов.",
+   "fix": "Зонды дают данные о сопротивлении, по ним и пористости рассчитывают насыщенности, а сравнение насыщенностей даёт признак подвижности нефти.",
+   "page": 126,
+   "evidence_quote": "As shown in the previous chapters, determining the porosity and true resistivity of a zone is the first step in converting the raw log data into estimated quantities of oil, gas, and water in a formation.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C008",
+   "error_type": "wrong_scaling_law",
+   "severity": 2,
+   "message": "В формуле Арчи показатель степени всего отношения равен 1/n, а не n.",
+   "fix": "По формуле 7.1 водонасыщенность неизменённой зоны равна Sw = (a·Rw/(Rt·φ^m))^(1/n), где n — показатель насыщенности.",
+   "page": 126,
+   "evidence_quote": "$$ S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1} $$",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C015",
+   "error_type": "overgeneralization",
+   "severity": 2,
+   "message": "В источнике различие насыщенностей говорит лишь о вероятном вытеснении углеводородов фильтратом и не гарантирует добычу нефти.",
+   "fix": "Если Sxo значительно больше Sw, углеводороды, вероятно, были вытеснены из ближней к скважине зоны фильтратом бурового раствора, но это не гарантирует притока нефти.",
+   "page": 127,
+   "evidence_quote": "if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C025",
+   "error_type": "overgeneralization",
+   "severity": 2,
+   "message": "Низкопроницаемый карбонат с молдовой пористостью указан как одна из возможностей, а не как единственное объяснение.",
+   "fix": "Если Swa < Swr, одним из возможных объяснений является низкопроницаемый карбонатный коллектор с молдовой пористостью.",
+   "page": 128,
+   "evidence_quote": "If $S_{wa} < S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C030",
+   "error_type": "measured_vs_derived",
+   "severity": 2,
+   "message": "Минимальное Rwa — расчётная оценка истинного Rw при допущении о водоносности зоны, а не прямое измерение.",
+   "fix": "Если интервал с минимальным расчётным Rwa считается водоносным, его Rwa используют как приближение Rw, а более высокие значения служат признаком возможного присутствия углеводородов.",
+   "page": 129,
+   "evidence_quote": "The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C034",
+   "error_type": "outdated_as_current",
+   "severity": 2,
+   "message": "Автор отмечает, что измеренную проводимость теперь редко выводят на планшет, а в описанном методе используют сопротивление и рядом с ПС показывают расчётную пористость.",
+   "fix": "В описанном методе пористость рассчитывают по измеренному сопротивлению и выводят на одном треке с ПС; измеренную кривую проводимости, с которой исторически начинался метод, выводят редко.",
+   "page": 130,
+   "evidence_quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C046",
+   "error_type": "lost_condition",
+   "severity": 2,
+   "message": "Неверное значение параметра матрицы искривляет водоносную линию, а не сохраняет её прямой.",
+   "fix": "На графике Пикетта водоносная линия прямая, если водоносные точки охватывают диапазон пористостей и параметр матрицы выбран правильно.",
+   "page": 133,
+   "evidence_quote": "If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight.",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C054",
+   "error_type": "lost_condition",
+   "severity": 2,
+   "message": "У формул прямо указано условие применимости: неснижаемая водонасыщенность.",
+   "fix": "Формулы по каротажу применимы для оценки проницаемости только в пластах с неснижаемой водонасыщенностью.",
+   "page": 134,
+   "evidence_quote": "Log-derived permeability formulas are only valid for estimating permeability in formations at irreducible water saturation (Schlumberger, 1977).",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C056",
+   "error_type": "wrong_scaling_law",
+   "severity": 2,
+   "message": "В формуле 7.30 всё выражение возводится в квадрат, поэтому при фиксированной Swirr зависимость от пористости имеет шестую степень.",
+   "fix": "Для нефти средней плотности формула Wyllie–Rose имеет вид K = (250·φ³/Swirr)², поэтому при неизменной Swirr K пропорциональна φ⁶.",
+   "page": 135,
+   "evidence_quote": "K = \\left( 250 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ (medium-gravity oils)} \\tag{7.30}",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "C061",
+   "error_type": "overgeneralization",
+   "severity": 2,
+   "message": "У Hilchie заметный эффект связан с превышением порога, а не с любым ненулевым содержанием сланца.",
+   "fix": "По Hilchie, сланец существенно влияет на рассчитанную по каротажу водонасыщенность при содержании свыше 10–15 %.",
+   "page": 136,
+   "evidence_quote": "Hilchie (1978) suggests that for shale to significantly affect log-derived water saturations, shale content must be greater than 10 to \\(15\\%\\).",
+   "evidence_verified": true,
+   "source": "llm"
+  },
+  {
+   "target_id": "F02",
+   "error_type": "frame_error",
+   "severity": 2,
+   "message": "В кадре показаны расширенные ствол и зона проникновения, но требуемой спецификацией плашки о масштабе нет.",
+   "fix": "Добавить плашку «не в масштабе: ствол и зона проникновения шире».",
+   "page": null,
+   "evidence_quote": null,
+   "evidence_verified": false,
+   "source": "llm"
+  },
+  {
+   "target_id": "F04",
+   "error_type": "frame_error",
+   "severity": 2,
+   "message": "Описание выдаёт расчётный кадр за реальные данные, хотя на видимой плашке указано «СИМУЛЯЦИЯ».",
+   "fix": "Кадр класса B с меткой «симуляция»: у подошвы водяного пласта мелкий зонд показывает около 12,5 Ом·м, глубокий — около 1,25 Ом·м.",
+   "page": null,
+   "evidence_quote": null,
+   "evidence_verified": false,
+   "source": "llm"
+  },
+  {
+   "target_id": "F09",
+   "error_type": "frame_error",
+   "severity": 2,
+   "message": "В описании нефтяного интервала перепутаны значения глубокого и мелкого зондов: по их собственным шкалам кадр показывает около 20 и 35 Ом·м соответственно.",
+   "fix": "У забоя на 2060 м обе кривые записаны полностью: в нефтяном пласте глубокий зонд показывает около 20 Ом·м, мелкий — около 35 Ом·м, а в водяном — около 1,25 и 12,5 Ом·м соответственно.",
+   "page": null,
+   "evidence_quote": null,
+   "evidence_verified": false,
+   "source": "llm"
+  }
+ ],
+ "dropped_for_precision": [
+  {
+   "id": "S03",
+   "verdict": "error",
+   "error_type": "sign_flip",
+   "severity": 3,
+   "explanation": "Насыщенности переставлены местами: при заданных сопротивлениях расчёт даёт больше воды в промытой зоне, что совпадает с экранной подписью, но не с элементом.",
+   "fix": "В нефтяном пласте при Rt = 20 Ом·м и Rxo = 34,7 Ом·м получаем Sw = 0,25 и Sxo = 0,60: у ствола воды больше, чем в нетронутой зоне.",
+   "page": null,
+   "evidence_quote": null,
+   "reason": "evidence quote not found in chapter"
+  },
+  {
+   "target_id": "A02",
+   "error_type": "it_analogy_without_limit",
+   "severity": 2,
+   "message": "Безусловный перенос ранжирования между любыми пластами подменяет сравнение геологически сопоставимых оценок.",
+   "fix": "Сравнение похоже на ранжирование, но уместно только при неснижаемой водонасыщенности для сопоставимых участков одного пласта, по возможности с опорой на данные соседних добывающих скважин.",
+   "page": 126,
+   "evidence_quote": "A geologist should always consider every item of relevant data, such as drill stem tests, sample shows, mud-log analysis, nearby production, etc., before making a decision to set pipe.",
+   "evidence_verified": true,
+   "source": "llm",
+   "reason": "independent review did not confirm the contradiction"
+  },
+  {
+   "target_id": "L06",
+   "error_type": "wrong_mechanism",
+   "severity": 3,
+   "message": "Подстановка перевёрнута: пластовая вода и глубокое сопротивление относятся к Sw, а не к Sxo.",
+   "fix": "Для Sxo в формуле Арчи вместо сопротивления пластовой воды Rw берут сопротивление фильтрата Rmf, а вместо глубокого Rt — сопротивление промытой зоны Rxo с очень мелкого зонда.",
+   "page": 126,
+   "evidence_quote": "The methods discussed are: Archie water saturations ($S_w$ and $S_{xo}$) and the ratio method, quick-look technique, bulk volume water ($BVW$), and saturation crossplots (Pickett plots and Hingle plots).",
+   "evidence_verified": true,
+   "source": "llm",
+   "reason": "independent review did not confirm the contradiction"
+  }
+ ],
+ "remarks": [
+  {
+   "target": "C027",
+   "category": "sign_flip",
+   "severity": "critical",
+   "problem": "В углеводородных зонах глубокое сопротивление выше, а не ниже Ro.",
+   "fix": "В углеводородных зонах глубокое сопротивление выше Ro, и разница растёт с увеличением насыщенности углеводородами.",
+   "page_pdf": 131,
+   "quote": "In hydrocarbon-bearing zones, the deep resistivity is higher than $R_o$, with the separation increasing with increasing hydrocarbon saturation."
+  },
+  {
+   "target": "C037",
+   "category": "wrong_mechanism",
+   "severity": "critical",
+   "problem": "Отношение снижается из-за увеличения знаменателя Rt, а не из-за уменьшения числителя Rxo.",
+   "fix": "В углеводородном интервале отношение Rxo/Rt падает вследствие роста Rt, и кривая отношения расходится с ПС.",
+   "page_pdf": 129,
+   "quote": "the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP."
+  },
+  {
+   "target": "C039",
+   "category": "wrong_mechanism",
+   "severity": "critical",
+   "problem": "Неснижаемую воду удерживают капиллярные силы на зёрнах породы, а не глинистая корка на стенке скважины.",
+   "fix": "При неснижаемой водонасыщенности вода в неизменённой зоне неподвижна, так как капиллярное давление удерживает её на зёрнах породы.",
+   "page_pdf": 131,
+   "quote": "When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure."
+  },
+  {
+   "target": "L10",
+   "category": "measured_vs_inferred",
+   "severity": "critical",
+   "problem": "Сценарий выдаёт оценки насыщенности, получаемые интерпретацией, за непосредственные показания зондов.",
+   "fix": "Зонды дают данные о сопротивлении, по ним и пористости рассчитывают насыщенности, а сравнение насыщенностей даёт признак подвижности нефти.",
+   "page_pdf": 126,
+   "quote": "As shown in the previous chapters, determining the porosity and true resistivity of a zone is the first step in converting the raw log data into estimated quantities of oil, gas, and water in a formation."
+  },
+  {
+   "target": "C008",
+   "category": "wrong_scaling",
+   "severity": "significant",
+   "problem": "В формуле Арчи показатель степени всего отношения равен 1/n, а не n.",
+   "fix": "По формуле 7.1 водонасыщенность неизменённой зоны равна Sw = (a·Rw/(Rt·φ^m))^(1/n), где n — показатель насыщенности.",
+   "page_pdf": 126,
+   "quote": "$$ S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1} $$"
+  },
+  {
+   "target": "C015",
+   "category": "overgeneralization",
+   "severity": "significant",
+   "problem": "В источнике различие насыщенностей говорит лишь о вероятном вытеснении углеводородов фильтратом и не гарантирует добычу нефти.",
+   "fix": "Если Sxo значительно больше Sw, углеводороды, вероятно, были вытеснены из ближней к скважине зоны фильтратом бурового раствора, но это не гарантирует притока нефти.",
+   "page_pdf": 127,
+   "quote": "if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$)."
+  },
+  {
+   "target": "C025",
+   "category": "overgeneralization",
+   "severity": "significant",
+   "problem": "Низкопроницаемый карбонат с молдовой пористостью указан как одна из возможностей, а не как единственное объяснение.",
+   "fix": "Если Swa < Swr, одним из возможных объяснений является низкопроницаемый карбонатный коллектор с молдовой пористостью.",
+   "page_pdf": 128,
+   "quote": "If $S_{wa} < S_{wr}$, the reservoir might be a carbonate with moldic (i.e., oomoldic, fossil-moldic, etc.) porosity and low permeability."
+  },
+  {
+   "target": "C030",
+   "category": "measured_vs_inferred",
+   "severity": "significant",
+   "problem": "Минимальное Rwa — расчётная оценка истинного Rw при допущении о водоносности зоны, а не прямое измерение.",
+   "fix": "Если интервал с минимальным расчётным Rwa считается водоносным, его Rwa используют как приближение Rw, а более высокие значения служат признаком возможного присутствия углеводородов.",
+   "page_pdf": 129,
+   "quote": "The assumption is that this lowest value of $R_{wa}$ is the closest approximation to the true formation water resistivity ($R_w$) and that values of $R_{wa}$ greater than the minimum value are indicative of the presence of hydrocarbons."
+  },
+  {
+   "target": "C034",
+   "category": "outdated_as_current",
+   "severity": "significant",
+   "problem": "Автор отмечает, что измеренную проводимость теперь редко выводят на планшет, а в описанном методе используют сопротивление и рядом с ПС показывают расчётную пористость.",
+   "fix": "В описанном методе пористость рассчитывают по измеренному сопротивлению и выводят на одном треке с ПС; измеренную кривую проводимости, с которой исторически начинался метод, выводят редко.",
+   "page_pdf": 130,
+   "quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement."
+  },
+  {
+   "target": "C046",
+   "category": "lost_condition",
+   "severity": "significant",
+   "problem": "Неверное значение параметра матрицы искривляет водоносную линию, а не сохраняет её прямой.",
+   "fix": "На графике Пикетта водоносная линия прямая, если водоносные точки охватывают диапазон пористостей и параметр матрицы выбран правильно.",
+   "page_pdf": 133,
+   "quote": "If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight."
+  },
+  {
+   "target": "C054",
+   "category": "lost_condition",
+   "severity": "significant",
+   "problem": "У формул прямо указано условие применимости: неснижаемая водонасыщенность.",
+   "fix": "Формулы по каротажу применимы для оценки проницаемости только в пластах с неснижаемой водонасыщенностью.",
+   "page_pdf": 134,
+   "quote": "Log-derived permeability formulas are only valid for estimating permeability in formations at irreducible water saturation (Schlumberger, 1977)."
+  },
+  {
+   "target": "C056",
+   "category": "wrong_scaling",
+   "severity": "significant",
+   "problem": "В формуле 7.30 всё выражение возводится в квадрат, поэтому при фиксированной Swirr зависимость от пористости имеет шестую степень.",
+   "fix": "Для нефти средней плотности формула Wyllie–Rose имеет вид K = (250·φ³/Swirr)², поэтому при неизменной Swirr K пропорциональна φ⁶.",
+   "page_pdf": 135,
+   "quote": "K = \\left( 250 \\times \\frac{\\phi^3}{S_{\\text{wirr}}} \\right)^2 \\text{ (medium-gravity oils)} \\tag{7.30}"
+  },
+  {
+   "target": "C061",
+   "category": "overgeneralization",
+   "severity": "significant",
+   "problem": "У Hilchie заметный эффект связан с превышением порога, а не с любым ненулевым содержанием сланца.",
+   "fix": "По Hilchie, сланец существенно влияет на рассчитанную по каротажу водонасыщенность при содержании свыше 10–15 %.",
+   "page_pdf": 136,
+   "quote": "Hilchie (1978) suggests that for shale to significantly affect log-derived water saturations, shale content must be greater than 10 to \\(15\\%\\)."
+  },
+  {
+   "target": "F02",
+   "category": "frame_error",
+   "severity": "significant",
+   "problem": "В кадре показаны расширенные ствол и зона проникновения, но требуемой спецификацией плашки о масштабе нет.",
+   "fix": "Добавить плашку «не в масштабе: ствол и зона проникновения шире».",
+   "page_pdf": null,
+   "quote": null
+  },
+  {
+   "target": "F04",
+   "category": "frame_error",
+   "severity": "significant",
+   "problem": "Описание выдаёт расчётный кадр за реальные данные, хотя на видимой плашке указано «СИМУЛЯЦИЯ».",
+   "fix": "Кадр класса B с меткой «симуляция»: у подошвы водяного пласта мелкий зонд показывает около 12,5 Ом·м, глубокий — около 1,25 Ом·м.",
+   "page_pdf": null,
+   "quote": null
+  },
+  {
+   "target": "F09",
+   "category": "frame_error",
+   "severity": "significant",
+   "problem": "В описании нефтяного интервала перепутаны значения глубокого и мелкого зондов: по их собственным шкалам кадр показывает около 20 и 35 Ом·м соответственно.",
+   "fix": "У забоя на 2060 м обе кривые записаны полностью: в нефтяном пласте глубокий зонд показывает около 20 Ом·м, мелкий — около 35 Ом·м, а в водяном — около 1,25 и 12,5 Ом·м соответственно.",
+   "page_pdf": null,
+   "quote": null
+  },
+  {
+   "target": "L06",
+   "category": "sign_flip",
+   "severity": "critical",
+   "problem": "Замены в формуле Sxo перепутаны: в источнике Rmf ставят вместо Rw, а Rxo (мелкий зонд) — вместо Rt, а не наоборот.",
+   "fix": "Только вместо сопротивления пластовой воды берут сопротивление фильтрата, а вместо глубокого сопротивления — сопротивление промытой зоны с очень мелкого зонда.",
+   "page_pdf": 127,
+   "quote": "Water saturation of a formation's flushed zone ($S_{xo}$) is also based on the Archie equation, but two variables are changed: mud filtrate resistivity ($R_{mf}$) in place of formation water resistivity ($R_w$)"
+  },
+  {
+   "target": "S03",
+   "category": "sign_flip",
+   "severity": "critical",
+   "problem": "В нефтяном пласте фильтрат вытесняет нефть у ствола, поэтому Sxo должна быть больше Sw; в сцене задано наоборот (Sxo = 0,25 < Sw = 0,6), что противоречит и реплике L08.",
+   "fix": "Нефтяной пласт задать с Sxo больше Sw (у ствола воды больше, чем в нетронутой зоне), например Sw = 0,25 и Sxo = 0,6, и пересчитать Rt и Rxo.",
+   "page_pdf": 127,
+   "quote": "For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$)."
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+{
+  "request": {
+    "task": "check_test_asquith_02",
+    "key": "fdca15c4edd50315a756",
+    "prompt": "check_review",
+    "system": "Ты — строгий, но справедливый предметный рецензент (домен: Геология и геофизика нефтегазовых коллекторов). Тебе дают элементы чужого чернового пакета по главе книги\n(утверждения, фразы сценария, спецификации сцен, описания кадров) и для каждого — фрагменты исходного текста главы со страницами.\nЗадача: найти ошибки. Примерно 20–25 % элементов содержат ошибку; часть верных элементов звучит неожиданно, но верна —\nложная тревога (пометка верного элемента) наказывается так же сильно, как пропуск ошибки.\n\nТипы ошибок (error_type):\n- overgeneralization — обобщение сверх источника («всегда», «любой», снято «как правило», частный случай выдан за общий);\n- sign_flip — перевёрнут знак/направление зависимости (растёт ↔ падает, больше ↔ меньше, выше ↔ ниже);\n- measured_vs_derived — вычисляемое выдано за измеряемое или наоборот; сигнал прибора выдан за свойство породы;\n- lost_condition — потеряно условие применимости (тип раствора, диапазон, «при …», допущение модели);\n- missing_caveat — нет обязательной оговорки (неоднозначность, «не в масштабе», исключение, о котором говорит автор);\n- wrong_scaling_law — неверный закон масштабирования/зависимости (линейно вместо √t, обратная пропорциональность и т.п.);\n- wrong_mechanism — неверный физический механизм процесса или прибора;\n- wrong_number — число/единица/диапазон не совпадает с автором;\n- outdated_as_current — устаревшая техника из книги выдана за сегодняшнюю практику;\n- it_analogy_without_limit — ИТ-аналогия без названной границы, где она ломается, или аналогия, вводящая в заблуждение;\n- frame_error — ошибка кадра/сцены: нарушен чек-лист физики, класс кадра или метка происхождения не соответствуют способу изготовления, сгенерированный кадр утверждает факт, глубина/шкалы/полярность неверны, объект меняется между кадрами;\n- misconception — элемент закрепляет типичное заблуждение из списка;\n- unsupported — утверждение выдано за авторское, но в главе его нет и оно не следует из неё (используй только при явной выдумке).\n\nУровни (severity): 3 — критическая (заблуждение, неверный механизм, нарушена причинность, перевёрнут знак); 2 — существенная (неверное число/деталь, потеряно условие, неверная страница при неверном факте); 1 — допустимая неточность/мелочь.\n\nПравила точности:\n1. Сначала найди в фрагментах источника место, которое говорит о том же. Ошибка — только если элемент ПРОТИВОРЕЧИТ источнику, искажает его (знак, число, условие, область применимости) или нарушает чек-лист физики / закрепляет заблуждение из списка.\n2. Если источник подтверждает элемент — verdict \"ok\", даже если звучит неожиданно. Упрощение без искажения смысла — \"ok\".\n3. Если источник молчит, а элемент не противоречит физике и не закрепляет заблуждение — \"ok\" (не придумывай ошибку). Если не уверен — \"unsure\".\n4. Для каждой ошибки: evidence_quote — ДОСЛОВНАЯ цитата из приведённых фрагментов источника (5–40 слов), page — её страница; fix — исправленная формулировка элемента (одна фраза, по источнику).\n5. Не помечай стиль, орфографию, порядок слов и само по себе расхождение страниц у верного пересказа без прямой цитаты. Одна ошибка — один тип (самый точный).\n   Для «потеряно условие» процитируй место, где условие ограничивает именно этот вывод. Учитывай область, уже заданную соседними условиями, формулировкой элемента и спецификацией сцены.\n6. Для кадров с вложением используй видимое изображение, его плашку и спецификацию сцены. Если ошибка подтверждается только самим кадром или чек-листом, не подставляй фиктивную цитату и страницу.\n\nТипичные заблуждения:\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nЧек-лист физики и предметной корректности:\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.",
+    "user": "Глава: Log Interpretation (checker test package) (G. Asquith, D. Krygowski, «Basic Well Log Analysis»).\n\n\n\n=== Элемент C011 (claim, ссылается на стр. 127)\nSxo считают по уравнению Арчи, заменяя Rw на Rmf (сопротивление фильтрата) и Rt на Rxo.\n\n\nЦитата, на которую ссылается элемент: «Water saturation of a formation's flushed zone ($S_{xo}$) is also based on the Archie equation, but two variables are changed: mud filtrate resistivity ($R_{mf}$) in place of formation water resistivity ($R_w$)»\n\nФрагменты источника:\n  [стр. 127] Water saturation of a formation's flushed zone ($S_{xo}$) is also based on the Archie equation, but two variables are changed: mud filtrate resistivity ($R_{mf}$) in place of formation water resistivity ($R_w$) and flushed zone resistivity ($R_{xo}$) in place of uninvaded zone resistivity ($R_t$).\n  [стр. 127] $S_{xo} =$ water saturation of the flushed zone\n  [стр. 127] $S_{xo} =$ water saturation in the flushed zone\n\n\n=== Элемент C012 (claim, ссылается на стр. 127)\nФормула 7.2 повторяет форму 7.1 с Rmf и Rxo.\n\n\nЦитата, на которую ссылается элемент: «S_{xo} = \\left( \\frac{a \\times R_{mf}}{R_{xo} \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.2}»\n\nФрагменты источника:\n  [стр. 127] $$ S_{xo} = \\left( \\frac{a \\times R_{mf}}{R_{xo} \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.2} $$\n  [стр. 126] $$ S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1} $$\n  [стр. 130] $$\\phi = \\left(\\frac{a \\times R_w}{R_t \\times S_w^n}\\right)^{\\frac{1}{m}} \\tag{7.18}$$\n\n\n=== Элемент C013 (claim, ссылается на стр. 127)\nRxo получают с очень мелкого прибора: бокового каротажа-8, микросферического или микробокового каротажа.\n\n\nЦитата, на которую ссылается элемент: «$R_{xo} =$ shallow resistivity from a very shallow reading device, such as laterolog-8, microspherically focused log, or microlaterolog»\n\nФрагменты источника:\n  [стр. 127] $R_{xo} =$ shallow resistivity from a very shallow reading device, such as laterolog-8, microspherically focused log, or microlaterolog\n  [стр. 127] $R_{xo} =$ shallow resistivity from measurements such as laterolog-8, microspherically focused log, or microlaterolog\n  [стр. 127] $R_{xo} =$ formation's shallow resistivity from a measurement such as laterolog-8, microspherically focused log, or microlaterolog\n\n\n=== Элемент C014 (claim, ссылается на стр. 127)\nSxo можно использовать как индикатор подвижности углеводородов.\n\n\nЦитата, на которую ссылается элемент: «Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*.»\n\nФрагменты источника:\n  [стр. 127] Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*. For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).\n  [стр. 127] $S_{xo} =$ water saturation of the flushed zone\n  [стр. 127] $S_{xo} =$ water saturation in the flushed zone\n\n\n=== Элемент C015 (claim, ссылается на стр. 127)\nЕсли Sxo много больше Sw, это доказывает, что углеводороды подвижны и зона даст нефть.\n\n\nЦитата, на которую ссылается элемент: «For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).»\n\nФрагменты источника:\n  [стр. 127] Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*. For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).\n  [стр. 127] If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion. This is true regardless of whether or not a formation contains hydrocarbons. Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).\n  [стр. 127] $S_{xo} =$ water saturation of the flushed zone\n\n\n=== Элемент C016 (claim, ссылается на стр. 127)\nПри делении Sw на Sxo фактор формации сокращается, потому что в обоих расчётах он один и тот же.\n\n\nЦитата, на которую ссылается элемент: «When $S_w$ is divided by $S_{xo}$, the formation factor ($F = a/\\phi^m$) is cancelled out of the equation because the same formation factor is used to calculate both $S_w$ and $S_{xo}$.»\n\nФрагменты источника:\n  [стр. 127] When $S_w$ is divided by $S_{xo}$, the formation factor ($F = a/\\phi^m$) is cancelled out of the equation because the same formation factor is used to calculate both $S_w$ and $S_{xo}$. This can be very helpful in log analysis because, from the ratio $(R_{xo}/R_t)/(R_{mf}/R_w)$, the geologist can determine a value for both the moveable hydrocarbon index ($S_w/S_{xo}$) and water saturation by the ratio method without knowing porosity. Therefore, a geologist can still derive useful formation evaluation log parameters even though porosity logs are unavailable.\n  [стр. 127] The ratio method identifies hydrocarbons from the difference between water saturations in the flushed zone ($S_{xo}$) and the uninvaded zone ($S_w$). When the uninvaded zone form of Archie's equation (Equation 7.1) is divided by the flushed zone form (Equation 7.2), the following results:\n  [стр. 135] …predicted from the slope of the water-bearing line. When using the plot by hand, the graph paper to be used (full logarithmic) is readily available. | Water saturation can be predicted without prior knowledge of $R_w$, $\\rho_{ma}$ or $\\Delta t_{ma}$, $\\rho_{ma}$ or $\\Delta t_{ma}$ can be directly predicted from the intercept of the water-bearing line at a conductivity of zero (a resistivity of infinity).  | |  Limitations | Values for $\\rho_{ma}$ and $\\Delta t_{ma}$ must be assumed (although in cases with a wide range of porosities in the water-bearing zone, the matrix values can be estimated from the water-bearing line). | Values for tortuosity factor ($a$) and cementation exponent ($m$) must be assumed. To use the plot, the resistivity parameter has to be calculated or a special graph paper used.  | |  Limitations for both techniques | A wide range of porosity must be present to positi…\n\n\n=== Элемент C017 (claim, ссылается на стр. 127)\nДля индекса принято n = 2,0. В тексте этот показатель ошибочно назван показателем цементации, хотя n обозначает показатель насыщенности.\n\n\nЦитата, на которую ссылается элемент: «The cementation exponent ($n$) is assumed to be 2.0»\n\nФрагменты источника:\n  [стр. 127] The cementation exponent ($n$) is assumed to be 2.0\n  [стр. 127] $m =$ cementation exponent (Table 1.1; Chapter 1)\n  [стр. 127] $m =$ cementation exponent (Table 1.1; Chapter 1)\n\n\n=== Элемент C018 (claim, ссылается на стр. 127)\nЕсли Sw/Sxo ≥ 1,0, углеводороды не были вытеснены. Это верно и для пласта, в котором углеводородов нет вовсе.\n\n\nЦитата, на которую ссылается элемент: «If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion. This is true regardless of whether or not a formation contains hydrocarbons.»\n\nФрагменты источника:\n  [стр. 127] If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion. This is true regardless of whether or not a formation contains hydrocarbons. Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).\n  [стр. 130] 2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.\n  [стр. 127] $R_t =$ true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)\n\n\n=== Элемент C019 (claim, ссылается на стр. 127)\nПороги подвижности: ниже 0,7 для песчаников и ниже 0,6 для карбонатов.\n\n\nЦитата, на которую ссылается элемент: «Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).»\n\nФрагменты источника:\n  [стр. 127] If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion. This is true regardless of whether or not a formation contains hydrocarbons. Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).\n  [стр. 127] The moveable hydrocarbon index by the ratio method is:\n  [стр. 127] Water saturation of the flushed zone ($S_{xo}$) can be used as an *indicator of hydrocarbon moveability*. For example, if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$).\n\n\n=== Элемент C020 (claim, ссылается на стр. 128)\nПри разборе случая Swa < Swr автор ссылается на неравенство Sxo < Sw^(1/5) «из уравнения 7.5». Показатель 1/5 согласуется с выводом 5/8, а записанный в 7.5 показатель 1/2 — нет.\n\n\nЦитата, на которую ссылается элемент: «Also, an annulus-type invasion profile might be indicated and/or $S_{xo} < S_w^{1/5}$ (from Equation 7.5).»\n\nФрагменты источника:\n  [стр. 128] 3. If $S_{wa} < S_{wr}$, then the value for $R_{xo}/R_t$ is too high. $R_{xo}$ is too high because of the effect of adjacent, high-resistivity beds, or $R_t$ estimated from the deep resistivity measurement is too low because $R_{xo}$ is less than $R_t$. Also, an annulus-type invasion profile might be indicated and/or $S_{xo} < S_w^{1/5}$ (from Equation 7.5). In this case, a more accurate value for water saturation can be estimated using the following equation (from Schlumberger, 1977):\n  [стр. 128] 2. If $S_{wa} > S_{wr}$, then the value for $R_{xo}/R_t$ is too low. $R_{xo}$ is too low because invasion is very shallow, or $R_t$ is too high because invasion is very deep. Also, a transition-type invasion profile might be indicated and $S_{wa}$ is considered a good value for the zone's actual water saturation.\n  [стр. 128] 1. If $S_{wa} \\sim S_{wr}$, the assumption of a step-contact invasion profile is indicated to be correct, and all values determined ($S_w$, $R_t$, $R_{xo}$, and $d_t$) are correct.\n\n\nВерни reviews — по одному объекту на каждый элемент: id, verdict (ok | error | unsure), error_type (или null), severity (3/2/1 или null), explanation (1 фраза), fix (или null), page (или null), evidence_quote (или null).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"reviews\"], \"properties\": {\"reviews\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"id\", \"verdict\", \"error_type\", \"severity\", \"explanation\", \"fix\", \"page\", \"evidence_quote\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"verdict\": {\"enum\": [\"ok\", \"error\", \"unsure\"]}, \"error_type\": {\"anyOf\": [{\"enum\": [\"overgeneralization\", \"sign_flip\", \"measured_vs_derived\", \"lost_condition\", \"missing_caveat\", \"wrong_scaling_law\", \"wrong_mechanism\", \"wrong_number\", \"outdated_as_current\", \"it_analogy_without_limit\", \"frame_error\", \"misconception\", \"unsupported\"]}, {\"type\": \"null\"}]}, \"severity\": {\"enum\": [1, 2, 3, null]}, \"explanation\": {\"type\": \"string\"}, \"fix\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"evidence_quote\": {\"type\": [\"string\", \"null\"]}}}}}}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "reviews"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "verdict",
+              "error_type",
+              "severity",
+              "explanation",
+              "fix",
+              "page",
+              "evidence_quote"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "ok",
+                  "error",
+                  "unsure"
+                ]
+              },
+              "error_type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "overgeneralization",
+                      "sign_flip",
+                      "measured_vs_derived",
+                      "lost_condition",
+                      "missing_caveat",
+                      "wrong_scaling_law",
+                      "wrong_mechanism",
+                      "wrong_number",
+                      "outdated_as_current",
+                      "it_analogy_without_limit",
+                      "frame_error",
+                      "misconception",
+                      "unsupported"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "severity": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  null
+                ]
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "fix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/review_asquith/llm/check_test_asquith_02/fdca15c4edd50315a756.json",
+    "created": "2026-11-26T08:44:54"
+  },
+  "response": {
+    "reviews": [
+      {
+        "id": "C011",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Обе замены переменных совпадают с описанием расчёта Sxo у автора.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C012",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Уравнения 7.1 и 7.2 действительно имеют одинаковую форму с указанными заменами.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C013",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Все три примера относятся к измерениям с малой глубиной исследования, как в источнике.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C014",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник прямо называет Sxo индикатором подвижности углеводородов.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C015",
+        "verdict": "error",
+        "error_type": "overgeneralization",
+        "severity": 2,
+        "explanation": "В источнике различие насыщенностей говорит лишь о вероятном вытеснении углеводородов фильтратом и не гарантирует добычу нефти.",
+        "fix": "Если Sxo значительно больше Sw, углеводороды, вероятно, были вытеснены из ближней к скважине зоны фильтратом бурового раствора, но это не гарантирует притока нефти.",
+        "page": 127,
+        "evidence_quote": "if the value of $S_{xo}$ is much larger than $S_w$, then hydrocarbons in the flushed zone have probably been moved or flushed out of the zone nearest the borehole by the invading drilling fluids ($R_{mf}$)."
+      },
+      {
+        "id": "C016",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "По источнику один и тот же фактор формации используется в обоих расчётах и сокращается при делении.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C017",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник принимает n равным 2,0, но его терминология здесь непоследовательна: цементационный показатель отдельно обозначен m.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C018",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Автор явно указывает, что при отношении от 1,0 вывод об отсутствии вытеснения действует и для пласта без углеводородов.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C019",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Оба порога отношения Sw/Sxo по типу породы переданы верно.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C020",
+        "verdict": "unsure",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Фрагмент подтверждает ссылку автора на неравенство с показателем 1/5, но самой формулы 7.5 в приведённых фрагментах нет.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 20681,
+    "output_chars": 2603
+  }
+}

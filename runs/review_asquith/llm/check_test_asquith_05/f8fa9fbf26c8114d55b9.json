@@ -1,0 +1,211 @@
+{
+  "request": {
+    "task": "check_test_asquith_05",
+    "key": "f8fa9fbf26c8114d55b9",
+    "prompt": "check_review",
+    "system": "Ты — строгий, но справедливый предметный рецензент (домен: Геология и геофизика нефтегазовых коллекторов). Тебе дают элементы чужого чернового пакета по главе книги\n(утверждения, фразы сценария, спецификации сцен, описания кадров) и для каждого — фрагменты исходного текста главы со страницами.\nЗадача: найти ошибки. Примерно 20–25 % элементов содержат ошибку; часть верных элементов звучит неожиданно, но верна —\nложная тревога (пометка верного элемента) наказывается так же сильно, как пропуск ошибки.\n\nТипы ошибок (error_type):\n- overgeneralization — обобщение сверх источника («всегда», «любой», снято «как правило», частный случай выдан за общий);\n- sign_flip — перевёрнут знак/направление зависимости (растёт ↔ падает, больше ↔ меньше, выше ↔ ниже);\n- measured_vs_derived — вычисляемое выдано за измеряемое или наоборот; сигнал прибора выдан за свойство породы;\n- lost_condition — потеряно условие применимости (тип раствора, диапазон, «при …», допущение модели);\n- missing_caveat — нет обязательной оговорки (неоднозначность, «не в масштабе», исключение, о котором говорит автор);\n- wrong_scaling_law — неверный закон масштабирования/зависимости (линейно вместо √t, обратная пропорциональность и т.п.);\n- wrong_mechanism — неверный физический механизм процесса или прибора;\n- wrong_number — число/единица/диапазон не совпадает с автором;\n- outdated_as_current — устаревшая техника из книги выдана за сегодняшнюю практику;\n- it_analogy_without_limit — ИТ-аналогия без названной границы, где она ломается, или аналогия, вводящая в заблуждение;\n- frame_error — ошибка кадра/сцены: нарушен чек-лист физики, класс кадра или метка происхождения не соответствуют способу изготовления, сгенерированный кадр утверждает факт, глубина/шкалы/полярность неверны, объект меняется между кадрами;\n- misconception — элемент закрепляет типичное заблуждение из списка;\n- unsupported — утверждение выдано за авторское, но в главе его нет и оно не следует из неё (используй только при явной выдумке).\n\nУровни (severity): 3 — критическая (заблуждение, неверный механизм, нарушена причинность, перевёрнут знак); 2 — существенная (неверное число/деталь, потеряно условие, неверная страница при неверном факте); 1 — допустимая неточность/мелочь.\n\nПравила точности:\n1. Сначала найди в фрагментах источника место, которое говорит о том же. Ошибка — только если элемент ПРОТИВОРЕЧИТ источнику, искажает его (знак, число, условие, область применимости) или нарушает чек-лист физики / закрепляет заблуждение из списка.\n2. Если источник подтверждает элемент — verdict \"ok\", даже если звучит неожиданно. Упрощение без искажения смысла — \"ok\".\n3. Если источник молчит, а элемент не противоречит физике и не закрепляет заблуждение — \"ok\" (не придумывай ошибку). Если не уверен — \"unsure\".\n4. Для каждой ошибки: evidence_quote — ДОСЛОВНАЯ цитата из приведённых фрагментов источника (5–40 слов), page — её страница; fix — исправленная формулировка элемента (одна фраза, по источнику).\n5. Не помечай стиль, орфографию, порядок слов и само по себе расхождение страниц у верного пересказа без прямой цитаты. Одна ошибка — один тип (самый точный).\n   Для «потеряно условие» процитируй место, где условие ограничивает именно этот вывод. Учитывай область, уже заданную соседними условиями, формулировкой элемента и спецификацией сцены.\n6. Для кадров с вложением используй видимое изображение, его плашку и спецификацию сцены. Если ошибка подтверждается только самим кадром или чек-листом, не подставляй фиктивную цитату и страницу.\n\nТипичные заблуждения:\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nЧек-лист физики и предметной корректности:\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.",
+    "user": "Глава: Log Interpretation (checker test package) (G. Asquith, D. Krygowski, «Basic Well Log Analysis»).\n\n\n\n=== Элемент C041 (claim, ссылается на стр. 131)\nBVW растёт с уменьшением размера зерна. Табл. 7.1 сопоставляет BVW с размером зерна и типом породы: от крупных зёрен (0,02–0,025) к алевриту (0,07–0,09) в терригенных, от 0,005–0,015 у каверновых до 0,05 у меловых карбонатов. Значения для карбонатов автор даёт лишь как очень общий ориентир.\n\n\nЦитата, на которую ссылается элемент: «Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart.»\n\nФрагменты источника:\n  [стр. 131] Table 7.1. Bulk volume water ($BVW$) as a function of grain size and lithology. A comparative chart. |  Lithology | Grain Size (millimeters) | Bulk Volume Water ($BVW$)  | | --- | --- | --- | |  *Clastics*  |   |   | |  Coarse | 1.0 to 0.5 | 0.02 to 0.025  | |  Medium | 0.5 to 0.25 | 0.025 to 0.035  | |  Fine | 0.25 to 0.125 | 0.035 to 0.05  | |  Very Fine | 0.125 to 0.062 | 0.05 to 0.07  | |  Silt | < 0.062 | 0.07 to 0.09  | |  *Carbonates*  |   |   | |  Vuggy |   | 0.005 to 0.015  | |  Vuggy and intercrystalline (intergranular) |   | 0.015 to 0.025  | |  Intercrystalline |   | 0.025 to 0.04  | |  Chalky |   | 0.05  |\n  [стр. 131] Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size, the bulk volume water also increases with decreasing grain size. Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.\n  [стр. 131] $BVW$ = bulk volume water\n\n\n=== Элемент C042 (claim, ссылается на стр. 132)\nВодоносные точки разной пористости лежат на прямой с наклоном −1/m и отсечкой a·Rw при пористости 1,0.\n\n\nЦитата, на которую ссылается элемент: «Water-bearing points of different porosities plot along a straight line with a slope of ($-1/m$) and an intercept (at porosity = 1.0) of ($a \\times R_w$).»\n\nФрагменты источника:\n  [стр. 132] - Water-bearing points of different porosities plot along a straight line with a slope of ($-1/m$) and an intercept (at porosity = 1.0) of ($a \\times R_w$). From this line, the cementation exponent ($m$) can be determined, and if the tortuosity factor ($a$) is known (or can be estimated), $R_w$ can be predicted. This is the water-bearing, or $R_o$, line.\n  [стр. 133] - Water-bearing points of different porosities plot along a straight line. The x-intercept of the line (where conductivity is zero and resistivity is infinite) occurs at the point where porosity is\n  [стр. 132] This form of the equation ($y = b + mx$) indicates that by plotting $R_t$ on the y-axis (on a logarithmic scale) against porosity ($\\phi$) on the x-axis (on a logarithmic scale), one can determine the product ($a \\times R_w$) from intercept of the line (b), and the cementation exponent ($m$) from the slope of the line ($m$). In practice, the resistivity ($R_t$) is usually plotted on the x-axis and the porosity ($\\phi$) on the y-axis (Figure 7.4). This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique. The best format to use (for the best data resolution) is two decades for porosity (0.01 to 1.0, or 1% to 100%) and three decades for the resistivity (0.1 to 100, or 1 to 1000). The only 2-by-3 full-logarithmic paper available was constructed with 2 decades on the y-axis and 3 decades on the x-axis so …\n\n\n=== Элемент C043 (claim, ссылается на стр. 132)\nТочки с углеводородами смещены по горизонтали вправо от водоносной линии из-за более высокого сопротивления.\n\n\nЦитата, на которую ссылается элемент: «Hydrocarbon-bearing points lie away from the line, moved horizontally to the right from the water-bearing line by their increased resistivity.»\n\nФрагменты источника:\n  [стр. 132] - Hydrocarbon-bearing points lie away from the line, moved horizontally to the right from the water-bearing line by their increased resistivity. The horizontal distance of a point from the water-bearing line depends on the water saturation ($S_w$) of that point. If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined. Lines of constant water saturation lie parallel to the water-bearing line.\n  [стр. 134] - Hydrocarbon-bearing points lie below the line of 100% water saturation, moved downward from the water-bearing line by their increased resistivity. The vertical distance from a point to the water-bearing line depends on the water saturation ($S_w$) of that point. If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined. Lines of decreasing water saturation radiate from the x-axis intercept and spread like a fan toward the right side of the chart.\n  [стр. 133] The water saturation of a point plotting away from the water-bearing line can be determined by the equation:\n\n\n=== Элемент C044 (claim, ссылается на стр. 132)\nСила метода в том, что Rw и m оценивают по самим данным, а не берут из местных знаний или дорогих измерений на керне.\n\n\nЦитата, на которую ссылается элемент: «The power in the Pickett plot is that water resistivity ($R_w$) and cementation exponent ($m$) can be estimated from the data, rather than having to be derived from local knowledge or from expensive core measurements.»\n\nФрагменты источника:\n  [стр. 132] The power in the Pickett plot is that water resistivity ($R_w$) and cementation exponent ($m$) can be estimated from the data, rather than having to be derived from local knowledge or from expensive core measurements.\n  [стр. 132] This form of the equation ($y = b + mx$) indicates that by plotting $R_t$ on the y-axis (on a logarithmic scale) against porosity ($\\phi$) on the x-axis (on a logarithmic scale), one can determine the product ($a \\times R_w$) from intercept of the line (b), and the cementation exponent ($m$) from the slope of the line ($m$). In practice, the resistivity ($R_t$) is usually plotted on the x-axis and the porosity ($\\phi$) on the y-axis (Figure 7.4). This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique. The best format to use (for the best data resolution) is two decades for porosity (0.01 to 1.0, or 1% to 100%) and three decades for the resistivity (0.1 to 100, or 1 to 1000). The only 2-by-3 full-logarithmic paper available was constructed with 2 decades on the y-axis and 3 decades on the x-axis so …\n  [стр. 134] As with the Pickett plot, the Hingle plot allows the interpreter to predict some of the parameters from the logs rather than estimating them by other methods. The formation water resistivity ($R_w$) can be estimated by choosing any point along the water-bearing line. The point's resistivity ($R_o$) and porosity can be read from the plot, and values of tortuosity factor ($a$) and cementation exponent ($m$) are assumed based on the chart that is chosen. Formation water resistivity is then:\n\n\n=== Элемент C045 (claim, ссылается на стр. 132)\nРасположение Rt по оси x — историческое: оно связано с доступностью логарифмической бумаги, а не с физикой.\n\n\nЦитата, на которую ссылается элемент: «This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique.»\n\nФрагменты источника:\n  [стр. 132] This form of the equation ($y = b + mx$) indicates that by plotting $R_t$ on the y-axis (on a logarithmic scale) against porosity ($\\phi$) on the x-axis (on a logarithmic scale), one can determine the product ($a \\times R_w$) from intercept of the line (b), and the cementation exponent ($m$) from the slope of the line ($m$). In practice, the resistivity ($R_t$) is usually plotted on the x-axis and the porosity ($\\phi$) on the y-axis (Figure 7.4). This convention stems from the availability of full-logarithmic graph paper (both scales logarithmic) at the time Pickett developed the technique. The best format to use (for the best data resolution) is two decades for porosity (0.01 to 1.0, or 1% to 100%) and three decades for the resistivity (0.1 to 100, or 1 to 1000). The only 2-by-3 full-logarithmic paper available was constructed with 2 decades on the y-axis and 3 decades on the x-axis so …\n  [стр. 132] Using the convention driven by graph-paper availability, the equation becomes:\n  [стр. 132] Saturation crossplots, also called resistivity-porosity crossplots (or specifically, Pickett plots and Hingle plots) are similar to the porosity crossplots discussed in Chapter 4. They are x-y plots of log data from which quantities of interest are derived; in this case, that quantity is water saturation ($S_w$). Both the Pickett and Hingle methods are essentially graphical solutions to the Archie saturation equation. They were created before the use of computers to aid log interpretation. These techniques minimize the number of calculations that must be done and aid the comparison of potentially productive zones. With the advent of early (mostly nongraphic) log-interpretation software, their use declined, but this decline was reversed as people realized the power of the techniques to use the ability of the human mind to recognize patterns in data. These techniques are currently regarded…\n\n\n=== Элемент C046 (claim, ссылается на стр. 133)\nВодоносная линия на графике Пикетта получается прямой при любом выбранном значении матрицы.\n\n\nЦитата, на которую ссылается элемент: «If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight.»\n\nФрагменты источника:\n  [стр. 133] Both quantities are the numerators in porosity equations $$(\\rho_b - \\rho_{ma})$$ from the density porosity equation (Chapter 4, Equation 4.7), and $$(\\Delta t - \\Delta t_{ma})$$ from the Wyllie time-average sonic equation (Chapter 4, Equation 4.1). The quantities are plotting shortcuts to avoid the calculation of porosity, but they serve another purpose as well. If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight. If the chosen matrix value is either too high or too low, the line is curved. Thus, with a spread of good data in the water-bearing zone, the proper matrix value can be chosen by trial and error by modifying the matrix value until the water-bearing line is straight and not curved.\n  [стр. 133] In its fullest use, then, the Pickett plot can be used to determine formation water resistivity ($$R_w$$), cementation exponent (m), and formation matrix values ($$\\rho_{ma}$$ or $$\\Delta t_{ma}$$). As expected, there are assumptions to the interpretation. The prime assumption is that in the zones being compared, all the parameters (matrix value, a, m, n, and $$R_w$$) do not change.\n  [стр. 133] - Water-bearing points of different porosities plot along a straight line. The x-intercept of the line (where conductivity is zero and resistivity is infinite) occurs at the point where porosity is\n\n\n=== Элемент C047 (claim, ссылается на стр. 133)\nТабл. 7.2 содержит множители от 1,56 (Sw 0,80) до 25 (Sw 0,20) для n = 2,0; общая для графиков Пикетта и Хингла.\n\n\nЦитата, на которую ссылается элемент: «Table 7.2. Factors for positioning water-saturation lines on Pickett and Hingle plots.»\n\nФрагменты источника:\n  [стр. 133] Table 7.2. Factors for positioning water-saturation lines on Pickett and Hingle plots. |  Multiplier | $$S_w$$ (for n = 2.0)  | | --- | --- | |  1.56 | 0.80  | |  2.04 | 0.70  | |  2.78 | 0.60  | |  4 | 0.50  | |  6.25 | 0.40  | |  11.11 | 0.30  | |  25 | 0.20  |\n  [стр. 133] The table below can be used to draw saturation lines on a Pickett plot, as a reference. The technique is:\n  [стр. 134] Table 7.2, previously used for the Pickett plot, can be used to draw saturation lines on a Hingle plot. The technique is:\n\n\n=== Элемент C048 (claim, ссылается на стр. 133)\nСетка с a = 1,0 и m = 2,0 обычно используется для песчаников, а с a = 0,62 и m = 2,15 — для карбонатов.\n\n\nЦитата, на которую ссылается элемент: «The grid constructed using a = 1.0 and m = 2.0 is usually used for sandstones (Figure 7.5), and the grid constructed using a = 0.62 and m = 2.15 is used for carbonates (Figure 7.6).»\n\nФрагменты источника:\n  [стр. 133] While porosity is plotted on a linear scale, the resistivity is plotted on a very nonlinear scale. In practice, the resistivity is plotted on a grid that has been constructed for specific values of tortuosity factor (a) and cementation exponent (m). The grid constructed using a = 1.0 and m = 2.0 is usually used for sandstones (Figure 7.5), and the grid constructed using a = 0.62 and m = 2.15 is used for carbonates (Figure 7.6). Using the constructed grids, resistivity values can be plotted directly on the graph without the need for any calculations.\n  [стр. 145] The Hingle grid using a = 1.0 and m = 2.0 was chosen as the common parameters for sandstones.\n  [стр. 143] Figure 7.5. Hingle plot (saturation crossplot or resistivity-porosity crossplot) generally used for sandstones. (Western Atlas International, Inc., 1995, Chart 7-79) The y-axis is constructed with tortuosity factor (a) = 1.0 and cementation exponent (m) = 2.0.\n\n\n=== Элемент C049 (claim, ссылается на стр. 134)\nТочки с углеводородами лежат ниже линии 100 % водонасыщенности из-за повышенного сопротивления.\n\n\nЦитата, на которую ссылается элемент: «Hydrocarbon-bearing points lie below the line of 100% water saturation, moved downward from the water-bearing line by their increased resistivity.»\n\nФрагменты источника:\n  [стр. 134] - Hydrocarbon-bearing points lie below the line of 100% water saturation, moved downward from the water-bearing line by their increased resistivity. The vertical distance from a point to the water-bearing line depends on the water saturation ($S_w$) of that point. If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined. Lines of decreasing water saturation radiate from the x-axis intercept and spread like a fan toward the right side of the chart.\n  [стр. 132] - Hydrocarbon-bearing points lie away from the line, moved horizontally to the right from the water-bearing line by their increased resistivity. The horizontal distance of a point from the water-bearing line depends on the water saturation ($S_w$) of that point. If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined. Lines of constant water saturation lie parallel to the water-bearing line.\n  [стр. 134] The water saturation of a point plotting away from the water-bearing line can be determined by Equation 7.26. In practice, this means reading the resistivity of the point ($R_t$) and the resistivity of the water-bearing line ($R_o$) at the same porosity value as the point, estimating a value for saturation exponent ($n$), and making the calculation.\n\n\n=== Элемент C050 (claim, ссылается на стр. 134)\nЛинии уменьшающейся Sw расходятся веером от пересечения с осью x к правой стороне графика.\n\n\nЦитата, на которую ссылается элемент: «Lines of decreasing water saturation radiate from the x-axis intercept and spread like a fan toward the right side of the chart.»\n\nФрагменты источника:\n  [стр. 134] - Hydrocarbon-bearing points lie below the line of 100% water saturation, moved downward from the water-bearing line by their increased resistivity. The vertical distance from a point to the water-bearing line depends on the water saturation ($S_w$) of that point. If the saturation exponent ($n$) is known (or can be estimated), the water saturation can be determined. Lines of decreasing water saturation radiate from the x-axis intercept and spread like a fan toward the right side of the chart.\n  [стр. 134] - Draw the saturation lines to intersect the water-bearing line at the zero porosity point on the x-axis, with each line going through the calculated points.\n  [стр. 134] By plotting the bulk density ($\\rho_b$) or sonic travel time ($\\Delta t$) values on the x-axis, rather than the porosity, the matrix density or matrix travel time ($\\rho_{ma}$ or $\\Delta t_{ma}$) can be estimated. If there is a sufficient range of porosities used to determine the water-bearing line, the line can be extrapolated to the zero-conductivity value (the bottom of the chart). The value of this intercept is the matrix value for the porosity equation. On Figure 7.5 or Figure 7.6, the placement of the zero porosity point is arbitrary. If porosity is plotted on the x-axis, setting the zero porosity point at the left side of the plot makes the most sense. If $\\rho_b$ or $\\Delta t$ is used, the anticipated zero porosity point (the anticipated matrix value) could be displaced from the lower left corner if the matrix value is different than the expected matrix value. Regardless of the v…\n\n\nВерни reviews — по одному объекту на каждый элемент: id, verdict (ok | error | unsure), error_type (или null), severity (3/2/1 или null), explanation (1 фраза), fix (или null), page (или null), evidence_quote (или null).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"reviews\"], \"properties\": {\"reviews\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"id\", \"verdict\", \"error_type\", \"severity\", \"explanation\", \"fix\", \"page\", \"evidence_quote\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"verdict\": {\"enum\": [\"ok\", \"error\", \"unsure\"]}, \"error_type\": {\"anyOf\": [{\"enum\": [\"overgeneralization\", \"sign_flip\", \"measured_vs_derived\", \"lost_condition\", \"missing_caveat\", \"wrong_scaling_law\", \"wrong_mechanism\", \"wrong_number\", \"outdated_as_current\", \"it_analogy_without_limit\", \"frame_error\", \"misconception\", \"unsupported\"]}, {\"type\": \"null\"}]}, \"severity\": {\"enum\": [1, 2, 3, null]}, \"explanation\": {\"type\": \"string\"}, \"fix\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"evidence_quote\": {\"type\": [\"string\", \"null\"]}}}}}}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "reviews"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "verdict",
+              "error_type",
+              "severity",
+              "explanation",
+              "fix",
+              "page",
+              "evidence_quote"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "ok",
+                  "error",
+                  "unsure"
+                ]
+              },
+              "error_type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "overgeneralization",
+                      "sign_flip",
+                      "measured_vs_derived",
+                      "lost_condition",
+                      "missing_caveat",
+                      "wrong_scaling_law",
+                      "wrong_mechanism",
+                      "wrong_number",
+                      "outdated_as_current",
+                      "it_analogy_without_limit",
+                      "frame_error",
+                      "misconception",
+                      "unsupported"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "severity": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  null
+                ]
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "fix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/review_asquith/llm/check_test_asquith_05/f8fa9fbf26c8114d55b9.json",
+    "created": "2026-11-26T08:44:54"
+  },
+  "response": {
+    "reviews": [
+      {
+        "id": "C041",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Тенденция и приведённые численные диапазоны соответствуют табл. 7.1.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C042",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Для принятой ориентации осей графика Пикетта наклон равен −1/m, а отсечка при φ = 1 равна a·Rw.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C043",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "На графике Пикетта большее сопротивление при той же пористости смещает точку вправо.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C044",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник прямо называет оценку Rw и m по данным преимуществом графика Пикетта.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C045",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Выбор осей объясняется доступным Пикетту форматом логарифмической бумаги.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C046",
+        "verdict": "error",
+        "error_type": "lost_condition",
+        "severity": 2,
+        "explanation": "Неверное значение параметра матрицы искривляет водоносную линию, а не сохраняет её прямой.",
+        "fix": "На графике Пикетта водоносная линия прямая, если водоносные точки охватывают диапазон пористостей и параметр матрицы выбран правильно.",
+        "page": 133,
+        "evidence_quote": "If there is a range of porosities in the zones defining the water-bearing line on the Pickett plot, and if the matrix value is chosen correctly, the line is straight."
+      },
+      {
+        "id": "C047",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Множители на концах диапазона совпадают с табл. 7.2, применимой к обоим графикам.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C048",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Значения a и m и их отнесение к песчаникам и карбонатам приведены именно так.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C049",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "На графике Хингла повышенное сопротивление смещает точку ниже линии 100 % водонасыщенности.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C050",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Линии на графике Хингла действительно расходятся вправо веером от отсечки на оси x.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 27170,
+    "output_chars": 2402
+  }
+}

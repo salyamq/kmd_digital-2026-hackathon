@@ -1,0 +1,13 @@
+id: review_asquith
+split: test
+domain: geology
+title: Log Interpretation (checker test package)
+book:
+  author: G. Asquith, D. Krygowski
+  title: Basic Well Log Analysis
+  year: 2004
+  md: review/test/asquith_ch7.md
+language: en
+course_language: ru
+segments:
+  - pages: [126, 146]

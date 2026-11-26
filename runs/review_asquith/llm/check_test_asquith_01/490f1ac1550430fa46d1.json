@@ -1,0 +1,211 @@
+{
+  "request": {
+    "task": "check_test_asquith_01",
+    "key": "490f1ac1550430fa46d1",
+    "prompt": "check_review",
+    "system": "Ты — строгий, но справедливый предметный рецензент (домен: Геология и геофизика нефтегазовых коллекторов). Тебе дают элементы чужого чернового пакета по главе книги\n(утверждения, фразы сценария, спецификации сцен, описания кадров) и для каждого — фрагменты исходного текста главы со страницами.\nЗадача: найти ошибки. Примерно 20–25 % элементов содержат ошибку; часть верных элементов звучит неожиданно, но верна —\nложная тревога (пометка верного элемента) наказывается так же сильно, как пропуск ошибки.\n\nТипы ошибок (error_type):\n- overgeneralization — обобщение сверх источника («всегда», «любой», снято «как правило», частный случай выдан за общий);\n- sign_flip — перевёрнут знак/направление зависимости (растёт ↔ падает, больше ↔ меньше, выше ↔ ниже);\n- measured_vs_derived — вычисляемое выдано за измеряемое или наоборот; сигнал прибора выдан за свойство породы;\n- lost_condition — потеряно условие применимости (тип раствора, диапазон, «при …», допущение модели);\n- missing_caveat — нет обязательной оговорки (неоднозначность, «не в масштабе», исключение, о котором говорит автор);\n- wrong_scaling_law — неверный закон масштабирования/зависимости (линейно вместо √t, обратная пропорциональность и т.п.);\n- wrong_mechanism — неверный физический механизм процесса или прибора;\n- wrong_number — число/единица/диапазон не совпадает с автором;\n- outdated_as_current — устаревшая техника из книги выдана за сегодняшнюю практику;\n- it_analogy_without_limit — ИТ-аналогия без названной границы, где она ломается, или аналогия, вводящая в заблуждение;\n- frame_error — ошибка кадра/сцены: нарушен чек-лист физики, класс кадра или метка происхождения не соответствуют способу изготовления, сгенерированный кадр утверждает факт, глубина/шкалы/полярность неверны, объект меняется между кадрами;\n- misconception — элемент закрепляет типичное заблуждение из списка;\n- unsupported — утверждение выдано за авторское, но в главе его нет и оно не следует из неё (используй только при явной выдумке).\n\nУровни (severity): 3 — критическая (заблуждение, неверный механизм, нарушена причинность, перевёрнут знак); 2 — существенная (неверное число/деталь, потеряно условие, неверная страница при неверном факте); 1 — допустимая неточность/мелочь.\n\nПравила точности:\n1. Сначала найди в фрагментах источника место, которое говорит о том же. Ошибка — только если элемент ПРОТИВОРЕЧИТ источнику, искажает его (знак, число, условие, область применимости) или нарушает чек-лист физики / закрепляет заблуждение из списка.\n2. Если источник подтверждает элемент — verdict \"ok\", даже если звучит неожиданно. Упрощение без искажения смысла — \"ok\".\n3. Если источник молчит, а элемент не противоречит физике и не закрепляет заблуждение — \"ok\" (не придумывай ошибку). Если не уверен — \"unsure\".\n4. Для каждой ошибки: evidence_quote — ДОСЛОВНАЯ цитата из приведённых фрагментов источника (5–40 слов), page — её страница; fix — исправленная формулировка элемента (одна фраза, по источнику).\n5. Не помечай стиль, орфографию, порядок слов и само по себе расхождение страниц у верного пересказа без прямой цитаты. Одна ошибка — один тип (самый точный).\n   Для «потеряно условие» процитируй место, где условие ограничивает именно этот вывод. Учитывай область, уже заданную соседними условиями, формулировкой элемента и спецификацией сцены.\n6. Для кадров с вложением используй видимое изображение, его плашку и спецификацию сцены. Если ошибка подтверждается только самим кадром или чек-листом, не подставляй фиктивную цитату и страницу.\n\nТипичные заблуждения:\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nЧек-лист физики и предметной корректности:\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.",
+    "user": "Глава: Log Interpretation (checker test package) (G. Asquith, D. Krygowski, «Basic Well Log Analysis»).\n\n\n\n=== Элемент C001 (claim, ссылается на стр. 126)\nОпределение пористости и истинного сопротивления зоны — первый шаг перевода сырых каротажных данных в оценки нефти, газа и воды.\n\n\nЦитата, на которую ссылается элемент: «As shown in the previous chapters, determining the porosity and true resistivity of a zone is the first step in converting the raw log data into estimated quantities of oil, gas, and water in a formation.»\n\nФрагменты источника:\n  [стр. 126] As shown in the previous chapters, determining the porosity and true resistivity of a zone is the first step in converting the raw log data into estimated quantities of oil, gas, and water in a formation. These estimated quantities are used to evaluate a zone and to determine whether a well completion attempt is warranted. This chapter covers some of the different methods from which these estimates are derived. The methods discussed are: Archie water saturations ($S_w$ and $S_{xo}$) and the ratio method, quick-look technique, bulk volume water ($BVW$), and saturation crossplots (Pickett plots and Hingle plots). Determination of log-derived permeability ($K_e$) and shaly sand analysis are also discussed.\n  [стр. 126] $R_w =$ resistivity of formation water at formation temperature\n  [стр. 131] 1. Calculate $R_o$ from the porosity and an estimate of formation water resistivity ($R_w$).\n\n\n=== Элемент C002 (claim, ссылается на стр. 126)\nРезультаты каротажа не следует применять без привлечения других данных.\n\n\nЦитата, на которую ссылается элемент: «As important as this log-derived information is, however, it should not be applied without the inclusion of other data.»\n\nФрагменты источника:\n  [стр. 126] As important as this log-derived information is, however, it should not be applied without the inclusion of other data. This statement is, perhaps, obvious to the reader, but it can't be overemphasized. A geologist should always consider every item of relevant data, such as drill stem tests, sample shows, mud-log analysis, nearby production, etc., before making a decision to set pipe.\n  [стр. 126] As shown in the previous chapters, determining the porosity and true resistivity of a zone is the first step in converting the raw log data into estimated quantities of oil, gas, and water in a formation. These estimated quantities are used to evaluate a zone and to determine whether a well completion attempt is warranted. This chapter covers some of the different methods from which these estimates are derived. The methods discussed are: Archie water saturations ($S_w$ and $S_{xo}$) and the ratio method, quick-look technique, bulk volume water ($BVW$), and saturation crossplots (Pickett plots and Hingle plots). Determination of log-derived permeability ($K_e$) and shaly sand analysis are also discussed.\n  [стр. 140] The sources of raw data, both well logs and other well-bore information, are shown in the left column. In many cases, the information generated from that raw data (shown in the center column) is used in computations to produce the quantities of interest (shown in the right column).\n\n\n=== Элемент C003 (claim, ссылается на стр. 126)\nКаротаж, на котором коллектора больше, чем неколлектора, встречается крайне редко.\n\n\nЦитата, на которую ссылается элемент: «It is an exceedingly rare log that contains more reservoir than nonreservoir»\n\nФрагменты источника:\n  [стр. 126] It is an exceedingly rare log that contains more reservoir than nonreservoir, and when one is unfamiliar with an area or wants to broadly reconnoiter an area, a scanning technique that sorts reservoir from nonreservoir can be helpful, even with access to computer-aided processing. A good scanning technique not only identifies the reservoirs, but can also give the geologist hints as to potential pay and wet zones. Remember that in the interpretive process, the identification of wet zones is as important as the discovery of those containing hydrocarbons, because the com comparison of the two helps clearly identify both the presence and amount of the hydrocarbons.\n  [стр. 130] some hydrocarbons, then the other zones contain even more hydrocarbons than anticipated.\n  [стр. 130] 2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.\n\n\n=== Элемент C004 (claim, ссылается на стр. 126)\nВ терригенном разрезе изменения сопротивления из-за флюидов видны на относительно постоянном фоне глин.\n\n\nЦитата, на которую ссылается элемент: «The changes in resistivity due to changes in fluid content of the reservoirs tend to stand out against this relatively constant background.»\n\nФрагменты источника:\n  [стр. 126] Figure 7.1 is a flowchart for one such scanning technique. Note that it has two paths, one for clastics and one for carbonates. In the clastic case, the resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales of slowly varying resistivity. The changes in resistivity due to changes in fluid content of the reservoirs tend to stand out against this relatively constant background. On the carbonate path, on the other hand, formation resistivities tend to vary widely with changing rock types, and commonly there are few shales against which to measure changes. In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, those with the capacity to hold fluids (of any type) can be identified.\n  [стр. 140] The resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales whose resistivities vary gradually with depth. Differences in the fluid content of the reservoirs tend to produce reservoir resistivities that stand out against the relatively constant resistivity of the surrounding shales.\n  [стр. 140] Formation resistivities tend to vary widely with changing rock types, and commonly there are few shales against which to measure changes. In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, the zones with the capacity to hold fluids (of any type) can be identified.\n\n\n=== Элемент C005 (claim, ссылается на стр. 126)\nВ карбонатах основная кривая просмотра — пористость: сначала находят зоны, способные вместить флюид.\n\n\nЦитата, на которую ссылается элемент: «In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, those with the capacity to hold fluids (of any type) can be identified.»\n\nФрагменты источника:\n  [стр. 126] Figure 7.1 is a flowchart for one such scanning technique. Note that it has two paths, one for clastics and one for carbonates. In the clastic case, the resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales of slowly varying resistivity. The changes in resistivity due to changes in fluid content of the reservoirs tend to stand out against this relatively constant background. On the carbonate path, on the other hand, formation resistivities tend to vary widely with changing rock types, and commonly there are few shales against which to measure changes. In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, those with the capacity to hold fluids (of any type) can be identified.\n  [стр. 140] Formation resistivities tend to vary widely with changing rock types, and commonly there are few shales against which to measure changes. In this case, the porosity log is the primary reconnaissance measurement. By first finding the porous zones, the zones with the capacity to hold fluids (of any type) can be identified.\n  [стр. 140] Using this scanning technique in combination with the neutron-density quick-look technique discussed in Chapter 4 (if those logs are available) allows one to identify lithology (and sometimes fluid type) in the course of identifying the zones of interest.\n\n\n=== Элемент C006 (claim, ссылается на стр. 140)\nИсключение: зона, похожая на глину, может быть радиоактивной продуктивной зоной.\n\n\nЦитата, на которую ссылается элемент: «Zones that appear to be shales might be radioactive productive zones.»\n\nФрагменты источника:\n  [стр. 140] ¹ Zones that appear to be shales might be radioactive productive zones. ² Shaly zones might produce oil or gas even if they have low resistivity.\n  [стр. 140] The resistivity log is the primary reconnaissance measurement because clastics tend to consist of reservoirs surrounded by shales whose resistivities vary gradually with depth. Differences in the fluid content of the reservoirs tend to produce reservoir resistivities that stand out against the relatively constant resistivity of the surrounding shales.\n  [стр. 136] Remember that all shaly sandstone formulas reduce the water saturation value from the value that would be calculated if shale effect were ignored. However, this lowering of water saturation can be a problem in log evaluation, because, if a geologist overestimates shale content, a water-bearing zone might appear to be a hydrocarbon-bearing zone.\n\n\n=== Элемент C007 (claim, ссылается на стр. 126)\nВодонасыщенность неизменённой зоны пласта вычисляется по формуле Арчи (1942), то есть это расчётная, а не измеренная величина.\n\n\nЦитата, на которую ссылается элемент: «Water saturation ($S_w$) of a reservoir's uninvaded zone is calculated by the Archie (1942) formula:»\n\nФрагменты источника:\n  [стр. 126] Water saturation ($S_w$) of a reservoir's uninvaded zone is calculated by the Archie (1942) formula:\n  [стр. 126] $S_w =$ water saturation of the uninvaded zone\n  [стр. 128] $S_{wa}$ = water saturation of the uninvaded zone (Archie method)\n\n\n=== Элемент C008 (claim, ссылается на стр. 126)\nФормула 7.1: отношение a·Rw/(Rt·φ^m) возводится в степень n (показатель насыщенности), то есть Sw = (a·Rw/(Rt·φ^m))^n.\n\n\nЦитата, на которую ссылается элемент: «S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1}»\n\nФрагменты источника:\n  [стр. 126] $$ S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1} $$\n  [стр. 127] $$ S_{xo} = \\left( \\frac{a \\times R_{mf}}{R_{xo} \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.2} $$\n  [стр. 130] $$\\phi = \\left(\\frac{a \\times R_w}{R_t \\times S_w^n}\\right)^{\\frac{1}{m}} \\tag{7.18}$$\n\n\n=== Элемент C009 (claim, ссылается на стр. 126)\nRt — истинное сопротивление пласта: глубокое измерение (индукционное или боковое), исправленное за проникновение.\n\n\nЦитата, на которую ссылается элемент: «true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)»\n\nФрагменты источника:\n  [стр. 126] $R_t =$ true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)\n  [стр. 127] $R_t =$ true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)\n  [стр. 127] $R_t =$ true formation resistivity (i.e., deep induction or deep laterolog corrected for invasion)\n\n\n=== Элемент C010 (claim, ссылается на стр. 127)\nЗнания одной Sw недостаточно, чтобы полностью оценить продуктивность зоны.\n\n\nЦитата, на которую ссылается элемент: «But merely knowing a zone's water saturation ($S_w$) does not provide enough information to completely evaluate a zone's potential productivity.»\n\nФрагменты источника:\n  [стр. 127] The uninvaded zone's water saturation ($S_w$), determined by the Archie equation, is the most fundamental quantity used in log evaluation. But merely knowing a zone's water saturation ($S_w$) does not provide enough information to completely evaluate a zone's potential productivity. A geologist must also determine if:\n  [стр. 127] - the water saturation is low enough for a water-free completion the hydrocarbons are moveable the zone is permeable\n  [стр. 127] When $S_w$ is divided by $S_{xo}$, the formation factor ($F = a/\\phi^m$) is cancelled out of the equation because the same formation factor is used to calculate both $S_w$ and $S_{xo}$. This can be very helpful in log analysis because, from the ratio $(R_{xo}/R_t)/(R_{mf}/R_w)$, the geologist can determine a value for both the moveable hydrocarbon index ($S_w/S_{xo}$) and water saturation by the ratio method without knowing porosity. Therefore, a geologist can still derive useful formation evaluation log parameters even though porosity logs are unavailable.\n\n\nВерни reviews — по одному объекту на каждый элемент: id, verdict (ok | error | unsure), error_type (или null), severity (3/2/1 или null), explanation (1 фраза), fix (или null), page (или null), evidence_quote (или null).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"reviews\"], \"properties\": {\"reviews\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"id\", \"verdict\", \"error_type\", \"severity\", \"explanation\", \"fix\", \"page\", \"evidence_quote\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"verdict\": {\"enum\": [\"ok\", \"error\", \"unsure\"]}, \"error_type\": {\"anyOf\": [{\"enum\": [\"overgeneralization\", \"sign_flip\", \"measured_vs_derived\", \"lost_condition\", \"missing_caveat\", \"wrong_scaling_law\", \"wrong_mechanism\", \"wrong_number\", \"outdated_as_current\", \"it_analogy_without_limit\", \"frame_error\", \"misconception\", \"unsupported\"]}, {\"type\": \"null\"}]}, \"severity\": {\"enum\": [1, 2, 3, null]}, \"explanation\": {\"type\": \"string\"}, \"fix\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"evidence_quote\": {\"type\": [\"string\", \"null\"]}}}}}}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "reviews"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "verdict",
+              "error_type",
+              "severity",
+              "explanation",
+              "fix",
+              "page",
+              "evidence_quote"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "ok",
+                  "error",
+                  "unsure"
+                ]
+              },
+              "error_type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "overgeneralization",
+                      "sign_flip",
+                      "measured_vs_derived",
+                      "lost_condition",
+                      "missing_caveat",
+                      "wrong_scaling_law",
+                      "wrong_mechanism",
+                      "wrong_number",
+                      "outdated_as_current",
+                      "it_analogy_without_limit",
+                      "frame_error",
+                      "misconception",
+                      "unsupported"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "severity": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  null
+                ]
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "fix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/review_asquith/llm/check_test_asquith_01/490f1ac1550430fa46d1.json",
+    "created": "2026-11-26T08:44:54"
+  },
+  "response": {
+    "reviews": [
+      {
+        "id": "C001",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Определение пористости и истинного сопротивления действительно названо первым шагом обработки сырых каротажных данных.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C002",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Автор прямо предостерегает от применения каротажных данных без других сведений.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C003",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "В источнике разрез с преобладанием коллекторов назван исключительно редким.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C004",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Описание соответствует экспресс-просмотру терригенных разрезов на относительно постоянном фоне сопротивления глин.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C005",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "При экспресс-просмотре карбонатов автор предлагает начать с кривой пористости для выделения зон, способных вмещать флюид.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C006",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник явно допускает радиоактивную продуктивную зону, похожую на глину по каротажному отклику.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C007",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "В источнике водонасыщенность неизменённой зоны рассчитывается по уравнению Арчи.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C008",
+        "verdict": "error",
+        "error_type": "wrong_scaling_law",
+        "severity": 2,
+        "explanation": "В формуле Арчи показатель степени всего отношения равен 1/n, а не n.",
+        "fix": "По формуле 7.1 водонасыщенность неизменённой зоны равна Sw = (a·Rw/(Rt·φ^m))^(1/n), где n — показатель насыщенности.",
+        "page": 126,
+        "evidence_quote": "$$ S_w = \\left( \\frac{a \\times R_w}{R_t \\times \\phi^m} \\right)^{\\frac{1}{n}} \\tag{7.1} $$"
+      },
+      {
+        "id": "C009",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Определение Rt и необходимость поправки глубокого измерения на проникновение совпадают с источником.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C010",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Для оценки потенциальной продуктивности, помимо Sw, автор требует учитывать подвижность углеводородов и проницаемость зоны.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 22741,
+    "output_chars": 2473
+  }
+}

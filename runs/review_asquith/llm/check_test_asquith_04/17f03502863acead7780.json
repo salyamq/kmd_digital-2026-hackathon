@@ -1,0 +1,211 @@
+{
+  "request": {
+    "task": "check_test_asquith_04",
+    "key": "17f03502863acead7780",
+    "prompt": "check_review",
+    "system": "Ты — строгий, но справедливый предметный рецензент (домен: Геология и геофизика нефтегазовых коллекторов). Тебе дают элементы чужого чернового пакета по главе книги\n(утверждения, фразы сценария, спецификации сцен, описания кадров) и для каждого — фрагменты исходного текста главы со страницами.\nЗадача: найти ошибки. Примерно 20–25 % элементов содержат ошибку; часть верных элементов звучит неожиданно, но верна —\nложная тревога (пометка верного элемента) наказывается так же сильно, как пропуск ошибки.\n\nТипы ошибок (error_type):\n- overgeneralization — обобщение сверх источника («всегда», «любой», снято «как правило», частный случай выдан за общий);\n- sign_flip — перевёрнут знак/направление зависимости (растёт ↔ падает, больше ↔ меньше, выше ↔ ниже);\n- measured_vs_derived — вычисляемое выдано за измеряемое или наоборот; сигнал прибора выдан за свойство породы;\n- lost_condition — потеряно условие применимости (тип раствора, диапазон, «при …», допущение модели);\n- missing_caveat — нет обязательной оговорки (неоднозначность, «не в масштабе», исключение, о котором говорит автор);\n- wrong_scaling_law — неверный закон масштабирования/зависимости (линейно вместо √t, обратная пропорциональность и т.п.);\n- wrong_mechanism — неверный физический механизм процесса или прибора;\n- wrong_number — число/единица/диапазон не совпадает с автором;\n- outdated_as_current — устаревшая техника из книги выдана за сегодняшнюю практику;\n- it_analogy_without_limit — ИТ-аналогия без названной границы, где она ломается, или аналогия, вводящая в заблуждение;\n- frame_error — ошибка кадра/сцены: нарушен чек-лист физики, класс кадра или метка происхождения не соответствуют способу изготовления, сгенерированный кадр утверждает факт, глубина/шкалы/полярность неверны, объект меняется между кадрами;\n- misconception — элемент закрепляет типичное заблуждение из списка;\n- unsupported — утверждение выдано за авторское, но в главе его нет и оно не следует из неё (используй только при явной выдумке).\n\nУровни (severity): 3 — критическая (заблуждение, неверный механизм, нарушена причинность, перевёрнут знак); 2 — существенная (неверное число/деталь, потеряно условие, неверная страница при неверном факте); 1 — допустимая неточность/мелочь.\n\nПравила точности:\n1. Сначала найди в фрагментах источника место, которое говорит о том же. Ошибка — только если элемент ПРОТИВОРЕЧИТ источнику, искажает его (знак, число, условие, область применимости) или нарушает чек-лист физики / закрепляет заблуждение из списка.\n2. Если источник подтверждает элемент — verdict \"ok\", даже если звучит неожиданно. Упрощение без искажения смысла — \"ok\".\n3. Если источник молчит, а элемент не противоречит физике и не закрепляет заблуждение — \"ok\" (не придумывай ошибку). Если не уверен — \"unsure\".\n4. Для каждой ошибки: evidence_quote — ДОСЛОВНАЯ цитата из приведённых фрагментов источника (5–40 слов), page — её страница; fix — исправленная формулировка элемента (одна фраза, по источнику).\n5. Не помечай стиль, орфографию, порядок слов и само по себе расхождение страниц у верного пересказа без прямой цитаты. Одна ошибка — один тип (самый точный).\n   Для «потеряно условие» процитируй место, где условие ограничивает именно этот вывод. Учитывай область, уже заданную соседними условиями, формулировкой элемента и спецификацией сцены.\n6. Для кадров с вложением используй видимое изображение, его плашку и спецификацию сцены. Если ошибка подтверждается только самим кадром или чек-листом, не подставляй фиктивную цитату и страницу.\n\nТипичные заблуждения:\n- Нефть лежит подземным озером или в пещерах.\n- Нефть образовалась из динозавров.\n- Пласт — пустота, а не порода с порами.\n- Пористость и проницаемость — одно и то же.\n- Сейсмика «видит нефть» напрямую.\n- Высокое сопротивление всегда означает нефть.\n- ГК «отражается» от породы.\n- Водонефтяной контакт всегда резкая плоская граница.\n- Запасы — одно точное число, а не диапазон с вероятностями.\n- Керн и шлам дают одинаковую информацию.\n- Обсаженная скважина сама пропускает нефть без перфорации.\n- Буровая вышка остаётся над добывающей скважиной.\n- Каротажная кривая — это и есть порода, а не косвенное измерение.\n- Модель пласта точно знает, что под землёй.\n- Тонкий пласт, который не виден отдельным отражением, на сейсмике «не существует».\n- Давление в пласте расходится с постоянной скоростью, как звук.\n- Высокая амплитуда на сейсмике всегда означает углеводороды.\n- Гамма-каротаж измеряет глинистость напрямую.\n- Газовая пачка в закрытой скважине расширяется, и давление не меняется.\n- Пористость рифовых известняков сохраняется такой, какой была при образовании.\n- Коллектор — это любая пористая порода.\n- Если зоны проникновения нет, то пласт — не коллектор.\n- Один метод ГИС может однозначно определить литологию и насыщение.\n- Коллектор либо отдаёт чистую нефть, либо чистую воду.\n- При пуске скважины давление во всём пласте падает мгновенно.\n- Упругий запас — это нефть, которая просто вытекает сама по себе без перепада давления.\n- Риф — это коралловый остров, а значит, всегда сложен кораллами.\n- Лучшие коллекторы всегда в центре (ядре) рифа.\n- Дельта — это просто устье реки, все дельты устроены одинаково.\n\nЧек-лист физики и предметной корректности:\n# Чек-лист физической и предметной корректности (домен: геология и геофизика)\n\nИсточник: ТЗ хакатона, раздел «Чек-лист физической и предметной корректности», + пункты команды (помечены «[наш]»).\nОтвет «нет» без оговорки в тексте/ролике — ошибка. Используется: промпты слоя и проверки (`check_*`), сцены, модуль проверки.\n\n## Слои и структура\n- [ ] Порядок слоёв сохраняется во всех кадрах; молодые лежат на старых, если не показан надвиг или опрокидывание.\n- [ ] Разлом смещает слои согласованно по обе стороны; смещение не исчезает и не меняет знак между кадрами.\n- [ ] Несогласие показано как событие: размыв, перерыв, новое накопление.\n\n## Флюиды и пласт\n- [ ] Нефть и газ находятся в порах породы, а не в полостях и озёрах.\n- [ ] Газ над нефтью, нефть над водой. Контакт горизонтален, если не объяснено иное; наклонный/нерегулярный контакт и переходная зона требуют оговорки.\n- [ ] Флюид движется от высокого давления к низкому; ловушка имеет покрышку.\n\n## Процессы и причинность\n- [ ] Порядок операций и событий верный: причина раньше следствия.\n- [ ] Соблюдается баланс (закачали — трещина выросла; вынесли шлам — ушёл по затрубу).\n- [ ] Разрез, план и поверхность показывают одно и то же состояние.\n- [ ] [наш] Возмущение давления в упругом пласте распространяется диффузионно (радиус ~ √(κt)), а не с постоянной скоростью.\n- [ ] [наш] Знак эффекта верный: депрессия (отбор) снижает давление у скважины, репрессия повышает; рост плотности раствора увеличивает репрессию и глубину проникновения.\n\n## Измерения и данные\n- [ ] Механизм прибора верный: ГК регистрирует собственное излучение породы, а не «отражение»; плотностной метод — не «расстояние между электронами».\n- [ ] Сигнал отделён от свойства: прибор измеряет отклик, свойство получают интерпретацией.\n- [ ] Названы условия применимости правила (например, знак ПС зависит от соотношения минерализации фильтрата и пластовой воды).\n- [ ] Кривая синхронна с прибором и вычислена из той же модели.\n- [ ] [наш] Измеренное не выдаётся за вычисленное и наоборот (например, Pн вычисляется как ρп/ρвп, а не «измеряется прибором»).\n- [ ] [наш] Корреляционные связи (ΔJ = f(kп), Pп = f(kп)) действуют для своего района/класса коллекторов; не обобщать на все породы.\n\n## Масштабы и числа\n- [ ] Глубины, температуры, давления, размеры правдоподобны (ошибка: «300° у долота» при типичных 60–150 °C).\n- [ ] Преувеличения названы, а не только помечены общей плашкой.\n- [ ] [наш] Числа и пороги — с единицами и условиями, как у автора (диапазон не превращать в одно число).\n\n## Объекты\n- [ ] Оборудование и прибор не меняют конструкцию между кадрами; детали на местах.\n- [ ] Объекты не совмещены неправдоподобно.\n\n## Кадры и актуальность\n- [ ] Глубина на каротажном планшете и на разрезе растёт вниз; шкалы, единицы и полярность подписаны.\n- [ ] Вертикальное преувеличение подписано числом; метка происхождения кадра соответствует способу изготовления.\n- [ ] Оборудование современное или помечено как историческое; техника из старой книги не выдаётся за сегодняшнюю практику.\n\n## Бурение и скважина (для глав из других доменов)\n- [ ] Гидростатическое давление растёт с глубиной и плотностью раствора; при циркуляции давление на забой выше статического.\n- [ ] Газ в закрытой скважине почти не расширяется и, всплывая, поднимает давление по всему стволу; в открытой — расширяется, сильнее всего у устья.\n- [ ] Рост объёма раствора в приёмной ёмкости — признак притока, уменьшение — признак поглощения.\n- [ ] Колонны, пакеры и оборудование на местах; конструкция скважины не меняется между видами.\n\n## Уровни ошибок\n- Критическая (severity 3): закреплено заблуждение из списка; неверный механизм прибора или процесса; нарушена причинность; перевёрнут знак эффекта.\n- Существенная (severity 2): неверная деталь или число без оговорки; потеряно условие применимости; несогласованные виды; дрейф объекта.\n- Допустимое упрощение (severity 1 / без штрафа): упрощение с явной оговоркой.",
+    "user": "Глава: Log Interpretation (checker test package) (G. Asquith, D. Krygowski, «Basic Well Log Analysis»).\n\n\n\n=== Элемент C031 (claim, ссылается на стр. 129)\nВ малопористых зонах (менее примерно 10%) Rwa ниже настоящего Rw.\n\n\nЦитата, на которую ссылается элемент: «In low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.»\n\nФрагменты источника:\n  [стр. 129] In low-porosity zones (less than about 10% porosity), the $R_{wa}$ value is lower than the actual $R_w$ value.\n  [стр. 129] When a given zone is water bearing, $R_t$ reverts to the water-bearing resistivity ($R_o$) and $R_{wa}$ equals $R_w$. If the zone contains hydrocarbons, $R_t$ is greater than $R_o$, and $R_{wa}$ is greater than $R_w$. By comparing a number of zones (or different depths in the same zone, where a water-hydrocarbon contact is suspected) and assuming the zone with the lowest value of $R_{wa}$ is wet, the minimum value of $R_{wa}$ can be used as an estimate for the value of $R_w$ in all the zones being considered. If the zone with the minimum $R_{wa}$ value actually contains\n  [стр. 129] 2. Zones with values of $R_{wa}$ greater than the minimum observed are likely to have some hydrocarbon saturation.\n\n\n=== Элемент C032 (claim, ссылается на стр. 130)\nВ зонах с углеводородами Rt больше Ro, поэтому рассчитанная пористость меньше фактической.\n\n\nЦитата, на которую ссылается элемент: «When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.»\n\nФрагменты источника:\n  [стр. 130] By using the form of the equation above (7.19), the water-filled porosity is determined. Where the formation is actually water filled, $R_t$ reverts to the water-bearing resistivity ($R_o$). The porosity calculated from this equation is close to the actual formation porosity, assuming that the parameters in the equation are close to the actual formation parameters. When the formation contains hydrocarbons, $R_t$ is greater than $R_o$, and the calculated porosity is less than the actual formation porosity.\n  [стр. 130] 2. In zones that contain hydrocarbons, the conductivity-derived porosity is low, lower than the true formation porosity.\n  [стр. 127] If the ratio $S_w/S_{xo}$ is equal to or greater than 1.0, then hydrocarbons were not moved during invasion. This is true regardless of whether or not a formation contains hydrocarbons. Whenever the ratio $S_w/S_{xo}$ is less than 0.7 for sandstones or less than 0.6 for carbonates, moveable hydrocarbons are indicated (Schlumberger, 1972).\n\n\n=== Элемент C033 (claim, ссылается на стр. 130)\nСравнение значений кривой между разными зонами при неверном Rw остаётся прежним.\n\n\nЦитата, на которую ссылается элемент: «It would not, however, change the results of comparison of the curve values in different zones.»\n\nФрагменты источника:\n  [стр. 130] The choice of an incorrect value for $R_w$ would change the value of conductivity-derived porosity, and might make its comparison to true formation porosity inaccurate. It would not, however, change the results of comparison of the curve values in different zones.\n  [стр. 130] 2. Compare the curve values and the relative position of the curve in porous and permeable zones.\n  [стр. 131] If the value of $R_w$ chosen to calculate $R_o$ is incorrect, the curves would not align in water-bearing zones.\n\n\n=== Элемент C034 (claim, ссылается на стр. 130)\nМетод опирается на кривую проводимости, которую сегодня обычно выводят на каротажный планшет рядом с ПС.\n\n\nЦитата, на которую ссылается элемент: «the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.»\n\nФрагменты источника:\n  [стр. 130] Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement.\n  [стр. 130] This technique calculates a porosity from Archie's equation, using the form of the equation for water-bearing zones ($S_w = 1$). The porosity values are generated as a curve and are normally displayed in the same track as the SP, scaled from high porosity values on the left to low porosity values on the right.\n  [стр. 130] 1. Calculate the porosity from Archie's equation (assuming $S_w = 1.0$), using the uninvaded zone resistivity measurement.\n\n\n=== Элемент C035 (claim, ссылается на стр. 128)\nВ водоносной зоне кривая Rxo/Rt повторяет ПС.\n\n\nЦитата, на которую ссылается элемент: «In a water-bearing zone, the $R_{xo}/R_t$ ratio tracks the SP.»\n\nФрагменты источника:\n  [стр. 128] 2. In a water-bearing zone, the $R_{xo}/R_t$ ratio tracks the SP.\n  [стр. 128] $S_{wr}$ = water saturation of the uninvaded zone (ratio method)\n  [стр. 128] 3. In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].\n\n\n=== Элемент C036 (claim, ссылается на стр. 128)\nВ зоне с углеводородами отношение уходит от ПС (вправо при нормальной, отрицательной ПС).\n\n\nЦитата, на которую ссылается элемент: «In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].»\n\nФрагменты источника:\n  [стр. 128] 3. In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].\n  [стр. 128] 2. In a water-bearing zone, the $R_{xo}/R_t$ ratio tracks the SP.\n  [стр. 129] The $R_{xo}/R_o$ ratio is then related to the SP through a constant. Since $R_o$ is just a special case of $R_t$ ($R_o$ is the resistivity in the undisturbed, water-bearing zone), $R_t$ can be substituted for $R_o$ for the more general case. In water-bearing intervals, the $R_{xo}/R_t$ ratio parallels the response of the SP, and both curves move in the same direction from their respective baseline values. In a hydrocarbon-bearing interval, while the SP still responds to the differences in connate water and mud filtrate resistivities and moves accordingly, the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.\n\n\n=== Элемент C037 (claim, ссылается на стр. 129)\nВ углеводородном интервале отношение Rxo/Rt падает, потому что падает Rxo, и кривая расходится с ПС.\n\n\nЦитата, на которую ссылается элемент: «the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.»\n\nФрагменты источника:\n  [стр. 129] The $R_{xo}/R_o$ ratio is then related to the SP through a constant. Since $R_o$ is just a special case of $R_t$ ($R_o$ is the resistivity in the undisturbed, water-bearing zone), $R_t$ can be substituted for $R_o$ for the more general case. In water-bearing intervals, the $R_{xo}/R_t$ ratio parallels the response of the SP, and both curves move in the same direction from their respective baseline values. In a hydrocarbon-bearing interval, while the SP still responds to the differences in connate water and mud filtrate resistivities and moves accordingly, the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP.\n  [стр. 128] 3. In a hydrocarbon-bearing zone, the $R_{xo}/R_t$ ratio moves away from the SP [a deflection to the right for the case of a normal (negative) SP].\n  [стр. 129] The $R_{xo}$ curve usually used for the ratio is derived from a shallow-reading measurement, such as a microspherically focused log or a microlaterolog. The $R_t$ curve is derived from a deep-reading measurement such as the deep induction log or deep laterolog. In practice, especially when the ratio is calculated and displayed as part of the logging job, the measurements are normally used without any environmental corrections being applied.\n\n\n=== Элемент C038 (claim, ссылается на стр. 131)\nBVW есть произведение водонасыщенности на пористость (ф. 7.22).\n\n\nЦитата, на которую ссылается элемент: «The product of a formation's water saturation ($S_w$) and its porosity ($\\phi$) is the bulk volume of water ($BVW$).»\n\nФрагменты источника:\n  [стр. 131] The product of a formation's water saturation ($S_w$) and its porosity ($\\phi$) is the bulk volume of water ($BVW$).\n  [стр. 131] A formation not at irreducible water saturation ($S_{w\\ irr}$) exhibits wide variations in bulk volume water values. The Buckles plot (Buckles, 1965) is a graph of porosity ($\\phi$) versus $S_w$. Points of equal $BVW$ form hyperbolic curves across this plot. Figure 7.3 illustrates Buckles plots using data from three wells in the Ordovician Red River B-zone, Beaver Creek Field, North Dakota. If $BVW$ is plotted using data from a formation at irreducible water saturation, the points fall along a single hyperbolic curve (Figure 7.3a). If the data come from reservoirs with higher percentages of produced water, the points are more scattered (Figures 7.3b and 7.3c).\n  [стр. 131] $BVW$ = bulk volume water\n\n\n=== Элемент C039 (claim, ссылается на стр. 131)\nПри неснижаемой насыщенности вода в неизменённой зоне неподвижна: её запирает глинистая корка на стенке скважины.\n\n\nЦитата, на которую ссылается элемент: «When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure.»\n\nФрагменты источника:\n  [стр. 131] If values for bulk volume water, calculated at several depths in a formation, are constant or very close to constant, they indicate that the zone is of a single rock type and at irreducible water saturation ($S_{w\\ irr}$). When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure. Therefore, hydrocarbon production from a zone at irreducible water saturation should be water free (Morris and Biggs, 1967).\n  [стр. 131] $S_w$ = water saturation of uninvaded zone\n  [стр. 131] Because the amount of water a formation can hold by capillary pressure increases with decreasing grain size, the bulk volume water also increases with decreasing grain size. Table 7.1 illustrates the relationship of bulk volume water values to decreasing grain size and lithology.\n\n\n=== Элемент C040 (claim, ссылается на стр. 141)\nРис. 7.3a: BVW почти постоянен (все точки между 0,04 и 0,05), пласт близок к неснижаемой насыщенности и даёт 96% нефти.\n\n\nЦитата, на которую ссылается элемент: «Figure 7.3a is an example of nearly constant BVW. The formation shown produces 96% oil. Note that all the points plot between 0.04 and 0.05 BVW.»\n\nФрагменты источника:\n  [стр. 141] Figure 7.3a is an example of nearly constant BVW. The formation shown produces 96% oil. Note that all the points plot between 0.04 and 0.05 BVW. The formation is very close to, or at, irreducible water saturation.\n  [стр. 141] Figure 7.3c shows a well producing no oil (all water). Note the scatter of BVW values from the hyperbolic curves, indicating that the formation is not at irreducible water saturation.\n  [стр. 141] With $S_{W}$ and porosity plotted on linear scales, points of equal bulk volume water (BVW) plot as hyperbolic curves. A series of points plotting along a particular hyperbolic curve indicates that the bulk volume water is constant and that the formation is close to irreducible water saturation. A reservoir in that condition would not produce water. As the amount of formation water increases, the bulk volume water values become scattered from the hyperbolic curves and the formation has more water than it can hold by capillary pressure. The water saturation is no longer at, or near, irreducible, so more water is produced relative to oil.\n\n\nВерни reviews — по одному объекту на каждый элемент: id, verdict (ok | error | unsure), error_type (или null), severity (3/2/1 или null), explanation (1 фраза), fix (или null), page (или null), evidence_quote (или null).\n\nОтвет — только один JSON-объект, валидный по этой JSON Schema, без пояснений и без ```:\n{\"type\": \"object\", \"required\": [\"reviews\"], \"properties\": {\"reviews\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"id\", \"verdict\", \"error_type\", \"severity\", \"explanation\", \"fix\", \"page\", \"evidence_quote\"], \"properties\": {\"id\": {\"type\": \"string\"}, \"verdict\": {\"enum\": [\"ok\", \"error\", \"unsure\"]}, \"error_type\": {\"anyOf\": [{\"enum\": [\"overgeneralization\", \"sign_flip\", \"measured_vs_derived\", \"lost_condition\", \"missing_caveat\", \"wrong_scaling_law\", \"wrong_mechanism\", \"wrong_number\", \"outdated_as_current\", \"it_analogy_without_limit\", \"frame_error\", \"misconception\", \"unsupported\"]}, {\"type\": \"null\"}]}, \"severity\": {\"enum\": [1, 2, 3, null]}, \"explanation\": {\"type\": \"string\"}, \"fix\": {\"type\": [\"string\", \"null\"]}, \"page\": {\"type\": [\"integer\", \"null\"]}, \"evidence_quote\": {\"type\": [\"string\", \"null\"]}}}}}}",
+    "schema": {
+      "type": "object",
+      "required": [
+        "reviews"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "verdict",
+              "error_type",
+              "severity",
+              "explanation",
+              "fix",
+              "page",
+              "evidence_quote"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "ok",
+                  "error",
+                  "unsure"
+                ]
+              },
+              "error_type": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "overgeneralization",
+                      "sign_flip",
+                      "measured_vs_derived",
+                      "lost_condition",
+                      "missing_caveat",
+                      "wrong_scaling_law",
+                      "wrong_mechanism",
+                      "wrong_number",
+                      "outdated_as_current",
+                      "it_analogy_without_limit",
+                      "frame_error",
+                      "misconception",
+                      "unsupported"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "severity": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  null
+                ]
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "fix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": [],
+    "cache_path": "runs/review_asquith/llm/check_test_asquith_04/17f03502863acead7780.json",
+    "created": "2026-11-26T08:44:54"
+  },
+  "response": {
+    "reviews": [
+      {
+        "id": "C031",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник прямо отмечает занижение Rwa относительно истинного Rw при пористости ниже примерно 10%.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C032",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Для описанного расчёта пористости автор подтверждает оба неравенства в присутствии углеводородов.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C033",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "По источнику неверное Rw меняет значения кривой, но не результат их сравнения между зонами.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C034",
+        "verdict": "error",
+        "error_type": "outdated_as_current",
+        "severity": 2,
+        "explanation": "Автор отмечает, что измеренную проводимость теперь редко выводят на планшет, а в описанном методе используют сопротивление и рядом с ПС показывают расчётную пористость.",
+        "fix": "В описанном методе пористость рассчитывают по измеренному сопротивлению и выводят на одном треке с ПС; измеренную кривую проводимости, с которой исторически начинался метод, выводят редко.",
+        "page": 130,
+        "evidence_quote": "Although this technique originated with the use of the conductivity curve (Dresser Atlas, 1975), the conductivity curve is now rarely presented on log displays, and the technique is described here using the resistivity measurement."
+      },
+      {
+        "id": "C035",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Следование кривой отношения за ПС в водоносной зоне прямо указано в источнике.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C036",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Источник подтверждает расхождение кривых и отклонение вправо именно для нормальной отрицательной ПС.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C037",
+        "verdict": "error",
+        "error_type": "wrong_mechanism",
+        "severity": 3,
+        "explanation": "Отношение снижается из-за увеличения знаменателя Rt, а не из-за уменьшения числителя Rxo.",
+        "fix": "В углеводородном интервале отношение Rxo/Rt падает вследствие роста Rt, и кривая отношения расходится с ПС.",
+        "page": 129,
+        "evidence_quote": "the $R_{xo}/R_t$ ratio decreases (because of increasing $R_t$) and the $R_{xo}/R_t$ curve moves away from the SP."
+      },
+      {
+        "id": "C038",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Определение BVW как произведения водонасыщенности и пористости совпадает с источником.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      },
+      {
+        "id": "C039",
+        "verdict": "error",
+        "error_type": "wrong_mechanism",
+        "severity": 3,
+        "explanation": "Неснижаемую воду удерживают капиллярные силы на зёрнах породы, а не глинистая корка на стенке скважины.",
+        "fix": "При неснижаемой водонасыщенности вода в неизменённой зоне неподвижна, так как капиллярное давление удерживает её на зёрнах породы.",
+        "page": 131,
+        "evidence_quote": "When a zone is at irreducible water saturation, water in the uninvaded zone ($S_w$) does not move because it is held on grains by capillary pressure."
+      },
+      {
+        "id": "C040",
+        "verdict": "ok",
+        "error_type": null,
+        "severity": null,
+        "explanation": "Подпись к рисунку подтверждает диапазон BVW, близость к неснижаемой насыщенности и долю нефти 96%.",
+        "fix": null,
+        "page": null,
+        "evidence_quote": null
+      }
+    ]
+  },
+  "provider": "queue",
+  "model": "claude-opus-5.5 (agent queue)",
+  "usage": {
+    "input_chars": 22006,
+    "output_chars": 3228
+  }
+}
