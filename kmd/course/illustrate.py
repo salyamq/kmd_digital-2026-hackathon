@@ -9,6 +9,7 @@ visuals API used (all optional; the course works without kmd.visuals):
 from __future__ import annotations
 
 import importlib
+import threading
 from pathlib import Path
 
 from . import figures
@@ -62,7 +63,16 @@ def catalog_text(domain: str | None = None) -> str:
 _SPEC_KEYS = ("template", "params", "caption", "alt", "title", "redrawn_from", "exaggerations", "claim_ids", "class", "provenance", "t", "size")
 
 
+# matplotlib/pyplot is not thread-safe; course steps are built concurrently (llm.pmap)
+_RENDER_LOCK = threading.RLock()
+
+
 def render(spec: dict, out_dir: Path, stem: str) -> dict:
+    with _RENDER_LOCK:
+        return _render(spec, out_dir, stem)
+
+
+def _render(spec: dict, out_dir: Path, stem: str) -> dict:
     """Render one illustration spec. Returns {file, class, provenance, template, renderer, alt?, caption?, issues}
     or raises (unknown template, invariant violation, bad params)."""
     out_dir.mkdir(parents=True, exist_ok=True)

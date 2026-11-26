@@ -194,6 +194,13 @@ def run(chapter: str, node: str | None = None, figures: list[str] | None = None,
         except llm.PendingLLM as p:
             pending.append(p.path)
             continue
+        except Exception as e:  # noqa: BLE001
+            # A text-only model (e.g. a free OpenRouter endpoint) cannot see the figure crops.
+            # Redraws are optional: keep the book figures as they are and go on with the course.
+            if "image" not in str(e).lower():
+                raise
+            print(f"[redraw] пропуск: модель не принимает изображения ({str(e)[:120]})")
+            break
         index.append(rec)
         print(f"[redraw] рис. {num}: {rec['status']} {rec.get('file', '')} {rec.get('errors') or ''}")
     if index:

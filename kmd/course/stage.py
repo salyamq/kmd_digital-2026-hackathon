@@ -699,11 +699,13 @@ def run(chapter: str, node: str | None = None, **kw) -> list[Path]:
     for nid in targets:
         if nid not in nodes:
             raise KeyError(f"unknown node {nid}")
-        try:
-            res, attempts = build_node(rd, cfg, layer, nodes[nid], pl[nid], ctx)
-        except llm.PendingLLM as p:
-            pending.append(p.path)
+    # steps are independent given ctx: LLM work runs concurrently, writing stays in order
+    built = llm.pmap(lambda nid: build_node(rd, cfg, layer, nodes[nid], pl[nid], ctx), targets)
+    for nid, (kind, val) in zip(targets, built):
+        if kind == "pending":
+            pending.append(val)
             continue
+        res, attempts = val
         done[nid] = write_step(rd, cfg, layer, nodes[nid], pl[nid], ctx, res) + (attempts,)
 
     # chapter-level files are rebuilt from all step files on disk (so --node runs keep the rest)

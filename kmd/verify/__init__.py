@@ -276,7 +276,10 @@ def verify_layer(chapter: str, layer: dict, units: dict, coverage: list | None) 
         # numbers in every learner-visible field
         for path, text, by in _node_fields(n):
             bad = check_text_numbers(text, chapter)
-            if bad:
+            if bad and n.get("_overridden"):
+                # a human override (logged in edits/journal.jsonl) is the authority over the book here
+                warn("number_by_editor", f"{nid}.{path}", f"numbers set by a manual override, not in chapter: {bad}")
+            elif bad:
                 stats["numbers_bad"] += len(bad)
                 err("number_not_in_source", f"{nid}.{path}", f"numbers not in chapter: {bad}", by=by)
         for e in n.get("worked_examples", []):

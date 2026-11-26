@@ -15,6 +15,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -135,6 +136,9 @@ def _call_openai(system: str, user: str, max_tokens: int, images=()) -> tuple[st
     import openai
 
     model = os.environ.get("KMD_LLM_MODEL", "gpt-4.1")
+    if images and os.environ.get("KMD_LLM_VISION_MODEL"):
+        # text-only main model (e.g. a free one): requests with images go to a vision model
+        model = os.environ["KMD_LLM_VISION_MODEL"]
     base_url = os.environ.get("OPENAI_BASE_URL") or None
     options = {}
     if base_url and urlsplit(base_url).hostname == "openrouter.ai":
@@ -170,6 +174,30 @@ def _call_openai(system: str, user: str, max_tokens: int, images=()) -> tuple[st
     if isinstance(cost, (int, float)):
         usage["cost_usd"] = cost
     return text, usage, model
+
+
+def _call_with_retry(call, system, user, max_tokens, images, tries=None):
+    """Retry transport failures: HTTP 429/5xx, dropped connections, a malformed gateway body
+    (free OpenRouter endpoints sometimes return a truncated/non-JSON body), an empty answer.
+    Schema/JSON problems in a well-formed answer are handled by the caller's re-ask loop."""
+    tries = tries or int(os.environ.get("KMD_LLM_RETRIES", "6"))
+    delay = 10.0
+    for i in range(tries):
+        try:
+            text, usage, model = call(system, user, max_tokens, images)
+            if text.strip() or usage.get("finish_reason") == "length":
+                return text, usage, model
+            err = f"empty answer (finish_reason={usage.get('finish_reason')})"
+        except Exception as e:  # noqa: BLE001 - provider SDKs raise many types
+            status = getattr(e, "status_code", None)
+            if status is not None and status < 500 and status not in (408, 409, 429):
+                raise
+            err = f"{type(e).__name__}: {str(e)[:200]}"
+        if i == tries - 1:
+            raise LLMError(f"LLM call failed after {tries} tries: {err}")
+        print(f"[llm] retry {i + 1}/{tries - 1} in {delay:.0f}s: {err}", file=sys.stderr, flush=True)
+        time.sleep(delay)
+        delay = min(delay * 2, 120.0)
 
 
 def complete_json(
@@ -224,7 +252,7 @@ def complete_json(
     last_err = None
     msgs_user = user_full
     for _ in range(attempts):
-        text, usage, model = call(system, msgs_user, max_tokens, images)
+        text, usage, model = _call_with_retry(call, system, msgs_user, max_tokens, images)
         try:
             obj = _extract_json(text)
             validate(obj, schema_d)
@@ -257,16 +285,45 @@ def answer_pending(pending_file: Path, response_file: Path, model: str = "claude
     return cache
 
 
+def parallelism() -> int:
+    """How many independent LLM requests a stage may run at once (KMD_LLM_PARALLEL, default 4).
+    The queue provider answers instantly (PendingLLM), so it stays sequential."""
+    if provider_name() == "queue":
+        return 1
+    return max(1, int(os.environ.get("KMD_LLM_PARALLEL", "4")))
+
+
+def pmap(fn, items):
+    """Apply fn to items, concurrently for API providers. Returns a list in input order of
+    ("ok", result) or ("pending", path). Other exceptions propagate (first one in input order)."""
+    items = list(items)
+
+    def one(x):
+        try:
+            return ("ok", fn(x))
+        except PendingLLM as p:
+            return ("pending", p.path)
+
+    n = min(parallelism(), len(items))
+    if n <= 1:
+        return [one(x) for x in items]
+    from concurrent.futures import ThreadPoolExecutor
+
+    with ThreadPoolExecutor(max_workers=n) as ex:
+        futures = [ex.submit(one, x) for x in items]
+        return [f.result() for f in futures]
+
+
 def gather(calls):
     """Run zero-arg callables; collect results and pending requests instead of stopping at the first.
 
     Returns (results, pending_paths). results[i] is None where pending.
     """
     results, pending = [], []
-    for c in calls:
-        try:
-            results.append(c())
-        except PendingLLM as p:
+    for kind, val in pmap(lambda c: c(), calls):
+        if kind == "pending":
             results.append(None)
-            pending.append(p.path)
+            pending.append(val)
+        else:
+            results.append(val)
     return results, pending

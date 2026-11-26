@@ -243,11 +243,10 @@ def run(chapter: str, node: str | None = None, fmt: str | None = None, **kw) -> 
     elif fmt:
         todo = [(n, r, fmt) for n, r, _ in todo]
     pending = []
-    for n, r, f in todo:
-        try:
-            sc = build_scene(rd, n, r, f, pack)
-        except llm.PendingLLM as p:
-            pending.append(p.path)
+    built = llm.pmap(lambda t: build_scene(rd, t[0], t[1], t[2], pack), todo)
+    for (n, r, f), (kind, sc) in zip(todo, built):
+        if kind == "pending":
+            pending.append(sc)
             continue
         write_json(scene_path(rd, n["id"], f, r.get("format")), sc)
         st = sc["checks"]

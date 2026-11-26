@@ -1,3 +1,6 @@
+import time
+from pathlib import Path
+import json
 from types import SimpleNamespace
 
 from PIL import Image
@@ -121,3 +124,43 @@ def test_checker_retrieves_passage_from_its_actual_page():
     unit = {"kind": "paragraph", "page": 7, "text": first + " Тепловой поток",
             "page_breaks": [{"offset": len(first), "page": 8}]}
     assert retrieve({"text": "Тепловой поток"}, [unit], k=1) == [{"page": 8, "text": "Тепловой поток"}]
+
+
+def test_transport_errors_are_retried_but_client_errors_are_not(monkeypatch):
+    monkeypatch.setattr(llm.time, "sleep", lambda _s: None)
+    seq = [json.JSONDecodeError("Expecting value", "\n", 0), "", "{}"]
+
+    def flaky(system, user, max_tokens, images):
+        item = seq.pop(0)
+        if isinstance(item, Exception):
+            raise item
+        return item, {"finish_reason": "stop"}, "m"
+
+    assert llm._call_with_retry(flaky, "s", "u", 10, (), tries=3)[0] == "{}"
+
+    class BadRequest(Exception):
+        status_code = 400
+
+    calls = []
+
+    def bad(*_a):
+        calls.append(1)
+        raise BadRequest("no")
+
+    with pytest.raises(BadRequest):
+        llm._call_with_retry(bad, "s", "u", 10, (), tries=3)
+    assert len(calls) == 1
+    with pytest.raises(llm.LLMError):
+        llm._call_with_retry(lambda *_a: ("", {"finish_reason": "stop"}, "m"), "s", "u", 10, (), tries=2)
+
+
+def test_pmap_keeps_order_and_collects_pending(monkeypatch):
+    monkeypatch.setattr(llm, "parallelism", lambda: 4)
+
+    def f(x):
+        if x == 2:
+            raise llm.PendingLLM(Path(f"p{x}"))
+        time.sleep(0.01 * (5 - x))
+        return x * 10
+
+    assert llm.pmap(f, range(5)) == [("ok", 0), ("ok", 10), ("pending", Path("p2")), ("ok", 30), ("ok", 40)]
